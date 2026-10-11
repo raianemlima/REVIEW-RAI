@@ -16,5 +16,8 @@ O baralho está criptografado dentro do `index.html` (AES-256-GCM, chave derivad
   `SENHA='nova-senha' node build.mjs caminho/fonte.html index.html`
 - Depois de trocar a senha, aumente o número da versão em `sw.js` (`CACHE`) e avise quem usa: cada pessoa precisará digitar a nova senha.
 
+## Sincronizar notebook e celular
+O progresso pode ser sincronizado por um repositório privado seu no GitHub. Veja [`docs/SINCRONIZAR.md`](docs/SINCRONIZAR.md).
+
 ## App no celular (PWA)
 O site se instala como aplicativo, sem lojas e sem custo. Veja [`docs/INSTALAR-PWA.md`](docs/INSTALAR-PWA.md).

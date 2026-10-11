@@ -1,6 +1,6 @@
 // Revisão DPE · service worker
 // Offline: o app e as fontes ficam guardados no aparelho. Atualização: a versão nova espera o aviso "Atualizar".
-const CACHE = "revisao-dpe-v12", DADOS = "revisao-dpe-dados";
+const CACHE = "revisao-dpe-v13", DADOS = "revisao-dpe-dados";
 const CORE = ["./", "index.html", "manifest.webmanifest", "privacidade.html", "icons/icon.svg", "icons/icon-180.png", "icons/icon-192.png", "icons/icon-512.png", "icons/icon-maskable-512.png",
   "fonts/fonts.css", "fonts/ibm-plex-sans-latin-400-normal.woff2", "fonts/ibm-plex-sans-latin-500-normal.woff2", "fonts/ibm-plex-sans-latin-600-normal.woff2",
   "fonts/ibm-plex-mono-latin-400-normal.woff2", "fonts/ibm-plex-mono-latin-500-normal.woff2",
@@ -17,6 +17,7 @@ self.addEventListener("message", e => {
 });
 self.addEventListener("fetch", e => {
   if (e.request.method !== "GET") return;
+  if (new URL(e.request.url).origin !== self.location.origin) return;   // só o próprio site: a API do GitHub (sincronização) nunca passa pelo cache
   e.respondWith(caches.match(e.request, { ignoreSearch: true }).then(hit => hit || fetch(e.request).then(r => {
     if (r.ok) { const copy = r.clone(); caches.open(CACHE).then(c => c.put(e.request, copy)); }
     return r;
