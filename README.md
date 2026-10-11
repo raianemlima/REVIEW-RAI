@@ -16,5 +16,5 @@ O baralho está criptografado dentro do `index.html` (AES-256-GCM, chave derivad
   `SENHA='nova-senha' node build.mjs caminho/fonte.html index.html`
 - Depois de trocar a senha, aumente o número da versão em `sw.js` (`CACHE`) e avise quem usa: cada pessoa precisará digitar a nova senha.
 
-## App de iPhone
-O mesmo site vira app de iPhone com o Capacitor (pasta `ios/`). Veja o passo a passo completo em [`docs/PUBLICAR-IOS.md`](docs/PUBLICAR-IOS.md) e os textos da loja em [`docs/loja-apple.md`](docs/loja-apple.md).
+## App no celular (PWA)
+O site se instala como aplicativo, sem lojas e sem custo. Veja [`docs/INSTALAR-PWA.md`](docs/INSTALAR-PWA.md).

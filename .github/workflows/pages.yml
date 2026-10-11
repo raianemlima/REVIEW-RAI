@@ -2,7 +2,7 @@ name: Publicar site
 on:
   push:
     branches: [main]
-    paths-ignore: ["ios/**", "docs/**", "assets/**", "capacitor.config.json", "package*.json", "scripts/**", ".github/workflows/ios-*.yml"]
+    paths-ignore: ["docs/**", "README.md"]
   workflow_dispatch:
 permissions:
   contents: read
@@ -21,7 +21,7 @@ jobs:
         run: |
           mkdir _site
           cp index.html sw.js manifest.webmanifest privacidade.html _site/
-          cp -r icons fonts _site/
+          cp -r icons fonts screenshots _site/
       - uses: actions/upload-pages-artifact@v3
         with: { path: _site }
       - id: d
