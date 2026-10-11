@@ -1,3 +1,11 @@
+node_modules/
+www/
+ios/App/Pods/
+ios/App/App/public/
+ios/App/App/capacitor.config.json
+ios/DerivedData/
+ios/App/build/
+*.xcarchive
 fonte*.html
 source*.html
 senha*

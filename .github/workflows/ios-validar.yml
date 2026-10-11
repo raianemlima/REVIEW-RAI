@@ -1,0 +1,29 @@
+name: iOS · validar compilação
+# Compila o app de iPhone no simulador, sem assinatura e sem conta Apple.
+# Serve para saber se o projeto está íntegro antes de enviar à Apple.
+on:
+  workflow_dispatch:
+  pull_request:
+    paths: ["ios/**", "package*.json", "capacitor.config.json", "index.html", "scripts/**", ".github/workflows/ios-*.yml"]
+jobs:
+  build:
+    runs-on: macos-26
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npm run www && npx cap sync ios
+      - run: xcodebuild -version && xcrun --sdk iphoneos --show-sdk-version
+      - name: Compilar para o simulador
+        run: |
+          set -o pipefail
+          xcodebuild -project ios/App/App.xcodeproj -scheme App -configuration Debug \
+            -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build \
+            | tee "$RUNNER_TEMP/build.log" | tail -40
+      - name: Conferir o pacote gerado
+        run: |
+          APP=$(find ~/Library/Developer/Xcode/DerivedData -name 'App.app' -path '*Debug-iphonesimulator*' | head -1)
+          echo "App: $APP"; ls "$APP" | head -20; du -sh "$APP"
+          /usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$APP/Info.plist"
