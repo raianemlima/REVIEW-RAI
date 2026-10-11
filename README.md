@@ -15,3 +15,6 @@ O baralho está criptografado dentro do `index.html` (AES-256-GCM, chave derivad
 - Para gerar uma nova versão ou trocar a senha:
   `SENHA='nova-senha' node build.mjs caminho/fonte.html index.html`
 - Depois de trocar a senha, aumente o número da versão em `sw.js` (`CACHE`) e avise quem usa: cada pessoa precisará digitar a nova senha.
+
+## App no celular (PWA)
+O site se instala como aplicativo, sem lojas e sem custo. Veja [`docs/INSTALAR-PWA.md`](docs/INSTALAR-PWA.md).
