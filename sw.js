@@ -1,5 +1,5 @@
 // Cache-first para o app (offline); fontes do Google são guardadas na primeira visita.
-const CACHE = "revisao-dpe-v3";
+const CACHE = "revisao-dpe-v4";
 const CORE = ["./", "index.html", "manifest.webmanifest", "icons/icon.svg", "icons/icon-192.png", "icons/icon-512.png", "icons/icon-180.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => {
