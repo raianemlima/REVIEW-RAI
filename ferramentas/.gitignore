@@ -1,0 +1,6 @@
+# conteúdo em texto puro nunca entra no repositório
+*.csv
+fonte*.html
+source*.html
+baralho/
+__pycache__/
