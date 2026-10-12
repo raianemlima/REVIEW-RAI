@@ -95,8 +95,8 @@
   const naoChegou = `<p style="margin:0;color:var(--muted);font-size:14px">Não chegou? Veja a caixa de spam e as promoções. O código vale por 1 hora.</p>`;
   const TELAS = {
     entrar: () => [`Entre na sua conta.`, `${campoEmail()}${campoSenha("gSenha", "Senha", "current-password")}<button id="gOk" style="${btn}">Entrar</button>`,
-      ir("criar", "Criar conta") + ir("esqueci", "Esqueci minha senha") + ir("codigo", "Entrar com código no e-mail, sem senha") + ir("senhaApp", "Tenho uma senha de acesso")],
-    criar: () => [`Crie a sua conta com e-mail e uma senha de pelo menos 8 caracteres.`, `${campoEmail()}${campoSenha("gSenha", "Senha", "new-password")}${campoSenha("gSenha2", "Repita a senha", "new-password")}<button id="gOk" style="${btn}">Criar conta</button>`, ir("entrar", "Já tenho conta")],
+      ir("criar", "Criar conta") + ir("esqueci", "Esqueci minha senha") + ir("senhaApp", "Tenho uma senha de acesso")],
+    criar: () => [`Crie a sua conta com o <b>e-mail liberado na compra</b> e uma senha de pelo menos 8 caracteres.`, `${campoEmail()}${campoSenha("gSenha", "Senha", "new-password")}${campoSenha("gSenha2", "Repita a senha", "new-password")}<button id="gOk" style="${btn}">Criar conta</button>`, ir("entrar", "Já tenho conta")],
     confirmar: () => [`Falta só <b>confirmar o seu e-mail</b> com o código que enviamos.`, `${campoCod()}<button id="gOk" style="${btn}">Confirmar e entrar</button><button type="button" id="gReenviar" style="${btn2}">Enviar outro código</button>${naoChegou}<p style="margin:0;color:var(--muted);font-size:14px">Se você já tinha conta com esse e-mail, volte e use Entrar ou Esqueci minha senha.</p>`, ir("entrar", "Voltar")],
     esqueci: () => [`Digite o seu e-mail. Enviamos um código para você criar uma senha nova.`, `${campoEmail()}<button id="gOk" style="${btn}">Enviar código</button>`, ir("entrar", "Voltar")],
     esqueci2: () => [`Crie a sua senha nova.`, `${campoCod()}${campoSenha("gSenha", "Nova senha (mínimo 8 caracteres)", "new-password")}${campoSenha("gSenha2", "Repita a nova senha", "new-password")}<button id="gOk" style="${btn}">Salvar senha e entrar</button><button type="button" id="gReenviar" style="${btn2}">Enviar outro código</button>${naoChegou}`, ir("entrar", "Voltar")],
@@ -148,8 +148,12 @@
       const email = pegaEmail(); checarSenha(val("#gSenha"), val("#gSenha2"));
       let j;
       try { j = await sb("/auth/v1/signup?redirect_to=" + volta(), { email, password: val("#gSenha") }); }
-      catch (e) { if (/already|exists|registered/i.test(e.srv)) throw new Erro("Já existe uma conta com esse e-mail. Use Entrar ou Esqueci minha senha.", e.st); throw new Erro(erroSenha(e.srv) || e.message || "Não consegui criar a conta.", e.st); }
-      if (j && j.access_token) return entrou(j);
+      catch (e) {
+        if (/already|exists|registered/i.test(e.srv)) throw new Erro("Já existe uma conta com esse e-mail. Use Entrar ou Esqueci minha senha.", e.st);
+        if (/database error saving new user|nao_liberado/i.test(e.srv)) throw new Erro("Esse e-mail ainda não foi liberado. Use o mesmo e-mail da compra ou fale com o suporte.", e.st);   // gatilho no Supabase: só e-mails da tabela liberados criam conta
+        throw new Erro(erroSenha(e.srv) || e.message || "Não consegui criar a conta.", e.st);
+      }
+      if (j && j.access_token) return entrou(j);   // "Confirm email" desligado no Supabase: entra direto, sem código
       tela("confirmar", "Conta criada. Enviamos um código para o seu e-mail.", true);
     },
     confirmar: async () => entrou(await verificar(st.email, val("#gCod"), ["signup", "email"])),
