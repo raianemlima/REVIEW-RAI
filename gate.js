@@ -41,7 +41,8 @@
     let j = null; try { j = await r.json(); } catch (_) {}
     if (!r.ok) {
       const m = (j && (j.msg || j.message || j.error_description || j.error)) || "";
-      throw new Erro(r.status === 429 ? "Muitas tentativas seguidas. Espere alguns minutos e tente de novo." : r.status >= 500 ? "O servidor não respondeu. Tente de novo em instantes." : m, r.status, m);
+      const envio = /sending|smtp|mail.*(send|deliver)|not authorized/i.test(m);   // falha do serviço de e-mail do Supabase
+      throw new Erro(envio ? "Não consegui enviar o e-mail com o código agora. Tente de novo em alguns minutos; se continuar, fale com o suporte." : r.status === 429 ? (/email/i.test(m) ? "Limite de envio de e-mails atingido. Espere alguns minutos e toque em Enviar outro código." : "Muitas tentativas seguidas. Espere alguns minutos e tente de novo.") : r.status >= 500 ? "O servidor não respondeu. Tente de novo em instantes." : m, r.status, m);
     }
     return j;
   }
