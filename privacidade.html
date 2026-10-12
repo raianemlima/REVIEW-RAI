@@ -10,17 +10,17 @@ h1{font:600 1.7rem Georgia,serif;margin:.4em 0}h2{font:600 1.15rem Georgia,serif
 p,li{margin:.5em 0}.m{color:var(--muted);font-size:.9rem}a{color:var(--accent)}
 </style></head><body><main>
 <h1>Revisão DPE: privacidade e suporte</h1>
-<p class="m">Última atualização: 11/10/2026</p>
+<p class="m">Última atualização: 12/10/2026</p>
 
 <h2>Resumo</h2>
-<p>O <b>Revisão DPE</b> é uma ferramenta de estudo com revisão espaçada, que funciona como site e como app instalável na tela inicial (PWA). <b>Não coletamos, não enviamos e não vendemos dados pessoais.</b> Tudo o que você faz fica salvo apenas no seu aparelho.</p>
+<p>O <b>Revisão DPE</b> é uma ferramenta de estudo com revisão espaçada, que funciona como site e como app instalável na tela inicial (PWA). <b>Não vendemos dados pessoais e não usamos rastreamento.</b> Tudo o que você faz fica salvo no seu aparelho. Só se você ativar a sincronização entre aparelhos é que uma cópia do seu progresso vai para a nuvem, como explicado abaixo.</p>
 
 <h2>Quais dados ficam no aparelho</h2>
 <ul>
 <li>Seu progresso de estudo (cartões revisados, notas, datas), suas anotações e os cartões que você criar.</li>
 <li>Suas preferências (por exemplo, data da prova e minutos de estudo por dia).</li>
 </ul>
-<p>Esses dados ficam no armazenamento do navegador do seu aparelho, dentro do app instalado. Não há conta, cadastro ou login em servidor nosso. Se você limpar os dados do navegador ou desinstalar o app, o progresso pode ser apagado, por isso o app oferece backup em arquivo.</p>
+<p>Esses dados ficam no armazenamento do navegador do seu aparelho, dentro do app instalado. A conta por e-mail é opcional e serve apenas para sincronizar entre aparelhos. Se você limpar os dados do navegador ou desinstalar o app, o progresso pode ser apagado, por isso o app oferece backup em arquivo.</p>
 
 <h2>O que não fazemos</h2>
 <ul>
@@ -38,7 +38,12 @@ p,li{margin:.5em 0}.m{color:var(--muted);font-size:.9rem}a{color:var(--accent)}
 </ul>
 
 <h2>Sincronização opcional entre aparelhos</h2>
-<p>Se você ativar, em Ajustes, a sincronização entre aparelhos, o seu progresso de estudo (cartões, anotações e preferências de estudo) é gravado num <b>repositório privado que é seu, na sua conta do GitHub</b>, usando um token de acesso que você mesma cria. Nós não temos acesso a esses dados e não operamos nenhum servidor. O token fica salvo apenas no seu aparelho e não vai junto com o backup nem com os dados sincronizados. A sincronização só funciona se você a ativar, e você pode desconectar a qualquer momento.</p>
+<p>A sincronização só funciona se você a ativar em <b>Ajustes → Sincronizar entre aparelhos</b>. Há duas formas:</p>
+<ul>
+<li><b>Conta por e-mail (recomendada):</b> você entra com o seu e-mail e recebe um código de acesso, sem senha. O seu progresso de estudo (cartões, histórico de respostas, anotações e preferências de estudo) é guardado no <b>Supabase</b>, serviço de banco de dados em nuvem, em servidores no Brasil (São Paulo). Usamos o seu e-mail só para o login. Cada conta lê e grava apenas o próprio registro. O token de acesso fica salvo apenas no seu aparelho. Em Ajustes você pode sair da conta ou <b>apagar o seu progresso da nuvem</b> a qualquer momento. Para excluir também a conta, escreva para o contato abaixo.</li>
+<li><b>GitHub (alternativa avançada):</b> o progresso é gravado num <b>repositório privado que é seu, na sua conta do GitHub</b>, usando um token de acesso que você mesma cria. Nós não temos acesso a esses dados. O token fica salvo apenas no seu aparelho e não vai junto com o backup nem com os dados sincronizados.</li>
+</ul>
+<p>Preferências próprias de cada aparelho (lembrete, sons e vibração) não são sincronizadas. O progresso é mesclado: nada que você fez em um aparelho é apagado pelo outro.</p>
 
 <h2>Controle dos seus dados</h2>
 <p>Em <b>Ajustes → Apagar todos os dados deste aparelho</b>, você remove todo o progresso e as anotações. Desinstalar o app ou limpar os dados do navegador também apaga os dados locais. Você pode exportar um backup em Ajustes antes de apagar.</p>
