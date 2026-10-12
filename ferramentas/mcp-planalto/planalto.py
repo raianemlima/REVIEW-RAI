@@ -38,7 +38,7 @@ ATALHOS: dict[str, tuple[str, str]] = {
     "LC 80": ("Lei Orgânica da Defensoria Pública (LC 80/1994)", "leis/lcp/lcp80.htm"),
     "CTN": ("Código Tributário Nacional (Lei 5.172/1966)", "leis/l5172compilado.htm"),
     "LINDB": ("Lei de Introdução às Normas do Direito Brasileiro", "decreto-lei/del4657compilado.htm"),
-    "LACP": ("Lei da Ação Civil Pública (Lei 7.347/1985)", "leis/l7347orig.htm"),
+    "LACP": ("Lei da Ação Civil Pública (Lei 7.347/1985)", "leis/l7347compilada.htm"),
     "MARIA DA PENHA": ("Lei Maria da Penha (Lei 11.340/2006)", "_ato2004-2006/2006/lei/l11340.htm"),
     "DROGAS": ("Lei de Drogas (Lei 11.343/2006)", "_ato2004-2006/2006/lei/l11343.htm"),
     "ESTATUTO DA PESSOA IDOSA": ("Estatuto da Pessoa Idosa (Lei 10.741/2003)", "leis/2003/l10.741.htm"),
@@ -114,6 +114,8 @@ def _baixar(url: str, timeout: int = 30) -> bytes:
 
 
 def _decodificar(dados: bytes) -> str:
+    if dados[:2] in (b"\xff\xfe", b"\xfe\xff"):  # algumas páginas (ex.: Lei 11.340) vêm em UTF-16
+        return dados.decode("utf-16", "replace")
     cab = dados[:3000].decode("ascii", "ignore").lower()
     m = re.search(r'charset=["\']?([\w-]+)', cab)
     for enc in ([m.group(1)] if m else []) + ["utf-8", "cp1252"]:
@@ -154,17 +156,23 @@ def parse_lei(html: str, incluir_revogados: bool = False, manter_notas: bool = T
     atual: Artigo | None = None
     contexto = ""
     parte = ""
+    fim = False
     for p in soup.find_all(["p", "h1", "h2", "h3", "h4"]):
         t = _limpar(p.get_text(" "))
         if not t:
             continue
         if not manter_notas:
             t = _limpar(NOTA_RE.sub("", t))
-        if re.match(r"^ATO DAS DISPOSI[ÇC][ÕO]ES CONSTITUCIONAIS TRANSIT[ÓO]RIAS", t, re.I):
-            parte, contexto, atual = "ADCT", "", None
+        # só o título em maiúsculas: o menu do topo da CF tem um link "Ato das Disposições..."
+        if re.match(r"^ATO DAS DISPOSI[ÇC][ÕO]ES CONSTITUCIONAIS TRANSIT[ÓO]RIAS", t):
+            parte, contexto, atual, fim = "ADCT", "", None, False
+            continue
+        if fim:
             continue
         if re.match(r"^(Bras[íi]lia\s*,|Este texto não substitui)", t):
-            break  # fim do texto normativo (assinaturas, anexos de publicação)
+            # fim do texto normativo (assinaturas); na CF o ADCT ainda vem depois
+            fim, atual = True, None
+            continue
         if re.match(r"^(T[ÍI]TULO|CAP[ÍI]TULO|SE[ÇC][ÃA]O|LIVRO|PARTE)\b", t, re.I):
             contexto = t
             continue
