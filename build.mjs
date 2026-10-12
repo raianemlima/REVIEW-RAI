@@ -3,6 +3,7 @@
 // O arquivo-fonte NÃO deve ficar no repositório.
 import { readFileSync, writeFileSync } from "node:fs";
 import { webcrypto as crypto, randomBytes } from "node:crypto";
+import { gzipSync } from "node:zlib";
 
 const [src, out = "index.html"] = process.argv.slice(2);
 const senha = process.env.SENHA;
@@ -22,8 +23,9 @@ if (/<\/script/i.test(appSrc)) throw new Error("app contém </script>");
 const salt = randomBytes(16), iv = randomBytes(12);
 const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(senha), "PBKDF2", false, ["deriveKey"]);
 const key = await crypto.subtle.deriveKey({ name: "PBKDF2", salt, iterations: ITER, hash: "SHA-256" }, base, { name: "AES-GCM", length: 256 }, true, ["encrypt"]);
-const ct = new Uint8Array(await crypto.subtle.encrypt({ name: "AES-GCM", iv }, key, new TextEncoder().encode(m[1])));
-const payload = JSON.stringify({ v: 1, it: ITER, s: b64(salt), iv: b64(iv), ct: b64(ct) });
+// o baralho é comprimido (gzip) antes de cifrar: o texto de lei seca deixaria o arquivo pesado
+const ct = new Uint8Array(await crypto.subtle.encrypt({ name: "AES-GCM", iv }, key, gzipSync(Buffer.from(m[1], "utf8"), { level: 9 })));
+const payload = JSON.stringify({ v: 2, z: "gzip", it: ITER, s: b64(salt), iv: b64(iv), ct: b64(ct) });
 
 const gate = readFileSync(new URL("./gate.js", import.meta.url), "utf8");
 html = html.replace(m[0], "/* baralho criptografado: ver gate */");

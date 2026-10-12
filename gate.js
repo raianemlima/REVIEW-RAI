@@ -8,7 +8,9 @@
 
   async function tryKey(key) {
     const pt = await crypto.subtle.decrypt({ name: "AES-GCM", iv: unb64(enc.iv) }, key, unb64(enc.ct));
-    return new TextDecoder().decode(pt);
+    if (!enc.z) return new TextDecoder().decode(pt);
+    if (typeof DecompressionStream === "undefined") throw new Error("sem-gzip");
+    return new Response(new Blob([pt]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
   }
   function start(deckJson) {
     $("#main").innerHTML = "";
@@ -36,7 +38,7 @@
         const deck = await tryKey(key);
         try { if ($("#gmem").checked) localStorage.setItem(KEY, b64(await crypto.subtle.exportKey("raw", key))); } catch (_) {}
         start(deck);
-      } catch (_) { form("Senha incorreta."); }
+      } catch (err) { form(err && err.message === "sem-gzip" ? "Este navegador é antigo demais para abrir o app. Atualize o navegador e tente de novo." : "Senha incorreta."); }
     };
     $("#gpw").focus();
   }
