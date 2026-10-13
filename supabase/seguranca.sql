@@ -33,3 +33,35 @@ alter table public.liberados add column if not exists valido_ate timestamptz;
 -- c) Liberar / renovar um aluno por 1 mês (até o webhook do pagamento fazer isso sozinho):
 --      insert into public.liberados (email, valido_ate) values ('aluno@exemplo.com', now() + interval '1 month')
 --      on conflict (email) do update set valido_ate = excluded.valido_ate;
+
+-- ============ 4) Asaas: liberação automática pelo pagamento ============
+-- Usado pela Edge Function asaas-webhook (supabase/functions/asaas-webhook). Requer que liberados.email seja chave primária ou único
+-- (se a parte 1 mostrar que não é:  alter table public.liberados add constraint liberados_email_key unique (email); ).
+create table if not exists public.asaas_log (
+  id bigserial primary key,
+  criado_em timestamptz not null default now(),
+  evento_id text, evento text, pagamento text, email text, acao text, valido_ate timestamptz
+);
+alter table public.asaas_log enable row level security;   -- sem policy: só o painel e a função leem
+
+create or replace function public.asaas_aplicar(p_email text, p_acao text, p_ate timestamptz, p_evento_id text, p_evento text, p_pagamento text)
+returns void language plpgsql security definer set search_path = public, pg_temp as $$
+declare v_ate timestamptz;
+begin
+  if p_acao = 'liberar' then
+    -- renovação nunca encurta: fica a data mais distante (eventos repetidos ou fora de ordem não atrapalham)
+    insert into public.liberados (email, valido_ate) values (lower(p_email), p_ate)
+    on conflict (email) do update set valido_ate = greatest(coalesce(public.liberados.valido_ate, excluded.valido_ate), excluded.valido_ate)
+    returning valido_ate into v_ate;
+  elsif p_acao = 'cortar' then
+    update public.liberados set valido_ate = now() where email = lower(p_email) returning valido_ate into v_ate;
+  end if;
+  insert into public.asaas_log (evento_id, evento, pagamento, email, acao, valido_ate) values (p_evento_id, p_evento, p_pagamento, lower(p_email), p_acao, v_ate);
+end $$;
+revoke all on function public.asaas_aplicar(text, text, timestamptz, text, text, text) from public, anon, authenticated;
+grant execute on function public.asaas_aplicar(text, text, timestamptz, text, text, text) to service_role;
+
+-- Consultas úteis:
+--   últimos eventos:            select * from public.asaas_log order by id desc limit 50;
+--   pagou mas sem e-mail:       select * from public.asaas_log where acao = 'sem_email' order by id desc;
+--   assinaturas que vencem em 7 dias: select email, valido_ate from public.liberados where valido_ate between now() and now() + interval '7 days';
