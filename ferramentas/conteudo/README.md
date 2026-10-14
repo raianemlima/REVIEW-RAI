@@ -20,6 +20,17 @@ SENHA='sua senha' node build.mjs fonte.html index.html
 # 5. subir a versão nova do sw.js (CACHE 'revisao-dpe-vNN') e fazer commit só do index.html e do sw.js
 ```
 
+## Alterações no app feitas direto no `index.html`
+
+Algumas mudanças no código do app foram aplicadas direto no `index.html` publicado, por scripts em `ferramentas/ajustes/`. Antes do próximo `node build.mjs`, rode os mesmos scripts no seu `fonte.html`, senão o build volta o app à versão antiga:
+
+```bash
+python ferramentas/ajustes/defensorias.py fonte.html   # lista de Defensorias no campo Concurso
+python ferramentas/ajustes/aba_defensoria.py fonte.html defensoria.json --publico   # aba Defensoria (súmulas e teses)
+```
+
+O `defensoria.json` pode ser recuperado do próprio `index.html` publicado (constante `DPE_PUBLICO`). Os scripts podem ser rodados mais de uma vez.
+
 O passo 3 precisa de `pip install -r ferramentas/mcp-planalto/requirements.txt`.
 
 ## Como ler o relatório `conferir`

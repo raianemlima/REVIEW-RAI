@@ -416,6 +416,37 @@ body { overscroll-behavior-y: none; }
 .masc-op .masc-emo { font-size: 1.9rem; line-height: 1.2; } .masc-op b { font-size: .85rem; } .masc-op small { font-size: .68rem; color: var(--muted); line-height: 1.2; }
 .masc-op.on { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, var(--surface)); }
 .hero-main .mascot, .profile .mascot { cursor: pointer; }
+
+/* ---- aba Defensoria ---- */
+.dpe-hero { position: relative; overflow: hidden; border-radius: 22px; padding: 22px 20px 20px; margin: 16px 0 14px; color: #f1fbf6;
+  background: radial-gradient(120% 140% at 100% 0%, #2fa37a 0%, transparent 55%), linear-gradient(135deg, #0f4a3a 0%, #155e4a 55%, #1b7a5c 100%); }
+.dpe-hero::after { content: ""; position: absolute; right: -40px; bottom: -60px; width: 200px; height: 200px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,.14), transparent 70%); pointer-events: none; }
+.dpe-kicker { font: 600 .7rem var(--f-ui); letter-spacing: .14em; text-transform: uppercase; opacity: .8; margin: 0; }
+.dpe-hero h2 { color: #fff; margin: 6px 0 6px; font-size: 1.7rem; }
+.dpe-hero p { margin: 0; opacity: .9; max-width: 34em; }
+.dpe-stats { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+.dpe-stat { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.18); border-radius: 14px; padding: 8px 12px; min-width: 84px; }
+.dpe-stat b { display: block; font: 600 1.25rem var(--f-ui); color: #fff; }
+.dpe-stat span { font-size: .75rem; opacity: .85; }
+.dpe-sec { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin: 22px 0 8px; }
+.dpe-sec h3 { margin: 0; }
+.dpe-filtros { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 10px; }
+.dpe-card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 16px; margin: 0 0 12px;
+  box-shadow: 0 1px 0 rgba(0,0,0,.02), 0 8px 24px -18px rgba(21,94,74,.45); border-left: 4px solid var(--accent); }
+.dpe-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+.dpe-num { font: 600 .82rem var(--f-mono); padding: 4px 10px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); }
+.dpe-data { color: var(--muted); font-size: .8rem; margin-left: auto; }
+.dpe-enun { font-family: var(--f-read); font-size: 1.12rem; line-height: 1.5; margin: 4px 0 12px; }
+.dpe-por { background: var(--accent-soft); border-radius: 12px; padding: 10px 12px; font-size: .92rem; }
+.dpe-por b { color: var(--accent); }
+.dpe-pe { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 10px; font-size: .8rem; color: var(--muted); }
+.dpe-pe a { color: var(--accent); font-weight: 600; text-decoration: none; }
+.dpe-nota { color: var(--muted); font-size: .8rem; margin: 18px 0 8px; }
+.dpe-tese { border-left-color: #2fa37a; }
+.dpe-tese .dpe-num { font-family: var(--f-ui); white-space: normal; border-radius: 12px; }
+.dpe-teses { margin: 4px 0 12px; padding-left: 20px; font-family: var(--f-read); font-size: 1.04rem; line-height: 1.5; }
+.dpe-teses li { margin: 0 0 8px; }
 </style>
 
 <header class="top">
@@ -430,6 +461,7 @@ body { overscroll-behavior-y: none; }
       <button role="tab" data-tab="biblioteca" aria-selected="false" id="tab-biblioteca"><svg class="ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/></svg><span>Biblioteca</span></button>
       <button role="tab" data-tab="leiseca" aria-selected="false" id="tab-leiseca"><svg class="ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 7l-3 7a3 3 0 0 0 6 0z"/><path d="M19 7l-3 7a3 3 0 0 0 6 0z"/><path d="M8 21h8"/></svg><span>Lei seca</span></button>
       <button role="tab" data-tab="novidades" aria-selected="false" id="tab-novidades"><svg class="ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11v2a1 1 0 0 0 1 1h2l8 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M18 9a4 4 0 0 1 0 6"/></svg><span>Novidades</span></button>
+      <button role="tab" data-tab="defensoria" aria-selected="false" id="tab-defensoria" hidden><svg class="ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><span>Defensoria</span></button>
       <button role="tab" data-tab="estatisticas" aria-selected="false" id="tab-estatisticas"><svg class="ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>Progresso</span></button>
       <button role="tab" data-tab="ajustes" aria-selected="false" id="tab-ajustes"><svg class="ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg><span>Ajustes</span></button>
     </nav>
@@ -1858,6 +1890,53 @@ const nvItens = () => (DECK.novidades || {}).itens || [];
 function novUnread() { const l = S.ajustes.nvLidas || []; return nvItens().filter(n => !l.includes(n.id)).length; }
 function updNavBadge() { const b = $("#tab-novidades"); if (b) b.dataset.n = novUnread() ? String(novUnread()) : ""; }
 const fmtISO = iso => iso.split("-").reverse().join("/");
+const DPE_PUBLICO = {"atualizado": "2026-10-14", "estatisticas": {"total_sumulas_tradicionais": 736, "total_sumulas_vinculantes": 63, "fonte": "Portal Oficial do STF (jurisprudencia.stf.jus.br)"}, "sumulas": [{"tipo": "Súmula Vinculante 63", "aprovacao": "26/09/2025", "ramo": "Penal", "enunciado": "O tráfico privilegiado (art. 33, § 4º, da Lei 11.343/2006) não configura crime hediondo, afastando-se a aplicação dos parâmetros mais rigorosos de progressão de regime e de livramento condicional.", "relevancia_dpe": "Essencial (Direito Penal / Execução Penal - Tema central de atuação da DPE)", "tribunal": "STF"}, {"tipo": "Súmula Vinculante 61", "aprovacao": "20/09/2024", "ramo": "Constitucional / Saúde", "enunciado": "A concessão judicial de medicamento registrado na ANVISA, mas não incorporado às listas de dispensação do Sistema Único de Saúde, deve observar as teses firmadas no julgamento do Tema 6 da Repercussão Geral (RE 566.471).", "relevancia_dpe": "Alta (Direito à Saúde e Atuação Coletiva/Individual da DPE)", "tribunal": "STF"}, {"tipo": "Súmula Vinculante 60", "aprovacao": "16/09/2024", "ramo": "Constitucional / Saúde", "enunciado": "O pedido e a análise administrativos de fármacos na rede pública de saúde, a judicialização do caso, bem ainda seus desdobramentos, devem observar os termos dos 3 (três) acordos interfederativos homologados pelo STF no Tema 1.234 da repercussão geral.", "relevancia_dpe": "Alta (Saúde Pública e Requisitos de Judicialização)", "tribunal": "STF"}, {"tipo": "Súmula 533 / STJ", "ramo": "Execução Penal", "enunciado": "Para o reconhecimento da prática de falta disciplinar no âmbito da execução penal, é imprescindível a instauração de procedimento administrativo pelo diretor do estabelecimento prisional, assegurado o direito de defesa, a ser realizado por advogado constituído ou defensor público nomeado.", "relevancia_dpe": "Essencial (Defesa do apenado na apuração de falta grave). Atenção: o STF, no Tema 941 (RE 972.598), admitiu dispensar o PAD quando há audiência judicial com defesa técnica.", "tribunal": "STJ"}, {"tipo": "Súmula 660 / STJ", "ramo": "Execução Penal", "enunciado": "A posse, pelo apenado, de aparelho celular ou de seus componentes essenciais constitui falta grave.", "relevancia_dpe": "Alta (Execução Penal: faltas disciplinares)", "tribunal": "STJ"}, {"tipo": "Súmula 661 / STJ", "ramo": "Execução Penal", "enunciado": "A falta grave prescinde da perícia do celular apreendido ou de seus componentes essenciais.", "relevancia_dpe": "Alta (Execução Penal: prova da falta grave)", "tribunal": "STJ"}, {"tipo": "Súmula 341 / STJ", "ramo": "Execução Penal", "enunciado": "A frequência a curso de ensino formal é causa de remição de parte do tempo de execução de pena sob regime fechado ou semiaberto.", "relevancia_dpe": "Alta (Remição pelo estudo)", "tribunal": "STJ"}, {"tipo": "Súmula 444 / STJ", "ramo": "Penal", "enunciado": "É vedada a utilização de inquéritos policiais e ações penais em curso para agravar a pena-base.", "relevancia_dpe": "Essencial (Dosimetria: presunção de inocência)", "tribunal": "STJ"}, {"tipo": "Súmula 440 / STJ", "ramo": "Penal", "enunciado": "Fixada a pena-base no mínimo legal, é vedado o estabelecimento de regime prisional mais gravoso do que o cabível em razão da sanção imposta, com base apenas na gravidade abstrata do delito.", "relevancia_dpe": "Essencial (Fixação do regime inicial)", "tribunal": "STJ"}, {"tipo": "Súmula 593 / STJ", "ramo": "Penal", "enunciado": "O crime de estupro de vulnerável se configura com a conjunção carnal ou prática de ato libidinoso com menor de 14 anos, sendo irrelevante eventual consentimento da vítima para a prática do ato, sua experiência sexual anterior ou existência de relacionamento amoroso com o agente.", "relevancia_dpe": "Alta (Crimes sexuais e proteção de crianças e adolescentes)", "tribunal": "STJ"}, {"tipo": "Súmula 297 / STJ", "ramo": "Consumidor", "enunciado": "O Código de Defesa do Consumidor é aplicável às instituições financeiras.", "relevancia_dpe": "Alta (Consumidor bancário)", "tribunal": "STJ"}, {"tipo": "Súmula 479 / STJ", "ramo": "Consumidor", "enunciado": "As instituições financeiras respondem objetivamente pelos danos gerados por fortuito interno relativo a fraudes e delitos praticados por terceiros no âmbito de operações bancárias.", "relevancia_dpe": "Essencial (Fraudes bancárias: responsabilidade objetiva do banco)", "tribunal": "STJ"}, {"tipo": "Súmula 642 / STJ", "ramo": "Direito Civil / Família", "enunciado": "O direito à indenização por danos morais transmite-se com o falecimento do titular, possuindo os herdeiros da vítima legitimidade ativa para ajuizar ou prosseguir a ação indenizatória.", "relevancia_dpe": "Alta (Direito Civil e Assistência Jurídica Cível)", "tribunal": "STJ"}, {"tipo": "Súmula 594 / STJ", "ramo": "Infância e Família", "enunciado": "O Ministério Público tem legitimidade ativa para ajuizar ação de alimentos em proveito de criança ou adolescente independentemente do exercício do poder familiar dos pais, ou do fato de o menor se encontrar nas situações de risco descritas no art. 98 do Estatuto da Criança e do Adolescente, ou de quaisquer outros questionamentos acerca da existência ou eficiência da Defensoria Pública na comarca.", "relevancia_dpe": "Alta (Alimentos: legitimidade concorrente com a Defensoria)", "tribunal": "STJ"}], "estatisticas_stj": {"total_sumulas_editadas": "Mais de 660 súmulas", "fonte_oficial": "Base de Súmulas do STJ (SCON / Súmulas Anotadas)"}, "teses": [{"edicao": "Edição nº 282: Superendividamento (CDC)", "teses_destaque": ["Superendividamento é a impossibilidade manifesta de o consumidor, pessoa natural, de boa-fé, pagar a totalidade de suas dívidas exigíveis sem comprometer seu mínimo existencial.", "O processo de repactuação de dívidas, previsto no art. 104-A do Código de Defesa do Consumidor (CDC), constitui instrumento essencial de garantia do mínimo existencial e tutela de vulneráveis."], "relevancia_dpe": "Essencial (Direito do Consumidor / Atuação prioritária da DPE na defesa dos superendividados)"}, {"edicao": "Edição nº 281: Direito Penal e Processual Penal em Ambiente Digital III", "teses_destaque": ["É indispensável a prova técnica para a comprovação da autoria e materialidade de delitos cibernéticos complexos.", "Na hipótese de violência e vulnerabilidade digital de crianças e adolescentes, a indicação de URL e preservação de metadados são vitais para a eficácia das medidas protetivas."], "relevancia_dpe": "Alta (Direito Penal Digital, Infância e Juventude)"}, {"edicao": "Edições nº 283, 284 e 285: Direito à Educação (I, II e III)", "teses_destaque": ["O ensino fundamental é direito subjetivo indisponível do menor e o princípio da inafastabilidade da jurisdição impõe o fornecimento estatal de vagas e suporte educacional.", "As instituições de ensino superior respondem objetivamente por falhas na prestação de serviços educacionais."], "relevancia_dpe": "Essencial (Direito Coletivo e Individual Indisponível - Atuação clássica da DPE em Mandados de Segurança e Ações Civis Públicas por vagas em creches/escolas)"}]};
+// ===================== aba Defensoria: súmulas e teses que mais importam à DPE =====================
+// conteúdo em DECK.dpe (baralho cifrado) ou em DPE_PUBLICO (embutido no código: só textos públicos de súmulas e teses)
+const dpeDados = () => DECK.dpe || (typeof DPE_PUBLICO !== "undefined" ? DPE_PUBLICO : {});
+function renderDef() {
+  const D = dpeDados(), sum = D.sumulas || [], E = D.estatisticas || {}, EJ = D.estatisticas_stj || {}, teses = D.teses || [];
+  const tri = S.defTri || "", f = S.defRamo || "";
+  const doTri = sum.filter(x => !tri || (x.tribunal || "STF") === tri);
+  const ramos = [...new Set(doTri.map(x => x.ramo))].sort((a, b) => a.localeCompare(b, "pt"));
+  const lista = doTri.filter(x => !f || x.ramo === f);
+  const nivel = r => /^essencial/i.test(r) ? "Essencial" : /^alta/i.test(r) ? "Alta" : /^m[ée]dia/i.test(r) ? "Média" : "";
+  const motivo = r => r.replace(/^(Essencial|Alta|Média|Media)\s*/i, "").replace(/^\(([^)]*)\)/, "$1");
+  const rel = r => r ? `<div class="dpe-por"><b>Relevância para a DPE${nivel(r) ? " · " + nivel(r) : ""}:</b> ${esc(motivo(r))}</div>` : "";
+  const numStj = String(EJ.total_sumulas_editadas || "").match(/\d+/);
+  $("#main").innerHTML = `
+    <section class="dpe-hero">
+      <p class="dpe-kicker">Defensoria em foco</p>
+      <h2>O que mais cai e mais importa para a DPE</h2>
+      <p>Súmulas e teses com maior relevância para concursos e para a atuação da Defensoria Pública.${D.atualizado ? " Atualizado em " + fmtISO(D.atualizado) + "." : ""}</p>
+      <div class="dpe-stats">
+        ${E.total_sumulas_tradicionais ? `<div class="dpe-stat"><b>${E.total_sumulas_tradicionais}</b><span>súmulas do STF</span></div>` : ""}
+        ${E.total_sumulas_vinculantes ? `<div class="dpe-stat"><b>${E.total_sumulas_vinculantes}</b><span>vinculantes</span></div>` : ""}
+        ${numStj ? `<div class="dpe-stat"><b>${numStj[0]}+</b><span>súmulas do STJ</span></div>` : ""}
+        <div class="dpe-stat"><b>${sum.length}</b><span>em destaque</span></div>
+      </div>
+    </section>
+    <div class="dpe-sec"><h3>Súmulas em destaque</h3><span class="count">${plural(lista.length, "súmula", "súmulas")}</span></div>
+    <div class="dpe-filtros" role="group" aria-label="Tribunal">${["", "STF", "STJ"].map(t => `<button class="fchip" data-tri="${t}" aria-pressed="${tri === t}">${t || "STF e STJ"}</button>`).join("")}</div>
+    <div class="dpe-filtros" role="group" aria-label="Filtrar por ramo"><button class="fchip" data-r="" aria-pressed="${!f}">Todos os ramos</button>${ramos.map(r => `<button class="fchip" data-r="${esc(r)}" aria-pressed="${f === r}">${esc(r)}</button>`).join("")}</div>
+    ${lista.map(x => `
+      <article class="dpe-card">
+        <div class="dpe-top"><span class="dpe-num">${esc(x.tipo)}</span><span class="chip">${esc(x.ramo)}</span>${x.aprovacao ? `<span class="dpe-data">aprovada em ${esc(x.aprovacao)}</span>` : ""}</div>
+        <p class="dpe-enun">${md(x.enunciado)}</p>
+        ${rel(x.relevancia_dpe)}
+      </article>`).join("")}
+    ${teses.length ? `<div class="dpe-sec"><h3>Jurisprudência em Teses · STJ</h3><span class="count">${plural(teses.length, "edição", "edições")}</span></div>
+    ${teses.map(t => `
+      <article class="dpe-card dpe-tese">
+        <div class="dpe-top"><span class="dpe-num">${esc(t.edicao)}</span></div>
+        <ol class="dpe-teses">${(t.teses_destaque || []).map(x => `<li>${md(x)}</li>`).join("")}</ol>
+        ${rel(t.relevancia_dpe)}
+      </article>`).join("")}` : ""}
+    <p class="dpe-nota">${[E.fonte, EJ.fonte_oficial].filter(Boolean).map(esc).join(" · ")}${E.fonte || EJ.fonte_oficial ? ". " : ""}Confira sempre a redação oficial antes de citar em peça ou prova.</p>`;
+  document.querySelectorAll(".fchip[data-tri]").forEach(b => b.onclick = () => { S.defTri = b.dataset.tri; S.defRamo = ""; renderDef(); });
+  document.querySelectorAll(".fchip[data-r]").forEach(b => b.onclick = () => { S.defRamo = b.dataset.r; renderDef(); });
+}
+(() => { const t = document.getElementById("tab-defensoria"), D = dpeDados(); if (t) t.hidden = !((D.sumulas || []).length || (D.teses || []).length); })();
 function renderNov() {
   const all = nvItens(), f = S.novTema || "", lidas = S.ajustes.nvLidas || [];
   const temas = [...new Set(all.flatMap(n => n.temas))].sort((a, b) => a.localeCompare(b, "pt"));
@@ -2468,7 +2547,7 @@ function go(tab) { if (S.tab === "ouvir" && tab !== "ouvir") stopAudio(); if (S.
 function render() {
   document.querySelectorAll("#tabs button").forEach(b => b.setAttribute("aria-selected", String(b.dataset.tab === S.tab)));
   setTimeout(bindMetodoMini, 0);
-  ({ hoje: renderHoje, sessao: renderSession, biblioteca: renderLib, novidades: renderNov, estatisticas: renderStats, ajustes: renderAjustes, ouvir: renderOuvir, busca: renderBusca, preparo: renderPreparo, leiseca: renderLeiSeca, metodos: renderMetodos, jogo: renderJogo })[S.tab]();
+  ({ hoje: renderHoje, sessao: renderSession, biblioteca: renderLib, novidades: renderNov, defensoria: renderDef, estatisticas: renderStats, ajustes: renderAjustes, ouvir: renderOuvir, busca: renderBusca, preparo: renderPreparo, leiseca: renderLeiSeca, metodos: renderMetodos, jogo: renderJogo })[S.tab]();
   updNavBadge();
 }
 function statusOf(id) {
