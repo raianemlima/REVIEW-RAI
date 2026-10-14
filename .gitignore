@@ -12,3 +12,6 @@ senha*
 
 # dados das teses (obra de terceiros): nunca neste repositório público
 teses-app/
+
+# chaves dos PDFs protegidos: ficam junto do fonte.html, nunca no GitHub
+chave-arquivos*.json

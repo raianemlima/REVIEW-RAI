@@ -49,6 +49,7 @@ CSS = """
 .dpe-links { display: flex; gap: 8px; flex-wrap: wrap; }
 .dpe-links a { text-decoration: none; }
 .dpe-prova { border-left-color: #8fd3b6; }
+.dpe-arq { border-left-color: #0f4a3a; background: linear-gradient(135deg, var(--accent-soft), var(--surface) 70%); }
 .dpe-tese .dpe-num { font-family: var(--f-ui); white-space: normal; border-radius: 12px; }
 .dpe-teses { margin: 4px 0 12px; padding-left: 20px; font-family: var(--f-read); font-size: 1.04rem; line-height: 1.5; }
 .dpe-teses li { margin: 0 0 8px; }
@@ -96,6 +97,7 @@ function renderDef() {
         <ol class="dpe-teses">${(t.teses_destaque || []).map(x => `<li>${md(x)}</li>`).join("")}</ol>
         ${rel(t.relevancia_dpe)}
       </article>`).join("")}` : ""}
+    ${typeof arqCards === "function" && arqLista().length ? `<div class="dpe-sec"><h3>Provas comentadas</h3></div>${arqCards()}` : ""}
     ${(D.provas || []).length ? `<div class="dpe-sec"><h3>Provas anteriores</h3><span class="count">${plural(D.provas.length, "concurso", "concursos")}</span></div>
     ${D.provas.map(v => `
       <article class="dpe-card dpe-prova">
@@ -125,7 +127,7 @@ def aplicar(caminho: Path, dados: Path | None, publico: bool = False):
     # estilo: insere, ou troca a versão anterior pela atual
     c0 = html.find("\n/* ---- aba Defensoria ---- */")
     if c0 >= 0:
-        c1 = html.index("</style>", c0)
+        c1 = min(k for k in (html.find("\n/* ---- ", c0 + 1), html.index("</style>", c0)) if k >= 0)   # só o próprio bloco
         if html[c0:c1] != CSS.rstrip("\n") + "\n": html = html[:c0] + CSS + html[c1:]; n += 1
     else:
         k = html.index("</style>", html.index(".tabs {")); html = html[:k] + CSS + html[k:]; n += 1

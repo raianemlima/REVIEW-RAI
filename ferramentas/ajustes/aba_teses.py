@@ -104,7 +104,7 @@ def aplicar(caminho: Path, dados: Path | None):
         html = html[:j] + NAV_BTN + html[j:]; n += 1
     c0 = html.find("\n/* ---- aba Teses ---- */")
     if c0 >= 0:
-        c1 = html.index("</style>", c0)
+        c1 = min(k for k in (html.find("\n/* ---- ", c0 + 1), html.index("</style>", c0)) if k >= 0)   # só o próprio bloco
         if html[c0:c1] != CSS.rstrip("\n") + "\n": html = html[:c0] + CSS + html[c1:]; n += 1
     else:
         k = html.index("</style>", html.index("/* ---- aba Defensoria ---- */")); html = html[:k] + CSS + html[k:]; n += 1

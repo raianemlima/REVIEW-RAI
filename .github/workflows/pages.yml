@@ -21,7 +21,7 @@ jobs:
         run: |
           mkdir _site
           cp index.html sw.js manifest.webmanifest privacidade.html termos.html _site/
-          cp -r icons fonts screenshots _site/
+          cp -r icons fonts screenshots arquivos _site/
       - uses: actions/upload-pages-artifact@v3
         with: { path: _site }
       - id: d
