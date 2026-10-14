@@ -9,3 +9,6 @@ ios/App/build/
 fonte*.html
 source*.html
 senha*
+
+# dados das teses (obra de terceiros): nunca neste repositório público
+teses-app/
