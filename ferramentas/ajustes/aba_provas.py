@@ -32,6 +32,9 @@ CSS = """
 .pv-mapa button.ok { background: var(--ok-soft); border-color: var(--ok); color: var(--ok); }
 .pv-mapa button.no { background: var(--bad-soft); border-color: var(--bad); color: var(--bad); }
 .pv-mapa button.at { outline: 2px solid var(--accent); }
+.pv-mapa button.nu { border-style: dashed; opacity: .6; }
+.pv-res.nu { background: var(--line); color: var(--muted); }
+.pv-disc { margin-top: 12px; } .pv-disc summary { cursor: pointer; font-weight: 600; color: var(--accent); }
 .pv-tab { width: 100%; border-collapse: collapse; font-size: .9rem; }
 .pv-tab td { padding: 6px 4px; border-bottom: 1px solid var(--line); } .pv-tab td:last-child { text-align: right; white-space: nowrap; }
 """
@@ -42,15 +45,17 @@ const provasDados = () => typeof PROVAS_PUBLICO !== "undefined" ? PROVAS_PUBLICO
 const pvEst = id => { ensureAj(); const P = S.ajustes.provas = S.ajustes.provas || {}; return P[id] = P[id] || { r: {}, rev: [] }; };
 const pvParas = t => String(t || "").split("\n").map(p => `<p>${esc(p)}</p>`).join("");
 function pvLista(P) { return P.questoes.filter(q => !S.pvMat || q.materia === S.pvMat); }
-function pvPlacar(P, qs) { const e = pvEst(P.id), feitas = qs.filter(q => e.r[q.n]); return { feitas: feitas.length, certas: feitas.filter(q => e.r[q.n] === q.gabarito).length }; }
-function pvDisc(materia) {
+function pvPlacar(P, qs) { const e = pvEst(P.id), vale = qs.filter(q => q.gabarito !== "X"), feitas = vale.filter(q => e.r[q.n]);   // anulada não entra no placar
+  return { feitas: feitas.length, certas: feitas.filter(q => e.r[q.n] === q.gabarito).length, total: vale.length }; }
+const pvDisc = P => P.discursiva ? `<details class="pv-disc"><summary>✍️ Questão discursiva</summary><div class="pv-enun">${pvParas(P.discursiva)}</div></details>` : "";
+function pvDiscId(materia) {
   const n = s => String(s).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(), m = n(materia);
   const d = (DECK.disciplinas || []).find(x => m.includes(n(x.nome)) || n(x.nome).includes(m.replace(/^direitos? (do |da |de )?/, "")));
   return d ? d.id : undefined;
 }
 function pvRevisar(P) {
   const e = pvEst(P.id), novas = pvLista(P).filter(q => e.r[q.n] && e.r[q.n] !== q.gabarito && !e.rev.includes(q.n));
-  novas.forEach(q => addMeu({ disc: pvDisc(q.materia), tema: `${P.nome} · ${q.materia}`,
+  novas.forEach(q => addMeu({ disc: pvDiscId(q.materia), tema: `${P.nome} · ${q.materia}`,
     frente: `${P.nome}, questão ${q.n}\n\n${q.enunciado}\n\n${Object.entries(q.alternativas).map(([k, v]) => k + ") " + v).join("\n")}`,
     verso: `Gabarito: ${q.gabarito}) ${q.alternativas[q.gabarito] || ""}`, porque: `Você marcou ${e.r[q.n]}. Gabarito ${P.gabarito} da banca ${P.banca}.` }));
   e.rev.push(...novas.map(q => q.n)); queue("ajustes");
@@ -63,40 +68,42 @@ function renderProva() {
     $("#main").innerHTML = `<h2>Provas de concurso</h2><p class="sub">Resolva provas reais da Defensoria e veja na hora se acertou. As erradas viram cartões de revisão.</p>
       ${L.map(p => { const pl = pvPlacar(p, p.questoes), mats = [...new Set(p.questoes.map(q => q.materia))]; return `
       <article class="pv-card"><h3>${esc(p.nome)}</h3><p class="pv-meta">${esc(p.cargo)} · ${esc(p.banca)} · ${p.questoes.length} questões · gabarito ${esc(p.gabarito)}</p>
-        ${pl.feitas ? `<div class="pv-barra"><i style="width:${Math.round(100 * pl.feitas / p.questoes.length)}%"></i></div><p class="pv-meta">${pl.feitas} respondidas · ${pl.certas} certas (${Math.round(100 * pl.certas / pl.feitas)}%)</p>` : ""}
+        ${pl.feitas ? `<div class="pv-barra"><i style="width:${Math.round(100 * pl.feitas / pl.total)}%"></i></div><p class="pv-meta">${pl.feitas} respondidas · ${pl.certas} certas (${Math.round(100 * pl.certas / pl.feitas)}%)</p>` : ""}
         <div class="pv-acoes"><select data-pvmat="${esc(p.id)}" aria-label="Matéria"><option value="">Prova inteira</option>${mats.map(m => `<option>${esc(m)}</option>`).join("")}</select>
           <button class="btn" data-pvabrir="${esc(p.id)}">${pl.feitas ? "Continuar" : "Começar"}</button>${pl.feitas ? `<button class="btn small ghost" data-pvzerar="${esc(p.id)}">Recomeçar</button>` : ""}</div>
+        ${pvDisc(p)}
       </article>`; }).join("")}`;
     document.querySelectorAll("[data-pvabrir]").forEach(b => b.onclick = () => {
       const p = L.find(x => x.id === b.dataset.pvabrir); S.pvId = p.id; S.pvMat = document.querySelector(`[data-pvmat="${p.id}"]`).value;
-      const qs = pvLista(p), e = pvEst(p.id), prox = qs.find(q => !e.r[q.n]); S.pvI = prox ? qs.indexOf(prox) : qs.length; renderProva(); scrollTo(0, 0); });
+      const qs = pvLista(p), e = pvEst(p.id), prox = qs.find(q => !e.r[q.n] && q.gabarito !== "X"); S.pvI = prox ? qs.indexOf(prox) : qs.length; renderProva(); scrollTo(0, 0); });
     document.querySelectorAll("[data-pvzerar]").forEach(b => b.onclick = () => { if (!confirm("Apagar as respostas desta prova e começar do zero?")) return;
       S.ajustes.provas[b.dataset.pvzerar] = { r: {}, rev: [] }; queue("ajustes"); renderProva(); });
     if (typeof esVoltar === "function") esVoltar(); return;
   }
   const qs = pvLista(P), e = pvEst(P.id), i = Math.max(0, Math.min(S.pvI || 0, qs.length)), pl = pvPlacar(P, qs);
-  const mapa = `<div class="pv-mapa">${qs.map((q, k) => `<button data-pvir="${k}" class="${e.r[q.n] ? (e.r[q.n] === q.gabarito ? "ok" : "no") : ""}${k === i ? " at" : ""}" aria-label="Questão ${q.n}">${q.n}</button>`).join("")}</div>`;
+  const mapa = `<div class="pv-mapa">${qs.map((q, k) => `<button data-pvir="${k}" class="${q.gabarito === "X" ? "nu" : e.r[q.n] ? (e.r[q.n] === q.gabarito ? "ok" : "no") : ""}${k === i ? " at" : ""}" aria-label="Questão ${q.n}">${q.n}</button>`).join("")}</div>`;
   const voltar = `<button class="btn small ghost" id="pvSair">← Provas</button>`;
   if (i >= qs.length) {
     const porMat = [...new Set(qs.map(q => q.materia))].map(m => [m, pvPlacar(P, qs.filter(q => q.materia === m))]);
     const erradas = qs.filter(q => e.r[q.n] && e.r[q.n] !== q.gabarito), novas = erradas.filter(q => !e.rev.includes(q.n)).length;
     $("#main").innerHTML = `${voltar}<h2>Resultado · ${esc(P.nome)}</h2><p class="sub">${esc(S.pvMat || "Prova inteira")}</p>
       <article class="pv-card"><h3>${pl.certas} de ${pl.feitas} certas${pl.feitas ? ` (${Math.round(100 * pl.certas / pl.feitas)}%)` : ""}</h3>
-        <p class="pv-meta">${pl.feitas < qs.length ? `${qs.length - pl.feitas} sem resposta. ` : ""}Gabarito ${esc(P.gabarito)} da banca ${esc(P.banca)}.</p>
+        <p class="pv-meta">${pl.feitas < pl.total ? `${pl.total - pl.feitas} sem resposta. ` : ""}${pl.total < qs.length ? `${plural(qs.length - pl.total, "questão anulada", "questões anuladas")} fora do placar. ` : ""}Gabarito ${esc(P.gabarito)} da banca ${esc(P.banca)}.</p>
         <div class="pv-acoes">${erradas.length ? `<button class="btn" id="pvRev" ${novas ? "" : "disabled"}>${novas ? `Mandar ${plural(novas, "errada", "erradas")} para a revisão` : "Erradas já estão na revisão ✓"}</button>` : ""}</div></article>
-      ${S.pvMat ? "" : `<table class="pv-tab">${porMat.map(([m, x]) => `<tr><td>${esc(m)}</td><td>${x.certas}/${x.feitas || 0}</td></tr>`).join("")}</table>`}
+      ${S.pvMat ? "" : pvDisc(P)}${S.pvMat ? "" : `<table class="pv-tab">${porMat.map(([m, x]) => `<tr><td>${esc(m)}</td><td>${x.certas}/${x.feitas || 0}</td></tr>`).join("")}</table>`}
       <h3 style="margin-top:18px">Rever questões</h3>${mapa}`;
   } else {
-    const q = qs[i], r = e.r[q.n], certa = r === q.gabarito;
+    const q = qs[i], nula = q.gabarito === "X", r = e.r[q.n], certa = r === q.gabarito;
     $("#main").innerHTML = `${voltar}
       <div class="pv-top"><span>${esc(P.nome)} · ${esc(q.materia)}</span><span>${i + 1}/${qs.length}</span></div>
-      <div class="pv-barra"><i style="width:${Math.round(100 * pl.feitas / qs.length)}%"></i></div>
+      <div class="pv-barra"><i style="width:${Math.round(100 * pl.feitas / (pl.total || 1))}%"></i></div>
       <h3>Questão ${q.n}</h3><div class="pv-enun">${pvParas(q.enunciado)}</div>
-      <div class="opts">${Object.entries(q.alternativas).map(([k, v]) => `<button class="opt${r ? (k === q.gabarito ? " right" : k === r ? " wrong" : "") : ""}" data-pvalt="${k}" ${r ? "disabled" : ""}><span class="k">${k}</span><span>${esc(v)}</span></button>`).join("")}</div>
+      <div class="opts">${Object.entries(q.alternativas).map(([k, v]) => `<button class="opt${r ? (k === q.gabarito ? " right" : k === r ? " wrong" : "") : ""}" data-pvalt="${k}" ${r || nula ? "disabled" : ""}><span class="k">${k}</span><span>${esc(v)}</span></button>`).join("")}</div>
+      ${nula ? `<div class="pv-res nu">Questão anulada pela banca: não entra no placar.</div>` : ""}
       ${r ? `<div class="pv-res ${certa ? "ok" : "no"}">${certa ? "✓ Certa!" : `✗ Você marcou ${r}. Gabarito: ${q.gabarito}.`}</div>` : ""}
       <div class="pv-nav"><button class="btn small ghost" id="pvAnt" ${i ? "" : "disabled"}>← Anterior</button>
         ${r ? `<button class="btn small ghost" id="pvRefazer">Refazer</button>` : ""}<button class="btn small${r ? "" : " ghost"}" id="pvProx">${i + 1 < qs.length ? (r ? "Próxima →" : "Pular →") : "Ver resultado"}</button></div>
-      <details style="margin-top:16px"><summary class="pv-meta">Mapa da prova · ${pl.feitas}/${qs.length} respondidas · ${pl.certas} certas</summary>${mapa}</details>`;
+      <details style="margin-top:16px"><summary class="pv-meta">Mapa da prova · ${pl.feitas}/${pl.total} respondidas · ${pl.certas} certas</summary>${mapa}</details>`;
     document.querySelectorAll("[data-pvalt]").forEach(b => b.onclick = () => { e.r[q.n] = b.dataset.pvalt; queue("ajustes"); renderProva(); });
     $("#pvAnt").onclick = () => { S.pvI = i - 1; renderProva(); };
     $("#pvProx").onclick = () => { S.pvI = i + 1; renderProva(); scrollTo(0, 0); };
