@@ -18,9 +18,8 @@ App abre → chave_do_app confere valido_ate → entrega (ou não) a chave do co
 Painel do Supabase: https://supabase.com/dashboard/project/hlenhmgnqqnkjqmntnpz
 
 **1. Banco de dados.** Menu lateral **SQL Editor → New query**. Cole e rode (**Run**) cada parte de [`supabase/seguranca.sql`](../supabase/seguranca.sql) separadamente:
-   - parte 1 (diagnóstico, só lê). Copie o resultado e mande para quem mantém o app;
-   - parte 2 (endurecimento);
-   - parte 4 (Asaas). Se der erro de `on conflict`, rode antes a linha `alter table ... unique (email)` indicada no começo da parte 4.
+   - parte 2 (validade da assinatura na `chave_do_app`);
+   - parte 4 (Asaas).
 
 **2. Chave da API do Asaas.** No Asaas: **Integrações → Chaves de API → Gerar chave**. Copie (começa com `$aact_`). Ela não vai para o repositório nem para o app.
 

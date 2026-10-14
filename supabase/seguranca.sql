@@ -1,6 +1,6 @@
 -- Segurança do Supabase para o app por assinatura.
 -- Rode no painel do Supabase: SQL Editor → New query. Este arquivo NÃO vai para o site (o deploy só publica index.html, sw.js etc.).
--- Faça na ordem. A parte 1 só lê; mande o resultado dela para ajustar a parte 3.
+-- Faça na ordem. A parte 1 só lê. As partes 2 e 4 podem ser rodadas juntas.
 
 -- ============ 1) Diagnóstico (só leitura) ============
 -- Como a função que entrega a chave está escrita hoje:
@@ -14,29 +14,37 @@ select tablename, policyname, cmd, roles, qual, with_check from pg_policies wher
 -- Quem pode chamar a função:
 select grantee, privilege_type from information_schema.routine_privileges where routine_schema = 'public' and routine_name = 'chave_do_app';
 
--- ============ 2) Endurecimento seguro (pode rodar já) ============
+-- ============ 2) Assinatura com validade (pode rodar já) ============
+-- Validade da assinatura. Vazio (null) = sem prazo, para não cortar quem foi liberado à mão antes do Asaas.
+alter table public.liberados add column if not exists valido_ate timestamptz;
+-- Um e-mail por linha (o Asaas atualiza a linha existente em vez de duplicar).
+create unique index if not exists liberados_email_unico on public.liberados (email);
+
+-- Mesma função de antes (só e-mail liberado e confirmado), agora também exigindo assinatura em dia.
+create or replace function public.chave_do_app()
+returns text language sql stable security definer set search_path to '' as $$
+  select c.senha from public.chave_app c
+  where exists (
+    select 1 from auth.users u
+    join public.liberados l on l.email = lower(u.email)
+    where u.id = auth.uid()
+      and u.email_confirmed_at is not null
+      and (l.valido_ate is null or l.valido_ate > now())
+  )
+$$;
 -- Visitante sem login (anon) não chama a função; só quem entrou na conta.
 revoke execute on function public.chave_do_app() from public, anon;
 grant execute on function public.chave_do_app() to authenticated;
--- Fixa o search_path (evita que alguém sequestre a função criando objetos com o mesmo nome em outro schema).
-alter function public.chave_do_app() set search_path = public, pg_temp;
--- Validade da assinatura. Vazio (null) = sem prazo, para não cortar quem já está liberado hoje.
-alter table public.liberados add column if not exists valido_ate timestamptz;
 
--- ============ 3) Depois do diagnóstico ============
--- a) A chave_do_app deve conferir a validade. Na consulta que procura o e-mail em liberados, acrescente:
---      and (l.valido_ate is null or l.valido_ate > now())
---    e só entregue a chave a e-mail confirmado:
---      and exists (select 1 from auth.users u where u.id = auth.uid() and u.email_confirmed_at is not null)
--- b) Toda tabela do item 1 com rls_ligada = false:  alter table public.<tabela> enable row level security;
---    (liberados e a tabela onde fica a senha do baralho não precisam de policy nenhuma: só a função, como SECURITY DEFINER, lê.)
--- c) Liberar / renovar um aluno por 1 mês (até o webhook do pagamento fazer isso sozinho):
---      insert into public.liberados (email, valido_ate) values ('aluno@exemplo.com', now() + interval '1 month')
---      on conflict (email) do update set valido_ate = excluded.valido_ate;
+-- ============ 3) Liberar à mão (opcional) ============
+-- Liberar / renovar um aluno por 1 mês sem passar pelo Asaas:
+--   insert into public.liberados (email, valido_ate) values ('aluno@exemplo.com', now() + interval '1 month')
+--   on conflict (email) do update set valido_ate = excluded.valido_ate;
+-- Dar prazo a quem foi liberado antes, sem data (senão continua sem prazo):
+--   update public.liberados set valido_ate = now() + interval '1 month' where valido_ate is null;
 
 -- ============ 4) Asaas: liberação automática pelo pagamento ============
--- Usado pela Edge Function asaas-webhook (supabase/functions/asaas-webhook). Requer que liberados.email seja chave primária ou único
--- (se a parte 1 mostrar que não é:  alter table public.liberados add constraint liberados_email_key unique (email); ).
+-- Usado pela Edge Function asaas-webhook (supabase/functions/asaas-webhook). Rode a parte 2 antes (ela cria o índice único em email).
 create table if not exists public.asaas_log (
   id bigserial primary key,
   criado_em timestamptz not null default now(),
