@@ -41,38 +41,57 @@ CSS = """
 .dpe-pe { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 10px; font-size: .8rem; color: var(--muted); }
 .dpe-pe a { color: var(--accent); font-weight: 600; text-decoration: none; }
 .dpe-nota { color: var(--muted); font-size: .8rem; margin: 18px 0 8px; }
+.dpe-tese { border-left-color: #2fa37a; }
+.dpe-tese .dpe-num { font-family: var(--f-ui); white-space: normal; border-radius: 12px; }
+.dpe-teses { margin: 4px 0 12px; padding-left: 20px; font-family: var(--f-read); font-size: 1.04rem; line-height: 1.5; }
+.dpe-teses li { margin: 0 0 8px; }
 """
 
 JS = r"""
-// ===================== aba Defensoria: súmulas e temas da DPE (conteúdo em DECK.dpe) =====================
+// ===================== aba Defensoria: súmulas e teses que mais importam à DPE (conteúdo em DECK.dpe) =====================
 function renderDef() {
-  const D = DECK.dpe || {}, sum = D.sumulas || [], E = D.estatisticas || {}, f = S.defRamo || "";
-  const ramos = [...new Set(sum.map(x => x.ramo))].sort((a, b) => a.localeCompare(b, "pt"));
-  const lista = sum.filter(x => !f || x.ramo === f);
-  const nivel = r => /^essencial/i.test(r) ? "Essencial" : /^alta/i.test(r) ? "Alta" : "";
+  const D = DECK.dpe || {}, sum = D.sumulas || [], E = D.estatisticas || {}, EJ = D.estatisticas_stj || {}, teses = D.teses || [];
+  const tri = S.defTri || "", f = S.defRamo || "";
+  const doTri = sum.filter(x => !tri || (x.tribunal || "STF") === tri);
+  const ramos = [...new Set(doTri.map(x => x.ramo))].sort((a, b) => a.localeCompare(b, "pt"));
+  const lista = doTri.filter(x => !f || x.ramo === f);
+  const nivel = r => /^essencial/i.test(r) ? "Essencial" : /^alta/i.test(r) ? "Alta" : /^m[ée]dia/i.test(r) ? "Média" : "";
+  const motivo = r => r.replace(/^(Essencial|Alta|Média|Media)\s*/i, "").replace(/^\(([^)]*)\)/, "$1");
+  const rel = r => r ? `<div class="dpe-por"><b>Relevância para a DPE${nivel(r) ? " · " + nivel(r) : ""}:</b> ${esc(motivo(r))}</div>` : "";
+  const numStj = String(EJ.total_sumulas_editadas || "").match(/\d+/);
   $("#main").innerHTML = `
     <section class="dpe-hero">
       <p class="dpe-kicker">Defensoria em foco</p>
       <h2>O que mais cai e mais importa para a DPE</h2>
-      <p>Súmulas com maior relevância para concursos e para a atuação da Defensoria Pública.${D.atualizado ? " Atualizado em " + fmtISO(D.atualizado) + "." : ""}</p>
+      <p>Súmulas e teses com maior relevância para concursos e para a atuação da Defensoria Pública.${D.atualizado ? " Atualizado em " + fmtISO(D.atualizado) + "." : ""}</p>
       <div class="dpe-stats">
         ${E.total_sumulas_tradicionais ? `<div class="dpe-stat"><b>${E.total_sumulas_tradicionais}</b><span>súmulas do STF</span></div>` : ""}
         ${E.total_sumulas_vinculantes ? `<div class="dpe-stat"><b>${E.total_sumulas_vinculantes}</b><span>vinculantes</span></div>` : ""}
+        ${numStj ? `<div class="dpe-stat"><b>${numStj[0]}+</b><span>súmulas do STJ</span></div>` : ""}
         <div class="dpe-stat"><b>${sum.length}</b><span>em destaque</span></div>
       </div>
     </section>
     <div class="dpe-sec"><h3>Súmulas em destaque</h3><span class="count">${plural(lista.length, "súmula", "súmulas")}</span></div>
-    <div class="dpe-filtros" role="group" aria-label="Filtrar por ramo"><button class="fchip" data-r="" aria-pressed="${!f}">Todas</button>${ramos.map(r => `<button class="fchip" data-r="${esc(r)}" aria-pressed="${f === r}">${esc(r)}</button>`).join("")}</div>
+    <div class="dpe-filtros" role="group" aria-label="Tribunal">${["", "STF", "STJ"].map(t => `<button class="fchip" data-tri="${t}" aria-pressed="${tri === t}">${t || "STF e STJ"}</button>`).join("")}</div>
+    <div class="dpe-filtros" role="group" aria-label="Filtrar por ramo"><button class="fchip" data-r="" aria-pressed="${!f}">Todos os ramos</button>${ramos.map(r => `<button class="fchip" data-r="${esc(r)}" aria-pressed="${f === r}">${esc(r)}</button>`).join("")}</div>
     ${lista.map(x => `
       <article class="dpe-card">
         <div class="dpe-top"><span class="dpe-num">${esc(x.tipo)}</span><span class="chip">${esc(x.ramo)}</span>${x.aprovacao ? `<span class="dpe-data">aprovada em ${esc(x.aprovacao)}</span>` : ""}</div>
         <p class="dpe-enun">${md(x.enunciado)}</p>
-        ${x.relevancia_dpe ? `<div class="dpe-por"><b>Relevância para a DPE${nivel(x.relevancia_dpe) ? " · " + nivel(x.relevancia_dpe) : ""}:</b> ${esc(x.relevancia_dpe.replace(/^(Essencial|Alta|Média|Media)\s*/i, "").replace(/^\((.*)\)$/, "$1"))}</div>` : ""}
+        ${rel(x.relevancia_dpe)}
       </article>`).join("")}
-    <p class="dpe-nota">${E.fonte ? "Fonte: " + esc(E.fonte) + ". " : ""}Confira sempre a redação oficial antes de citar em peça ou prova.</p>`;
+    ${teses.length ? `<div class="dpe-sec"><h3>Jurisprudência em Teses · STJ</h3><span class="count">${plural(teses.length, "edição", "edições")}</span></div>
+    ${teses.map(t => `
+      <article class="dpe-card dpe-tese">
+        <div class="dpe-top"><span class="dpe-num">${esc(t.edicao)}</span></div>
+        <ol class="dpe-teses">${(t.teses_destaque || []).map(x => `<li>${md(x)}</li>`).join("")}</ol>
+        ${rel(t.relevancia_dpe)}
+      </article>`).join("")}` : ""}
+    <p class="dpe-nota">${[E.fonte, EJ.fonte_oficial].filter(Boolean).map(esc).join(" · ")}${E.fonte || EJ.fonte_oficial ? ". " : ""}Confira sempre a redação oficial antes de citar em peça ou prova.</p>`;
+  document.querySelectorAll(".fchip[data-tri]").forEach(b => b.onclick = () => { S.defTri = b.dataset.tri; S.defRamo = ""; renderDef(); });
   document.querySelectorAll(".fchip[data-r]").forEach(b => b.onclick = () => { S.defRamo = b.dataset.r; renderDef(); });
 }
-(() => { const t = document.getElementById("tab-defensoria"); if (t) t.hidden = !(DECK.dpe && (DECK.dpe.sumulas || []).length); })();
+(() => { const t = document.getElementById("tab-defensoria"); if (t) t.hidden = !(DECK.dpe && ((DECK.dpe.sumulas || []).length || (DECK.dpe.teses || []).length)); })();
 """
 
 DECK_RE = re.compile(r"^const DECK = (\{.*\});$", re.M)
