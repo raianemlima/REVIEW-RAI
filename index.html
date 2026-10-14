@@ -1,4 +1,13 @@
-<!doctype html><html><head><meta charset=utf8><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://hlenhmgnqqnkjqmntnpz.supabase.co https://api.github.com; worker-src 'self'; manifest-src 'self'; media-src 'self' data: blob:; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#155e4a"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="icons/icon-180.png"><meta name="description" content="Revisão espaçada, teses defensivas e novidades legislativas para o concurso da Defensoria Pública."><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Revisão DPE"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html><head><meta charset=utf8><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://hlenhmgnqqnkjqmntnpz.supabase.co https://api.github.com; worker-src 'self'; manifest-src 'self'; media-src 'self' data: blob:; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#155e4a"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="icons/icon-180.png"><meta name="description" content="Revisão espaçada, teses defensivas e novidades legislativas para o concurso da Defensoria Pública."><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Revisão DPE"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><style id="nv-secoes">
+.nv-seg { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 4px; margin: 12px 0 4px; border-radius: 14px; background: var(--accent-soft); }
+.nv-seg button { font: 600 .86rem var(--f-ui); border: 0; border-radius: 10px; padding: 9px 8px; background: none; color: var(--ink); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap; }
+.nv-seg button[aria-selected="true"] { background: var(--surface); color: var(--accent); box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+.nv-seg .n { font: 600 .72rem var(--f-mono); opacity: .7; }
+.nv-grupo { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin: 18px 0 8px; }
+.nv-grupo h3 { margin: 0; }
+.chip.rep { color: var(--accent); background: var(--accent-soft); border-color: transparent; font-weight: 600; }
+</style>
+</head><body>
 <title>Revisão Espaçada DPE</title>
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
@@ -1952,26 +1961,29 @@ function renderDef() {
 }
 (() => { const t = document.getElementById("tab-defensoria"), D = dpeDados(); if (t) t.hidden = !((D.sumulas || []).length || (D.teses || []).length); })();
 function renderNov() {
-  const all = nvItens(), f = S.novTema || "", lidas = S.ajustes.nvLidas || [];
-  const temas = [...new Set(all.flatMap(n => n.temas))].sort((a, b) => a.localeCompare(b, "pt"));
-  const tp = S.novTipo || "", list = all.filter(n => (!f || n.temas.includes(f)) && (!tp || (n.tipo || "lei") === tp)).sort((a, b) => b.pub.localeCompare(a.pub));
+  const all = nvItens(), lidas = S.ajustes.nvLidas || [], tipoDe = n => n.tipo || "lei";
+  const SEC = { lei: ["📜", "Leis", "Atualizações legislativas", "Só o que muda a rotina da Defensoria", "publicada em", "O que mudou"],
+                jur: ["⚖️", "Jurisprudência", "Temas repetitivos e julgados", "Teses fixadas e decisões recentes do STF e do STJ", "divulgado em", "O que foi decidido"] };
+  const repetitivo = n => /\bTema\b|repercuss|repetitiv/i.test(n.lei);
+  const por = { lei: all.filter(n => tipoDe(n) === "lei"), jur: all.filter(n => tipoDe(n) !== "lei") };
+  let tp = S.novTipo === "jur" || S.novTipo === "lei" ? S.novTipo : "lei";
+  if (!por[tp].length && por[tp === "lei" ? "jur" : "lei"].length) tp = tp === "lei" ? "jur" : "lei";
+  S.novTipo = tp;
+  const base = por[tp], temas = [...new Set(base.flatMap(n => n.temas))].sort((a, b) => a.localeCompare(b, "pt"));
+  if (S.novTema && !temas.includes(S.novTema)) S.novTema = "";
+  const f = S.novTema || "", list = base.filter(n => !f || n.temas.includes(f)).sort((a, b) => b.pub.localeCompare(a.pub));
+  const naoLidas = arr => arr.filter(n => !lidas.includes(n.id)).length, s = SEC[tp];
   const ul = (arr) => `<ul class="nv-ul">${arr.map(x => `<li>${md(x)}</li>`).join("")}</ul>`;
-  $("#main").innerHTML = `
-    <h2>Novidades legislativas</h2>
-    <p class="sub">Só o que muda a rotina da Defensoria. ${plural(all.length, "lei", "leis")}${all.length ? ", a mais recente de " + fmtISO(all.map(n => n.pub).sort().pop()) : ""}. São resumos próprios: confira sempre o texto oficial.</p>
-    ${all.some(n => (n.tipo || "lei") !== "lei") ? `<div class="nv-filters" role="group" aria-label="Tipo"><button class="fchip" data-tp="" aria-pressed="${!tp}">Tudo</button><button class="fchip" data-tp="lei" aria-pressed="${tp === "lei"}">Leis</button><button class="fchip" data-tp="jur" aria-pressed="${tp === "jur"}">Jurisprudência</button></div>` : ""}
-    <div class="nv-filters" role="group" aria-label="Filtrar por tema"><button class="fchip" data-t="" aria-pressed="${!f}">Todas</button>${temas.map(t => `<button class="fchip" data-t="${esc(t)}" aria-pressed="${f === t}">${esc(t)}</button>`).join("")}</div>
-    ${list.length ? "" : `<p class="count">Nenhuma novidade neste tema.</p>`}
-    <div class="nv-list">${list.map(n => `
+  const card = n => `
       <article class="nov"><details data-id="${n.id}">
         <summary>
-          <div class="nv-top"><span class="nv-lei">${esc(n.lei)}</span><span class="count">publicada em ${fmtISO(n.pub)}</span>${lidas.includes(n.id) ? "" : `<span class="badge new">novo</span>`}</div>
+          <div class="nv-top"><span class="nv-lei">${esc(n.lei)}</span><span class="count">${s[4]} ${fmtISO(n.pub)}</span>${lidas.includes(n.id) ? "" : `<span class="badge new">novo</span>`}</div>
           <h3 class="nv-t">${esc(n.titulo)}</h3>
           <p class="nv-r">${md(n.resumo)}</p>
-          <div class="nv-tags">${n.temas.map(t => `<span class="chip">${esc(t)}</span>`).join("")}${(n.papeis || []).map(p => `<span class="chip role">${PAPEIS[p][0]} ${PAPEIS[p][1]}</span>`).join("")}</div>
+          <div class="nv-tags">${tp === "jur" && repetitivo(n) ? `<span class="chip rep">${/^STF/.test(n.lei) ? "Repercussão geral" : "Recurso repetitivo"}</span>` : ""}${n.temas.map(t => `<span class="chip">${esc(t)}</span>`).join("")}${(n.papeis || []).map(p => `<span class="chip role">${PAPEIS[p][0]} ${PAPEIS[p][1]}</span>`).join("")}</div>
         </summary>
         <div class="nv-body">
-          <h4>O que mudou</h4>${ul(n.mudou)}
+          <h4>${s[5]}</h4>${ul(n.mudou)}
           <h4>Por que interessa à Defensoria</h4>${ul(n.dpe)}
           <h4>Cai em prova</h4>${ul(n.prova)}
           ${(n.jur || []).length ? `<h4>Jurisprudência e direitos humanos relacionados</h4>${ul(n.jur)}` : ""}
@@ -1979,12 +1991,24 @@ function renderNov() {
           ${(n.treino || []).map(q => `<details class="qz"><summary>${md(q.q)}</summary><p class="qa ${q.a ? "ok" : "no"}"><b>${q.a ? "CERTO" : "ERRADO"}.</b> ${md(q.e.replace(/^(Certo|Errado)\.\s*/, ""))}</p></details>`).join("")}
           <p class="src" style="margin-top:12px">${esc((DECK.novidades || {}).fonte || "Resumos próprios: confira sempre o texto oficial.")}</p>
         </div>
-      </details></article>`).join("")}</div>`;
+      </details></article>`;
+  const grupo = (titulo, arr) => arr.length ? `<div class="nv-grupo"><h3>${titulo}</h3><span class="count">${arr.length}</span></div><div class="nv-list">${arr.map(card).join("")}</div>` : "";
+  const corpo = tp === "jur" ? grupo("Temas repetitivos e repercussão geral", list.filter(repetitivo)) + grupo("Outros julgados", list.filter(n => !repetitivo(n)))
+                             : `<div class="nv-list">${list.map(card).join("")}</div>`;
+  const recente = base.length ? ", a mais recente de " + fmtISO(base.map(n => n.pub).sort().pop()) : "";
+  $("#main").innerHTML = `
+    <h2>Novidades</h2>
+    ${por.jur.length && por.lei.length ? `<div class="nv-seg" role="tablist" aria-label="Seção">${["lei", "jur"].map(k => `<button role="tab" data-tp="${k}" aria-selected="${tp === k}">${SEC[k][0]} ${SEC[k][1]} <span class="n">${por[k].length}</span>${naoLidas(por[k]) ? `<span class="badge new">${naoLidas(por[k])}</span>` : ""}</button>`).join("")}</div>` : ""}
+    <p class="sub"><b>${s[2]}.</b> ${s[3]}: ${plural(base.length, tp === "lei" ? "lei" : "decisão", tp === "lei" ? "leis" : "decisões")}${recente}. São resumos próprios: confira sempre o texto oficial.</p>
+    ${temas.length > 1 ? `<div class="nv-filters" role="group" aria-label="Filtrar por tema"><button class="fchip" data-t="" aria-pressed="${!f}">Todas</button>${temas.map(t => `<button class="fchip" data-t="${esc(t)}" aria-pressed="${f === t}">${esc(t)}</button>`).join("")}</div>` : ""}
+    ${list.length ? "" : `<p class="count">Nenhuma novidade neste tema.</p>`}
+    ${corpo}`;
   document.querySelectorAll(".fchip[data-t]").forEach(b => b.onclick = () => { S.novTema = b.dataset.t; renderNov(); });
-  document.querySelectorAll(".fchip[data-tp]").forEach(b => b.onclick = () => { S.novTipo = b.dataset.tp; renderNov(); });
+  document.querySelectorAll(".nv-seg [data-tp]").forEach(b => b.onclick = () => { S.novTipo = b.dataset.tp; S.novTema = ""; renderNov(); });
   document.querySelectorAll(".nov details[data-id]").forEach(dt => dt.addEventListener("toggle", () => {
     if (!dt.open) return; ensureAj(); const id = dt.dataset.id;
-    if (!S.ajustes.nvLidas.includes(id)) { S.ajustes.nvLidas = [...S.ajustes.nvLidas, id]; queue("ajustes"); dt.querySelector(".badge.new")?.remove(); updNavBadge(); }
+    if (!S.ajustes.nvLidas.includes(id)) { S.ajustes.nvLidas = [...S.ajustes.nvLidas, id]; queue("ajustes"); dt.querySelector(".badge.new")?.remove(); updNavBadge();
+      const sb = document.querySelector('.nv-seg [aria-selected="true"] .badge.new'); if (sb) { const k = +sb.textContent - 1; if (k) sb.textContent = k; else sb.remove(); } }
   }));
 }
 
@@ -2176,11 +2200,11 @@ function renderBusca() {
     const sec = (tit, n, body) => n ? `<h3>${tit} <span class="count" style="text-transform:none;letter-spacing:0">· ${n}</span></h3>${body}` : "";
     out.innerHTML = (cards.length + gl.length + nv.length + qd.length + notas.length ? "" : `<p class="count">Nada encontrado.</p>`) +
       sec("Glossário", gl.length, `<ul class="lib">${gl.slice(0, 8).map(g => `<li><details><summary><span class="q">${esc(g.t)}</span></summary><div class="body"><p class="answer" style="font-size:1rem">${hl(g.d)}</p></div></details></li>`).join("")}</ul>`) +
-      sec("Novidades legislativas", nv.length, `<ul class="lib">${nv.slice(0, 6).map(n => `<li><details><summary><span class="q">${esc(n.lei)}: ${esc(n.titulo)}</span></summary><div class="body"><p class="answer" style="font-size:1rem">${md(n.resumo)}</p><button class="btn small" data-gonv="1">Abrir na aba Novidades</button></div></details></li>`).join("")}</ul>`) +
+      sec("Novidades", nv.length, `<ul class="lib">${nv.slice(0, 6).map(n => `<li><details><summary><span class="q">${esc(n.lei)}: ${esc(n.titulo)}</span></summary><div class="body"><p class="answer" style="font-size:1rem">${md(n.resumo)}</p><button class="btn small" data-gonv="${(n.tipo || "lei") === "lei" ? "lei" : "jur"}">Abrir na aba Novidades</button></div></details></li>`).join("")}</ul>`) +
       sec("Quadros", qd.length, `<ul class="lib">${qd.slice(0, 6).map(x => `<li><details><summary><span class="q">${esc(x.titulo)}</span></summary><div class="body"><button class="btn small" data-goqd="1">Abrir os quadros</button></div></details></li>`).join("")}</ul>`) +
       sec("Cartões", cards.length, `<ul class="lib">${cards.slice(0, 15).map(c => `<li><details><summary><span class="q">${esc(c.tipo === "multipla_escolha" ? parseMC(c.frente).stem : c.frente)}</span><span class="st">${esc((DISC[c.disc] || {}).curto || "")}</span></summary><div class="body"><p class="answer">${hl(c.verso)}</p>${c.porque ? `<p class="why">${hl(c.porque)}</p>` : ""}<p class="src">${esc(c.origem)}</p></div></details></li>`).join("")}</ul>${cards.length > 15 ? `<button class="btn small" data-golib="1">Ver os ${cards.length} na Biblioteca</button>` : ""}`) +
       sec("Minhas dicas", notas.length, `<ul class="lib">${notas.slice(0, 8).map(([id, t]) => `<li><div class="body" style="padding:10px 0"><div class="mynote">📝 ${esc(t)}</div><p class="count">${esc(byId[id] ? byId[id].frente : "")}</p></div></li>`).join("")}</ul>`);
-    out.querySelectorAll("[data-gonv]").forEach(b => b.onclick = () => go("novidades")); out.querySelectorAll("[data-goqd]").forEach(b => b.onclick = () => { S.libView = "quadros"; go("biblioteca"); });
+    out.querySelectorAll("[data-gonv]").forEach(b => b.onclick = () => { S.novTipo = b.dataset.gonv; S.novTema = ""; go("novidades"); }); out.querySelectorAll("[data-goqd]").forEach(b => b.onclick = () => { S.libView = "quadros"; go("biblioteca"); });
     out.querySelectorAll("[data-golib]").forEach(b => b.onclick = () => { S.libView = ""; S.libQuery = S.buscaQ; go("biblioteca"); });
   };
   let deb; $("#bq").oninput = e => { clearTimeout(deb); deb = setTimeout(() => { S.buscaQ = e.target.value; draw(); }, 200); };

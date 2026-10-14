@@ -13,6 +13,7 @@ PASSOS = [
     ("lista de Defensorias", [AJ / "defensorias.py"]),
     ("aba Defensoria", [AJ / "aba_defensoria.py", "{fonte}", DADOS / "defensoria.json", "--publico"]),
     ("novidades embutidas", [AJ / "novidades_publicas.py", "{fonte}", *sorted(DADOS.glob("novidades-*.json"))]),
+    ("Novidades em duas seções", [AJ / "novidades_secoes.py"]),
 ]
 
 if __name__ == "__main__":
