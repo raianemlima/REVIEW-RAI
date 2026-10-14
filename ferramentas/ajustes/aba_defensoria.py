@@ -2,9 +2,12 @@
 
     python ferramentas/ajustes/aba_defensoria.py fonte.html                 # só o código da aba
     python ferramentas/ajustes/aba_defensoria.py fonte.html defensoria.json # código + conteúdo (DECK.dpe)
+    python ferramentas/ajustes/aba_defensoria.py index.html defensoria.json --publico
+                                    # conteúdo embutido no código, sem baralho cifrado nem senha
+                                    # (use só para textos públicos: súmulas e teses)
 
-O conteúdo fica dentro do baralho cifrado (DECK.dpe), por isso a aba só aparece depois do build com a senha.
-Sem DECK.dpe a aba fica escondida. Rodar de novo não duplica nada.
+Com DECK.dpe o conteúdo fica cifrado e a aba só aparece depois do build com a senha; com --publico ele vai no código.
+Sem conteúdo a aba fica escondida. Rodar de novo não duplica nada.
 """
 import json, re, sys
 from pathlib import Path
@@ -48,9 +51,11 @@ CSS = """
 """
 
 JS = r"""
-// ===================== aba Defensoria: súmulas e teses que mais importam à DPE (conteúdo em DECK.dpe) =====================
+// ===================== aba Defensoria: súmulas e teses que mais importam à DPE =====================
+// conteúdo em DECK.dpe (baralho cifrado) ou em DPE_PUBLICO (embutido no código: só textos públicos de súmulas e teses)
+const dpeDados = () => DECK.dpe || (typeof DPE_PUBLICO !== "undefined" ? DPE_PUBLICO : {});
 function renderDef() {
-  const D = DECK.dpe || {}, sum = D.sumulas || [], E = D.estatisticas || {}, EJ = D.estatisticas_stj || {}, teses = D.teses || [];
+  const D = dpeDados(), sum = D.sumulas || [], E = D.estatisticas || {}, EJ = D.estatisticas_stj || {}, teses = D.teses || [];
   const tri = S.defTri || "", f = S.defRamo || "";
   const doTri = sum.filter(x => !tri || (x.tribunal || "STF") === tri);
   const ramos = [...new Set(doTri.map(x => x.ramo))].sort((a, b) => a.localeCompare(b, "pt"));
@@ -91,7 +96,7 @@ function renderDef() {
   document.querySelectorAll(".fchip[data-tri]").forEach(b => b.onclick = () => { S.defTri = b.dataset.tri; S.defRamo = ""; renderDef(); });
   document.querySelectorAll(".fchip[data-r]").forEach(b => b.onclick = () => { S.defRamo = b.dataset.r; renderDef(); });
 }
-(() => { const t = document.getElementById("tab-defensoria"); if (t) t.hidden = !(DECK.dpe && ((DECK.dpe.sumulas || []).length || (DECK.dpe.teses || []).length)); })();
+(() => { const t = document.getElementById("tab-defensoria"), D = dpeDados(); if (t) t.hidden = !((D.sumulas || []).length || (D.teses || []).length); })();
 """
 
 DECK_RE = re.compile(r"^const DECK = (\{.*\});$", re.M)
@@ -101,7 +106,7 @@ def trocar(html, antes, depois, marca):
     if html.count(antes) != 1: sys.exit(f"trecho não encontrado (ou repetido), nada foi gravado: {antes[:80]!r}")
     return html.replace(antes, depois), 1
 
-def aplicar(caminho: Path, dados: Path | None):
+def aplicar(caminho: Path, dados: Path | None, publico: bool = False):
     html = caminho.read_text(encoding="utf-8"); n = 0
     i = html.index('id="tab-novidades"'); j = html.index("</button>", i) + len("</button>")
     if 'id="tab-defensoria"' not in html: html = html[:j] + NAV_BTN + html[j:]; n += 1
@@ -109,7 +114,13 @@ def aplicar(caminho: Path, dados: Path | None):
     if "/* ---- aba Defensoria ---- */" not in html: html = html[:k] + CSS + html[k:]; n += 1
     html, x = trocar(html, "novidades: renderNov,", "novidades: renderNov, defensoria: renderDef,", "defensoria: renderDef"); n += x
     html, x = trocar(html, "function renderNov() {", JS.lstrip("\n") + "function renderNov() {", "function renderDef()"); n += x
-    if dados:
+    if dados and publico:
+        bloco = "const DPE_PUBLICO = " + json.dumps(json.loads(dados.read_text(encoding="utf-8")), ensure_ascii=False) + ";\n"
+        html = re.sub(r"const DPE_PUBLICO = .*;\n", "", html)          # troca a versão anterior, se houver
+        i = html.index("// ===================== aba Defensoria")
+        html = html[:i] + bloco + html[i:]
+        print("conteúdo embutido no código (DPE_PUBLICO)")
+    elif dados:
         m = DECK_RE.search(html)
         if not m: sys.exit("const DECK não encontrado: o conteúdo só pode ir para o fonte.html (no index.html o baralho é cifrado).")
         deck = json.loads(m.group(1)); deck["dpe"] = json.loads(dados.read_text(encoding="utf-8"))
@@ -119,5 +130,6 @@ def aplicar(caminho: Path, dados: Path | None):
     print(f"{caminho}: {n} alterações de código" + (" (já estava aplicado)" if not n else ""))
 
 if __name__ == "__main__":
-    if len(sys.argv) not in (2, 3): sys.exit(__doc__)
-    aplicar(Path(sys.argv[1]), Path(sys.argv[2]) if len(sys.argv) == 3 else None)
+    args = [a for a in sys.argv[1:] if a != "--publico"]
+    if len(args) not in (1, 2): sys.exit(__doc__)
+    aplicar(Path(args[0]), Path(args[1]) if len(args) == 2 else None, "--publico" in sys.argv)
