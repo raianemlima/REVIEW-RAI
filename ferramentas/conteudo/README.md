@@ -22,15 +22,21 @@ SENHA='sua senha' node build.mjs fonte.html index.html
 
 ## Alterações no app feitas direto no `index.html`
 
-Algumas mudanças no código do app foram aplicadas direto no `index.html` publicado, por scripts em `ferramentas/ajustes/`. Antes do próximo `node build.mjs`, rode os mesmos scripts no seu `fonte.html`, senão o build volta o app à versão antiga:
+Algumas mudanças no código do app foram aplicadas direto no `index.html` publicado, por scripts em `ferramentas/ajustes/`. Antes de cada `node build.mjs`, aplique essas mudanças no seu `fonte.html`, senão o build volta o app à versão antiga. Um comando faz tudo:
+
+```bash
+python ferramentas/ajustes/preparar_fonte.py caminho/fonte.html
+```
+
+Ele roda, nesta ordem:
 
 ```bash
 python ferramentas/ajustes/defensorias.py fonte.html   # lista de Defensorias no campo Concurso
-python ferramentas/ajustes/aba_defensoria.py fonte.html defensoria.json --publico   # aba Defensoria (súmulas e teses)
-python ferramentas/ajustes/novidades_publicas.py fonte.html novidades-2026-10-14.json   # novidades embutidas no código
+python ferramentas/ajustes/aba_defensoria.py fonte.html ferramentas/conteudo/dados/defensoria.json --publico   # aba Defensoria (súmulas e teses)
+python ferramentas/ajustes/novidades_publicas.py fonte.html ferramentas/conteudo/dados/novidades-2026-10-14.json   # novidades embutidas no código
 ```
 
-O `defensoria.json` e as novidades podem ser recuperados do próprio `index.html` publicado (constantes `DPE_PUBLICO` e `NOV_PUBLICO`). Os scripts podem ser rodados mais de uma vez.
+Os dados ficam em `ferramentas/conteudo/dados/` (os mesmos embutidos no `index.html` publicado, nas constantes `DPE_PUBLICO` e `NOV_PUBLICO`). Os scripts podem ser rodados mais de uma vez.
 
 O passo 3 precisa de `pip install -r ferramentas/mcp-planalto/requirements.txt`.
 
