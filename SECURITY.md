@@ -1,21 +1,15 @@
-# Security Policy
+# Política de segurança
 
-## Supported Versions
+## Versões com suporte
+Só a versão publicada em https://raianemlima.github.io/REVIEW-RAI/ recebe correções.
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+## Como relatar uma falha
+Não abra uma issue pública. Use **Security → Report a vulnerability** neste repositório (aviso privado) ou escreva para o e-mail de suporte do app.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+Inclua o que você encontrou, como reproduzir e o que dá para acessar com a falha. Respondemos em até 5 dias úteis e avisamos quando a correção for publicada.
 
-## Reporting a Vulnerability
-
-Use this section to tell people how to report a vulnerability.
-
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+## Como o app se protege
+- O conteúdo (baralho) é publicado cifrado (AES-256-GCM). A chave é entregue pelo Supabase só a contas liberadas, confirmadas e com assinatura válida.
+- A chave fica guardada no aparelho para uso offline, mas o app exige confirmar a assinatura online a cada 7 dias e apaga a chave quando a assinatura acaba.
+- Os dados de cada aluno ficam protegidos por RLS no Supabase. A chave `sb_publishable` no código é pública por design.
+- Uma Content-Security-Policy restringe para onde o app pode enviar dados (Supabase e API do GitHub).

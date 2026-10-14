@@ -28,6 +28,13 @@ const ct = new Uint8Array(await crypto.subtle.encrypt({ name: "AES-GCM", iv }, k
 const payload = JSON.stringify({ v: 2, z: "gzip", it: ITER, s: b64(salt), iv: b64(iv), ct: b64(ct) });
 
 const gate = readFileSync(new URL("./gate.js", import.meta.url), "utf8");
+// CSP: o GitHub Pages não deixa configurar cabeçalhos, então vai como <meta>. Limita para onde o app pode enviar dados (Supabase e API do GitHub).
+// 'unsafe-inline' é necessário porque o app inteiro roda em scripts inline (o baralho só existe depois de decifrado).
+const CSP = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; " +
+  "connect-src 'self' https://hlenhmgnqqnkjqmntnpz.supabase.co https://api.github.com; worker-src 'self'; manifest-src 'self'; media-src 'self' data: blob:; " +
+  "object-src 'none'; base-uri 'none'; form-action 'none'";
+if (!/http-equiv="Content-Security-Policy"/i.test(html)) html = html.replace(/<meta charset=[^>]*>/i, m => m + `<meta http-equiv="Content-Security-Policy" content="${CSP}">`);
+if (!/http-equiv="Content-Security-Policy"/i.test(html)) throw new Error("não consegui inserir a CSP (falta <meta charset>)");
 html = html.replace(m[0], "/* baralho criptografado: ver gate */");
 const a = html.indexOf("<script>", html.indexOf("/* baralho criptografado"));
 const b = html.lastIndexOf("</script>");

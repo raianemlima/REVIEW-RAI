@@ -1,0 +1,3 @@
+# Só o necessário para o CLI: o Asaas não envia login do Supabase; a função se protege com o token do webhook.
+[functions.asaas-webhook]
+verify_jwt = false
