@@ -14,6 +14,7 @@ PASSOS = [
     ("lista de Defensorias", [AJ / "defensorias.py"]),
     ("aba Defensoria", [AJ / "aba_defensoria.py", "{fonte}", DADOS / "defensoria.json", "--publico"]),
     ("aba Teses", [AJ / "aba_teses.py", "{fonte}", DADOS / "teses.json"]),
+    ("provas de concurso (simulados)", [AJ / "aba_provas.py"]),
     ("arquivos protegidos (PDFs)", [AJ / "arquivos_protegidos.py", "{fonte}", "{chaves}"]),
     ("novidades embutidas", [AJ / "novidades_publicas.py", "{fonte}", *sorted(DADOS.glob("novidades-*.json"))]),
     ("Novidades em duas seções", [AJ / "novidades_secoes.py"]),
