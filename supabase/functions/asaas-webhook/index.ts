@@ -1,6 +1,6 @@
 // Webhook do Asaas: a cada cobrança paga, libera (ou renova) o e-mail do cliente em public.liberados; estorno ou chargeback corta.
 // Publicar: supabase functions deploy asaas-webhook --no-verify-jwt   (o Asaas não manda JWT; a proteção é o token abaixo)
-// Segredos: ASAAS_API_KEY, ASAAS_WEBHOOK_TOKEN e, opcionais, ASAAS_API_URL, TOLERANCIA_DIAS, AVULSO_MESES. Passo a passo em docs/ASAAS.md.
+// Segredos: ASAAS_API_KEY, ASAAS_WEBHOOK_TOKEN e, opcionais, ASAAS_API_URL, SB_SECRET_KEY, TOLERANCIA_DIAS, AVULSO_MESES. Passo a passo em docs/ASAAS.md.
 // Arquivo único de propósito: dá para colar inteiro no editor de Edge Functions do painel do Supabase.
 
 // ---- regras (testadas em index.test.ts) ----
@@ -51,10 +51,12 @@ async function asaas<T>(caminho: string): Promise<T> {
   return await r.json() as T;
 }
 
+// chave de servidor: a nova (sb_secret_..., no segredo SB_SECRET_KEY) ou a antiga service_role (JWT, que o Supabase já injeta)
 async function aplicar(args: Record<string, unknown>) {
+  const chave = env("SB_SECRET_KEY") || env("SUPABASE_SERVICE_ROLE_KEY");
   const r = await fetch(env("SUPABASE_URL") + "/rest/v1/rpc/asaas_aplicar", {
     method: "POST",
-    headers: { apikey: env("SUPABASE_SERVICE_ROLE_KEY"), Authorization: "Bearer " + env("SUPABASE_SERVICE_ROLE_KEY"), "Content-Type": "application/json" },
+    headers: { apikey: chave, ...(chave.startsWith("eyJ") ? { Authorization: "Bearer " + chave } : {}), "Content-Type": "application/json" },
     body: JSON.stringify(args),
   });
   if (!r.ok) throw new Error(`asaas_aplicar: ${r.status} ${await r.text()}`);
