@@ -1,14 +1,52 @@
 // Webhook do Asaas: a cada cobrança paga, libera (ou renova) o e-mail do cliente em public.liberados; estorno ou chargeback corta.
 // Publicar: supabase functions deploy asaas-webhook --no-verify-jwt   (o Asaas não manda JWT; a proteção é o token abaixo)
 // Segredos: ASAAS_API_KEY, ASAAS_WEBHOOK_TOKEN e, opcionais, ASAAS_API_URL, TOLERANCIA_DIAS, AVULSO_MESES. Passo a passo em docs/ASAAS.md.
-import { decidir, normalizarEmail, tokenConfere, type Assinatura, type Pagamento } from "./logica.ts";
+// Arquivo único de propósito: dá para colar inteiro no editor de Edge Functions do painel do Supabase.
+
+// ---- regras (testadas em index.test.ts) ----
+// A decisão usa a cobrança buscada na API do Asaas, nunca o corpo do webhook: assim um evento forjado ou fora de ordem não libera ninguém.
+
+export type Pagamento = { id: string; status: string; customer: string; subscription?: string | null; dueDate: string };
+export type Assinatura = { cycle: string } | null;
+export type Decisao = { acao: "liberar"; ate: Date } | { acao: "cortar" } | { acao: "ignorar" };
+
+const PAGO = new Set(["CONFIRMED", "RECEIVED", "RECEIVED_IN_CASH"]);
+const ESTORNADO = new Set(["REFUNDED", "REFUND_IN_PROGRESS", "CHARGEBACK_REQUESTED", "CHARGEBACK_DISPUTE", "AWAITING_CHARGEBACK_REVERSAL"]);
+const MESES: Record<string, number> = { MONTHLY: 1, BIMONTHLY: 2, QUARTERLY: 3, SEMIANNUALLY: 6, YEARLY: 12 };
+const DIAS: Record<string, number> = { WEEKLY: 7, BIWEEKLY: 14 };
+
+// Acesso pago vai do vencimento da cobrança até o fim do ciclo, mais uma folga para o próximo pagamento compensar (boleto leva dias).
+export function decidir(p: Pagamento, a: Assinatura, opc: { toleranciaDias: number; avulsoMeses: number }): Decisao {
+  if (ESTORNADO.has(p.status)) return { acao: "cortar" };
+  if (!PAGO.has(p.status) || !/^\d{4}-\d{2}-\d{2}$/.test(p.dueDate || "")) return { acao: "ignorar" };
+  const ate = new Date(p.dueDate + "T23:59:59-03:00");
+  const ciclo = a ? a.cycle : "";
+  if (DIAS[ciclo]) ate.setUTCDate(ate.getUTCDate() + DIAS[ciclo]);
+  else ate.setUTCMonth(ate.getUTCMonth() + (MESES[ciclo] || opc.avulsoMeses));
+  ate.setUTCDate(ate.getUTCDate() + opc.toleranciaDias);
+  return { acao: "liberar", ate };
+}
+
+export const normalizarEmail = (e: unknown) => {
+  const s = String(e ?? "").trim().toLowerCase();
+  return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(s) ? s : "";
+};
+
+// comparação em tempo constante: não deixa medir quantos caracteres do token estão certos
+export function tokenConfere(recebido: string, esperado: string): boolean {
+  if (!esperado || esperado.length < 32) return false;   // sem token configurado, recusa tudo
+  const a = new TextEncoder().encode(recebido), b = new TextEncoder().encode(esperado);
+  let dif = a.length ^ b.length;
+  for (let i = 0; i < b.length; i++) dif |= (a[i] ?? 0) ^ b[i];
+  return dif === 0;
+}
 
 const env = (k: string, padrao = "") => Deno.env.get(k) || padrao;
-const API = env("ASAAS_API_URL", "https://api.asaas.com/v3");
+const api = () => env("ASAAS_API_URL", "https://api.asaas.com/v3");
 const resposta = (txt: string, status = 200) => new Response(txt, { status, headers: { "Content-Type": "text/plain; charset=utf-8" } });
 
 async function asaas<T>(caminho: string): Promise<T> {
-  const r = await fetch(API + caminho, { headers: { access_token: env("ASAAS_API_KEY"), "User-Agent": "revisao-dpe-webhook" } });
+  const r = await fetch(api() + caminho, { headers: { access_token: env("ASAAS_API_KEY"), "User-Agent": "revisao-dpe-webhook" } });
   if (!r.ok) throw new Error(`Asaas ${caminho}: ${r.status}`);
   return await r.json() as T;
 }
@@ -22,7 +60,8 @@ async function aplicar(args: Record<string, unknown>) {
   if (!r.ok) throw new Error(`asaas_aplicar: ${r.status} ${await r.text()}`);
 }
 
-Deno.serve(async (req) => {
+// fora do Supabase (nos testes) Deno não existe: só exporta a lógica
+if (typeof Deno !== "undefined") Deno.serve(async (req) => {
   if (req.method !== "POST") return resposta("método não permitido", 405);
   if (!tokenConfere(req.headers.get("asaas-access-token") ?? "", env("ASAAS_WEBHOOK_TOKEN"))) return resposta("não autorizado", 401);
   let ev: { id?: string; event?: string; payment?: { id?: string } };

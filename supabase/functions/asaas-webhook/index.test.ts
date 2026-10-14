@@ -1,7 +1,7 @@
-// node --experimental-strip-types --test supabase/functions/asaas-webhook/logica.test.ts
+// node --experimental-strip-types --test supabase/functions/asaas-webhook/index.test.ts
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { decidir, normalizarEmail, tokenConfere } from "./logica.ts";
+import { decidir, normalizarEmail, tokenConfere } from "./index.ts";
 
 const opc = { toleranciaDias: 3, avulsoMeses: 1 };
 const pag = (status: string, extra = {}) => ({ id: "pay_1", status, customer: "cus_1", dueDate: "2026-10-10", ...extra });
