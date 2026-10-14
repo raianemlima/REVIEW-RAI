@@ -508,12 +508,6 @@ const plural = (n, a, b) => n + " " + (n === 1 ? a : b);
 const TIPOS = { conceito: "Conceito", lei_seca: "Lei seca", jurisprudencia: "Jurisprudência", pegadinha: "Certo ou errado", tese_defensiva: "Tese defensiva", comparativo: "Comparativo", multipla_escolha: "Múltipla escolha" };
 const ESTADOS = { DPU: "DPU", AC: "DPE/AC", AL: "DPE/AL", AP: "DPE/AP", AM: "DPE/AM", BA: "DPE/BA", CE: "DPE/CE", DF: "DPDF", ES: "DPE/ES", GO: "DPE/GO", MA: "DPE/MA", MT: "DPE/MT", MS: "DPE/MS", MG: "DPE/MG", PA: "DPE/PA", PB: "DPE/PB", PR: "DPE/PR", PE: "DPE/PE", PI: "DPE/PI", RJ: "DPE/RJ", RN: "DPE/RN", RS: "DPE/RS", RO: "DPE/RO", RR: "DPE/RR", SC: "DPE/SC", SP: "DPE/SP", SE: "DPE/SE", TO: "DPE/TO" };
 const ESTADO_NOME = { DPU: "Defensoria Pública da União", AC: "Acre", AL: "Alagoas", AP: "Amapá", AM: "Amazonas", BA: "Bahia", CE: "Ceará", DF: "Distrito Federal", ES: "Espírito Santo", GO: "Goiás", MA: "Maranhão", MT: "Mato Grosso", MS: "Mato Grosso do Sul", MG: "Minas Gerais", PA: "Pará", PB: "Paraíba", PR: "Paraná", PE: "Pernambuco", PI: "Piauí", RJ: "Rio de Janeiro", RN: "Rio Grande do Norte", RS: "Rio Grande do Sul", RO: "Rondônia", RR: "Roraima", SC: "Santa Catarina", SP: "São Paulo", SE: "Sergipe", TO: "Tocantins" };
-const opcoesEstado = atual => Object.entries(ESTADOS).map(([k, v]) => `<option value="${k}" ${k === atual ? "selected" : ""}>${v} · ${ESTADO_NOME[k]}</option>`).join("");
-function dicaEstado(k) {   // núcleo comum vale para todas; o módulo específico só existe para algumas
-  const n = DECK.cartoes.filter(c => c.abr === k).length;
-  return n ? `Entram os cartões do núcleo comum e ${n} ${n === 1 ? "cartão específico" : "cartões específicos"} da ${ESTADOS[k] || k}.`
-    : `Entram os cartões do núcleo comum, que valem para qualquer Defensoria. O módulo específico da ${ESTADOS[k] || k} ainda não foi publicado.`;
-}
 const GRADES = { 1: "Errei", 2: "Difícil", 3: "Bom", 4: "Fácil" };
 
 // ---------- estado ----------
@@ -766,7 +760,7 @@ function instalarHtml() {
   return `<section class="panel install"><div class="ph"><h3>📲 Instale no celular</h3><button class="btn small ghost" id="instX">Agora não</button></div>${corpo}</section>`;
 }
 async function compartilharApp() {
-  const dados = { title: "Revisão DPE", text: "App de revisão espaçada para concursos da Defensoria Pública, com conteúdo para todas as Defensorias do Brasil.", url: appUrl() };
+  const dados = { title: "Revisão DPE", text: "App de revisão espaçada para a Defensoria Pública. O acesso é por senha, que você recebe de quem enviou o link.", url: appUrl() };
   try { if (navigator.share) { await navigator.share(dados); return; } } catch (e) { if (e && e.name === "AbortError") return; }
   try { await navigator.clipboard.writeText(dados.url); toast("Link copiado. É só colar na conversa."); } catch (e) { prompt("Copie o link:", dados.url); }
 }
@@ -1794,13 +1788,13 @@ function onboarding(force) {
   const slides = [
     () => `<div class="onb-art">${fenix(0, "feliz", 150)}</div><h2>Conheça sua Fênix</h2><p>Ela nasce de um ovo e cresce com os seus dias de estudo (prefere outro bicho? Em Ajustes há 20 mascotes para escolher). Cada resposta rende XP, e a sequência de dias a mantém acesa.</p>`,
     () => `<div class="onb-art">${fenix(2, "ok", 150)}</div><h2>Como funciona</h2><p><b>1.</b> Leia a pergunta e tente lembrar a resposta.<br><b>2.</b> Revele e diga se acertou.<br><b>3.</b> O app traz o cartão de volta no dia certo, quando você estiver prestes a esquecer.</p>`,
-    () => `<div class="onb-art">${fenix(3, "feliz", 150)}</div><h2>Vamos combinar a meta</h2><p>Escolha a sua Defensoria e, se já souber, a data da prova. O app ajusta as fases do estudo até lá.</p><div class="form" style="text-align:left;gap:10px;box-shadow:none"><div class="field"><label for="o-estado">Defensoria</label><select id="o-estado">${opcoesEstado(S.ajustes.estado)}</select></div><div class="field"><label for="o-prova">Data da prova</label><input id="o-prova" type="date" value="${esc(S.ajustes.prova)}"></div><div class="field"><label for="o-min">Minutos por dia</label><input id="o-min" type="number" min="5" max="240" step="5" value="${S.ajustes.minutos}"></div></div>`,
+    () => `<div class="onb-art">${fenix(3, "feliz", 150)}</div><h2>Vamos combinar a meta</h2><p>Se já souber a data da prova, informe. O app ajusta as fases do estudo até lá.</p><div class="form" style="text-align:left;gap:10px;box-shadow:none"><div class="field"><label for="o-prova">Data da prova</label><input id="o-prova" type="date" value="${esc(S.ajustes.prova)}"></div><div class="field"><label for="o-min">Minutos por dia</label><input id="o-min" type="number" min="5" max="240" step="5" value="${S.ajustes.minutos}"></div></div>`,
   ];
   let i = 0;
   const draw = () => {
     el.innerHTML = `<div class="onb-card">${slides[i]()}<div class="dotsx">${slides.map((_, k) => `<i class="${k === i ? "on" : ""}"></i>`).join("")}</div><div class="row" style="justify-content:center"><button class="btn primary" id="onb-next">${i < slides.length - 1 ? "Continuar" : "Começar a estudar"}</button>${i < slides.length - 1 ? `<button class="btn ghost" id="onb-skip">Pular</button>` : ""}</div></div>`;
     const done = () => {
-      if ($("#o-prova")) { if ($("#o-estado")) S.ajustes.estado = $("#o-estado").value; S.ajustes.prova = $("#o-prova").value; S.ajustes.minutos = Math.max(5, +$("#o-min").value || 30); }
+      if ($("#o-prova")) { S.ajustes.prova = $("#o-prova").value; S.ajustes.minutos = Math.max(5, +$("#o-min").value || 30); }
       S.ajustes.onboard = true; queue("ajustes"); el.remove(); render();
     };
     $("#onb-next").onclick = () => { if (i < slides.length - 1) { i++; draw(); } else done(); };
@@ -2893,15 +2887,15 @@ function renderAjustes() {
     ${mascotePicker()}
     <p class="sub">${S.mode === "db" || ultSync() != null ? "Ajustes e progresso ficam salvos neste aparelho e sincronizados com os seus outros aparelhos." : "Ajustes e progresso estão salvos só neste navegador. Para usar em outro aparelho, entre na sua conta em Sincronizar entre aparelhos."}</p>
     <form class="form" id="aj">
-      <div class="field"><label for="a-estado">Defensoria do seu concurso</label>
-        <select id="a-estado">${opcoesEstado(a.estado)}</select>
-        <span class="hint" id="a-estado-h">${esc(dicaEstado(a.estado))}</span></div>
+      <div class="field"><label for="a-estado">Concurso</label>
+        <select id="a-estado">${Object.entries(ESTADOS).map(([k, v]) => `<option value="${k}" ${k === a.estado ? "selected" : ""}>${v} · ${k === "RN" ? "III Concurso" : ESTADO_NOME[k]}</option>`).join("")}</select>
+        <span class="hint">Define quais cartões do módulo estadual entram. Outros estados chegam com os próximos perfis.</span></div>
       <fieldset class="field" style="border:0;padding:0;margin:0"><legend style="font-weight:600;font-size:.9rem;padding:0">Disciplinas em estudo</legend>
         ${DECK.disciplinas.map(d => `<label class="row" style="gap:8px;font-weight:400"><input type="checkbox" id="a-d-${d.id}" ${discOn(d.id) ? "checked" : ""}> ${esc(d.nome)} <span class="count">${esc(d.status || "")}</span></label>`).join("")}
-        <span class="hint">Desmarcar tira a disciplina das sessões sem apagar o progresso. Cada disciplina pesa o mesmo até o edital da sua Defensoria definir os pesos.</span></fieldset>
+        <span class="hint">Desmarcar tira a disciplina das sessões sem apagar o progresso. Na DPE/RN, cada disciplina pesa o mesmo até o edital dividir os grupos.</span></fieldset>
       <div class="field"><label for="a-prova">Data da prova objetiva</label>
         <input id="a-prova" type="date" value="${esc(a.prova)}">
-        <span class="hint">Use a data do edital da sua Defensoria. Com a data, nenhum intervalo passa do dia da prova e a prioridade sobe nos últimos 6 meses.</span></div>
+        <span class="hint">Edital da DPE/RN ainda não publicado. Com a data, nenhum intervalo passa do dia da prova e a prioridade sobe nos últimos 6 meses.</span></div>
       <div class="field"><label for="a-min">Minutos por dia</label>
         <input id="a-min" type="number" min="5" max="240" step="5" value="${a.minutos}">
         <span class="hint">O app calcula quantos cartões novos cabem depois das revisões (cerca de 15 s por revisão e 40 s por cartão novo).</span></div>
@@ -2928,7 +2922,6 @@ function renderAjustes() {
     <div class="row"><button class="btn" id="privBtn">Política de privacidade</button><button class="btn" id="wipeBtn" style="color:var(--bad)">Apagar todos os dados deste aparelho</button></div>
     <div id="wipeMsg"></div>
     <p class="count" style="margin-top:20px">Algoritmo FSRS-4.5 com parâmetros padrão. Baralho de ${esc(DECK.versao)}, ${DECK.cartoes.length} cartões. Prioridade = peso do cartão × peso da disciplina × urgência × risco de esquecer.</p>`;
-  $("#a-estado").onchange = e => { $("#a-estado-h").textContent = dicaEstado(e.target.value); };
   $("#aj").onsubmit = e => {
     e.preventDefault();
     const dsel = DECK.disciplinas.filter(d => $("#a-d-" + d.id).checked).map(d => d.id);
