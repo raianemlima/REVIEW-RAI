@@ -45,6 +45,10 @@ CSS = """
 .dpe-pe a { color: var(--accent); font-weight: 600; text-decoration: none; }
 .dpe-nota { color: var(--muted); font-size: .8rem; margin: 18px 0 8px; }
 .dpe-tese { border-left-color: #2fa37a; }
+.dpe-cargo { margin: 0 0 10px; font-weight: 600; }
+.dpe-links { display: flex; gap: 8px; flex-wrap: wrap; }
+.dpe-links a { text-decoration: none; }
+.dpe-prova { border-left-color: #8fd3b6; }
 .dpe-tese .dpe-num { font-family: var(--f-ui); white-space: normal; border-radius: 12px; }
 .dpe-teses { margin: 4px 0 12px; padding-left: 20px; font-family: var(--f-read); font-size: 1.04rem; line-height: 1.5; }
 .dpe-teses li { margin: 0 0 8px; }
@@ -92,6 +96,14 @@ function renderDef() {
         <ol class="dpe-teses">${(t.teses_destaque || []).map(x => `<li>${md(x)}</li>`).join("")}</ol>
         ${rel(t.relevancia_dpe)}
       </article>`).join("")}` : ""}
+    ${(D.provas || []).length ? `<div class="dpe-sec"><h3>Provas anteriores</h3><span class="count">${plural(D.provas.length, "concurso", "concursos")}</span></div>
+    ${D.provas.map(v => `
+      <article class="dpe-card dpe-prova">
+        <div class="dpe-top"><span class="dpe-num">${esc(v.orgao)}</span><span class="chip">${esc(v.banca)}</span>${v.ano ? `<span class="dpe-data">${esc(String(v.ano))}</span>` : ""}</div>
+        <p class="dpe-cargo">${esc(v.cargo)}</p>
+        <div class="dpe-links">${(v.links || []).map(l => `<a class="btn small" href="${esc(l.url)}" target="_blank" rel="noopener">📄 ${esc(l.rotulo)}</a>`).join("")}</div>
+      </article>`).join("")}
+    <p class="dpe-nota">Os arquivos abrem nos sites das bancas e de repositórios de provas e precisam de internet.</p>` : ""}
     <p class="dpe-nota">${[E.fonte, EJ.fonte_oficial].filter(Boolean).map(esc).join(" · ")}${E.fonte || EJ.fonte_oficial ? ". " : ""}Confira sempre a redação oficial antes de citar em peça ou prova.</p>`;
   document.querySelectorAll(".fchip[data-tri]").forEach(b => b.onclick = () => { S.defTri = b.dataset.tri; S.defRamo = ""; renderDef(); });
   document.querySelectorAll(".fchip[data-r]").forEach(b => b.onclick = () => { S.defRamo = b.dataset.r; renderDef(); });
@@ -110,10 +122,23 @@ def aplicar(caminho: Path, dados: Path | None, publico: bool = False):
     html = caminho.read_text(encoding="utf-8"); n = 0
     i = html.index('id="tab-novidades"'); j = html.index("</button>", i) + len("</button>")
     if 'id="tab-defensoria"' not in html: html = html[:j] + NAV_BTN + html[j:]; n += 1
-    k = html.index("</style>", html.index(".tabs {"))
-    if "/* ---- aba Defensoria ---- */" not in html: html = html[:k] + CSS + html[k:]; n += 1
+    # estilo: insere, ou troca a versão anterior pela atual
+    c0 = html.find("\n/* ---- aba Defensoria ---- */")
+    if c0 >= 0:
+        c1 = html.index("</style>", c0)
+        if html[c0:c1] != CSS.rstrip("\n") + "\n": html = html[:c0] + CSS + html[c1:]; n += 1
+    else:
+        k = html.index("</style>", html.index(".tabs {")); html = html[:k] + CSS + html[k:]; n += 1
     html, x = trocar(html, "novidades: renderNov,", "novidades: renderNov, defensoria: renderDef,", "defensoria: renderDef"); n += x
-    html, x = trocar(html, "function renderNov() {", JS.lstrip("\n") + "function renderNov() {", "function renderDef()"); n += x
+    # tela: insere antes de renderNov, ou troca a versão anterior pela atual
+    novo_js = JS.lstrip("\n")
+    j0 = html.find("// ===================== aba Defensoria")
+    if j0 >= 0:
+        fim = '(() => { const t = document.getElementById("tab-defensoria")'
+        j1 = html.index("\n", html.index(fim, j0)) + 1
+        if html[j0:j1] != novo_js: html = html[:j0] + novo_js + html[j1:]; n += 1
+    else:
+        html, x = trocar(html, "function renderNov() {", novo_js + "function renderNov() {", "function renderDef()"); n += x
     if dados and publico:
         bloco = "const DPE_PUBLICO = " + json.dumps(json.loads(dados.read_text(encoding="utf-8")), ensure_ascii=False) + ";\n"
         html = re.sub(r"const DPE_PUBLICO = .*;\n", "", html)          # troca a versão anterior, se houver

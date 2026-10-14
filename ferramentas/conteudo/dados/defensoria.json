@@ -137,5 +137,101 @@
    ],
    "relevancia_dpe": "Essencial (Direito Coletivo e Individual Indisponível - Atuação clássica da DPE em Mandados de Segurança e Ações Civis Públicas por vagas em creches/escolas)"
   }
+ ],
+ "provas": [
+  {
+   "orgao": "DPE-PB",
+   "banca": "FGV",
+   "ano": 2025,
+   "cargo": "Defensor Público",
+   "links": [
+    {
+     "rotulo": "Prova",
+     "url": "https://www.pciconcursos.com.br/provas/34860872/9d47f827f232/defensor_publico.pdf"
+    },
+    {
+     "rotulo": "Gabarito",
+     "url": "https://www.pciconcursos.com.br/provas/34860872/8f3fc3f2e798/gabarito.pdf"
+    }
+   ]
+  },
+  {
+   "orgao": "DPE-RO",
+   "banca": "FGV",
+   "ano": 2025,
+   "cargo": "Analista Jurídico",
+   "links": [
+    {
+     "rotulo": "Prova (tipo 1)",
+     "url": "https://conhecimento.fgv.br/sites/default/files/concursos/analista-juridico-classe-acns002-tipo-1.pdf"
+    },
+    {
+     "rotulo": "Gabarito definitivo",
+     "url": "https://conhecimento.fgv.br/sites/default/files/concursos/gabarito-defintivo-dpe-ro_0.pdf"
+    },
+    {
+     "rotulo": "Espelho da discursiva",
+     "url": "https://conhecimento.fgv.br/sites/default/files/concursos/espelhodpe-ro.pdf"
+    }
+   ]
+  },
+  {
+   "orgao": "DPE-PR",
+   "banca": "FUNDATEC",
+   "ano": 2024,
+   "cargo": "Defensor Público Substituto",
+   "links": [
+    {
+     "rotulo": "Prova",
+     "url": "https://www.pciconcursos.com.br/provas/32915383/ca6cee84a1de/defensor_publico_substituto.pdf"
+    },
+    {
+     "rotulo": "Gabarito preliminar",
+     "url": "https://www.pciconcursos.com.br/provas/32915383/1cf210641900/gabarito_preliminar.pdf"
+    }
+   ]
+  },
+  {
+   "orgao": "DPE-MG",
+   "banca": "FUNDEP",
+   "ano": 2023,
+   "cargo": "Defensor Público de Classe Inicial",
+   "links": [
+    {
+     "rotulo": "Prova",
+     "url": "https://www.pciconcursos.com.br/provas/31313752/9541623f2ea7/defensor_publico_de_classe_inicial.pdf"
+    },
+    {
+     "rotulo": "Gabarito",
+     "url": "https://www.pciconcursos.com.br/provas/31313752/bc0abc51d684/gabarito.pdf"
+    }
+   ]
+  },
+  {
+   "orgao": "DPE-BA",
+   "banca": "FCC",
+   "cargo": "Defensor(a) Público(a)",
+   "links": [
+    {
+     "rotulo": "Gabaritos da objetiva",
+     "url": "https://www.concursosfcc.com.br/concursos/dpeba125/edital_dos_gabaritos_prova_objetiva.pdf"
+    },
+    {
+     "rotulo": "Resultado da discursiva",
+     "url": "https://www.concursosfcc.com.br/concursos/dpeba125/edital_de_resultado_definitiva_prova_discursiva_e_convocacao_para_comissao_de_heteroidentificacao.pdf"
+    }
+   ]
+  },
+  {
+   "orgao": "DPE-MT",
+   "banca": "FCC",
+   "cargo": "Defensor(a) Público(a) Estadual",
+   "links": [
+    {
+     "rotulo": "Gabaritos definitivos",
+     "url": "https://www.concursosfcc.com.br/concursos/dpemt125/dpemt125_relatorio_atribuicao_de_gabaritos.pdf"
+    }
+   ]
+  }
  ]
 }
