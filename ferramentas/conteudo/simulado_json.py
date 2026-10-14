@@ -17,6 +17,7 @@ PASTA = Path(__file__).resolve().parent / "dados" / "simulados"
 PROVAS = {
     "dpe-pr-2024": dict(nome="DPE-PR 2024", cargo="Defensor(a) Público(a) Substituto(a)", banca="Fundatec", formato="fundatec", gabarito="fundatec"),
     "dpe-pe-2025": dict(nome="DPE-PE 2025", cargo="Defensor(a) Público(a) · prova tipo 1 (branca)", banca="FGV", formato="fgv", gabarito="grade", secao="DEFENSOR PÚBLICO - PROVA TIPO 1"),
+    "dpe-mg-2023": dict(nome="DPE-MG 2023", cargo="Defensor(a) Público(a) · IX Concurso", banca="Gestão de Concursos", formato="gestao", gabarito="colunas"),
     "dpe-ro-2025": dict(nome="DPE-RO 2025", cargo="Analista Jurídico · Classe A · prova tipo 1 (branca)", banca="FGV", formato="fgv", gabarito="pares", secao="Analista Jurídico - Classe A - Prova Tipo 1"),
 }
 LIXO = re.compile(r"^(\d+_BASE_\w+|Execução: .*|DEFENSOR PÚBLICO – SUBSTITUTO|\d{1,2}/\d{1,2}/\d{4}\d{1,2}:\d{2}:\d{2}|QR|code|PARANÁ|V\d_.*|```|## Página \d+)$")
@@ -94,6 +95,28 @@ def paragrafos(linhas):
         out.append(l); ant = s or ant
     return out
 
+TITULO_MAIUSC = re.compile(r"^[A-ZÁÉÍÓÚÂÊÔÃÕÇ ,]{4,}$")
+
+def separar_gestao(texto):
+    """Gestão de Concursos: "QUESTÃO 12" sozinho na linha, matéria em maiúsculas antes; a folha de respostas encerra."""
+    corpo = texto.split("## Página 2", 1)[1]
+    qs, buf, materia, esperado = [], [], "", 1
+    for l in corpo.splitlines():
+        s_ = l.strip()
+        if re.match(r"^(A B C D E|FOLHA DE RESPOSTAS)", s_): break
+        if s_ in ("```",) or s_.startswith("## Página") or re.fullmatch(r"[\d ]+", s_) or re.fullmatch(r"GRUPO [IVX]+", s_): continue
+        if s_ == f"QUESTÃO {esperado}":
+            while buf and not buf[-1].strip(): buf.pop()
+            k = len(buf)
+            while k and TITULO_MAIUSC.match(buf[k - 1].strip()): k -= 1
+            if k < len(buf):
+                materia = " ".join(x.strip() for x in buf[k:]).capitalize(); del buf[k:]
+                for a, b in (("Direito penal", "Direito Penal"), ("Direito processual", "Direito Processual"), ("constitucional", "Constitucional"), ("Direitos humanos", "Direitos Humanos"), ("antidiscriminatório", "Antidiscriminatório"), ("institucionais", "Institucionais"), ("Direito administrativo", "Direito Administrativo"), ("Direito civil", "Direito Civil"), ("processual civil", "Processual Civil"), ("Processual civil", "Processual Civil"), ("Direitos difusos e coletivos", "Direitos Difusos e Coletivos"), ("criança e do adolescente", "Criança e do Adolescente"), ("Direito do consumidor", "Direito do Consumidor"), ("Execução penal", "Execução Penal"), ("defensoria pública", "Defensoria Pública"), ("e criminologia", "e Criminologia"), ("Processual penal", "Processual Penal"), ("processual penal", "Processual Penal")):
+                    materia = materia.replace(a, b)
+            qs.append({"n": esperado, "materia": materia, "linhas": []}); buf = qs[-1]["linhas"]; esperado += 1; continue
+        buf.append(l)
+    return qs
+
 def montar(q, fgv=False):
     linhas, alts, atual, enun = q["linhas"], {}, None, []
     for l in linhas:
@@ -120,6 +143,7 @@ def trecho(linhas, partes):
 
 PAL = re.compile(r"[A-Za-zÀ-ÿ]+")
 PAR = re.compile(r"(?<![A-Za-zÀ-ÿ])([A-Za-zÀ-ÿ]+) ([a-zà-ÿ][a-zà-ÿ]*)(?![A-Za-zÀ-ÿ])")
+INICIO_IMPOSSIVEL = re.compile(r"^(nd|nt|ss|rr|lh|nh|ç|ã|õ|mp|rc|lm|ns|nç|ndo|ção)")   # nenhuma palavra começa assim
 CURTAS = set("a o e é à as os ao aos às de da do das dos em no na nos nas se que um uma por com ou sem lei art".split())
 
 def colador():
@@ -129,13 +153,16 @@ def colador():
     eh = lambda x: x.lower() in CURTAS or (voc[x.lower()] >= 2 and len(x) > 2)
     def troca(m):
         a, b = m.group(1), m.group(2)
-        if re.fullmatch(r"[IVX]+", a) or (a.isupper() and len(a) > 1) or (len(b) == 1 and eh(a)) or not voc[(a + b).lower()] or (eh(a) and eh(b)): return m.group(0)
+        if re.fullmatch(r"[IVX]+", a) or (a.isupper() and len(a) > 1) or (len(b) == 1 and eh(a)) or not voc[(a + b).lower()] or (eh(a) and eh(b)) \
+                or (eh(a) and voc[(a + b).lower()] < 3 and not INICIO_IMPOSSIVEL.match(b)): return m.group(0)   # "de ferir" fica; "a ssinale" junta
         return a + b
     return lambda t: PAR.sub(troca, PAR.sub(troca, t))
 
 def ler_gabarito(texto, cfg):
     """{número: letra}; "*" (questão anulada) vira "X"."""
-    if cfg["gabarito"] == "fundatec":
+    if cfg["gabarito"] == "colunas":             # "1 C 36 B 71 E"
+        g = dict(re.findall(r"(?<!\d)(\d{1,3}) ([A-E*])(?![A-Za-z])", texto))
+    elif cfg["gabarito"] == "fundatec":
         g = {str(int(n)): l for n, l in re.findall(r"\b(\d{2,3}) - ([A-E*X])\b", texto)}
     else:
         ls = [l.strip() for l in texto.splitlines()]
@@ -152,12 +179,15 @@ def gerar(id_):
     prova = (PASTA / f"{id_}-prova.md").read_text(encoding="utf-8")
     gtexto = (PASTA / f"{id_}-gabarito.md").read_text(encoding="utf-8")
     gab = ler_gabarito(gtexto, cfg)
-    if cfg["formato"] == "fgv":
+    if cfg["formato"] == "gestao":
+        brutas, disc = separar_gestao(prova), ""
+        linhas = prova.splitlines()
+    elif cfg["formato"] == "fgv":
         brutas, disc = separar_fgv(prova)
         linhas = [l.rstrip() for l in prova.splitlines() if not FGV_LIXO.match(l.strip())]
     else:
         linhas = paginas(prova); brutas, disc = separar(linhas), ""
-    qs = [montar(q, cfg["formato"] == "fgv") for q in brutas]
+    qs = [montar(q, cfg["formato"] in ("fgv", "gestao")) for q in brutas]
     corr, movidos = PASTA / f"{id_}-correcoes.json", []
     for n, alts in (json.loads(corr.read_text(encoding="utf-8")) if corr.exists() else {}).items():
         if n.startswith("_"): continue
