@@ -2,7 +2,7 @@
 
     python ferramentas/ajustes/preparar_fonte.py C:\\caminho\\fonte.html
 
-Rode antes de cada `node build.mjs`. Deixe o chave-arquivos.json (chaves dos PDFs protegidos) na mesma pasta do fonte.html. Pode rodar quantas vezes quiser: o que já foi aplicado não muda.
+Atualize o repositório (git pull) e rode antes de cada `node build.mjs`. Deixe o chave-arquivos.json (chaves dos PDFs protegidos) na mesma pasta do fonte.html. Pode rodar quantas vezes quiser: o que já foi aplicado não muda.
 """
 import subprocess, sys
 from pathlib import Path
@@ -10,6 +10,7 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parents[2]
 AJ, DADOS = RAIZ / "ferramentas" / "ajustes", RAIZ / "ferramentas" / "conteudo" / "dados"
 PASSOS = [
+    ("código do site publicado", [AJ / "sincronizar_fonte.py"]),   # primeiro: menu, abas e estilo feitos direto no index.html
     ("lista de Defensorias", [AJ / "defensorias.py"]),
     ("aba Defensoria", [AJ / "aba_defensoria.py", "{fonte}", DADOS / "defensoria.json", "--publico"]),
     ("aba Teses", [AJ / "aba_teses.py", "{fonte}", DADOS / "teses.json"]),
