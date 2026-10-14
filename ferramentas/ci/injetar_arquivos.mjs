@@ -32,4 +32,4 @@ const iv = randomBytes(12);
 const ct = new Uint8Array(await crypto.subtle.encrypt({ name: "AES-GCM", iv }, key, gzipSync(Buffer.from(JSON.stringify(deck), "utf8"), { level: 9 })));
 const novo = JSON.stringify({ ...enc, z: "gzip", iv: b64(iv), ct: b64(ct) });
 writeFileSync(arq, html.replace(re, (_, a, __, c) => a + novo + c));
-console.log(`ok: ${lista.length} PDF(s) protegido(s) no baralho (${lista.map(a => a.id).join(", ")})`);
+console.log(`ok: ${lista.length} arquivo(s) protegido(s) no baralho (PDFs e pacotes de doutrina) (${lista.map(a => a.id).join(", ")})`);
