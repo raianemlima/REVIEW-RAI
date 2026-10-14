@@ -6,13 +6,32 @@
 O PDF vai para o site já cifrado (arquivos/<id>.bin, feito pelo cifrar_arquivo.mjs). A chave fica em chave-arquivos.json,
 que NÃO vai para o GitHub: o script a coloca dentro do baralho, que só abre para quem tem assinatura.
 Sem DECK.arquivos nada aparece. Rodar de novo não duplica nada.
+Entradas com "tipo": "doutrina" são pacotes de conceitos (JSON cifrado) que o app junta à aba Doutrina ao abrir.
 """
 import json, re, sys
 from pathlib import Path
 
 JS = r"""
 // ===================== arquivos protegidos: PDFs cifrados que só abrem com o baralho =====================
-const arqLista = () => DECK.arquivos || [];
+const arqLista = () => (DECK.arquivos || []).filter(a => !a.tipo || a.tipo === "pdf");
+// pacotes de doutrina cifrados (tipo "doutrina"): entram em DECK.doutrina quando o app abre; offline depois da 1ª vez
+async function arqPacotes() {
+  const un = s => Uint8Array.from(atob(s), c => c.charCodeAt(0)); let novos = 0;
+  for (const a of (DECK.arquivos || []).filter(x => x.tipo === "doutrina")) {
+    try {
+      const r = await fetch(a.arquivo); if (!r.ok) continue;
+      const key = await crypto.subtle.importKey("raw", un(a.k), "AES-GCM", false, ["decrypt"]);
+      const P = JSON.parse(new TextDecoder().decode(await crypto.subtle.decrypt({ name: "AES-GCM", iv: un(a.iv) }, key, await r.arrayBuffer())));
+      const D = DECK.doutrina = DECK.doutrina || { obras: [], conceitos: [] }, ob = new Set(D.obras.map(o => o.id)), co = new Set(D.conceitos.map(c => c.id));
+      (P.obras || []).forEach(o => { if (!ob.has(o.id)) D.obras.push(o); });
+      (P.conceitos || []).forEach(c => { if (!co.has(c.id)) { D.conceitos.push(c); novos++; } });
+    } catch (_) {}
+  }
+  if (!novos) return;
+  const t = document.getElementById("tab-doutrina"); if (t) t.hidden = false;
+  if (["doutrina", "sessao"].includes(S.tab)) render();
+}
+setTimeout(arqPacotes, 0);
 const arqUrls = {};
 async function arqAbrir(a) {
   if (arqUrls[a.id]) return arqUrls[a.id];

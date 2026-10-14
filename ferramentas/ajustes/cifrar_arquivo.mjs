@@ -1,5 +1,6 @@
 // Cifra um arquivo (ex.: PDF) para ele ir ao site sem ficar aberto a quem não assina.
 // Uso: node ferramentas/ajustes/cifrar_arquivo.mjs arquivo.pdf id "Título" "Descrição" [chave-arquivos.json]
+//      TIPO=doutrina node ... pacote.json id "Título" "" chave-arquivos.json   (pacote de conceitos para a aba Doutrina)
 //
 // Gera arquivos/<id>.bin (cifrado com AES-GCM, pode ir para o GitHub) e anota a chave em chave-arquivos.json.
 // A chave NÃO pode ir para o GitHub: guarde chave-arquivos.json junto do fonte.html. O preparar_fonte.py coloca
@@ -20,7 +21,7 @@ const ct = new Uint8Array(await crypto.subtle.encrypt({ name: "AES-GCM", iv }, k
 mkdirSync(join(raiz, "arquivos"), { recursive: true });
 writeFileSync(join(raiz, "arquivos", id + ".bin"), ct);
 const lista = existsSync(chaves) ? JSON.parse(readFileSync(chaves, "utf8")).filter(x => x.id !== id) : [];
-lista.push({ id, titulo, descricao, nome: basename(arq), arquivo: `arquivos/${id}.bin`, bytes: dados.length,
+lista.push({ id, ...(process.env.TIPO ? { tipo: process.env.TIPO } : {}), titulo, descricao, nome: basename(arq), arquivo: `arquivos/${id}.bin`, bytes: dados.length,
   k: Buffer.from(k).toString("base64"), iv: Buffer.from(iv).toString("base64") });
 writeFileSync(chaves, JSON.stringify(lista, null, 1));
 console.log(`ok: arquivos/${id}.bin (${(ct.length / 1e6).toFixed(2)} MB) · chave anotada em ${chaves}: guarde junto do fonte.html, fora do GitHub`);
