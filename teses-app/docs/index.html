@@ -1,0 +1,25 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Teses RG e Repetitivos</title>
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--mut:#666;--ac:#9b2c2c;--bd:#e3e3e3}
+@media(prefers-color-scheme:dark){:root{--bg:#161616;--fg:#eee;--mut:#9a9a9a;--ac:#e08a8a;--bd:#333}}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,sans-serif}
+header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--bd);padding:12px 16px;display:flex;gap:8px;flex-wrap:wrap}
+input,select{font:inherit;padding:8px;border:1px solid var(--bd);border-radius:6px;background:var(--bg);color:var(--fg)}
+input{flex:1;min-width:200px}main{max-width:860px;margin:0 auto;padding:16px}
+article{border-bottom:1px solid var(--bd);padding:14px 0}h2{font-size:1.05rem;margin:0 0 4px;color:var(--ac)}
+.m{color:var(--mut);font-size:.8rem}.f{font-size:.85rem;color:var(--mut)}p{margin:.5em 0;white-space:pre-line}
+</style></head><body>
+<header><input id="q" placeholder="Buscar (ex.: honorários, Tema 973, Info 1120)…"><select id="c"><option value="">Todos os ramos</option></select><span id="n" class="m"></span></header>
+<main id="out"></main>
+<script>
+let D,T;const q=document.getElementById('q'),c=document.getElementById('c'),out=document.getElementById('out'),n=document.getElementById('n');
+const norm=s=>(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+fetch('teses.json').then(r=>r.json()).then(d=>{D=d;T=d.teses.map(t=>({t,k:norm([t.titulo,t.texto,t.fontes.join(' ')].join(' '))}));
+d.estrutura.capitulos.forEach(x=>c.add(new Option(x.num+'. '+x.titulo,x.num)));render()});
+function esc(s){return s.replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]))}
+function render(){const w=norm(q.value).split(/\s+/).filter(Boolean),cap=c.value;
+const r=T.filter(x=>(!cap||x.t.capitulo==cap)&&w.every(k=>x.k.includes(k)));n.textContent=r.length+' teses';
+out.innerHTML=r.slice(0,100).map(({t})=>`<article><div class="m">${t.secao||''} · p.${t.pagina}</div><h2>${esc(t.titulo)}</h2><p>${esc(t.texto)}</p>${t.fontes.map(f=>`<div class="f">${esc(f)}</div>`).join('')}${t.link_oficial?`<a class="f" href="${t.link_oficial}" target="_blank" rel="noopener">Andamento oficial</a>`:''}</article>`).join('')}
+q.oninput=c.onchange=render;
+</script></body></html>
