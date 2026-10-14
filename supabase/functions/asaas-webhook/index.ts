@@ -51,9 +51,14 @@ async function asaas<T>(caminho: string): Promise<T> {
   return await r.json() as T;
 }
 
-// chave de servidor: a nova (sb_secret_..., no segredo SB_SECRET_KEY) ou a antiga service_role (JWT, que o Supabase já injeta)
+// chave de servidor: a nova (sb_secret_..., que o Supabase injeta em SUPABASE_SECRET_KEYS) ou a antiga service_role (JWT)
+function chaveServidor(): string {
+  if (env("SB_SECRET_KEY")) return env("SB_SECRET_KEY");
+  try { const ks = JSON.parse(env("SUPABASE_SECRET_KEYS", "{}")); const k = ks.default || Object.values(ks)[0]; if (k) return String(k); } catch { /* sem chaves novas */ }
+  return env("SUPABASE_SERVICE_ROLE_KEY");
+}
 async function aplicar(args: Record<string, unknown>) {
-  const chave = env("SB_SECRET_KEY") || env("SUPABASE_SERVICE_ROLE_KEY");
+  const chave = chaveServidor();
   const r = await fetch(env("SUPABASE_URL") + "/rest/v1/rpc/asaas_aplicar", {
     method: "POST",
     headers: { apikey: chave, ...(chave.startsWith("eyJ") ? { Authorization: "Bearer " + chave } : {}), "Content-Type": "application/json" },
