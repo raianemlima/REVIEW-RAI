@@ -22,6 +22,11 @@ jobs:
           mkdir _site
           cp index.html sw.js manifest.webmanifest privacidade.html termos.html _site/
           cp -r icons fonts screenshots arquivos _site/
+      - name: Chaves dos PDFs protegidos no baralho (segredos APP_SENHA e CHAVE_ARQUIVOS)
+        env:
+          APP_SENHA: ${{ secrets.APP_SENHA }}
+          CHAVE_ARQUIVOS: ${{ secrets.CHAVE_ARQUIVOS }}
+        run: node ferramentas/ci/injetar_arquivos.mjs _site/index.html
       - uses: actions/upload-pages-artifact@v3
         with: { path: _site }
       - id: d
