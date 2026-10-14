@@ -27,9 +27,10 @@ Algumas mudanças no código do app foram aplicadas direto no `index.html` publi
 ```bash
 python ferramentas/ajustes/defensorias.py fonte.html   # lista de Defensorias no campo Concurso
 python ferramentas/ajustes/aba_defensoria.py fonte.html defensoria.json --publico   # aba Defensoria (súmulas e teses)
+python ferramentas/ajustes/novidades_publicas.py fonte.html novidades-2026-10-14.json   # novidades embutidas no código
 ```
 
-O `defensoria.json` pode ser recuperado do próprio `index.html` publicado (constante `DPE_PUBLICO`). Os scripts podem ser rodados mais de uma vez.
+O `defensoria.json` e as novidades podem ser recuperados do próprio `index.html` publicado (constantes `DPE_PUBLICO` e `NOV_PUBLICO`). Os scripts podem ser rodados mais de uma vez.
 
 O passo 3 precisa de `pip install -r ferramentas/mcp-planalto/requirements.txt`.
 
