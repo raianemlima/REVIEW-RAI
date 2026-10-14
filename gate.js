@@ -1,7 +1,8 @@
-// Tela de entrada: conta (e-mail e senha) ou senha de acesso. Decifra o baralho (PBKDF2 + AES-GCM) e só então inicia o app.
-// Pela conta, a senha do baralho vem do Supabase (função chave_do_app), entregue só a e-mails liberados e confirmados.
+// Tela de entrada: conta (e-mail e senha). Decifra o baralho (PBKDF2 + AES-GCM) e só então inicia o app.
+// A senha do baralho vem do Supabase (função chave_do_app), entregue só a e-mails liberados, confirmados e com assinatura válida.
+// A chave fica guardada no aparelho para abrir offline, mas só por PRAZO: depois disso o app exige confirmar a assinatura online.
 (() => {
-  const KEY = "revisao-dpe-chave", CONTA = "revisao-dpe-conta";
+  const KEY = "revisao-dpe-chave", CONTA = "revisao-dpe-conta", VERIF = "revisao-dpe-verif", PRAZO = 7 * 86400000;
   const SB_URL = "https://hlenhmgnqqnkjqmntnpz.supabase.co", SB_KEY = "sb_publishable_UbPHvOFSbd-dgyDx6SI7mg_UBx4_o9l";   // chave pública: a proteção é a RLS
   const $ = s => document.querySelector(s);
   const enc = JSON.parse($("#deck-enc").textContent);
@@ -26,7 +27,9 @@
     const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveKey"]);
     return crypto.subtle.deriveKey({ name: "PBKDF2", salt: unb64(enc.s), iterations: enc.it, hash: "SHA-256" }, base, { name: "AES-GCM", length: 256 }, true, ["decrypt"]);
   }
-  async function guardarChave(key) { try { localStorage.setItem(KEY, b64(await crypto.subtle.exportKey("raw", key))); } catch (_) {} }
+  async function guardarChave(key) { try { localStorage.setItem(KEY, b64(await crypto.subtle.exportKey("raw", key))); localStorage.setItem(VERIF, String(Date.now())); } catch (_) {} }
+  const esquecerChave = () => { try { localStorage.removeItem(KEY); localStorage.removeItem(VERIF); } catch (_) {} };
+  const verificadoEm = () => { try { return +localStorage.getItem(VERIF) || 0; } catch (_) { return 0; } };
   const msgDecifrar = err => err && err.message === "sem-gzip" ? "Este navegador é antigo demais para abrir o app. Atualize o navegador e tente de novo." : null;
 
   // ---- conta (mesmo formato que o app usa para sincronizar) ----
@@ -37,7 +40,7 @@
   async function sb(path, body, tok, method) {
     let r;
     try { r = await fetch(SB_URL + path, { method: method || (body ? "POST" : "GET"), cache: "no-store", headers: { apikey: SB_KEY, "Content-Type": "application/json", ...(tok ? { Authorization: "Bearer " + tok } : {}) }, body: body ? JSON.stringify(body) : undefined }); }
-    catch (_) { throw new Erro("Sem conexão com a internet. Conecte-se para entrar.", 0); }
+    catch (_) { throw Object.assign(new Erro("Sem conexão com a internet. Conecte-se para entrar.", 0), { rede: true }); }
     let j = null; try { j = await r.json(); } catch (_) {}
     if (!r.ok) {
       const m = (j && (j.msg || j.message || j.error_description || j.error)) || "";
@@ -74,11 +77,20 @@
   async function abrirComConta() {
     const c = await token(); if (!c) return false;
     const pw = await sb("/rest/v1/rpc/chave_do_app", {}, c.at);
-    if (!pw) { st.email = c.email; tela("aguardando"); return true; }
+    if (!pw) { esquecerChave(); st.email = c.email; tela("aguardando"); return true; }
     let deck, key;
     try { key = await deriveFromPassword(pw); deck = await tryKey(key); }
     catch (err) { throw new Erro(msgDecifrar(err) || "Sua conta está liberada, mas a chave do app no servidor não confere com esta versão. Avise o suporte.", 0); }
     await guardarChave(key); start(deck); return true;
+  }
+  // com o app já aberto pela chave guardada: confirma a assinatura em segundo plano. Sem internet ou sessão, não faz nada (o PRAZO cuida disso).
+  async function revalidar() {
+    try {
+      const c = await token(); if (!c) return;
+      const pw = await sb("/rest/v1/rpc/chave_do_app", {}, c.at);
+      if (pw) { try { localStorage.setItem(VERIF, String(Date.now())); } catch (_) {} }
+      else esquecerChave();   // assinatura encerrada: na próxima abertura, o app volta para a tela de entrada
+    } catch (_) {}
   }
   const entrou = async j => { gravarConta(sessao(j)); st.msg = ""; if (!(await abrirComConta())) tela("entrar", "Não consegui abrir a sessão. Tente de novo."); };
 
@@ -95,7 +107,7 @@
   const naoChegou = `<p style="margin:0;color:var(--muted);font-size:14px">Não chegou? Veja a caixa de spam e as promoções. O código vale por 1 hora.</p>`;
   const TELAS = {
     entrar: () => [`Entre na sua conta.`, `${campoEmail()}${campoSenha("gSenha", "Senha", "current-password")}<button id="gOk" style="${btn}">Entrar</button>`,
-      ir("criar", "Criar conta") + ir("esqueci", "Esqueci minha senha") + ir("senhaApp", "Tenho uma senha de acesso")],
+      ir("criar", "Criar conta") + ir("esqueci", "Esqueci minha senha")],
     criar: () => [`Crie a sua conta com o <b>e-mail liberado na compra</b> e uma senha de pelo menos 8 caracteres.`, `${campoEmail()}${campoSenha("gSenha", "Senha", "new-password")}${campoSenha("gSenha2", "Repita a senha", "new-password")}<button id="gOk" style="${btn}">Criar conta</button>`, ir("entrar", "Já tenho conta")],
     confirmar: () => [`Falta só <b>confirmar o seu e-mail</b> com o código que enviamos.`, `${campoCod()}<button id="gOk" style="${btn}">Confirmar e entrar</button><button type="button" id="gReenviar" style="${btn2}">Enviar outro código</button>${naoChegou}<p style="margin:0;color:var(--muted);font-size:14px">Se você já tinha conta com esse e-mail, volte e use Entrar ou Esqueci minha senha.</p>`, ir("entrar", "Voltar")],
     esqueci: () => [`Digite o seu e-mail. Enviamos um código para você criar uma senha nova.`, `${campoEmail()}<button id="gOk" style="${btn}">Enviar código</button>`, ir("entrar", "Voltar")],
@@ -103,8 +115,7 @@
     codigo: () => [`Entre sem senha: enviamos um código para o seu e-mail.`, `${campoEmail()}<button id="gOk" style="${btn}">Enviar código</button>`, ir("entrar", "Entrar com senha")],
     codigo2: () => [`Digite o código para entrar.`, `${campoCod()}<button id="gOk" style="${btn}">Entrar</button><button type="button" id="gReenviar" style="${btn2}">Enviar outro código</button>${naoChegou}`, ir("codigo", "Usar outro e-mail")],
     novaSenha: () => [`Você entrou pelo link do e-mail. Agora crie a sua senha nova.`, `${campoSenha("gSenha", "Nova senha (mínimo 8 caracteres)", "new-password")}${campoSenha("gSenha2", "Repita a nova senha", "new-password")}<button id="gOk" style="${btn}">Salvar senha e entrar</button>`, ""],
-    aguardando: () => [`Olá, <b>${esc(st.email)}</b>. Sua conta está criada, mas o acesso ao conteúdo <b>ainda não foi liberado</b>. Se você já comprou, aguarde a liberação ou fale com o suporte.`, `<button id="gOk" style="${btn}">Verificar de novo</button><button type="button" id="gSair" style="${btn2}">Sair desta conta</button>`, ir("senhaApp", "Tenho uma senha de acesso")],
-    senhaApp: () => [`Digite a senha de acesso para abrir.`, `<input id="gpw" type="password" autocomplete="current-password" placeholder="Senha de acesso" required style="${inp}"><label style="display:flex;gap:8px;align-items:center;color:var(--muted)"><input id="gmem" type="checkbox" checked> Lembrar neste aparelho</label><button id="gbtn" style="${btn}">Entrar</button>`, ir("entrar", "Entrar com a minha conta")]
+    aguardando: () => [`Olá, <b>${esc(st.email)}</b>. Sua conta está criada, mas o acesso ao conteúdo <b>ainda não foi liberado</b>. Se você já comprou, aguarde a liberação ou fale com o suporte.`, `<button id="gOk" style="${btn}">Verificar de novo</button><button type="button" id="gSair" style="${btn2}">Sair desta conta</button>`, ""]
   };
   function tela(nome, msg, ok) {
     if (nome) st.tela = nome;
@@ -121,8 +132,8 @@
     const cod = $("#gCod"); if (cod) cod.oninput = () => { cod.value = cod.value.replace(/\D/g, ""); };
     const reenviar = $("#gReenviar"); if (reenviar) reenviar.onclick = () => rodar(reenviar, "Enviando…", REENVIAR[st.tela]);
     const sair = $("#gSair"); if (sair) sair.onclick = () => { const c = lerConta(); gravarConta(c && c.email ? { email: c.email } : null); if (c && c.at) sb("/auth/v1/logout", {}, c.at).catch(() => {}); tela("entrar", ""); };
-    f.onsubmit = e => { e.preventDefault(); const b = $("#gOk") || $("#gbtn"); rodar(b, st.tela === "senhaApp" ? "Verificando…" : "Aguarde…", ACOES[st.tela]); };
-    const foco = f.querySelector("#gCod,#gpw,#gSenha" + (st.email ? "" : ",#gEmail")) || f.querySelector("input"); if (foco) foco.focus();
+    f.onsubmit = e => { e.preventDefault(); rodar($("#gOk"), "Aguarde…", ACOES[st.tela]); };
+    const foco = f.querySelector("#gCod,#gSenha" + (st.email ? "" : ",#gEmail")) || f.querySelector("input"); if (foco) foco.focus();
   }
   async function rodar(b, txt, fn) {
     if (!fn) return;
@@ -173,14 +184,7 @@
       try { await sb("/auth/v1/user", { password: val("#gSenha") }, c.at, "PUT"); } catch (e) { throw new Erro(erroSenha(e.srv) || e.message, e.st); }
       st.msg = ""; if (!(await abrirComConta())) tela("entrar", "Sua sessão expirou. Entre de novo.");
     },
-    aguardando: async () => { if (!(await abrirComConta())) tela("entrar", "Sua sessão expirou. Entre de novo."); else if (st.tela === "aguardando") tela(null, "Ainda não liberado.", false); },
-    senhaApp: async () => {
-      try {
-        const key = await deriveFromPassword(val("#gpw")); const deck = await tryKey(key);
-        if ($("#gmem").checked) await guardarChave(key);
-        start(deck);
-      } catch (err) { throw new Erro(msgDecifrar(err) || "Senha incorreta.", 0); }
-    }
+    aguardando: async () => { if (!(await abrirComConta())) tela("entrar", "Sua sessão expirou. Entre de novo."); else if (st.tela === "aguardando") tela(null, "Ainda não liberado.", false); }
   };
   const REENVIAR = {
     confirmar: async () => { await sb("/auth/v1/resend?redirect_to=" + volta(), { type: "signup", email: st.email }); tela(null, "Código reenviado.", true); },
@@ -200,13 +204,18 @@
       } else st.msg = "Esse link expirou ou já foi usado. Entre ou peça um código novo.";
     }
     if (tipoLink === "recovery") return tela("novaSenha");
+    // chave guardada e assinatura confirmada há menos de PRAZO: abre na hora (também offline) e confere a assinatura em segundo plano
+    const verif = verificadoEm(), recente = verif > 0 && Date.now() - verif < PRAZO;
     try {
       const raw = localStorage.getItem(KEY);
-      if (raw) { const key = await crypto.subtle.importKey("raw", unb64(raw), "AES-GCM", false, ["decrypt"]); return start(await tryKey(key)); }
-    } catch (_) { try { localStorage.removeItem(KEY); } catch (__) {} }   // versão nova do app: a chave muda e a conta busca a nova
+      if (raw && recente) { const key = await crypto.subtle.importKey("raw", unb64(raw), "AES-GCM", false, ["decrypt"]); start(await tryKey(key)); revalidar(); return; }
+    } catch (_) { esquecerChave(); }   // versão nova do app: a chave muda e a conta busca a nova
     const c = lerConta();
     if (c && c.email) st.email = c.email;
-    if (c && c.at) { try { if (await abrirComConta()) return; st.msg = "Sua sessão expirou. Entre de novo."; } catch (e) { st.msg = e.message; } }
+    if (c && c.at) {
+      try { if (await abrirComConta()) return; st.msg = "Sua sessão expirou. Entre de novo."; }
+      catch (e) { st.msg = e.rede && verif ? "Conecte-se à internet para confirmar a sua assinatura. O app pede isso a cada 7 dias." : e.message; }
+    }
     else if (c && c.expirada) st.msg = "Sua sessão expirou. Entre de novo.";
     tela("entrar");
   })();
