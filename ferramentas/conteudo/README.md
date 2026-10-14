@@ -34,6 +34,7 @@ Ele roda, nesta ordem:
 python ferramentas/ajustes/defensorias.py fonte.html   # lista de Defensorias no campo Concurso
 python ferramentas/ajustes/aba_defensoria.py fonte.html ferramentas/conteudo/dados/defensoria.json --publico   # aba Defensoria (súmulas e teses)
 python ferramentas/ajustes/novidades_publicas.py fonte.html ferramentas/conteudo/dados/novidades-2026-10-14.json   # novidades embutidas no código
+python ferramentas/ajustes/novidades_secoes.py fonte.html   # aba Novidades separada em Leis e Jurisprudência
 ```
 
 Os dados ficam em `ferramentas/conteudo/dados/` (os mesmos embutidos no `index.html` publicado, nas constantes `DPE_PUBLICO` e `NOV_PUBLICO`). Os scripts podem ser rodados mais de uma vez.
