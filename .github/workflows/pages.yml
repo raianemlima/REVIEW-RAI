@@ -20,7 +20,7 @@ jobs:
       - name: Montar a pasta do site (só o que é público)
         run: |
           mkdir _site
-          cp index.html sw.js manifest.webmanifest privacidade.html termos.html _site/
+          cp index.html conheca.html sw.js manifest.webmanifest privacidade.html termos.html _site/
           cp -r icons fonts screenshots arquivos _site/
       - name: Chaves dos PDFs protegidos no baralho (segredos APP_SENHA e CHAVE_ARQUIVOS)
         env:
