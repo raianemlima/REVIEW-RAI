@@ -1,6 +1,8 @@
 // Tela de entrada: conta (e-mail e senha). Decifra o baralho (PBKDF2 + AES-GCM) e só então inicia o app.
 // A senha do baralho vem do Supabase (função chave_do_app), entregue só a e-mails liberados, confirmados e com assinatura válida.
 // A chave fica guardada no aparelho para abrir offline, mas só por PRAZO: depois disso o app exige confirmar a assinatura online.
+// tema escolhido no app (diurno/noturno) já na tela de entrada
+try { const t = localStorage.getItem("revisao-dpe-tema"); if (t === "claro" || t === "escuro") document.documentElement.dataset.theme = t === "claro" ? "light" : "dark"; } catch (e) {}
 (() => {
   const KEY = "revisao-dpe-chave", CONTA = "revisao-dpe-conta", VERIF = "revisao-dpe-verif", PRAZO = 7 * 86400000;
   const SB_URL = "https://hlenhmgnqqnkjqmntnpz.supabase.co", SB_KEY = "sb_publishable_UbPHvOFSbd-dgyDx6SI7mg_UBx4_o9l";   // chave pública: a proteção é a RLS
