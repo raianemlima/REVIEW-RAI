@@ -1,7 +1,7 @@
 {
   "id": "revisao-dpe",
-  "name": "Revisão Espaçada DPE",
-  "short_name": "Revisão DPE",
+  "name": "Review DPE",
+  "short_name": "Review DPE",
   "description": "Revisão espaçada, teses defensivas e novidades legislativas para o concurso da Defensoria Pública.",
   "lang": "pt-BR",
   "dir": "ltr",
