@@ -97,18 +97,11 @@ function renderDef() {
         <ol class="dpe-teses">${(t.teses_destaque || []).map(x => `<li>${md(x)}</li>`).join("")}</ol>
         ${rel(t.relevancia_dpe)}
       </article>`).join("")}` : ""}
-    ${typeof arqCards === "function" && arqLista().length ? `<div class="dpe-sec"><h3>Provas comentadas</h3></div>${arqCards()}` : ""}
-    ${(D.provas || []).length ? `<div class="dpe-sec"><h3>Provas anteriores</h3><span class="count">${plural(D.provas.length, "concurso", "concursos")}</span></div>
-    ${D.provas.map(v => `
-      <article class="dpe-card dpe-prova">
-        <div class="dpe-top"><span class="dpe-num">${esc(v.orgao)}</span><span class="chip">${esc(v.banca)}</span>${v.ano ? `<span class="dpe-data">${esc(String(v.ano))}</span>` : ""}</div>
-        <p class="dpe-cargo">${esc(v.cargo)}</p>
-        <div class="dpe-links">${(v.links || []).map(l => `<a class="btn small" href="${esc(l.url)}" target="_blank" rel="noopener">📄 ${esc(l.rotulo)}</a>`).join("")}</div>
-      </article>`).join("")}
-    <p class="dpe-nota">Os arquivos abrem nos sites das bancas e de repositórios de provas e precisam de internet.</p>` : ""}
+    ${(typeof arqLista === "function" && arqLista().length) || (D.provas || []).length || (typeof provasDados === "function" && provasDados().length) ? `<button class="pv-atalho" data-goprova="1"><span class="pv-ai">🏛️</span><span><b>Provas</b><small>Comentadas, para resolver no app e provas anteriores, tudo num lugar só</small></span><span class="pv-seta">→</span></button>` : ""}
     <p class="dpe-nota">${[E.fonte, EJ.fonte_oficial].filter(Boolean).map(esc).join(" · ")}${E.fonte || EJ.fonte_oficial ? ". " : ""}Confira sempre a redação oficial antes de citar em peça ou prova.</p>`;
   document.querySelectorAll(".fchip[data-tri]").forEach(b => b.onclick = () => { S.defTri = b.dataset.tri; S.defRamo = ""; renderDef(); });
   document.querySelectorAll(".fchip[data-r]").forEach(b => b.onclick = () => { S.defRamo = b.dataset.r; renderDef(); });
+  document.querySelectorAll("[data-goprova]").forEach(b => b.onclick = () => { S.pvId = ""; go("prova"); });
 }
 (() => { const t = document.getElementById("tab-defensoria"), D = dpeDados(); if (t) t.hidden = !((D.sumulas || []).length || (D.teses || []).length); })();
 """

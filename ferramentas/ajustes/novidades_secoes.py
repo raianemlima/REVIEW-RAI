@@ -19,11 +19,26 @@ CSS = CSS_ID + """
 .nv-grupo { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin: 18px 0 8px; }
 .nv-grupo h3 { margin: 0; }
 .chip.rep { color: var(--accent); background: var(--accent-soft); border-color: transparent; font-weight: 600; }
+.nv-barra { display: flex; align-items: center; gap: 10px; margin: 6px 0 10px; font: 600 .8rem var(--f-ui); color: var(--muted); }
+.nv-prog { flex: 1; height: 8px; border-radius: 999px; background: var(--line); overflow: hidden; } .nv-prog i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--accent), var(--ok)); transition: width .3s; }
+.nv-tools { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; justify-content: space-between; margin: 0 0 14px; }
+.nv-st { display: inline-flex; gap: 4px; padding: 4px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); }
+.nv-st button { font: 600 .82rem var(--f-ui); border: 0; border-radius: 999px; padding: 7px 12px; background: none; color: var(--muted); cursor: pointer; }
+.nv-st button b { font: 600 .72rem var(--f-mono); opacity: .75; margin-left: 2px; }
+.nv-st button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+.nv-tema { display: flex; align-items: center; gap: 8px; font: 600 .82rem var(--f-ui); color: var(--muted); flex: 1 1 220px; max-width: 360px; }
+.nv-tema select { flex: 1; min-width: 0; font: .9rem var(--f-ui); color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 8px 12px; }
+.nv-ok { margin-left: auto; font: 600 .76rem var(--f-ui); border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; background: var(--surface); color: var(--muted); cursor: pointer; white-space: nowrap; }
+.nv-ok:hover { border-color: var(--accent); color: var(--accent); }
+.nv-ok[aria-pressed="true"] { background: var(--ok-soft); border-color: transparent; color: var(--ok); }
+.nov.feita { opacity: .72; } .nov.feita .nv-t { text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--ok) 60%, transparent); }
+.nv-fim { width: 100%; margin-top: 14px; }
+.nv-vazio { text-align: center; padding: 28px 16px; border: 1px dashed var(--line); border-radius: 18px; color: var(--muted); }
 </style>
 """
 
 JS = r'''function renderNov() {
-  const all = nvItens(), lidas = S.ajustes.nvLidas || [], tipoDe = n => n.tipo || "lei";
+  ensureAj(); const all = nvItens(), lidas = S.ajustes.nvLidas || [], feitas = S.ajustes.nvFeitas || [], tipoDe = n => n.tipo || "lei";
   const SEC = { lei: ["📜", "Leis", "Atualizações legislativas", "Só o que muda a rotina da Defensoria", "publicada em", "O que mudou"],
                 jur: ["⚖️", "Jurisprudência", "Temas repetitivos e julgados", "Teses fixadas e decisões recentes do STF e do STJ", "divulgado em", "O que foi decidido"] };
   const repetitivo = n => /\bTema\b|repercuss|repetitiv/i.test(n.lei);
@@ -33,13 +48,15 @@ JS = r'''function renderNov() {
   S.novTipo = tp;
   const base = por[tp], temas = [...new Set(base.flatMap(n => n.temas))].sort((a, b) => a.localeCompare(b, "pt"));
   if (S.novTema && !temas.includes(S.novTema)) S.novTema = "";
-  const f = S.novTema || "", list = base.filter(n => !f || n.temas.includes(f)).sort((a, b) => b.pub.localeCompare(a.pub));
+  const st = ["pend", "ok", "todas"].includes(S.novSt) ? S.novSt : "pend", doTema = base.filter(n => !S.novTema || n.temas.includes(S.novTema));
+  const nOk = doTema.filter(n => feitas.includes(n.id)).length, nPend = doTema.length - nOk;
+  const f = S.novTema || "", list = doTema.filter(n => st === "todas" || (st === "ok") === feitas.includes(n.id)).sort((a, b) => b.pub.localeCompare(a.pub));
   const naoLidas = arr => arr.filter(n => !lidas.includes(n.id)).length, s = SEC[tp];
   const ul = (arr) => `<ul class="nv-ul">${arr.map(x => `<li>${md(x)}</li>`).join("")}</ul>`;
   const card = n => `
-      <article class="nov"><details data-id="${n.id}">
+      <article class="nov${feitas.includes(n.id) ? " feita" : ""}"><details data-id="${n.id}">
         <summary>
-          <div class="nv-top"><span class="nv-lei">${esc(n.lei)}</span><span class="count">${s[4]} ${fmtISO(n.pub)}</span>${lidas.includes(n.id) ? "" : `<span class="badge new">novo</span>`}</div>
+          <div class="nv-top"><span class="nv-lei">${esc(n.lei)}</span><span class="count">${s[4]} ${fmtISO(n.pub)}</span>${lidas.includes(n.id) ? "" : `<span class="badge new">novo</span>`}<button class="nv-ok" data-nvok="${n.id}" aria-pressed="${feitas.includes(n.id)}" title="${feitas.includes(n.id) ? "Desmarcar" : "Marcar como concluída"}">${feitas.includes(n.id) ? "✓ Concluída" : "○ Concluir"}</button></div>
           <h3 class="nv-t">${esc(n.titulo)}</h3>
           <p class="nv-r">${md(n.resumo)}</p>
           <div class="nv-tags">${tp === "jur" && repetitivo(n) ? `<span class="chip rep">${/^STF/.test(n.lei) ? "Repercussão geral" : "Recurso repetitivo"}</span>` : ""}${n.temas.map(t => `<span class="chip">${esc(t)}</span>`).join("")}${(n.papeis || []).map(p => `<span class="chip role">${PAPEIS[p][0]} ${PAPEIS[p][1]}</span>`).join("")}</div>
@@ -51,6 +68,7 @@ JS = r'''function renderNov() {
           ${(n.jur || []).length ? `<h4>Jurisprudência e direitos humanos relacionados</h4>${ul(n.jur)}` : ""}
           <h4>Treine: certo ou errado?</h4>
           ${(n.treino || []).map(q => `<details class="qz"><summary>${md(q.q)}</summary><p class="qa ${q.a ? "ok" : "no"}"><b>${q.a ? "CERTO" : "ERRADO"}.</b> ${md(q.e.replace(/^(Certo|Errado)\.\s*/, ""))}</p></details>`).join("")}
+          <button class="btn${feitas.includes(n.id) ? "" : " primary"} nv-fim" data-nvok="${n.id}">${feitas.includes(n.id) ? "Desmarcar concluída" : "✓ Concluí: não mostrar mais"}</button>
           <p class="src" style="margin-top:12px">${esc((DECK.novidades || {}).fonte || "Resumos próprios: confira sempre o texto oficial.")}</p>
         </div>
       </details></article>`;
@@ -62,10 +80,20 @@ JS = r'''function renderNov() {
     <h2>Novidades</h2>
     ${por.jur.length && por.lei.length ? `<div class="nv-seg" role="tablist" aria-label="Seção">${["lei", "jur"].map(k => `<button role="tab" data-tp="${k}" aria-selected="${tp === k}">${SEC[k][0]} ${SEC[k][1]} <span class="n">${por[k].length}</span>${naoLidas(por[k]) ? `<span class="badge new">${naoLidas(por[k])}</span>` : ""}</button>`).join("")}</div>` : ""}
     <p class="sub"><b>${s[2]}.</b> ${s[3]}: ${plural(base.length, tp === "lei" ? "lei" : "decisão", tp === "lei" ? "leis" : "decisões")}${recente}. São resumos próprios: confira sempre o texto oficial.</p>
-    ${temas.length > 1 ? `<div class="nv-filters" role="group" aria-label="Filtrar por tema"><button class="fchip" data-t="" aria-pressed="${!f}">Todas</button>${temas.map(t => `<button class="fchip" data-t="${esc(t)}" aria-pressed="${f === t}">${esc(t)}</button>`).join("")}</div>` : ""}
-    ${list.length ? "" : `<p class="count">Nenhuma novidade neste tema.</p>`}
+    <div class="nv-barra"><div class="nv-prog"><i style="width:${doTema.length ? Math.round(100 * nOk / doTema.length) : 0}%"></i></div><span>${nOk} de ${doTema.length} concluídas</span></div>
+    <div class="nv-tools"><div class="nv-st" role="group" aria-label="Mostrar">${[["pend", "Pendentes", nPend], ["ok", "Concluídas", nOk], ["todas", "Todas", doTema.length]].map(([k, t, c]) => `<button data-st="${k}" aria-pressed="${st === k}">${t} <b>${c}</b></button>`).join("")}</div>
+      ${temas.length > 1 ? `<label class="nv-tema"><span>Tema</span><select id="nvTema"><option value="">Todos os temas</option>${temas.map(t => `<option ${f === t ? "selected" : ""}>${esc(t)}</option>`).join("")}</select></label>` : ""}</div>
+    ${list.length ? "" : `<div class="nv-vazio">${st === "pend" && doTema.length ? "🎉 Tudo concluído aqui. Novas leis e julgados aparecem como pendentes." : "Nada por aqui."}</div>`}
     ${corpo}`;
-  document.querySelectorAll(".fchip[data-t]").forEach(b => b.onclick = () => { S.novTema = b.dataset.t; renderNov(); });
+  $("#nvTema")?.addEventListener("change", e => { S.novTema = e.target.value; renderNov(); });
+  document.querySelectorAll(".nv-st [data-st]").forEach(b => b.onclick = () => { S.novSt = b.dataset.st; renderNov(); });
+  document.querySelectorAll("[data-nvok]").forEach(b => b.addEventListener("click", e => {
+    e.preventDefault(); e.stopPropagation(); ensureAj(); const id = b.dataset.nvok, a = S.ajustes;
+    a.nvFeitas = a.nvFeitas.includes(id) ? a.nvFeitas.filter(x => x !== id) : [...a.nvFeitas, id];
+    if (!a.nvLidas.includes(id)) a.nvLidas = [...a.nvLidas, id];
+    queue("ajustes"); updNavBadge(); const y = scrollY; renderNov(); scrollTo(0, y);
+    toast(a.nvFeitas.includes(id) ? "Concluída. Ela sai da lista de pendentes." : "Voltou para as pendentes.");
+  }));
   document.querySelectorAll(".nv-seg [data-tp]").forEach(b => b.onclick = () => { S.novTipo = b.dataset.tp; S.novTema = ""; renderNov(); });
   document.querySelectorAll(".nov details[data-id]").forEach(dt => dt.addEventListener("toggle", () => {
     if (!dt.open) return; ensureAj(); const id = dt.dataset.id;
