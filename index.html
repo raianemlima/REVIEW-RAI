@@ -1103,7 +1103,7 @@ function buzz(p) {
 }
 
 // ===================== app de iPhone (Capacitor): ponte nativa =====================
-const APP_VERSAO = "1.0.0", PRIVACY_URL = "https://raianemlima.github.io/REVIEW-RAI/privacidade.html";
+const APP_VERSAO = "1.0.0", PRIVACY_URL = "https://reviewdpe.com.br/privacidade.html";
 function isNative() { try { return !!(window.Capacitor && Capacitor.isNativePlatform && Capacitor.isNativePlatform()); } catch (e) { return false; } }
 function plug(n) { try { return isNative() && window.Capacitor.Plugins ? window.Capacitor.Plugins[n] || null : null; } catch (e) { return null; } }
 const lblLocal = () => { const k = contaCfg(); if (k && k.at) return "☁️ sincronizado na sua conta"; if (syncCfg()) return "☁️ sincronizado pelo GitHub"; return isNative() ? "salvo neste aparelho" : "salvo só neste navegador"; };

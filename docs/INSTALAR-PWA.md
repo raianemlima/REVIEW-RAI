@@ -2,7 +2,7 @@
 
 O Revisão DPE é um **PWA**: um site que se instala na tela inicial e abre como aplicativo, **sem App Store, sem Google Play e sem pagar nada**.
 
-**Endereço:** `https://raianemlima.github.io/REVIEW-RAI/` (envie este link por qualquer conversa; quem receber precisa da senha de acesso, enviada à parte).
+**Endereço:** `https://reviewdpe.com.br/` (envie este link por qualquer conversa; quem receber precisa da senha de acesso, enviada à parte).
 
 ## Instalar
 **iPhone (Safari):** Compartilhar (quadrado com seta) → **Adicionar à Tela de Início** → Adicionar.
