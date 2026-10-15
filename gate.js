@@ -124,7 +124,7 @@ try { const t = localStorage.getItem("revisao-dpe-tema"); if (t === "claro" || t
     if (msg !== undefined) { st.msg = msg; st.ok = !!ok; }
     const [intro, corpo, links] = TELAS[st.tela]();
     $("#main").innerHTML = `<form id="gate" novalidate style="max-width:380px;margin:48px auto 0;padding:0 16px;display:grid;gap:12px">
-      <h1 style="font:600 22px var(--f-ui);margin:0">Revisão Espaçada DPE</h1>
+      <h1 style="font:600 22px var(--f-ui);margin:0">Review DPE</h1>
       <p style="margin:0;color:var(--muted)">${intro}</p>${corpo}
       <p id="gmsg" role="alert" style="margin:0;color:${st.ok ? "var(--ink)" : "var(--bad)"}">${esc(st.msg)}</p>
       <div style="display:grid;gap:2px;justify-items:start">${links}</div></form>`;
