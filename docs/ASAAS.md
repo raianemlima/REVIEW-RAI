@@ -50,7 +50,7 @@ Painel do Supabase: https://supabase.com/dashboard/project/hlenhmgnqqnkjqmntnpz
 
 **7. Autenticação do Supabase.** Menu **Authentication**:
    - **Sign In / Providers → Email:** "Confirm email" **ligado**; tamanho mínimo da senha 8; ligue **"Prevent use of leaked passwords"** (se o seu plano tiver).
-   - **URL Configuration:** Site URL = `https://raianemlima.github.io/REVIEW-RAI/`; em Redirect URLs deixe só esse endereço.
+   - **URL Configuration:** Site URL = `https://reviewdpe.com.br/`; em Redirect URLs deixe só esse endereço.
    - **Rate Limits:** mantenha os padrões (não aumente o de e-mails sem SMTP próprio).
    - **Emails → SMTP Settings:** para vender, configure um SMTP próprio (Resend, Brevo, Amazon SES). O do Supabase manda poucos e-mails por hora e os códigos de login vão parar no spam ou não chegam.
 

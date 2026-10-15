@@ -1,7 +1,7 @@
 # Política de segurança
 
 ## Versões com suporte
-Só a versão publicada em https://raianemlima.github.io/REVIEW-RAI/ recebe correções.
+Só a versão publicada em https://reviewdpe.com.br/ recebe correções.
 
 ## Como relatar uma falha
 Não abra uma issue pública. Use **Security → Report a vulnerability** neste repositório (aviso privado) ou escreva para o e-mail de suporte do app.
