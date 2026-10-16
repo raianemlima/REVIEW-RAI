@@ -3105,6 +3105,8 @@ if ("serviceWorker" in navigator && !isNative()) {
     if (reg.waiting) avisa(reg.waiting);
     reg.addEventListener("updatefound", () => { const w = reg.installing; if (w) w.addEventListener("statechange", () => { if (w.state === "installed") avisa(w); }); });
     setInterval(() => reg.update().catch(() => {}), 3600000);
+    let ultChecagem = Date.now();   // ao voltar para o app (celular), procura versão nova se faz mais de 2 minutos
+    document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible" && Date.now() - ultChecagem > 120000) { ultChecagem = Date.now(); reg.update().catch(() => {}); } });
   }).catch(() => {});
   navigator.serviceWorker.addEventListener("controllerchange", () => { if (!tinhaSW || recarregou) return; recarregou = true; location.reload(); });
 }
