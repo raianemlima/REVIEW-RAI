@@ -1,12 +1,12 @@
 // Webhook do Asaas: a cada cobrança paga, libera (ou renova) o e-mail do cliente em public.liberados; estorno ou chargeback corta.
 // Publicar: supabase functions deploy asaas-webhook --no-verify-jwt   (o Asaas não manda JWT; a proteção é o token abaixo)
-// Segredos: ASAAS_API_KEY, ASAAS_WEBHOOK_TOKEN e, opcionais, ASAAS_API_URL, SB_SECRET_KEY, TOLERANCIA_DIAS, AVULSO_MESES. Passo a passo em docs/ASAAS.md.
+// Segredos: ASAAS_API_KEY, ASAAS_WEBHOOK_TOKEN e, opcionais, ASAAS_API_URL, SB_SECRET_KEY, TOLERANCIA_DIAS, AVULSO_MESES, ANUAL_VALOR_MIN. Passo a passo em docs/ASAAS.md.
 // Arquivo único de propósito: dá para colar inteiro no editor de Edge Functions do painel do Supabase.
 
 // ---- regras (testadas em index.test.ts) ----
 // A decisão usa a cobrança buscada na API do Asaas, nunca o corpo do webhook: assim um evento forjado ou fora de ordem não libera ninguém.
 
-export type Pagamento = { id: string; status: string; customer: string; subscription?: string | null; dueDate: string };
+export type Pagamento = { id: string; status: string; customer: string; subscription?: string | null; installment?: string | null; dueDate: string; value?: number };
 export type Assinatura = { cycle: string } | null;
 export type Decisao = { acao: "liberar"; ate: Date } | { acao: "cortar" } | { acao: "ignorar" };
 
@@ -16,13 +16,30 @@ const MESES: Record<string, number> = { MONTHLY: 1, BIMONTHLY: 2, QUARTERLY: 3, 
 const DIAS: Record<string, number> = { WEEKLY: 7, BIWEEKLY: 14 };
 
 // Acesso pago vai do vencimento da cobrança até o fim do ciclo, mais uma folga para o próximo pagamento compensar (boleto leva dias).
-export function decidir(p: Pagamento, a: Assinatura, opc: { toleranciaDias: number; avulsoMeses: number }): Decisao {
+// Plano anual à vista (R$ 130) vendido como cobrança avulsa: vale 12 meses quando o valor chega a ANUAL_VALOR_MIN (padrão R$ 100).
+export function decidir(p: Pagamento, a: Assinatura, opc: { toleranciaDias: number; avulsoMeses: number; anualValorMin?: number }): Decisao {
   if (ESTORNADO.has(p.status)) return { acao: "cortar" };
   if (!PAGO.has(p.status) || !/^\d{4}-\d{2}-\d{2}$/.test(p.dueDate || "")) return { acao: "ignorar" };
   const ate = new Date(p.dueDate + "T23:59:59-03:00");
   const ciclo = a ? a.cycle : "";
   if (DIAS[ciclo]) ate.setUTCDate(ate.getUTCDate() + DIAS[ciclo]);
-  else ate.setUTCMonth(ate.getUTCMonth() + (MESES[ciclo] || opc.avulsoMeses));
+  else ate.setUTCMonth(ate.getUTCMonth() + (MESES[ciclo] || (!a && opc.anualValorMin && (p.value ?? 0) >= opc.anualValorMin ? 12 : opc.avulsoMeses)));
+  ate.setUTCDate(ate.getUTCDate() + opc.toleranciaDias);
+  return { acao: "liberar", ate };
+}
+
+// Parcelado (ex.: anual de R$ 130 em até 10x): o acesso cobre a fração já paga do período, contada a partir da 1ª parcela.
+// No cartão todas as parcelas são confirmadas juntas, então libera o período inteiro; no boleto, vai liberando conforme paga.
+export function decidirParcelado(p: Pagamento, parcelas: Pagamento[], opc: { toleranciaDias: number; avulsoMeses: number; anualValorMin?: number }): Decisao {
+  if (ESTORNADO.has(p.status)) return { acao: "cortar" };
+  if (!PAGO.has(p.status)) return { acao: "ignorar" };
+  const lista = parcelas.length ? parcelas : [p], datas = lista.map(x => x.dueDate).filter(d => /^\d{4}-\d{2}-\d{2}$/.test(d || "")).sort();
+  if (!datas.length) return { acao: "ignorar" };
+  const total = lista.reduce((a, x) => a + (+(x.value ?? 0) || 0), 0), pagas = lista.filter(x => PAGO.has(x.status)).length || 1;
+  const meses = opc.anualValorMin && total >= opc.anualValorMin ? 12 : lista.length * opc.avulsoMeses;
+  const ate = new Date(datas[0] + "T23:59:59-03:00");
+  if (pagas >= lista.length) ate.setUTCMonth(ate.getUTCMonth() + meses);
+  else ate.setUTCDate(ate.getUTCDate() + Math.round(meses * 30.44 * pagas / lista.length));
   ate.setUTCDate(ate.getUTCDate() + opc.toleranciaDias);
   return { acao: "liberar", ate };
 }
@@ -79,7 +96,9 @@ if (typeof Deno !== "undefined") Deno.serve(async (req) => {
   try {
     const pag = await asaas<Pagamento>(`/payments/${encodeURIComponent(pid)}`);
     const assinatura = pag.subscription ? await asaas<Assinatura>(`/subscriptions/${encodeURIComponent(pag.subscription)}`) : null;
-    const d = decidir(pag, assinatura, { toleranciaDias: +env("TOLERANCIA_DIAS", "3"), avulsoMeses: +env("AVULSO_MESES", "1") });
+    const opc = { toleranciaDias: +env("TOLERANCIA_DIAS", "3"), avulsoMeses: +env("AVULSO_MESES", "1"), anualValorMin: +env("ANUAL_VALOR_MIN", "100") };
+    const parcelas = !pag.subscription && pag.installment ? (await asaas<{ data: Pagamento[] }>(`/payments?installment=${encodeURIComponent(pag.installment)}&limit=100`)).data || [] : null;
+    const d = parcelas ? decidirParcelado(pag, parcelas, opc) : decidir(pag, assinatura, opc);
     if (d.acao === "ignorar") return resposta("ignorado");
     const cliente = await asaas<{ email?: string }>(`/customers/${encodeURIComponent(pag.customer)}`);
     const email = normalizarEmail(cliente.email);
