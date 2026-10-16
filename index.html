@@ -2308,15 +2308,17 @@ function onboarding(force) {
 // ---- gesto de arrastar o cartão ----
 function enableSwipe(card, onLeft, onRight) {
   let x0 = null, dx = 0;
-  card.addEventListener("pointerdown", e => { if (e.target.closest("button,textarea,input,a,summary,select,label")) return; x0 = e.clientX; dx = 0; card.style.transition = "none"; });
+  card.addEventListener("pointerdown", e => { if (e.pointerType === "mouse") return;   // no computador há botões e teclas 1–4; arrastar com o mouse é selecionar texto
+    if (e.target.closest("button,textarea,input,a,summary,select,label")) return; x0 = e.clientX; dx = 0; card.style.transition = "none"; });
   card.addEventListener("pointermove", e => {
     if (x0 === null) return; dx = e.clientX - x0; if (Math.abs(dx) < 8) return;
     try { card.setPointerCapture(e.pointerId); } catch (_) {}
-    card.style.transform = `translateX(${dx}px) rotate(${dx / 30}deg)`; card.dataset.sw = dx > 50 ? "r" : dx < -50 ? "l" : "";
+    card.style.transform = `translateX(${dx}px) rotate(${dx / 30}deg)`; card.dataset.sw = dx > 50 && onRight ? "r" : dx < -50 ? "l" : "";
   });
   const end = () => {
     if (x0 === null) return; const d = dx; x0 = null; card.style.transition = "transform .18s, opacity .18s";
-    if (d > 110) { card.style.transform = "translateX(120%)"; card.style.opacity = "0"; setTimeout(onRight, 140); }
+    const sel = window.getSelection && window.getSelection(); if (sel && !sel.isCollapsed) { card.style.transform = ""; card.dataset.sw = ""; return; }   // selecionando texto: não avalia
+    if (d > 110 && onRight) { card.style.transform = "translateX(120%)"; card.style.opacity = "0"; setTimeout(onRight, 140); }   // sem onRight: volta ao lugar
     else if (d < -110) { card.style.transform = "translateX(-120%)"; card.style.opacity = "0"; setTimeout(onLeft, 140); }
     else { card.style.transform = ""; card.dataset.sw = ""; }
   };
@@ -3174,18 +3176,36 @@ function current() { return S.session && S.session.ui ? byId[S.session.ui.id] : 
 function reveal(extra) {
   const u = S.session.ui;
   if (extra && extra.correct === true) { buzz(15); snd("ok"); } else if (extra && extra.correct === false) { buzz([30, 50, 30]); snd("no"); }
+  if (!extra && u.flipMs == null) u.flipMs = Date.now() - u.t0;   // tempo até virar o cartão (aviso de virar rápido)
   Object.assign(u, extra || {}, { revealed: true, fresh: true }); renderSession();
 }
 function answer(g) {
   const s = S.session, u = s.ui; if (!u || !u.revealed) return;
+  const st0 = S.cards[u.id], t0 = today(), eraRevisao = !!st0;
+  const r0 = st0 && !st0.x && st0.last < t0 ? retrievability(t0 - st0.last, st0.s) : null;   // chance de lembrar antes desta resposta
+  const semRepetir = s.modo === "simulado" || s.modo === "tese2f" || byId[u.id].tipo === "multipla_escolha";   // estes voltam nas próximas revisões, não na mesma sessão
+  const branco = s.modo === "simulado" && u.picked === "B";   // "Em branco" do simulado (na múltipla escolha, B é alternativa)
+  if (s.sugPausa && s.pausaVista) { s.sugPausa = null; s.ativoBase = s.ativo || 0; s.ult = []; }   // seguiu sem pausar: vale como "Continuar"
   rate(u.id, g); s.results[g]++; buzz(8);
-  if (u.conf != null) { ensureAj(); const ok = g > 1 ? 1 : 0; S.ajustes.calib = [...S.ajustes.calib, [Date.now(), u.id, u.conf, ok]].slice(-4000); queue("ajustes"); if (u.conf === 2 && !ok) toast("Erro com certeza: ele volta mais cedo para você corrigir."); }
+  if (r0 != null && g > 1) { s.fortes = (s.fortes || 0) + 1; if (r0 < 0.7) s.resgates = (s.resgates || 0) + 1; }   // memórias fortalecidas (só na sessão)
+  if (eraRevisao && u.flipMs != null && u.flipMs < 2500 && g <= 2 && !s.avisoRapido && (s.rapidos = (s.rapidos || 0) + 1) >= 3) s.avisoRapido = true;   // virou rápido sem lembrar
+  if (u.conf != null && !branco) { ensureAj(); const ok = g > 1 ? 1 : 0; S.ajustes.calib = [...S.ajustes.calib, [Date.now(), u.id, u.conf, ok]].slice(-4000); queue("ajustes"); const cc = (s.cal ||= [[0, 0], [0, 0], [0, 0]])[u.conf]; if (cc) { cc[0]++; cc[1] += ok; } if (u.conf === 2 && !ok) toast(semRepetir ? "Erro com certeza: ele volta nas próximas revisões para você conferir se a correção ficou." : "Erro com certeza: ele volta ainda nesta sessão para você conferir se a correção ficou."); }   // em branco não é acerto nem erro de uma resposta dada
   if (s.modo === "tese2f") { ensureAj(); const t2 = (S.ajustes.t2f ||= []); t2.push([Date.now(), u.id, u.secs || 0, (u.chk || []).filter(Boolean).length, u.typed ? u.typed.length : 0]); S.ajustes.t2f = t2.slice(-800); queue("ajustes"); }
-  if (g === 1 && s.modo !== "simulado") { s.again++; s.queue.splice(Math.min(s.queue.length, s.pos + (u.conf === 2 ? 2 : 4)), 0, u.id); s.total++; } // volta na própria sessão
-  s.pendErr = g === 1 ? u.id : null;
-  s.done++; s.pos++; checkDesafio(); checkConq(); newCardUI(); renderSession();
+  if (g === 1 && !semRepetir) {   // volta na própria sessão, de 4 a 10 cartões depois
+    const resto = s.queue.length - s.pos - 1, gap = Math.min(resto, Math.max(4, Math.min(10, Math.floor(resto / 2))));
+    s.again++; s.queue.splice(s.pos + 1 + gap, 0, u.id); s.total++;
+  }
+  s.pendErr = g === 1 && !branco && !u.motivo && (u.correct !== false || s.modo === "simulado") ? u.id : null;   // com correção automática, o motivo já foi perguntado no verso
+  s.done++; s.pos++;
+  if (!["simulado", "errados", "hiper", "sanguessuga", "motivo", "pares", "noite"].includes(s.modo)) {   // sugestão de pausa
+    s.ativo = (s.ativo || 0) + Math.min(Date.now() - u.t0, 120000);   // tempo ativo, ignora o app parado
+    if (eraRevisao) { (s.ult ||= []).push(g === 1 ? 1 : 0); if (s.ult.length > 10) s.ult.shift(); }
+    const tempo = s.ativo - (s.ativoBase || 0) > 25 * 60000, erros = s.done >= 20 && (s.ult || []).length === 10 && s.ult.reduce((a, b) => a + b, 0) >= 5;
+    if (!s.sugPausa && (tempo || erros)) { s.sugPausa = tempo ? "tempo" : "erros"; s.pausaVista = false; }
+  }
+  checkDesafio(); checkConq(); newCardUI(); renderSession();
 }
-function simNext() { const s = S.session, u = s.ui; if (!u || !u.revealed) return; if (u.picked === "B") s.sim.b++; else if (u.correct) s.sim.c++; else s.sim.e++; answer(u.picked === "B" ? 2 : u.correct ? 3 : 1); }
+function simNext() { const s = S.session, u = s.ui; if (!u || !u.revealed) return; if (u.picked === "B") s.sim.b++; else if (u.correct) s.sim.c++; else s.sim.e++; answer(u.correct ? 3 : 1); }   // em branco (correct = null) = não lembrou: volta logo; no placar Cebraspe continua sem descontar
 function parseMC(frente) {
   const lines = frente.split("\n"); const stem = [], opts = [];
   for (const l of lines) { const m = l.match(/^([A-E])\)\s*(.*)$/); if (m) opts.push({ k: m[1], t: m[2] }); else stem.push(l); }
@@ -3718,6 +3738,28 @@ function renderHoje() {
   $("#fsave")?.addEventListener("click", () => { const v = $("#fdate").value; if (v) { S.ajustes.prova = v; queue("ajustes"); renderHoje(); } });
 }
 
+function sugNota(u, s) {   // nota sugerida: botão destacado e espaço/Enter
+  if (s.modo === "tese2f") { const n = (u.chk || []).filter(Boolean).length; return n >= 3 ? 3 : n === 2 ? 2 : 1; }
+  return u.correct === false ? 1 : u.correct === true ? (u.conf === 0 ? 2 : 3) : 0;   // acerto no chute não é memória
+}
+function calibSessaoHtml(s) {   // confiança × acerto só desta sessão (não grava nada)
+  const k = s.cal; if (!k || k[0][0] + k[1][0] + k[2][0] < 5) return "";
+  const L = ["Chutei", "Acho", "Tenho certeza"], txt = [2, 1, 0].filter(i => k[i][0]).map(i => `“${L[i]}”: ${k[i][1]} de ${k[i][0]} certos`).join(" · ");
+  const obs = k[2][0] >= 5 ? (k[2][1] / k[2][0] < .85 ? "Algumas certezas falharam; elas já estão em Erros com certeza." : "Sua certeza bateu com o acerto.") : "";
+  return `<p class="sub">Confiança × acerto nesta sessão: ${txt}. ${obs}</p>`;
+}
+let pausaTimer = null;
+function renderPausa(s) {   // pausa curta sugerida no meio da sessão
+  clearInterval(pausaTimer);
+  const resta = () => Math.max(0, Math.ceil((s.pausaAte - Date.now()) / 1000));
+  $("#main").innerHTML = `<div class="done"><p class="big">Pausa</p><p class="sub">Levante, beba água, olhe pela janela. Longe da tela, o cérebro organiza o que acabou de estudar.</p>
+    <p class="big mono" id="pausaTm">${resta() ? fmtMS(resta()) : "Pausa concluída"}</p>
+    <div class="row" style="justify-content:center"><button class="btn primary" id="pausaVolta">Voltar ao estudo</button><button class="btn ghost" id="pausaFim">Encerrar sessão</button></div></div>`;
+  $("#pausaVolta").onclick = retomarSessao;
+  $("#pausaFim").onclick = () => { clearInterval(pausaTimer); stopSimTimer(); S.session = null; flush(); go("hoje"); };
+  pausaTimer = setInterval(() => { const el = $("#pausaTm"); if (S.tab !== "sessao" || S.session !== s || !s.pausaAte || !el) return clearInterval(pausaTimer); const r = resta(); el.textContent = r ? fmtMS(r) : "Pausa concluída"; if (!r) clearInterval(pausaTimer); }, 500);
+}
+function retomarSessao() { const s = S.session; if (!s) return; clearInterval(pausaTimer); s.sugPausa = null; s.ativoBase = s.ativo || 0; s.ult = []; s.pausaAte = 0; if (s.ui) s.ui.t0 = Date.now(); renderSession(); }
 function renderSession() {
   if (S.tab !== "sessao") return;
   const s = S.session;
@@ -3730,39 +3772,45 @@ function renderSession() {
     let liq = 0, pctSim = 0;
     if (sim) { liq = s.sim.c - s.sim.e; pctSim = Math.max(0, Math.round(liq / Math.max(1, s.queue.length) * 100)); if (!s.finalized) { s.finalized = true; S.ajustes.simulados = (S.ajustes.simulados || 0) + 1; S.ajustes.simBest = Math.max(S.ajustes.simBest || 0, pctSim); queue("ajustes"); checkConq(); } }
     const conf = tot ? [...Array(28)].map((_, i) => `<i style="left:${Math.round(Math.random() * 100)}%;background:${["var(--accent)", "var(--amber)", "var(--info)", "var(--ok)", "var(--bad)"][i % 5]};animation-delay:${(Math.random() * .8).toFixed(2)}s"></i>`).join("") : "";
-    const titulo = sim ? (pctSim >= 70 ? "Nota de aprovação!" : "Simulado concluído") : ac >= .8 ? "Excelente sessão!" : ac >= .5 ? "Boa sessão, continue assim!" : "Sessão concluída: o que errou volta para fixar";
+    const titulo = sim ? (pctSim >= 70 ? "Meta de 70% líquido atingida!" : "Simulado concluído") : ac >= .8 ? "Excelente sessão!" : ac >= .5 ? "Boa sessão, continue assim!" : "Sessão concluída: o que errou volta para fixar";
     $("#main").innerHTML = `${s.pendErr ? errBarHtml() : ""}<div class="done"><div class="conf" aria-hidden="true">${conf}</div>
       <div class="onb-art">${mascote(nv.stage, "feliz", 130)}</div>
       <p class="big">${titulo}</p>
-      ${sim ? `<p class="sub">Critério Cebraspe: cada erro anula um acerto.<br><b>${s.sim.c} certos − ${s.sim.e} errados = ${liq}</b> de ${s.queue.length} · ${s.sim.b} em branco${s.timeout ? " · tempo esgotado" : ""}</p>` : ""}
+      ${sim ? `<p class="sub">Critério Cebraspe: cada erro anula um acerto.<br><b>${s.sim.c} certos − ${s.sim.e} errados = ${liq}</b> de ${s.queue.length} · ${s.sim.b} em branco${s.timeout ? " · tempo esgotado" : ""}</p><p class="count">Os itens errados e os deixados em branco voltam nas próximas revisões.</p>` : ""}
       <div class="stats3"><div><b>${tot}</b><span>respostas</span></div><div><b>+${ganho}</b><span>XP</span></div><div><b>🔥 ${st.n}</b><span>${st.n === 1 ? "dia seguido" : "dias seguidos"}</span></div></div>
+      ${s.fortes ? `<p class="sub">🧠 Você fortaleceu ${plural(s.fortes, "memória", "memórias")}${s.resgates ? `, e ${s.resgates} ${s.resgates === 1 ? "estava quase esquecida" : "estavam quase esquecidas"}` : ""}. Agora ${s.fortes === 1 ? "ela dura" : "elas duram"} mais até a próxima revisão.</p>` : ""}
+      ${calibSessaoHtml(s)}
       <div class="xp" style="max-width:320px;margin:10px auto 0"><div class="xp-top"><span>${esc(nv.nome)} · nível ${nv.lvl}</span><span class="mono">${nv.x - nv.lo}/${nv.hi - nv.lo}</span></div><div class="xpbar light"><i style="width:${Math.round(nv.pct * 100)}%"></i></div></div>
+      ${s.modo === "tese2f" && r[1] ? `<p class="sub">Os casos fracos voltam nas próximas revisões para você reescrever com calma.</p>` : ""}
       <p class="sub" style="margin-top:12px">${amanha ? `Amanhã voltam ${plural(amanha, "cartão", "cartões")} para você reforçar.` : "Volte amanhã para continuar."}</p>
       <div class="row" style="justify-content:center"><button class="btn primary" id="toHoje">Voltar para Hoje</button><button class="btn" id="maisModos">Outro modo</button><button class="btn" id="shareBtn">Compartilhar</button></div></div>`;
     $("#toHoje").onclick = () => go("hoje"); $("#maisModos").onclick = () => { S.session = null; renderSession(); }; $("#shareBtn").onclick = compartilhar; bindErrBar(); flush(); sincronizarSuave(true);
     if (tot && !s.celebrated) { s.celebrated = true; buzz([20, 40, 20]); if ([3, 7, 14, 30, 60, 100].includes(st.n)) toast(`🔥 ${st.n} dias seguidos! Sequência e tanto.`); }
     return;
   }
+  if (s.pausaAte) return renderPausa(s);
   const u = s.ui, c = byId[u.id], st = S.cards[u.id], sim = s.modo === "simulado", col = discColor(c.disc);
   const isNew = !st;
   const pct = Math.round(s.done / Math.max(1, s.total) * 100);
+  const t2f = s.modo === "tese2f";
+  const confHtml = !u.revealed && !t2f && S.ajustes.confOn !== false ? `<div class="conf-row" id="confRow"><span>Sua confiança:</span>${[[2, "Tenho certeza"], [1, "Acho"], [0, "Chutei"]].map(([v, l]) => `<button type="button" data-conf="${v}" aria-pressed="${u.conf === v}">${l}</button>`).join("")}</div>` : "";
+  const confAntes = c.tipo === "multipla_escolha" || c.tipo === "pegadinha" || c.frente.includes("____");   // aqui os botões de resposta já revelam: a confiança vem antes deles
   let body = "";
   if (c.tipo === "multipla_escolha") {
     const mc = parseMC(c.frente), right = correctMC(c);
-    body = `<p class="front">${esc(mc.stem)}</p><div class="opts">${mc.opts.map(o => {
+    body = `<p class="front">${esc(mc.stem)}</p>${confHtml}<div class="opts">${mc.opts.map(o => {
       let cls = ""; if (u.revealed) { if (o.k === right) cls = "right"; else if (o.k === u.picked) cls = "wrong"; }
       return `<button class="opt ${cls}" data-k="${o.k}" ${u.revealed ? "disabled" : ""}><span class="k">${o.k}</span><span>${esc(o.t)}</span></button>`;
     }).join("")}</div>`;
   } else if (c.tipo === "pegadinha") {
-    body = `<p class="front">${esc(c.frente.replace(/^Certo ou errado(\s*\([^)]*\))?:\s*/i, ""))}</p>
+    body = `<p class="front">${esc(c.frente.replace(/^Certo ou errado(\s*\([^)]*\))?:\s*/i, ""))}</p>${confHtml}
       ${u.revealed ? "" : `<div class="ce"><button class="btn" data-ce="C">Certo <span class="mono count">C</span></button><button class="btn" data-ce="E">Errado <span class="mono count">E</span></button>${sim ? `<button class="btn ghost" data-ce="B">Em branco <span class="mono count">B</span></button>` : ""}</div>`}`;
   } else if (c.frente.includes("____")) {
-    body = `<p class="front">${esc(c.frente).replace(/_{4,}/g, '<span class="blank"></span>')}</p>
+    body = `<p class="front">${esc(c.frente).replace(/_{4,}/g, '<span class="blank"></span>')}</p>${confHtml}
       ${u.revealed ? "" : `<form class="fill" id="fill"><input id="typed" autocomplete="off" placeholder="Digite o que falta (opcional)"><button class="btn" type="submit">Conferir</button></form>`}`;
   } else {
     body = `<p class="front">${esc(c.frente)}</p>`;
   }
-  const t2f = s.modo === "tese2f";
   if (t2f && !u.revealed) {
     const left = s.limite - Math.floor((Date.now() - u.t0) / 1000);
     body += `<div class="t2f-box"><div class="t2f-bar"><span class="count">Escreva: fundamento legal, tese e providência processual.</span><span class="t2f-tm ${left < 0 ? "over" : ""}" id="t2f">${fmtMS(left)}</span></div>
@@ -3776,15 +3824,21 @@ function renderSession() {
     const prev = [1, 2, 3, 4].map(g => { const n = proximo(st, g, today(), u.id); return n.due - today(); });
     const sugg = u.correct === false ? 1 : u.correct === true ? 3 : 0;
     const fonteSec = c.fonte && /secund/i.test(c.fonte);
-    const nchk = (u.chk || []).filter(Boolean).length;
-    const sugg2 = t2f ? (nchk >= 3 ? 3 : nchk === 2 ? 2 : 1) : sugg;
-    const hiper = u.conf === 2 && (u.correct === false) ? `<div class="hiper">⚠️ <b>Você tinha certeza e errou.</b> É justamente o erro que mais se corrige quando se presta atenção agora: leia a resposta e o porquê com calma.</div>` : u.conf === 2 && u.correct == null ? `<p class="count" style="margin:0 0 6px">Você marcou “tenho certeza”. Se errou, avalie com “Errei”: o cartão volta mais cedo.</p>` : "";
+    const sugg2 = sugNota(u, s);
+    const lac = c.frente.includes("____"), vered = u.correct === false && lac ? `<div class="verdict no">Não bateu com o gabarito</div><p class="count" style="margin:0 0 6px">A correção da lacuna é aproximada. Se disse o mesmo com outras palavras, avalie como “Bom”.</p>` : verdict;
+    const chute = u.correct === true && u.conf === 0 && !sim ? `<p class="count" style="margin:0 0 6px">Acertou no chute. “Difícil” traz o cartão de volta mais cedo, para virar memória de verdade.</p>` : "";
+    const hiper = u.conf === 2 && (u.correct === false) ? `<div class="hiper">⚠️ <b>Você tinha certeza e errou.</b> É justamente o erro que mais se corrige quando se presta atenção agora: leia a resposta e o porquê com calma.</div>` : u.conf === 2 && u.correct == null && !sim ? `<p class="count" style="margin:0 0 6px">Você marcou “tenho certeza”. Se errou, avalie com “Errei”: o cartão volta ainda nesta sessão.</p>` : "";
+    const sang = st && !st.x && (st.lapses || 0) >= 4 && u.correct !== true && !nota && !sim && !t2f;   // sanguessuga: convite a criar uma pista própria
+    const sangHtml = sang ? `<div class="hiper">🩸 <b>Este cartão já escapou ${st.lapses} vezes.</b> Repetir do mesmo jeito não tem resolvido. Crie uma pista sua: um exemplo, uma imagem, a diferença para o instituto parecido. <button class="btn small" id="sangDica">📝 Escrever minha dica</button></div>` : "";
+    const whyFechado = st && !st.x && st.s >= 21 && (st.lapses || 0) <= 1 && u.correct !== false && !t2f && !sim;   // cartão maduro: tente explicar antes de abrir
+    const errMot = u.correct === false && !sim ? `<div class="errbar" style="margin:10px 0"><span>${lac ? "Se errou, por quê?" : "Por que errou?"}</span><div>${Object.entries(MOTIVOS).map(([k, v]) => `<button type="button" data-mi="${k}" aria-pressed="${u.motivo === k}"${u.motivo === k ? ' style="border-color:var(--accent);color:var(--accent)"' : ""}>${v[0]} ${v[1]}</button>`).join("")}</div>${u.motivo ? `<p class="count" style="margin:4px 0 0">${esc(MOTIVOS[u.motivo][2])}</p>` : ""}</div>` : "";
     const pares = paresDe(u.id);
-    back = `<div class="back">${hiper}${verdict}
+    back = `<div class="back">${hiper}${sangHtml}${vered}${chute}
       ${t2f ? `<p class="yours">Você escreveu em <b>${fmtMS(u.secs || 0)}</b>${u.secs > s.limite ? " (passou do tempo)" : ""}:</p>${u.typed ? `<p class="answer" style="white-space:pre-wrap;font-size:.95rem;opacity:.85">${esc(u.typed)}</p>` : `<p class="count">(nada escrito)</p>`}` : u.typed ? `<p class="yours">Você escreveu: <b>${esc(u.typed)}</b></p>` : ""}
       ${t2f ? `<p class="count" style="margin:10px 0 0"><b>Gabarito</b></p>` : ""}
       <p class="answer">${hl(c.verso)}</p>
-      ${c.porque ? `<p class="why">${hl(c.porque)}</p>` : ""}
+      ${c.porque ? (whyFechado ? `<details class="whyd"${u.whyOpen ? " open" : ""}><summary style="cursor:pointer;color:var(--muted);font-size:.9rem;margin:0 0 8px">💡 Por quê? Explique para si antes de abrir</summary><p class="why">${hl(c.porque)}</p></details>` : `<p class="why">${hl(c.porque)}</p>`) : ""}
+      ${errMot}
       ${t2f ? `<div class="chk"><b>Autoavaliação: o que a sua resposta trouxe?</b>${["Fundamento legal (artigos, súmulas, precedentes)", "Tese defensiva (o argumento central)", "Providência processual (pedido, recurso, incidente)"].map((x, i) => `<label><input type="checkbox" data-chk="${i}" ${u.chk[i] ? "checked" : ""}><span>${x}</span></label>`).join("")}</div>` : ""}
       ${nota ? `<div class="mynote">📝 ${esc(nota)}</div>` : ""}
       ${cons.length ? conceitosHtml(cons, isNew || u.correct === false || u.conceptOpen) : ""}
@@ -3792,16 +3846,18 @@ function renderSession() {
       ${!sim ? `<div class="pairbox" style="border-style:none;padding:0">${u.pairing ? `<input id="pairQ" type="search" placeholder="Com qual cartão você confundiu? Busque uma palavra…" value="${esc(u.pairQ || "")}" style="width:100%;font:.95rem var(--f-ui);padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)"><div class="pairres">${pairBusca(c, u.pairQ).map(o => `<button data-pair="${o.id}">${esc((o.tipo === "multipla_escolha" ? parseMC(o.frente).stem : o.frente).slice(0, 160))}</button>`).join("")}</div>` : `<button class="btn small ghost" id="pairBtn">🧩 Confundi com outro cartão</button>`}</div>` : ""}
       <p class="src">${esc(c.origem)}${c.vdata ? ` · ${esc(c.vdata.split("-").reverse().join("/"))}` : ""}${fonteSec ? ` · <span class="sec">fonte secundária</span>` : ""}</p>
       ${sim ? `<div class="ce"><button class="btn primary" id="nextSim" style="width:100%">Próxima →</button></div>` :
-      `<div class="rate">${[1, 2, 3, 4].map(g => `<button class="g${g} ${g === (typeof sugg2 === "number" ? sugg2 : sugg) ? "sugg" : ""}" data-g="${g}">${GRADES[g]}<small>${prev[g - 1] === 1 ? "amanhã" : prev[g - 1] + " dias"}${g === 1 ? " · e hoje" : ""}</small></button>`).join("")}</div>
+      `<div class="rate">${[1, 2, 3, 4].map(g => `<button class="g${g} ${g === (typeof sugg2 === "number" ? sugg2 : sugg) ? "sugg" : ""}" data-g="${g}">${GRADES[g]}<small>${prev[g - 1] === 1 ? "amanhã" : prev[g - 1] + " dias"}${g === 1 && !t2f && c.tipo !== "multipla_escolha" ? " · e hoje" : ""}</small></button>`).join("")}</div>
       <p class="swipehint">← arraste: errei · bom: arraste →</p>`}
     </div>`;
   }
   const fl = S.flags[u.id] && S.flags[u.id].ativo;
   const cls = u.revealed ? (u.fresh ? "flip" : "") : "enter"; u.fresh = false;
+  const dicaPausa = s.sugPausa && !u.revealed; if (dicaPausa) s.pausaVista = true;
   $("#main").innerHTML = `
     ${s.pendErr ? errBarHtml() : ""}
     <div class="progress"><span class="mono">${s.done}/${s.total}</span><div class="track"><i style="width:${pct}%"></i></div>${sim ? `<span class="mono tm" id="tm">20:00</span>` : ""}<button class="btn small ghost" id="endS">Encerrar</button></div>
  ${s.done === 0 && !u.revealed && MODO_METODO[s.modo] ? metodoMini(MODO_METODO[s.modo]) : ""}
+    ${dicaPausa ? `<div class="tip" style="margin:8px 0" role="status"><span>💡</span><div><b>${{ tempo: "Mais de 25 minutos de foco.", erros: "Vários erros seguidos: pode ser cansaço.", ds: "Distração costuma ser sinal de cansaço." }[s.sugPausa] || ""}</b> Uma pausa de 3 a 5 minutos longe da tela ajuda a atenção e deixa o cérebro fixar o que você acabou de estudar.<div class="row" style="margin-top:8px"><button class="btn small primary" id="pausaSim">Pausar 3 min</button><button class="btn small ghost" id="pausaNao">Continuar</button></div></div></div>` : ""}
     <article class="card ${cls}" style="background-image:linear-gradient(${col},${col});background-size:100% 4px;background-repeat:no-repeat">
       <div class="meta">
         <span class="chip t-${c.tipo}">${TIPOS[c.tipo] || c.tipo}</span>
@@ -3813,8 +3869,8 @@ function renderSession() {
         ${isNew ? `<span class="chip plain">novo</span>` : ""}
       </div>
       ${body}
-      ${!u.revealed ? `<p class="recall">💭 Tente lembrar antes de ver a resposta.</p>` : ""}
-      ${!u.revealed && !t2f && S.ajustes.confOn !== false ? `<div class="conf-row" id="confRow"><span>Sua confiança:</span>${[[2, "Tenho certeza"], [1, "Acho"], [0, "Chutei"]].map(([v, l]) => `<button type="button" data-conf="${v}" aria-pressed="${u.conf === v}">${l}</button>`).join("")}</div>` : ""}
+      ${!u.revealed ? `<p class="recall">${isNew ? "💡 <span>Cartão novo: arrisque um palpite antes de ver. Tentar e conferir logo em seguida também ajuda a fixar.</span>" : s.avisoRapido && !["multipla_escolha", "pegadinha"].includes(c.tipo) ? "💭 <span><b>Segure 3 a 5 segundos tentando lembrar antes de virar.</b> É esse esforço que fixa, mesmo quando a resposta não vem.</span>" : "💭 Tente lembrar antes de ver a resposta."}</p>` : ""}
+      ${confAntes ? "" : confHtml}
       ${!u.revealed && cons.length ? `<button class="btn small ghost" id="conBtn" style="margin-top:8px">📖 ${u.conceptOpen ? "Esconder o conceito" : "Não conheço o termo"}</button>${u.conceptOpen ? conceitosHtml(cons, true).replace("Resumo de apoio.", "Ler antes pode entregar parte da resposta. Resumo de apoio.") : ""}` : ""}
       ${!u.revealed && !t2f && !["multipla_escolha", "pegadinha"].includes(c.tipo) && !c.frente.includes("____") ? `<div class="ce"><button class="btn primary" id="flip">Mostrar resposta</button></div>` : ""}
       ${back}
@@ -3823,13 +3879,24 @@ function renderSession() {
       <span class="row" style="gap:6px"><button class="btn small ghost" id="flagBtn">${fl ? "Sinalizado como erro" : "Sinalizar erro"}</button>${u.revealed ? `<button class="btn small ghost" id="noteBtn">📝 ${nota ? "Editar dica" : "Minha dica"}</button>` : ""}</span>
       <button class="btn small ghost" id="suspBtn" title="Tira o cartão das revisões; reative na Biblioteca">Suspender cartão</button>
     </div>
-    ${u.noting ? `<form class="flagbox" id="noteForm"><textarea id="noteTxt" placeholder="Escreva sua própria dica de memória: uma associação, um macete, um exemplo seu…">${esc(nota || "")}</textarea><div class="row"><button class="btn small primary" type="submit">Salvar dica</button><button class="btn small ghost" type="button" id="noteCancel">Cancelar</button></div></form>` : ""}
+    ${u.noting ? `<form class="flagbox" id="noteForm"><textarea id="noteTxt" placeholder="${u.motivo === "ns" ? "Em uma frase, com suas palavras: qual é a regra certa e por quê?" : "Escreva sua própria dica de memória: uma associação, um macete, um exemplo seu…"}">${esc(nota || "")}</textarea><div class="row"><button class="btn small primary" type="submit">Salvar dica</button><button class="btn small ghost" type="button" id="noteCancel">Cancelar</button></div></form>` : ""}
     ${u.flagging ? `<form class="flagbox" id="flagForm"><textarea id="flagNote" placeholder="O que está errado? Ex.: o artigo mudou, a resposta está incompleta…">${esc(fl ? S.flags[u.id].nota : "")}</textarea><div class="row"><button class="btn small primary" type="submit">Salvar sinalização</button>${fl ? `<button class="btn small" type="button" id="unflag">Retirar sinalização</button>` : ""}<button class="btn small ghost" type="button" id="flagCancel">Cancelar</button></div></form>` : ""}
     <p class="keys"><kbd>espaço</kbd> mostrar · <kbd>1</kbd>–<kbd>4</kbd> avaliar · <kbd>A</kbd>–<kbd>E</kbd> alternativa · <kbd>C</kbd>/<kbd>E</kbd> certo ou errado</p>`;
   // eventos
   $("#endS").onclick = () => { stopSimTimer(); S.session = null; flush(); go("hoje"); };
   $("#flip")?.addEventListener("click", () => reveal());
-  document.querySelectorAll("[data-conf]").forEach(b => b.onclick = () => { u.conf = +b.dataset.conf; document.querySelectorAll("[data-conf]").forEach(x => x.setAttribute("aria-pressed", String(x === b))); });
+  document.querySelectorAll("[data-conf]").forEach(b => b.onclick = ev => { u.conf = +b.dataset.conf; document.querySelectorAll("[data-conf]").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+    if (ev.detail) { b.blur(); if (matchMedia("(hover: hover)").matches) $("#typed")?.focus(); } });   // clique de mouse ou toque solta o foco (espaço volta a revelar); pelo teclado o foco fica
+  document.querySelectorAll("#main summary").forEach(x => x.addEventListener("click", ev => { if (ev.detail) x.blur(); }));
+  $(".whyd")?.addEventListener("toggle", e => { u.whyOpen = e.target.open; });
+  document.querySelectorAll("[data-mi]").forEach(b => b.onclick = () => { const k = b.dataset.mi; if (!u.motivo) registrarErro(u.id, k); u.motivo = k;
+    if (k === "ns") { u.noting = true; u.flagging = false; }   // explique com suas palavras (Minha dica)
+    if (k === "cf") u.pairing = true;                          // marque o cartão confundido
+    if (k === "ds" && !s.sugPausa) { s.sugPausa = "ds"; s.pausaVista = false; }   // distração: sugere pausa no próximo cartão
+    renderSession(); if (k === "ns") $("#noteTxt")?.focus(); });
+  $("#sangDica")?.addEventListener("click", () => { u.noting = true; u.flagging = false; renderSession(); $("#noteTxt")?.focus(); });
+  $("#pausaNao")?.addEventListener("click", retomarSessao);
+  $("#pausaSim")?.addEventListener("click", () => { s.pausaAte = Date.now() + 180000; renderSession(); });
   $("#pairBtn")?.addEventListener("click", () => { u.pairing = true; renderSession(); $("#pairQ")?.focus(); });
   { let deb; $("#pairQ")?.addEventListener("input", e => { clearTimeout(deb); deb = setTimeout(() => { u.pairQ = e.target.value; renderSession(); const i = $("#pairQ"); if (i) { i.focus(); i.setSelectionRange(i.value.length, i.value.length); } }, 250); }); }
   document.querySelectorAll("[data-pair]").forEach(b => b.onclick = () => { ensureAj(); const o = b.dataset.pair; if (!S.ajustes.pares.some(e => (e[0] === u.id && e[1] === o) || (e[0] === o && e[1] === u.id))) { S.ajustes.pares = [...S.ajustes.pares, [u.id, o, Date.now()]]; queue("ajustes"); } u.pairing = false; toast("Par salvo. Ele aparece no modo “Pares que confundo”."); renderSession(); });
@@ -3853,28 +3920,35 @@ function renderSession() {
   bindErrBar(); bindMetodoMini();
   if (!u.revealed && $("#typed")) $("#typed").focus();
   if (!u.revealed && $("#t2fTxt")) { const t = $("#t2fTxt"); if (!u.typed) t.focus(); iniciaT2F(); }
-  if (u.revealed && !sim) enableSwipe($(".card"), () => answer(1), () => answer(3));
+  const gDir = t2f ? sugNota(u, s) : u.correct === false ? 1 : 3;   // mesma regra do espaço; com nota 1, arrastar para a direita só devolve o cartão
+  if (u.revealed && !sim) enableSwipe($(".card"), () => answer(1), gDir > 1 ? () => answer(gDir) : null);
   if (sim) { const r = Math.max(0, s.deadline - Date.now()), el = $("#tm"); if (el) el.textContent = Math.floor(r / 60000) + ":" + String(Math.floor(r / 1000) % 60).padStart(2, "0"); }
 }
 function fillMatch(typed, verso) {
-  const a = norm(typed), b = norm(verso.split(/[.(]/)[0]);
-  if (!a) return null;
-  const parts = a.split(/ ?; ?| e /).filter(Boolean);
-  return parts.every(p => b.includes(p)) || b.startsWith(a);
+  const a = norm(typed); if (!a) return null;
+  // só a resposta: sem parênteses e sem as frases seguintes (corta depois de "intimação.", "STF." ou "5º."), mas não em "Art.", "inc." nem em "1.000"
+  const resp = String(verso).replace(/\([^)]*\)/g, " ").replace(/([A-Za-zÀ-ÿ]{4,}|[A-Z]{2,}|[\dºª])\s*\.\s+[A-ZÀ-Ý][\s\S]*$/, "$1");
+  const B = norm(resp).split(" ");
+  const casa = (w, x) => w === x || x === w + "s" || w === x + "s";   // só o plural; letra trocada não: mandado ≠ mandato
+  const seq = p => { const T = p.split(" "); return B.some((_, i) => T.every((w, j) => i + j < B.length && casa(w, B[i + j]))); };   // palavras inteiras, em sequência
+  const parts = String(typed).split(";").flatMap(p => norm(p).split(/ e /)).filter(p => /[a-z]{3,}|\d|\b[ivxl]{2,}\b/.test(p));   // partes separadas por ";" ou " e "; ignora letras soltas e artigos
+  return parts.length ? parts.every(seq) : B.join(" ") === a;   // só siglas curtas ("MP"): vale a resposta inteira
 }
 document.addEventListener("keydown", e => {
   if (S.tab !== "sessao" || !S.session || !S.session.ui) return;
   if (e.target.matches("input, textarea, select") || e.metaKey || e.ctrlKey || e.altKey) return;
+  if ((e.key === " " || e.key === "Enter") && e.target.closest("button, a[href], summary, [role=button]")) return;   // o elemento focado age normalmente
+  if (S.session.pausaAte) return;   // na pausa, só os botões da tela
   const s = S.session, u = s.ui, c = byId[u.id], k = e.key.toUpperCase(), sim = s.modo === "simulado";
   if (!u.revealed) {
     if (s.modo === "tese2f") return;
     if (c.tipo === "multipla_escolha" && /^[A-E]$/.test(k)) { e.preventDefault(); reveal({ picked: k, correct: k === correctMC(c) }); }
     else if (c.tipo === "pegadinha" && (k === "C" || k === "E")) { e.preventDefault(); const r = correctCE(c); reveal({ picked: k, correct: r ? k === r : null }); }
     else if (c.tipo === "pegadinha" && sim && k === "B") { e.preventDefault(); reveal({ picked: "B", correct: null }); }
-    else if (e.key === " " || e.key === "Enter") { e.preventDefault(); reveal(); }
+    else if (e.key === " " || e.key === "Enter") { e.preventDefault(); if (!sim) reveal(); }   // no simulado, revelar sem escolher contaria como erro
   } else if (sim) { if (e.key === " " || e.key === "Enter") { e.preventDefault(); simNext(); } }
   else if (/^[1-4]$/.test(e.key)) { e.preventDefault(); answer(+e.key); }
-  else if (e.key === " " || e.key === "Enter") { e.preventDefault(); const n = (u.chk || []).filter(Boolean).length; answer(s.modo === "tese2f" ? (n >= 3 ? 3 : n === 2 ? 2 : 1) : u.correct === false ? 1 : 3); }
+  else if (e.key === " " || e.key === "Enter") { e.preventDefault(); answer(sugNota(u, s) || 3); }
 });
 
 function renderLib() {
