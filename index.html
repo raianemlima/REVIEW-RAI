@@ -1,4 +1,5 @@
-<!doctype html><html><head><meta charset=utf8><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://hlenhmgnqqnkjqmntnpz.supabase.co https://api.github.com; worker-src 'self'; manifest-src 'self'; media-src 'self' data: blob:; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f7f6ff"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="icons/icon-180.png"><meta name="description" content="Revisão espaçada, teses defensivas e novidades legislativas para o concurso da Defensoria Pública."><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Review DPE"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><style id="nv-secoes">
+<!doctype html><html><head><meta charset=utf8><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://hlenhmgnqqnkjqmntnpz.supabase.co https://api.github.com; worker-src 'self'; manifest-src 'self'; media-src 'self' data: blob:; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f7f6ff"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="icons/icon-180.png"><meta name="description" content="Revisão espaçada, teses defensivas e novidades legislativas para o concurso da Defensoria Pública."><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Review DPE"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}.cad-mat{display:flex;align-items:center;gap:8px;margin:6px 0;font-size:13px;color:var(--muted)}.cad-mat select,#cadNovoMat{flex:1;min-width:0;max-width:100%;padding:6px 8px;border-radius:10px;border:2px solid var(--line);background:var(--card,#fff);color:inherit;font:inherit}.cad-sec{margin-top:18px}.cad-novo .row{gap:8px;flex-wrap:wrap}
+</style><style id="nv-secoes">
 .nv-seg { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 4px; margin: 12px 0 4px; border-radius: 14px; background: var(--accent-soft); }
 .nv-seg button { font: 600 .86rem var(--f-ui); border: 0; border-radius: 10px; padding: 9px 8px; background: none; color: var(--ink); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap; }
 .nv-seg button[aria-selected="true"] { background: var(--surface); color: var(--accent); box-shadow: 0 1px 4px rgba(0,0,0,.08); }
@@ -2621,7 +2622,7 @@ function renderDoutrina() {
     ${(obra || obrasM.length === 1) && areas.length > 1 ? `<div class="dpe-filtros" role="group" aria-label="Área">${["", ...areas].map(a => `<button class="fchip" data-dtarea="${esc(a)}" aria-pressed="${area === a}">${esc(a || "Todas as áreas")}</button>`).join("")}</div>` : ""}
     <div class="dpe-sec"><h3>${esc(area || (obra ? obraDe(obra).autor : mat ? nomeD(mat) : "Todos os conceitos"))}</h3><span class="count">${plural(lista.length, "conceito", "conceitos")}</span></div>
     <div class="dt-lista">${lista.map(c => { const o = obraDe(c.obra), ok = lidos.includes(c.id); return `
-      <details class="dt-item${ok ? " ok" : ""}"><summary><span class="dt-tit">${ok ? "✅ " : ""}${esc(c.titulo)}</span><span class="dt-meta">${esc(o.autor || "")} · ${esc(c.cap || c.area)}</span></summary>
+      <details class="dt-item${ok ? " ok" : ""}" data-disc="${esc(o.disc || "")}"><summary><span class="dt-tit">${ok ? "✅ " : ""}${esc(c.titulo)}</span><span class="dt-meta">${esc(o.autor || "")} · ${esc(c.cap || c.area)}</span></summary>
         <div class="dt-body"><p>${esc(c.texto)}</p>
           ${c.dpe ? `<p class="dt-dpe"><b>Na Defensoria:</b> ${esc(c.dpe)}</p>` : ""}
           ${(c.base || []).length ? `<p class="dt-base"><b>Base:</b> ${c.base.map(esc).join("; ")}</p>` : ""}
@@ -2915,7 +2916,7 @@ function renderQuadros() {
     <h2>Quadros comparativos</h2>
     <p class="sub">${plural(all.length, "quadro", "quadros")} para fixar diferenças que costumam cair. Resumos de apoio: confira na lei e na doutrina.</p>
     <div class="filters"><input id="qq" type="search" placeholder="Buscar nos quadros…" value="${esc(S.quaQ || "")}"><select id="qd"><option value="">Todas as disciplinas</option>${discs.map(d => `<option value="${d}" ${f === d ? "selected" : ""}>${esc((DISC[d] || {}).curto || d)}</option>`).join("")}</select></div>
-    <div class="nv-list">${list.map(x => `<article class="nov"><details><summary><div class="nv-top"><span class="chip" style="background:${discColor(x.disc)}22;color:${discColor(x.disc)}">${discIco(x.disc)} ${esc((DISC[x.disc] || {}).curto || "")}</span></div><h3 class="nv-t">${esc(x.titulo)}</h3></summary>
+    <div class="nv-list">${list.map(x => `<article class="nov" data-disc="${esc(x.disc || "")}"><details><summary><div class="nv-top"><span class="chip" style="background:${discColor(x.disc)}22;color:${discColor(x.disc)}">${discIco(x.disc)} ${esc((DISC[x.disc] || {}).curto || "")}</span></div><h3 class="nv-t">${esc(x.titulo)}</h3></summary>
       <div class="nv-body"><div class="scroll-x"><table class="quadro"><thead><tr>${x.cols.map(c => `<th>${esc(c)}</th>`).join("")}</tr></thead><tbody>${x.rows.map(r => `<tr>${r.map((c, i) => i === 0 ? `<th scope="row">${esc(c)}</th>` : `<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>
       ${x.macete ? `<p class="tip" style="margin-top:12px"><span>💡</span><div><b>Macete:</b> ${esc(x.macete)}</div></p>` : ""}</div></details></article>`).join("")}</div>
     ${list.length ? "" : `<p class="count">Nenhum quadro encontrado.</p>`}`;
@@ -3577,11 +3578,43 @@ function cadFonte(no) {
   if (box.matches(".dt-item")) { const meta = box.querySelector(".dt-meta"); if (meta) s += " · " + meta.textContent.trim(); }
   return s.slice(0, 160);
 }
-function cadSalvar(txt, fonte, aba) {
+// matéria do trecho: pelo cartão/lei aberta, por marca data-disc na tela ou, por fim, por palavras do texto
+const CAD_PISTAS = [["pp", /processo penal|\bCPP\b|pris[aã]o (preventiva|tempor[aá]ria|em flagrante)|inqu[eé]rito policial|audi[eê]ncia de cust[oó]dia|habeas corpus|j[uú]ri\b/i],
+  ["ep", /execu[cç][aã]o penal|\bLEP\b|remi[cç][aã]o|livramento condicional|progress[aã]o de regime|sa[ií]da tempor[aá]ria/i],
+  ["ec", /\bECA\b|crian[cç]a|adolescente|ato infracional|medida socioeducativa|guarda|ado[cç][aã]o/i],
+  ["pc", /processo civil|\bCPC\b|tutela (provis[oó]ria|de urg[eê]ncia)|recurso especial|agravo de instrumento|cumprimento de senten[cç]a|peti[cç][aã]o inicial/i],
+  ["co", /consumidor|\bCDC\b|fornecedor/i],
+  ["df", /a[cç][aã]o civil p[uú]blica|difusos|coletivos|tutela coletiva|\bTAC\b/i],
+  ["dh", /direitos humanos|Corte IDH|Conven[cç][aã]o Americana|Pacto de San Jos[eé]|\bCIDH\b|controle de convencionalidade/i],
+  ["pi", /\bLC 80\b|Lei Complementar 80|defensor(ia)? p[uú]blic|assistido|curador especial|custos vulnerabilis/i],
+  ["tr", /tribut|imposto|\bICMS\b|\bCTN\b|contribui[cç][aã]o social/i],
+  ["ad", /administra[cç][aã]o p[uú]blica|ato administrativo|licita[cç][aã]o|improbidade|servidor p[uú]blico|poder de pol[ií]cia/i],
+  ["cr", /criminolog|labelling|etiquetamento|seletividade penal|cifra oculta/i],
+  ["em", /empresari|fal[eê]ncia|recupera[cç][aã]o judicial|sociedade limitada|t[ií]tulo de cr[eé]dito/i],
+  ["dc", /constitucional|Constitui[cç][aã]o|\bCF\b|\bSTF\b.*\bADI\b|\bADPF\b|direito fundamental|mandado de seguran[cç]a/i],
+  ["dp", /direito penal|\bCP\b|C[oó]digo Penal|crime\b|tipicidade|dolo|culpa\b|pena\b|leg[ií]tima defesa|insignific[aâ]ncia|furto|roubo|tr[aá]fico/i],
+  ["cv", /direito civil|\bCC\b|C[oó]digo Civil|contrato|posse|propriedade|usucapi[aã]o|alimentos|div[oó]rcio|responsabilidade civil|heran[cç]a|sucess[aã]o/i]];
+function cadAdivinhar(txt) {
+  txt = String(txt || "");
+  for (const d of DECK.disciplinas) if (d.id !== "ci" && (txt.includes(d.nome) || new RegExp("(^|[\\s(·:])" + d.curto.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "([\\s,·:)]|$)").test(txt))) return d.id;
+  for (const [id, re] of CAD_PISTAS) if (re.test(txt)) return id;
+  return "";
+}
+function cadMateria(no, txt, fonte) {
+  if (S.tab === "sessao" && S.session?.ui?.id && byId[S.session.ui.id]) return byId[S.session.ui.id].disc;
+  if (S.tab === "leiseca" && typeof LS_DIPS === "function") { const d = LS_DIPS().find(x => x.id === S.lsDip); if (d?.disc) return d.disc; }
+  const el = no && (no.nodeType === 1 ? no : no.parentElement), m = el?.closest("[data-disc]")?.dataset.disc;
+  if (m && DISC[m]) return m;
+  const box = el?.closest(".ls-a, .nov, .dt-item, .dpe-card, .pv-card, article, details, .card, section, .panel");
+  return cadAdivinhar((fonte || "") + "\n" + (box ? box.textContent.slice(0, 1500) : "") + "\n" + (txt || ""));
+}
+const cadMat = x => x.mat != null ? x.mat : cadAdivinhar((x.fonte || "") + "\n" + x.txt);
+const cadMatNome = id => id && DISC[id] ? DISC[id].nome : "Sem matéria";
+function cadSalvar(txt, fonte, aba, mat) {
   ensureAj(); txt = String(txt || "").replace(/[ \t]+\n/g, "\n").replace(/\n{3,}/g, "\n\n").trim().slice(0, 4000); if (txt.length < 2) return;
-  const agora = Date.now(); S.ajustes.caderno = [...S.ajustes.caderno, { id: "c" + agora.toString(36) + Math.random().toString(36).slice(2, 6), t: agora, u: agora, txt, fonte: fonte || "", aba: aba || S.tab, nota: "" }];
+  const agora = Date.now(); S.ajustes.caderno = [...S.ajustes.caderno, { id: "c" + agora.toString(36) + Math.random().toString(36).slice(2, 6), t: agora, u: agora, txt, fonte: fonte || "", aba: aba || S.tab, nota: "", mat: mat || "" }];
   queue("ajustes"); const b = document.querySelector(".cad-pop"); if (b) b.remove();
-  toast("Salvo no caderno de resumos 📒");
+  toast(mat && DISC[mat] ? `Salvo no caderno · ${DISC[mat].curto} 📒` : "Salvo no caderno de resumos 📒");
 }
 // botão flutuante que aparece quando há texto selecionado dentro do app
 (() => {
@@ -3595,41 +3628,56 @@ function cadSalvar(txt, fonte, aba) {
     if (!pop) { pop = document.createElement("div"); pop.className = "cad-pop"; pop.innerHTML = `<button type="button">📒 Salvar no caderno</button>`; document.body.appendChild(pop);
       const b = pop.querySelector("button");
       b.addEventListener("pointerdown", e => e.preventDefault());
-      b.addEventListener("click", () => { const s = window.getSelection(); if (!s || !s.rangeCount) return; cadSalvar(s.toString(), cadFonte(s.getRangeAt(0).startContainer), S.tab); s.removeAllRanges(); fechar(); }); }
+      b.addEventListener("click", () => { const s = window.getSelection(); if (!s || !s.rangeCount) return; const no = s.getRangeAt(0).startContainer, t = s.toString(), f = cadFonte(no); cadSalvar(t, f, S.tab, cadMateria(no, t, f)); s.removeAllRanges(); fechar(); }); }
     const larg = 190, x = Math.min(innerWidth - larg - 8, Math.max(8, box.left + box.width / 2 - larg / 2)), abaixo = box.bottom + 56 < innerHeight - 90;
     pop.style.left = x + "px"; pop.style.top = (abaixo ? box.bottom + 10 : Math.max(8, box.top - 54)) + "px";
   };
   document.addEventListener("selectionchange", () => { clearTimeout(tm); tm = setTimeout(mostrar, 250); });
   addEventListener("scroll", () => { if (pop) mostrar(); }, { passive: true });
 })();
+function cadTextoMat(lista) {
+  const g = new Map(); for (const x of lista) { const m = cadMat(x); if (!g.has(m)) g.set(m, []); g.get(m).push(x); }
+  return [...g.entries()].sort((a, b) => cadOrdem(a[0]) - cadOrdem(b[0])).map(([m, xs]) => `■ ${cadMatNome(m).toUpperCase()}\n\n` + cadTexto(xs)).join("\n\n════════\n\n");
+}
+const cadOrdem = id => { const i = DECK.disciplinas.findIndex(d => d.id === id); return i < 0 ? 999 : i; };
 function cadTexto(lista) { return lista.map(x => `${x.txt}\n— ${[x.fonte, CAD_ABAS[x.aba] || x.aba, new Date(x.t).toLocaleDateString("pt-BR")].filter(Boolean).join(" · ")}${x.nota ? `\nMinha anotação: ${x.nota}` : ""}`).join("\n\n────────\n\n"); }
 function renderCaderno() {
-  ensureAj(); const todos = cadAtivos().slice().reverse(), q = norm(S.cadQ || ""), abas = [...new Set(todos.map(x => x.aba))], fa = abas.includes(S.cadAba) ? S.cadAba : "";
-  const lista = todos.filter(x => (!fa || x.aba === fa) && (!q || norm(x.txt + " " + x.fonte + " " + (x.nota || "")).includes(q)));
-  $("#main").innerHTML = `<button class="btn small ghost es-voltar" id="cadVolta">← Estudar</button>
-    <section class="dpe-hero"><p class="dpe-kicker">Caderno de resumos</p><h2>Seus trechos e anotações</h2>
-      <p>Em qualquer tela, selecione um trecho com o dedo ou o mouse e toque em <b>📒 Salvar no caderno</b>. Ele vem para cá com a origem.</p>
-      <div class="dpe-stats"><div class="dpe-stat"><b>${todos.length}</b><span>${todos.length === 1 ? "trecho" : "trechos"}</span></div><div class="dpe-stat"><b>${todos.filter(x => x.nota).length}</b><span>com anotação</span></div></div></section>
-    <div class="cad-novo"><label for="cadNovo" class="count">Escrever uma anotação livre</label><textarea id="cadNovo" rows="3" placeholder="Ex.: resumo do tema em suas palavras"></textarea><button class="btn primary small" id="cadAdd">Adicionar ao caderno</button></div>
-    ${todos.length ? `<div class="ts-busca"><input id="cadQ" type="search" placeholder="Buscar no caderno" value="${esc(S.cadQ || "")}" aria-label="Buscar no caderno"></div>
-    ${abas.length > 1 ? `<div class="dpe-filtros" role="group" aria-label="Origem">${["", ...abas].map(a => `<button class="fchip" data-cadaba="${esc(a)}" aria-pressed="${fa === a}">${esc(a ? (CAD_ABAS[a] || a) : "Todas")}</button>`).join("")}</div>` : ""}
-    <div class="row cad-acoes"><button class="btn small" id="cadCopiar">Copiar tudo</button><button class="btn small" id="cadBaixar">Baixar resumo (.txt)</button></div>` : ""}
-    <div class="cad-lista">${lista.map(x => `<article class="cad-item" data-cad="${x.id}">
+  ensureAj(); const todos = cadAtivos().slice().reverse(), q = norm(S.cadQ || "");
+  const cont = {}; for (const x of todos) { const m = cadMat(x); cont[m] = (cont[m] || 0) + 1; }
+  const mats = Object.keys(cont).sort((a, b) => cadOrdem(a) - cadOrdem(b)), fm = S.cadMat != null && S.cadMat in cont ? S.cadMat : null;
+  const lista = todos.filter(x => (fm == null || cadMat(x) === fm) && (!q || norm(x.txt + " " + x.fonte + " " + (x.nota || "") + " " + cadMatNome(cadMat(x))).includes(q)));
+  const grupos = new Map(); for (const x of lista) { const m = cadMat(x); if (!grupos.has(m)) grupos.set(m, []); grupos.get(m).push(x); }
+  const ordem = [...grupos.keys()].sort((a, b) => cadOrdem(a) - cadOrdem(b));
+  const opcoes = sel => `<option value="">Sem matéria</option>` + DECK.disciplinas.filter(d => d.id !== "ci").map(d => `<option value="${d.id}"${d.id === sel ? " selected" : ""}>${esc(d.nome)}</option>`).join("");
+  const item = x => `<article class="cad-item" data-cad="${x.id}" style="border-left:5px solid ${cadMat(x) ? discColor(cadMat(x)) : "var(--line)"}">
       <blockquote>${esc(x.txt)}</blockquote>
       <p class="cad-orig">${esc([x.fonte, CAD_ABAS[x.aba] || x.aba].filter(Boolean).join(" · "))} · ${new Date(x.t).toLocaleDateString("pt-BR")}</p>
+      <label class="cad-mat"><span>Matéria</span><select data-cadmat="${x.id}">${opcoes(cadMat(x))}</select></label>
       <label class="cad-nota"><span>Minha anotação</span><textarea rows="2" data-cadnota="${x.id}" placeholder="Por que isso importa? Como cai em prova?">${esc(x.nota || "")}</textarea></label>
-      <div class="row"><button class="btn small" data-cadcp="${x.id}">Copiar</button><button class="btn small ghost" data-caddel="${x.id}">Apagar</button></div></article>`).join("") || (todos.length ? `<p class="count">Nada encontrado.</p>` : `<div class="nv-vazio">Seu caderno está vazio. Abra a Lei seca, a Doutrina ou um cartão, selecione um trecho e salve.</div>`)}</div>`;
+      <div class="row"><button class="btn small" data-cadcp="${x.id}">Copiar</button><button class="btn small ghost" data-caddel="${x.id}">Apagar</button></div></article>`;
+  $("#main").innerHTML = `<button class="btn small ghost es-voltar" id="cadVolta">← Estudar</button>
+    <section class="dpe-hero"><p class="dpe-kicker">Caderno de resumos</p><h2>Seus trechos e anotações</h2>
+      <p>Em qualquer tela, selecione um trecho com o dedo ou o mouse e toque em <b>📒 Salvar no caderno</b>. Ele vem para cá com a origem e já separado por matéria.</p>
+      <div class="dpe-stats"><div class="dpe-stat"><b>${todos.length}</b><span>${todos.length === 1 ? "trecho" : "trechos"}</span></div><div class="dpe-stat"><b>${mats.filter(Boolean).length}</b><span>${mats.filter(Boolean).length === 1 ? "matéria" : "matérias"}</span></div><div class="dpe-stat"><b>${todos.filter(x => x.nota).length}</b><span>com anotação</span></div></div></section>
+    <div class="cad-novo"><label for="cadNovo" class="count">Escrever uma anotação livre</label><textarea id="cadNovo" rows="3" placeholder="Ex.: resumo do tema em suas palavras"></textarea>
+      <div class="row"><select id="cadNovoMat" aria-label="Matéria da anotação">${opcoes(fm || "")}</select><button class="btn primary small" id="cadAdd">Adicionar ao caderno</button></div></div>
+    ${todos.length ? `<div class="ts-busca"><input id="cadQ" type="search" placeholder="Buscar no caderno" value="${esc(S.cadQ || "")}" aria-label="Buscar no caderno"></div>
+    <div class="dpe-filtros" role="group" aria-label="Matéria"><button class="fchip" data-cadmatf="*" aria-pressed="${fm == null}">Todas · ${todos.length}</button>${mats.map(m => `<button class="fchip" data-cadmatf="${esc(m)}" aria-pressed="${fm === m}">${esc(m ? DISC[m].curto : "Sem matéria")} · ${cont[m]}</button>`).join("")}</div>
+    <div class="row cad-acoes"><button class="btn small" id="cadCopiar">Copiar ${fm == null ? "tudo" : "esta matéria"}</button><button class="btn small" id="cadBaixar">Baixar resumo (.txt)</button></div>` : ""}
+    <div class="cad-lista">${ordem.map(m => `<div class="dpe-sec cad-sec"><h3>${m ? discIco(m) + " " : ""}${esc(cadMatNome(m))}</h3><span class="count">${plural(grupos.get(m).length, "trecho", "trechos")}</span></div>${grupos.get(m).map(item).join("")}`).join("") || (todos.length ? `<p class="count">Nada encontrado.</p>` : `<div class="nv-vazio">Seu caderno está vazio. Abra a Lei seca, a Doutrina ou um cartão, selecione um trecho e salve.</div>`)}</div>`;
   $("#cadVolta").onclick = () => go("sessao");
-  $("#cadAdd").onclick = () => { const v = $("#cadNovo").value.trim(); if (!v) return; cadSalvar(v, "Anotação livre", "caderno"); renderCaderno(); };
+  $("#cadAdd").onclick = () => { const v = $("#cadNovo").value.trim(); if (!v) return; const m = $("#cadNovoMat").value; cadSalvar(v, "Anotação livre", "caderno", m || cadAdivinhar(v)); renderCaderno(); };
   let t0; $("#cadQ")?.addEventListener("input", e => { clearTimeout(t0); t0 = setTimeout(() => { S.cadQ = e.target.value; const pos = e.target.selectionStart; renderCaderno(); const i = $("#cadQ"); i.focus(); i.setSelectionRange(pos, pos); }, 200); });
-  document.querySelectorAll("[data-cadaba]").forEach(b => b.onclick = () => { S.cadAba = b.dataset.cadaba; renderCaderno(); });
+  document.querySelectorAll("[data-cadmatf]").forEach(b => b.onclick = () => { S.cadMat = b.dataset.cadmatf === "*" ? null : b.dataset.cadmatf; renderCaderno(); });
   const achar = id => S.ajustes.caderno.find(x => x.id === id);
+  document.querySelectorAll("[data-cadmat]").forEach(t => t.addEventListener("change", () => { const x = achar(t.dataset.cadmat); if (!x) return; x.mat = t.value; x.u = Date.now(); S.ajustes.caderno = [...S.ajustes.caderno]; queue("ajustes"); toast(`Movido para ${cadMatNome(t.value)}.`); renderCaderno(); }));
   document.querySelectorAll("[data-cadnota]").forEach(t => t.addEventListener("change", () => { const x = achar(t.dataset.cadnota); if (!x) return; x.nota = t.value.trim().slice(0, 2000); x.u = Date.now(); S.ajustes.caderno = [...S.ajustes.caderno]; queue("ajustes"); toast("Anotação salva."); }));
   document.querySelectorAll("[data-caddel]").forEach(b => b.onclick = () => { if (!confirm("Apagar este trecho do caderno?")) return; const x = achar(b.dataset.caddel); if (!x) return; x.del = 1; x.txt = ""; x.nota = ""; x.u = Date.now(); S.ajustes.caderno = [...S.ajustes.caderno]; queue("ajustes"); renderCaderno(); });
   const copiar = async txt => { try { await navigator.clipboard.writeText(txt); toast("Copiado."); } catch (e) { toast("Não consegui copiar neste aparelho."); } };
   document.querySelectorAll("[data-cadcp]").forEach(b => b.onclick = () => { const x = achar(b.dataset.cadcp); if (x) copiar(cadTexto([x])); });
-  $("#cadCopiar")?.addEventListener("click", () => copiar(cadTexto(lista.slice().reverse())));
-  $("#cadBaixar")?.addEventListener("click", () => entregarArquivo("caderno-review-dpe.txt", "text/plain", "Caderno de resumos · Review DPE\n\n" + cadTexto(lista.slice().reverse())));
+  const emOrdem = () => ordem.flatMap(m => grupos.get(m).slice().reverse());
+  $("#cadCopiar")?.addEventListener("click", () => copiar(cadTextoMat(emOrdem())));
+  $("#cadBaixar")?.addEventListener("click", () => entregarArquivo(fm == null ? "caderno-review-dpe.txt" : `caderno-${(DISC[fm]?.curto || "sem-materia").toLowerCase().normalize("NFD").replace(/[^a-z0-9]+/g, "-")}.txt`, "text/plain", "Caderno de resumos · Review DPE\n\n" + cadTextoMat(emOrdem())));
 }
 // redesenhos internos (filtros, busca) também mantêm o seletor
 renderNov = (f => function (...a) { const r = f.apply(this, a); if (S.tab === "novidades") lsSeletor(); return r; })(renderNov);
