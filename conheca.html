@@ -127,6 +127,12 @@ section { padding: 72px 0; }
 .valor { background: #fff; color: var(--ink); border-radius: 24px; padding: 24px; text-align: center; position: relative; z-index: 1; box-shadow: 0 6px 0 rgba(30,27,75,.3); }
 .valor .v { font: 800 2.4rem var(--f); color: var(--accent); }
 .valor small { display: block; color: var(--muted); margin: 6px 0 18px; }
+.planos { display: grid; gap: 14px; position: relative; z-index: 1; }
+.plano { position: relative; }
+.plano .v small { display: inline; font-size: 1rem; color: var(--muted); margin: 0; }
+.plano .selo { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #ffb703; color: #1e1b4b; font: 800 .78rem var(--f); padding: 4px 12px; border-radius: 999px; white-space: nowrap; box-shadow: 0 3px 0 #c98f00; }
+.plano.destaque { outline: 3px solid #ffb703; }
+.plano .btn.sec { background: #efeaff; color: #4b3fc4; box-shadow: 0 4px 0 #c9bdff; }
 
 /* faq */
 .faq { max-width: 780px; }
@@ -288,10 +294,20 @@ footer .links { display: flex; gap: 16px; flex-wrap: wrap; font-weight: 600; }
           <li>Cancele quando quiser, sem multa</li>
         </ul>
       </div>
-      <div class="valor">
-        <div class="v" id="preco-valor">Em breve</div>
-        <small id="preco-obs">Valor de lançamento sendo definido. Garanta seu lugar!</small>
-        <a class="btn cta1" data-assinar href="#" style="width:100%">Quero assinar</a>
+      <div class="planos">
+        <div class="valor plano destaque">
+          <span class="selo">Economize 32%</span>
+          <p style="margin:6px 0 0;font-weight:800">Anual</p>
+          <div class="v">R$ 130<small>/ano</small></div>
+          <small>à vista no Pix, boleto ou cartão · sai por R$ 10,83/mês</small>
+          <a class="btn cta1" data-assinar="anual" href="#" style="width:100%">Assinar o anual</a>
+        </div>
+        <div class="valor plano">
+          <p style="margin:0;font-weight:800">Mensal</p>
+          <div class="v">R$ 15,99<small>/mês</small></div>
+          <small>renova todo mês · cancele quando quiser</small>
+          <a class="btn cta1 sec" data-assinar="mensal" href="#" style="width:100%">Assinar o mensal</a>
+        </div>
       </div>
     </div>
   </div>
@@ -303,6 +319,7 @@ footer .links { display: flex; gap: 16px; flex-wrap: wrap; font-weight: 600; }
     <h2>Perguntas frequentes</h2>
     <details><summary>Serve para a Defensoria do meu estado?</summary><p>Sim. Você escolhe a DPE do seu concurso (qualquer estado) ou a DPU. A base de lei seca, teses e doutrina vale para todas, e as provas de Defensoria ajudam a entender o estilo das bancas.</p></details>
     <details><summary>Preciso baixar algo na loja de apps?</summary><p>Não. O Review DPE abre no navegador e pode ser instalado na tela inicial do celular ou do computador, como um app. Funciona em Android, iPhone e computador.</p></details>
+    <details><summary>Qual a diferença entre o mensal e o anual?</summary><p>O mensal custa R$ 15,99 e renova sozinho todo mês, até você cancelar. O anual custa R$ 130 pagos uma vez só (Pix, boleto ou cartão) e libera 12 meses de acesso, saindo por R$ 10,83 por mês. Ele não renova sozinho: perto do fim, você decide se quer continuar.</p></details>
     <details><summary>Funciona sem internet?</summary><p>Sim. Depois de entrar na conta, você estuda offline. A cada 7 dias o app confirma sua assinatura quando houver conexão.</p></details>
     <details><summary>Substitui curso ou livro?</summary><p>Não substitui. O Review DPE é a ferramenta para você <b>não esquecer</b> o que estudou e treinar o que mais cai. Ele funciona muito bem junto com seu curso ou material.</p></details>
     <details><summary>Posso cancelar?</summary><p>Pode, quando quiser e sem multa. E se desistir em até 7 dias da compra, devolvemos o valor integral.</p></details>
@@ -323,18 +340,20 @@ footer .links { display: flex; gap: 16px; flex-wrap: wrap; font-weight: 600; }
 <script>
 // ===== Ajuste aqui quando definir a venda =====
 const VENDA = {
-  preco: "",          // ex.: "R$ 29,90/mês"
-  observacao: "",     // ex.: "ou R$ 249/ano (2 meses grátis)"
-  linkPagamento: ""   // link de pagamento da Asaas
+  linkMensal: "",     // link de pagamento da Asaas: assinatura mensal de R$ 15,99
+  linkAnual: ""       // link de pagamento da Asaas: R$ 130 à vista (vale 12 meses)
 };
 // ==============================================
 (() => {
   const contato = "https://wa.me/5588921957455?text=" + encodeURIComponent("Olá! Quero assinar o Review DPE");
-  if (VENDA.preco) document.getElementById("preco-valor").textContent = VENDA.preco;
-  if (VENDA.observacao) document.getElementById("preco-obs").textContent = VENDA.observacao;
+  // botões dentro dos planos vão direto para o pagamento; os de cima levam até os planos
+  const plano = new URLSearchParams(location.search).get("plano");
   document.querySelectorAll("[data-assinar]").forEach(a => {
-    if (a.closest("#preco") || !a.getAttribute("href").startsWith("#")) a.href = VENDA.linkPagamento || contato;
+    const p = a.dataset.assinar; if (!p) return;
+    const link = p === "anual" ? VENDA.linkAnual : VENDA.linkMensal;
+    a.href = link || contato; if (link) { a.target = "_blank"; a.rel = "noopener"; }
   });
+  if (plano || location.hash === "#preco") setTimeout(() => document.getElementById("preco").scrollIntoView({ block: "start" }), 100);
   // botão fixo no celular depois de rolar o topo
   const fixo = document.getElementById("fixo"), hero = document.querySelector(".hero"), preco = document.getElementById("preco");
   if ("IntersectionObserver" in window) {

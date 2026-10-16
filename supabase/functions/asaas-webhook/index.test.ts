@@ -19,6 +19,12 @@ test("semanal usa dias", () => {
 test("cobrança avulsa usa AVULSO_MESES", () => {
   assert.equal(dia(decidir(pag("RECEIVED_IN_CASH"), null, { toleranciaDias: 0, avulsoMeses: 12 })), "2027-10-11");
 });
+test("anual à vista (cobrança avulsa de R$ 130) vale 12 meses", () => {
+  const o = { toleranciaDias: 3, avulsoMeses: 1, anualValorMin: 100 };
+  assert.equal(dia(decidir(pag("RECEIVED", { value: 130 }), null, o)), "2027-10-14");
+  assert.equal(dia(decidir(pag("CONFIRMED", { value: 15.99 }), null, o)), "2026-11-14");   // avulsa pequena continua 1 mês
+  assert.equal(dia(decidir(pag("RECEIVED", { value: 130, subscription: "sub_1" }), { cycle: "MONTHLY" }, o)), "2026-11-14");   // assinatura manda no ciclo
+});
 test("pendente, vencida ou excluída não mudam nada", () => {
   for (const s of ["PENDING", "OVERDUE", "AWAITING_RISK_ANALYSIS"]) assert.equal(decidir(pag(s), null, opc).acao, "ignorar");
 });

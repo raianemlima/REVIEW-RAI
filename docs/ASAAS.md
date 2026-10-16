@@ -14,6 +14,18 @@ App abre → chave_do_app confere valido_ate → entrega (ou não) a chave do co
 - **Estorno ou chargeback:** acesso cortado na hora.
 - O e-mail liberado é o **e-mail do cliente no Asaas**. O aluno precisa criar a conta no app com esse mesmo e-mail, então deixe o e-mail como campo obrigatório no link de pagamento.
 
+## Planos
+| Plano | Preço | Como criar no Asaas | Acesso liberado |
+|---|---|---|---|
+| Mensal | R$ 15,99/mês | link de pagamento do tipo **Assinatura**, ciclo **Mensal** | até o vencimento + 1 mês + 3 dias; renova a cada pagamento |
+| Anual | R$ 130 à vista | link de pagamento do tipo **Pagamento único** (à vista; sem parcelamento) | 12 meses + 3 dias (cobrança avulsa de valor ≥ `ANUAL_VALOR_MIN`, padrão R$ 100) |
+
+Criar os links: no Asaas, **Cobranças → Links de pagamento → Criar link**.
+- Nome: "Review DPE · Mensal" / "Review DPE · Anual". Valor: 15,99 / 130,00.
+- Formas de pagamento: Pix, boleto e cartão. No anual, **não** ofereça parcelamento (cada parcela seria vista como um pagamento pequeno).
+- Em **Dados do cliente**, deixe o **e-mail obrigatório**: é ele que libera o app.
+- Copie cada link e cole em `conheca.html`, no bloco `VENDA` (`linkMensal` e `linkAnual`). Os botões "Assinar o mensal" e "Assinar o anual" passam a abrir o pagamento; sem link, eles abrem o WhatsApp.
+
 ## Configurar (uma vez), tudo pelo navegador
 Painel do Supabase: https://supabase.com/dashboard/project/hlenhmgnqqnkjqmntnpz
 
