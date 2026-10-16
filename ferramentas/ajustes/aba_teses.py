@@ -37,6 +37,11 @@ CSS = """
 .ts-stat-novas { font: inherit; cursor: pointer; border: 1px solid transparent; }
 .ts-stat-novas[aria-pressed="true"] { border-color: #f0b429; }
 .ts-grupo { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin: 18px 0 8px; padding-bottom: 4px; border-bottom: 2px solid var(--line); font: 700 1rem var(--f-ui); }
+.ts-nota { margin: 4px 0 8px; border-radius: 12px; background: var(--accent-soft); padding: 0 12px; }
+.ts-nota > summary { cursor: pointer; padding: 9px 0; font: 600 .86rem var(--f-ui); color: var(--accent); }
+.ts-nota h4 { margin: 8px 0 6px; font: 700 .8rem var(--f-ui); text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+.ts-nota .qz { background: var(--surface); }
+.ts-nota[open] { padding-bottom: 10px; }
 .ts-grupo small { color: var(--muted); font-weight: 500; font-size: .8rem; }
 .ts-pe { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin-top: 6px; font-size: .82rem; }
 .ts-proc { color: var(--muted); font-weight: 600; }
@@ -57,7 +62,7 @@ const TS_ALERTA = { aguardando: "Tema afetado: o tribunal ainda não fixou a tes
 const TS_TIPOS = [["", "Tudo"], ["sum", "Súmulas"], ["rg", "Repercussão geral"], ["rep", "Repetitivos e IAC"]];
 const tsTipoOk = (x, t) => !t || (t === "sum" ? /Súmula/.test(x.tipo) : t === "rg" ? x.tipo === "Repercussão geral" : /Repetitivo|IAC/.test(x.tipo));
 const tsRamos = x => [x.ramo, ...(x.outros_ramos || [])];
-const tsData = x => { const m = /(\d{1,2})\/(\d{1,2})\/(\d{4})/.exec(x.data || ""); return m ? m[3] + m[2].padStart(2, "0") + m[1].padStart(2, "0") : ""; };
+const tsData = x => { const m = /(\d{1,2})\/(\d{1,2})\/(\d{4})/.exec(x.data || ""); return m ? m[3] + m[2].padStart(2, "0") + m[1].padStart(2, "0") : (x.pub || "").replace(/-/g, ""); };
 const tsNum = x => parseInt(x.num, 10) || 0;
 function tsBase(semRamo) {      // todos os filtros, menos a busca; semRamo serve para contar os itens de cada ramo
   const D = tsDados(), tri = S.tsTri || "", tipo = S.tsTipo || "", r = S.tsRamo || "";
@@ -65,7 +70,7 @@ function tsBase(semRamo) {      // todos os filtros, menos a busca; semRamo serv
 }
 function tsFiltrados() {
   const termos = tsNorm(S.tsQ).trim().split(/\s+/).filter(Boolean);
-  const l = tsBase().filter(x => !termos.length || (x._q || (x._q = tsNorm([x.tribunal, x.tipo, "tema " + x.num, x.num, x.processo, x.ramo, x.texto].join(" ")))) && termos.every(t => x._q.includes(t)));
+  const l = tsBase().filter(x => !termos.length || (x._q || (x._q = tsNorm([x.tribunal, x.tipo, "tema " + x.num, x.num, x.processo, x.ramo, x.texto, ...(x.nota ? [...x.nota.dpe || [], ...x.nota.prova || []] : [])].join(" ")))) && termos.every(t => x._q.includes(t)));
   if (S.tsOrdem === "recentes") return [...l].sort((a, b) => (tsData(b) || "0").localeCompare(tsData(a) || "0") || tsNum(b) - tsNum(a));
   if (S.tsOrdem === "numero") return [...l].sort((a, b) => a.tribunal.localeCompare(b.tribunal) || tsNum(a) - tsNum(b));
   return l;                    // ordem do conjunto: por ramo; súmulas, STF e STJ; tema mais novo primeiro
@@ -102,9 +107,17 @@ function tsCard(x, termos) {
     ${x.status ? `<div class="ts-alerta">${TS_ALERTA[x.status]}</div>` : ""}
     <div class="ts-txt${longo ? " fechado" : ""}">${paras}</div>
     ${longo ? `<button class="ts-mais">Ler tudo</button>` : ""}
+    ${x.nota ? tsNota(x.nota) : ""}
     <div class="ts-pe">${x.processo ? `<span class="ts-proc">${esc(x.processo)}</span>` : ""}<span class="ts-ramos">${tsRamos(x).map(r => `<span class="chip">${esc(r)}</span>`).join("")}</span>
       <span class="ts-acoes"><button class="ts-acao" data-tscopia="1" title="Copia a tese com a citação, pronta para a peça">Copiar citação</button>${lk ? `<a class="ts-acao" href="${lk}" target="_blank" rel="noopener">Ver no ${x.tribunal}</a>` : ""}</span></div>
   </article>`;
+}
+function tsNota(n) {                  // análise própria: por que importa à Defensoria, como cai em prova e treino de certo ou errado
+  const ul = a => (a || []).length ? `<ul class="nv-ul">${a.map(t => `<li>${md(t)}</li>`).join("")}</ul>` : "";
+  return `<details class="ts-nota"><summary>Para a Defensoria e para a prova${(n.treino || []).length ? ` · treine ${plural(n.treino.length, "questão", "questões")}` : ""}</summary>
+    ${(n.dpe || []).length ? `<h4>Por que interessa à Defensoria</h4>${ul(n.dpe)}` : ""}${(n.prova || []).length ? `<h4>Cai em prova</h4>${ul(n.prova)}` : ""}
+    ${(n.treino || []).length ? `<h4>Treine: certo ou errado?</h4>${n.treino.map(q => `<details class="qz"><summary>${md(q.q)}</summary><p class="qa ${q.a ? "ok" : "no"}"><b>${q.a ? "CERTO" : "ERRADO"}.</b> ${md(q.e.replace(/^(Certo|Errado)\.\s*/, ""))}</p></details>`).join("")}` : ""}
+  </details>`;
 }
 function tsLista() {
   const l = tsFiltrados(), n = S.tsN || 40, el = $("#ts-lista"), termos = tsNorm(S.tsQ).trim().split(/\s+/).filter(Boolean);

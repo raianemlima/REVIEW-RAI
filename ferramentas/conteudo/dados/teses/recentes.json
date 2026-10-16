@@ -1,0 +1,65 @@
+[
+ {
+  "tribunal": "STJ",
+  "tipo": "Repetitivo",
+  "num": "1327",
+  "processo": "",
+  "data": "",
+  "pub": "2026-10-14",
+  "ramo": "Administrativo",
+  "texto": "A penalidade administrativa deve se basear pelo princípio do tempus regit actum, salvo se houver previsão legal, específica e expressa, autorizativa de aplicação do normativo mais benéfico posterior às condutas pretéritas.",
+  "ref": "Primeira Seção, unânime (Informativo 901 do STJ). No caso, a redução da multa da Resolução ANTT 5.847/2019 não alcança infrações anteriores",
+  "nota": {
+   "dpe": [
+    "Limita a defesa em processos administrativos sancionadores: não basta invocar a lei posterior mais benéfica.",
+    "Diferencia a sanção administrativa da penal, em que a retroatividade benéfica é garantia constitucional."
+   ],
+   "prova": [
+    "Distinção entre retroatividade penal benéfica (art. 5º, XL, da CF) e sanção administrativa.",
+    "Comparar com o Tema 1.199/STF e conferir os limites no inteiro teor."
+   ],
+   "treino": [
+    {
+     "q": "Segundo o Tema 1.327/STJ, a lei posterior que reduz multa administrativa retroage automaticamente para beneficiar o infrator.",
+     "a": false,
+     "e": "Errado. Vale o tempus regit actum; só retroage se houver previsão legal específica e expressa."
+    },
+    {
+     "q": "A retroatividade da lei mais benéfica, garantida no direito penal, não é regra geral para toda sanção administrativa.",
+     "a": true,
+     "e": "Certo. Foi o que o STJ destacou ao fixar o Tema 1.327."
+    }
+   ]
+  }
+ },
+ {
+  "tribunal": "STF",
+  "tipo": "Repercussão geral",
+  "num": "1481",
+  "processo": "RE 1.563.095",
+  "data": "",
+  "pub": "2026-10-13",
+  "ramo": "Administrativo",
+  "outros_ramos": [
+   "Constitucional"
+  ],
+  "texto": "Possibilidade de efetivação, no serviço público, dos agentes comunitários de saúde e de combate às endemias contratados antes da Emenda Constitucional 51/2006.",
+  "status": "aguardando",
+  "nota": {
+   "dpe": [
+    "Atinge trabalhadores vulneráveis que buscam a efetivação no serviço público."
+   ],
+   "prova": [
+    "Exceção constitucional ao concurso público e processo seletivo público dos agentes (EC 51/2006).",
+    "Não confundir reconhecimento de repercussão geral com tese julgada."
+   ],
+   "treino": [
+    {
+     "q": "Ao reconhecer a repercussão geral do Tema 1.481, o STF já fixou tese garantindo a efetivação dos agentes contratados antes da EC 51/2006.",
+     "a": false,
+     "e": "Errado. Só a repercussão geral foi reconhecida; o mérito ainda será julgado."
+    }
+   ]
+  }
+ }
+]

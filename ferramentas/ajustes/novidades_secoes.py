@@ -1,9 +1,9 @@
-"""Aba Novidades em duas seções: atualizações legislativas e jurisprudência (temas repetitivos e outros julgados).
+"""Aba Novidades em duas seções: atualizações legislativas e jurisprudência (julgados recentes).
 
     python ferramentas/ajustes/novidades_secoes.py fonte.html
 
 Troca a tela renderNov, que misturava leis e decisões numa lista só, por duas abas internas com contagem
-e "novos" próprios. Na jurisprudência, Temas repetitivos e de repercussão geral vêm à parte dos demais julgados.
+e "novos" próprios. Temas repetitivos e de repercussão geral não aparecem aqui: ficam só na aba Teses (nvVisiveis).
 Os temas do filtro são só os da seção aberta. Rodar de novo não duplica: a tela é trocada inteira.
 """
 import sys
@@ -38,10 +38,9 @@ CSS = CSS_ID + """
 """
 
 JS = r'''function renderNov() {
-  ensureAj(); const all = nvItens(), lidas = S.ajustes.nvLidas || [], feitas = S.ajustes.nvFeitas || [], tipoDe = n => n.tipo || "lei";
+  ensureAj(); const all = typeof nvVisiveis === "function" ? nvVisiveis() : nvItens(), lidas = S.ajustes.nvLidas || [], feitas = S.ajustes.nvFeitas || [], tipoDe = n => n.tipo || "lei";
   const SEC = { lei: ["📜", "Leis", "Atualizações legislativas", "Só o que muda a rotina da Defensoria", "publicada em", "O que mudou"],
-                jur: ["⚖️", "Jurisprudência", "Temas repetitivos e julgados", "Teses fixadas e decisões recentes do STF e do STJ", "divulgado em", "O que foi decidido"] };
-  const repetitivo = n => /\bTema\b|repercuss|repetitiv/i.test(n.lei);
+                jur: ["⚖️", "Jurisprudência", "Julgados recentes", "Decisões recentes do STF e do STJ", "divulgado em", "O que foi decidido"] };
   const por = { lei: all.filter(n => tipoDe(n) === "lei"), jur: all.filter(n => tipoDe(n) !== "lei") };
   let tp = S.novTipo === "jur" || S.novTipo === "lei" ? S.novTipo : "lei";
   if (!por[tp].length && por[tp === "lei" ? "jur" : "lei"].length) tp = tp === "lei" ? "jur" : "lei";
@@ -59,7 +58,7 @@ JS = r'''function renderNov() {
           <div class="nv-top"><span class="nv-lei">${esc(n.lei)}</span><span class="count">${s[4]} ${fmtISO(n.pub)}</span>${lidas.includes(n.id) ? "" : `<span class="badge new">novo</span>`}<button class="nv-ok" data-nvok="${n.id}" aria-pressed="${feitas.includes(n.id)}" title="${feitas.includes(n.id) ? "Desmarcar" : "Marcar como concluída"}">${feitas.includes(n.id) ? "✓ Concluída" : "○ Concluir"}</button></div>
           <h3 class="nv-t">${esc(n.titulo)}</h3>
           <p class="nv-r">${md(n.resumo)}</p>
-          <div class="nv-tags">${tp === "jur" && repetitivo(n) ? `<span class="chip rep">${/^STF/.test(n.lei) ? "Repercussão geral" : "Recurso repetitivo"}</span>` : ""}${n.temas.map(t => `<span class="chip">${esc(t)}</span>`).join("")}${(n.papeis || []).map(p => `<span class="chip role">${PAPEIS[p][0]} ${PAPEIS[p][1]}</span>`).join("")}</div>
+          <div class="nv-tags">${n.temas.map(t => `<span class="chip">${esc(t)}</span>`).join("")}${(n.papeis || []).map(p => `<span class="chip role">${PAPEIS[p][0]} ${PAPEIS[p][1]}</span>`).join("")}</div>
         </summary>
         <div class="nv-body">
           <h4>${s[5]}</h4>${ul(n.mudou)}
@@ -72,14 +71,13 @@ JS = r'''function renderNov() {
           <p class="src" style="margin-top:12px">${esc((DECK.novidades || {}).fonte || "Resumos próprios: confira sempre o texto oficial.")}</p>
         </div>
       </details></article>`;
-  const grupo = (titulo, arr) => arr.length ? `<div class="nv-grupo"><h3>${titulo}</h3><span class="count">${arr.length}</span></div><div class="nv-list">${arr.map(card).join("")}</div>` : "";
-  const corpo = tp === "jur" ? grupo("Temas repetitivos e repercussão geral", list.filter(repetitivo)) + grupo("Outros julgados", list.filter(n => !repetitivo(n)))
-                             : `<div class="nv-list">${list.map(card).join("")}</div>`;
+  const corpo = `<div class="nv-list">${list.map(card).join("")}</div>`;
+  const temTeses = !!document.getElementById("tab-teses") && typeof renderTeses === "function";
   const recente = base.length ? ", a mais recente de " + fmtISO(base.map(n => n.pub).sort().pop()) : "";
   $("#main").innerHTML = `
     <h2>Novidades</h2>
     ${por.jur.length && por.lei.length ? `<div class="nv-seg" role="tablist" aria-label="Seção">${["lei", "jur"].map(k => `<button role="tab" data-tp="${k}" aria-selected="${tp === k}">${SEC[k][0]} ${SEC[k][1]} <span class="n">${por[k].length}</span>${naoLidas(por[k]) ? `<span class="badge new">${naoLidas(por[k])}</span>` : ""}</button>`).join("")}</div>` : ""}
-    <p class="sub"><b>${s[2]}.</b> ${s[3]}: ${plural(base.length, tp === "lei" ? "lei" : "decisão", tp === "lei" ? "leis" : "decisões")}${recente}. São resumos próprios: confira sempre o texto oficial.</p>
+    <p class="sub"><b>${s[2]}.</b> ${s[3]}: ${plural(base.length, tp === "lei" ? "lei" : "decisão", tp === "lei" ? "leis" : "decisões")}${recente}. São resumos próprios: confira sempre o texto oficial.${tp === "jur" && temTeses ? ` Temas repetitivos e de repercussão geral ficam na aba <a href="#" data-goteses>Teses</a>.` : ""}</p>
     <div class="nv-barra"><div class="nv-prog"><i style="width:${doTema.length ? Math.round(100 * nOk / doTema.length) : 0}%"></i></div><span>${nOk} de ${doTema.length} concluídas</span></div>
     <div class="nv-tools"><div class="nv-st" role="group" aria-label="Mostrar">${[["pend", "Pendentes", nPend], ["ok", "Concluídas", nOk], ["todas", "Todas", doTema.length]].map(([k, t, c]) => `<button data-st="${k}" aria-pressed="${st === k}">${t} <b>${c}</b></button>`).join("")}</div>
       ${temas.length > 1 ? `<label class="nv-tema"><span>Tema</span><select id="nvTema"><option value="">Todos os temas</option>${temas.map(t => `<option ${f === t ? "selected" : ""}>${esc(t)}</option>`).join("")}</select></label>` : ""}</div>
@@ -94,6 +92,7 @@ JS = r'''function renderNov() {
     queue("ajustes"); updNavBadge(); const y = scrollY; renderNov(); scrollTo(0, y);
     toast(a.nvFeitas.includes(id) ? "Concluída. Ela sai da lista de pendentes." : "Voltou para as pendentes.");
   }));
+  document.querySelectorAll("[data-goteses]").forEach(a => a.onclick = e => { e.preventDefault(); go("teses"); });
   document.querySelectorAll(".nv-seg [data-tp]").forEach(b => b.onclick = () => { S.novTipo = b.dataset.tp; S.novTema = ""; renderNov(); });
   document.querySelectorAll(".nov details[data-id]").forEach(dt => dt.addEventListener("toggle", () => {
     if (!dt.open) return; ensureAj(); const id = dt.dataset.id;
