@@ -3700,6 +3700,85 @@ async function cadDocx(lista, titulo) {
   if (logo) arqs.push(["word/media/logo.png", logo]);
   return zipar(arqs);
 }
+// ---- caderno em PDF: gerado aqui mesmo (fontes Helvetica do próprio PDF, larguras para quebrar linhas) ----
+const PDF_W = { r: [278,278,355,556,556,889,667,191,333,333,389,584,278,333,278,278,556,556,556,556,556,556,556,556,556,556,278,278,584,584,584,556,1015,667,667,722,722,667,611,778,722,278,500,667,556,833,722,778,667,778,722,667,611,722,667,944,667,667,611,278,278,278,469,556,333,556,556,500,556,556,278,556,556,222,222,500,222,833,556,556,556,556,333,500,278,556,500,722,500,500,500,334,260,334,584,761,556,761,222,556,333,1000,556,556,333,1000,667,333,1000,761,611,761,761,222,222,333,333,350,556,1000,333,1000,500,333,944,761,500,667,278,333,556,556,556,556,260,556,333,737,370,556,584,333,737,333,400,584,333,333,333,556,537,278,333,333,365,556,834,834,834,611,667,667,667,667,667,667,1000,722,667,667,667,667,278,278,278,278,722,722,778,778,778,778,778,584,778,722,722,722,722,667,667,611,556,556,556,556,556,556,889,500,556,556,556,556,278,278,278,278,556,556,556,556,556,556,556,584,611,556,556,556,556,500,556,500], b: [278,333,474,556,556,889,722,238,333,333,389,584,278,333,278,278,556,556,556,556,556,556,556,556,556,556,333,333,584,584,584,611,975,722,722,722,722,667,611,778,722,278,556,722,611,833,722,778,667,778,722,667,611,722,667,944,667,667,611,333,278,333,584,556,333,556,611,556,611,556,333,611,611,278,278,556,278,889,611,611,611,611,389,556,333,611,556,778,556,556,500,389,280,389,584,761,556,761,278,556,500,1000,556,556,333,1000,667,333,1000,761,611,761,761,278,278,500,500,350,556,1000,333,1000,556,333,944,761,500,667,278,333,556,556,556,556,280,556,333,737,370,556,584,333,737,333,400,584,333,333,333,611,556,278,333,333,365,556,834,834,834,611,722,722,722,722,722,722,1000,722,667,667,667,667,278,278,278,278,722,722,778,778,778,778,778,584,778,722,722,722,722,667,667,611,556,556,556,556,556,556,889,556,556,556,556,556,278,278,278,278,611,611,611,611,611,611,611,584,611,611,611,611,611,556,611,556] };
+const CP1252 = { 0x20AC: 128, 0x201A: 130, 0x0192: 131, 0x201E: 132, 0x2026: 133, 0x2020: 134, 0x2021: 135, 0x02C6: 136, 0x2030: 137, 0x0160: 138, 0x2039: 139, 0x0152: 140, 0x017D: 142, 0x2018: 145, 0x2019: 146, 0x201C: 147, 0x201D: 148, 0x2022: 149, 0x2013: 150, 0x2014: 151, 0x02DC: 152, 0x2122: 153, 0x0161: 154, 0x203A: 155, 0x0153: 156, 0x017E: 158, 0x0178: 159 };
+function pdfCod(t) { let o = ""; for (const ch of String(t).normalize("NFC")) { const c = ch.codePointAt(0); o += String.fromCharCode(c >= 32 && c < 127 || c >= 160 && c < 256 ? c : CP1252[c] || (c === 9 ? 32 : 63)); } return o; }
+const pdfLarg = (t, f, tam) => { let w = 0; for (let i = 0; i < t.length; i++) { const c = t.charCodeAt(i); w += (PDF_W[f === "b" ? "b" : "r"][c - 32] || 556); } return w * tam / 1000; };
+function pdfQuebra(t, f, tam, max) {
+  const linhas = [];
+  for (const par of pdfCod(t).split("\n")) {
+    let atual = "";
+    for (let pal of par.split(" ")) {
+      while (pdfLarg(pal, f, tam) > max) { let k = pal.length; while (k > 1 && pdfLarg(pal.slice(0, k), f, tam) > max) k--; if (atual) { linhas.push(atual); atual = ""; } linhas.push(pal.slice(0, k)); pal = pal.slice(k); }
+      const tent = atual ? atual + " " + pal : pal;
+      if (pdfLarg(tent, f, tam) <= max) atual = tent; else { linhas.push(atual); atual = pal; }
+    }
+    linhas.push(atual);
+  }
+  return linhas;
+}
+async function logoJpeg() {
+  try { const r = await fetch("icons/icon-192.png"); if (!r.ok) return null; const bmp = await createImageBitmap(await r.blob());
+    const c = document.createElement("canvas"); c.width = c.height = 192; const g = c.getContext("2d"); g.fillStyle = "#fff"; g.fillRect(0, 0, 192, 192); g.drawImage(bmp, 0, 0, 192, 192);
+    const bin = atob(c.toDataURL("image/jpeg", 0.92).split(",")[1]); return bin; } catch (e) { return null; }
+}
+async function cadPdf(lista, titulo) {
+  const PW = 595.28, PH = 841.89, M = 56.7, LARG = PW - 2 * M, TOPO = PH - 92, BASE = 62;
+  const rgb = h => { h = h.replace("#", ""); return [0, 2, 4].map(i => (parseInt(h.slice(i, i + 2), 16) / 255).toFixed(3)).join(" "); };
+  const esc = t => t.replace(/\\/g, "\\\\").replace(/\(/g, "\\(").replace(/\)/g, "\\)");
+  const F = { r: "/F1", b: "/F2", i: "/F3" };
+  const logo = await logoJpeg(), paginas = []; let ops = [], y = TOPO;
+  const nova = () => { if (ops.length) paginas.push(ops); ops = []; y = TOPO; };
+  const texto = (t, x, yy, f, tam, cor) => ops.push(`BT ${rgb(cor)} rg ${F[f]} ${tam} Tf ${x.toFixed(2)} ${yy.toFixed(2)} Td (${esc(t)}) Tj ET`);
+  const ret = (x, yy, w, h, cor) => ops.push(`${rgb(cor)} rg ${x.toFixed(2)} ${yy.toFixed(2)} ${w.toFixed(2)} ${h.toFixed(2)} re f`);
+  const linha = (x1, yy, x2, cor, esp) => ops.push(`${rgb(cor)} RG ${esp} w ${x1.toFixed(2)} ${yy.toFixed(2)} m ${x2.toFixed(2)} ${yy.toFixed(2)} l S`);
+  const cabe = h => { if (y - h < BASE) nova(); };
+  const g = new Map(); for (const x of lista) { const m = cadMat(x); if (!g.has(m)) g.set(m, []); g.get(m).push(x); }
+  // capa
+  if (logo) { ops.push(`q 64 0 0 64 ${(PW / 2 - 32).toFixed(2)} ${(y - 64).toFixed(2)} cm /Im1 Do Q`); y -= 84; }
+  const centro = (t, f, tam, cor) => { const c = pdfCod(t); texto(c, PW / 2 - pdfLarg(c, f, tam) / 2, y, f, tam, cor); };
+  centro("Review DPE", "b", 14, "#6C5CE7"); y -= 30; centro(titulo, "b", 24, "#1E1B4B"); y -= 20;
+  centro(`${plural(lista.length, "trecho", "trechos")} · ${plural(g.size, "matéria", "matérias")} · gerado em ${new Date().toLocaleDateString("pt-BR")}`, "r", 10, "#6B6890"); y -= 34;
+  for (const [m, xs] of [...g.entries()].sort((a, b) => cadOrdem(a[0]) - cadOrdem(b[0]))) {
+    const cor = m ? discColor(m) : "#6C5CE7";
+    cabe(70); y -= 10; texto(pdfCod(cadMatNome(m).toUpperCase()), M, y, "b", 13, cor); y -= 8; linha(M, y, PW - M, cor, 1.2); y -= 20;
+    for (const x of xs) {
+      const L = pdfQuebra(x.txt, "r", 10.5, LARG - 24), lh = 14.5;
+      cabe(Math.min(L.length, 3) * lh + 30); y -= 4;
+      L.forEach((l, i) => { if (y - lh < BASE) { nova(); } ret(M, y - lh + 10, LARG, lh, "#F7F6FF"); ret(M, y - lh + 10, 3, lh, cor); texto(l, M + 14, y - 1, "r", 10.5, "#1E1B4B"); y -= lh; });
+      y -= 6;
+      for (const l of pdfQuebra("— " + [x.fonte, CAD_ABAS[x.aba] || x.aba, new Date(x.t).toLocaleDateString("pt-BR")].filter(Boolean).join(" · "), "r", 8.5, LARG - 14)) { cabe(12); texto(l, M + 14, y, "i", 8.5, "#6B6890"); y -= 11; }
+      if (x.nota) { const N = pdfQuebra("Minha anotação: " + x.nota, "r", 10, LARG - 14); N.forEach((l, i) => { cabe(14); if (i === 0) { const rot = pdfCod("Minha anotação:"); texto(rot, M + 14, y, "b", 10, "#4B3FC4"); texto(l.slice(rot.length), M + 14 + pdfLarg(rot, "b", 10), y, "r", 10, "#1E1B4B"); } else texto(l, M + 14, y, "r", 10, "#1E1B4B"); y -= 13.5; }); }
+      y -= 12;
+    }
+  }
+  nova();
+  // cabeçalho e rodapé em todas as páginas
+  const tot = paginas.length;
+  paginas.forEach((p, i) => {
+    const o = [];
+    if (logo) o.push(`q 20 0 0 20 ${M.toFixed(2)} ${(PH - 50).toFixed(2)} cm /Im1 Do Q`);
+    o.push(`BT ${rgb("#6C5CE7")} rg /F2 11 Tf ${(M + (logo ? 26 : 0)).toFixed(2)} ${(PH - 44).toFixed(2)} Td (Review DPE) Tj ET`);
+    const t = pdfCod(titulo); o.push(`BT ${rgb("#6B6890")} rg /F1 9 Tf ${(PW - M - pdfLarg(t, "r", 9)).toFixed(2)} ${(PH - 44).toFixed(2)} Td (${esc(t)}) Tj ET`);
+    o.push(`${rgb("#E6E3FB")} RG 0.8 w ${M} ${(PH - 58).toFixed(2)} m ${(PW - M).toFixed(2)} ${(PH - 58).toFixed(2)} l S`);
+    const r = pdfCod(`Review DPE é um produto Multiversão · página ${i + 1} de ${tot}`); o.push(`BT ${rgb("#8582A8")} rg /F1 8 Tf ${(PW / 2 - pdfLarg(r, "r", 8) / 2).toFixed(2)} 32 Td (${esc(r)}) Tj ET`);
+    paginas[i] = o.concat(p);
+  });
+  // montagem dos objetos
+  const objs = [], add = s => { objs.push(s); return objs.length; };
+  const cat = add(""), pags = add(""), f1 = add("<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>"), f2 = add("<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>"), f3 = add("<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding >>");
+  const im = logo ? add(`<< /Type /XObject /Subtype /Image /Width 192 /Height 192 /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${logo.length} >>\nstream\n${logo}\nendstream`) : 0;
+  const res = `<< /Font << /F1 ${f1} 0 R /F2 ${f2} 0 R /F3 ${f3} 0 R >>${im ? ` /XObject << /Im1 ${im} 0 R >>` : ""} >>`;
+  const kids = paginas.map(p => { const c = p.join("\n"), cs = add(`<< /Length ${c.length} >>\nstream\n${c}\nendstream`); return add(`<< /Type /Page /Parent ${pags} 0 R /MediaBox [0 0 ${PW} ${PH}] /Resources ${res} /Contents ${cs} 0 R >>`); });
+  objs[cat - 1] = `<< /Type /Catalog /Pages ${pags} 0 R >>`; objs[pags - 1] = `<< /Type /Pages /Count ${kids.length} /Kids [${kids.map(k => k + " 0 R").join(" ")}] >>`;
+  const info = add(`<< /Title (${esc(pdfCod(titulo + " · Review DPE"))}) /Producer (Review DPE) /Author (${esc(pdfCod("Review DPE · Multiversão"))}) >>`);
+  let out = "%PDF-1.4\n%\xE2\xE3\xCF\xD3\n"; const offs = [];
+  objs.forEach((o, i) => { offs.push(out.length); out += `${i + 1} 0 obj\n${o}\nendobj\n`; });
+  const xref = out.length; out += `xref\n0 ${objs.length + 1}\n0000000000 65535 f \n` + offs.map(o => String(o).padStart(10, "0") + " 00000 n \n").join("");
+  out += `trailer\n<< /Size ${objs.length + 1} /Root ${cat} 0 R /Info ${info} 0 R >>\nstartxref\n${xref}\n%%EOF`;
+  const b = new Uint8Array(out.length); for (let i = 0; i < out.length; i++) b[i] = out.charCodeAt(i) & 255; return b;
+}
 function renderCaderno() {
   ensureAj(); const todos = cadAtivos().slice().reverse(), q = norm(S.cadQ || "");
   const cont = {}; for (const x of todos) { const m = cadMat(x); cont[m] = (cont[m] || 0) + 1; }
@@ -3722,7 +3801,7 @@ function renderCaderno() {
       <div class="row"><select id="cadNovoMat" aria-label="Matéria da anotação">${opcoes(fm || "")}</select><button class="btn primary small" id="cadAdd">Adicionar ao caderno</button></div></div>
     ${todos.length ? `<div class="ts-busca"><input id="cadQ" type="search" placeholder="Buscar no caderno" value="${esc(S.cadQ || "")}" aria-label="Buscar no caderno"></div>
     <div class="dpe-filtros" role="group" aria-label="Matéria"><button class="fchip" data-cadmatf="*" aria-pressed="${fm == null}">Todas · ${todos.length}</button>${mats.map(m => `<button class="fchip" data-cadmatf="${esc(m)}" aria-pressed="${fm === m}">${esc(m ? DISC[m].curto : "Sem matéria")} · ${cont[m]}</button>`).join("")}</div>
-    <div class="row cad-acoes"><button class="btn small" id="cadCopiar">Copiar ${fm == null ? "tudo" : "esta matéria"}</button><button class="btn small" id="cadBaixar">Baixar resumo (Word)</button></div>` : ""}
+    <div class="row cad-acoes"><button class="btn small" id="cadCopiar">Copiar ${fm == null ? "tudo" : "esta matéria"}</button><button class="btn small" id="cadBaixar">Baixar em Word</button><button class="btn small" id="cadPdf">Baixar em PDF</button></div>` : ""}
     <div class="cad-lista">${ordem.map(m => `<div class="dpe-sec cad-sec"><h3>${m ? discIco(m) + " " : ""}${esc(cadMatNome(m))}</h3><span class="count">${plural(grupos.get(m).length, "trecho", "trechos")}</span></div>${grupos.get(m).map(item).join("")}`).join("") || (todos.length ? `<p class="count">Nada encontrado.</p>` : `<div class="nv-vazio">Seu caderno está vazio. Abra a Lei seca, a Doutrina ou um cartão, selecione um trecho e salve.</div>`)}</div>`;
   $("#cadVolta").onclick = () => go("sessao");
   $("#cadAdd").onclick = () => { const v = $("#cadNovo").value.trim(); if (!v) return; const m = $("#cadNovoMat").value; cadSalvar(v, "Anotação livre", "caderno", m || cadAdivinhar(v)); renderCaderno(); };
@@ -3736,14 +3815,16 @@ function renderCaderno() {
   document.querySelectorAll("[data-cadcp]").forEach(b => b.onclick = () => { const x = achar(b.dataset.cadcp); if (x) copiar(cadTexto([x])); });
   const emOrdem = () => ordem.flatMap(m => grupos.get(m).slice().reverse());
   $("#cadCopiar")?.addEventListener("click", () => copiar(cadTextoMat(emOrdem())));
-  $("#cadBaixar")?.addEventListener("click", async () => {
-    const b = $("#cadBaixar"); b.disabled = true;
+  const baixar = async (btn, ext) => {
+    btn.disabled = true;
     try {
-      const nome = fm == null ? "caderno-review-dpe" : `caderno-${(DISC[fm]?.curto || "sem materia").toLowerCase().normalize("NFD").replace(/[^a-z0-9]+/g, "-")}`;
-      const bytes = await cadDocx(emOrdem(), fm == null ? "Caderno de resumos" : `Caderno de resumos · ${cadMatNome(fm)}`);
-      await entregarArquivo(nome + ".docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", bytesB64(bytes), true);
-    } catch (e) { toast("Não consegui gerar o arquivo agora."); } finally { b.disabled = false; }
-  });
+      const nome = fm == null ? "caderno-review-dpe" : `caderno-${(DISC[fm]?.curto || "sem materia").toLowerCase().normalize("NFD").replace(/[^a-z0-9]+/g, "-")}`, tit = fm == null ? "Caderno de resumos" : `Caderno de resumos · ${cadMatNome(fm)}`;
+      const bytes = ext === "pdf" ? await cadPdf(emOrdem(), tit) : await cadDocx(emOrdem(), tit);
+      await entregarArquivo(`${nome}.${ext}`, ext === "pdf" ? "application/pdf" : "application/vnd.openxmlformats-officedocument.wordprocessingml.document", bytesB64(bytes), true);
+    } catch (e) { toast("Não consegui gerar o arquivo agora."); } finally { btn.disabled = false; }
+  };
+  $("#cadBaixar")?.addEventListener("click", e => baixar(e.currentTarget, "docx"));
+  $("#cadPdf")?.addEventListener("click", e => baixar(e.currentTarget, "pdf"));
 }
 // redesenhos internos (filtros, busca) também mantêm o seletor
 renderNov = (f => function (...a) { const r = f.apply(this, a); if (S.tab === "novidades") lsSeletor(); return r; })(renderNov);
