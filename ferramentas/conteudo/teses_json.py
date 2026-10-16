@@ -1,9 +1,12 @@
 """Gera dados/teses.json a partir do texto do documento "Teses de Repercussão Geral e Temas Repetitivos
-mais importantes para as Defensorias Públicas" (dados/teses/*.txt, copiado sem alterações).
+mais importantes para as Defensorias Públicas" (dados/teses/*.txt, copiado sem alterações) e da atualização
+de julho/2026 (dados/teses/duo-2026-07.json, gerada por teses_duo.py), mais os temas recentes de dados/teses/recentes.json
+(julgados ou afetados depois disso; cada um pode trazer "pub" (data de divulgação, AAAA-MM-DD) e "nota" com dpe, prova e treino).
 
     python ferramentas/conteudo/teses_json.py
 
-O texto de cada item fica como está no documento. O script só separa os itens, identifica tribunal, tipo,
+Quando o mesmo tema está em mais de uma fonte, vale o da mais nova (recentes, depois julho, depois abril);
+o tema que só existe numa fonte mais nova que abril ganha a marca "novo". O texto de cada item fica como está no documento. O script só separa os itens, identifica tribunal, tipo,
 número e ramo, junta repetições idênticas e marca o que precisa de atenção:
   - "superado": trecho riscado ou cancelado no documento;
   - "aguardando": o documento traz só a questão ou a admissão do tema, sem a tese;
@@ -14,6 +17,8 @@ from pathlib import Path
 
 DADOS = Path(__file__).resolve().parent / "dados"
 FONTE = sorted((DADOS / "teses").glob("*.txt"))
+ATUALIZACAO = DADOS / "teses" / "duo-2026-07.json"
+RECENTES = DADOS / "teses" / "recentes.json"
 SAIDA = DADOS / "teses.json"
 
 RAMOS = {
@@ -102,6 +107,40 @@ def mesmo_tema(grupo):
     ks = [chave_texto(x["texto"]) for x in grupo]
     return all(a[:60] in b or b[:60] in a for a in ks for b in ks)
 
+def chave(x):
+    return (x["tribunal"], x["tipo"], x["num"]) if x["num"] else None
+
+def juntar(abril, ramos):
+    """Junta abril com a atualização de julho e os temas recentes. Um tema aparece uma vez só (mesmo número ou mesmo texto);
+    os outros ramos em que ele é citado vão em "outros_ramos", para o filtro por ramo continuar achando."""
+    ler_json = lambda f: json.loads(f.read_text(encoding="utf-8")) if f.exists() else []
+    julho, recentes = ler_json(ATUALIZACAO), ler_json(RECENTES)
+    tk = lambda x: chave_texto(x["texto"])[:90]
+    saida, por_chave, por_texto, achado_antes = [], {}, {}, set()
+    for origem, lista in (("recentes", recentes), ("julho", julho), ("abril", abril)):   # da fonte mais nova para a mais antiga
+        for x in lista:
+            k, t = chave(x), tk(x)
+            p = (k and por_chave.get(k)) or por_texto.get(t)
+            if p is not None:
+                if origem != p["_origem"]: achado_antes.add(id(p))            # já existia numa fonte mais antiga: não é novo
+                if origem == "abril":
+                    if x["tipo"] == "IAC": p["tipo"] = "IAC"                 # julho lista o IAC como tema comum
+                    if " e " in (x["num"] or "") and x["num"].startswith(p["num"]): p["num"] = x["num"]   # "190 e 191"
+                if x["ramo"] != p["ramo"] and x["ramo"] not in p.setdefault("outros_ramos", []): p["outros_ramos"].append(x["ramo"])
+                continue
+            x = dict(x, _origem=origem); saida.append(x)
+            if k: por_chave[k] = x
+            por_texto[t] = x
+    novos = 0
+    for x in saida:
+        if x.pop("_origem") != "abril" and id(x) not in achado_antes: x["novo"] = True; novos += 1
+        if not x.get("outros_ramos"): x.pop("outros_ramos", None)
+    ordem_tipo = {"Súmula Vinculante": 0, "Súmula": 1, "Repercussão geral": 2, "IAC": 3, "Repetitivo": 4}
+    num = lambda x: int(re.match(r"\d+", x["num"]).group()) if re.match(r"\d+", x["num"] or "") else 0
+    # dentro de cada ramo: súmulas, depois STF e STJ, do tema mais recente (número maior) para o mais antigo
+    saida.sort(key=lambda x: (ramos.index(x["ramo"]) if x["ramo"] in ramos else 99, ordem_tipo.get(x["tipo"], 9), -num(x)))
+    return saida, novos
+
 def gerar():
     vistos, saida, dup = set(), [], 0
     for it in ler():
@@ -120,12 +159,14 @@ def gerar():
         if len(grupo) > 1 and not mesmo_tema(grupo):
             for x in grupo:
                 if not x.get("status"): x["status"] = "conferir"; conferir += 1
+    ramos = list(dict.fromkeys(RAMOS.values()))
+    saida, novos = juntar(saida, ramos)
     dados = {"titulo": "Teses de repercussão geral e temas repetitivos mais importantes para a Defensoria",
-             "atualizado": "2026-04-30", "fonte": "Compilação “Teses de Repercussão Geral e Temas Repetitivos mais importantes para as Defensorias Públicas” (abril/2026)",
-             "ramos": list(dict.fromkeys(RAMOS.values())), "itens": saida}
+             "atualizado": "2026-10-14", "fonte": "Compilações “Teses de Repercussão Geral e Temas Repetitivos mais importantes para as Defensorias Públicas” (abril/2026) e “Teses de Repercussão Geral & Temas Repetitivos” (Cursos DUO, julho/2026), mais temas julgados ou afetados até outubro/2026",
+             "ramos": ramos, "itens": saida}
     SAIDA.write_text(json.dumps(dados, ensure_ascii=False, indent=1), encoding="utf-8")
     from collections import Counter
-    print(f"{len(saida)} itens ({dup} repetições idênticas removidas, {conferir} para conferir número) → {SAIDA}")
+    print(f"{len(saida)} itens, {novos} novos (julho e recentes) ({dup} repetições idênticas removidas, {conferir} para conferir número) → {SAIDA}")
     for (r, t), n in sorted(Counter((x["ramo"], x["tribunal"]) for x in saida).items(), key=lambda a: dados["ramos"].index(a[0][0])):
         print(f"  {r:24} {t}: {n}")
     print("  status:", dict(Counter(x.get("status", "ok") for x in saida)))

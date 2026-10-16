@@ -28,43 +28,121 @@ CSS = """
 .ts-card.ts-superado .ts-txt { text-decoration: line-through; text-decoration-thickness: 1px; }
 .ts-stj { border-left-color: #2fa37a; }
 .ts-vazio { color: var(--muted); text-align: center; padding: 24px 8px; }
+.ts-ramos-nav { display: flex; gap: 6px; overflow-x: auto; padding: 2px 2px 8px; margin: 0 0 4px; scrollbar-width: thin; }
+.ts-ramos-nav .fchip { flex: none; white-space: nowrap; }
+.fchip small { opacity: .7; font-weight: 600; margin-left: 2px; }
+.ts-sep { width: 1px; background: var(--line); margin: 2px 4px; }
+.ts-fnovas[aria-pressed="false"] { border-color: #f0b429; }
+.ts-novo { font: 700 .7rem var(--f-ui); text-transform: uppercase; letter-spacing: .04em; background: #f0b429; color: #3d2a00; border-radius: 999px; padding: 2px 8px; }
+.ts-stat-novas { font: inherit; cursor: pointer; border: 1px solid transparent; }
+.ts-stat-novas[aria-pressed="true"] { border-color: #f0b429; }
+.ts-grupo { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin: 18px 0 8px; padding-bottom: 4px; border-bottom: 2px solid var(--line); font: 700 1rem var(--f-ui); }
+.ts-nota { margin: 4px 0 8px; border-radius: 12px; background: var(--accent-soft); padding: 0 12px; }
+.ts-nota > summary { cursor: pointer; padding: 9px 0; font: 600 .86rem var(--f-ui); color: var(--accent); }
+.ts-nota h4 { margin: 8px 0 6px; font: 700 .8rem var(--f-ui); text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+.ts-nota .qz { background: var(--surface); }
+.ts-nota[open] { padding-bottom: 10px; }
+.ts-grupo small { color: var(--muted); font-weight: 500; font-size: .8rem; }
+.ts-pe { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin-top: 6px; font-size: .82rem; }
+.ts-proc { color: var(--muted); font-weight: 600; }
+.ts-ramos { display: flex; gap: 4px; flex-wrap: wrap; }
+.ts-acoes { margin-left: auto; display: flex; gap: 6px; }
+.ts-acao { font: 600 .8rem var(--f-ui); color: var(--accent); background: none; border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; cursor: pointer; text-decoration: none; }
+.ts-acao:hover { border-color: var(--accent); }
+.ts-txt mark { background: #fde68a; color: inherit; border-radius: 3px; padding: 0 1px; }
 """
 
 JS = r"""
 // ===================== aba Teses: repercussão geral (STF) e repetitivos (STJ) para a DPE =====================
-const tsDados = () => DECK.teses || (typeof TESES_PUBLICO !== "undefined" ? TESES_PUBLICO : { itens: [] });
+const tsDados = () => { const a = DECK.teses, b = typeof TESES_PUBLICO !== "undefined" ? TESES_PUBLICO : null;
+  return a && (!b || (a.atualizado || "") >= (b.atualizado || "")) ? a : (b || { itens: [] }); };
 const tsNorm = s => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
-const TS_ALERTA = { aguardando: "O documento traz só a questão do tema, sem a tese fixada.", superado: "Superado ou cancelado: não use como entendimento atual.",
+const TS_ALERTA = { aguardando: "Tema afetado: o tribunal ainda não fixou a tese. Acompanhe o julgamento.", superado: "Superado, revogado ou cancelado: não use como entendimento atual.",
   conferir: "Este número aparece no documento com outro texto. Confira o número no site do tribunal." };
-function tsFiltrados() {
-  const D = tsDados(), q = tsNorm(S.tsQ).trim(), tri = S.tsTri || "", r = S.tsRamo || "";
-  const termos = q.split(/\s+/).filter(Boolean);
-  return (D.itens || []).filter(x => (!tri || x.tribunal === tri) && (!r || x.ramo === r) &&
-    (!termos.length || (x._q || (x._q = tsNorm([x.tipo, x.num, x.processo, x.ramo, x.texto].join(" ")))) && termos.every(t => x._q.includes(t))));
+const TS_TIPOS = [["", "Tudo"], ["sum", "Súmulas"], ["rg", "Repercussão geral"], ["rep", "Repetitivos e IAC"]];
+const tsTipoOk = (x, t) => !t || (t === "sum" ? /Súmula/.test(x.tipo) : t === "rg" ? x.tipo === "Repercussão geral" : /Repetitivo|IAC/.test(x.tipo));
+const tsRamos = x => [x.ramo, ...(x.outros_ramos || [])];
+const tsData = x => { const m = /(\d{1,2})\/(\d{1,2})\/(\d{4})/.exec(x.data || ""); return m ? m[3] + m[2].padStart(2, "0") + m[1].padStart(2, "0") : (x.pub || "").replace(/-/g, ""); };
+const tsNum = x => parseInt(x.num, 10) || 0;
+function tsBase(semRamo) {      // todos os filtros, menos a busca; semRamo serve para contar os itens de cada ramo
+  const D = tsDados(), tri = S.tsTri || "", tipo = S.tsTipo || "", r = S.tsRamo || "";
+  return (D.itens || []).filter(x => (!tri || x.tribunal === tri) && tsTipoOk(x, tipo) && (!S.tsNovas || x.novo) && (semRamo || !r || tsRamos(x).includes(r)));
 }
-function tsCard(x) {
-  const rot = x.tipo === "Repercussão geral" ? `Tema ${x.num || "—"} · RG` : x.tipo === "Repetitivo" ? `Tema ${x.num} · Repetitivo` : `${x.tipo} ${x.num}`;
-  const paras = x.texto.split("\n").map(p => `<p>${esc(p)}</p>`).join("");
-  return `<article class="dpe-card ts-card${x.tribunal === "STJ" ? " ts-stj" : ""}${x.status === "superado" ? " ts-superado" : ""}">
-    <div class="dpe-top"><span class="dpe-num">${x.tribunal} · ${esc(rot)}</span><span class="chip">${esc(x.ramo)}</span>${x.data ? `<span class="dpe-data">${esc(x.data)}</span>` : ""}</div>
+function tsFiltrados() {
+  const termos = tsNorm(S.tsQ).trim().split(/\s+/).filter(Boolean);
+  const l = tsBase().filter(x => !termos.length || (x._q || (x._q = tsNorm([x.tribunal, x.tipo, "tema " + x.num, x.num, x.processo, x.ramo, x.texto, ...(x.nota ? [...x.nota.dpe || [], ...x.nota.prova || []] : [])].join(" ")))) && termos.every(t => x._q.includes(t)));
+  if (S.tsOrdem === "recentes") return [...l].sort((a, b) => (tsData(b) || "0").localeCompare(tsData(a) || "0") || tsNum(b) - tsNum(a));
+  if (S.tsOrdem === "numero") return [...l].sort((a, b) => a.tribunal.localeCompare(b.tribunal) || tsNum(a) - tsNum(b));
+  return l;                    // ordem do conjunto: por ramo; súmulas, STF e STJ; tema mais novo primeiro
+}
+function tsRotulo(x) {
+  return x.tipo === "Repercussão geral" ? `Tema ${x.num || "—"} · Repercussão geral` : x.tipo === "Repetitivo" ? `Tema ${x.num} · Repetitivo`
+    : x.tipo === "IAC" ? `IAC ${x.num}` : `${x.tipo} ${x.num}`;
+}
+function tsCitacao(x) {
+  const p = [x.processo, x.data ? "julgado em " + x.data : ""].filter(Boolean).join(", ");
+  const onde = /Súmula/.test(x.tipo) ? `${x.tipo} ${x.num} do ${x.tribunal}` : x.tipo === "Repercussão geral" ? `STF, Tema ${x.num} da Repercussão Geral`
+    : x.tipo === "IAC" ? `STJ, IAC ${x.num}` : `STJ, Tema Repetitivo ${x.num}`;
+  return `“${x.texto.replace(/\n+/g, " ")}” (${onde}${p ? ", " + p : ""}).`;
+}
+function tsLink(x) {
+  if (!x.num || !/^\d+$/.test(x.num)) return "";
+  if (x.tipo === "Repercussão geral") return "https://portal.stf.jus.br/jurisprudenciaRepercussao/tema.asp?num=" + x.num;
+  if (x.tipo === "Repetitivo") return `https://processo.stj.jus.br/repetitivos/temas_repetitivos/pesquisa.jsp?novaConsulta=true&tipo_pesquisa=T&cod_tema_inicial=${x.num}&cod_tema_final=${x.num}`;
+  return "";
+}
+function tsDestaca(html, termos) {    // marca os termos da busca no texto, ignorando acentos
+  const cls = { a: "[aáàâã]", e: "[eéê]", i: "[ií]", o: "[oóôõ]", u: "[uúü]", c: "[cç]" };
+  termos.filter(t => t.length > 2).forEach(t => {
+    const re = new RegExp("(" + [...t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")].map(ch => cls[ch] || ch).join("") + ")", "gi");
+    html = html.replace(/(^|>)([^<]*)/g, (m, a, txt) => a + txt.replace(re, "<mark>$1</mark>"));
+  });
+  return html;
+}
+function tsCard(x, termos) {
+  const longo = x.texto.length > 600, lk = tsLink(x);
+  const paras = x.texto.split("\n").map(p => `<p>${tsDestaca(esc(p), termos)}</p>`).join("");
+  return `<article class="dpe-card ts-card${x.tribunal === "STJ" ? " ts-stj" : ""}${x.status === "superado" ? " ts-superado" : ""}" data-ts="${esc(x.tribunal + x.tipo + x.num)}">
+    <div class="dpe-top"><span class="dpe-num">${x.tribunal} · ${esc(tsRotulo(x))}</span>${x.novo ? `<span class="ts-novo">Nova</span>` : ""}${x.data ? `<span class="dpe-data">${esc(x.data)}</span>` : ""}</div>
     ${x.status ? `<div class="ts-alerta">${TS_ALERTA[x.status]}</div>` : ""}
-    <div class="ts-txt${x.texto.length > 600 ? " fechado" : ""}">${paras}</div>
-    ${x.texto.length > 600 ? `<button class="ts-mais">Ler tudo</button>` : ""}
-    ${x.processo ? `<div class="dpe-pe"><span>${esc(x.processo)}</span></div>` : ""}
+    <div class="ts-txt${longo ? " fechado" : ""}">${paras}</div>
+    ${longo ? `<button class="ts-mais">Ler tudo</button>` : ""}
+    ${x.nota ? tsNota(x.nota) : ""}
+    <div class="ts-pe">${x.processo ? `<span class="ts-proc">${esc(x.processo)}</span>` : ""}<span class="ts-ramos">${tsRamos(x).map(r => `<span class="chip">${esc(r)}</span>`).join("")}</span>
+      <span class="ts-acoes"><button class="ts-acao" data-tscopia="1" title="Copia a tese com a citação, pronta para a peça">Copiar citação</button>${lk ? `<a class="ts-acao" href="${lk}" target="_blank" rel="noopener">Ver no ${x.tribunal}</a>` : ""}</span></div>
   </article>`;
 }
+function tsNota(n) {                  // análise própria: por que importa à Defensoria, como cai em prova e treino de certo ou errado
+  const ul = a => (a || []).length ? `<ul class="nv-ul">${a.map(t => `<li>${md(t)}</li>`).join("")}</ul>` : "";
+  return `<details class="ts-nota"><summary>Para a Defensoria e para a prova${(n.treino || []).length ? ` · treine ${plural(n.treino.length, "questão", "questões")}` : ""}</summary>
+    ${(n.dpe || []).length ? `<h4>Por que interessa à Defensoria</h4>${ul(n.dpe)}` : ""}${(n.prova || []).length ? `<h4>Cai em prova</h4>${ul(n.prova)}` : ""}
+    ${(n.treino || []).length ? `<h4>Treine: certo ou errado?</h4>${n.treino.map(q => `<details class="qz"><summary>${md(q.q)}</summary><p class="qa ${q.a ? "ok" : "no"}"><b>${q.a ? "CERTO" : "ERRADO"}.</b> ${md(q.e.replace(/^(Certo|Errado)\.\s*/, ""))}</p></details>`).join("")}` : ""}
+  </details>`;
+}
 function tsLista() {
-  const l = tsFiltrados(), n = S.tsN || 40, el = $("#ts-lista");
+  const l = tsFiltrados(), n = S.tsN || 40, el = $("#ts-lista"), termos = tsNorm(S.tsQ).trim().split(/\s+/).filter(Boolean);
   $("#ts-cont").textContent = plural(l.length, "tese", "teses");
-  el.innerHTML = l.length ? l.slice(0, n).map(tsCard).join("") + (l.length > n ? `<button class="btn" id="ts-mostrar" style="width:100%">Mostrar mais ${Math.min(40, l.length - n)} de ${l.length - n}</button>` : "")
+  const porRamo = !S.tsOrdem && !S.tsRamo; let ramo = "", h = "";
+  l.slice(0, n).forEach(x => {
+    if (porRamo && x.ramo !== ramo) { ramo = x.ramo; h += `<h4 class="ts-grupo"><span>${esc(ramo)}</span><small>${plural(l.filter(y => y.ramo === ramo).length, "tese", "teses")}</small></h4>`; }
+    h += tsCard(x, termos);
+  });
+  el.innerHTML = l.length ? h + (l.length > n ? `<button class="btn" id="ts-mostrar" style="width:100%">Mostrar mais ${Math.min(40, l.length - n)} de ${l.length - n}</button>` : "")
     : `<p class="ts-vazio">Nada encontrado. Tente outra palavra ou limpe os filtros.</p>`;
   el.querySelectorAll(".ts-mais").forEach(b => b.onclick = () => { const t = b.previousElementSibling, f = t.classList.toggle("fechado"); b.textContent = f ? "Ler tudo" : "Mostrar menos"; });
+  const porId = Object.fromEntries(l.map(x => [x.tribunal + x.tipo + x.num, x]));
+  el.querySelectorAll("[data-tscopia]").forEach(b => b.onclick = () => {
+    const x = porId[b.closest("[data-ts]").dataset.ts], txt = tsCitacao(x);
+    const ok = () => toast("Tese copiada com a citação.");
+    if (navigator.clipboard) navigator.clipboard.writeText(txt).then(ok, () => prompt("Copie a citação:", txt)); else prompt("Copie a citação:", txt);
+  });
   const m = $("#ts-mostrar"); if (m) m.onclick = () => { S.tsN = n + 40; tsLista(); };
 }
 function renderTeses() {
   const D = tsDados(), it = D.itens || [], tri = S.tsTri || "";
-  const ramos = (D.ramos || []).filter(r => it.some(x => x.ramo === r && (!tri || x.tribunal === tri)));
-  const nSTF = it.filter(x => x.tribunal === "STF").length;
+  const nSTF = it.filter(x => x.tribunal === "STF").length, nNovas = it.filter(x => x.novo).length;
+  const base = tsBase(true), conta = r => base.filter(x => tsRamos(x).includes(r)).length;
+  const ramos = (D.ramos || []).filter(r => conta(r) || r === S.tsRamo);
   $("#main").innerHTML = `
     <section class="dpe-hero">
       <p class="dpe-kicker">Precedentes qualificados</p>
@@ -73,19 +151,32 @@ function renderTeses() {
       <div class="dpe-stats">
         <div class="dpe-stat"><b>${nSTF}</b><span>do STF</span></div>
         <div class="dpe-stat"><b>${it.length - nSTF}</b><span>do STJ</span></div>
-        <div class="dpe-stat"><b>${(D.ramos || []).length}</b><span>ramos</span></div>
+        ${nNovas ? `<button class="dpe-stat ts-stat-novas" id="ts-ver-novas" aria-pressed="${!!S.tsNovas}"><b>${nNovas}</b><span>novas</span></button>` : `<div class="dpe-stat"><b>${(D.ramos || []).length}</b><span>ramos</span></div>`}
       </div>
     </section>
-    <div class="ts-busca"><input id="ts-q" type="search" placeholder="Buscar tese" value="${esc(S.tsQ || "")}" aria-label="Buscar teses">
-      <select id="ts-ramo" aria-label="Ramo"><option value="">Todos os ramos</option>${ramos.map(r => `<option${r === S.tsRamo ? " selected" : ""}>${esc(r)}</option>`).join("")}</select></div>
-    <div class="dpe-filtros" role="group" aria-label="Tribunal">${["", "STF", "STJ"].map(t => `<button class="fchip" data-tstri="${t}" aria-pressed="${tri === t}">${t || "STF e STJ"}</button>`).join("")}</div>
-    <div class="dpe-sec"><h3>${esc(S.tsRamo || "Todas as teses")}</h3><span class="count" id="ts-cont"></span></div>
+    <div class="ts-busca"><input id="ts-q" type="search" placeholder="Buscar por palavra, tema ou processo" value="${esc(S.tsQ || "")}" aria-label="Buscar teses">
+      <select id="ts-ordem" aria-label="Ordem"><option value="">Por ramo</option><option value="recentes"${S.tsOrdem === "recentes" ? " selected" : ""}>Mais recentes</option><option value="numero"${S.tsOrdem === "numero" ? " selected" : ""}>Número do tema</option></select></div>
+    <div class="ts-ramos-nav" role="group" aria-label="Ramo">
+      <button class="fchip" data-tsramo="" aria-pressed="${!S.tsRamo}">Todos <small>${base.length}</small></button>
+      ${ramos.map(r => `<button class="fchip" data-tsramo="${esc(r)}" aria-pressed="${r === S.tsRamo}">${esc(r)} <small>${conta(r)}</small></button>`).join("")}
+    </div>
+    <div class="dpe-filtros" role="group" aria-label="Filtros">
+      ${["", "STF", "STJ"].map(t => `<button class="fchip" data-tstri="${t}" aria-pressed="${tri === t}">${t || "STF e STJ"}</button>`).join("")}
+      <span class="ts-sep"></span>
+      ${TS_TIPOS.map(([v, r]) => `<button class="fchip" data-tstipo="${v}" aria-pressed="${(S.tsTipo || "") === v}">${r}</button>`).join("")}
+      ${nNovas ? `<button class="fchip ts-fnovas" data-tsnovas="1" aria-pressed="${!!S.tsNovas}">Só as novas</button>` : ""}
+    </div>
+    <div class="dpe-sec"><h3>${esc(S.tsRamo || (S.tsNovas ? "Novas nesta atualização" : "Todas as teses"))}</h3><span class="count" id="ts-cont"></span></div>
     <div id="ts-lista"></div>
     <p class="dpe-nota">${D.fonte ? esc(D.fonte) + ". " : ""}Confira sempre a redação oficial no site do STF ou do STJ antes de citar em peça ou prova.</p>`;
+  const reset = () => { S.tsN = 40; renderTeses(); };
   let t0; $("#ts-q").oninput = e => { clearTimeout(t0); t0 = setTimeout(() => { S.tsQ = e.target.value; S.tsN = 40; tsLista(); }, 150); };
-  $("#ts-ramo").onchange = e => { S.tsRamo = e.target.value; S.tsN = 40; renderTeses(); };
-  document.querySelectorAll(".fchip[data-tstri]").forEach(b => b.onclick = () => { S.tsTri = b.dataset.tstri; S.tsN = 40;
-    if (S.tsRamo && !it.some(x => x.ramo === S.tsRamo && (!S.tsTri || x.tribunal === S.tsTri))) S.tsRamo = ""; renderTeses(); });
+  $("#ts-ordem").onchange = e => { S.tsOrdem = e.target.value; S.tsN = 40; tsLista(); };
+  document.querySelectorAll("[data-tsramo]").forEach(b => b.onclick = () => { S.tsRamo = b.dataset.tsramo; reset(); });
+  document.querySelectorAll("[data-tstri]").forEach(b => b.onclick = () => { S.tsTri = b.dataset.tstri; reset(); });
+  document.querySelectorAll("[data-tstipo]").forEach(b => b.onclick = () => { S.tsTipo = b.dataset.tstipo; reset(); });
+  document.querySelectorAll("[data-tsnovas], #ts-ver-novas").forEach(b => b.onclick = () => { S.tsNovas = !S.tsNovas; reset(); });
+  const sel = document.querySelector('.ts-ramos-nav [aria-pressed="true"]'); if (sel && sel.scrollIntoView) sel.scrollIntoView({ block: "nearest", inline: "center" });
   tsLista();
 }
 (() => { const t = document.getElementById("tab-teses"); if (t) t.hidden = !(tsDados().itens || []).length; })();
