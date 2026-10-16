@@ -27,6 +27,11 @@ jobs:
           APP_SENHA: ${{ secrets.APP_SENHA }}
           CHAVE_ARQUIVOS: ${{ secrets.CHAVE_ARQUIVOS }}
         run: node ferramentas/ci/injetar_arquivos.mjs _site/index.html
+      - name: Revisões de texto dos cartões (segredos APP_SENHA e REVISOES_CHAVE)
+        env:
+          APP_SENHA: ${{ secrets.APP_SENHA }}
+          REVISOES_CHAVE: ${{ secrets.REVISOES_CHAVE }}
+        run: node ferramentas/ci/aplicar_revisoes.mjs _site/index.html
       - uses: actions/upload-pages-artifact@v3
         with: { path: _site }
       - id: d
