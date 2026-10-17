@@ -120,7 +120,9 @@ def juntar(abril, ramos):
     for origem, lista in (("recentes", recentes), ("julho", julho), ("abril", abril)):   # da fonte mais nova para a mais antiga
         for x in lista:
             k, t = chave(x), tk(x)
-            p = (k and por_chave.get(k)) or por_texto.get(t)
+            p_t = por_texto.get(t)
+            if p_t is not None and ("Súmula" in p_t["tipo"]) != ("Súmula" in x["tipo"]): p_t = None   # súmula e tema com o mesmo texto (ex.: SV 56 e Tema 423) ficam separados
+            p = (k and por_chave.get(k)) or p_t
             if p is not None:
                 if origem != p["_origem"]: achado_antes.add(id(p))            # já existia numa fonte mais antiga: não é novo
                 if origem == "abril":
@@ -162,7 +164,7 @@ def gerar():
     ramos = list(dict.fromkeys(RAMOS.values()))
     saida, novos = juntar(saida, ramos)
     dados = {"titulo": "Teses de repercussão geral e temas repetitivos mais importantes para a Defensoria",
-             "atualizado": "2026-10-14", "fonte": "Compilações “Teses de Repercussão Geral e Temas Repetitivos mais importantes para as Defensorias Públicas” (abril/2026) e “Teses de Repercussão Geral & Temas Repetitivos” (Cursos DUO, julho/2026), mais temas julgados ou afetados até outubro/2026",
+             "atualizado": "2026-10-17", "fonte": "Compilações “Teses de Repercussão Geral e Temas Repetitivos mais importantes para as Defensorias Públicas” (abril/2026) e “Teses de Repercussão Geral & Temas Repetitivos” (Cursos DUO, julho/2026), mais temas julgados ou afetados até outubro/2026",
              "ramos": ramos, "itens": saida}
     SAIDA.write_text(json.dumps(dados, ensure_ascii=False, indent=1), encoding="utf-8")
     from collections import Counter
