@@ -16,7 +16,7 @@ const MESES: Record<string, number> = { MONTHLY: 1, BIMONTHLY: 2, QUARTERLY: 3, 
 const DIAS: Record<string, number> = { WEEKLY: 7, BIWEEKLY: 14 };
 
 // Acesso pago vai do vencimento da cobrança até o fim do ciclo, mais uma folga para o próximo pagamento compensar (boleto leva dias).
-// Plano anual à vista (R$ 130) vendido como cobrança avulsa: vale 12 meses quando o valor chega a ANUAL_VALOR_MIN (padrão R$ 100).
+// Plano anual à vista (R$ 129,99) vendido como cobrança avulsa: vale 12 meses quando o valor chega a ANUAL_VALOR_MIN (padrão R$ 100).
 export function decidir(p: Pagamento, a: Assinatura, opc: { toleranciaDias: number; avulsoMeses: number; anualValorMin?: number }): Decisao {
   if (ESTORNADO.has(p.status)) return { acao: "cortar" };
   if (!PAGO.has(p.status) || !/^\d{4}-\d{2}-\d{2}$/.test(p.dueDate || "")) return { acao: "ignorar" };
@@ -28,7 +28,7 @@ export function decidir(p: Pagamento, a: Assinatura, opc: { toleranciaDias: numb
   return { acao: "liberar", ate };
 }
 
-// Parcelado (ex.: anual de R$ 130 em até 10x): o acesso cobre a fração já paga do período, contada a partir da 1ª parcela.
+// Parcelado (ex.: anual de R$ 129,99 em até 12x de R$ 10,83): o acesso cobre a fração já paga do período, contada a partir da 1ª parcela.
 // No cartão todas as parcelas são confirmadas juntas, então libera o período inteiro; no boleto, vai liberando conforme paga.
 export function decidirParcelado(p: Pagamento, parcelas: Pagamento[], opc: { toleranciaDias: number; avulsoMeses: number; anualValorMin?: number }): Decisao {
   if (ESTORNADO.has(p.status)) return { acao: "cortar" };
