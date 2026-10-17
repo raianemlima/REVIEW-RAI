@@ -18,7 +18,7 @@ App abre → chave_do_app confere valido_ate → entrega (ou não) a chave do co
 | Plano | Preço | Como criar no Asaas | Acesso liberado |
 |---|---|---|---|
 | Mensal | R$ 15,99/mês | link de pagamento do tipo **Assinatura**, ciclo **Mensal** | até o vencimento + 1 mês + 3 dias; renova a cada pagamento |
-| Anual | R$ 129,99 à vista ou em até 12x de R$ 10,83 | link de pagamento do tipo **Cobrança parcelada**, até 12 parcelas | 12 meses + 3 dias, contados da 1ª parcela (valor total ≥ `ANUAL_VALOR_MIN`, padrão R$ 100). No cartão as parcelas são confirmadas juntas e libera o ano todo; no boleto parcelado, libera a fração já paga |
+| Anual | R$ 129,99 à vista ou até 12x de R$ 11,20 no cartão (taxas repassadas) | link de pagamento do tipo **Cobrança parcelada**, até 12 parcelas | 12 meses + 3 dias, contados da 1ª parcela (valor total ≥ `ANUAL_VALOR_MIN`, padrão R$ 100). No cartão as parcelas são confirmadas juntas e libera o ano todo; no boleto parcelado, libera a fração já paga |
 
 Criar os links: no Asaas, **Cobranças → Links de pagamento → Criar link**.
 - Nome: "Review DPE · Mensal" / "Review DPE · Anual". Valor: 15,99 / 130,00.

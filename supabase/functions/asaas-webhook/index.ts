@@ -28,7 +28,7 @@ export function decidir(p: Pagamento, a: Assinatura, opc: { toleranciaDias: numb
   return { acao: "liberar", ate };
 }
 
-// Parcelado (ex.: anual de R$ 129,99 em até 12x de R$ 10,83): o acesso cobre a fração já paga do período, contada a partir da 1ª parcela.
+// Parcelado (ex.: anual de R$ 129,99 em até 12x de R$ 11,20, taxas do cartão repassadas): o acesso cobre a fração já paga do período, contada a partir da 1ª parcela.
 // No cartão todas as parcelas são confirmadas juntas, então libera o período inteiro; no boleto, vai liberando conforme paga.
 export function decidirParcelado(p: Pagamento, parcelas: Pagamento[], opc: { toleranciaDias: number; avulsoMeses: number; anualValorMin?: number }): Decisao {
   if (ESTORNADO.has(p.status)) return { acao: "cortar" };
