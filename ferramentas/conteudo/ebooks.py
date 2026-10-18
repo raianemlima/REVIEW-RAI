@@ -75,9 +75,22 @@ TROCAS = [
 ]
 
 
+# texto novo, escrito a partir do ECA consolidado no Planalto (Lei 15.240/2025), no lugar de um aviso de bastidor
+AFETIVA = """#### Assistência afetiva e abandono afetivo (Lei nº 15.240/2025)
+
+A Lei nº 15.240/2025 incluiu no ECA o dever de **assistência afetiva** e tornou expressa a **ilicitude do abandono afetivo**:
+
+- **Art. 4º, § 2º:** compete aos pais, além de zelar pelos direitos do art. 3º, prestar aos filhos assistência afetiva, **por meio de convívio ou de visitação periódica**, que permita o acompanhamento da formação psicológica, moral e social da pessoa em desenvolvimento.
+- **Art. 4º, § 3º:** considera-se assistência afetiva: (I) a orientação quanto às principais escolhas e oportunidades profissionais, educacionais e culturais; (II) a solidariedade e o apoio nos momentos de intenso sofrimento ou de dificuldade; (III) a presença física espontaneamente solicitada pela criança ou pelo adolescente, quando possível de ser atendida.
+- **Art. 5º, parágrafo único:** considera-se **conduta ilícita, sujeita a reparação de danos**, sem prejuízo de outras sanções cabíveis, a ação ou a omissão que ofenda direito fundamental de criança ou de adolescente previsto no ECA, **incluídos os casos de abandono afetivo**.
+- **Art. 22:** a **assistência material e afetiva** passou a figurar, ao lado de sustento, guarda, convivência e educação, entre os deveres dos pais.
+
+⚠️ **Alerta de prova:** antes da lei, o tema era construção jurisprudencial. O STJ já admitia indenização por abandono afetivo com base no dever de cuidado (REsp 1.159.242/SP, 3ª Turma, 2012: "amar é faculdade, cuidar é dever"). Agora há **previsão legal expressa**. O que se exige dos pais é **assistência** (convívio, orientação, apoio e presença), e não afeto como sentimento."""
+
+
 # frases de bastidor ("conferir antes de publicar", "o original", "ver mapa"...) tiram a credibilidade do texto para o aluno
 RE_TROCAS = [
-    (r'\n*Há ainda previsão relacionada à assistência afetiva parental e ao abandono afetivo\.[^\n]*', ''),
+    (r'\n*Há ainda previsão relacionada à assistência afetiva parental e ao abandono afetivo\.[^\n]*', lambda m: '\n\n' + AFETIVA),
     (r'; portanto, não se deve tratar esses dados históricos como incontroversos sem verificação bibliográfica\.', '.'),
     (r'O texto-base usa a adoção por avós como exemplo de tensão entre uma regra legal e o melhor interesse\. Esse exemplo deve ser estudado com a ressalva de que exceções',
      'A adoção por avós é exemplo clássico de tensão entre uma regra legal e o melhor interesse. As exceções'),
