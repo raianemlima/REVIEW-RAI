@@ -35,8 +35,9 @@ def preparar(md, eid, disc, titulo, subtitulo):
         txt = re.sub(r'^## Direito da Criança e do Adolescente\n### E-book de revisão estratégica[^\n]*\n#### Caderno 1[^\n]*\n', '', txt, flags=re.M)
         for a, b in TROCAS: txt = txt.replace(a, b)
         for a, b in RE_TROCAS: txt = re.sub(a, b, txt)
+        txt = sem_secao(txt, r'flash ?cards?')   # o app já tem o próprio baralho de cartões
         txt = re.sub(r'(\n---\s*)+\Z', '', re.sub(r'\n{3,}', '\n\n', txt)).strip()
-        for x in re.findall(r'[^\n]*(?:material-base|CP Iuris|mapa de integridade|ver mapa|o original|do original|texto-base|confer[a-z]* antes|publicação final|verificação bibliográfica|Caderno sobre)[^\n]*', txt): print('  ATENÇÃO, nota de produção:', x[:140])
+        for x in re.findall(r'[^\n]*(?:material-base|CP Iuris|mapa de integridade|ver mapa|\bo original|\bdo original|texto-base|confer[a-z]* antes|publicação final|verificação bibliográfica|Caderno sobre)[^\n]*', txt): print('  ATENÇÃO, nota de produção:', x[:140])
         out.append({'id': f'c{i}', 't': c['t'], 'md': txt})
     d = {'id': eid, 'titulo': titulo, 'subtitulo': subtitulo, 'disc': disc, 'atualizado': date.today().isoformat(), 'caps': out}
     os.makedirs(os.path.join(AQUI, 'dados', 'ebooks'), exist_ok=True)
@@ -102,6 +103,17 @@ RE_TROCAS = [
     (r'Nota de terminologia: o original usa "menor infrator"\. Em provas', 'Nota de terminologia: evite "menor infrator". Em provas'),
     (r'Segundo o original, esse papel', 'Esse papel'),
 ]
+
+
+def sem_secao(txt, padrao):
+    """Remove as seções cujo título casa com o padrão, até o próximo título de mesmo nível ou acima."""
+    out, corta = [], 0
+    for l in txt.split('\n'):
+        h = re.match(r'^(#{2,6})\s+(.*)$', l)
+        if h and corta and len(h.group(1)) <= corta: corta = 0
+        if h and not corta and re.search(padrao, h.group(2), re.I): corta = len(h.group(1)); continue
+        if not corta: out.append(l)
+    return '\n'.join(out)
 
 
 def titulo_bonito(t):
