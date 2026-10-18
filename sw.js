@@ -1,6 +1,6 @@
 // Review DPE · service worker
 // Offline: o app e as fontes ficam guardados no aparelho. Atualização: a versão nova espera o aviso "Atualizar".
-const CACHE = "revisao-dpe-v97", DADOS = "revisao-dpe-dados";
+const CACHE = "revisao-dpe-v98", DADOS = "revisao-dpe-dados";
 const CORE = ["./", "index.html", "manifest.webmanifest", "privacidade.html", "termos.html", "icons/icon.svg", "icons/icon-180.png", "icons/icon-192.png", "icons/icon-512.png", "icons/icon-maskable-512.png",
   "fonts/fonts.css", "fonts/ibm-plex-sans-latin-400-normal.woff2", "fonts/ibm-plex-sans-latin-500-normal.woff2", "fonts/ibm-plex-sans-latin-600-normal.woff2",
   "fonts/ibm-plex-mono-latin-400-normal.woff2", "fonts/ibm-plex-mono-latin-500-normal.woff2",
