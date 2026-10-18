@@ -50,9 +50,16 @@ def limpa(linhas, ate=None, sem=()):
         l = re.sub(r'^([lI]{1,3}) - ', lambda m: m.group(1).replace('l', 'I') + ' - ', l)   # "ll -" do Planalto
         l = re.sub(r'\((reda|inclu)', lambda m: '(' + m.group(1).capitalize(), l)
         l = re.sub(r'^((?:Art\.|§)\s*\d+)o\b', r'\1º', l)
-        l = l.replace('\xad', '-').replace(' .', '.').replace('))', ')')
+        l = l.replace('arestauratividade', 'a restauratividade').replace('\xad', '-').replace(' .', '.').replace('))', ')')
+        # o Planalto às vezes mantém a redação antiga sem tachar: fica a última versão do mesmo dispositivo
+        if out and rotulo(l) and rotulo(l) == rotulo(out[-1]): out[-1] = l; continue
         out.append(l)
     return '\n'.join(out)
+
+
+def rotulo(l):
+    m = re.match(r'^([IVXLC]+\s*[-–]|§\s*\d+|[a-z]\)|Pena\b|Parágrafo único)', l)
+    return m and re.sub(r'\s|[-–]', '', m.group(1))
 
 
 def grupo(nome, R, lista):
@@ -63,6 +70,34 @@ def grupo(nome, R, lista):
         if a not in R: raise SystemExit(f'{nome}: art. {a} não encontrado')
         itens.append({'a': a, 'x': limpa(R[a], **kw)})
     return {'nome': nome, 'itens': itens}
+
+
+def mandela(path):
+    """Regras de Mandela: o PDF do CNJ intercala colunas, então os trechos são conferidos e montados um a um."""
+    txt = re.sub(r'\s+', ' ', open(path, encoding='utf-8').read().replace('\u2011', '-'))
+    txt = re.sub(r'([a-z]),\d+ ', r'\1, ', txt)   # remove chamadas de nota de rodapé
+    R = {
+        '1': ['1. Todos os presos devem ser tratados com respeito, devido a seu valor e dignidade inerentes ao ser humano. Nenhum preso deverá ser submetido a tortura ou tratamentos ou sanções cruéis, desumanos ou degradantes e deverá ser protegido de tais atos, não sendo estes justificáveis em qualquer circunstância. A segurança dos presos, dos servidores prisionais, dos prestadores de serviço e dos visitantes deve ser sempre assegurada.'],
+        '3': ['O encarceramento e outras medidas que excluam uma pessoa do convívio com o mundo externo são aflitivas pelo próprio fato de ser retirado destas pessoas o direito à autodeterminação ao serem privadas de sua liberdade. Portanto, o sistema prisional não deverá agravar o sofrimento inerente a tal situação, exceto em casos incidentais, em que a separação seja justificável, ou nos casos de manutenção da disciplina.'],
+        '43': ['1. Em nenhuma hipótese devem as restrições ou sanções disciplinares implicar em tortura ou outra forma de tratamento ou sanções cruéis, desumanos ou degradantes. As seguintes práticas, em particular, devem ser proibidas:',
+               '(a) Confinamento solitário indefinido;', '(b) Confinamento solitário prolongado;', '(c) Encarceramento em cela escura ou constantemente iluminada;',
+               '(d) Castigos corporais ou redução da dieta ou água potável do preso;', '(e) Castigos coletivos.',
+               '2. Instrumentos de imobilização jamais devem ser utilizados como sanção a infrações disciplinares.',
+               '3. Sanções disciplinares ou medidas restritivas não devem incluir a proibição de contato com a família. O contato familiar só pode ser restringido por um prazo limitado e quando for estritamente necessário para a manutenção da segurança e da ordem.'],
+        '44': ['Para os objetivos destas Regras, o confinamento solitário refere-se ao confinamento do preso por 22 horas ou mais, por dia, sem contato humano significativo. O confinamento solitário prolongado refere-se ao confinamento solitário por mais de 15 dias consecutivos.'],
+        '45': ['1. O confinamento solitário será utilizado somente em casos excepcionais como último recurso, pelo menor prazo possível e sujeito a uma revisão independente, e somente de acordo com autorização de autoridade competente. Não deverá ser imposto como consequência da sentença do preso.',
+               '2. A determinação de confinamento solitário será proibida no caso de preso portador de deficiência mental ou física quando essas condições possam ser agravadas por tal medida. A proibição do uso do confinamento solitário e de medidas similares em casos envolvendo mulheres e crianças, como referido em outros padrões e normas das Nações Unidas sobre prevenção ao crime e justiça criminal, permanece aplicável.'],
+        '61': ['1. Os presos devem ter a oportunidade, tempo e meios adequados para receberem visitas e de se comunicaram com um advogado de sua própria escolha ou com um defensor público, sem demora, interceptação ou censura, em total confidencialidade, sobre qualquer assunto legal, em conformidade com a legislação local. Tais encontros podem estar sob as vistas de agentes prisionais, mas não passíveis de serem ouvidos por estes.',
+               '2. Nos casos em que os presos não falam o idioma local, a administração prisional deve facilitar o acesso aos serviços de um intérprete competente e independente.',
+               '3. Os presos devem ter acesso a assistência jurídica efetiva.'],
+    }
+    itens = []
+    for n, ls in R.items():
+        for l in ls:   # cada frase precisa existir no texto oficial (o PDF quebra linhas e páginas no meio)
+            for parte in re.split(r'(?<=[.;:])\s+', re.sub(r'^(\d\.|\([a-e]\))\s*', '', l)):
+                if parte and parte.replace('refere-se', 'refere') not in txt.replace('refere-se', 'refere'): raise SystemExit(f'Mandela {n}: não conferiu: {parte[:60]}')
+        itens.append({'a': n, 'r': f'Regra {n}', 'x': '\n'.join(ls)})
+    return {'nome': 'Regras de Mandela (ONU, 2015)', 'itens': itens}
 
 
 FONTE = 'Seleção do Review DPE com os dispositivos mais cobrados em provas de Defensoria. Texto conferido em {} em 18/10/2026'
@@ -91,6 +126,17 @@ def main(src, dst):
         'jec': dict(nome='Juizados Especiais · Lei 9.099/1995', curto='Lei 9.099', disc='pp', fonte=FONTE.format('planalto.gov.br'), grupos=[
             grupo('Juizado Especial Criminal', jec, ['60', '61', '62', '69', '72', '74', '75', '76', '88', '89']),
             grupo('Juizado Especial Cível', jec, ['3', '9', '41'])]),
+        'idoso': dict(nome='Estatuto da Pessoa Idosa · Lei 10.741/2003', curto='Idoso', disc='dh', fonte=FONTE.format('planalto.gov.br'), grupos=[
+            grupo('Estatuto da Pessoa Idosa', arts(t('idoso')), ['#Disposições preliminares', '1', '2', '3', '4', '#Direitos fundamentais', '10', '39',
+                                                                 '#Medidas de proteção', '43', '45', '#Acesso à justiça e crimes', '71', '94'])]),
+        'epcd': dict(nome='Estatuto da Pessoa com Deficiência · Lei 13.146/2015', curto='PcD', disc='dh', fonte=FONTE.format('planalto.gov.br'), grupos=[
+            grupo('Estatuto da Pessoa com Deficiência', arts(t('epcd')), ['2', '4', '6', '#Acesso à justiça', '79', '#Capacidade legal e curatela', '84', '85'])]),
+        'lmp': dict(nome='Lei Maria da Penha · Lei 11.340/2006', curto='Maria da Penha', disc='dp', fonte=FONTE.format('planalto.gov.br'), grupos=[
+            grupo('Lei Maria da Penha', arts(t('lmp')), ['#Conceitos', '5', '7', '#Medidas protetivas', '12-C', '22', '24-A',
+                                                         '#Processo e assistência', '16', '17', '27', '28', '41'])]),
+        'mandela': dict(nome='Execução penal · Regras de Mandela e Res. 487 do CNJ', curto='Mandela', disc='ep', fonte=FONTE.format('cnj.jus.br (Regras de Mandela, tradução oficial do CNJ, 2016; Res. 487/2023)'), grupos=[
+            mandela(t('mandela')),
+            grupo('Res. 487/2023 do CNJ · política antimanicomial', arts(t('r487')), ['1', '3', '11', '12', '13', '16', '18'])]),
     }
     for k, d in dips.items():
         p = os.path.join(dst, k + '.json')
