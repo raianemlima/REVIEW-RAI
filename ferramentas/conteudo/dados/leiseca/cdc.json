@@ -1,0 +1,187 @@
+{
+ "id": "cdc",
+ "nome": "CDC · Código de Defesa do Consumidor",
+ "curto": "CDC",
+ "disc": "co",
+ "fonte": "Seleção do Review DPE com os dispositivos mais cobrados em provas de Defensoria. Texto conferido em planalto.gov.br em 18/10/2026",
+ "grupos": [
+  {
+   "nome": "CDC: direito material",
+   "itens": [
+    {
+     "h": "Conceitos"
+    },
+    {
+     "a": "2",
+     "x": "Art. 2° Consumidor é toda pessoa física ou jurídica que adquire ou utiliza produto ou serviço como destinatário final.\nParágrafo único. Equipara-se a consumidor a coletividade de pessoas, ainda que indetermináveis, que haja intervindo nas relações de consumo."
+    },
+    {
+     "a": "3",
+     "x": "Art. 3° Fornecedor é toda pessoa física ou jurídica, pública ou privada, nacional ou estrangeira, bem como os entes despersonalizados, que desenvolvem atividade de produção, montagem, criação, construção, transformação, importação, exportação, distribuição ou comercialização de produtos ou prestação de serviços.\n§ 1° Produto é qualquer bem, móvel ou imóvel, material ou imaterial.\n§ 2° Serviço é qualquer atividade fornecida no mercado de consumo, mediante remuneração, inclusive as de natureza bancária, financeira, de crédito e securitária, salvo as decorrentes das relações de caráter trabalhista."
+    },
+    {
+     "h": "Direitos básicos"
+    },
+    {
+     "a": "6",
+     "x": "Art. 6º São direitos básicos do consumidor:\nI - a proteção da vida, saúde e segurança contra os riscos provocados por práticas no fornecimento de produtos e serviços considerados perigosos ou nocivos;\nII - a educação e divulgação sobre o consumo adequado dos produtos e serviços, asseguradas a liberdade de escolha e a igualdade nas contratações;\nIII - a informação adequada e clara sobre os diferentes produtos e serviços, com especificação correta de quantidade, características, composição, qualidade, tributos incidentes e preço, bem como sobre os riscos que apresentem; (Redação dada pela Lei nº 12.741, de 2012) Vigência\nIV - a proteção contra a publicidade enganosa e abusiva, métodos comerciais coercitivos ou desleais, bem como contra práticas e cláusulas abusivas ou impostas no fornecimento de produtos e serviços;\nV - a modificação das cláusulas contratuais que estabeleçam prestações desproporcionais ou sua revisão em razão de fatos supervenientes que as tornem excessivamente onerosas;\nVI - a efetiva prevenção e reparação de danos patrimoniais e morais, individuais, coletivos e difusos;\nVII - o acesso aos órgãos judiciários e administrativos com vistas à prevenção ou reparação de danos patrimoniais e morais, individuais, coletivos ou difusos, assegurada a proteção Jurídica, administrativa e técnica aos necessitados;\nVIII - a facilitação da defesa de seus direitos, inclusive com a inversão do ônus da prova, a seu favor, no processo civil, quando, a critério do juiz, for verossímil a alegação ou quando for ele hipossuficiente, segundo as regras ordinárias de experiências;\nIX - (Vetado);\nX - a adequada e eficaz prestação dos serviços públicos em geral.\nXI - a garantia de práticas de crédito responsável, de educação financeira e de prevenção e tratamento de situações de superendividamento, preservado o mínimo existencial, nos termos da regulamentação, por meio da revisão e da repactuação da dívida, entre outras medidas; (Incluído pela Lei nº 14.181, de 2021)\nXII - a preservação do mínimo existencial, nos termos da regulamentação, na repactuação de dívidas e na concessão de crédito; (Incluído pela Lei nº 14.181, de 2021)\nXIII - a informação acerca dos preços dos produtos por unidade de medida, tal como por quilo, por litro, por metro ou por outra unidade, conforme o caso. (Incluído pela Lei nº 14.181, de 2021)\nParágrafo único. A informação de que trata o inciso III do caput deste artigo deve ser acessível à pessoa com deficiência, observado o disposto em regulamento. (Incluído pela Lei nº 13.146, de 2015) (Vigência)"
+    },
+    {
+     "h": "Responsabilidade e prazos"
+    },
+    {
+     "a": "14",
+     "x": "Art. 14. O fornecedor de serviços responde, independentemente da existência de culpa, pela reparação dos danos causados aos consumidores por defeitos relativos à prestação dos serviços, bem como por informações insuficientes ou inadequadas sobre sua fruição e riscos.\n§ 1° O serviço é defeituoso quando não fornece a segurança que o consumidor dele pode esperar, levando-se em consideração as circunstâncias relevantes, entre as quais:\nI - o modo de seu fornecimento;\nII - o resultado e os riscos que razoavelmente dele se esperam;\nIII - a época em que foi fornecido.\n§ 2º O serviço não é considerado defeituoso pela adoção de novas técnicas.\n§ 3° O fornecedor de serviços só não será responsabilizado quando provar:\nI - que, tendo prestado o serviço, o defeito inexiste;\nII - a culpa exclusiva do consumidor ou de terceiro.\n§ 4° A responsabilidade pessoal dos profissionais liberais será apurada mediante a verificação de culpa."
+    },
+    {
+     "a": "17",
+     "x": "Art. 17. Para os efeitos desta Seção, equiparam-se aos consumidores todas as vítimas do evento."
+    },
+    {
+     "a": "26",
+     "x": "Art. 26. O direito de reclamar pelos vícios aparentes ou de fácil constatação caduca em:\nI - trinta dias, tratando-se de fornecimento de serviço e de produtos não duráveis;\nII - noventa dias, tratando-se de fornecimento de serviço e de produtos duráveis.\n§ 1° Inicia-se a contagem do prazo decadencial a partir da entrega efetiva do produto ou do término da execução dos serviços.\n§ 2° Obstam a decadência:\nI - a reclamação comprovadamente formulada pelo consumidor perante o fornecedor de produtos e serviços até a resposta negativa correspondente, que deve ser transmitida de forma inequívoca;\nII - (Vetado).\nIII - a instauração de inquérito civil, até seu encerramento.\n§ 3° Tratando-se de vício oculto, o prazo decadencial inicia-se no momento em que ficar evidenciado o defeito."
+    },
+    {
+     "a": "27",
+     "x": "Art. 27. Prescreve em cinco anos a pretensão à reparação pelos danos causados por fato do produto ou do serviço prevista na Seção II deste Capítulo, iniciando-se a contagem do prazo a partir do conhecimento do dano e de sua autoria.\nParágrafo único. (Vetado)."
+    },
+    {
+     "a": "28",
+     "x": "Art. 28. O juiz poderá desconsiderar a personalidade jurídica da sociedade quando, em detrimento do consumidor, houver abuso de direito, excesso de poder, infração da lei, fato ou ato ilícito ou violação dos estatutos ou contrato social. A desconsideração também será efetivada quando houver falência, estado de insolvência, encerramento ou inatividade da pessoa jurídica provocados por má administração.\n§ 1° (Vetado).\n§ 2° As sociedades integrantes dos grupos societários e as sociedades controladas, são subsidiariamente responsáveis pelas obrigações decorrentes deste código.\n§ 3° As sociedades consorciadas são solidariamente responsáveis pelas obrigações decorrentes deste código.\n§ 4° As sociedades coligadas só responderão por culpa.\n§ 5° Também poderá ser desconsiderada a pessoa jurídica sempre que sua personalidade for, de alguma forma, obstáculo ao ressarcimento de prejuízos causados aos consumidores."
+    },
+    {
+     "h": "Práticas e cláusulas abusivas"
+    },
+    {
+     "a": "42",
+     "x": "Art. 42. Na cobrança de débitos, o consumidor inadimplente não será exposto a ridículo, nem será submetido a qualquer tipo de constrangimento ou ameaça.\nParágrafo único. O consumidor cobrado em quantia indevida tem direito à repetição do indébito, por valor igual ao dobro do que pagou em excesso, acrescido de correção monetária e juros legais, salvo hipótese de engano justificável."
+    },
+    {
+     "a": "49",
+     "x": "Art. 49. O consumidor pode desistir do contrato, no prazo de 7 dias a contar de sua assinatura ou do ato de recebimento do produto ou serviço, sempre que a contratação de fornecimento de produtos e serviços ocorrer fora do estabelecimento comercial, especialmente por telefone ou a domicílio.\nParágrafo único. Se o consumidor exercitar o direito de arrependimento previsto neste artigo, os valores eventualmente pagos, a qualquer título, durante o prazo de reflexão, serão devolvidos, de imediato, monetariamente atualizados."
+    },
+    {
+     "a": "51",
+     "x": "Art. 51. São nulas de pleno direito, entre outras, as cláusulas contratuais relativas ao fornecimento de produtos e serviços que:\nI - impossibilitem, exonerem ou atenuem a responsabilidade do fornecedor por vícios de qualquer natureza dos produtos e serviços ou impliquem renúncia ou disposição de direitos. Nas relações de consumo entre o fornecedor e o consumidor pessoa jurídica, a indenização poderá ser limitada, em situações justificáveis;\nII - subtraiam ao consumidor a opção de reembolso da quantia já paga, nos casos previstos neste código;\nIII - transfiram responsabilidades a terceiros;\nIV - estabeleçam obrigações consideradas iníquas, abusivas, que coloquem o consumidor em desvantagem exagerada, ou sejam incompatíveis com a boa-fé ou a eqüidade;\nV - (Vetado);\nVI - estabeleçam inversão do ônus da prova em prejuízo do consumidor;\nVII - determinem a utilização compulsória de arbitragem;\nVIII - imponham representante para concluir ou realizar outro negócio jurídico pelo consumidor;\nIX - deixem ao fornecedor a opção de concluir ou não o contrato, embora obrigando o consumidor;\nX - permitam ao fornecedor, direta ou indiretamente, variação do preço de maneira unilateral;\nXI - autorizem o fornecedor a cancelar o contrato unilateralmente, sem que igual direito seja conferido ao consumidor;\nXII - obriguem o consumidor a ressarcir os custos de cobrança de sua obrigação, sem que igual direito lhe seja conferido contra o fornecedor;\nXIII - autorizem o fornecedor a modificar unilateralmente o conteúdo ou a qualidade do contrato, após sua celebração;\nXIV - infrinjam ou possibilitem a violação de normas ambientais;\nXV - estejam em desacordo com o sistema de proteção ao consumidor;\nXVI - possibilitem a renúncia do direito de indenização por benfeitorias necessárias.\nXVII - condicionem ou limitem de qualquer forma o acesso aos órgãos do Poder Judiciário; (Incluído pela Lei nº 14.181, de 2021)\nXVIII - estabeleçam prazos de carência em caso de impontualidade das prestações mensais ou impeçam o restabelecimento integral dos direitos do consumidor e de seus meios de pagamento a partir da purgação da mora ou do acordo com os credores; (Incluído pela Lei nº 14.181, de 2021)\nXIX - (VETADO). (Incluído pela Lei nº 14.181, de 2021)\n§ 1º Presume-se exagerada, entre outros casos, a vantagem que:\nI - ofende os princípios fundamentais do sistema jurídico a que pertence;\nII - restringe direitos ou obrigações fundamentais inerentes à natureza do contrato, de tal modo a ameaçar seu objeto ou equilíbrio contratual;\nIII - se mostra excessivamente onerosa para o consumidor, considerando-se a natureza e conteúdo do contrato, o interesse das partes e outras circunstâncias peculiares ao caso.\n§ 2° A nulidade de uma cláusula contratual abusiva não invalida o contrato, exceto quando de sua ausência, apesar dos esforços de integração, decorrer ônus excessivo a qualquer das partes.\n§ 3° (Vetado).\n§ 4° É facultado a qualquer consumidor ou entidade que o represente requerer ao Ministério Público que ajuíze a competente ação para ser declarada a nulidade de cláusula contratual que contrarie o disposto neste código ou de qualquer forma não assegure o justo equilíbrio entre direitos e obrigações das partes."
+    },
+    {
+     "h": "Superendividamento"
+    },
+    {
+     "a": "54-A",
+     "x": "Art. 54-A. Este Capítulo dispõe sobre a prevenção do superendividamento da pessoa natural, sobre o crédito responsável e sobre a educação financeira do consumidor. (Incluído pela Lei nº 14.181, de 2021)\n§ 1º Entende-se por superendividamento a impossibilidade manifesta de o consumidor pessoa natural, de boa-fé, pagar a totalidade de suas dívidas de consumo, exigíveis e vincendas, sem comprometer seu mínimo existencial, nos termos da regulamentação. (Incluído pela Lei nº 14.181, de 2021)\n§ 2º As dívidas referidas no § 1º deste artigo englobam quaisquer compromissos financeiros assumidos decorrentes de relação de consumo, inclusive operações de crédito, compras a prazo e serviços de prestação continuada. (Incluído pela Lei nº 14.181, de 2021)\n§ 3º O disposto neste Capítulo não se aplica ao consumidor cujas dívidas tenham sido contraídas mediante fraude ou má-fé, sejam oriundas de contratos celebrados dolosamente com o propósito de não realizar o pagamento ou decorram da aquisição ou contratação de produtos e serviços de luxo de alto valor. (Incluído pela Lei nº 14.181, de 2021)"
+    }
+   ]
+  }
+ ],
+ "cartoes": [
+  {
+   "g": 0,
+   "a": "2",
+   "origem": "CDC, art. 2",
+   "tema": "Conceitos",
+   "frente": "CDC, art. 2º: consumidor é toda pessoa física ou jurídica que adquire ou utiliza produto ou serviço como ____.",
+   "verso": "Destinatário final (CDC, art. 2º).",
+   "porque": "O STJ adota o finalismo mitigado: a vulnerabilidade concreta pode estender a proteção."
+  },
+  {
+   "g": 0,
+   "a": "6",
+   "origem": "CDC, art. 6",
+   "tema": "Direitos básicos",
+   "frente": "CDC, art. 6º, VIII: a inversão do ônus da prova, a critério do juiz, cabe quando for ____ a alegação ou quando o consumidor for ____.",
+   "verso": "Verossímil; hipossuficiente (CDC, art. 6º, VIII).",
+   "porque": "Inversão ope judicis; não é automática."
+  },
+  {
+   "g": 0,
+   "a": "6",
+   "origem": "CDC, art. 6",
+   "tema": "Direitos básicos",
+   "frente": "CDC, art. 6º, XI e XII: são direitos básicos a prevenção e o tratamento do superendividamento, preservado o ____.",
+   "verso": "Mínimo existencial (CDC, art. 6º, XI e XII).",
+   "porque": "Incluídos pela Lei 14.181/2021."
+  },
+  {
+   "g": 0,
+   "a": "14",
+   "origem": "CDC, art. 14",
+   "tema": "Responsabilidade",
+   "frente": "CDC, art. 14, § 4º: a responsabilidade pessoal dos profissionais liberais será apurada mediante ____.",
+   "verso": "Verificação de culpa (CDC, art. 14, § 4º).",
+   "porque": "Exceção à regra da responsabilidade objetiva do fornecedor de serviços."
+  },
+  {
+   "g": 0,
+   "a": "17",
+   "origem": "CDC, art. 17",
+   "tema": "Responsabilidade",
+   "frente": "CDC, art. 17: para os efeitos da responsabilidade pelo fato do produto e do serviço, equiparam-se aos consumidores ____.",
+   "verso": "Todas as vítimas do evento (CDC, art. 17).",
+   "porque": "Consumidor por equiparação (bystander)."
+  },
+  {
+   "g": 0,
+   "a": "26",
+   "origem": "CDC, art. 26",
+   "tema": "Prazos",
+   "frente": "CDC, art. 26: o direito de reclamar por vícios aparentes caduca em ____ dias (produtos/serviços não duráveis) e ____ dias (duráveis).",
+   "verso": "30; 90 (CDC, art. 26, I e II).",
+   "porque": "Prazo decadencial; no vício oculto conta-se de quando o defeito ficar evidenciado (§ 3º)."
+  },
+  {
+   "g": 0,
+   "a": "27",
+   "origem": "CDC, art. 27",
+   "tema": "Prazos",
+   "frente": "CDC, art. 27: prescreve em ____ anos a pretensão à reparação por fato do produto ou do serviço, contados do conhecimento do ____ e de sua ____.",
+   "verso": "Cinco; dano; autoria (CDC, art. 27).",
+   "porque": "Vício = decadência (art. 26); fato (acidente de consumo) = prescrição (art. 27)."
+  },
+  {
+   "g": 0,
+   "a": "28",
+   "origem": "CDC, art. 28",
+   "tema": "Responsabilidade",
+   "frente": "CDC, art. 28, § 5º: a pessoa jurídica pode ser desconsiderada sempre que sua personalidade for ____ ao ressarcimento de prejuízos causados aos consumidores.",
+   "verso": "Obstáculo (CDC, art. 28, § 5º).",
+   "porque": "Teoria menor da desconsideração."
+  },
+  {
+   "g": 0,
+   "a": "42",
+   "origem": "CDC, art. 42",
+   "tema": "Práticas abusivas",
+   "frente": "CDC, art. 42, parágrafo único: o consumidor cobrado em quantia indevida tem direito à repetição do indébito por valor igual ao ____ do que pagou em excesso, salvo ____.",
+   "verso": "Dobro; engano justificável (CDC, art. 42, parágrafo único).",
+   "porque": "O STJ dispensa a prova de má-fé: basta conduta contrária à boa-fé objetiva (EAREsp 676.608)."
+  },
+  {
+   "g": 0,
+   "a": "49",
+   "origem": "CDC, art. 49",
+   "tema": "Práticas abusivas",
+   "frente": "CDC, art. 49: o consumidor pode desistir do contrato em ____ dias quando a contratação ocorrer ____ do estabelecimento comercial.",
+   "verso": "7; fora (CDC, art. 49).",
+   "porque": "Direito de arrependimento; os valores pagos são devolvidos de imediato e atualizados."
+  },
+  {
+   "g": 0,
+   "a": "51",
+   "origem": "CDC, art. 51",
+   "tema": "Cláusulas abusivas",
+   "frente": "CDC, art. 51, VII: são nulas de pleno direito as cláusulas que determinem a utilização ____ de arbitragem.",
+   "verso": "Compulsória (CDC, art. 51, VII).",
+   "porque": "A nulidade de uma cláusula não invalida o contrato, salvo ônus excessivo (§ 2º)."
+  },
+  {
+   "g": 0,
+   "a": "54-A",
+   "origem": "CDC, art. 54-A",
+   "tema": "Superendividamento",
+   "frente": "CDC, art. 54-A, § 1º: superendividamento é a impossibilidade manifesta de o consumidor ____, de boa-fé, pagar suas dívidas de consumo sem comprometer seu ____.",
+   "verso": "Pessoa natural; mínimo existencial (CDC, art. 54-A, § 1º).",
+   "porque": "Não se aplica a dívidas contraídas com fraude ou má-fé, nem à compra de produtos e serviços de luxo de alto valor (§ 3º)."
+  }
+ ]
+}
