@@ -1,0 +1,109 @@
+{
+ "id": "epcd",
+ "nome": "Estatuto da Pessoa com Deficiência · Lei 13.146/2015",
+ "curto": "PcD",
+ "disc": "dh",
+ "fonte": "Seleção do Review DPE com os dispositivos mais cobrados em provas de Defensoria. Texto conferido em planalto.gov.br em 18/10/2026",
+ "grupos": [
+  {
+   "nome": "Estatuto da Pessoa com Deficiência",
+   "itens": [
+    {
+     "a": "2",
+     "x": "Art. 2º Considera-se pessoa com deficiência aquela que tem impedimento de longo prazo de natureza física, mental, intelectual ou sensorial, o qual, em interação com uma ou mais barreiras, pode obstruir sua participação plena e efetiva na sociedade em igualdade de condições com as demais pessoas.\n§ 1º A avaliação da deficiência, quando necessária, será biopsicossocial, realizada por equipe multiprofissional e interdisciplinar e considerará: (Vigência) (Vide Decreto nº 11.063, de 2022)\nI - os impedimentos nas funções e nas estruturas do corpo;\nII - os fatores socioambientais, psicológicos e pessoais;\nIII - a limitação no desempenho de atividades; e\nIV - a restrição de participação.\n§ 2º O Poder Executivo criará instrumentos para avaliação da deficiência. (Vide Lei nº 13.846, de 2019) (Vide Lei nº 14.126, de 2021) (Vide Lei nº 14.768, de 2023)\n§ 3º O exame médico-pericial componente da avaliação biopsicossocial da deficiência de que trata o § 1º deste artigo poderá ser realizado com o uso de tecnologia de telemedicina ou por análise documental conforme situações e requisitos definidos em regulamento. (Incluído pela Lei nº 14.724, de 2023)"
+    },
+    {
+     "a": "4",
+     "x": "Art. 4º Toda pessoa com deficiência tem direito à igualdade de oportunidades com as demais pessoas e não sofrerá nenhuma espécie de discriminação.\n§ 1º Considera-se discriminação em razão da deficiência toda forma de distinção, restrição ou exclusão, por ação ou omissão, que tenha o propósito ou o efeito de prejudicar, impedir ou anular o reconhecimento ou o exercício dos direitos e das liberdades fundamentais de pessoa com deficiência, incluindo a recusa de adaptações razoáveis e de fornecimento de tecnologias assistivas.\n§ 2º A pessoa com deficiência não está obrigada à fruição de benefícios decorrentes de ação afirmativa."
+    },
+    {
+     "a": "6",
+     "x": "Art. 6º A deficiência não afeta a plena capacidade civil da pessoa, inclusive para:\nI - casar-se e constituir união estável;\nII - exercer direitos sexuais e reprodutivos;\nIII - exercer o direito de decidir sobre o número de filhos e de ter acesso a informações adequadas sobre reprodução e planejamento familiar;\nIV - conservar sua fertilidade, sendo vedada a esterilização compulsória;\nV - exercer o direito à família e à convivência familiar e comunitária; e\nVI - exercer o direito à guarda, à tutela, à curatela e à adoção, como adotante ou adotando, em igualdade de oportunidades com as demais pessoas."
+    },
+    {
+     "h": "Acesso à justiça"
+    },
+    {
+     "a": "79",
+     "x": "Art. 79. O poder público deve assegurar o acesso da pessoa com deficiência à justiça, em igualdade de oportunidades com as demais pessoas, garantindo, sempre que requeridos, adaptações e recursos de tecnologia assistiva.\n§ 1º A fim de garantir a atuação da pessoa com deficiência em todo o processo judicial, o poder público deve capacitar os membros e os servidores que atuam no Poder Judiciário, no Ministério Público, na Defensoria Pública, nos órgãos de segurança pública e no sistema penitenciário quanto aos direitos da pessoa com deficiência.\n§ 2º Devem ser assegurados à pessoa com deficiência submetida a medida restritiva de liberdade todos os direitos e garantias a que fazem jus os apenados sem deficiência, garantida a acessibilidade.\n§ 3º A Defensoria Pública e o Ministério Público tomarão as medidas necessárias à garantia dos direitos previstos nesta Lei."
+    },
+    {
+     "h": "Capacidade legal e curatela"
+    },
+    {
+     "a": "84",
+     "x": "Art. 84. A pessoa com deficiência tem assegurado o direito ao exercício de sua capacidade legal em igualdade de condições com as demais pessoas.\n§ 1º Quando necessário, a pessoa com deficiência será submetida à curatela, conforme a lei.\n§ 2º É facultado à pessoa com deficiência a adoção de processo de tomada de decisão apoiada.\n§ 3º A definição de curatela de pessoa com deficiência constitui medida protetiva extraordinária, proporcional às necessidades e às circunstâncias de cada caso, e durará o menor tempo possível.\n§ 4º Os curadores são obrigados a prestar, anualmente, contas de sua administração ao juiz, apresentando o balanço do respectivo ano."
+    },
+    {
+     "a": "85",
+     "x": "Art. 85. A curatela afetará tão somente os atos relacionados aos direitos de natureza patrimonial e negocial.\n§ 1º A definição da curatela não alcança o direito ao próprio corpo, à sexualidade, ao matrimônio, à privacidade, à educação, à saúde, ao trabalho e ao voto.\n§ 2º A curatela constitui medida extraordinária, devendo constar da sentença as razões e motivações de sua definição, preservados os interesses do curatelado.\n§ 3º No caso de pessoa em situação de institucionalização, ao nomear curador, o juiz deve dar preferência a pessoa que tenha vínculo de natureza familiar, afetiva ou comunitária com o curatelado."
+    }
+   ]
+  }
+ ],
+ "cartoes": [
+  {
+   "g": 0,
+   "a": "2",
+   "origem": "PcD, art. 2",
+   "tema": "Conceito",
+   "frente": "EPD, art. 2º, § 1º: a avaliação da deficiência, quando necessária, será ____, realizada por equipe multiprofissional e interdisciplinar.",
+   "verso": "Biopsicossocial (Lei 13.146, art. 2º, § 1º).",
+   "porque": "Considera impedimentos do corpo, fatores socioambientais, limitação de atividades e restrição de participação."
+  },
+  {
+   "g": 0,
+   "a": "4",
+   "origem": "PcD, art. 4",
+   "tema": "Igualdade",
+   "frente": "EPD, art. 4º, § 2º: a pessoa com deficiência ____ está obrigada à fruição de benefícios decorrentes de ação afirmativa.",
+   "verso": "Não (Lei 13.146, art. 4º, § 2º).",
+   "porque": "A recusa de adaptações razoáveis é forma de discriminação (§ 1º)."
+  },
+  {
+   "g": 0,
+   "a": "6",
+   "origem": "PcD, art. 6",
+   "tema": "Capacidade civil",
+   "frente": "EPD, art. 6º: a deficiência ____ afeta a plena capacidade civil da pessoa, inclusive para casar-se e constituir união estável.",
+   "verso": "Não (Lei 13.146, art. 6º).",
+   "porque": "O EPD retirou a deficiência das hipóteses de incapacidade absoluta do CC (art. 3º)."
+  },
+  {
+   "g": 0,
+   "a": "6",
+   "origem": "PcD, art. 6",
+   "tema": "Capacidade civil",
+   "frente": "EPD, art. 6º, IV: a pessoa com deficiência pode conservar sua fertilidade, sendo vedada a ____.",
+   "verso": "Esterilização compulsória (Lei 13.146, art. 6º, IV).",
+   "porque": "Direitos sexuais e reprodutivos expressamente garantidos."
+  },
+  {
+   "g": 0,
+   "a": "79",
+   "origem": "PcD, art. 79",
+   "tema": "Acesso à justiça",
+   "frente": "EPD, art. 79, § 3º: quem deve tomar as medidas necessárias para garantir o acesso da pessoa com deficiência à justiça, segundo o próprio artigo?",
+   "verso": "A Defensoria Pública e o Ministério Público (Lei 13.146, art. 79, § 3º).",
+   "porque": "Ao preso com deficiência são assegurados todos os direitos e garantias, com acessibilidade (§ 2º)."
+  },
+  {
+   "g": 0,
+   "a": "84",
+   "origem": "PcD, art. 84",
+   "tema": "Curatela",
+   "frente": "EPD, art. 84, § 2º: é facultado à pessoa com deficiência a adoção de processo de ____.",
+   "verso": "Tomada de decisão apoiada (Lei 13.146, art. 84, § 2º).",
+   "porque": "A curatela é medida protetiva extraordinária, proporcional e pelo menor tempo possível (§ 3º)."
+  },
+  {
+   "g": 0,
+   "a": "85",
+   "origem": "PcD, art. 85",
+   "tema": "Curatela",
+   "frente": "EPD, art. 85: a curatela afetará tão somente os atos relacionados aos direitos de natureza ____ e ____.",
+   "verso": "Patrimonial; negocial (Lei 13.146, art. 85).",
+   "porque": "Não alcança o direito ao próprio corpo, à sexualidade, ao matrimônio, à privacidade, à educação, à saúde, ao trabalho e ao voto (§ 1º)."
+  }
+ ]
+}
