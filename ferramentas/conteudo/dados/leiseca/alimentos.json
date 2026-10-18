@@ -1,0 +1,96 @@
+{
+ "id": "alimentos",
+ "nome": "Alimentos · Lei 5.478/1968 e alimentos gravídicos",
+ "curto": "Alimentos",
+ "disc": "cv",
+ "fonte": "Seleção do Review DPE com os dispositivos mais cobrados em provas de Defensoria. Texto conferido em planalto.gov.br em 18/10/2026",
+ "grupos": [
+  {
+   "nome": "Lei de Alimentos · Lei 5.478/1968",
+   "itens": [
+    {
+     "a": "1",
+     "x": "Art. 1º. A ação de alimentos é de rito especial, independente de prévia distribuição e de anterior concessão do benefício de gratuidade.\n§ 1º A distribuição será determinada posteriormente por ofício do juízo, inclusive para o fim de registro do feito.\n§ 2º A parte que não estiver em condições de pagar as custas do processo, sem prejuízo do sustento próprio ou de sua família, gozará do benefício da gratuidade, por simples afirmativa dessas condições perante o juiz, sob pena de pagamento até o décuplo das custas judiciais.\n§ 3º Presume-se pobre, até prova em contrário, quem afirmar essa condição, nos termos desta lei.\n§ 4º A impugnação do direito à gratuidade não suspende o curso do processo de alimentos e será feita em autos apartados."
+    },
+    {
+     "a": "2",
+     "x": "Art. 2º. O credor, pessoalmente, ou por intermédio de advogado, dirigir-se-á ao juiz competente, qualificando-se, e exporá suas necessidades, provando, apenas o parentesco ou a obrigação de alimentar do devedor, indicando seu nome e sobrenome, residência ou local de trabalho, profissão e naturalidade, quanto ganha aproximadamente ou os recursos de que dispõe.\n§ 1º Dispensar-se-á a produção inicial de documentos probatórios;\nI - quando existente em notas, registros, repartições ou estabelecimentos públicos e ocorrer impedimento ou demora em extrair certidões.\nII - quando estiverem em poder do obrigado, as prestações alimentícias ou de terceiro residente em lugar incerto ou não sabido.\n§ 2º Os documentos públicos ficam isentos de reconhecimento de firma.\n§ 3º Se o credor comparecer pessoalmente e não indicar profissional que haja concordado em assisti-lo, o juiz designará desde logo quem o deva fazer."
+    },
+    {
+     "a": "4",
+     "x": "Art. 4º As despachar o pedido, o juiz fixará desde logo alimentos provisórios a serem pagos pelo devedor, salvo se o credor expressamente declarar que deles não necessita.\nParágrafo único. Se se tratar de alimentos provisórios pedidos pelo cônjuge, casado pelo regime da comunhão universal de bens, o juiz determinará igualmente que seja entregue ao credor, mensalmente, parte da renda líquida dos bens comuns, administrados pelo devedor."
+    },
+    {
+     "a": "13",
+     "x": "Art. 13 O disposto nesta lei aplica-se igualmente, no que couber, às ações ordinárias de desquite, nulidade e anulação de casamento, à revisão de sentenças proferidas em pedidos de alimentos e respectivas execuções.\n§ 1º. Os alimentos provisórios fixados na inicial poderão ser revistos a qualquer tempo, se houver modificação na situação financeira das partes, mas o pedido será sempre processado em apartado.\n§ 2º. Em qualquer caso, os alimentos fixados retroagem à data da citação.\n§ 3º. Os alimentos provisórios serão devidos até a decisão final, inclusive o julgamento do recurso extraordinário."
+    }
+   ],
+   "pre": "Lei 5.478"
+  },
+  {
+   "nome": "Alimentos gravídicos · Lei 11.804/2008",
+   "itens": [
+    {
+     "a": "1",
+     "x": "Art. 1º Esta Lei disciplina o direito de alimentos da mulher gestante e a forma como será exercido."
+    },
+    {
+     "a": "2",
+     "x": "Art. 2º Os alimentos de que trata esta Lei compreenderão os valores suficientes para cobrir as despesas adicionais do período de gravidez e que sejam dela decorrentes, da concepção ao parto, inclusive as referentes a alimentação especial, assistência médica e psicológica, exames complementares, internações, parto, medicamentos e demais prescrições preventivas e terapêuticas indispensáveis, a juízo do médico, além de outras que o juiz considere pertinentes.\nParágrafo único. Os alimentos de que trata este artigo referem-se à parte das despesas que deverá ser custeada pelo futuro pai, considerando-se a contribuição que também deverá ser dada pela mulher grávida, na proporção dos recursos de ambos."
+    },
+    {
+     "a": "6",
+     "x": "Art. 6º Convencido da existência de indícios da paternidade, o juiz fixará alimentos gravídicos que perdurarão até o nascimento da criança, sopesando as necessidades da parte autora e as possibilidades da parte ré.\nParágrafo único. Após o nascimento com vida, os alimentos gravídicos ficam convertidos em pensão alimentícia em favor do menor até que uma das partes solicite a sua revisão."
+    }
+   ],
+   "pre": "Lei 11.804"
+  }
+ ],
+ "cartoes": [
+  {
+   "g": 0,
+   "a": "1",
+   "origem": "Lei 5.478, art. 1",
+   "tema": "Ação de alimentos",
+   "frente": "Lei 5.478/68, art. 1º, § 3º: presume-se ____, até prova em contrário, quem afirmar essa condição.",
+   "verso": "Pobre (Lei 5.478, art. 1º, § 3º).",
+   "porque": "A ação de alimentos tem rito especial e a impugnação da gratuidade não suspende o processo (§ 4º)."
+  },
+  {
+   "g": 0,
+   "a": "4",
+   "origem": "Lei 5.478, art. 4",
+   "tema": "Ação de alimentos",
+   "frente": "Lei 5.478/68, art. 4º: ao despachar o pedido, o juiz fixará desde logo alimentos ____, salvo se o credor declarar expressamente que deles não necessita.",
+   "verso": "Provisórios (Lei 5.478, art. 4º).",
+   "porque": "Exigem prova pré-constituída do parentesco ou da obrigação alimentar."
+  },
+  {
+   "g": 0,
+   "a": "13",
+   "origem": "Lei 5.478, art. 13",
+   "tema": "Ação de alimentos",
+   "frente": "Lei 5.478/68, art. 13, § 2º: em qualquer caso, os alimentos fixados retroagem à data da ____.",
+   "verso": "Citação (Lei 5.478, art. 13, § 2º).",
+   "porque": "Os provisórios são devidos até a decisão final, inclusive o julgamento do recurso extraordinário (§ 3º)."
+  },
+  {
+   "g": 1,
+   "a": "6",
+   "origem": "Lei 11.804, art. 6",
+   "tema": "Alimentos gravídicos",
+   "frente": "Lei 11.804/2008, art. 6º: para fixar alimentos gravídicos, basta ao juiz estar convencido da existência de ____ da paternidade.",
+   "verso": "Indícios (Lei 11.804, art. 6º).",
+   "porque": "Após o nascimento com vida, convertem-se em pensão alimentícia ao filho até eventual revisão (parágrafo único)."
+  },
+  {
+   "g": 1,
+   "a": "2",
+   "origem": "Lei 11.804, art. 2",
+   "tema": "Alimentos gravídicos",
+   "frente": "Lei 11.804/2008, art. 2º, parágrafo único: os alimentos gravídicos referem-se à parte das despesas a ser custeada pelo ____, considerada também a contribuição da mulher, na proporção dos recursos de ambos.",
+   "verso": "Futuro pai (Lei 11.804, art. 2º, parágrafo único).",
+   "porque": "Cobrem as despesas adicionais da gravidez, da concepção ao parto."
+  }
+ ]
+}

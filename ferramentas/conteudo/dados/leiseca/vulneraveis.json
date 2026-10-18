@@ -1,0 +1,107 @@
+{
+ "id": "vulneraveis",
+ "nome": "Grupos vulneráveis · Igualdade Racial, população de rua e BPC",
+ "curto": "Vulneráveis",
+ "disc": "dh",
+ "fonte": "Seleção do Review DPE com os dispositivos mais cobrados em provas de Defensoria. Texto conferido em planalto.gov.br em 18/10/2026",
+ "grupos": [
+  {
+   "nome": "Estatuto da Igualdade Racial · Lei 12.288/2010",
+   "itens": [
+    {
+     "a": "1",
+     "x": "Art. 1º Esta Lei institui o Estatuto da Igualdade Racial, destinado a garantir à população negra a efetivação da igualdade de oportunidades, a defesa dos direitos étnicos individuais, coletivos e difusos e o combate à discriminação e às demais formas de intolerância étnica.\nParágrafo único. Para efeito deste Estatuto, considera-se:\nI - discriminação racial ou étnico-racial: toda distinção, exclusão, restrição ou preferência baseada em raça, cor, descendência ou origem nacional ou étnica que tenha por objeto anular ou restringir o reconhecimento, gozo ou exercício, em igualdade de condições, de direitos humanos e liberdades fundamentais nos campos político, econômico, social, cultural ou em qualquer outro campo da vida pública ou privada;\nII - desigualdade racial: toda situação injustificada de diferenciação de acesso e fruição de bens, serviços e oportunidades, nas esferas pública e privada, em virtude de raça, cor, descendência ou origem nacional ou étnica;\nIII - desigualdade de gênero e raça: assimetria existente no âmbito da sociedade que acentua a distância social entre mulheres negras e os demais segmentos sociais;\nIV - população negra: o conjunto de pessoas que se autodeclaram pretas e pardas, conforme o quesito cor ou raça usado pela Fundação Instituto Brasileiro de Geografia e Estatística (IBGE), ou que adotam autodefinição análoga;\nV - políticas públicas: as ações, iniciativas e programas adotados pelo Estado no cumprimento de suas atribuições institucionais;\nVI - ações afirmativas: os programas e medidas especiais adotados pelo Estado e pela iniciativa privada para a correção das desigualdades raciais e para a promoção da igualdade de oportunidades."
+    },
+    {
+     "a": "4",
+     "x": "Art. 4º A participação da população negra, em condição de igualdade de oportunidade, na vida econômica, social, política e cultural do País será promovida, prioritariamente, por meio de:\nI - inclusão nas políticas públicas de desenvolvimento econômico e social;\nII - adoção de medidas, programas e políticas de ação afirmativa;\nIII - modificação das estruturas institucionais do Estado para o adequado enfrentamento e a superação das desigualdades étnicas decorrentes do preconceito e da discriminação étnica;\nIV - promoção de ajustes normativos para aperfeiçoar o combate à discriminação étnica e às desigualdades étnicas em todas as suas manifestações individuais, institucionais e estruturais;\nV - eliminação dos obstáculos históricos, socioculturais e institucionais que impedem a representação da diversidade étnica nas esferas pública e privada;\nVI - estímulo, apoio e fortalecimento de iniciativas oriundas da sociedade civil direcionadas à promoção da igualdade de oportunidades e ao combate às desigualdades étnicas, inclusive mediante a implementação de incentivos e critérios de condicionamento e prioridade no acesso aos recursos públicos;\nVII - implementação de programas de ação afirmativa destinados ao enfrentamento das desigualdades étnicas no tocante à educação, cultura, esporte e lazer, saúde, segurança, trabalho, moradia, meios de comunicação de massa, financiamentos públicos, acesso à terra, à Justiça, e outros.\nParágrafo único. Os programas de ação afirmativa constituir-se-ão em políticas públicas destinadas a reparar as distorções e desigualdades sociais e demais práticas discriminatórias adotadas, nas esferas pública e privada, durante o processo de formação social do País."
+    }
+   ],
+   "pre": "Igualdade Racial"
+  },
+  {
+   "nome": "População em situação de rua · Decreto 7.053/2009",
+   "itens": [
+    {
+     "a": "1",
+     "x": "Art. 1º Fica instituída a Política Nacional para a População em Situação de Rua, a ser implementada de acordo com os princípios, diretrizes e objetivos previstos neste Decreto.\nParágrafo único. Para fins deste Decreto, considera-se população em situação de rua o grupo populacional heterogêneo que possui em comum a pobreza extrema, os vínculos familiares interrompidos ou fragilizados e a inexistência de moradia convencional regular, e que utiliza os logradouros públicos e as áreas degradadas como espaço de moradia e de sustento, de forma temporária ou permanente, bem como as unidades de acolhimento para pernoite temporário ou como moradia provisória."
+    },
+    {
+     "a": "5",
+     "x": "Art. 5º São princípios da Política Nacional para a População em Situação de Rua, além da igualdade e equidade:\nI - respeito à dignidade da pessoa humana;\nII - direito à convivência familiar e comunitária;\nIII - valorização e respeito à vida e à cidadania;\nIV - atendimento humanizado e universalizado; e\nV - respeito às condições sociais e diferenças de origem, raça, idade, nacionalidade, gênero, orientação sexual e religiosa, com atenção especial às pessoas com deficiência."
+    },
+    {
+     "a": "7",
+     "x": "Art. 7º São objetivos da Política Nacional para a População em Situação de Rua:\nI - assegurar o acesso amplo, simplificado e seguro aos serviços e programas que integram as políticas públicas de saúde, educação, previdência, assistência social, moradia, segurança, cultura, esporte, lazer, trabalho e renda;\nII - garantir a formação e capacitação permanente de profissionais e gestores para atuação no desenvolvimento de políticas públicas intersetoriais, transversais e intergovernamentais direcionadas às pessoas em situação de rua;\nIII - instituir a contagem oficial da população em situação de rua;\nIV - produzir, sistematizar e disseminar dados e indicadores sociais, econômicos e culturais sobre a rede existente de cobertura de serviços públicos à população em situação de rua;\nV - desenvolver ações educativas permanentes que contribuam para a formação de cultura de respeito, ética e solidariedade entre a população em situação de rua e os demais grupos sociais, de modo a resguardar a observância aos direitos humanos;\nVI - incentivar a pesquisa, produção e divulgação de conhecimentos sobre a população em situação de rua, contemplando a diversidade humana em toda a sua amplitude étnico-racial, sexual, de gênero e geracional, nas diversas áreas do conhecimento;\nVII - implantar centros de defesa dos direitos humanos para a população em situação de rua;\nVIII - incentivar a criação, divulgação e disponibilização de canais de comunicação para o recebimento de denúncias de violência contra a população em situação de rua, bem como de sugestões para o aperfeiçoamento e melhoria das políticas públicas voltadas para este segmento;\nIX - proporcionar o acesso das pessoas em situação de rua aos benefícios previdenciários e assistenciais e aos programas de transferência de renda, na forma da legislação específica;\nX - criar meios de articulação entre o Sistema Único de Assistência Social e o Sistema Único de Saúde para qualificar a oferta de serviços;\nXI - adotar padrão básico de qualidade, segurança e conforto na estruturação e reestruturação dos serviços de acolhimento temporários, de acordo com o disposto no art. 8o;\nXII - implementar centros de referência especializados para atendimento da população em situação de rua, no âmbito da proteção social especial do Sistema Único de Assistência Social;\nXIII - implementar ações de segurança alimentar e nutricional suficientes para proporcionar acesso permanente à alimentação pela população em situação de rua à alimentação, com qualidade; e\nXIV - disponibilizar programas de qualificação profissional para as pessoas em situação de rua, com o objetivo de propiciar o seu acesso ao mercado de trabalho."
+    }
+   ],
+   "pre": "Dec. 7.053"
+  },
+  {
+   "nome": "BPC · LOAS (Lei 8.742/1993)",
+   "itens": [
+    {
+     "a": "20",
+     "x": "Art. 20. O benefício de prestação continuada é a garantia de um salário-mínimo mensal à pessoa com deficiência e ao idoso com 65 (sessenta e cinco) anos ou mais que comprovem não possuir meios de prover a própria manutenção nem de tê-la provida por sua família. (Redação dada pela Lei nº 12.435, de 2011) (Vide Lei nº 13.985, de 2020)\n§ 1º Para os efeitos do disposto no caput, a família é composta pelo requerente, o cônjuge ou companheiro, os pais e, na ausência de um deles, a madrasta ou o padrasto, os irmãos solteiros, os filhos e enteados solteiros e os menores tutelados, desde que vivam sob o mesmo teto. (Redação dada pela Lei nº 12.435, de 2011)\n§ 2º Para efeito de concessão do benefício de prestação continuada, considera-se pessoa com deficiência aquela que tem impedimento de longo prazo de natureza física, mental, intelectual ou sensorial, o qual, em interação com uma ou mais barreiras, pode obstruir sua participação plena e efetiva na sociedade em igualdade de condições com as demais pessoas. (Redação dada pela Lei nº 13.146, de 2015) (Vigência)\n§ 2º-A. A concessão administrativa ou judicial do benefício de que trata este artigo a pessoa com deficiência fica sujeita a avaliação, nos termos de regulamento. (Incluído pela Lei nº 15.077, de 2024)\n§ 2º-B. (VETADO). (Incluído pela Lei nº 15.077, de 2024)\n§ 3º Observados os demais critérios de elegibilidade definidos nesta Lei, terão direito ao benefício financeiro de que trata o caput deste artigo a pessoa com deficiência ou a pessoa idosa com renda familiar mensal per capita igual ou inferior a 1/4 (um quarto) do salário-mínimo. (Redação dada pela Lei nº 14.176, de 2021)\nI – (revogado); (Redação dada pela Lei nº 14.176, de 2021)\nII - (VETADO). (Incluído pela Lei nº 13.982, de 2020)\n§ 3º-A. O cálculo da renda familiar considerará a soma dos rendimentos auferidos mensalmente pelos membros da família que vivam sob o mesmo teto, ressalvadas as hipóteses previstas no § 14 deste artigo, nos termos estabelecidos em ato do Poder Executivo federal, vedadas deduções não previstas em lei. (Incluído pela Lei nº 15.077, de 2024)"
+    }
+   ],
+   "pre": "LOAS"
+  }
+ ],
+ "cartoes": [
+  {
+   "g": 0,
+   "a": "1",
+   "origem": "Igualdade Racial, art. 1",
+   "tema": "Igualdade Racial",
+   "frente": "Estatuto da Igualdade Racial, art. 1º, parágrafo único, IV: população negra é o conjunto de pessoas que se autodeclaram ____ e ____, conforme o quesito cor ou raça do IBGE.",
+   "verso": "Pretas; pardas (Lei 12.288, art. 1º, parágrafo único, IV).",
+   "porque": "O critério é a autodeclaração."
+  },
+  {
+   "g": 0,
+   "a": "4",
+   "origem": "Igualdade Racial, art. 4",
+   "tema": "Igualdade Racial",
+   "frente": "Estatuto da Igualdade Racial, art. 4º, parágrafo único: os programas de ação afirmativa são políticas públicas destinadas a reparar as distorções e desigualdades sociais e demais práticas discriminatórias adotadas, nas esferas pública e privada, durante ____.",
+   "verso": "O processo de formação social do País (Lei 12.288, art. 4º, parágrafo único).",
+   "porque": "A ação afirmativa tem natureza reparatória."
+  },
+  {
+   "g": 1,
+   "a": "1",
+   "origem": "Dec. 7.053, art. 1",
+   "tema": "População em situação de rua",
+   "frente": "Decreto 7.053/2009, art. 1º, parágrafo único: a população em situação de rua tem em comum a pobreza extrema, os vínculos familiares interrompidos ou fragilizados e a inexistência de ____.",
+   "verso": "Moradia convencional regular (Decreto 7.053, art. 1º, parágrafo único).",
+   "porque": "Usa logradouros públicos e áreas degradadas como espaço de moradia e sustento, e unidades de acolhimento."
+  },
+  {
+   "g": 1,
+   "a": "7",
+   "origem": "Dec. 7.053, art. 7",
+   "tema": "População em situação de rua",
+   "frente": "Decreto 7.053/2009, art. 7º, VII: é objetivo da Política Nacional para a População em Situação de Rua implantar centros de defesa dos ____ para essa população.",
+   "verso": "Direitos humanos (Decreto 7.053, art. 7º, VII).",
+   "porque": "O STF, na ADPF 976, determinou a observância obrigatória dessa política."
+  },
+  {
+   "g": 2,
+   "a": "20",
+   "origem": "LOAS, art. 20",
+   "tema": "BPC",
+   "frente": "LOAS, art. 20: o BPC garante um salário-mínimo mensal à pessoa com deficiência e ao idoso com ____ anos ou mais que não tenham meios de prover a própria manutenção.",
+   "verso": "65 (Lei 8.742, art. 20).",
+   "porque": "Não se confunde com a idade de 60 anos do Estatuto da Pessoa Idosa."
+  },
+  {
+   "g": 2,
+   "a": "20",
+   "origem": "LOAS, art. 20",
+   "tema": "BPC",
+   "frente": "LOAS, art. 20, § 3º: tem direito ao BPC quem tiver renda familiar mensal per capita igual ou inferior a ____ do salário-mínimo.",
+   "verso": "1/4 (Lei 8.742, art. 20, § 3º).",
+   "porque": "O STF admitiu outros meios de provar a miserabilidade (RE 567.985) e o § 11-A permite ampliar o limite por regulamento."
+  }
+ ]
+}

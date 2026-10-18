@@ -58,18 +58,18 @@ def limpa(linhas, ate=None, sem=()):
 
 
 def rotulo(l):
-    m = re.match(r'^([IVXLC]+\s*[-–]|§\s*\d+|[a-z]\)|Pena\b|Parágrafo único)', l)
+    m = re.match(r'^([IVXLC]+(?:-[A-Z])?\s*[-–]|§\s*\d+[º°o]?(?:-[A-Z])?(?![\w-])|[a-z]\)|Pena\b|Parágrafo único)', l)
     return m and re.sub(r'\s|[-–]', '', m.group(1))
 
 
-def grupo(nome, R, lista):
+def grupo(nome, R, lista, pre=None):
     itens = []
     for e in lista:
         if isinstance(e, str) and e.startswith('#'): itens.append({'h': e[1:].strip()}); continue
         a, kw = (e, {}) if isinstance(e, str) else e
         if a not in R: raise SystemExit(f'{nome}: art. {a} não encontrado')
         itens.append({'a': a, 'x': limpa(R[a], **kw)})
-    return {'nome': nome, 'itens': itens}
+    return {'nome': nome, 'itens': itens} | ({'pre': pre} if pre else {})   # pre: início da origem dos cartões do grupo
 
 
 def mandela(path):
@@ -137,6 +137,17 @@ def main(src, dst):
         'mandela': dict(nome='Execução penal · Regras de Mandela e Res. 487 do CNJ', curto='Mandela', disc='ep', fonte=FONTE.format('cnj.jus.br (Regras de Mandela, tradução oficial do CNJ, 2016; Res. 487/2023)'), grupos=[
             mandela(t('mandela')),
             grupo('Res. 487/2023 do CNJ · política antimanicomial', arts(t('r487')), ['1', '3', '11', '12', '13', '16', '18'])]),
+        'moradia': dict(nome='Moradia · Estatuto da Cidade, Reurb e bem de família', curto='Moradia', disc='df', fonte=FONTE.format('planalto.gov.br'), grupos=[
+            grupo('Estatuto da Cidade · Lei 10.257/2001', arts(t('cidade')), ['#Usucapião especial urbana', '9', '10', '12', '14', '#Função social', '39'], pre='Est. Cidade'),
+            grupo('Reurb · Lei 13.465/2017', arts(t('reurb')), ['10', ('13', {'ate': r'^§ 4º'})], pre='Reurb'),
+            grupo('Bem de família · Lei 8.009/1990', arts(t('bemfam')), ['1', '3', '5'], pre='Lei 8.009')]),
+        'alimentos': dict(nome='Alimentos · Lei 5.478/1968 e alimentos gravídicos', curto='Alimentos', disc='cv', fonte=FONTE.format('planalto.gov.br'), grupos=[
+            grupo('Lei de Alimentos · Lei 5.478/1968', arts(t('alim')), ['1', '2', '4', '13'], pre='Lei 5.478'),
+            grupo('Alimentos gravídicos · Lei 11.804/2008', arts(t('gravid')), ['1', '2', '6'], pre='Lei 11.804')]),
+        'vulneraveis': dict(nome='Grupos vulneráveis · Igualdade Racial, população de rua e BPC', curto='Vulneráveis', disc='dh', fonte=FONTE.format('planalto.gov.br'), grupos=[
+            grupo('Estatuto da Igualdade Racial · Lei 12.288/2010', arts(t('racial')), ['1', '4'], pre='Igualdade Racial'),
+            grupo('População em situação de rua · Decreto 7.053/2009', arts(t('poprua')), ['1', '5', '7'], pre='Dec. 7.053'),
+            grupo('BPC · LOAS (Lei 8.742/1993)', arts(t('loas')), [('20', {'ate': r'^§ 4º'})], pre='LOAS')]),
     }
     for k, d in dips.items():
         p = os.path.join(dst, k + '.json')
