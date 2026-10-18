@@ -982,8 +982,10 @@ function daysToExam() {
   const n = Math.floor(Date.UTC(y, m - 1, d) / DAY);
   return n - today();
 }
-function activeCards() {
-  return DECK.cartoes.filter(c => discOn(c.disc) && (c.abr === "nucleo_comum" || c.abr === S.ajustes.estado) && !(S.cards[c.id] && S.cards[c.id].x));
+// questões integrais das provas comentadas (DPE/BA e DPE/RJ 2026): ficam só na aba Provas, fora da revisão de cartões
+const ehProvaComentada = c => c.tipo === "multipla_escolha" && /2026$/.test(c.prova || "");
+function activeCards(comProvas) {
+  return DECK.cartoes.filter(c => (comProvas || !ehProvaComentada(c)) && discOn(c.disc) && (c.abr === "nucleo_comum" || c.abr === S.ajustes.estado) && !(S.cards[c.id] && S.cards[c.id].x));
 }
 function ctx() { return { pesoDisciplina: 1, daysToExam: daysToExam() }; }
 function prio(c, t, cx) { return priority(c, S.cards[c.id], t, { ...cx, pesoDisciplina: (DISC[c.disc] || {}).peso || 1 }); }
@@ -1832,7 +1834,7 @@ function weakTopics() {
 }
 function shuffle(a) { a = [...a]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
 function modoCards(modo, arg) {
-  const t = today(), act = activeCards(), c = ctx(), seen = act.filter(x => S.cards[x.id] && !S.cards[x.id].x);
+  const t = today(), act = activeCards(modo === "provas"), c = ctx(), seen = act.filter(x => S.cards[x.id] && !S.cards[x.id].x);
   if (modo === "errados") return seen.filter(x => S.cards[x.id].lapses > 0).sort((a, b) => S.cards[b.id].lapses - S.cards[a.id].lapses || S.cards[a.id].due - S.cards[b.id].due).slice(0, 20).map(x => x.id);
   if (modo === "juris") {
     const due = seen.filter(x => x.tipo === "jurisprudencia" && S.cards[x.id].due <= t);
