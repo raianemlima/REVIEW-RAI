@@ -34,8 +34,9 @@ def preparar(md, eid, disc, titulo, subtitulo):
         # cabeçalhos de produção do Caderno 1 (título repetido do livro e "Caderno 1 — ... mapa de integridade")
         txt = re.sub(r'^## Direito da Criança e do Adolescente\n### E-book de revisão estratégica[^\n]*\n#### Caderno 1[^\n]*\n', '', txt, flags=re.M)
         for a, b in TROCAS: txt = txt.replace(a, b)
+        for a, b in RE_TROCAS: txt = re.sub(a, b, txt)
         txt = re.sub(r'(\n---\s*)+\Z', '', re.sub(r'\n{3,}', '\n\n', txt)).strip()
-        for x in re.findall(r'[^\n]*(?:material-base|CP Iuris|mapa de integridade)[^\n]*', txt): print('  ATENÇÃO, nota de produção:', x[:140])
+        for x in re.findall(r'[^\n]*(?:material-base|CP Iuris|mapa de integridade|ver mapa|o original|do original|texto-base|confer[a-z]* antes|publicação final|verificação bibliográfica|Caderno sobre)[^\n]*', txt): print('  ATENÇÃO, nota de produção:', x[:140])
         out.append({'id': f'c{i}', 't': c['t'], 'md': txt})
     d = {'id': eid, 'titulo': titulo, 'subtitulo': subtitulo, 'disc': disc, 'atualizado': date.today().isoformat(), 'caps': out}
     os.makedirs(os.path.join(AQUI, 'dados', 'ebooks'), exist_ok=True)
@@ -71,6 +72,22 @@ TROCAS = [
     ('O material-base destaca, ainda,', 'Destaca-se, ainda,'),
     ('O material-base explica', 'A doutrina explica'),
     ('O material-base menciona, entre os exemplos,', 'Entre os exemplos, estão'),
+]
+
+
+# frases de bastidor ("conferir antes de publicar", "o original", "ver mapa"...) tiram a credibilidade do texto para o aluno
+RE_TROCAS = [
+    (r'\n*Há ainda previsão relacionada à assistência afetiva parental e ao abandono afetivo\.[^\n]*', ''),
+    (r'; portanto, não se deve tratar esses dados históricos como incontroversos sem verificação bibliográfica\.', '.'),
+    (r'O texto-base usa a adoção por avós como exemplo de tensão entre uma regra legal e o melhor interesse\. Esse exemplo deve ser estudado com a ressalva de que exceções',
+     'A adoção por avós é exemplo clássico de tensão entre uma regra legal e o melhor interesse. As exceções'),
+    (r'\*\*Duas notas do original, em linguagem própria\*\*', '**Duas notas importantes**'),
+    (r'O material, citando Habib, atribui a ideia a Ralf Dahrendorf \(atribuição a conferir; ver mapa\)\. O tema volta em detalhe no Caderno sobre temas especiais\.',
+     'Habib atribui a ideia a Ralf Dahrendorf.'),
+    (r'\*\*Ressalva crítica do original:\*\*', '**Visão crítica:**'),
+    (r'\| Exemplo do original \|', '| Exemplo |'),
+    (r'Nota de terminologia: o original usa "menor infrator"\. Em provas', 'Nota de terminologia: evite "menor infrator". Em provas'),
+    (r'Segundo o original, esse papel', 'Esse papel'),
 ]
 
 
