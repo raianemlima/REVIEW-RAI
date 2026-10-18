@@ -142,6 +142,7 @@ def aplicar(caminho: Path):
     else:
         i = html.index("function renderNov() {"); html = html[:i] + novo + html[i:]; n += 1
     provas = [json.loads(p.read_text(encoding="utf-8")) for p in sorted(DADOS.glob("*.json")) if not p.stem.endswith("-correcoes")]
+    provas.sort(key=lambda p: p["id"] != "fcc-defensorias")   # banco de questões da FCC primeiro
     bloco = "const PROVAS_PUBLICO = " + json.dumps(provas, ensure_ascii=False).replace("</", "<\\/") + ";\n"
     a = html.find("const PROVAS_PUBLICO = ")
     if a >= 0: html = html[:a] + bloco + html[html.index(";\n", a) + 2:]
