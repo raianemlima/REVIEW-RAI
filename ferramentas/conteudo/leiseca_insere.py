@@ -6,7 +6,7 @@ F = 'secundária: elaborado a partir do texto legal; confira a redação vigente
 deck_p, fontes = sys.argv[1], sys.argv[2:]
 d = json.load(open(deck_p, encoding='utf-8'))
 discs = {x['id'] for x in d['disciplinas']}
-ordem = ['lc80', 'cf', 'cadh', 'cdc', 'acp', 'jec', 'idoso', 'epcd', 'lmp', 'mandela']
+ordem = ['lc80', 'cf', 'cadh', 'cdc', 'acp', 'jec', 'idoso', 'epcd', 'lmp', 'mandela', 'moradia', 'alimentos', 'vulneraveis']
 for p in fontes:
     s = json.load(open(p, encoding='utf-8')); k = s['id']
     assert s['disc'] in discs, s['disc']
