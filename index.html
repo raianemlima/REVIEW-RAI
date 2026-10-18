@@ -1,5 +1,6 @@
 <!doctype html><html><head><meta charset=utf8><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://hlenhmgnqqnkjqmntnpz.supabase.co https://api.github.com; worker-src 'self'; manifest-src 'self'; media-src 'self' data: blob:; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f7f6ff"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="icons/icon-180.png"><meta name="description" content="Revisão espaçada, teses defensivas e novidades legislativas para o concurso da Defensoria Pública."><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Review DPE"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}.cad-mat{display:flex;align-items:center;gap:8px;margin:6px 0;font-size:13px;color:var(--muted)}.cad-mat select,#cadNovoMat{flex:1;min-width:0;max-width:100%;padding:6px 8px;border-radius:10px;border:2px solid var(--line);background:var(--card,#fff);color:inherit;font:inherit}.cad-sec{margin-top:18px}.cad-novo .row{gap:8px;flex-wrap:wrap}
 .nj-grade{display:flex;gap:8px;margin:12px -4px 14px;padding:2px 4px 6px;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:thin}.nj-grade .nj-op{flex:1 0 112px;scroll-snap-align:start}.nj-op{display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:10px 12px;border-radius:16px;border:2px solid var(--line);border-bottom-width:4px;background:var(--surface);color:var(--ink);font:inherit;text-align:left;cursor:pointer;min-width:0}.nj-op span{font-weight:700;font-size:.86rem;line-height:1.2}.nj-op b{font-size:1.3rem;line-height:1.1}.nj-op small{color:var(--muted);font-size:.72rem}.nj-op[aria-pressed="true"]{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--surface))}
+.pv-card.pv-destaque{border-left-color:#ffb703;box-shadow:0 4px 0 rgba(255,183,3,.35)}
 </style><style id="nv-secoes">
 .nv-seg { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 4px; margin: 12px 0 4px; border-radius: 14px; background: var(--accent-soft); }
 .nv-seg button { font: 600 .86rem var(--f-ui); border: 0; border-radius: 10px; padding: 9px 8px; background: none; color: var(--ink); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap; }
@@ -2216,6 +2217,7 @@ function renderEstudar() {
     tile({ tab: "caderno", i: "📒", t: "Caderno de resumos", d: "Trechos que você salvou, com suas anotações", n: (() => { const k = cadAtivos().length; return k ? plural(k, "trecho", "trechos") : ""; })() }),
   ];
   const treinar = [
+    (() => { const f = provasDados().find(x => x.id === "fcc-defensorias"); return f ? tile({ id: "goFCC", i: "🎯", t: "Questões FCC", d: "Questões reais de Defensoria, por matéria", n: plural(f.questoes.length, "questão", "questões") }) : ""; })(),
     tile({ tab: "prova", i: "🏛️", t: "Provas", d: "Comentadas, para resolver no app e anteriores", n: plural(provasDados().length + (modoCards("provas").length ? 2 : 0), "prova", "provas") }),
     modo("simulado"),
     tile({ id: "goT2F", i: "✍️", t: "Treino de 2ª fase", d: "Escreva a tese, com cronômetro", off: !nTeses, offTxt: "Sem teses ainda" }),
@@ -3470,6 +3472,16 @@ function pvHub() {
   m.querySelectorAll(".es-atalhos a").forEach(a => a.addEventListener("click", e => { e.preventDefault(); m.querySelector(a.getAttribute("href"))?.scrollIntoView({ behavior: "smooth", block: "start" }); }));
 }
 renderProva = (f => function (...a) { const r = f.apply(this, a); if (!S.pvId) pvHub(); return r; })(renderProva);
+// banco de questões da FCC em destaque no topo de Provas, com atalho em Estudar
+pvHub = (f => function () {
+  f(); const m = $("#main"); if (!m || m.querySelector("#pv-fcc")) return;
+  const card = [...m.querySelectorAll(".pv-card")].find(c => c.querySelector('[data-pvabrir="fcc-defensorias"]')), com = m.querySelector("#pv-com");
+  if (!card || !com) return;
+  com.insertAdjacentHTML("beforebegin", `<h3 class="es-sec" id="pv-fcc"><span>★</span>Banco de questões<small>questões reais da FCC em concursos de Defensoria, por matéria</small></h3>`);
+  m.querySelector("#pv-fcc").after(card); card.classList.add("pv-destaque");
+  m.querySelector(".es-atalhos")?.insertAdjacentHTML("afterbegin", `<a href="#pv-fcc">🎯 Questões FCC</a>`);
+})(pvHub);
+document.addEventListener("click", e => { if (!e.target.closest("#goFCC")) return; S.pvId = null; S.pvMat = ""; go("prova"); setTimeout(() => document.getElementById("pv-fcc")?.scrollIntoView({ block: "start" }), 80); });
 // ---- tema: automático (segue o aparelho), claro ou escuro ----
 const TEMA_KEY = "revisao-dpe-tema", temaMQ = window.matchMedia ? matchMedia("(prefers-color-scheme: dark)") : null;
 function temaEscuro() { const d = document.documentElement.dataset.theme; return d ? d === "dark" : !!(temaMQ && temaMQ.matches); }
