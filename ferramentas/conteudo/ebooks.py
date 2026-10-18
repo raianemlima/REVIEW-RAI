@@ -18,7 +18,7 @@ def preparar(md, eid, disc, titulo, subtitulo):
             t = l[2:].strip()
             if n == 0: continue   # título geral do arquivo
             if re.match(r'(AP[ÊE]NDICE|Mapa de integridade|Plano de execu)', t, re.I): cur = None; continue   # notas de produção
-            cur = {'t': titulo_bonito(t), 'linhas': []}; caps.append(cur); continue
+            cur = {'t': titulo_bonito(re.sub(r'\*+', '', t)), 'linhas': []}; caps.append(cur); continue   # título vai como texto puro
         if cur is None: continue
         if re.match(r'^<a id="[^"]*"></a>$', l.strip()): continue
         if re.match(r'^\*Fonte: .*\*$', l.strip()): continue
