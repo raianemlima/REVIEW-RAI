@@ -2227,7 +2227,7 @@ function renderEstudar() {
     nDef ? tile({ tab: "defensoria", i: "🛡️", t: "Defensoria", d: "Súmulas e teses institucionais", n: plural(nDef, "item", "itens") }) : "",
     nTs ? tile({ tab: "teses", i: "🏛️", t: "Teses dos tribunais", d: "Repetitivos e repercussão geral", n: plural(nTs, "tese", "teses") }) : "",
     nDt ? tile({ tab: "doutrina", i: "📖", t: "Doutrina", d: "Conceitos-chave dos manuais", n: `${nDtL}/${nDt} estudados` }) : "",
-    ebLista().length ? tile({ id: "goEb", i: "📘", t: "E-books", d: "Aprofundamento por matéria, em capítulos", n: plural(ebLista().length, "e-book", "e-books") }) : "",
+    ebLista().length ? tile({ id: "goEb", i: "📘", t: "Aprofundamento", d: "Material de estudo por matéria, em capítulos", n: plural(ebLista().length, "material", "materiais") }) : "",
     tile({ id: "goEnc", i: "🔗", t: "Sessão por tema", d: "Glossário + cartões em sequência" }),
     tile({ tab: "caderno", i: "📒", t: "Caderno de resumos", d: "Trechos que você salvou, com suas anotações", n: (() => { const k = cadAtivos().length; return k ? plural(k, "trecho", "trechos") : ""; })() }),
   ];
@@ -4239,7 +4239,7 @@ document.addEventListener("keydown", e => {
   else if (e.key === " " || e.key === "Enter") { e.preventDefault(); answer(sugNota(u, s) || 3); }
 });
 
-// ===================== e-books de aprofundamento (Biblioteca) =====================
+// ===================== Aprofundamento: materiais de estudo em capítulos (Biblioteca) =====================
 // Texto em Markdown dentro do baralho cifrado (DECK.ebooks). O renderizador escapa tudo e só aceita a sintaxe usada nos e-books.
 const ebLista = () => DECK.ebooks || [];
 function ebInline(s) {
@@ -4292,7 +4292,7 @@ function renderEbooks() {
   if (!e) {
     S.ebId = null;
     $("#main").innerHTML = `<button class="btn small ghost" id="ebBack">← Biblioteca</button>
-      <h2>E-books de aprofundamento</h2>
+      <h2>Aprofundamento</h2>
       <p class="sub">Material de estudo aprofundado, organizado por matéria. Leia por capítulos, marque o que concluiu e selecione trechos para salvar no caderno.</p>
       <div class="eb-lista">${L.map(x => {
         const n = x.caps.filter(c => lidos.has(x.id + ":" + c.id)).length, pos = S.ajustes.ebPos[x.id];
@@ -4301,7 +4301,7 @@ function renderEbooks() {
           <p class="count">${plural(x.caps.length, "capítulo", "capítulos")} · ${n}/${x.caps.length} concluídos</p>
           <div class="stack"><i class="s2" style="width:${n / x.caps.length * 100}%;background:var(--ok)"></i></div>
           <button class="btn primary" data-eb="${esc(x.id)}" style="width:100%;margin-top:10px">${pos != null || n ? "Continuar leitura" : "Começar a ler"}</button></article>`;
-      }).join("") || `<p class="count">Nenhum e-book disponível ainda.</p>`}</div>`;
+      }).join("") || `<p class="count">Nenhum material disponível ainda.</p>`}</div>`;
     $("#ebBack").onclick = () => { S.libView = ""; renderLib(); window.scrollTo(0, 0); };
     document.querySelectorAll("[data-eb]").forEach(b => b.onclick = () => { S.ebId = b.dataset.eb; S.ebCap = S.ajustes.ebPos[S.ebId] || 0; renderEbooks(); window.scrollTo(0, 0); });
     return;
@@ -4309,7 +4309,7 @@ function renderEbooks() {
   const ci = Math.max(0, Math.min(S.ebCap || 0, e.caps.length - 1)), c = e.caps[ci], { html, toc } = ebMd(c.md, "eb" + ci), chave = e.id + ":" + c.id;
   if (S.ajustes.ebPos[e.id] !== ci) { S.ajustes.ebPos[e.id] = ci; queue("ajustes"); }
   const fonte = S.ajustes.ebFonte || 1, n = e.caps.filter(x => lidos.has(e.id + ":" + x.id)).length;
-  $("#main").innerHTML = `<button class="btn small ghost" id="ebBack">← E-books</button>
+  $("#main").innerHTML = `<button class="btn small ghost" id="ebBack">← Aprofundamento</button>
     <h2>${esc(e.titulo)}</h2>
     <div class="filters"><select id="ebCap">${e.caps.map((x, j) => `<option value="${j}" ${j === ci ? "selected" : ""}>${lidos.has(e.id + ":" + x.id) ? "✓ " : ""}${esc(x.t)}</option>`).join("")}</select>
       <span class="eb-fonte"><button class="btn small" data-ebf="-1" aria-label="Diminuir letra">A−</button><button class="btn small" data-ebf="1" aria-label="Aumentar letra">A+</button></span></div>
@@ -4328,7 +4328,7 @@ function renderEbooks() {
   $("#ebLido").onchange = ev => {
     const l = ebLidos(); if (ev.target.checked) l.add(chave); else l.delete(chave); S.ajustes.ebLidos = [...l]; queue("ajustes");
     const k = e.caps.filter(x => l.has(e.id + ":" + x.id)).length;
-    if (ev.target.checked) toast(k === e.caps.length ? "E-book concluído 🎉" : "Capítulo concluído ✔"); $("#main .count").textContent = `Capítulo ${ci + 1} de ${e.caps.length} · ${k}/${e.caps.length} concluídos`;
+    if (ev.target.checked) toast(k === e.caps.length ? "Material concluído 🎉" : "Capítulo concluído ✔"); $("#main .count").textContent = `Capítulo ${ci + 1} de ${e.caps.length} · ${k}/${e.caps.length} concluídos`;
     $("#main .stack .s2").style.width = k / e.caps.length * 100 + "%";
   };
 }
@@ -4355,7 +4355,7 @@ function renderLib() {
   $("#main").innerHTML = `
     <h2>Biblioteca</h2>
     <p class="sub">${DECK.cartoes.length} cartões em ${plural(DECK.disciplinas.length, "disciplina", "disciplinas")}, versão ${esc(DECK.versao)}.</p>
-    ${ebLista().length ? `<button class="btn primary eb-entrar" id="ebBtn">📘 E-books de aprofundamento (${ebLista().length})</button>` : ""}
+    ${ebLista().length ? `<button class="btn primary eb-entrar" id="ebBtn">📘 Aprofundamento (${ebLista().length})</button>` : ""}
     <div class="libnav"><button class="btn" id="glBtn">📖 Glossário (${(DECK.glossario || []).length})</button><button class="btn" id="quBtn">🗂️ Quadros (${(DECK.quadros || []).length})</button><button class="btn" id="meBtn">➕ Meus cartões${(S.ajustes.meus || []).length ? " (" + S.ajustes.meus.length + ")" : ""}</button></div>
     <div class="filters">
       <input id="lq" type="search" placeholder="Buscar: artigo, julgado, palavra…" value="${esc(S.libQuery)}">
