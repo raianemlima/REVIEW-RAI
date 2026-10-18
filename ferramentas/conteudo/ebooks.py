@@ -1,4 +1,4 @@
-# Prepara e-books de aprofundamento (Markdown) para a Biblioteca do app.
+# Prepara os materiais da área "Aprofundamento" (Markdown) para a Biblioteca do app.
 # Uso:
 #   python3 ebooks.py preparar arquivo.md id disc "Título" "Subtítulo"   -> dados/ebooks/<id>.json (fora do git: o repositório é público)
 #   python3 ebooks.py inserir deck.json dados/ebooks/*.json              -> DECK.ebooks (vai cifrado com o baralho)
