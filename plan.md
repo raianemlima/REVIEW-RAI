@@ -45,3 +45,29 @@ Manter uma ação principal clara. Exibir quantidade do próximo bloco, estimati
 Reduzir fricção: perguntar planejamento no máximo uma vez no dia, dispensar essa tela em Hoje, só 5 e reaproveitar o foco escolhido no mesmo dia. Deixar sugestões metacognitivas recolhidas. Manter reflexão, confiança e backups funcionando. Preferências novas entram em `S.ajustes` e seguem o mecanismo existente de sincronização, com override diário datado para não persistir acidentalmente amanhã.
 
 Reutilizar CSS e cores do aplicativo e o mascote atual. Ajustar a hierarquia por composição e elementos nativos `details/summary`, com estados e rótulos acessíveis, campos rotulados e layout responsivo. Não criar novas imagens ou migrar infraestrutura. A estrutura continua em `index.html` para as integrações pontuais; `arquivos/metacognicao.js` cuida da fricção de planejamento; testes nativos/JSDOM e documentação acompanham a etapa. Usar as verificações nativas já existentes, pois não há projeto Manus gerenciado vinculado.
+
+# Etapa 3 — integrar o design do Figma ao aplicativo funcional
+
+## Escopo aprovado e referência
+
+Aplicar o novo visual de `raianemlima/MelhorarDesignDoApp` (`7467241`, idêntico ao ZIP fornecido) ao aplicativo funcional REVIEW-RAI, em branch `manus/integrar-novo-design`, baseada em `d21fdd3`. A usuária aprovou explicitamente essa opção em vez de transformar o protótipo React em um aplicativo novo. Primeiro recorte: navegação, tela Hoje e interface da sessão de estudo. Preservar recursos e dados. Sem migração React, Supabase novo, troca de domínio, publicação ou merge automático.
+
+## Implementação e estrutura
+
+Adicionar uma camada externa de apresentação: `arquivos/interface.js` reorganiza os elementos reais, reaproveitando botões e listeners; `arquivos/interface.css` aplica tokens, composição e componentes da referência. O HTML inclui os arquivos depois das extensões existentes; o service worker usa nova versão e guarda ambos offline. `ferramentas/ci/validar_site.mjs` confere suas referências, sintaxe e existência quando presentes. A publicação já copia a pasta arquivos; não mudar hospedagem nem criar infraestrutura gerenciada para obter Preview. Testes em `tests/interface-design.test.mjs` exercitam o código real com dados fictícios. Documentar em `docs/INTERFACE.md` e README. O repositório específico permanece como referência original, sem alterações ou envio de dados privados.
+
+Reutilizar navegação real `#tabs` em vez de duplicar sua lógica: menu lateral no desktop e navegação inferior no celular. Manter Busca, tema e Ajustes existentes no cabeçalho; Ajustes também acessível pelo menu lateral. Não quebrar abas secundárias, atalhos, links de materiais, badge real, relógios de sessão, aviso de atualização ou acessibilidade do teclado.
+
+Hoje recebe saudação genérica e data calculada, cartão de foco à esquerda e semana/fila/áreas opcionais à direita. Meta de cartões distintos e Hoje, só 5 seguem intactos; missões, XP e metacognição continuam opcionais/recolhidos. Atalhos de estudo levam a telas reais. Nenhum nome fictício, sequência fixa, sincronização falsa, conta/plano ativo de exemplo ou quantidade decorativa é importado. O resumo de conta continua o status existente do aplicativo.
+
+Planejamento, cartão, notas e reflexão recebem o visual novo, mas mantêm sua lógica real: quatro notas ao FSRS, confiança opcional, resultado com gabarito separado de autoavaliação, bloco finito, pular/reativar planejamento e encerrar antecipadamente. Não copiar “Dominado”, percentual falso de calibração ou intervalos fixos de 1/2/7 dias do protótipo.
+
+## Design
+
+Referência escolhida: painel de estudo editorial, calmo e contemporâneo. Base lavanda muito clara, superfícies brancas, violeta `#6653e7`, verde menta para progresso e âmbar secundário; tema escuro com superfícies violetas profundas. Tipografia Rubik já instalada, Newsreader nas frases e IBM Plex Mono nos dados. Menu lateral de aproximadamente 248px, cabeçalho leve, conteúdo com respiro e dashboard de duas regiões quando couber. No celular, uma coluna e navegação inferior respeitando área segura, sem rolagem horizontal.
+
+Assinatura visual: marca dos quadrados sobrepostos existente, cantos arredondados sem excesso de bordas tridimensionais, sombras discretas e progresso fino. Preservar o mascote escolhido pelo aluno, em vez de obrigar a troca para o símbolo do protótipo. Ação principal violeta; animações curtas, respeitando movimento reduzido, sem brilho/pulsação permanentes. Textos didáticos e não punitivos: “Um pequeno bloco já conta” e “Estudar mais é opcional”. Nenhum novo ativo visual é necessário: usar marca, fontes, SVGs e mascote já fornecidos.
+
+## Restrições
+
+Preservar byte a byte o conteúdo protegido, gate.js e motor FSRS; não editar o esquema de registros ou o armazenamento. O repositório não tem projeto Manus gerenciado vinculado; diagnósticos gerenciados foram consultados e estão indisponíveis, portanto usar verificações nativas e testes existentes. Não autenticar estudante nem executar chamadas a produção. A primeira etapa não redesenha integralmente todos os módulos de leitura; eles permanecem acessíveis na nova navegação e recebem os tokens comuns.
