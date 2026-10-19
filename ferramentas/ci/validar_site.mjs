@@ -192,6 +192,19 @@ export function validarSite(pastaSite, opções = {}) {
     if (!css.trim()) throw erro("interface.css não pode estar vazio.");
   }
 
+  const scriptCronograma = "arquivos/cronograma.js", cssCronograma = "arquivos/cronograma.css";
+  const refsCronograma = scriptsDoHtml(index).filter(s => referenciaÉ(atributo(s.abertura, "src"), scriptCronograma));
+  const linksCronograma = [...index.matchAll(/<link\b[^>]*>/gi)].map(m => m[0]).filter(tag => referenciaÉ(atributo(tag, "href"), cssCronograma) && (atributo(tag, "rel") || "").toLowerCase() === "stylesheet");
+  const temCronograma = refsCronograma.length || linksCronograma.length || core.some(e => referenciaÉ(e, scriptCronograma) || referenciaÉ(e, cssCronograma));
+  if (temCronograma) {
+    if (refsCronograma.length !== 1 || linksCronograma.length !== 1) throw erro("O cronograma precisa de uma referência única a cronograma.js e cronograma.css no HTML.");
+    for (const f of [scriptCronograma, cssCronograma]) if (!core.some(e => referenciaÉ(e, f))) throw erro(`O cronograma precisa estar no CORE offline: ${f}.`);
+    const js = lerTexto(caminhoDentroDaPasta(site, scriptCronograma, "cronograma"), "cronograma.js");
+    validarSintaxeJavaScript(js, scriptCronograma, "cronograma.js");
+    const css = lerTexto(caminhoDentroDaPasta(site, cssCronograma, "estilos do cronograma"), "cronograma.css");
+    if (!css.trim()) throw erro("cronograma.css não pode estar vazio.");
+  }
+
   const appSrc = localizarAppSrc(index);
   const avisos = [];
   if (appSrc.length === 0) {

@@ -1,0 +1,46 @@
+/* Review DPE · cronograma */
+.cr-hero { margin: 10px 0 18px; padding: 24px; border: 1px solid var(--line); border-radius: 22px; background: linear-gradient(135deg, var(--surface), var(--accent-soft)); }
+.cr-hero h2 { margin: 5px 0 8px; font-family: var(--f-ui); }
+.cr-hero p { max-width: 720px; margin: 0; color: var(--muted); line-height: 1.55; }
+.cr-eyebrow { display: block; color: var(--accent); font: 700 .72rem var(--f-mono); letter-spacing: .08em; text-transform: uppercase; }
+.cr-status { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.cr-status span, .cr-status b { padding: 7px 10px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); font-size: .82rem; }
+.cr-status b { background: var(--ok-soft); border-color: transparent; color: var(--ok); }
+.cr-form { display: grid; gap: 14px; }
+.cr-form .panel { margin: 0; }
+.cr-form select, .cr-form input[type=number] { width: 100%; box-sizing: border-box; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink); font: .95rem var(--f-ui); }
+.cr-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.cr-days { border: 0; padding: 0; margin: 12px 0 0; }
+.cr-days legend, .cr-form .field > span { display: block; margin-bottom: 6px; font: 700 .9rem var(--f-ui); }
+.cr-days > div { display: flex; flex-wrap: wrap; gap: 8px; }
+.cr-days label { padding: 8px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--bg); font-size: .86rem; cursor: pointer; }
+.cr-days input { accent-color: var(--accent); }
+.cr-subjects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.cr-subject { display: flex; align-items: flex-start; gap: 9px; padding: 11px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); cursor: pointer; }
+.cr-subject input { margin-top: 3px; accent-color: var(--accent); }
+.cr-subject span { display: grid; gap: 3px; min-width: 0; }
+.cr-subject b { font-size: .88rem; line-height: 1.25; }
+.cr-subject small, .cr-apply small { color: var(--muted); font-size: .76rem; line-height: 1.35; }
+.cr-peso { display: grid; grid-template-columns: minmax(0, 1fr) 76px 18px; align-items: center; gap: 8px; padding: 7px 0; border-bottom: 1px solid var(--line); font-size: .88rem; }
+.cr-peso input { text-align: right; }
+.cr-peso b { color: var(--muted); }
+.cr-week { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 7px; }
+.cr-dia { min-height: 110px; padding: 10px; border-radius: 12px; background: var(--accent-soft); border: 1px solid color-mix(in srgb, var(--accent) 24%, var(--line)); }
+.cr-dia.off { opacity: .65; background: var(--bg); border-style: dashed; }
+.cr-dia b, .cr-dia small { display: block; }
+.cr-dia b { color: var(--accent); font-size: .82rem; }
+.cr-dia small { margin: 5px 0 8px; color: var(--muted); font-size: .72rem; line-height: 1.3; }
+.cr-dia div { display: grid; gap: 5px; }
+.cr-dia span { font-size: .72rem; line-height: 1.25; }
+.cr-apply { display: grid; gap: 4px; margin: 16px 0; padding: 12px; border-radius: 12px; background: var(--bg); }
+.cr-apply label { display: flex; gap: 8px; align-items: flex-start; font-size: .88rem; font-weight: 600; }
+.cr-apply input { margin-top: 3px; accent-color: var(--accent); }
+.cr-today, .cr-aj { display: flex; align-items: center; justify-content: space-between; gap: 12px; border-left: 4px solid var(--accent); }
+.cr-today > div, .cr-aj > div { min-width: 0; }
+.cr-today b, .cr-aj b { display: block; margin: 2px 0 4px; font-family: var(--f-ui); }
+.cr-today p, .cr-aj p { margin: 0; color: var(--muted); font-size: .84rem; line-height: 1.4; }
+.cr-note { margin: 16px 0 32px; padding: 14px 16px; border-left: 3px solid var(--accent); color: var(--muted); background: var(--accent-soft); border-radius: 0 12px 12px 0; }
+.cr-note p { margin: 5px 0 0; line-height: 1.5; font-size: .86rem; }
+.cr-back { margin-bottom: 10px; }
+@media (max-width: 760px) { .cr-week { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cr-subjects { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .cr-hero { padding: 18px; } .cr-grid { grid-template-columns: 1fr; } .cr-week { grid-template-columns: 1fr; } .cr-today, .cr-aj { align-items: flex-start; flex-direction: column; } .cr-today .btn, .cr-aj .btn { align-self: flex-start; } }
