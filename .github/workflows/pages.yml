@@ -32,6 +32,8 @@ jobs:
           APP_SENHA: ${{ secrets.APP_SENHA }}
           REVISOES_CHAVE: ${{ secrets.REVISOES_CHAVE }}
         run: node ferramentas/ci/aplicar_revisoes.mjs _site/index.html
+      - name: Validar os arquivos obrigatórios do app e do cache offline
+        run: node ferramentas/ci/validar_site.mjs _site
       - uses: actions/upload-pages-artifact@v3
         with: { path: _site }
       - id: d
