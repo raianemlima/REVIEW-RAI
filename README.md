@@ -28,3 +28,7 @@ O site se instala como aplicativo, sem lojas e sem custo. Veja [`docs/INSTALAR-P
 ## Metacognição: planejar, monitorar e refletir
 
 O planejamento e a reflexão são opcionais. O app compara confiança e resultado sem tratar um acerto isolado como domínio, e diferencia questões com gabarito de autoavaliação. Consulte o [guia de metacognição](docs/METACOGNICAO.md) para entender os indicadores, o backup e os testes com dados fictícios (`npm ci --ignore-scripts` e `npm test`).
+
+## Rotina diária sustentável
+
+A meta padrão é de 10 cartões diferentes, ajustável, sem confundir toda a fila com obrigação diária. O bloco tem até 10 cartões e tentativas limitadas; **Hoje, só 5** reduz a meta somente naquele dia. XP e missões ficam em áreas opcionais. Leia o [guia da rotina diária](docs/ROTINA-DIARIA.md) para conhecer a seleção, a retomada e os limites.

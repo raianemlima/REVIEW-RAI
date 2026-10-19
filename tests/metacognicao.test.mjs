@@ -40,6 +40,7 @@ function funcaoReal(nome) {
 // Fronteiras explícitas: estes trechos são o código real do index.html; o restante é infraestrutura.
 const REAL = {
   resultadoConfianca: funcaoReal("resultadoConfianca"),
+  podeRepetirSessao: funcaoReal("podeRepetirSessao"),
   answer: funcaoReal("answer"),
   mesclar: funcaoReal("mesclar"),
   snapshot: funcaoReal("snapshot"),
@@ -120,6 +121,7 @@ const BASE = String.raw`
     if ([" ", "1", "2", "3", "4", "A", "B", "C", "D", "E"].includes(e.key)) __calls.keyboard.push([e.key, e.target.id || e.target.tagName]);
   });
   __REAL_RESULTADO__
+  __REAL_REPETICAO__
   __REAL_ANSWER__
   __REAL_MESCLAR__
   __REAL_SNAPSHOT__
@@ -130,6 +132,7 @@ function scriptBase() {
   return BASE
     .replace("__FIXTURES__", JSON.stringify(cards))
     .replace("__REAL_RESULTADO__", REAL.resultadoConfianca)
+    .replace("__REAL_REPETICAO__", REAL.podeRepetirSessao)
     .replace("__REAL_ANSWER__", REAL.answer)
     .replace("__REAL_MESCLAR__", REAL.mesclar)
     .replace("__REAL_SNAPSHOT__", REAL.snapshot)

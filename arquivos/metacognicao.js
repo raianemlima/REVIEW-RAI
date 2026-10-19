@@ -13,10 +13,14 @@
   };
   const ORDEM = ["il", "la", "in", "do"];
   const SUGESTOES = ["Testar o que eu acho que já sei", "Revisar os pontos em que errei", "Fixar a base de um tema novo"];
-  let ultObjetivo = "", planoAtivo = false, instalado = false;
+  let planoAtivo = false, instalado = false;
   const lista = a => Array.isArray(a) ? a : [];
   const veredito = (conf, ok) => ok ? (conf === 2 ? "do" : "in") : (conf === 2 ? "il" : "la");
   const hojeDe = ts => Number.isFinite(ts) && dayOf(ts) === today();
+  const planoHoje = () => {
+    const e = lista((S.ajustes || {}).mcPlanos).slice().reverse().find(x => Array.isArray(x) && hojeDe(x[0]) && typeof x[1] === "string" && x[1].trim());
+    return e ? e[1].trim().slice(0, 140) : "";
+  };
   const ultimaReflexao = () => lista(S.ajustes.reflexoes).slice().reverse().find(r => r && r.mudar);
   const frenteDe = c => (c.tipo === "multipla_escolha" ? parseMC(c.frente).stem : c.frente).replace(/^Certo ou errado(\s*\([^)]*\))?:\s*/i, "");
   const curto = (t, n) => { t = String(t || "").replace(/\s+/g, " ").trim(); return t.length > n ? t.slice(0, n - 1) + "…" : t; };
@@ -60,7 +64,8 @@
 .mc-grid .il { background:var(--bad-soft); color:var(--bad); } .mc-grid .la { background:var(--info-soft); color:var(--info); }
 .mc-grid .in { background:var(--amber-soft); color:var(--amber); } .mc-grid .do { background:var(--ok-soft); color:var(--ok); }
 .mc-prio { background:var(--bad-soft); border-radius:12px; padding:10px 12px; margin:0 0 12px; font-size:.86rem; } .mc-prio ul { margin:6px 0 0; padding-left:18px; }
-.mc-missoes { list-style:none; padding:0; margin:0; display:grid; gap:8px; }
+  .mc-missoes-panel > summary { cursor:pointer; font-weight:600; }
+  .mc-missoes { list-style:none; padding:0; margin:0; display:grid; gap:8px; }
 .mc-missoes li { display:grid; grid-template-columns:1fr auto; gap:8px; align-items:center; font-size:.9rem; }
 .mc-missoes small { display:block; color:var(--muted); font-size:.78rem; }
 .mc-bar { height:5px; border-radius:99px; background:var(--line); overflow:hidden; margin-top:4px; } .mc-bar i { display:block; height:100%; background:var(--accent); }
@@ -74,10 +79,10 @@
 
   function renderPlano(s) {
     planoAtivo = true;
-    const r = ultimaReflexao(), obj = s.mcRascunho ?? ultObjetivo;
+    const r = ultimaReflexao(), obj = s.mcRascunho ?? planoHoje();
     $("#main").innerHTML = `<div class="mc-plan">${passos(0)}
-      <p class="mc-eyebrow">Antes · Planejar</p><h2>Qual é o foco desta sessão?</h2>
-      <p class="mc-lead">${esc(s.label || "Sessão")} · ${plural(s.total, "cartão", "cartões")}. Escolha um objetivo curto para orientar seu estudo.</p>
+      <p class="mc-eyebrow">Antes · Planejar</p><h2>Qual é o foco de hoje?</h2>
+      <p class="mc-lead">${esc(s.label || "Sessão")} · ${plural(s.total, "cartão", "cartões")}. Escolha um objetivo curto para orientar o primeiro bloco.</p>
       ${r ? `<div class="mc-ontem"><b>Na última reflexão você decidiu:</b> ${esc(r.mudar)}</div>` : ""}
       <div class="mc-chips">${SUGESTOES.map(x => `<button type="button" data-mcsug="${esc(x)}" aria-pressed="${obj === x}">${esc(x)}</button>`).join("")}</div>
       <label class="mc-field">Ou escreva com suas palavras<input id="mcObj" maxlength="140" value="${esc(obj)}" placeholder="Ex.: explicar os prazos da LC 80/94 sem consultar"></label>
@@ -103,12 +108,12 @@
     planoAtivo = false;
     obj = String(obj).trim().slice(0, 140);
     iniciarDados(s, obj);
+    ensureAj();
+    S.ajustes.mcPerguntadoDia = today();
     if (obj) {
-      ultObjetivo = obj;
-      ensureAj();
       S.ajustes.mcPlanos = [...lista(S.ajustes.mcPlanos), [Date.now(), obj]].slice(-300);
-      queue("ajustes");
     }
+    queue("ajustes");
     if (s.ui) s.ui.t0 = Date.now();
     renderSession();
   }
@@ -184,12 +189,13 @@
       ["Guarde uma reflexão", "Um ajuste concreto para a próxima sessão.", refl, 1],
     ];
     const ilus = modoCards("hiper").length;
-    const el = document.createElement("section"); el.className = "panel"; el.id = "mcMissoes";
-    el.innerHTML = `<div class="ph"><h3>Estude com intenção</h3><span class="count">${L.filter(x => x[2] >= x[3]).length}/${L.length} hoje</span></div>
+    const el = document.createElement("details"); el.className = "panel mc-missoes-panel"; el.id = "mcMissoes";
+    el.innerHTML = `<summary>Refletir sobre o estudo (opcional)</summary>
+      <div class="ph"><h3>Estude com intenção</h3><span class="count">${L.filter(x => x[2] >= x[3]).length}/${L.length} hoje</span></div>
       <p class="count">Sugestões opcionais, sem penalidade por pular. Fazer uma tentativa já é um começo.</p>
       <ul class="mc-missoes">${L.map(([t, d, v, meta]) => `<li class="${v >= meta ? "ok" : ""}"><div>${esc(t)}<small>${esc(d)}</small><div class="mc-bar"><i style="width:${v >= meta ? 100 : 0}%"></i></div></div><span class="mono count">${Math.min(v, meta)}/${meta}</span></li>`).join("")}</ul>
       ${ilus ? `<div class="row" style="margin-top:12px"><button class="btn small" id="mcHiper">Revisar ${plural(ilus, "certeza não confirmada", "certezas não confirmadas")}</button></div>` : ""}`;
-    const alvo = main.querySelector(".panel"); alvo ? alvo.before(el) : main.appendChild(el);
+    const alvo = main.querySelector(".hero") || main.querySelector(".panel"); alvo ? alvo.after(el) : main.appendChild(el);
     $("#mcHiper")?.addEventListener("click", () => startModo("hiper"));
   }
 
@@ -210,8 +216,10 @@
     renderSession = function () {
       const s = S.tab === "sessao" ? S.session : null;
       if (s && !s.mc) {
-        if (s.ui && s.done === 0 && !s.pausaAte && !SEM_PLANO.includes(s.modo) && S.ajustes.metaOn !== false) return renderPlano(s);
-        iniciarDados(s);
+        const comum = !SEM_PLANO.includes(s.modo), reaproveita = comum && S.ajustes.metaOn !== false && S.ajustes.mcPerguntadoDia === today();
+        const podePerguntar = s.ui && s.done === 0 && !s.pausaAte && comum && s.leve !== true && S.ajustes.metaOn !== false;
+        if (podePerguntar && !reaproveita) return renderPlano(s);
+        iniciarDados(s, reaproveita ? planoHoje() : "");
       }
       planoAtivo = false;
       const out = _render.apply(this, arguments);
@@ -257,9 +265,15 @@
       const out = _stats.apply(this, arguments), on = $("#confOn");
       if (on && !$("#mcOn")) {
         const l = document.createElement("label"); l.className = "row"; l.style.cssText = "gap:8px;margin-top:6px;font-weight:400";
-        l.innerHTML = `<input type="checkbox" id="mcOn" ${S.ajustes.metaOn !== false ? "checked" : ""}> Definir um objetivo antes de cada sessão`;
+        l.innerHTML = `<input type="checkbox" id="mcOn" ${S.ajustes.metaOn !== false ? "checked" : ""}> Definir um foco no início do dia`;
         on.closest("label").after(l);
-        $("#mcOn").onchange = e => { ensureAj(); S.ajustes.metaOn = e.target.checked; queue("ajustes"); };
+        $("#mcOn").onchange = e => {
+          ensureAj();
+          const anterior = S.ajustes.metaOn !== false;
+          S.ajustes.metaOn = e.target.checked;
+          if (!anterior && e.target.checked) delete S.ajustes.mcPerguntadoDia;
+          queue("ajustes");
+        };
       }
       return out;
     };
