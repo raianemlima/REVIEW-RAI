@@ -25,6 +25,8 @@ function ambiente() {
   run(app);
   run(`S.mode = 'local'; S.ajustes.metaOn = false; S.ajustes.onboard = true; S.ajustes.som = false; S.ajustes.vibra = false; S.ajustes.minutos = 10; S.ajustes.novosMax = 10; ensureAj();`);
   if (perfis) run(perfis);
+  run(readFileSync(new URL('../arquivos/cronograma-conteudo.js', import.meta.url), 'utf8'));
+  run(readFileSync(new URL('../arquivos/cronograma-motor.js', import.meta.url), 'utf8'));
   run(cronograma);
   return { dom, run, close: () => dom.window.close() };
 }
@@ -109,7 +111,7 @@ test('alterar percentual redistribui saldo ao redor do valor fixo e inválidos n
     target.value = '-5'; target.dispatchEvent(new a.dom.window.Event('change', { bubbles: true }));
     assert.notEqual(target.value, '0.00', 'entrada negativa não deve virar zero silenciosamente');
     d.querySelector('#crForm').dispatchEvent(new a.dom.window.Event('submit', { bubbles: true, cancelable: true }));
-    assert.notEqual(a.run('S.ajustes.cronograma.ativo'), true, 'formulário inválido não salva');
+    assert.notEqual(a.run('S.ajustes.cronograma?.ativo'), true, 'formulário inválido não salva');
   } finally { a.close(); }
 });
 
@@ -134,6 +136,7 @@ test('salvar e reabrir plano personalizado conserva pesos 60/40 sem regenerá-lo
   try {
     await pronta(a); a.run('go("cronograma")');
     const d = a.dom.window.document;
+    const edital=d.querySelector('#crEdital'); edital.value='ce-2022'; edital.dispatchEvent(new a.dom.window.Event('change',{bubbles:true}));
     d.querySelectorAll('[data-cr-subject]').forEach(x => { x.checked = ['direito_constitucional','direito_processual_civil'].includes(x.dataset.crSubject); x.dispatchEvent(new a.dom.window.Event('change', { bubbles: true })); });
     for (const x of d.querySelectorAll('[data-cr-peso]')) x.value = x.dataset.crPeso === 'direito_constitucional' ? '60' : '40';
     d.querySelector('#crForm').dispatchEvent(new a.dom.window.Event('submit', { bubbles: true, cancelable: true }));

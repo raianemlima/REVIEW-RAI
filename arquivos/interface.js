@@ -57,7 +57,8 @@
     rodape.className = "rd-sidebar-footer";
     rodape.innerHTML = `<div class="rd-presenca"><strong id="rdSequencia">Seu progresso</strong><p id="rdLegenda">carregando os registros</p></div><button type="button" id="rdAjustes" class="rd-settings">${icone("settings")}<span>Ajustes</span></button>`;
     side.appendChild(rodape);
-    header.before(side);
+    // O fixed precisa ficar fora de shells que possam criar containing block.
+    document.body.appendChild(side);
     $rd("#rdAjustes").onclick = () => go("ajustes");
     logo.classList.add("rd-mobile-logo");
     $rd("#goBusca").innerHTML = icone("search");
@@ -73,9 +74,31 @@
       e.preventDefault(); botoes[j].focus(); botoes[j].click();
     });
     window.addEventListener("resize", atributosNavegacao);
+    const medirNavegacao = () => {
+      const altura = side.getBoundingClientRect().height;
+      document.documentElement.style.setProperty("--rd-nav-space", `${Math.ceil(altura)}px`);
+    };
+    medirNavegacao();
+    if (typeof ResizeObserver === "function") {
+      const observador = new ResizeObserver(medirNavegacao);
+      observador.observe(side);
+    } else {
+      window.addEventListener("resize", medirNavegacao);
+    }
+    const ajustarTeclado = evento => {
+      const alvo = evento?.type === "focusin" ? evento.target : document.activeElement;
+      const campo = alvo?.matches?.("textarea, select, input:not([type=checkbox]):not([type=radio]):not([type=button]):not([type=submit])");
+      document.documentElement.classList.toggle("rd-editando", window.innerWidth <= 900 && !!campo);
+      medirNavegacao();
+    };
+    document.addEventListener("focusin", ajustarTeclado, true);
+    document.addEventListener("focusout", () => requestAnimationFrame(ajustarTeclado));
+    window.addEventListener("resize", ajustarTeclado);
+    window.visualViewport?.addEventListener("resize", ajustarTeclado);
     document.documentElement.dataset.rdDesign = "figma";
     document.body.classList.add("rd-shell");
     atualizarShell();
+    ajustarTeclado();
   }
   function decorarHoje() {
     atualizarShell();
