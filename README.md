@@ -24,3 +24,7 @@ O progresso pode ser sincronizado por um repositório privado seu no GitHub. Vej
 
 ## App no celular (PWA)
 O site se instala como aplicativo, sem lojas e sem custo. Veja [`docs/INSTALAR-PWA.md`](docs/INSTALAR-PWA.md).
+
+## Metacognição: planejar, monitorar e refletir
+
+O planejamento e a reflexão são opcionais. O app compara confiança e resultado sem tratar um acerto isolado como domínio, e diferencia questões com gabarito de autoavaliação. Consulte o [guia de metacognição](docs/METACOGNICAO.md) para entender os indicadores, o backup e os testes com dados fictícios (`npm ci --ignore-scripts` e `npm test`).
