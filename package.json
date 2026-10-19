@@ -5,7 +5,7 @@
   "description": "Ferramentas de teste do aplicativo estático Review DPE",
   "scripts": {
     "test": "node --test tests/*.test.mjs",
-    "check": "node --check arquivos/metacognicao.js && node --check arquivos/cronograma.js && node --check arquivos/interface.js && node --check sw.js && node --check gate.js && node --check ferramentas/ci/injetar_arquivos.mjs && node --check ferramentas/ci/validar_site.mjs"
+    "check": "node --check arquivos/metacognicao.js && node --check arquivos/cronograma-pesos.js && node --check arquivos/cronograma.js && node --check arquivos/interface.js && node --check sw.js && node --check gate.js && node --check ferramentas/ci/injetar_arquivos.mjs && node --check ferramentas/ci/validar_site.mjs && node --check arquivos/cronograma-conteudo.js && node --check arquivos/cronograma-motor.js"
   },
   "devDependencies": {
     "jsdom": "26.1.0"

@@ -1317,18 +1317,39 @@ html[data-rd-design="figma"] body.rd-shell #tabs button {
 }
 
 @media (max-width: 900px) {
+  html[data-rd-design="figma"] body.rd-shell {
+    padding-bottom: var(--rd-nav-space, calc(64px + env(safe-area-inset-bottom, 0px)));
+    scroll-padding-bottom: var(--rd-nav-space, calc(64px + env(safe-area-inset-bottom, 0px)));
+  }
+
+  html[data-rd-design="figma"] {
+    scroll-padding-bottom: calc(var(--rd-nav-space, 64px) + 24px);
+  }
+
+  html[data-rd-design="figma"].rd-editando body.rd-shell #rdSidebar.rd-sidebar {
+    display: none;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell main input,
+  html[data-rd-design="figma"] body.rd-shell main textarea,
+  html[data-rd-design="figma"] body.rd-shell main select {
+    scroll-margin-block: 96px;
+  }
+
   html[data-rd-design="figma"] body.rd-shell #rdSidebar.rd-sidebar {
     align-items: stretch;
     border-right: 0;
     border-top: 1px solid var(--rd-line);
     bottom: 0;
     box-shadow: 0 -8px 28px rgba(40, 30, 100, 0.08);
-    height: calc(70px + env(safe-area-inset-bottom, 0px));
+    height: auto;
     left: 0;
-    padding: 5px 7px max(5px, env(safe-area-inset-bottom, 0px));
+    padding: 4px 7px max(4px, env(safe-area-inset-bottom, 0px));
     right: 0;
     top: auto;
     width: 100%;
+    position: fixed;
+    z-index: 40;
   }
 
   html[data-rd-design="figma"] body.rd-shell #rdSidebar .rd-logo,
@@ -1363,9 +1384,9 @@ html[data-rd-design="figma"] body.rd-shell #tabs button {
     font-size: 11px;
     gap: 3px;
     justify-content: center;
-    min-height: 58px;
+    min-height: 44px;
     min-width: 54px;
-    padding: 5px 4px;
+    padding: 4px 4px;
     text-align: center;
     white-space: normal;
   }
@@ -1455,7 +1476,7 @@ html[data-rd-design="figma"] body.rd-shell #tabs button {
   html[data-rd-design="figma"] body.rd-shell > main.wrap[data-rd-view="hoje"] {
     margin-left: 0;
     max-width: none;
-    padding: 28px 16px calc(104px + env(safe-area-inset-bottom, 0px));
+    padding: 28px 16px 28px;
     width: 100%;
   }
 

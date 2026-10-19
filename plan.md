@@ -93,3 +93,19 @@ A soma dos percentuais deve ser 100%; o aluno pode dividir igualmente e editar. 
 ## Verificação
 
 Testes do módulo usam o app real com dados fictícios e cobrem catálogo, editor, prévia, metas, filtro do baralho, backup e tela Hoje. A pasta pública é montada sem segredos e validada com o service worker e os arquivos novos. O motor FSRS e `gate.js` são comparados à base remota e permanecem iguais.
+
+# Etapa 5 — percentuais automáticos por edital
+
+Corrigir o erro de validação que rejeita percentuais como 7,69 no celular. Aceitar vírgula ou ponto com duas casas decimais; distribuir centésimos pelo método dos maiores restos para fechar exatamente 100%. Sugerir tempo com base nas quantidades da prova objetiva do edital; quando o quadro é por grupo, repartir internamente sem duplicar o peso. Não misturar pesos de fases diferentes. Na ausência de ponderação verificável, usar distribuição equilibrada explicitamente identificada como sugestão, não peso oficial.
+
+Recalcular ao escolher edital/matérias e oferecer “Sugerir pelo edital”, “Dividir igualmente” e ajuste manual com redistribuição do restante. Exibir soma, método, fonte e limites. Preservar horas/dias durante troca de edital, planos já salvos e o mecanismo existente de metas/persistência. Usar cronograma.js para interação e um catálogo estático de perfis documentados carregado antes dele; incluir o catálogo no cache/validador de publicação. Não modificar FSRS, login, cartões ou histórico. Entregar branch/PR rascunho a partir da main que já recebeu o cronograma, sem publicação ou merge automático.
+
+# Etapa 6 — cronograma de conteúdo e navegação móvel
+
+A prévia atual repete as mesmas matérias em todos os dias e organiza o plano em torno de cartões. Substituir por ciclo de estudos com blocos reais de assuntos do programa escolhido: todas as disciplinas do anexo, inclusive Português e legislação estadual quando previstas; tópicos com texto e página rastreáveis; normas/jurisprudência citadas no item e acesso a fontes oficiais para consultar. Não inventar artigos, súmulas ou julgados. O modo comum deve pedir edital de conteúdo para fornecer assuntos concretos, em vez de atribuir programa genérico a todos os estados.
+
+Distribuir o orçamento semanal inteiro em dias e blocos de duração útil, com rodízio de disciplinas e avanço dos tópicos. Com pouco tempo e muitas matérias, mostrar ciclo de várias semanas e as matérias agendadas para a próxima semana, sem minissessões de 3 minutos ou matérias silenciosamente omitidas. Separar plano de conteúdo de revisão espaçada: horas/blocos e conclusão de assuntos têm metas próprias; não transformar automaticamente toda a carga semanal em cartões. Revisão opcional tem orçamento próprio, permanece independente do estudo e não altera o FSRS. Preservar planos antigos, percentuais, backup e sincronização; conclusão de assunto não significa domínio.
+
+Estrutura: arquivos/cronograma.js integra editor e Hoje ao app; arquivos/cronograma-conteudo.js fornece o catálogo documental; arquivos/cronograma-motor.js calcula ciclos e materiais sem depender do baralho; arquivos/cronograma.css estiliza agenda/assuntos; arquivos/interface.js e interface.css corrigem apenas a barra móvel. Fontes oficiais verificadas ficam em catálogo de materiais e links de consulta, sem dependência de IA paga em execução. Reutilizar visual e serviços atuais.
+
+Corrigir barra inferior com posicionamento estável no viewport, fora de ancestrais transformados e com espaço reservado medido; áreas seguras e teclado móvel não podem esconder botões de reflexão/salvar. Conferir defeito real em navegador com fixtures offline de celular, sem conta de produção. Entrega em branch/PR rascunho, incorporando correção de percentuais ainda não integrada; sem merge/publicação automática.

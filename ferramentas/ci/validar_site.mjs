@@ -202,6 +202,31 @@ export function validarSite(pastaSite, opções = {}) {
     const js = lerTexto(caminhoDentroDaPasta(site, scriptCronograma, "cronograma"), "cronograma.js");
     validarSintaxeJavaScript(js, scriptCronograma, "cronograma.js");
     const css = lerTexto(caminhoDentroDaPasta(site, cssCronograma, "estilos do cronograma"), "cronograma.css");
+    const perfil = "arquivos/cronograma-pesos.js";
+    const scripts = scriptsDoHtml(index);
+    const refsPerfil = scripts.filter(s => referenciaÉ(atributo(s.abertura, "src"), perfil));
+    if (js.includes("DPE_PESOS_EDITAIS") || refsPerfil.length || core.some(e => referenciaÉ(e, perfil))) {
+      if (refsPerfil.length !== 1) throw erro("O catálogo de pesos precisa de uma referência única a cronograma-pesos.js.");
+      if (!core.some(e => referenciaÉ(e, perfil))) throw erro("O catálogo de pesos precisa estar no CORE offline.");
+      const posiçãoModulo = scripts.findIndex(s => referenciaÉ(atributo(s.abertura, "src"), scriptCronograma));
+      if (scripts.indexOf(refsPerfil[0]) > posiçãoModulo) throw erro("cronograma-pesos.js precisa carregar antes de cronograma.js.");
+      validarSintaxeJavaScript(lerTexto(caminhoDentroDaPasta(site, perfil, "catálogo de pesos"), "catálogo de pesos"), perfil, "catálogo de pesos");
+    }
+    const conteúdo = "arquivos/cronograma-conteudo.js", motor = "arquivos/cronograma-motor.js";
+    const dependências = [conteúdo, motor];
+    if (js.includes("DPE_CONTEUDOS_EDITAIS") || dependências.some(f => scripts.some(s => referenciaÉ(atributo(s.abertura, "src"), f)) || core.some(e => referenciaÉ(e, f)))) {
+      const posiçãoModulo = scripts.findIndex(s => referenciaÉ(atributo(s.abertura, "src"), scriptCronograma));
+      let anterior = -1;
+      for (const f of dependências) {
+        const refs = scripts.filter(s => referenciaÉ(atributo(s.abertura, "src"), f));
+        if (refs.length !== 1) throw erro(`O cronograma por assuntos precisa de uma referência única a ${f}.`);
+        if (!core.some(e => referenciaÉ(e, f))) throw erro(`O cronograma por assuntos precisa estar no CORE offline: ${f}.`);
+        const posição = scripts.indexOf(refs[0]);
+        if (posição >= posiçãoModulo || posição <= anterior) throw erro("Ordem obrigatória: cronograma-conteudo.js, cronograma-motor.js, cronograma.js.");
+        anterior = posição;
+        validarSintaxeJavaScript(lerTexto(caminhoDentroDaPasta(site, f, "dependência de assuntos"), f), f, f);
+      }
+    }
     if (!css.trim()) throw erro("cronograma.css não pode estar vazio.");
   }
 
