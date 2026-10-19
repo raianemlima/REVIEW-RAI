@@ -1,77 +1,76 @@
-# Cronograma por editais de Defensoria
+# Cronograma por assuntos dos editais de Defensoria
 
-## O que foi analisado
+## O que mudou
 
-Foram recebidos 24 arquivos em Markdown derivados de documentos oficiais. A triagem foi feita apenas com o material anexado, sem completar lacunas com busca externa. O filtro usado foi: concurso para a carreira de Defensor(a) Público(a), edital de 2021 a 2026 inclusive e conteúdo programático verificável.
+O cronograma deixou de repetir uma lista de disciplinas com poucos minutos todos os dias. Agora distribui **blocos de estudo de assuntos do programa escolhido**, alterna disciplinas e continua o ciclo entre semanas. Cartões são revisão complementar, não a fonte do conteúdo nem a medida de conclusão do edital.
 
-O catálogo final contém **18 editais de carreira**, distribuídos por **16 estados**: AC, AP, AM, CE, ES, MA, MG, MT, PE, RJ, RO, RS, SC, SE, SP e TO. Mato Grosso e Santa Catarina aparecem em mais de um edital. Isso é uma amostra relevante para iniciar o recurso, mas **não representa todos os estados brasileiros** e não autoriza afirmar que uma matéria é universal em todas as DPEs do país.
+O catálogo reúne **18 editais de carreira, de 16 estados**, com 253 rubricas e 5.364 tópicos/unidades extraídas, incluindo seus subtemas. O recorte dos arquivos recebidos é 2021–2026; isso não representa todos os estados brasileiros nem uma janela móvel exata de cinco anos. Foram excluídos documentos de servidores, provas isoladas e o edital antigo do RJ. Contagens de tópicos variam conforme a estrutura de cada documento: não medem dificuldade ou carga equivalente.
 
-Ficaram fora dois cadernos/provas discursivas isoladas, um caderno de prova objetiva sem lista formal de disciplinas, o edital de 2014 do RJ e dois concursos para servidores de Defensoria. O arquivo `EDITAL01_2026DEABERTURADEINSCRICAO.md` foi conferido separadamente: apesar do nome anterior ter divergido do anexo, ele é o VII Concurso da DPE/MA, publicado em 2026, e entrou no corpus.
+## Como montar seu plano
 
-## Núcleo comum do corpus
+1. Abra **Cronograma**, pelo acesso em Hoje ou Ajustes. Escolha seu edital. Todas as rubricas do programa ficam disponíveis, mesmo quando não existem cartões delas no app.
+2. Informe **horas semanais, dias e duração preferida dos blocos**. O mínimo para um dia de conteúdo é 15 minutos. Escolha uma carga que você consiga sustentar.
+3. Selecione disciplinas e expanda seus **assuntos**. Use a busca para encontrar temas, como alimentos ou execução. Desmarque os assuntos que não deseja incluir.
+4. Confira os percentuais sugeridos e a agenda. Você pode dividir igualmente ou editar com vírgula/ponto, como `7,69`. Ao confirmar um percentual, as outras disciplinas dividem o saldo; o total fecha em 100,00%.
+5. Navegue pelas semanas e, se necessário, **escolha outro assunto em um bloco**. Salve e ative somente quando a distribuição estiver adequada.
 
-Após normalizar variações evidentes de nomenclatura — por exemplo, “Direito Penal e Criminologia” conta para Direito Penal e “Direito Processual Penal e Execução Penal” conta para Direito Processual Penal — as sete áreas abaixo aparecem nos 18 editais elegíveis:
+No modo **Núcleo comum**, escolha também o **programa que fornece os assuntos**. O núcleo compara disciplinas recorrentes; não é um edital real e não justifica misturar programas locais de diferentes estados.
 
-1. Direito Constitucional;
-2. Direito Administrativo;
-3. Direito Civil;
-4. Direito Processual Civil;
-5. Direito Penal;
-6. Direito Processual Penal;
-7. Direito Institucional da Defensoria Pública, incluindo títulos como princípios, atribuições, legislação ou organização institucional.
+## Por que algumas matérias aparecem em outra semana?
 
-“Comum” aqui significa **presente no conteúdo programático dos 18 editais da amostra, depois da normalização documentada**. Não significa mesmo peso, mesma extensão, mesma fase ou garantia de cobrança. Os editais variam bastante: alguns juntam disciplinas, outros não distribuem o conteúdo por fase e alguns dão peso maior a peças, questões, prova oral ou tribuna.
+Com muitas disciplinas e pouco tempo, não é viável estudar todas diariamente. O motor monta um ciclo de várias semanas, garantindo visita às disciplinas selecionadas com percentual positivo e assuntos marcados. A tela informa as matérias que ainda entrarão no ciclo. Uma disciplina com 0% ou nenhum assunto marcado fica explicitamente fora da agenda.
 
-## Matérias recorrentes e opcionais
+Por exemplo, com três horas semanais e várias disciplinas, o plano cria poucos blocos por dia, em vez de distribuir três minutos para cada matéria. Restos pequenos são incorporados aos blocos. As somas diária e semanal são calculadas em minutos inteiros, com ajustes de arredondamento quando necessários.
 
-Direitos Humanos, Direito do Consumidor, Direito da Criança e do Adolescente, Execução Penal e Direitos Difusos e Coletivos são oferecidos como recorrentes, porém não entram automaticamente no núcleo de sete áreas. Tributário, Criminologia, Empresarial, Direito do Idoso, Filosofia/Sociologia Jurídica, Antidiscriminatório, Ambiental/Urbanístico, Agrário, Tutela Coletiva, Sanitário, Trabalho, Previdenciário, Saúde, Medicina Legal e legislação penal extravagante ficam disponíveis como matérias opcionais ou específicas do edital selecionado.
+Percentuais orientam **prioridade aproximada de visitas**. A visita mínima a cada disciplina e a duração dos blocos podem afastar o tempo real da proporção exata, principalmente em cargas pequenas. Eles não são pesos oficiais individuais de aprovação. A fonte da objetiva é mostrada quando existe; grupos são tratados sem duplicar rubricas combinadas. Sem ponderação verificável, a sugestão é equilibrada e identificada como tal.
 
-A escolha do aluno parte do edital-alvo. Assim, uma matéria específica do Maranhão, Rondônia ou Tocantins não aparece como obrigação para quem seleciona outro estado. O modo “Núcleo comum documentado” é um ponto de partida comparativo, não um edital real.
+A sequência automática percorre os assuntos antes de voltar ao início. Uma escolha manual entra nessa sequência, evitando repetição automática precoce. Repetir manualmente um assunto ainda não concluído continua sendo possível. O horizonte navegável atual é de 52 semanas.
 
-## Como o recurso funciona no app
+## O que estudar em cada bloco
 
-O módulo `arquivos/cronograma.js` guarda o plano em `S.ajustes.cronograma`, usando o mesmo mecanismo de backup, sincronização e persistência das preferências existentes. O plano registra:
+Expanda **Assunto completo e materiais**. O bloco apresenta o texto extraído do programa, sua fonte e página/localizador, além das normas ou referências jurisprudenciais identificadas naquele item.
 
-- edital de referência;
-- horas por semana;
-- dias escolhidos;
-- disciplinas escolhidas;
-- distribuição percentual editável;
-- duração preferida do bloco;
-- se o ritmo deve ser aplicado às metas já existentes.
+- **Conteúdo jurídico:** leia os conceitos e a lei/artigo indicado, quando houver; consulte STF/STJ para estudar a tese, o contexto e os limites do precedente. Resolva questões do assunto e registre dúvidas.
+- **Português:** estude a regra gramatical e exemplos, faça questões e use o VOLP/ABL para dúvidas de grafia. O VOLP não substitui uma gramática.
+- **História e Geografia locais:** confira o estado e o período exigidos; consulte informações históricas/territoriais do IBGE e a bibliografia do edital.
 
-Ao salvar com a opção de aplicação ativada, o app atualiza o tempo diário, deriva uma meta moderada de cartões e restringe as sessões às disciplinas do baralho que puderem ser associadas com segurança. A associação é conservadora: quando uma matéria documental não tem cartão correspondente no baralho atual, ela continua visível no plano, mas não é inventado um conteúdo para ela.
+Quando o item não numera uma lei ou precedente, o app informa essa ausência. **Não inventa artigos, súmulas, temas ou acórdãos.** Os links abrem portais de consulta, não um julgado individual previamente selecionado ou material completo já verificado. O texto do item ajuda a delimitar a pesquisa. Confira vigência, retificações e bibliografia específica antes de estudar.
 
-A fila do FSRS, o histórico de respostas, as notas e os cartões não são recriados nem apagados. O cronograma organiza a capacidade informada; ele não converte horas em promessa de aprendizagem. A meta de cartões continua sendo uma medida de atividade, não de aprovação ou domínio.
+Fontes oficiais de consulta verificadas:
 
-## Critérios de produto
+- [LexML](https://www.lexml.gov.br/): pesquisa de normas; a consulta pode exigir verificação de conexão.
+- [STF](https://portal.stf.jus.br/jurisprudencia/) e [STJ](https://www.stj.jus.br/sites/portalp/paginas/Sob-medida/Advogado/Jurisprudencia/Pesquisa-de-Jurisprudencia.aspx): jurisprudência, súmulas e informativos.
+- [VOLP/ABL](https://www.academia.org.br/nossa-lingua/busca-no-vocabulario): consulta lexical e ortográfica.
+- [IBGE Cidades](https://cidades.ibge.gov.br/): informações históricas, territoriais e estatísticas.
 
-O editor não exige zerar a fila. Dias não selecionados são apresentados como dias livres, não como falhas. A distribuição precisa somar 100%, pode ser dividida igualmente e pode ser ajustada depois. O resumo semanal mostra o custo aproximado de cada área e o número de cartões é apresentado como referência compatível com a rotina, não como obrigação inflexível.
+### Complemento do Rio de Janeiro
 
-O recurso também preserva a distinção entre disciplina e formato de avaliação. Peça processual, questão discursiva, prova oral, prova de tribuna e prova de títulos são mostrados apenas como diferenças de edital no diagnóstico; não viram disciplinas artificiais no plano.
+O anexo enviado do RJ não continha o programa detalhado. Foi utilizado o complemento oficial **Relação de Pontos das Matérias**, publicado pela banca em 08/06/2026, identificado separadamente no catálogo e disponível na [página do concurso FGV](https://conhecimento.fgv.br/concursos/dperj2026).
 
-## Limites da evidência
+O [documento de pontos](https://conhecimento.fgv.br/sites/default/files/concursos/pontos-das-materias_dpe-rj.pdf) mantém ponto e alínea como localizador. Os assuntos de Tutela Coletiva estão compartilhados com Processo Civil nessa relação; o app mostra a rubrica combinada, sem fabricar uma lista independente ou contar o conteúdo duas vezes.
 
-A contagem é por edital/documento, não por estado, número de questões ou peso final. A seleção de 18 editais cobre 16 estados, não todas as unidades da federação. A normalização de rótulos combinados é útil para planejamento, mas precisa ser revisada quando o aluno escolher um edital específico. Uma frequência documental não é probabilidade de aprovação, e uma meta cumprida não é prova de retenção.
+## Metas de assuntos e revisão são diferentes
 
-A ferramenta deve ser tratada como uma hipótese revisável de organização. O aluno pode começar pelo núcleo comum, selecionar o edital que pretende prestar, acrescentar matérias opcionais, ajustar horas e dias e observar seu próprio histórico para recalibrar o plano.
+Em **Hoje**, acompanhe os assuntos planejados e marque **Estudei este assunto** após estudar. A conclusão é registrada pelo aluno: não é automática pelo relógio, não comprova domínio e não altera a nota ou o intervalo FSRS de um cartão.
 
-## Percentuais automáticos por edital
+A revisão complementar é opcional. Seu tempo **sai das horas semanais informadas**, não é uma carga extra. Ao escolher zero minutos de revisão, as preferências existentes de cartões são preservadas. Ao reservar revisão e autorizar a aplicação às metas, o app ajusta apenas essa parte da rotina de cartões. Uma reserva que não deixa pelo menos 15 minutos de conteúdo por dia é rejeitada com uma orientação, em vez de zerar silenciosamente as metas.
 
-O erro que rejeitava `7,69` vinha da combinação de um campo numérico com `step="0.5"` e valores gerados com duas casas decimais. Os percentuais agora usam um campo de texto com teclado decimal, aceitam vírgula ou ponto e validam de 0 a 100 com até duas casas. Texto inválido, valores negativos, acima de 100 e uma distribuição inteiramente zerada não podem ser salvos. O app não converte uma entrada inválida silenciosamente em zero.
+Um assunto extenso pode exigir mais tempo que um bloco. Você pode retomá-lo ou escolher outro assunto; os blocos são capacidade de estudo, não promessa de concluir o tópico. A agenda avança por calendário. Não transfere automaticamente todos os assuntos não concluídos para amanhã; consulte as semanas anteriores e ajuste seu plano quando necessário.
 
-Ao escolher um edital ou mudar as matérias, o botão **Sugerir pelo edital** usa as quantidades verificadas da **prova objetiva**. Foram conferidos os 18 anexos do catálogo: 14 permitem uma referência numérica por rubrica ou grupo; AC/2024, RJ/2026, SE/2021 e SP/2026 ficam com sugestão equilibrada, porque não foi identificada uma distribuição verificável por disciplina. O modo Núcleo comum também usa equilíbrio, sem fingir que possui pesos oficiais. Abaixo dos campos aparecem o critério, o arquivo-fonte e os itens/páginas utilizados.
+## Dados e planos anteriores
 
-Uma contagem conjunta, por exemplo Penal e Criminologia, entra uma única vez. O valor é repartido internamente entre os IDs associados como hipótese de tempo. Os pesos por grupos de RO/2022, RS/2025 e TO/2021 recebem o mesmo tratamento: o total do grupo é preservado antes de renormalizar apenas as matérias escolhidas. Questões discursivas, peças, prova oral e pesos entre fases não são somados à objetiva.
+O plano permanece em `S.ajustes.cronograma`; conclusões ficam em `S.ajustes.cronogramaProgresso`. Ambos usam a persistência e o backup existentes. O merge preserva registros de assuntos diferentes e usa o registro mais recente para marcação/desmarcação do mesmo assunto.
 
-Os valores representam **tempo sugerido**, não pesos oficiais individuais de aprovação. Se o catálogo oferece uma matéria sem quantidade própria no quadro objetivo, ela recebe uma reserva média calculada a partir das matérias numericamente cobertas; o app informa essa hipótese. Disciplinas sem ID catalogado, como Português em RS/2025 e SC/2026 e legislação local específica do Acre, permanecem declaradas como lacunas na fonte; não se cria um conteúdo de baralho fictício.
+Abrir um plano antigo, ativo ou pausado, não o sobrescreve nem substitui seus percentuais automaticamente. A versão por assuntos é aplicada somente ao salvar. Conteúdo protegido, FSRS, notas de revisão, autenticação e metacognição permanecem intactos.
 
-**Dividir igualmente** distribui o tempo uniformemente. **Sugerir pelo edital** restaura a proposta documental. Na edição manual, ao confirmar o percentual de uma disciplina, esse valor fica fixado e as demais dividem proporcionalmente o saldo. Com uma única matéria selecionada, seu percentual é 100%. A soma e a prévia respondem aos campos atuais, inclusive depois de alterar as matérias.
+## Navegação móvel
 
-O cálculo trabalha em centésimos inteiros e distribui o arredondamento pelo método dos maiores restos. Assim, 13 matérias não ficam com um total de 99,97%: os centésimos restantes são distribuídos de forma determinística e o resultado fecha em **100,00%**. A prévia também conserva o orçamento semanal em minutos inteiros, com possíveis ajustes de um minuto por arredondamento; seus valores por matéria são referências da semana, não tarefas repetidas integralmente em cada dia.
+A barra inferior fica diretamente no `body`, fixa na janela e com espaço inferior reservado, incluindo a área segura. Não ocupa uma posição no meio da página ao rolar. Durante edição de campos no celular, recolhe temporariamente e retorna ao sair do campo, para não encobrir reflexão ou teclado. Os controles originais, IDs e listeners são reaproveitados.
 
-Horas, dias e tamanho do bloco são preservados ao trocar o edital no rascunho. Percentuais de um plano ativo já salvo continuam como foram escolhidos; uma nova sugestão não os substitui sem confirmação de salvamento. O plano persiste no mesmo objeto de ajustes/backup e conserva a aplicação das metas existentes.
+## Verificação e limites
 
-### Verificações e limites desta correção
+Os testes usam código real com baralho fictício e rede bloqueada: cobrem conteúdo, rodízio, minutos, escolhas, percentuais, plano legado, orçamento de revisão, conclusão/backup/merge e publicação. Uma revisão independente identificou repetição precoce após escolha manual e alteração de pesos de plano pausado; ambos receberam correção e regressão.
 
-A revisão independente não encontrou falha funcional crítica. Foram executados testes de campos com vírgula/ponto, soma em centésimos, proporção documental, redistribuição, entradas inválidas, rascunho e reabertura de pesos personalizados. Os perfis foram extraídos exclusivamente dos anexos; não houve pesquisa de retificações posteriores na internet nem certificação de todos os conteúdos locais. A conferência em DOM simulado não equivale a teste no Safari/iPhone da captura nem a teste autenticado de produção. A entrega segue em branch/PR de revisão, sem merge ou publicação automática.
+A conferência pontual no Chromium utilizou larguras de 320, 390 e 1440 pixels, agenda longa, Hoje e reflexão; mediu barra, rolagem, foco e alcance das ações finais. Isso **não é certificação de Safari/iPhone nem teste autenticado de produção ou offline real**. A cópia pública é validada sem os segredos dos materiais protegidos.
+
+O catálogo é estático e derivado das fontes indicadas. Não monitora retificações futuras, não substitui a conferência do edital original e não disponibiliza uma biblioteca completa de doutrina ou precedentes comentados. A entrega é em branch/PR de revisão, sem publicação ou merge automático.

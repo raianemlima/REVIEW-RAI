@@ -1,7 +1,7 @@
 // Review DPE · service worker
 // Offline: o app e as fontes ficam guardados no aparelho. Atualização: a versão nova espera o aviso "Atualizar".
-const CACHE = "revisao-dpe-v121", DADOS = "revisao-dpe-dados";
-const CORE = ["./", "index.html", "arquivos/metacognicao.js", "arquivos/cronograma.js", "arquivos/cronograma-pesos.js", "arquivos/cronograma.css", "arquivos/interface.js", "arquivos/interface.css", "manifest.webmanifest", "privacidade.html", "termos.html", "icons/icon.svg", "icons/icon-180.png", "icons/icon-192.png", "icons/icon-512.png", "icons/icon-maskable-512.png",
+const CACHE = "review-dpe-assuntos-v1", DADOS = "revisao-dpe-dados";
+const CORE = ["./", "index.html", "arquivos/metacognicao.js", "arquivos/cronograma-conteudo.js", "arquivos/cronograma-motor.js", "arquivos/cronograma.js", "arquivos/cronograma-pesos.js", "arquivos/cronograma.css", "arquivos/interface.js", "arquivos/interface.css", "manifest.webmanifest", "privacidade.html", "termos.html", "icons/icon.svg", "icons/icon-180.png", "icons/icon-192.png", "icons/icon-512.png", "icons/icon-maskable-512.png",
   "fonts/fonts.css", "fonts/ibm-plex-sans-latin-400-normal.woff2", "fonts/ibm-plex-sans-latin-500-normal.woff2", "fonts/ibm-plex-sans-latin-600-normal.woff2",
   "fonts/ibm-plex-mono-latin-400-normal.woff2", "fonts/ibm-plex-mono-latin-500-normal.woff2",
   "fonts/newsreader-latin-400-normal.woff2", "fonts/newsreader-latin-500-normal.woff2", "fonts/newsreader-latin-600-normal.woff2", "fonts/newsreader-latin-400-italic.woff2", "fonts/rubik-latin-wght-normal.woff2"];
