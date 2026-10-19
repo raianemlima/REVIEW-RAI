@@ -4,11 +4,11 @@ A proposta é ajudar você a perceber o que sabe, testar essa percepção e esco
 
 ## Antes: escolha um foco
 
-Ao iniciar uma sessão comum, você pode escolher um objetivo sugerido ou escrever até 140 caracteres. Por exemplo: “Explicar os prazos da LC 80/94 sem consultar”. Se houver uma reflexão anterior com uma mudança planejada, o app a apresenta como lembrete.
+No primeiro bloco comum do dia, você pode escolher um objetivo sugerido ou escrever até 140 caracteres. Por exemplo: “Explicar os prazos da LC 80/94 sem consultar”. Se houver uma reflexão anterior com uma mudança planejada, o app a apresenta como lembrete. Depois de começar ou pular, os outros blocos entram direto e reaproveitam o foco escolhido nesse dia, quando houver.
 
 O planejamento é opcional. Use **Pular planejamento** para estudar imediatamente. A opção de não perguntar nas próximas sessões pode ser revertida em **Estatísticas**, junto das opções de confiança. Desativar essa pergunta não desativa o monitoramento nem a reflexão.
 
-Simulados e treino de segunda fase não recebem uma etapa inicial de planejamento: o módulo não acrescenta espera ao cronômetro dessas sessões.
+Simulados, treino de segunda fase e **Hoje, só 5 cartões** não recebem uma etapa inicial de planejamento: o módulo não acrescenta espera ao cronômetro dessas sessões nem atrapalha o começo do bloco leve.
 
 Enquanto o progresso estiver sendo carregado, a interface não oferece ações de estudo. Isso evita criar uma sessão com o histórico ainda vazio. No planejamento, Enter e Espaço continuam funcionando nos botões, mas letras de resposta e atalhos de notas não atuam sobre os cartões.
 
@@ -45,7 +45,7 @@ Os percentuais do painel geral apenas descrevem os resultados registrados em cad
 
 ## Sugestões diárias
 
-A tela Hoje oferece três sugestões opcionais: escolher um foco, observar a confiança em uma tentativa e guardar uma reflexão. Não há punição por pular, nem alteração do histórico de estudo por não concluir essas sugestões.
+A tela Hoje oferece três sugestões opcionais e recolhidas: escolher um foco, observar a confiança em uma tentativa e guardar uma reflexão. Não há punição por pular, nem alteração do histórico de estudo por não concluir essas sugestões. A [rotina diária sustentável](ROTINA-DIARIA.md) separa a meta escolhida, o próximo bloco e a fila disponível.
 
 ## Desenvolvimento e verificação
 
