@@ -3,13 +3,28 @@
 //
 // Os dois valores vêm dos segredos do repositório (Settings › Secrets and variables › Actions) e nunca ficam no código.
 // Decifra o baralho com a senha, troca DECK.arquivos e cifra de novo com o MESMO sal: a chave derivada não muda,
-// então quem já entrou continua abrindo o app sem precisar de internet. Sem os segredos, não faz nada.
+// então quem já entrou continua abrindo o app sem precisar de internet. Sem os segredos, só injeta o módulo de metacognição.
 import { readFileSync, writeFileSync } from "node:fs";
 import { webcrypto as crypto, randomBytes } from "node:crypto";
 import { gzipSync, gunzipSync } from "node:zlib";
 
 const arq = process.argv[2], senha = process.env.APP_SENHA, chaves = process.env.CHAVE_ARQUIVOS;
 if (!arq) { console.error("Uso: node injetar_arquivos.mjs index.html"); process.exit(1); }
+
+// Módulo de metacognição (arquivos/metacognicao.js): entra antes do </body>, depois dos scripts do app,
+// para se encaixar nas funções globais já definidas. Roda mesmo sem os segredos.
+{
+  const TAG = '<script src="arquivos/metacognicao.js"></script>';
+  const h = readFileSync(arq, "utf8");
+  if (h.includes('src="arquivos/metacognicao.js"')) console.log("index.html já carrega arquivos/metacognicao.js.");
+  else {
+    const i = h.lastIndexOf("</body>");
+    if (i < 0) { console.error("::error::</body> não encontrado no index.html."); process.exit(1); }
+    writeFileSync(arq, h.slice(0, i) + TAG + "\n" + h.slice(i));
+    console.log("ok: arquivos/metacognicao.js injetado no index.html");
+  }
+}
+
 if (!senha || !chaves) { console.log("::notice::Segredos APP_SENHA e CHAVE_ARQUIVOS não configurados: PDFs protegidos não entram no baralho."); process.exit(0); }
 
 let lista;
