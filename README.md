@@ -32,3 +32,7 @@ O planejamento e a reflexão são opcionais. O app compara confiança e resultad
 ## Rotina diária sustentável
 
 A meta padrão é de 10 cartões diferentes, ajustável, sem confundir toda a fila com obrigação diária. O bloco tem até 10 cartões e tentativas limitadas; **Hoje, só 5** reduz a meta somente naquele dia. XP e missões ficam em áreas opcionais. Leia o [guia da rotina diária](docs/ROTINA-DIARIA.md) para conhecer a seleção, a retomada e os limites.
+
+## Interface integrada ao design fornecido
+
+O menu lateral no computador, a barra inferior no celular e o painel de estudo seguem a referência de MelhorarDesignDoApp, usando os controles e dados reais deste aplicativo. A camada visual não troca o FSRS, o login, o histórico ou os backups. Consulte o [guia da interface](docs/INTERFACE.md) para conhecer a integração e o alcance desta primeira etapa.

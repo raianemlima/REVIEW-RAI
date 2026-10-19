@@ -177,6 +177,21 @@ export function validarSite(pastaSite, opções = {}) {
   const meta = lerTexto(caminhoMeta, "módulo de metacognição");
   validarSintaxeJavaScript(meta, caminhoMeta, "módulo de metacognição");
 
+  // Retrocompatível com artefatos anteriores: se uma parte do design estiver
+  // declarada, exigir as duas dependências e suas referências reais no HTML.
+  const scriptVisual = "arquivos/interface.js", cssVisual = "arquivos/interface.css";
+  const referencias = scriptsDoHtml(index).filter(s => referenciaÉ(atributo(s.abertura, "src"), scriptVisual));
+  const links = [...index.matchAll(/<link\b[^>]*>/gi)].map(m => m[0]).filter(tag => referenciaÉ(atributo(tag, "href"), cssVisual) && (atributo(tag, "rel") || "").toLowerCase() === "stylesheet");
+  const temVisual = referencias.length || links.length || core.some(e => referenciaÉ(e, scriptVisual) || referenciaÉ(e, cssVisual));
+  if (temVisual) {
+    if (referencias.length !== 1 || links.length !== 1) throw erro("O design precisa de uma referência única a interface.js e interface.css no HTML.");
+    for (const f of [scriptVisual, cssVisual]) if (!core.some(e => referenciaÉ(e, f))) throw erro(`O design precisa estar no CORE offline: ${f}.`);
+    const js = lerTexto(caminhoDentroDaPasta(site, scriptVisual, "interface"), "interface.js");
+    validarSintaxeJavaScript(js, scriptVisual, "interface.js");
+    const css = lerTexto(caminhoDentroDaPasta(site, cssVisual, "estilos da interface"), "interface.css");
+    if (!css.trim()) throw erro("interface.css não pode estar vazio.");
+  }
+
   const appSrc = localizarAppSrc(index);
   const avisos = [];
   if (appSrc.length === 0) {
