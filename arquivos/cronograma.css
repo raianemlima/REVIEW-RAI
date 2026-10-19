@@ -44,3 +44,13 @@
 .cr-back { margin-bottom: 10px; }
 @media (max-width: 760px) { .cr-week { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cr-subjects { grid-template-columns: 1fr; } }
 @media (max-width: 480px) { .cr-hero { padding: 18px; } .cr-grid { grid-template-columns: 1fr; } .cr-week { grid-template-columns: 1fr; } .cr-today, .cr-aj { align-items: flex-start; flex-direction: column; } .cr-today .btn, .cr-aj .btn { align-self: flex-start; } }
+
+/* Percentuais livres com teclado decimal: sem restrição de passo do input number. */
+.cr-form input[data-cr-peso] { width:100%; box-sizing:border-box; padding:10px 8px; min-height:44px; border:1px solid var(--line); border-radius:10px; background:var(--bg); color:var(--ink); font:16px var(--f-ui); text-align:right; }
+.cr-form input[data-cr-peso][aria-invalid="true"] { border-color:var(--bad); outline-color:var(--bad); }
+#crTotal { font-weight:700; color:var(--accent); margin:12px 0 6px; }
+#crMetodo { line-height:1.5; overflow-wrap:anywhere; }
+#crMetodo details { margin-top:8px; } #crMetodo summary { cursor:pointer; color:var(--accent); }
+#crMetodo p { margin:6px 0; }
+.cr-form .ph { flex-wrap:wrap; gap:8px; }
+.cr-form .ph .row { margin:0; flex-wrap:wrap; }

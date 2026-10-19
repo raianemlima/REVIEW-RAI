@@ -93,3 +93,9 @@ A soma dos percentuais deve ser 100%; o aluno pode dividir igualmente e editar. 
 ## Verificação
 
 Testes do módulo usam o app real com dados fictícios e cobrem catálogo, editor, prévia, metas, filtro do baralho, backup e tela Hoje. A pasta pública é montada sem segredos e validada com o service worker e os arquivos novos. O motor FSRS e `gate.js` são comparados à base remota e permanecem iguais.
+
+# Etapa 5 — percentuais automáticos por edital
+
+Corrigir o erro de validação que rejeita percentuais como 7,69 no celular. Aceitar vírgula ou ponto com duas casas decimais; distribuir centésimos pelo método dos maiores restos para fechar exatamente 100%. Sugerir tempo com base nas quantidades da prova objetiva do edital; quando o quadro é por grupo, repartir internamente sem duplicar o peso. Não misturar pesos de fases diferentes. Na ausência de ponderação verificável, usar distribuição equilibrada explicitamente identificada como sugestão, não peso oficial.
+
+Recalcular ao escolher edital/matérias e oferecer “Sugerir pelo edital”, “Dividir igualmente” e ajuste manual com redistribuição do restante. Exibir soma, método, fonte e limites. Preservar horas/dias durante troca de edital, planos já salvos e o mecanismo existente de metas/persistência. Usar cronograma.js para interação e um catálogo estático de perfis documentados carregado antes dele; incluir o catálogo no cache/validador de publicação. Não modificar FSRS, login, cartões ou histórico. Entregar branch/PR rascunho a partir da main que já recebeu o cronograma, sem publicação ou merge automático.

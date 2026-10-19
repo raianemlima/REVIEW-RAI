@@ -78,7 +78,50 @@
     const out = (subjects || []).filter(id => CORE.includes(id));
     return out.length ? out : (subjects || []).slice(0, 7);
   };
-  const pesosIguais = ids => Object.fromEntries((ids || []).map(id => [id, +(100 / Math.max(1, ids.length)).toFixed(2)]));
+  // Distribui centésimos inteiros: não perde 0,01% nos arredondamentos.
+  function normalizarPercentuais(ids, weights = {}, totalCent = 10000) {
+    if (!ids.length) return {};
+    const valores = ids.map(id => Number.isFinite(+weights[id]) && +weights[id] > 0 ? +weights[id] : 0);
+    const soma = valores.reduce((a, b) => a + b, 0);
+    const partes = ids.map((id, i) => {
+      const exato = (soma ? valores[i] / soma : 1 / ids.length) * totalCent;
+      return { id, i, cent: Math.floor(exato), resto: exato - Math.floor(exato) };
+    });
+    let restante = totalCent - partes.reduce((n, x) => n + x.cent, 0);
+    const ordem = partes.slice().sort((a, b) => b.resto - a.resto || a.i - b.i);
+    for (let i = 0; i < restante; i++) ordem[i % ordem.length].cent++;
+    return Object.fromEntries(partes.map(x => [x.id, x.cent / 100]));
+  }
+  const pesosIguais = ids => normalizarPercentuais(ids);
+  function lerPercentual(value) {
+    const texto = String(value ?? "").trim();
+    if (!/^(?:\d+(?:[.,]\d{1,2})?|[.,]\d{1,2})$/.test(texto)) return NaN;
+    const n = Number(texto.replace(",", "."));
+    return Number.isFinite(n) && n >= 0 && n <= 100 ? n : NaN;
+  }
+  const formatarPercentual = value => Number(value || 0).toFixed(2).replace(".", ",");
+  const perfis = () => window.DPE_PESOS_EDITAIS || {};
+  function sugerirPesos(editalId, ids) {
+    const perfil = perfis()[editalId];
+    if (!perfil || !perfil.grupos.length) return pesosIguais(ids);
+    const bases = {};
+    for (const g of perfil.grupos) {
+      // A contagem de uma rubrica conjunta entra só uma vez; repartição interna é hipótese.
+      for (const id of g.subjects) bases[id] = (bases[id] || 0) + g.valor / g.subjects.length;
+    }
+    const positivos = Object.values(bases).filter(n => n > 0);
+    const reserva = positivos.length ? positivos.reduce((a, b) => a + b, 0) / positivos.length : 1;
+    return normalizarPercentuais(ids, Object.fromEntries(ids.map(id => [id, bases[id] || reserva])));
+  }
+  function metodoHtml(editalId, ids, modo) {
+    const perfil = perfis()[editalId];
+    const inicio = modo === "manual" ? "Distribuição personalizada. O restante é redistribuído proporcionalmente ao editar." : modo === "igual" ? "Divisão igual entre as disciplinas selecionadas." : perfil?.grupos.length ? (perfil.tipo === "grupos" ? "Sugestão pelos grupos da prova objetiva." : "Sugestão pelas quantidades de questões da prova objetiva.") : "Sugestão equilibrada: não há ponderação numérica verificada para esta referência.";
+    if (!perfil) return inicio + " Você pode ajustar. Isto é tempo sugerido, não peso oficial ou previsão de aprovação.";
+    const cobertos = new Set(perfil.grupos.flatMap(g => g.subjects));
+    const faltam = ids.filter(id => !cobertos.has(id));
+    const extra = perfil.grupos.length && faltam.length ? " Matérias sem quantidade própria no quadro recebem uma reserva média de tempo (hipótese), não um peso oficial." : "";
+    return `${inicio}${extra} Percentuais são renormalizados somente entre as matérias escolhidas. Uma rubrica conjunta é repartida igualmente internamente como hipótese de tempo, não peso oficial individual.<details><summary>Ver fonte e critério</summary><p>${escLocal(perfil.fonte)} · ${escLocal(perfil.nota)}</p>${perfil.grupos.map(g => `<p>${escLocal(g.label)}: ${g.valor} · ${escLocal(g.evidencia)}</p>`).join("")}</details>`;
+  }
   const somaPesos = weights => Object.values(weights || {}).reduce((s, n) => s + (+n || 0), 0);
   function normalizarDias(values) {
     const out = [...new Set((values || []).map(Number).filter(n => n >= 1 && n <= 7))].sort((a, b) => a - b);
@@ -144,15 +187,17 @@
     return DECK.disciplinas.filter(d => (subjects || []).some(id => idDeckCompativel(id, d))).map(d => d.id);
   }
   function distribuicaoHtml(ids, weights) {
-    return ids.map(id => `<label class="cr-peso"><span>${escLocal(DISC_MAP[id].nome)}</span><input type="number" min="0" max="100" step="0.5" data-cr-peso="${id}" value="${Number(weights[id] || 0).toFixed(2)}" aria-label="Percentual de ${escLocal(DISC_MAP[id].nome)}"><b>%</b></label>`).join("");
+    return ids.map(id => `<label class="cr-peso"><span>${escLocal(DISC_MAP[id].nome)}</span><input type="text" inputmode="decimal" required autocomplete="off" data-cr-peso="${id}" value="${formatarPercentual(weights[id])}" aria-label="Percentual de ${escLocal(DISC_MAP[id].nome)}" aria-describedby="crTotal"><b>%</b></label>`).join("");
   }
   function labelsDias(ids) { return ids.map(id => (dias.find(x => x[0] === id) || [id, ""])[1]).join(", "); }
   function semanaPreview(p) {
-    const pesoTotal = somaPesos(p.pesos) || 100, ordem = p.subjects.slice().sort((a, b) => (p.pesos[b] || 0) - (p.pesos[a] || 0));
+    const ordem = p.subjects.filter(id => p.pesos[id] > 0).sort((a, b) => (p.pesos[b] || 0) - (p.pesos[a] || 0));
+    const totalMin = Math.round(p.horasSemana * 60);
+    const tempo = normalizarPercentuais(ordem, p.pesos, totalMin);
     return dias.map(([id, label]) => {
       if (!p.dias.includes(id)) return `<div class="cr-dia off"><b>${label}</b><span>descanso ou revisão livre</span></div>`;
-      const itens = ordem.slice(0, 4).map(s => `<span>${escLocal(DISC_MAP[s].nome)} · ${Math.max(1, Math.round(minutosPorDia(p) * (p.pesos[s] || 0) / pesoTotal))} min</span>`).join("");
-      return `<div class="cr-dia"><b>${label}</b><small>${minutosPorDia(p)} min · ${metaCartoesPorDia(p)} cartões como referência</small><div>${itens}</div></div>`;
+      const itens = ordem.map(s => `<span>${escLocal(DISC_MAP[s].nome)} · ${Math.round(tempo[s] * 100)} min/semana</span>`).join("");
+      return `<div class="cr-dia"><b>${label}</b><small>${minutosPorDia(p)} min no dia · distribuição semanal de referência</small><div>${itens}</div></div>`;
     }).join("");
   }
   function resumoPlano(p) {
@@ -162,15 +207,21 @@
   function renderCronograma() {
     ensureAj();
     const salvo = planoAtual();
-    const draftId = S.cronogramaDraftId || salvo.editalId || "comum";
+    if (!S.cronogramaDraft) {
+      const inicial = JSON.parse(JSON.stringify(salvo));
+      inicial.pesosModo = inicial.pesosModo || (inicial.ativo ? "manual" : "edital");
+      inicial.pesos = inicial.pesosModo === "edital" && !inicial.ativo ? sugerirPesos(inicial.editalId, inicial.subjects) : normalizarPercentuais(inicial.subjects, inicial.pesos);
+      S.cronogramaDraft = inicial;
+    }
+    const draft = S.cronogramaDraft;
+    const draftId = draft.editalId || "comum";
     const ed = EDITAIS_DPE.find(x => x.id === draftId);
     const subjectIds = ed ? ed.subjects : DISCIPLINAS_EDITAIS.map(x => x[0]);
-    const selected = (S.cronogramaDraftSubjects || (draftId === salvo.editalId ? salvo.subjects : coreOrFirst(subjectIds))).filter(id => DISC_MAP[id] && subjectIds.includes(id));
-    const draftWeights = draftId === salvo.editalId ? salvo.pesos : pesosIguais(selected);
-    const pPreview = { ...salvo, editalId: draftId, subjects: selected.length ? selected : coreOrFirst(subjectIds), pesos: draftWeights };
-    const matched = disciplinasDoBaralho(selected);
+    const selected = draft.subjects.filter(id => DISC_MAP[id] && subjectIds.includes(id));
+    const draftWeights = draft.pesos;
+    const pPreview = { ...draft, subjects: selected };
     const selectedSet = new Set(selected);
-    const daysSet = new Set(salvo.dias);
+    const daysSet = new Set(draft.dias);
     const title = salvo.ativo ? "Seu cronograma em andamento" : "Monte um cronograma que caiba";
     $("#main").innerHTML = `<button class="btn small ghost cr-back" id="crBack">← Hoje</button>
       <section class="cr-hero"><span class="cr-eyebrow">Planejamento por editais</span><h2>${title}</h2><p>Escolha um edital, seus dias, suas horas e as disciplinas que realmente quer acompanhar. O plano organiza o estudo; não promete resultado.</p>${salvo.ativo ? `<div class="cr-status"><b>Plano ativo</b><span>${resumoPlano(salvo)}</span><span>Hoje: ${agendaHoje(salvo) ? `${minutosPorDia(salvo)} min e meta de ${metaCartoesPorDia(salvo)} cartões` : "dia livre"}</span></div>` : ""}</section>
@@ -179,48 +230,106 @@
           <label class="field"><span>Base do cronograma</span><select id="crEdital"><option value="comum" ${draftId === "comum" ? "selected" : ""}>Núcleo comum documentado em 18 editais</option>${EDITAIS_DPE.map(x => `<option value="${x.id}" ${x.id === draftId ? "selected" : ""}>${escLocal(x.nome)} · ${escLocal(ESTADO_NOME?.[x.estado] || x.estado)}</option>`).join("")}</select><small class="hint">O núcleo comum usa sete matérias presentes nos 18 editais filtrados. Um edital estadual acrescenta as matérias específicas dele.</small></label>
         </section>
         <section class="panel"><div class="ph"><h3>2. Defina o tempo real</h3><span class="count">sem compensação automática</span></div>
-          <div class="cr-grid"><label class="field"><span>Horas por semana</span><input id="crHoras" type="number" min="1" max="60" step="0.5" value="${salvo.horasSemana}"><small class="hint">O app dividirá o tempo pelos dias escolhidos.</small></label><label class="field"><span>Bloco preferido (min)</span><input id="crBloco" type="number" min="15" max="180" step="5" value="${salvo.blocoMin}"><small class="hint">O bloco é uma sugestão; a meta leve continua disponível.</small></label></div>
+          <div class="cr-grid"><label class="field"><span>Horas por semana</span><input id="crHoras" type="number" min="1" max="60" step="0.5" value="${draft.horasSemana}"><small class="hint">O app dividirá o tempo pelos dias escolhidos.</small></label><label class="field"><span>Bloco preferido (min)</span><input id="crBloco" type="number" min="15" max="180" step="5" value="${draft.blocoMin}"><small class="hint">O bloco é uma sugestão; a meta leve continua disponível.</small></label></div>
           <fieldset class="field cr-days"><legend>Dias em que você pretende estudar</legend><div>${dias.map(([id, label]) => `<label><input type="checkbox" data-cr-dia="${id}" ${daysSet.has(id) ? "checked" : ""}> ${label}</label>`).join("")}</div><small class="hint">Você pode descansar sem perder histórico e sem criar uma dívida de cartões.</small></fieldset>
         </section>
-        <section class="panel"><div class="ph"><h3>3. Escolha as disciplinas</h3><span class="count">${selected.length} selecionadas</span></div>
+        <section class="panel"><div class="ph"><h3>3. Escolha as disciplinas</h3><span class="count" id="crSelecionadas">${selected.length} selecionadas</span></div>
           <div class="cr-subjects">${subjectIds.map(id => { const d = DISC_MAP[id]; return `<label class="cr-subject"><input type="checkbox" data-cr-subject="${id}" ${selectedSet.has(id) ? "checked" : ""}><span><b>${escLocal(d.nome)}</b><small>${escLocal(d.cobertura)}</small></span></label>`; }).join("")}</div>
           <p class="hint">Peças processuais, prova oral e tribuna continuam sendo formatos de prova, não foram cadastrados como disciplinas.</p>
         </section>
-        <section class="panel"><div class="ph"><h3>4. Distribua seu tempo</h3><button type="button" class="btn small" id="crIgual">Dividir igualmente</button></div>
-          <div id="crPesos">${distribuicaoHtml(selected.length ? selected : coreOrFirst(subjectIds), draftWeights)}</div><p class="hint">A soma precisa ser 100%. Percentuais são editáveis e não representam probabilidade de aprovação.</p>
+        <section class="panel"><div class="ph"><h3>4. Distribua seu tempo</h3><div class="row"><button type="button" class="btn small primary" id="crSugerir">Sugerir pelo edital</button><button type="button" class="btn small" id="crIgual">Dividir igualmente</button></div></div>
+          <div id="crPesos">${distribuicaoHtml(selected, draftWeights)}</div><p class="hint" id="crTotal" role="status" aria-live="polite"></p><div class="hint" id="crMetodo">${metodoHtml(draftId, selected, draft.pesosModo)}</div><p class="hint">Use vírgula ou ponto, até duas casas. Ao confirmar um percentual, o restante se ajusta para fechar 100%. Você mantém o controle.</p>
         </section>
-        <section class="panel"><div class="ph"><h3>Prévia semanal</h3><span class="count" id="crPrevResumo">${minutosPorDia(pPreview)} min por dia selecionado</span></div><div class="cr-week" id="crSemana">${semanaPreview(pPreview)}</div><div class="cr-apply"><label><input type="checkbox" id="crAplicar" ${salvo.aplicarMetas !== false ? "checked" : ""}> Aplicar este ritmo às metas do app (tempo, cartões e disciplinas compatíveis)</label><small>Ao salvar, o app atualiza o tempo diário e uma meta de cartões proporcional. A fila de revisão e o FSRS continuam intactos.</small></div><div class="row"><button class="btn primary" type="submit">Salvar e ativar cronograma</button>${salvo.ativo ? `<button class="btn" type="button" id="crPausar">Pausar plano</button>` : ""}</div><p id="crMsg" class="count" role="status"></p></section>
+        <section class="panel"><div class="ph"><h3>Prévia semanal</h3><span class="count" id="crPrevResumo">${minutosPorDia(pPreview)} min por dia selecionado</span></div><div class="cr-week" id="crSemana">${semanaPreview(pPreview)}</div><div class="cr-apply"><label><input type="checkbox" id="crAplicar" ${draft.aplicarMetas !== false ? "checked" : ""}> Aplicar este ritmo às metas do app (tempo, cartões e disciplinas compatíveis)</label><small>Ao salvar, o app atualiza o tempo diário e uma meta de cartões proporcional. A fila de revisão e o FSRS continuam intactos.</small></div><div class="row"><button class="btn primary" type="submit">Salvar e ativar cronograma</button>${salvo.ativo ? `<button class="btn" type="button" id="crPausar">Pausar plano</button>` : ""}</div><p id="crMsg" class="count" role="status"></p></section>
       </form>
       <section class="cr-note"><b>Como a pesquisa foi usada</b><p>O catálogo distingue recorrência documental de peso de prova. O app não chama uma matéria de universal fora do corpus, mostra escolhas opcionais e trata este cronograma como hipótese revisável de organização.</p></section>`;
 
-    $("#crBack").onclick = () => go("hoje");
-    const atualizarPrevia = () => {
-      const ids = [...document.querySelectorAll("[data-cr-subject]:checked")].map(x => x.dataset.crSubject);
-      const pesos = Object.fromEntries((ids.length ? ids : coreOrFirst(subjectIds)).map(id => [id, Number(document.querySelector(`[data-cr-peso='${id}']`)?.value) || 0]));
-      const preview = { ...salvo, subjects: ids.length ? ids : coreOrFirst(subjectIds), pesos, horasSemana: clamp(Number($("#crHoras").value) || 5, 1, 60), dias: normalizarDias([...document.querySelectorAll("[data-cr-dia]:checked")].map(x => +x.dataset.crDia)) };
-      $("#crSemana").innerHTML = semanaPreview(preview); $("#crPrevResumo").textContent = `${minutosPorDia(preview)} min por dia selecionado`;
+    const idsSelecionados = () => [...document.querySelectorAll("[data-cr-subject]:checked")].map(x => x.dataset.crSubject);
+    const lerCampos = () => {
+      const fields = [...document.querySelectorAll("[data-cr-peso]")];
+      const weights = {};
+      let valido = true;
+      for (const f of fields) {
+        const n = lerPercentual(f.value);
+        const erro = !Number.isFinite(n);
+        f.setCustomValidity(erro ? "Digite um percentual de 0 a 100, com até duas casas (ex.: 7,69)." : "");
+        f.setAttribute("aria-invalid", String(erro));
+        valido = valido && !erro;
+        weights[f.dataset.crPeso] = n;
+      }
+      return { weights, valido };
     };
-    $("#crEdital").onchange = e => { S.cronogramaDraftId = e.target.value; delete S.cronogramaDraftSubjects; renderCronograma(); };
+    const capturarTempo = () => {
+      draft.horasSemana = Number($("#crHoras").value);
+      draft.blocoMin = Number($("#crBloco").value);
+      draft.dias = [...document.querySelectorAll("[data-cr-dia]:checked")].map(x => +x.dataset.crDia);
+      draft.aplicarMetas = $("#crAplicar").checked;
+    };
+    const atualizarPrevia = () => {
+      capturarTempo();
+      const ids = idsSelecionados(), { weights, valido } = lerCampos();
+      const total = Math.round(somaPesos(weights) * 100) / 100;
+      $("#crTotal").textContent = !ids.length ? "Selecione ao menos uma disciplina." : !valido ? "Confira os percentuais: 0 a 100, com até duas casas decimais." : `Total: ${formatarPercentual(total)}%${total === 100 ? " · distribuição completa" : " · será ajustado a 100% ao confirmar"}`;
+      $("#crSelecionadas").textContent = `${ids.length} selecionadas`;
+      if (!valido) return;
+      draft.subjects = ids; draft.pesos = weights;
+      const preview = { ...draft, pesos: normalizarPercentuais(ids, weights) };
+      $("#crSemana").innerHTML = semanaPreview(preview);
+      $("#crPrevResumo").textContent = `${minutosPorDia(preview)} min por dia selecionado`;
+    };
+    const preencher = (weights, modo) => {
+      draft.pesos = weights; draft.pesosModo = modo;
+      const ids = idsSelecionados(), campos = [...document.querySelectorAll("[data-cr-peso]")];
+      if (campos.length === ids.length && campos.every((f, i) => f.dataset.crPeso === ids[i])) {
+        campos.forEach(f => { f.value = formatarPercentual(weights[f.dataset.crPeso]); });
+      } else $("#crPesos").innerHTML = distribuicaoHtml(ids, weights);
+      $("#crMetodo").innerHTML = metodoHtml(draft.editalId, idsSelecionados(), modo);
+      atualizarPrevia();
+    };
+    $("#crBack").onclick = () => { delete S.cronogramaDraft; go("hoje"); };
+    $("#crEdital").onchange = e => {
+      capturarTempo();
+      draft.editalId = e.target.value;
+      const referencia = EDITAIS_DPE.find(x => x.id === draft.editalId);
+      draft.subjects = coreOrFirst(referencia ? referencia.subjects : CORE);
+      draft.pesos = sugerirPesos(draft.editalId, draft.subjects); draft.pesosModo = "edital";
+      renderCronograma();
+    };
     document.querySelectorAll("[data-cr-subject]").forEach(input => input.onchange = () => {
-      S.cronogramaDraftSubjects = [...document.querySelectorAll("[data-cr-subject]:checked")].map(x => x.dataset.crSubject);
-      const ids = S.cronogramaDraftSubjects.length ? S.cronogramaDraftSubjects : coreOrFirst(subjectIds);
-      const box = $("#crPesos"); if (box) box.innerHTML = distribuicaoHtml(ids, pesosIguais(ids)); atualizarPrevia();
+      const ids = idsSelecionados();
+      draft.subjects = ids;
+      preencher(sugerirPesos(draft.editalId, ids), "edital");
     });
-    $("#crIgual").onclick = () => { const ids = [...document.querySelectorAll("[data-cr-subject]:checked")]; const w = pesosIguais(ids.map(x => x.dataset.crSubject)); document.querySelectorAll("[data-cr-peso]").forEach(x => { x.value = Number(w[x.dataset.crPeso] || 0).toFixed(2); }); atualizarPrevia(); };
-    document.querySelectorAll("[data-cr-dia], #crHoras, #crBloco, [data-cr-peso]").forEach(x => x.addEventListener("input", atualizarPrevia));
-    $("#crPausar")?.addEventListener("click", () => { ensureAj(); S.ajustes.cronograma = { ...planoAtual(), ativo: false, atualizadoEm: Date.now() }; queue("ajustes"); renderCronograma(); });
+    $("#crSugerir").onclick = () => preencher(sugerirPesos(draft.editalId, idsSelecionados()), "edital");
+    $("#crIgual").onclick = () => preencher(pesosIguais(idsSelecionados()), "igual");
+    // Delegação: os novos campos continuam funcionando após trocar matérias.
+    $("#crForm").addEventListener("input", atualizarPrevia);
+    $("#crForm").addEventListener("change", e => {
+      if (!e.target.matches("[data-cr-peso]")) { atualizarPrevia(); return; }
+      const { weights, valido } = lerCampos();
+      if (!valido) { atualizarPrevia(); return; }
+      const ids = idsSelecionados(), fixo = e.target.dataset.crPeso;
+      const cent = Math.round(weights[fixo] * 100);
+      const outros = ids.filter(id => id !== fixo);
+      const restante = normalizarPercentuais(outros, weights, 10000 - cent);
+      restante[fixo] = outros.length ? cent / 100 : 100;
+      preencher(restante, "manual");
+    });
+    $("#crPausar")?.addEventListener("click", () => { S.ajustes.cronograma = { ...planoAtual(), ativo: false, atualizadoEm: Date.now() }; queue("ajustes"); delete S.cronogramaDraft; renderCronograma(); });
     $("#crForm").onsubmit = e => {
       e.preventDefault();
-      const ids = [...document.querySelectorAll("[data-cr-subject]:checked")].map(x => x.dataset.crSubject);
-      const selectedIds = ids.length ? ids : coreOrFirst(subjectIds);
-      const days = normalizarDias([...document.querySelectorAll("[data-cr-dia]:checked")].map(x => +x.dataset.crDia));
-      if (!document.querySelector("[data-cr-dia]:checked")) return $("#crMsg").textContent = "Escolha ao menos um dia para estudar.";
-      const weights = Object.fromEntries(selectedIds.map(id => [id, Math.max(0, Number(document.querySelector(`[data-cr-peso='${id}']`)?.value) || 0)]));
-      const total = somaPesos(weights);
-      if (Math.abs(total - 100) > 0.05) return $("#crMsg").textContent = `A distribuição soma ${total.toFixed(2)}%. Ajuste para 100% ou use “Dividir igualmente”.`;
-      const hours = clamp(Number($("#crHoras").value) || 5, 1, 60), block = clamp(Number($("#crBloco").value) || 40, 15, 180), apply = $("#crAplicar").checked;
+      const selectedIds = idsSelecionados();
+      if (!selectedIds.length) return $("#crMsg").textContent = "Escolha ao menos uma disciplina.";
+      const { weights: informados, valido } = lerCampos();
+      if (!valido || somaPesos(informados) <= 0) return $("#crMsg").textContent = "Informe percentuais válidos e reserve tempo para ao menos uma disciplina.";
+      if (!$("#crForm").reportValidity()) return;
+      capturarTempo();
+      if (!draft.dias.length) return $("#crMsg").textContent = "Escolha ao menos um dia para estudar.";
+      const days = normalizarDias(draft.dias);
+      const weights = normalizarPercentuais(selectedIds, informados);
+      const hours = clamp(draft.horasSemana || 5, 1, 60), block = clamp(draft.blocoMin || 40, 15, 180), apply = draft.aplicarMetas;
       const linked = disciplinasDoBaralho(selectedIds);
-      const next = { v: 1, ativo: true, editalId: draftId, horasSemana: hours, dias: days, subjects: selectedIds, pesos: weights, blocoMin: block, aplicarMetas: apply, deckDisciplinas: linked, atualizadoEm: Date.now() };
+      const next = { v: 1, ativo: true, editalId: draftId, horasSemana: hours, dias: days, subjects: selectedIds, pesos: weights, pesosModo: draft.pesosModo, pesosMetodoVersao: 1, blocoMin: block, aplicarMetas: apply, deckDisciplinas: linked, atualizadoEm: Date.now() };
       ensureAj(); S.ajustes.cronograma = next;
       if (apply) {
         S.ajustes.minutos = minutosPorDia(next);
@@ -228,10 +337,11 @@
         if (linked.length) S.ajustes.disciplinas = linked.length === (DECK.disciplinas || []).length ? null : linked;
         const edital = editalSelecionado(next); if (edital && edital.estado) S.ajustes.estado = edital.estado;
       }
-      queue("ajustes"); delete S.cronogramaDraftId; delete S.cronogramaDraftSubjects;
+      queue("ajustes"); delete S.cronogramaDraft; delete S.cronogramaDraftId; delete S.cronogramaDraftSubjects;
       $("#crMsg").textContent = `Cronograma salvo: ${minutosPorDia(next)} min por dia selecionado e meta de ${metaCartoesPorDia(next)} cartões.`;
       setTimeout(() => go("hoje"), 550);
     };
+    atualizarPrevia();
   }
 
   function hojeCard() {
@@ -248,6 +358,6 @@
     const oldAjustes = renderAjustes;
     renderAjustes = function () { const r = oldAjustes.apply(this, arguments); const main = $("#main"); if (main && !$("#ajCronograma")) { main.insertAdjacentHTML("afterbegin", `<section class="panel cr-aj" id="ajCronograma"><div><b>Planejamento por editais</b><p>${planoAtual().ativo ? "Seu cronograma está ativo e conectado às metas diárias." : "Monte uma rotina por edital sem transformar a fila em obrigação."}</p></div><button class="btn small" id="ajCrGo">${planoAtual().ativo ? "Editar cronograma" : "Montar cronograma"}</button></section>`); $("#ajCrGo").onclick = () => go("cronograma"); } return r; };
   }
-  window.__cronogramaCatalogo = { CORE, DISC_MAP, EDITAIS_DPE, novoPlano, minutosPorDia, metaCartoesPorDia, disciplinasDoBaralho };
+  window.__cronogramaCatalogo = { CORE, DISC_MAP, EDITAIS_DPE, novoPlano, minutosPorDia, metaCartoesPorDia, disciplinasDoBaralho, normalizarPercentuais, sugerirPesos, lerPercentual };
   (function esperar() { try { if (typeof S === "object" && typeof renderHoje === "function" && typeof renderAjustes === "function" && typeof go === "function") instalar(); else setTimeout(esperar, 150); } catch (_) { setTimeout(esperar, 150); } })();
 })();
