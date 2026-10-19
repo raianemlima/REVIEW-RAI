@@ -2,7 +2,7 @@
 
 ## O que mudou
 
-O cronograma deixou de repetir uma lista de disciplinas com poucos minutos todos os dias. Agora distribui **blocos de estudo de assuntos do programa escolhido**, alterna disciplinas e continua o ciclo entre semanas. Cartões são revisão complementar, não a fonte do conteúdo nem a medida de conclusão do edital.
+O cronograma deixou de repetir uma lista de disciplinas com poucos minutos todos os dias. Agora distribui **blocos de estudo de assuntos do programa escolhido**, alterna disciplinas e continua o ciclo entre semanas. A Biblioteca própria aparece primeiro: quando há cartões relacionados ao assunto, o bloco mostra seus temas e perguntas e oferece acesso direto a esses conteúdos. Cartões são revisão complementar, não a medida de conclusão do edital.
 
 O catálogo reúne **18 editais de carreira, de 16 estados**, com 253 rubricas e 5.364 tópicos/unidades extraídas, incluindo seus subtemas. O recorte dos arquivos recebidos é 2021–2026; isso não representa todos os estados brasileiros nem uma janela móvel exata de cinco anos. Foram excluídos documentos de servidores, provas isoladas e o edital antigo do RJ. Contagens de tópicos variam conforme a estrutura de cada documento: não medem dificuldade ou carga equivalente.
 
@@ -28,7 +28,9 @@ A sequência automática percorre os assuntos antes de voltar ao início. Uma es
 
 ## O que estudar em cada bloco
 
-Expanda **Assunto completo e materiais**. O bloco apresenta o texto extraído do programa, sua fonte e página/localizador, além das normas ou referências jurisprudenciais identificadas naquele item.
+Expanda **Assunto completo e materiais**. O bloco começa por **Já temos na plataforma**, com os cartões relacionados encontrados na Biblioteca, seus temas e uma prévia da pergunta. Use **Abrir estes conteúdos na Biblioteca** para consultar respostas, explicações, notas e situação de revisão dentro do app. Se não houver correspondência específica, o bloco informa essa lacuna e oferece a disciplina para consulta ampla na Biblioteca.
+
+As consultas externas ficam recolhidas em **Conferência complementar (opcional)** quando já existe conteúdo próprio. Elas ficam abertas como fallback quando não há cartão específico. Assim, LexML, STF e STJ servem para confirmar texto, vigência, tese e jurisprudência — não substituem o material didático da plataforma quando ele existe.
 
 - **Conteúdo jurídico:** leia os conceitos e a lei/artigo indicado, quando houver; consulte STF/STJ para estudar a tese, o contexto e os limites do precedente. Resolva questões do assunto e registre dúvidas.
 - **Português:** estude a regra gramatical e exemplos, faça questões e use o VOLP/ABL para dúvidas de grafia. O VOLP não substitui uma gramática.
