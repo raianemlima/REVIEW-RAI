@@ -71,3 +71,25 @@ Assinatura visual: marca dos quadrados sobrepostos existente, cantos arredondado
 ## Restrições
 
 Preservar byte a byte o conteúdo protegido, gate.js e motor FSRS; não editar o esquema de registros ou o armazenamento. O repositório não tem projeto Manus gerenciado vinculado; diagnósticos gerenciados foram consultados e estão indisponíveis, portanto usar verificações nativas e testes existentes. Não autenticar estudante nem executar chamadas a produção. A primeira etapa não redesenha integralmente todos os módulos de leitura; eles permanecem acessíveis na nova navegação e recebem os tokens comuns.
+
+# Etapa 4 — cronograma por editais de Defensoria
+
+## Escopo aprovado
+
+Criar uma ferramenta no app funcional para o aluno escolher edital de carreira, horas semanais, dias de estudo, disciplinas e distribuição percentual. Usar os arquivos fornecidos como corpus documental de referência e integrar o resultado às metas existentes, sem criar cartões, armazenamento paralelo, conta fictícia ou previsão de aprovação.
+
+## Corpus e método
+
+A triagem consolidou 24 anexos. O catálogo usa 18 editais de carreira de Defensor(a), publicados de 2021 a 2026, de 16 estados; exclui provas isoladas, caderno sem conteúdo programático, concurso de servidores e edital fora do intervalo. O núcleo comum normalizado é formado por Constitucional, Administrativo, Civil, Processo Civil, Penal, Processo Penal e Direito Institucional da Defensoria. A amostra não representa todos os estados brasileiros; matérias recorrentes e específicas ficam opcionais. O anexo do Maranhão/2026 foi corrigido após conferir o nome real do arquivo.
+
+## Implementação
+
+`arquivos/cronograma.js` contém catálogo, aliases conservadores, seleção de edital, dias, horas, distribuição, prévia semanal, associação com disciplinas do baralho e persistência em `S.ajustes.cronograma`. Ao ativar a aplicação às metas, o módulo atualiza minutos, meta de cartões e filtro de disciplinas compatíveis; o FSRS, fila, histórico, backup e sincronização continuam sendo os existentes. `arquivos/cronograma.css` contém a camada visual responsiva. `index.html`, `sw.js` e o validador incluem a nova rota e os arquivos offline.
+
+## Critérios e limites
+
+A soma dos percentuais deve ser 100%; o aluno pode dividir igualmente e editar. Dias não selecionados são dias livres, não falhas. O número de cartões derivado das horas é referência de atividade, não medida de domínio. Peças, discursivas, oral, tribuna e títulos permanecem formatos/fases, não disciplinas inventadas. A associação entre matérias do catálogo e o baralho só ocorre quando o nome/ID é identificável; conteúdos sem cartões são mostrados, mas não simulados.
+
+## Verificação
+
+Testes do módulo usam o app real com dados fictícios e cobrem catálogo, editor, prévia, metas, filtro do baralho, backup e tela Hoje. A pasta pública é montada sem segredos e validada com o service worker e os arquivos novos. O motor FSRS e `gate.js` são comparados à base remota e permanecem iguais.

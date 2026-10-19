@@ -142,3 +142,23 @@ test("validador rejeita service worker inválido ou sem CORE", async t => {
   t.after(() => apagar(pastaSemCore));
   assert.throws(() => validarSite(pastaSemCore), /não declara um CORE válido/);
 });
+
+test("validador aceita o módulo de cronograma somente com JS, CSS e CORE completos", async t => {
+  const core = ["./", "index.html", "arquivos/metacognicao.js", "arquivos/cronograma.js", "arquivos/cronograma.css"];
+  const index = [
+    "<!doctype html><html><head>",
+    '<link rel="stylesheet" href="arquivos/cronograma.css">',
+    "</head><body>",
+    '<script type="text/plain" id="app-src">const appPronto = true;</script>',
+    '<script src="arquivos/metacognicao.js"></script>',
+    '<script src="arquivos/cronograma.js"></script>',
+    "</body></html>",
+  ].join("\n");
+  const pasta = await criarSite({ core, index });
+  t.after(() => apagar(pasta));
+  await writeFile(join(pasta, "arquivos/cronograma.js"), "globalThis.cronogramaPronto = true;\n");
+  await writeFile(join(pasta, "arquivos/cronograma.css"), ".cronograma { display: block; }\n");
+  assert.deepEqual(validarSite(pasta).core, core);
+  await rm(join(pasta, "arquivos/cronograma.css"));
+  assert.throws(() => validarSite(pasta), /cronograma.*CORE|arquivo obrigatório/i);
+});

@@ -877,6 +877,7 @@ header.top { background: var(--bg); -webkit-backdrop-filter: none; backdrop-filt
 .cad-nota { display: grid; gap: 4px; margin-bottom: 10px; } .cad-nota span { font: 700 .78rem var(--f-ui); color: var(--accent); }
 </style>
 <link rel="stylesheet" href="arquivos/interface.css">
+<link rel="stylesheet" href="arquivos/cronograma.css">
 
 <header class="top">
   <div class="top-in">
@@ -3519,7 +3520,7 @@ function render() {
   document.querySelectorAll("#tabs button").forEach(b => b.setAttribute("aria-selected", String(b.dataset.tab === abaNav)));
   $("#goAjustes")?.setAttribute("aria-pressed", String(S.tab === "ajustes"));
   setTimeout(bindMetodoMini, 0);
-  ({ hoje: renderHoje, sessao: renderSession, biblioteca: renderLib, novidades: renderNov, defensoria: renderDef, teses: renderTeses, prova: renderProva, doutrina: renderDoutrina, estatisticas: renderStats, ajustes: renderAjustes, ouvir: renderOuvir, busca: renderBusca, preparo: renderPreparo, leiseca: renderLeiSeca, metodos: renderMetodos, jogo: renderJogo, caderno: renderCaderno })[S.tab]();
+  ({ hoje: renderHoje, sessao: renderSession, biblioteca: renderLib, novidades: renderNov, defensoria: renderDef, teses: renderTeses, prova: renderProva, doutrina: renderDoutrina, estatisticas: renderStats, ajustes: renderAjustes, cronograma: typeof renderCronograma === "function" ? renderCronograma : () => {}, ouvir: renderOuvir, busca: renderBusca, preparo: renderPreparo, leiseca: renderLeiSeca, metodos: renderMetodos, jogo: renderJogo, caderno: renderCaderno })[S.tab]();
   updNavBadge();
   if (S.tab === "leiseca" || S.tab === "novidades") lsSeletor();
   esVoltar();
@@ -4899,5 +4900,6 @@ try { const t = localStorage.getItem("revisao-dpe-tema"); if (t === "claro" || t
 </script>
 
 <script src="arquivos/metacognicao.js"></script>
+<script src="arquivos/cronograma.js"></script>
 <script src="arquivos/interface.js"></script>
 </body></html>
