@@ -202,6 +202,16 @@ export function validarSite(pastaSite, opções = {}) {
     const js = lerTexto(caminhoDentroDaPasta(site, scriptCronograma, "cronograma"), "cronograma.js");
     validarSintaxeJavaScript(js, scriptCronograma, "cronograma.js");
     const css = lerTexto(caminhoDentroDaPasta(site, cssCronograma, "estilos do cronograma"), "cronograma.css");
+    const perfil = "arquivos/cronograma-pesos.js";
+    const scripts = scriptsDoHtml(index);
+    const refsPerfil = scripts.filter(s => referenciaÉ(atributo(s.abertura, "src"), perfil));
+    if (js.includes("DPE_PESOS_EDITAIS") || refsPerfil.length || core.some(e => referenciaÉ(e, perfil))) {
+      if (refsPerfil.length !== 1) throw erro("O catálogo de pesos precisa de uma referência única a cronograma-pesos.js.");
+      if (!core.some(e => referenciaÉ(e, perfil))) throw erro("O catálogo de pesos precisa estar no CORE offline.");
+      const posiçãoModulo = scripts.findIndex(s => referenciaÉ(atributo(s.abertura, "src"), scriptCronograma));
+      if (scripts.indexOf(refsPerfil[0]) > posiçãoModulo) throw erro("cronograma-pesos.js precisa carregar antes de cronograma.js.");
+      validarSintaxeJavaScript(lerTexto(caminhoDentroDaPasta(site, perfil, "catálogo de pesos"), "catálogo de pesos"), perfil, "catálogo de pesos");
+    }
     if (!css.trim()) throw erro("cronograma.css não pode estar vazio.");
   }
 

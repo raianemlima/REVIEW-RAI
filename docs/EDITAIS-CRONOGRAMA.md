@@ -55,3 +55,23 @@ O recurso também preserva a distinção entre disciplina e formato de avaliaç�
 A contagem é por edital/documento, não por estado, número de questões ou peso final. A seleção de 18 editais cobre 16 estados, não todas as unidades da federação. A normalização de rótulos combinados é útil para planejamento, mas precisa ser revisada quando o aluno escolher um edital específico. Uma frequência documental não é probabilidade de aprovação, e uma meta cumprida não é prova de retenção.
 
 A ferramenta deve ser tratada como uma hipótese revisável de organização. O aluno pode começar pelo núcleo comum, selecionar o edital que pretende prestar, acrescentar matérias opcionais, ajustar horas e dias e observar seu próprio histórico para recalibrar o plano.
+
+## Percentuais automáticos por edital
+
+O erro que rejeitava `7,69` vinha da combinação de um campo numérico com `step="0.5"` e valores gerados com duas casas decimais. Os percentuais agora usam um campo de texto com teclado decimal, aceitam vírgula ou ponto e validam de 0 a 100 com até duas casas. Texto inválido, valores negativos, acima de 100 e uma distribuição inteiramente zerada não podem ser salvos. O app não converte uma entrada inválida silenciosamente em zero.
+
+Ao escolher um edital ou mudar as matérias, o botão **Sugerir pelo edital** usa as quantidades verificadas da **prova objetiva**. Foram conferidos os 18 anexos do catálogo: 14 permitem uma referência numérica por rubrica ou grupo; AC/2024, RJ/2026, SE/2021 e SP/2026 ficam com sugestão equilibrada, porque não foi identificada uma distribuição verificável por disciplina. O modo Núcleo comum também usa equilíbrio, sem fingir que possui pesos oficiais. Abaixo dos campos aparecem o critério, o arquivo-fonte e os itens/páginas utilizados.
+
+Uma contagem conjunta, por exemplo Penal e Criminologia, entra uma única vez. O valor é repartido internamente entre os IDs associados como hipótese de tempo. Os pesos por grupos de RO/2022, RS/2025 e TO/2021 recebem o mesmo tratamento: o total do grupo é preservado antes de renormalizar apenas as matérias escolhidas. Questões discursivas, peças, prova oral e pesos entre fases não são somados à objetiva.
+
+Os valores representam **tempo sugerido**, não pesos oficiais individuais de aprovação. Se o catálogo oferece uma matéria sem quantidade própria no quadro objetivo, ela recebe uma reserva média calculada a partir das matérias numericamente cobertas; o app informa essa hipótese. Disciplinas sem ID catalogado, como Português em RS/2025 e SC/2026 e legislação local específica do Acre, permanecem declaradas como lacunas na fonte; não se cria um conteúdo de baralho fictício.
+
+**Dividir igualmente** distribui o tempo uniformemente. **Sugerir pelo edital** restaura a proposta documental. Na edição manual, ao confirmar o percentual de uma disciplina, esse valor fica fixado e as demais dividem proporcionalmente o saldo. Com uma única matéria selecionada, seu percentual é 100%. A soma e a prévia respondem aos campos atuais, inclusive depois de alterar as matérias.
+
+O cálculo trabalha em centésimos inteiros e distribui o arredondamento pelo método dos maiores restos. Assim, 13 matérias não ficam com um total de 99,97%: os centésimos restantes são distribuídos de forma determinística e o resultado fecha em **100,00%**. A prévia também conserva o orçamento semanal em minutos inteiros, com possíveis ajustes de um minuto por arredondamento; seus valores por matéria são referências da semana, não tarefas repetidas integralmente em cada dia.
+
+Horas, dias e tamanho do bloco são preservados ao trocar o edital no rascunho. Percentuais de um plano ativo já salvo continuam como foram escolhidos; uma nova sugestão não os substitui sem confirmação de salvamento. O plano persiste no mesmo objeto de ajustes/backup e conserva a aplicação das metas existentes.
+
+### Verificações e limites desta correção
+
+A revisão independente não encontrou falha funcional crítica. Foram executados testes de campos com vírgula/ponto, soma em centésimos, proporção documental, redistribuição, entradas inválidas, rascunho e reabertura de pesos personalizados. Os perfis foram extraídos exclusivamente dos anexos; não houve pesquisa de retificações posteriores na internet nem certificação de todos os conteúdos locais. A conferência em DOM simulado não equivale a teste no Safari/iPhone da captura nem a teste autenticado de produção. A entrega segue em branch/PR de revisão, sem merge ou publicação automática.
