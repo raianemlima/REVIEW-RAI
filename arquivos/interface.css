@@ -1,0 +1,1651 @@
+/*
+ * Review DPE — camada externa do design aprovado
+ *
+ * Esta folha só participa depois que interface.js marca
+ * html[data-rd-design="figma"] e body.rd-shell. O aplicativo legado e o gate
+ * continuam com a aparência original antes desse ponto.
+ */
+
+:root[data-rd-design="figma"] {
+  color-scheme: light;
+  --rd-bg: #f7f7fc;
+  --rd-surface: #ffffff;
+  --rd-surface-soft: #f0efff;
+  --rd-surface-muted: #ececf4;
+  --rd-ink: #18152f;
+  --rd-muted: #625d75;
+  --rd-line: #e5e3f1;
+  --rd-brand: #6653e7;
+  --rd-brand-deep: #4d3bc6;
+  --rd-brand-soft: #eeeaff;
+  --rd-ok: #24b981;
+  --rd-ok-soft: #e7f8f1;
+  --rd-amber: #ef9c26;
+  --rd-amber-soft: #fff3dd;
+  --rd-bad: #d95145;
+  --rd-bad-soft: #fde9e6;
+  --rd-info: #5a71b8;
+  --rd-info-soft: #e9edfb;
+  --rd-shadow: 0 18px 48px rgba(40, 30, 100, 0.08);
+  --rd-shadow-soft: 0 8px 24px rgba(40, 30, 100, 0.06);
+  --rd-radius: 18px;
+  --rd-radius-lg: 24px;
+
+  /* aliases used by the existing renderer and its real components */
+  --bg: var(--rd-bg);
+  --surface: var(--rd-surface);
+  --card: var(--rd-surface);
+  --surface-soft: var(--rd-surface-soft);
+  --surface-muted: var(--rd-surface-muted);
+  --ink: var(--rd-ink);
+  --muted: var(--rd-muted);
+  --line: var(--rd-line);
+  --accent: var(--rd-brand);
+  --accent-deep: var(--rd-brand-deep);
+  --accent-soft: var(--rd-brand-soft);
+  --accent-ink: #ffffff;
+  --ok: var(--rd-ok);
+  --ok-soft: var(--rd-ok-soft);
+  --amber: var(--rd-amber);
+  --amber-soft: var(--rd-amber-soft);
+  --bad: var(--rd-bad);
+  --bad-soft: var(--rd-bad-soft);
+  --info: var(--rd-info);
+  --info-soft: var(--rd-info-soft);
+  --sh-1: var(--rd-shadow-soft);
+  --r: 12px;
+  --r-lg: var(--rd-radius-lg);
+}
+
+:root[data-rd-design="figma"][data-theme="dark"] {
+  color-scheme: dark;
+  --rd-bg: #11101d;
+  --rd-surface: #1b192a;
+  --rd-surface-soft: #27233d;
+  --rd-surface-muted: #242231;
+  --rd-ink: #f6f4ff;
+  --rd-muted: #b8b3ca;
+  --rd-line: #302d43;
+  --rd-brand: #8b7cf6;
+  --rd-brand-deep: #7665ec;
+  --rd-brand-soft: #302a55;
+  --rd-ok: #4ed6a5;
+  --rd-ok-soft: #173a31;
+  --rd-amber: #f5b74f;
+  --rd-amber-soft: #3b2e19;
+  --rd-bad: #f28b80;
+  --rd-bad-soft: #442522;
+  --rd-info: #9eaff0;
+  --rd-info-soft: #29304e;
+  --rd-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+  --rd-shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.16);
+  --accent-ink: #17132e;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-rd-design="figma"]:not([data-theme="light"]):not([data-theme="dark"]) {
+    color-scheme: dark;
+    --rd-bg: #11101d;
+    --rd-surface: #1b192a;
+    --rd-surface-soft: #27233d;
+    --rd-surface-muted: #242231;
+    --rd-ink: #f6f4ff;
+    --rd-muted: #b8b3ca;
+    --rd-line: #302d43;
+    --rd-brand: #8b7cf6;
+    --rd-brand-deep: #7665ec;
+    --rd-brand-soft: #302a55;
+    --rd-ok: #4ed6a5;
+    --rd-ok-soft: #173a31;
+    --rd-amber: #f5b74f;
+    --rd-amber-soft: #3b2e19;
+    --rd-bad: #f28b80;
+    --rd-bad-soft: #442522;
+    --rd-info: #9eaff0;
+    --rd-info-soft: #29304e;
+    --rd-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+    --rd-shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.16);
+    --accent-ink: #17132e;
+  }
+}
+
+/* Gate: nenhum seletor desta camada é útil sem as duas marcas de ativação. */
+html[data-rd-design="figma"] body.rd-shell {
+  background: var(--rd-bg);
+  color: var(--rd-ink);
+  font-family: "Rubik", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  min-width: 320px;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+html[data-rd-design="figma"] body.rd-shell *,
+html[data-rd-design="figma"] body.rd-shell *::before,
+html[data-rd-design="figma"] body.rd-shell *::after {
+  box-sizing: border-box;
+}
+
+html[data-rd-design="figma"] body.rd-shell img,
+html[data-rd-design="figma"] body.rd-shell svg {
+  max-width: 100%;
+}
+
+html[data-rd-design="figma"] body.rd-shell button,
+html[data-rd-design="figma"] body.rd-shell input,
+html[data-rd-design="figma"] body.rd-shell select,
+html[data-rd-design="figma"] body.rd-shell textarea {
+  font: inherit;
+}
+
+html[data-rd-design="figma"] body.rd-shell a {
+  color: inherit;
+  text-decoration: none;
+}
+
+html[data-rd-design="figma"] body.rd-shell h1,
+html[data-rd-design="figma"] body.rd-shell h2,
+html[data-rd-design="figma"] body.rd-shell h3,
+html[data-rd-design="figma"] body.rd-shell p {
+  margin-top: 0;
+}
+
+html[data-rd-design="figma"] body.rd-shell button,
+html[data-rd-design="figma"] body.rd-shell a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html[data-rd-design="figma"] body.rd-shell [hidden]:not([hidden="until-found" i]) {
+  display: none !important;
+}
+
+html[data-rd-design="figma"] body.rd-shell button:focus-visible,
+html[data-rd-design="figma"] body.rd-shell a:focus-visible,
+html[data-rd-design="figma"] body.rd-shell input:focus-visible,
+html[data-rd-design="figma"] body.rd-shell select:focus-visible,
+html[data-rd-design="figma"] body.rd-shell textarea:focus-visible,
+html[data-rd-design="figma"] body.rd-shell summary:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--rd-brand) 72%, #fff);
+  outline-offset: 3px;
+}
+
+/* Sidebar and navigation */
+html[data-rd-design="figma"] body.rd-shell #rdSidebar.rd-sidebar {
+  align-items: stretch;
+  background: var(--rd-surface);
+  border-right: 1px solid var(--rd-line);
+  display: flex;
+  flex-direction: column;
+  height: 100svh;
+  left: 0;
+  padding: 30px 20px 24px;
+  position: fixed;
+  top: 0;
+  width: 248px;
+  z-index: 30;
+}
+
+html[data-rd-design="figma"] body.rd-shell #rdSidebar .rd-logo {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  color: var(--rd-ink);
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 22px;
+  font-weight: 750;
+  gap: 11px;
+  letter-spacing: -0.6px;
+  line-height: 1.15;
+  min-height: 31px;
+}
+
+html[data-rd-design="figma"] body.rd-shell #rdSidebar .rd-logo svg,
+html[data-rd-design="figma"] body.rd-shell #rdSidebar .rd-logo .logo-c {
+  flex: 0 0 auto;
+  height: 28px;
+  width: 30px;
+}
+
+html[data-rd-design="figma"] body.rd-shell #rdSidebar .rd-logo span,
+html[data-rd-design="figma"] body.rd-shell #rdSidebar .rd-logo strong {
+  color: var(--rd-brand);
+}
+
+html[data-rd-design="figma"] body.rd-shell #rdSidebar nav.tabs {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 55px;
+  overflow: visible;
+  position: static;
+  inset: auto;
+  width: 100%;
+  max-width: none;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-skip-link {
+  position: fixed;
+  top: -100px;
+  left: 12px;
+  z-index: 1000;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: var(--rd-brand);
+  color: #fff;
+  font-weight: 600;
+}
+html[data-rd-design="figma"] body.rd-shell .rd-skip-link:focus {
+  top: 12px;
+  outline: 3px solid var(--rd-ink);
+  outline-offset: 3px;
+}
+
+html[data-rd-design="figma"] body.rd-shell #rdSidebar nav.tabs button {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 14px;
+  color: var(--rd-muted);
+  cursor: pointer;
+  display: flex;
+  font: 600 14px/1.2 "Rubik", system-ui, sans-serif;
+  gap: 13px;
+  justify-content: flex-start;
+  min-height: 48px;
+  min-width: 0;
+  padding: 0 14px;
+  position: relative;
+  text-align: left;
+  transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+  white-space: nowrap;
+}
+
+html[data-rd-design="figma"] body.rd-shell #rdSidebar nav.tabs button:not([hidden]):hover {
+  background: var(--rd-surface-soft);
+  color: var(--rd-brand);
+  transform: translateX(2px);
+}
+
+html[data-rd-design="figma"] body.rd-shell #rdSidebar nav.tabs button[aria-selected="true"] {
+  background: var(--rd-brand-soft);
+  border-bottom: 0;
+  color: var(--rd-brand);
+}
+
+html[data-rd-design="figma"] body.rd-shell #rdSidebar nav.tabs button[aria-selected="true"]::before {
+  background: var(--rd-brand);
+  border-radius: 0 10px 10px 0;
+  content: "";
+  height: 25px;
+  left: -20px;
+  position: absolute;
+  width: 4px;
+}
+
+html[data-rd-design="figma"] body.rd-shell #rdSidebar nav.tabs button .ic {
+  display: block;
+  flex: 0 0 auto;
+  height: 21px;
+  stroke: currentColor;
+  width: 21px;
+}
+
+html[data-rd-design="figma"] body.rd-shell #rdSidebar nav.tabs button .tab-n {
+  background: #e8452a;
+  border-radius: 999px;
+  color: #fff;
+  font: 700 10px/1 "IBM Plex Mono", ui-monospace, monospace;
+  margin-left: auto;
+  min-width: 21px;
+  padding: 4px 6px;
+  text-align: center;
+}
+
+html[data-rd-design="figma"] body.rd-shell #rdSidebar nav.tabs button[data-n]:not([data-n=""])::after {
+  background: #e8452a;
+  border: 2px solid var(--rd-surface);
+  border-radius: 999px;
+  color: #fff;
+  content: attr(data-n);
+  font: 700 9px/17px "IBM Plex Mono", ui-monospace, monospace;
+  height: 17px;
+  min-width: 17px;
+  padding: 0 4px;
+  position: absolute;
+  right: 12px;
+  text-align: center;
+  top: 5px;
+}
+
+html[data-rd-design="figma"] body.rd-shell #rdSidebar nav.tabs button[hidden],
+html[data-rd-design="figma"] body.rd-shell #tabs button[hidden] {
+  display: none !important;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-sidebar-footer {
+  display: grid;
+  gap: 12px;
+  margin-top: auto;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-presenca {
+  align-items: center;
+  background: var(--rd-amber-soft);
+  border: 1px solid color-mix(in srgb, var(--rd-amber) 26%, var(--rd-line));
+  border-radius: 16px;
+  color: var(--rd-ink);
+  display: grid;
+  gap: 11px;
+  min-height: 64px;
+  padding: 12px 13px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-presenca > span {
+  align-items: center;
+  color: var(--rd-amber);
+  display: flex;
+  flex: 0 0 auto;
+  font-size: 19px;
+  justify-content: center;
+  width: 24px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-presenca > div,
+html[data-rd-design="figma"] body.rd-shell .rd-presenca > p {
+  display: grid;
+  gap: 1px;
+  margin: 0;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-presenca strong {
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-presenca p,
+html[data-rd-design="figma"] body.rd-shell .rd-presenca small {
+  color: var(--rd-muted);
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+html[data-rd-design="figma"] body.rd-shell #rdAjustes {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 14px;
+  color: var(--rd-muted);
+  cursor: pointer;
+  display: flex;
+  font: 600 14px/1.2 "Rubik", system-ui, sans-serif;
+  gap: 13px;
+  min-height: 46px;
+  padding: 0 14px;
+  text-align: left;
+  transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+html[data-rd-design="figma"] body.rd-shell #rdAjustes:hover {
+  background: var(--rd-surface-soft);
+  color: var(--rd-brand);
+  transform: translateX(2px);
+}
+
+/* Existing header: controls remain real; only the logo moves to mobile. */
+html[data-rd-design="figma"] body.rd-shell > header.top {
+  background: color-mix(in srgb, var(--rd-bg) 90%, transparent);
+  border-bottom: 1px solid var(--rd-line);
+  margin-left: 248px;
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 20;
+  backdrop-filter: blur(16px);
+}
+
+html[data-rd-design="figma"] body.rd-shell > header.top .top-in {
+  margin: 0 auto;
+  max-width: 1240px;
+  padding: 16px 40px 0;
+}
+
+html[data-rd-design="figma"] body.rd-shell > header.top .brand {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  min-height: 34px;
+}
+
+html[data-rd-design="figma"] body.rd-shell > header.top h1.rd-mobile-logo {
+  display: none;
+}
+
+html[data-rd-design="figma"] body.rd-shell > header.top .brand > span {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+html[data-rd-design="figma"] body.rd-shell #save {
+  color: var(--rd-muted);
+  font: 11px/1.2 "IBM Plex Mono", ui-monospace, monospace;
+}
+
+html[data-rd-design="figma"] body.rd-shell .iconbtn {
+  align-items: center;
+  background: var(--rd-surface);
+  border: 1px solid var(--rd-line);
+  border-radius: 12px;
+  color: var(--rd-muted);
+  cursor: pointer;
+  display: inline-flex;
+  height: 40px;
+  justify-content: center;
+  line-height: 1;
+  padding: 0;
+  transition: border-color 160ms ease, color 160ms ease, transform 160ms ease;
+  width: 40px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .iconbtn:hover {
+  border-color: var(--rd-brand);
+  color: var(--rd-brand);
+  transform: translateY(-1px);
+}
+
+html[data-rd-design="figma"] body.rd-shell nav.tabs button[aria-selected="true"] {
+  color: var(--rd-brand);
+}
+
+/* Main geometry */
+html[data-rd-design="figma"] body.rd-shell > main.wrap {
+  margin-left: 248px;
+  margin-right: auto;
+  max-width: 1240px;
+  min-width: 0;
+  padding: 40px;
+  width: calc(100% - 248px);
+}
+
+html[data-rd-design="figma"] body.rd-shell > main.wrap[data-rd-view="sessao"] {
+  max-width: 900px;
+}
+
+html[data-rd-design="figma"] body.rd-shell > main.wrap[data-rd-view="hoje"] {
+  max-width: 1350px;
+}
+
+html[data-rd-design="figma"] body.rd-shell > main.wrap:empty {
+  min-height: 240px;
+}
+
+html[data-rd-design="figma"] body.rd-shell #gate {
+  background: var(--rd-surface);
+  border: 1px solid var(--rd-line);
+  border-radius: var(--rd-radius-lg);
+  box-shadow: var(--rd-shadow-soft);
+  margin-top: 16px !important;
+  padding: 28px 24px !important;
+}
+
+/* Today composition supplied by interface.js */
+html[data-rd-design="figma"] body.rd-shell .rd-welcome {
+  align-items: flex-start;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  margin: 0 auto 34px;
+  max-width: 1350px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-welcome > div:first-child {
+  min-width: 0;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-eyebrow,
+html[data-rd-design="figma"] body.rd-shell .eyebrow {
+  color: var(--rd-brand);
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-title {
+  color: var(--rd-ink);
+  font-family: "Rubik", system-ui, sans-serif;
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 600;
+  letter-spacing: -1.7px;
+  line-height: 1.06;
+  margin: 9px 0 13px;
+  max-width: 760px;
+  text-wrap: balance;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-welcome p {
+  color: var(--rd-muted);
+  font-size: 15px;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 690px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-date {
+  align-items: center;
+  background: var(--rd-surface);
+  border: 1px solid var(--rd-line);
+  border-radius: 16px;
+  box-shadow: var(--rd-shadow-soft);
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  min-width: 72px;
+  padding: 10px 14px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-date span,
+html[data-rd-design="figma"] body.rd-shell .rd-date small {
+  color: var(--rd-muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-date b {
+  color: var(--rd-ink);
+  font: 500 25px/1.15 "IBM Plex Mono", ui-monospace, monospace;
+  margin: 3px 0;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-dashboard {
+  align-items: stretch;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.8fr);
+  margin: 0 auto;
+  max-width: 1350px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-dashboard > .hero,
+html[data-rd-design="figma"] body.rd-shell .rd-dashboard > .rd-side {
+  min-width: 0;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-dashboard > .hero {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-side {
+  display: grid;
+  gap: 16px;
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+  align-content: start;
+}
+
+/* The real hero remains the source of all IDs, mascot, goal and session actions. */
+html[data-rd-design="figma"] body.rd-shell .hero {
+  background: var(--rd-surface);
+  border: 1px solid var(--rd-line);
+  border-radius: 28px;
+  box-shadow: var(--rd-shadow);
+  color: var(--rd-ink);
+  margin: 0;
+  min-height: 0;
+  overflow: hidden;
+  padding: 30px;
+  position: relative;
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero::before,
+html[data-rd-design="figma"] body.rd-shell .hero::after {
+  pointer-events: none;
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero::after {
+  background: var(--rd-brand-soft);
+  border-radius: 50%;
+  content: "";
+  height: 310px;
+  opacity: 0.75;
+  position: absolute;
+  right: -160px;
+  top: -160px;
+  width: 310px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero-top {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  min-height: 29px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero .hi {
+  color: var(--rd-muted);
+  font: 600 12px/1.3 "Rubik", system-ui, sans-serif;
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero .pill,
+html[data-rd-design="figma"] body.rd-shell .hero .pills .pill {
+  background: var(--rd-brand-soft);
+  border: 0;
+  border-radius: 999px;
+  color: var(--rd-brand);
+  font: 700 11px/1.2 "Rubik", system-ui, sans-serif;
+  gap: 6px;
+  padding: 8px 11px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero .pill .ic,
+html[data-rd-design="figma"] body.rd-shell .hero .pill svg {
+  color: currentColor;
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero-main {
+  align-items: center;
+  display: flex;
+  gap: 24px;
+  margin: 34px 0 28px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero h2 {
+  color: var(--rd-ink);
+  font-family: "Rubik", system-ui, sans-serif;
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 600;
+  letter-spacing: -1.8px;
+  line-height: 1;
+  margin: 9px 0 12px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero p {
+  color: var(--rd-muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero p strong {
+  color: var(--rd-ink);
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero p span {
+  color: var(--rd-brand);
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero .ringbox {
+  color: var(--rd-brand);
+  height: 128px;
+  width: 128px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero .ringbox .tr {
+  stroke: var(--rd-surface-muted);
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero .ringbox b {
+  color: var(--rd-ink);
+  font-size: 18px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero .mascot,
+html[data-rd-design="figma"] body.rd-shell .hero .mascot img,
+html[data-rd-design="figma"] body.rd-shell .hero .fenix {
+  animation: none;
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero .mascot {
+  filter: drop-shadow(0 7px 10px rgba(40, 30, 100, 0.16));
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero .mascot .lvl {
+  background: var(--rd-ink);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
+  color: var(--rd-surface);
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero .xp {
+  margin: 8px 0 20px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero .xp-top {
+  color: var(--rd-muted);
+  font-size: 11px;
+  opacity: 1;
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero .xpbar,
+html[data-rd-design="figma"] body.rd-shell .hero .xpbar.light {
+  background: var(--rd-surface-muted);
+  border-radius: 99px;
+  height: 6px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero .xpbar i,
+html[data-rd-design="figma"] body.rd-shell .hero .xpbar.light i {
+  background: var(--rd-brand);
+  border-radius: inherit;
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero .xpbar.goal i {
+  background: var(--rd-ok);
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero .frase {
+  border-left: 3px solid var(--rd-brand);
+  color: var(--rd-muted);
+  font: italic 400 17px/1.5 "Newsreader", Georgia, serif !important;
+  margin: 26px 0 23px !important;
+  opacity: 1;
+  padding-left: 17px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero .cta {
+  align-items: center;
+  background: var(--rd-brand);
+  border: 0;
+  border-radius: 14px;
+  box-shadow: none;
+  color: #fff;
+  display: flex;
+  font: 700 15px/1.2 "Rubik", system-ui, sans-serif;
+  justify-content: center;
+  margin-top: 0;
+  min-height: 50px;
+  padding: 14px 20px;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero .cta:hover:not(:disabled) {
+  background: var(--rd-brand-deep);
+  transform: translateY(-1px);
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero .cta:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero .reassurance {
+  align-items: center;
+  color: var(--rd-muted);
+  display: flex;
+  font-size: 11px;
+  gap: 5px;
+  justify-content: center;
+  margin: 13px 0 0;
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero .tiles,
+html[data-rd-design="figma"] body.rd-shell .hero .plan {
+  background: var(--rd-surface);
+  border-color: var(--rd-line);
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero .tile {
+  border: 1px solid var(--rd-line);
+  border-radius: 14px;
+  box-shadow: none;
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero .day-details,
+html[data-rd-design="figma"] body.rd-shell .hero .day-metas {
+  color: var(--rd-ink);
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero .day-details {
+  background: var(--rd-surface-soft);
+  border: 1px solid var(--rd-line);
+  border-radius: 16px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero .day-metas button {
+  background: var(--rd-surface);
+  border: 1px solid var(--rd-line);
+  color: var(--rd-ink);
+  min-height: 38px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .hero .day-metas button[aria-pressed="true"] {
+  background: var(--rd-brand);
+  border-color: var(--rd-brand);
+  color: #fff;
+}
+
+/* Side panels: the parent moves the real nodes here, not copies of their data. */
+html[data-rd-design="figma"] body.rd-shell .rd-side > .panel,
+html[data-rd-design="figma"] body.rd-shell .rd-side > section.panel,
+html[data-rd-design="figma"] body.rd-shell .rd-side > details.panel {
+  margin: 0;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-week {
+  min-height: 0;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-side .panel,
+html[data-rd-design="figma"] body.rd-shell .rd-side details.panel {
+  background: var(--rd-surface);
+  border: 1px solid var(--rd-line);
+  border-radius: 24px;
+  box-shadow: none;
+  padding: 24px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-side .ph {
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-side .ph h3,
+html[data-rd-design="figma"] body.rd-shell .rd-side h3 {
+  color: var(--rd-ink);
+  font-size: 18px;
+  letter-spacing: -0.4px;
+  margin: 5px 0 0;
+  text-transform: none;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-side .week {
+  gap: 7px;
+  margin-top: 18px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-side .wd i {
+  background: var(--rd-ok-soft);
+  color: var(--rd-ok);
+  font-size: 13px;
+  max-width: 34px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-side .wd.on i {
+  background: var(--rd-ok);
+  box-shadow: none;
+  color: #fff;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-side .wd.today i {
+  outline: 2px solid var(--rd-brand);
+  outline-offset: 3px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-side .wd span {
+  color: var(--rd-muted);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-side details.panel > summary {
+  color: var(--rd-ink);
+  cursor: pointer;
+  font-weight: 700;
+  list-style: none;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-side details.panel > summary::-webkit-details-marker {
+  display: none;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-side details.panel > summary::after {
+  color: var(--rd-muted);
+  content: "⌄";
+  float: right;
+  font-size: 16px;
+  transition: transform 160ms ease;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-side details.panel[open] > summary::after {
+  transform: rotate(180deg);
+}
+
+/* Resources supplied by the interface module. */
+html[data-rd-design="figma"] body.rd-shell .rd-resources {
+  margin: 64px auto 0;
+  max-width: 1350px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-section-heading {
+  align-items: flex-end;
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-section-heading h2 {
+  color: var(--rd-ink);
+  font-family: "Rubik", system-ui, sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.9px;
+  line-height: 1.15;
+  margin: 8px 0 6px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-section-heading p {
+  color: var(--rd-muted);
+  font-size: 13px;
+  margin: 0;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-resource-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-resource {
+  align-items: center;
+  background: var(--rd-surface);
+  border: 1px solid var(--rd-line);
+  border-radius: 18px;
+  color: var(--rd-ink);
+  cursor: pointer;
+  display: flex;
+  gap: 14px;
+  min-height: 116px;
+  padding: 20px;
+  text-align: left;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-resource:hover {
+  border-color: color-mix(in srgb, var(--rd-brand) 42%, var(--rd-line));
+  box-shadow: var(--rd-shadow-soft);
+  transform: translateY(-2px);
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-icon {
+  align-items: center;
+  background: var(--rd-brand-soft);
+  border-radius: 13px;
+  color: var(--rd-brand);
+  display: inline-flex;
+  flex: 0 0 48px;
+  height: 48px;
+  justify-content: center;
+  width: 48px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-icon svg {
+  fill: none;
+  height: 22px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+  width: 22px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-resource-copy {
+  display: grid;
+  flex: 1;
+  gap: 3px;
+  min-width: 0;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-resource-copy small {
+  color: var(--rd-brand);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-resource-copy b,
+html[data-rd-design="figma"] body.rd-shell .rd-resource-copy strong {
+  color: var(--rd-ink);
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-resource-copy span {
+  color: var(--rd-muted);
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rd-resource .rd-arrow {
+  color: var(--rd-muted);
+  flex: 0 0 auto;
+}
+
+/* Shared calm surfaces for the real secondary screens. */
+html[data-rd-design="figma"] body.rd-shell .panel,
+html[data-rd-design="figma"] body.rd-shell .card,
+html[data-rd-design="figma"] body.rd-shell .form,
+html[data-rd-design="figma"] body.rd-shell .tile,
+html[data-rd-design="figma"] body.rd-shell .nov,
+html[data-rd-design="figma"] body.rd-shell .dpe-card,
+html[data-rd-design="figma"] body.rd-shell .pv-card,
+html[data-rd-design="figma"] body.rd-shell .dt-item,
+html[data-rd-design="figma"] body.rd-shell .es-t,
+html[data-rd-design="figma"] body.rd-shell .modo,
+html[data-rd-design="figma"] body.rd-shell .ls-a,
+html[data-rd-design="figma"] body.rd-shell .tema-escolha {
+  background: var(--rd-surface);
+  border: 1px solid var(--rd-line);
+  border-bottom-width: 1px;
+  border-radius: var(--rd-radius);
+  box-shadow: none;
+}
+
+html[data-rd-design="figma"] body.rd-shell .panel,
+html[data-rd-design="figma"] body.rd-shell .form,
+html[data-rd-design="figma"] body.rd-shell .card {
+  padding: 22px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .sub,
+html[data-rd-design="figma"] body.rd-shell .count,
+html[data-rd-design="figma"] body.rd-shell .recall,
+html[data-rd-design="figma"] body.rd-shell .keys,
+html[data-rd-design="figma"] body.rd-shell .src,
+html[data-rd-design="figma"] body.rd-shell .why,
+html[data-rd-design="figma"] body.rd-shell .yours {
+  color: var(--rd-muted);
+}
+
+html[data-rd-design="figma"] body.rd-shell .progress {
+  align-items: center;
+  color: var(--rd-muted);
+  display: flex;
+  font-size: 12px;
+  gap: 12px;
+  margin: 18px 0 10px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .progress .track,
+html[data-rd-design="figma"] body.rd-shell .bar,
+html[data-rd-design="figma"] body.rd-shell .stack {
+  background: var(--rd-surface-muted);
+  border-radius: 99px;
+  height: 6px;
+  overflow: hidden;
+}
+
+html[data-rd-design="figma"] body.rd-shell .progress .track i,
+html[data-rd-design="figma"] body.rd-shell .bar i,
+html[data-rd-design="figma"] body.rd-shell .stack i {
+  background: var(--rd-brand);
+  border-radius: inherit;
+}
+
+html[data-rd-design="figma"] body.rd-shell .progress .tm {
+  color: var(--rd-ink);
+}
+
+html[data-rd-design="figma"] body.rd-shell .front,
+html[data-rd-design="figma"] body.rd-shell .answer,
+html[data-rd-design="figma"] body.rd-shell .done .big {
+  font-family: "Rubik", system-ui, sans-serif;
+}
+
+html[data-rd-design="figma"] body.rd-shell .front {
+  color: var(--rd-ink);
+  font-size: clamp(1.22rem, 2.5vw, 1.45rem);
+  line-height: 1.45;
+}
+
+html[data-rd-design="figma"] body.rd-shell .opt,
+html[data-rd-design="figma"] body.rd-shell .fill input,
+html[data-rd-design="figma"] body.rd-shell textarea,
+html[data-rd-design="figma"] body.rd-shell .field input,
+html[data-rd-design="figma"] body.rd-shell .field select,
+html[data-rd-design="figma"] body.rd-shell .filters input,
+html[data-rd-design="figma"] body.rd-shell .filters select {
+  background: var(--rd-bg);
+  border: 1px solid var(--rd-line);
+  border-radius: 12px;
+  color: var(--rd-ink);
+}
+
+html[data-rd-design="figma"] body.rd-shell .opt {
+  padding: 13px 14px;
+  transition: background-color 150ms ease, border-color 150ms ease, transform 150ms ease;
+}
+
+html[data-rd-design="figma"] body.rd-shell .opt:hover:not(:disabled) {
+  border-color: var(--rd-brand);
+}
+
+html[data-rd-design="figma"] body.rd-shell .opt.right {
+  background: var(--rd-ok-soft);
+  border-color: var(--rd-ok);
+}
+
+html[data-rd-design="figma"] body.rd-shell .opt.wrong {
+  background: var(--rd-bad-soft);
+  border-color: var(--rd-bad);
+}
+
+html[data-rd-design="figma"] body.rd-shell .rate {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 16px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rate button {
+  background: var(--rd-surface);
+  border: 1px solid var(--rd-line);
+  border-radius: 14px;
+  color: var(--rd-ink);
+  cursor: pointer;
+  display: grid;
+  gap: 2px;
+  padding: 13px 6px 10px;
+  transition: background-color 150ms ease, border-color 150ms ease, transform 150ms ease;
+}
+
+html[data-rd-design="figma"] body.rd-shell .rate button:hover {
+  background: var(--rd-surface-soft);
+}
+
+html[data-rd-design="figma"] body.rd-shell .rate button.g1 {
+  border-color: var(--rd-bad);
+}
+
+html[data-rd-design="figma"] body.rd-shell .rate button.g2 {
+  border-color: var(--rd-amber);
+}
+
+html[data-rd-design="figma"] body.rd-shell .rate button.g3 {
+  border-color: var(--rd-brand);
+}
+
+html[data-rd-design="figma"] body.rd-shell .rate button.g4 {
+  border-color: var(--rd-info);
+}
+
+html[data-rd-design="figma"] body.rd-shell .rate button small {
+  color: var(--rd-muted);
+  font: 400 11px/1.2 "IBM Plex Mono", ui-monospace, monospace;
+}
+
+html[data-rd-design="figma"] body.rd-shell .tools {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: space-between;
+  margin-top: 14px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .btn {
+  align-items: center;
+  background: var(--rd-surface);
+  border: 1px solid var(--rd-line);
+  border-radius: 12px;
+  color: var(--rd-ink);
+  cursor: pointer;
+  display: inline-flex;
+  font: 600 13px/1.25 "Rubik", system-ui, sans-serif;
+  justify-content: center;
+  min-height: 40px;
+  padding: 9px 14px;
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease, transform 150ms ease;
+}
+
+html[data-rd-design="figma"] body.rd-shell .btn:hover:not(:disabled) {
+  border-color: var(--rd-brand);
+  color: var(--rd-brand);
+  transform: translateY(-1px);
+}
+
+html[data-rd-design="figma"] body.rd-shell .btn.primary,
+html[data-rd-design="figma"] body.rd-shell .btn.primary:hover:not(:disabled) {
+  background: var(--rd-brand);
+  border-color: var(--rd-brand);
+  color: #fff;
+}
+
+html[data-rd-design="figma"] body.rd-shell .btn.ghost,
+html[data-rd-design="figma"] body.rd-shell .button-quiet {
+  background: transparent;
+  border-color: transparent;
+  color: var(--rd-muted);
+}
+
+html[data-rd-design="figma"] body.rd-shell .btn.small {
+  min-height: 34px;
+  padding: 6px 10px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .ce {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .ce .btn.primary {
+  width: 100%;
+}
+
+html[data-rd-design="figma"] body.rd-shell .done {
+  padding: 32px 16px;
+}
+
+/* Metacognição: refine the real blocks without changing their flow or handlers. */
+html[data-rd-design="figma"] body.rd-shell .mc-plan,
+html[data-rd-design="figma"] body.rd-shell .mc-depois,
+html[data-rd-design="figma"] body.rd-shell .mc-grid {
+  border-color: var(--rd-line);
+  border-radius: var(--rd-radius);
+}
+
+html[data-rd-design="figma"] body.rd-shell .mc-plan,
+html[data-rd-design="figma"] body.rd-shell .mc-depois {
+  background: var(--rd-surface);
+  border: 1px solid var(--rd-line);
+  box-shadow: var(--rd-shadow-soft);
+  padding: clamp(16px, 3vw, 28px);
+  min-width: 0;
+}
+
+html[data-rd-design="figma"] body.rd-shell .mc-plan h2 {
+  font: 600 1.55rem/1.2 "Rubik", system-ui, sans-serif;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .mc-grid {
+  gap: 10px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .mc-plan button,
+html[data-rd-design="figma"] body.rd-shell .mc-depois button,
+html[data-rd-design="figma"] body.rd-shell .mc-grid button {
+  border-radius: 12px;
+}
+
+html[data-rd-design="figma"] body.rd-shell .mc-plan input,
+html[data-rd-design="figma"] body.rd-shell .mc-depois textarea {
+  background: var(--rd-bg);
+  border-color: var(--rd-line);
+  border-radius: 12px;
+  color: var(--rd-ink);
+}
+
+/* Genuine legacy tabs are still the one source of navigation truth. */
+html[data-rd-design="figma"] body.rd-shell #tabs {
+  scrollbar-width: thin;
+}
+
+html[data-rd-design="figma"] body.rd-shell #tabs button {
+  overflow: visible;
+}
+
+/* Breakpoint follows the requested desktop sidebar/mobile bottom navigation split. */
+@media (max-width: 1250px) and (min-width: 901px) {
+  html[data-rd-design="figma"] body.rd-shell .rd-dashboard {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .rd-dashboard > .hero,
+  html[data-rd-design="figma"] body.rd-shell .rd-dashboard > .rd-side {
+    grid-column: 1;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .rd-dashboard > .rd-side {
+    grid-row: 2;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  html[data-rd-design="figma"] body.rd-shell #rdSidebar.rd-sidebar {
+    align-items: stretch;
+    border-right: 0;
+    border-top: 1px solid var(--rd-line);
+    bottom: 0;
+    box-shadow: 0 -8px 28px rgba(40, 30, 100, 0.08);
+    height: calc(70px + env(safe-area-inset-bottom, 0px));
+    left: 0;
+    padding: 5px 7px max(5px, env(safe-area-inset-bottom, 0px));
+    right: 0;
+    top: auto;
+    width: 100%;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell #rdSidebar .rd-logo,
+  html[data-rd-design="figma"] body.rd-shell #rdSidebar .rd-sidebar-footer {
+    display: none;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell #rdSidebar nav.tabs {
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    margin: 0;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    position: static;
+    left: auto;
+    right: auto;
+    bottom: auto;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell #rdSidebar nav.tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell #rdSidebar nav.tabs button {
+    align-items: center;
+    border-radius: 12px;
+    display: grid;
+    flex: 1 1 0;
+    font-size: 11px;
+    gap: 3px;
+    justify-content: center;
+    min-height: 58px;
+    min-width: 54px;
+    padding: 5px 4px;
+    text-align: center;
+    white-space: normal;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell #rdSidebar nav.tabs button[aria-selected="true"]::before {
+    display: none;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell #rdSidebar nav.tabs button .ic {
+    height: 20px;
+    justify-self: center;
+    width: 20px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell #rdSidebar nav.tabs button[data-n]:not([data-n=""])::after {
+    border-color: var(--rd-surface);
+    right: calc(50% - 23px);
+    top: 2px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell #rdSidebar nav.tabs button .tab-n {
+    background: #e8452a;
+    border: 2px solid var(--rd-surface);
+    border-radius: 999px;
+    color: #fff;
+    display: block;
+    font: 700 8px/13px "IBM Plex Mono", ui-monospace, monospace;
+    height: 17px;
+    min-width: 17px;
+    padding: 0 3px;
+    position: absolute;
+    right: calc(50% - 23px);
+    text-align: center;
+    top: 1px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell > header.top {
+    margin-left: 0;
+    top: 0;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell > header.top .top-in {
+    padding: 11px 16px 10px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell > header.top .brand {
+    justify-content: space-between;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell > header.top h1.rd-mobile-logo {
+    align-items: center;
+    color: var(--rd-ink);
+    display: inline-flex;
+    font-family: "Rubik", system-ui, sans-serif;
+    font-size: 18px;
+    font-weight: 750;
+    gap: 8px;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell > header.top h1.rd-mobile-logo .logo-c {
+    height: 24px;
+    width: 24px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell > header.top h1.rd-mobile-logo span {
+    color: var(--rd-brand);
+  }
+
+  html[data-rd-design="figma"] body.rd-shell > header.top .brand > span {
+    gap: 6px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell #save {
+    display: none;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .iconbtn {
+    height: 38px;
+    width: 38px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell > main.wrap,
+  html[data-rd-design="figma"] body.rd-shell > main.wrap[data-rd-view="sessao"],
+  html[data-rd-design="figma"] body.rd-shell > main.wrap[data-rd-view="hoje"] {
+    margin-left: 0;
+    max-width: none;
+    padding: 28px 16px calc(104px + env(safe-area-inset-bottom, 0px));
+    width: 100%;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .rd-welcome {
+    gap: 16px;
+    margin-bottom: 25px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .rd-title {
+    font-size: clamp(29px, 8vw, 40px);
+    letter-spacing: -1.3px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .rd-welcome p {
+    font-size: 13px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .rd-date {
+    min-width: 64px;
+    padding: 9px 10px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .rd-dashboard {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  html[data-rd-design="figma"] body.rd-shell .rd-dashboard > .hero,
+  html[data-rd-design="figma"] body.rd-shell .rd-dashboard > .rd-side {
+    grid-column: 1;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .rd-dashboard > .rd-side {
+    grid-row: 2;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .hero {
+    border-radius: 24px;
+    padding: 22px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .hero-main {
+    gap: 17px;
+    margin: 27px 0 24px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .hero .ringbox {
+    flex: 0 0 105px;
+    height: 105px;
+    width: 105px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .hero h2 {
+    font-size: clamp(30px, 8vw, 38px);
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .rd-side .panel,
+  html[data-rd-design="figma"] body.rd-shell .rd-side details.panel {
+    border-radius: 20px;
+    padding: 20px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .rd-resources {
+    margin-top: 44px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .rd-section-heading {
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .rd-section-heading h2 {
+    font-size: 25px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .rd-resource-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .rd-resource {
+    min-height: 92px;
+    padding: 16px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .rd-icon {
+    flex-basis: 44px;
+    height: 44px;
+    width: 44px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .card,
+  html[data-rd-design="figma"] body.rd-shell .panel,
+  html[data-rd-design="figma"] body.rd-shell .form {
+    padding: 18px 16px 15px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .study-actions .btn,
+  html[data-rd-design="figma"] body.rd-shell .ce .btn {
+    flex: 1 1 180px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .mc-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  html[data-rd-design="figma"] body.rd-shell .rd-welcome {
+    align-items: flex-start;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .rd-date {
+    min-width: 58px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .rd-date b {
+    font-size: 21px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .rd-section-heading {
+    flex-direction: column;
+    margin-bottom: 18px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .rate {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .tools {
+    align-items: stretch;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .tools > * {
+    max-width: 100%;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .front {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  html[data-rd-design="figma"] body.rd-shell #rdSidebar nav.tabs button {
+    font-size: 10px;
+    min-width: 51px;
+    padding-inline: 2px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell #rdSidebar nav.tabs button .ic {
+    height: 18px;
+    width: 18px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .rd-welcome {
+    gap: 10px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .rd-date {
+    display: none;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .hero-main {
+    align-items: flex-start;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .hero .ringbox {
+    flex-basis: 88px;
+    height: 88px;
+    width: 88px;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .hero h2 {
+    font-size: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-rd-design="figma"] body.rd-shell,
+  html[data-rd-design="figma"] body.rd-shell * {
+    scroll-behavior: auto !important;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell *,
+  html[data-rd-design="figma"] body.rd-shell *::before,
+  html[data-rd-design="figma"] body.rd-shell *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html[data-rd-design="figma"] body.rd-shell .hero .mascot {
+    animation: none !important;
+  }
+}

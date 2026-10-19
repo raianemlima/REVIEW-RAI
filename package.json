@@ -1,0 +1,16 @@
+{
+  "name": "review-dpe-dev",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Ferramentas de teste do aplicativo estático Review DPE",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check": "node --check arquivos/metacognicao.js && node --check arquivos/cronograma.js && node --check arquivos/interface.js && node --check sw.js && node --check gate.js && node --check ferramentas/ci/injetar_arquivos.mjs && node --check ferramentas/ci/validar_site.mjs"
+  },
+  "devDependencies": {
+    "jsdom": "26.1.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

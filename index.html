@@ -1,6 +1,19 @@
 <!doctype html><html><head><meta charset=utf8><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://hlenhmgnqqnkjqmntnpz.supabase.co https://api.github.com; worker-src 'self'; manifest-src 'self'; media-src 'self' data: blob:; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f7f6ff"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="icons/icon-180.png"><meta name="description" content="Revisão espaçada, teses defensivas e novidades legislativas para o concurso da Defensoria Pública."><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Review DPE"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}.cad-mat{display:flex;align-items:center;gap:8px;margin:6px 0;font-size:13px;color:var(--muted)}.cad-mat select,#cadNovoMat{flex:1;min-width:0;max-width:100%;padding:6px 8px;border-radius:10px;border:2px solid var(--line);background:var(--card,#fff);color:inherit;font:inherit}.cad-sec{margin-top:18px}.cad-novo .row{gap:8px;flex-wrap:wrap}
 .nj-grade{display:flex;gap:8px;margin:12px -4px 14px;padding:2px 4px 6px;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:thin}.nj-grade .nj-op{flex:1 0 112px;scroll-snap-align:start}.nj-op{display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:10px 12px;border-radius:16px;border:2px solid var(--line);border-bottom-width:4px;background:var(--surface);color:var(--ink);font:inherit;text-align:left;cursor:pointer;min-width:0}.nj-op span{font-weight:700;font-size:.86rem;line-height:1.2}.nj-op b{font-size:1.3rem;line-height:1.1}.nj-op small{color:var(--muted);font-size:.72rem}.nj-op[aria-pressed="true"]{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--surface))}
 .pv-card.pv-destaque{border-left-color:#ffb703;box-shadow:0 4px 0 rgba(255,183,3,.35)}
+
+/* rotina diária: uma ação principal, informação secundária sob demanda */
+.day-details { margin:14px 0; padding:14px 16px; border:2px solid var(--line); border-radius:18px; background:var(--surface); }
+.day-details > summary { cursor:pointer; font-weight:600; color:var(--ink); line-height:1.4; }
+.day-details[open] > summary { margin-bottom:12px; }
+.day-details .tiles { margin:12px 0; }
+.day-metas { display:flex; align-items:center; flex-wrap:wrap; gap:7px; margin-top:16px; font-size:.82rem; }
+.day-metas button { min-width:40px; min-height:38px; border:1px solid var(--line); border-radius:999px; background:var(--surface); color:var(--ink); font:600 .85rem var(--f-ui); cursor:pointer; }
+.day-metas button[aria-pressed="true"] { background:var(--accent); color:#fff; border-color:var(--accent); }
+.hero .day-leve { margin-top:10px; color:var(--accent); }
+.hero .xp { margin-bottom:12px; }
+@media(max-width:480px) { .day-details { padding:12px; } .day-metas { gap:6px; } }
+
 </style><style id="nv-secoes">
 .nv-seg { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 4px; margin: 12px 0 4px; border-radius: 14px; background: var(--accent-soft); }
 .nv-seg button { font: 600 .86rem var(--f-ui); border: 0; border-radius: 10px; padding: 9px 8px; background: none; color: var(--ink); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap; }
@@ -863,6 +876,8 @@ header.top { background: var(--bg); -webkit-backdrop-filter: none; backdrop-filt
 .cad-orig { margin: 0 0 10px; font-size: .8rem; color: var(--muted); }
 .cad-nota { display: grid; gap: 4px; margin-bottom: 10px; } .cad-nota span { font: 700 .78rem var(--f-ui); color: var(--accent); }
 </style>
+<link rel="stylesheet" href="arquivos/interface.css">
+<link rel="stylesheet" href="arquivos/cronograma.css">
 
 <header class="top">
   <div class="top-in">
@@ -960,7 +975,7 @@ const ESTADO_NOME = { DPU: "Defensoria Pública da União", AC: "Acre", AL: "Ala
 const GRADES = { 1: "Errei", 2: "Difícil", 3: "Bom", 4: "Fácil" };
 
 // ---------- estado ----------
-const DEFAULTS = { estado: "RN", prova: "", minutos: 30, novosMax: 20, retencao: 0.9, disciplinas: null, som: true, vibra: true, onboard: false };
+const DEFAULTS = { estado: "RN", prova: "", minutos: 10, novosMax: 10, metaDiaria: 10, retencao: 0.9, disciplinas: null, som: true, vibra: true, onboard: false };
 const DISC = Object.fromEntries(DECK.disciplinas.map(d => [d.id, d]));
 function discOn(id) { const l = S.ajustes.disciplinas; return !l || l.includes(id); }
 const S = {
@@ -2106,7 +2121,7 @@ function renderLeech() {
   });
 }
 function calibracao() {
-  const c = [[0, 0], [0, 0], [0, 0]]; for (const e of S.ajustes.calib || []) { c[e[2]][0]++; if (e[3]) c[e[2]][1]++; } return c;
+  const c = [[0, 0], [0, 0], [0, 0]]; for (const e of S.ajustes.calib || []) { if (!Array.isArray(e) || ![0, 1, 2].includes(e[2])) continue; c[e[2]][0]++; if (e[3]) c[e[2]][1]++; } return c;
 }
 function aplicarW(a) { const w = (a || S.ajustes || {}).w; W = Array.isArray(w) && w.length === 17 && w.every(x => typeof x === "number" && isFinite(x)) ? w.slice() : W0.slice(); }
 function seqsFsrs() {
@@ -2144,10 +2159,11 @@ function statsMemoriaHtml() {
   const c = calibracao(), tot = c[0][0] + c[1][0] + c[2][0], info = S.ajustes.wInfo, sq = seqsFsrs();
   const nrev = sq.reduce((s, q) => s + q.filter((e, i) => i > 0 && e[3] >= 1).length, 0);
   const lbl = ["Chutei", "Acho", "Tenho certeza"], pc = x => x[0] ? Math.round(x[1] / x[0] * 100) + "%" : "—";
-  return `<h3 style="margin-top:26px">Calibração da confiança</h3>
-    <section class="panel"><p style="margin:0 0 8px">Antes de ver a resposta, marque sua confiança. Se você acerta pouco quando diz “tenho certeza”, é a <b>ilusão de competência</b> agindo: vale revisar esses pontos no modo 🎯 Erros com certeza.</p>
-      ${tot ? `<table class="calib"><tr><th>Você disse</th><th>Respostas</th><th>Acertos</th></tr>${[2, 1, 0].map(k => `<tr><td>${lbl[k]}</td><td class="mono">${c[k][0]}</td><td class="mono">${pc(c[k])}</td></tr>`).join("")}</table>
-        <p class="count" style="margin:8px 0 0">${c[2][0] >= 10 && c[2][1] / c[2][0] < 0.85 ? "⚠️ Sua certeza está acima do seu acerto. Desconfie da sensação de “já sei”." : c[2][0] >= 10 ? "✔ Quando você tem certeza, costuma acertar. Boa calibração." : "Responda mais cartões marcando a confiança para ver sua calibração."}</p>` : `<p class="count" style="margin:0">Ainda sem respostas com confiança marcada.</p>`}
+  return `<h3 style="margin-top:26px">Confiança × resultado</h3>
+    <section class="panel"><p style="margin:0 0 8px">Marque sua confiança antes de ver a resposta e compare com o resultado. Certezas que não se confirmaram podem ser retomadas em <b>Erros com certeza</b>.</p>
+      ${tot ? `<table class="calib"><tr><th>Você disse</th><th>Tentativas</th><th>Resultados positivos</th></tr>${[2, 1, 0].map(k => `<tr><td>${lbl[k]}</td><td class="mono">${c[k][0]}</td><td class="mono">${pc(c[k])}</td></tr>`).join("")}</table>
+        <p class="count" style="margin:8px 0 0">${tot} tentativas no histórico, incluindo repetições. Estes percentuais descrevem o histórico; não são uma medida validada de calibração nem comprovam domínio.</p>` : `<p class="count" style="margin:0">Ainda sem respostas com confiança marcada.</p>`}
+      <p class="count">Questões de múltipla escolha e certo ou errado usam o gabarito. Cartões abertos e lacunas usam sua autoavaliação. Registros anteriores a esta atualização podem refletir apenas a nota escolhida; sua origem não foi gravada separadamente.</p>
       <label class="row" style="gap:8px;margin-top:10px;font-weight:400"><input type="checkbox" id="confOn" ${S.ajustes.confOn !== false ? "checked" : ""}> Perguntar a confiança nos cartões</label></section>
     <h3 style="margin-top:26px">Algoritmo ajustado à sua memória</h3>
     <section class="panel"><p style="margin:0 0 8px">O FSRS usa parâmetros médios de milhares de estudantes. Com o seu histórico, o app calcula parâmetros próprios para prever melhor quando <b>você</b> vai esquecer.</p>
@@ -2216,6 +2232,7 @@ function renderMetodos() {
 function renderEstudar() {
   ensureAj();
   const act = activeCards(), nTeses = act.filter(c => c.tipo === "tese_defensiva").length, p = plan(), restante = p.due.length + p.newToday.length;
+  const blocoEstudar = selecionarBloco(p), dia = rotinaDiaria();
   const D = dpeDados(), nDef = (D.sumulas || []).length + (D.teses || []).length, nTs = (tsDados().itens || []).length;
   const DT = dtDados(), nDt = DT.conceitos.length, nDtL = (S.ajustes.dtLidos || []).filter(id => DT.conceitos.some(c => c.id === id)).length;
   const nNov = novUnread(), rec = S.ajustes.jogo && S.ajustes.jogo.rec && S.ajustes.jogo.rec.relampago;
@@ -2244,11 +2261,11 @@ function renderEstudar() {
   const erros = ["errados", "hiper", "sanguessuga", "pares", "noite"].map(k => modo(k, { cor: "es-err", offTxt: "Libera quando você errar" }));
   $("#main").innerHTML = `
     <h2>Estudar</h2>
-    <p class="sub">Tudo o que o app oferece, em um só lugar. Comece pela revisão do dia; depois leia, treine e conserte os erros.</p>
-    <section class="es-hoje"><div><small>📅 Revisão de hoje · ~${p.minutes} min</small>
-      <b>${restante ? [p.due.length ? plural(p.due.length, "revisão vencida", "revisões vencidas") : "", p.newToday.length ? plural(p.newToday.length, "cartão novo", "cartões novos") : ""].filter(Boolean).join(" e ") : "Tudo em dia por hoje"}</b>
-      <span>${restante ? "Na ordem do que mais cai." : "Escolha um dos caminhos abaixo para ir além."}</span></div>
-      <button class="cta" id="esStart" ${restante ? "" : "disabled"}>${restante ? "Começar" : "Feito ✓"}</button></section>
+    <p class="sub">Escolha um caminho de estudo. Não precisa fazer todos: um bloco pequeno já conta.</p>
+    <section class="es-hoje"><div><small>Próximo bloco · cerca de ${blocoEstudar.minutos} min</small>
+      <b>${restante ? plural(blocoEstudar.q.length, "cartão neste bloco", "cartões neste bloco") : "Sem cartões disponíveis agora"}</b>
+      <span>${restante ? `Fila disponível: ${restante} cartões. Meta escolhida: ${dia.meta}; a fila não é obrigação de terminar hoje.` : "Se quiser, explore um dos caminhos abaixo."}</span></div>
+      <button class="${dia.concluida ? "btn" : "cta"}" id="esStart" ${restante ? "" : "disabled"}>${restante ? (dia.concluida ? "Estudar mais (opcional)" : "Começar bloco") : "Sem cartões por agora"}</button></section>
     <nav class="es-atalhos" aria-label="Ir para"><a href="#es-ler">📚 Ler</a><a href="#es-treinar">🎯 Treinar</a><a href="#es-erros">🩹 Erros</a></nav>
     <h3 class="es-sec" id="es-ler"><span>1</span>Ler e aprender<small>a base: lei, jurisprudência e doutrina</small></h3>
     <div class="es-grid">${ler.join("")}</div>
@@ -2311,13 +2328,13 @@ function onboarding(force) {
   const slides = [
     () => `<div class="onb-art">${fenix(0, "feliz", 150)}</div><h2>Conheça sua Fênix</h2><p>Ela nasce de um ovo e cresce com os seus dias de estudo (prefere outro bicho? Em Ajustes há 20 mascotes para escolher). Cada resposta rende XP, e a sequência de dias a mantém acesa.</p>`,
     () => `<div class="onb-art">${fenix(2, "ok", 150)}</div><h2>Como funciona</h2><p><b>1.</b> Leia a pergunta e tente lembrar a resposta.<br><b>2.</b> Revele e diga se acertou.<br><b>3.</b> O app traz o cartão de volta no dia certo, quando você estiver prestes a esquecer.</p>`,
-    () => `<div class="onb-art">${fenix(3, "feliz", 150)}</div><h2>Vamos combinar a meta</h2><p>Se já souber a data da prova, informe. O app ajusta as fases do estudo até lá.</p><div class="form" style="text-align:left;gap:10px;box-shadow:none"><div class="field"><label for="o-prova">Data da prova</label><input id="o-prova" type="date" value="${esc(S.ajustes.prova)}"></div><div class="field"><label for="o-min">Minutos por dia</label><input id="o-min" type="number" min="5" max="240" step="5" value="${S.ajustes.minutos}"></div></div>`,
+    () => `<div class="onb-art">${fenix(3, "feliz", 150)}</div><h2>Vamos combinar a meta</h2><p>Se já souber a data da prova, informe. O app ajusta as fases do estudo até lá.</p><div class="form" style="text-align:left;gap:10px;box-shadow:none"><div class="field"><label for="o-prova">Data da prova</label><input id="o-prova" type="date" value="${esc(S.ajustes.prova)}"></div><div class="field"><label for="o-min">Tempo disponível (minutos)</label><input id="o-min" type="number" min="5" max="240" step="5" value="${S.ajustes.minutos}"></div><div class="field"><label for="o-meta">Meta diária em cartões diferentes</label><input id="o-meta" type="number" min="5" max="50" value="${normalizarMetaDiaria(S.ajustes.metaDiaria)}"><span class="hint">Comece com 10, ou escolha 5 para uma rotina leve. Você pode ajustar depois.</span></div></div>`,
   ];
   let i = 0;
   const draw = () => {
     el.innerHTML = `<div class="onb-card">${slides[i]()}<div class="dotsx">${slides.map((_, k) => `<i class="${k === i ? "on" : ""}"></i>`).join("")}</div><div class="row" style="justify-content:center"><button class="btn primary" id="onb-next">${i < slides.length - 1 ? "Continuar" : "Começar a estudar"}</button>${i < slides.length - 1 ? `<button class="btn ghost" id="onb-skip">Pular</button>` : ""}</div></div>`;
     const done = () => {
-      if ($("#o-prova")) { S.ajustes.prova = $("#o-prova").value; S.ajustes.minutos = Math.max(5, +$("#o-min").value || 30); }
+      if ($("#o-prova")) { S.ajustes.prova = $("#o-prova").value; S.ajustes.minutos = Math.min(240, Math.max(5, +$("#o-min").value || 10)); S.ajustes.metaDiaria = normalizarMetaDiaria($("#o-meta").value); }
       S.ajustes.onboard = true; queue("ajustes"); el.remove(); render();
     };
     $("#onb-next").onclick = () => { if (i < slides.length - 1) { i++; draw(); } else done(); };
@@ -3029,6 +3046,48 @@ function ritmoSeg() {   // segundos por cartão nos últimos 14 dias (intervalo 
   const med = (a, d) => a.length >= 30 ? Math.min(90, Math.max(6, a.sort((x, y) => x - y)[a.length >> 1])) : d;
   _ritC = [L, { rev: med(rev, 15), nov: med(nov, 40) }]; return _ritC[1];
 }
+// ---- rotina sustentável: meta escolhida, bloco curto e fila são coisas diferentes ----
+function normalizarMetaDiaria(valor) {
+  const n = Number(valor); return Number.isFinite(n) && n > 0 ? Math.min(50, Math.max(5, Math.round(n))) : 10;
+}
+function rotinaDiaria() {
+  const t = today(), a = S.ajustes, temporaria = a.metaHoje;
+  const meta = normalizarMetaDiaria(temporaria && temporaria.dia === t ? temporaria.valor : a.metaDiaria);
+  const ids = new Set(); let ultimo = null;
+  for (const e of allLogs()) {
+    if (!Array.isArray(e) || !Number.isFinite(e[0]) || typeof e[1] !== "string") continue;
+    const d = dayOf(e[0]);
+    if (d === t) ids.add(e[1]);
+    else if (d < t && (ultimo == null || d > ultimo)) ultimo = d;
+  }
+  const feitos = ids.size;
+  return { meta, feitos, restantes: Math.max(0, meta - feitos), concluida: feitos >= meta, retomada: !feitos && ultimo != null && t - ultimo >= 3, temporaria: !!(temporaria && temporaria.dia === t) };
+}
+function definirMetaDiaria(valor, soHoje = false) {
+  const n = normalizarMetaDiaria(valor);
+  if (soHoje) S.ajustes.metaHoje = { dia: today(), valor: n };
+  else { S.ajustes.metaDiaria = n; delete S.ajustes.metaHoje; }
+  queue("ajustes");
+}
+function selecionarBloco(p, leve = false) {
+  const dia = rotinaDiaria(), limite = Math.min(leve ? 5 : 10, dia.restantes || (leve ? 5 : 10));
+  const rev = p.due || [], novos = p.newToday || [], pool = [...rev, ...novos];
+  const nMin = Number(S.ajustes.minutos), budget = Math.min(240, Math.max(5, Number.isFinite(nMin) && nMin > 0 ? nMin : 10)) * 60;
+  const cs = []; let segundos = 0;
+  for (const c of pool) {
+    if (cs.length >= limite) break;
+    const base = S.cards[c.id] ? p.secsReview || 15 : p.secsNew || 40;
+    const custo = ehLongo(c) ? Math.max(60, base) : base;
+    if (cs.length && segundos + custo > budget) break;
+    cs.push(c); segundos += custo;
+  }
+  const q = espalharLongos(espalharTemas(cs).map(c => c.id));
+  return { q, minutos: Math.ceil(segundos / 60), limiteTentativas: q.length + Math.ceil(q.length / 2) };
+}
+function podeRepetirSessao(s, id) {
+  if (s.limiteTentativas == null) return true;   // modos especializados mantêm seus contratos
+  return s.queue.length < s.limiteTentativas && !(s.repeticoes || {})[id];
+}
 function plan() {
   desempilharVespera();
   const t = today(), c = ctx(), dte = c.daysToExam;
@@ -3044,7 +3103,8 @@ function plan() {
   const budget = S.ajustes.minutos * 60 - due.length * secsReview;
   const room = Math.max(0, Math.floor(budget / secsNew));
   const teto = !comBase ? S.ajustes.novosMax : fi === 4 ? Math.min(5, S.ajustes.novosMax) : fi === 3 ? Math.ceil(S.ajustes.novosMax / 2) : S.ajustes.novosMax;
-  const nNew = Math.max(0, Math.min(room, teto - introducedToday(), fresh.length));
+  const dia = rotinaDiaria(), espacoMeta = Math.max(0, dia.restantes - due.length);
+  const nNew = dia.retomada && due.length ? 0 : Math.max(0, Math.min(room, teto - introducedToday(), fresh.length, espacoMeta));
   return { due, fresh, newToday: fresh.slice(0, nNew), minutes: Math.ceil((due.length * secsReview + nNew * secsNew) / 60), secsReview, secsNew, incMin };
 }
 
@@ -3168,16 +3228,16 @@ function espalharTemas(cs) {   // mantém a prioridade, mas evita dois seguidos 
   }
   return out;
 }
-function startSession() {
-  const p = plan();
-  const bloco = Math.max(20, Math.round((+S.ajustes.minutos || 30) * 60 / (p.secsReview || 15)));   // o que cabe no tempo diário; o resto continua vencido para o próximo bloco
-  const due = espalharTemas(p.due.slice(0, bloco)).map(c => c.id), fresh = p.newToday.map(c => c.id);
-  const q = [];
-  while (due.length || fresh.length) { // intercala: 2 revisões, 1 novo
-    if (due.length) q.push(due.shift()); if (due.length) q.push(due.shift());
-    if (fresh.length) q.push(fresh.shift());
+function startSession(opcoes = {}) {
+  if (S.mode === "loading") return;
+  const leve = opcoes && opcoes.leve === true, aberta = S.session;
+  if (!leve && aberta && aberta.ui && aberta.modo === "plano" && aberta.dia === today()) {
+    if (!aberta.pausaAte) aberta.ui.t0 = Date.now();
+    go("sessao"); return;
   }
-  stopSimTimer(); S.session = { queue: espalharLongos(q), pos: 0, total: q.length, done: 0, again: 0, ui: null, results: { 1: 0, 2: 0, 3: 0, 4: 0 }, modo: "plano", label: "Revisão de hoje", xp0: xpTotal(), sim: { c: 0, e: 0, b: 0 } };
+  const b = selecionarBloco(plan(), leve), q = b.q;
+  if (!q.length) { toast("Sem cartões disponíveis neste bloco. Seu histórico continua salvo."); return; }
+  stopSimTimer(); S.session = { queue: q, pos: 0, total: q.length, done: 0, again: 0, ui: null, results: { 1: 0, 2: 0, 3: 0, 4: 0 }, modo: "plano", label: leve ? "Bloco leve" : "Bloco de foco", dia: today(), leve, limiteTentativas: b.limiteTentativas, repeticoes: {}, xp0: xpTotal(), sim: { c: 0, e: 0, b: 0 } };
   newCardUI(); go("sessao");
 }
 function newCardUI() {
@@ -3202,6 +3262,12 @@ function reveal(extra) {
   if (!extra && u.flipMs == null) u.flipMs = Date.now() - u.t0;   // tempo até virar o cartão (aviso de virar rápido)
   Object.assign(u, extra || {}, { revealed: true, fresh: true }); renderSession();
 }
+function resultadoConfianca(u, g) {
+  const c = byId[u.id];
+  const temGabarito = c && ["multipla_escolha", "pegadinha"].includes(c.tipo) && typeof u.correct === "boolean";
+  // Lacunas têm correção aproximada; a nota do estudante continua sendo a referência nesses cartões.
+  return { ok: temGabarito ? u.correct : g > 1, fonte: temGabarito ? "gabarito" : "autoavaliacao" };
+}
 function answer(g) {
   const s = S.session, u = s.ui; if (!u || !u.revealed) return;
   const st0 = S.cards[u.id], t0 = today(), eraRevisao = !!st0;
@@ -3212,11 +3278,12 @@ function answer(g) {
   rate(u.id, g); s.results[g]++; buzz(8);
   if (r0 != null && g > 1) { s.fortes = (s.fortes || 0) + 1; if (r0 < 0.7) s.resgates = (s.resgates || 0) + 1; }   // memórias fortalecidas (só na sessão)
   if (eraRevisao && u.flipMs != null && u.flipMs < 2500 && g <= 2 && !s.avisoRapido && (s.rapidos = (s.rapidos || 0) + 1) >= 3) s.avisoRapido = true;   // virou rápido sem lembrar
-  if (u.conf != null && !branco) { ensureAj(); const ok = g > 1 ? 1 : 0; S.ajustes.calib = [...S.ajustes.calib, [Date.now(), u.id, u.conf, ok]].slice(-4000); queue("ajustes"); const cc = (s.cal ||= [[0, 0], [0, 0], [0, 0]])[u.conf]; if (cc) { cc[0]++; cc[1] += ok; } if (u.conf === 2 && !ok) toast(semRepetir ? "Erro com certeza: ele volta nas próximas revisões para você conferir se a correção ficou." : "Erro com certeza: ele volta ainda nesta sessão para você conferir se a correção ficou."); }   // em branco não é acerto nem erro de uma resposta dada
+  if ([0, 1, 2].includes(u.conf) && !branco) { ensureAj(); const ok = resultadoConfianca(u, g).ok ? 1 : 0; S.ajustes.calib = [...S.ajustes.calib, [Date.now(), u.id, u.conf, ok]].slice(-4000); queue("ajustes"); const cc = (s.cal ||= [[0, 0], [0, 0], [0, 0]])[u.conf]; if (cc) { cc[0]++; cc[1] += ok; } if (u.conf === 2 && !ok) toast("Sua certeza não confirmou o resultado. Confira a explicação e use Erros com certeza para revisar."); }   // mantém o formato histórico; branco não é uma resposta dada
   if (s.modo === "tese2f") { ensureAj(); const t2 = (S.ajustes.t2f ||= []); t2.push([Date.now(), u.id, u.secs || 0, (u.chk || []).filter(Boolean).length, u.typed ? u.typed.length : 0]); S.ajustes.t2f = t2.slice(-800); queue("ajustes"); }
-  if (g === 1 && !semRepetir) {   // volta na própria sessão, de 4 a 10 cartões depois
+  if (g === 1 && !semRepetir && podeRepetirSessao(s, u.id)) {   // o bloco diário tem um teto de tentativas
     const resto = s.queue.length - s.pos - 1, gap = Math.min(resto, Math.max(4, Math.min(10, Math.floor(resto / 2))));
     s.again++; s.queue.splice(s.pos + 1 + gap, 0, u.id); s.total++;
+    if (s.limiteTentativas != null) (s.repeticoes ||= {})[u.id] = 1;
   }
   s.pendErr = g === 1 && !branco && !u.motivo && (u.correct !== false || s.modo === "simulado") ? u.id : null;   // com correção automática, o motivo já foi perguntado no verso
   s.done++; s.pos++;
@@ -3442,11 +3509,18 @@ function renderJogo() {
 }
 function go(tab) { if (S.tab === "ouvir" && tab !== "ouvir") stopAudio(); if (S.tab === "jogo" && tab !== "jogo") { jogoParar(); G = null; } if (tab === "sessao" && S.tab !== "sessao" && S.session && !S.session.ui) S.session = null; S.tab = tab; render(); window.scrollTo(0, 0); }
 function render() {
+  const main = $("#main");
+  main.setAttribute("aria-busy", String(S.mode === "loading"));
+  if (S.mode === "loading") {
+    // boot renderiza novamente depois de carregar o progresso; não criar uma fila com estado vazio.
+    main.innerHTML = '<section class="panel" role="status"><h2>Carregando seu progresso</h2><p class="count">Aguarde um instante antes de começar a estudar.</p></section>';
+    return;
+  }
   const abaNav = S.tab === "novidades" ? "leiseca" : ["defensoria", "teses", "doutrina", "prova", "jogo", "metodos", "preparo", "caderno"].includes(S.tab) ? "sessao" : S.tab;
   document.querySelectorAll("#tabs button").forEach(b => b.setAttribute("aria-selected", String(b.dataset.tab === abaNav)));
   $("#goAjustes")?.setAttribute("aria-pressed", String(S.tab === "ajustes"));
   setTimeout(bindMetodoMini, 0);
-  ({ hoje: renderHoje, sessao: renderSession, biblioteca: renderLib, novidades: renderNov, defensoria: renderDef, teses: renderTeses, prova: renderProva, doutrina: renderDoutrina, estatisticas: renderStats, ajustes: renderAjustes, ouvir: renderOuvir, busca: renderBusca, preparo: renderPreparo, leiseca: renderLeiSeca, metodos: renderMetodos, jogo: renderJogo, caderno: renderCaderno })[S.tab]();
+  ({ hoje: renderHoje, sessao: renderSession, biblioteca: renderLib, novidades: renderNov, defensoria: renderDef, teses: renderTeses, prova: renderProva, doutrina: renderDoutrina, estatisticas: renderStats, ajustes: renderAjustes, cronograma: typeof renderCronograma === "function" ? renderCronograma : () => {}, ouvir: renderOuvir, busca: renderBusca, preparo: renderPreparo, leiseca: renderLeiSeca, metodos: renderMetodos, jogo: renderJogo, caderno: renderCaderno })[S.tab]();
   updNavBadge();
   if (S.tab === "leiseca" || S.tab === "novidades") lsSeletor();
   esVoltar();
@@ -3561,13 +3635,9 @@ function missoesHtml() {
 }
 renderHoje = (f => function (...a) {
   const r = f.apply(this, a), m = $("#main"), hero = m && m.querySelector(".hero");
-  if (!hero || m.querySelector("#missoes")) return r;
-  const st = streakInfo(), feitasHoje = logsToday(), p = plan(), rest = p.due.length + p.newToday.length, nv = nivelInfo(), hr = new Date().getHours();
-  if (st.n && !feitasHoje && hr >= 17) { const pl = hero.querySelector('.pill[title="dias seguidos estudando"]'); if (pl) { pl.classList.add("risco"); pl.textContent = `🔥 ${st.n} ${st.n === 1 ? "dia" : "dias"} em risco: faltam ${24 - hr}h`; } }
-  const g = []; if (rest) g.push(`Faltam <b>${rest}</b> para fechar a meta`); g.push(`<b>+${nv.hi - nv.x}</b> XP para o nível ${nv.lvl + 1}`);
-  const ms = missoesDia(), falta = ms.ms.filter(x => !x.ok).length; if (falta) g.push(`<b>${falta}</b> ${falta === 1 ? "missão" : "missões"} para o baú`);
-  hero.querySelector(".frase")?.insertAdjacentHTML("beforebegin", `<p class="gatilho">${g.map(x => `<span>${x}</span>`).join("")}</p>`);
-  hero.insertAdjacentHTML("afterend", missoesHtml());
+  if (!hero || m.querySelector("#extrasHoje")) return r;
+  const nv = nivelInfo();
+  hero.insertAdjacentHTML("afterend", `<details class="day-details" id="extrasHoje"><summary>Meu progresso e extras (opcional)</summary><p class="count">XP e missões são incentivos opcionais; não medem aprendizagem e não fazem parte da meta diária.</p><div class="xp"><div class="xp-top"><span>${esc(nv.nome)} · nível ${nv.lvl}</span><span class="mono">${nv.x - nv.lo}/${nv.hi - nv.lo} XP</span></div><div class="xpbar"><i style="width:${Math.round(nv.pct * 100)}%"></i></div></div>${missoesHtml()}</details>`);
   const bau = m.querySelector("#abrirBau");
   if (bau) { const abrir = () => { gravarLS("revisao-dpe-bau", String(today())); xpVoa(bau, `+${bauXp(today())} XP`); setTimeout(() => renderHoje(), 900); }; bau.onclick = abrir; bau.onkeydown = e => { if (e.key === "Enter" || e.key === " ") abrir(); }; }
   return r;
@@ -3946,12 +4016,13 @@ function renderHoje() {
   const rows = Object.entries(temas).sort((a, b) => b[1].inc - a[1].inc || b[1].q - a[1].q || b[1].n - a[1].n).slice(0, todas ? 40 : 999);
   const nTeses = act.filter(c => c.tipo === "tese_defensiva").length;
   const flagged = Object.values(S.flags).filter(f => f.ativo).length;
-  const feitas = logsToday(), restante = p.due.length + p.newToday.length, meta = feitas + restante;
-  const pct = meta ? feitas / meta : 1, st = streakInfo(), nv = nivelInfo(), wk = semana(), wkOn = wk.filter(x => x.on).length;
+  const feitas = logsToday(), restante = p.due.length + p.newToday.length, dia = rotinaDiaria(), bloco = selecionarBloco(p);
+  const aberta = S.session && S.session.ui && S.session.modo === "plano" && S.session.dia === t;
+  const pct = Math.min(1, dia.feitos / dia.meta), st = streakInfo(), nv = nivelInfo(), wk = semana(), wkOn = wk.filter(x => x.on).length;
   const h = new Date().getHours(), oi = h < 12 ? "Bom dia" : h < 18 ? "Boa tarde" : "Boa noite";
-  const mood = !restante && feitas ? "feliz" : !restante ? "dorme" : "ok";
-  const titulo = restante ? (feitas ? "Continue, você está indo bem" : "Vamos estudar?") : (feitas ? "Meta de hoje cumprida" : "Tudo em dia");
-  const sub = restante ? `${plural(restante, "cartão", "cartões")} para hoje · cerca de ${p.minutes} min` : (feitas ? `${plural(feitas, "resposta", "respostas")} hoje. Volte amanhã para manter a sequência.` : (mascAtual()[0] === "fenix" ? "Nada vencido agora. Sua fênix está descansando." : `Nada vencido agora. ${mascAtual()[2]} está descansando.`));
+  const mood = dia.concluida ? "feliz" : !restante ? "dorme" : "ok";
+  const titulo = dia.concluida ? "Sua meta de hoje está feita" : aberta ? "Retome seu bloco de foco" : dia.retomada ? "Vamos retomar com calma?" : restante ? "Um pequeno bloco já conta" : "Tudo em dia por agora";
+  const sub = dia.concluida ? `${dia.feitos} cartões diferentes estudados hoje. Você pode descansar.` : aberta ? "Continue o bloco que você iniciou nesta sessão do app." : restante ? `${bloco.q.length} cartões no próximo bloco · cerca de ${bloco.minutos} min` : "Sem cartões disponíveis agora. Seu progresso continua salvo.";
   const des = desafioHoje(), weak = weakTopics(), fi = faseAtual(dte);
   $("#main").innerHTML = `
     <section class="hero">
@@ -3959,32 +4030,35 @@ function renderHoje() {
         <span class="pills">${dte != null ? `<span class="pill" title="dias para a prova">🎯 ${dte} dias</span>` : ""}<span class="pill" title="dias seguidos estudando">🔥 ${st.n} ${st.n === 1 ? "dia" : "dias"}</span></span></div>
       <div class="hero-main"><div class="mascot">${mascote(nv.stage, mood, 108)}<span class="lvl" title="nível">${nv.lvl}</span></div>
         <div><h2>${titulo}</h2><p>${sub}</p></div></div>
-      <div class="xp"><div class="xp-top"><span>${esc(nv.nome)} · nível ${nv.lvl}</span><span class="mono">${nv.x - nv.lo}/${nv.hi - nv.lo} XP</span></div><div class="xpbar"><i style="width:${Math.round(nv.pct * 100)}%"></i></div></div>
-      <div class="xp"><div class="xp-top"><span>Meta de hoje</span><span class="mono">${Math.round(pct * 100)}%</span></div><div class="xpbar goal"><i style="width:${Math.round(pct * 100)}%"></i></div></div>
-      <p class="frase">${esc(FRASES[t % FRASES.length])}</p>
-      <button class="cta" id="start" ${restante ? "" : "disabled"}>${restante ? (feitas ? "Continuar sessão" : "Começar sessão") : "Sem cartões por agora"}</button>
+      <div class="xp"><div class="xp-top"><span>Meta de hoje · cartões diferentes</span><span class="mono">${Math.min(dia.feitos, dia.meta)}/${dia.meta}</span></div><div class="xpbar goal" role="progressbar" aria-label="Cartões diferentes estudados hoje" aria-valuemin="0" aria-valuemax="${dia.meta}" aria-valuenow="${Math.min(dia.feitos, dia.meta)}"><i style="width:${Math.round(pct * 100)}%"></i></div></div>
+      <p class="frase">${dia.concluida ? "Meta cumprida não significa fila zerada. Estudar mais é uma escolha, não uma obrigação." : dia.retomada ? "Não precisa compensar os dias sem uso. Comece pelo que cabe hoje." : "Repetições ajudam a revisar, mas não aumentam sua meta nem contam como outro cartão."}</p>
+      ${dia.concluida ? `<button class="btn" id="start" ${restante || aberta ? "" : "disabled"}>Estudar mais (opcional)</button>` : `<button class="cta" id="start" ${restante || aberta ? "" : "disabled"}>${aberta ? "Retomar bloco" : restante ? "Começar bloco de foco" : "Sem cartões por agora"}</button>`}
+      ${!dia.concluida && restante ? `<button class="btn ghost day-leve" id="hojeLeve">Hoje, só 5 cartões</button>` : ""}
+      <div class="day-metas" role="group" aria-label="Escolher meta habitual em cartões"><span>Meta habitual:</span>${[5, 10, 15, 20].map(n => `<button type="button" data-meta="${n}" aria-pressed="${!dia.temporaria && dia.meta === n}">${n}</button>`).join("")}</div>
+      ${dia.temporaria ? `<p class="count">Meta leve só para hoje. Amanhã volta a sua meta habitual de ${normalizarMetaDiaria(S.ajustes.metaDiaria)}.</p>` : `<p class="count">Escolha o que cabe na sua rotina. Mais opções em Ajustes; o app não aumenta a meta sozinho.</p>`}
     </section>
-    <div class="tiles">
-      <div class="tile due"><div class="n">${p.due.length}</div><div class="l">revisões vencidas</div></div>
-      <div class="tile new"><div class="n">${p.newToday.length}</div><div class="l">cartões novos</div></div>
-      <div class="tile min"><div class="n">~${p.minutes}<span style="font-size:.8rem"> min</span></div><div class="l">de ${S.ajustes.minutos} por dia</div></div>
-    </div>
+    <details class="day-details" id="filaHoje"><summary>Ver fila de revisão e próximos passos</summary>
+      <p>Há ${plural(p.due.length, "revisão disponível", "revisões disponíveis")}. Esta é a fila, não a obrigação de terminar tudo hoje. Sua meta é ${dia.meta} cartões diferentes.</p>
+      <div class="tiles"><div class="tile"><div class="n">${p.due.length}</div><div class="l">para revisar</div></div><div class="tile"><div class="n">${p.newToday.length}</div><div class="l">novos disponíveis hoje</div></div><div class="tile min"><div class="n">~${bloco.minutos} min</div><div class="l">próximo bloco</div></div></div>
+      <p class="count">Os cartões não revisados continuam pendentes e o FSRS mantém suas datas. Adiar repetidamente pode reduzir a chance de lembrar; retome aos poucos e ajuste a carga sem esconder a fila.</p>
+    </details>
     ${instalarHtml()}
     ${S.mode === "local" && !syncBackend() ? `<div class="note warn">Seu progresso está salvo só neste aparelho. Para não perder nada, exporte um backup em Ajustes de vez em quando.</div>` : ""}
     ${flagged ? `<div class="note">${plural(flagged, "cartão sinalizado", "cartões sinalizados")} como possível erro. Veja na Biblioteca, filtro “Sinalizados”.</div>` : ""}
 
     <section class="panel"><div class="ph"><h3>Sua semana</h3><span class="count">${wkOn}/5 dias · meta semanal</span></div>
       <div class="week">${wk.map(x => `<div class="wd ${x.on ? "on" : ""} ${x.hoje ? "today" : ""} ${x.fut ? "fut" : ""}" title="${x.nome}" aria-label="${x.nome}${x.on ? ", estudou" : ""}"><i>${x.on ? "🔥" : ""}</i><span>${x.l}</span></div>`).join("")}</div>
-      <p class="count" style="margin:10px 0 0">${st.n ? (st.descanso ? "🛡️ Você tem 1 descanso disponível: faltar um dia não zera a sequência." : "🛡️ Descanso desta semana já usado. Estude hoje para proteger a sequência.") : "Estude hoje para acender a sua sequência."}</p></section>
+      <p class="count" style="margin:10px 0 0">${st.n ? "O calendário registra sua presença. Descansar não apaga respostas, XP ou conquistas; não é preciso compensar amanhã." : "Cada dia de estudo conta, mesmo com um bloco pequeno. A sugestão de 5 dias não é uma obrigação."}</p></section>
 
     ${(() => { const n = modoCards("noite").length; return new Date().getHours() >= 19 && n ? `<section class="panel" style="border-left:5px solid #5b6f8f"><div class="ph"><h3>🌙 Antes de dormir</h3><span class="count">5 minutos</span></div><p style="margin:0 0 10px">Revise os ${plural(n, "cartão", "cartões")} que você errou ou achou difícil hoje. Recuperar a informação antes de dormir ajuda o sono a consolidá-la.</p><button class="btn primary" data-modo="noite">Revisar agora</button></section>` : ""; })()}
     <section class="panel" style="display:flex;justify-content:space-between;align-items:center;gap:10px"><div><b>📚 Modos de estudo</b><p class="count" style="margin:4px 0 0">2ª fase, tema, lei seca, intercalado, erros, pares, ouvir e mais.</p></div><button class="btn primary small" id="goEstudar">Abrir →</button></section>
 
+    <details class="day-details" id="hojeExplorar" ${S.hojeExplorar ? "open" : ""}><summary>Explorar conteúdos e acompanhar disciplinas</summary>
     ${des ? `<section class="panel" style="border-left:5px solid ${discColor(des.d.id)}"><div class="ph"><h3>🎯 Desafio do dia</h3><span class="badge ${des.ok ? "zero" : ""}">${des.ok ? "cumprido +30 XP" : "+30 XP"}</span></div>
       <p style="margin:0 0 8px">Acerte <b>${des.meta}</b> cartões de ${discIco(des.d.id)} <b>${esc(des.d.nome)}</b>.</p>
       <div class="stack"><i class="s2" style="width:${Math.min(100, des.feitas / des.meta * 100)}%;background:${discColor(des.d.id)}"></i></div><p class="count" style="margin:6px 0 0">${Math.min(des.feitas, des.meta)}/${des.meta}</p></section>` : ""}
 
-    ${weak.length ? `<section class="panel"><div class="ph"><h3>Seus pontos fracos</h3><span class="count">onde a memória está mais frágil</span></div>
+    ${weak.length ? `<section class="panel"><div class="ph"><h3>Pontos para reforçar</h3><span class="count">prioridades possíveis de revisão</span></div>
       ${weak.map((w, i) => `<div class="weak"><span class="wi" style="background:${discColor(w.disc)}22;color:${discColor(w.disc)}">${discIco(w.disc)}</span>
         <div class="wt"><b>${esc(w.tema)}</b><div class="bar"><i class="${w.r >= .85 ? "hi" : w.r >= .6 ? "mid" : "lo"}" style="width:${Math.round(w.r * 100)}%"></i></div></div>
         <span class="mono count">${Math.round(w.r * 100)}%</span><button class="btn small" data-weak="${i}">Treinar</button></div>`).join("")}</section>` : ""}
@@ -4013,15 +4087,18 @@ function renderHoje() {
     </table></div>
     ${todas ? `<p class="count" style="margin-top:6px">Os 40 temas de maior incidência entre todas as disciplinas. Toque numa disciplina acima (ou no botão ao lado) para ver todos os temas dela.</p>` : ""}
     <p class="count" style="margin-top:10px">Incidência estimada para provas de Defensoria (provas comentadas de várias DPEs, estatísticas públicas de cursinhos e as questões reais do app), calibrada em outubro de 2026. Os cartões novos seguem a incidência: o que mais cai entra primeiro. “Memória hoje” é a chance estimada de você lembrar agora (verde: firme, amarelo: atenção, vermelho: revise).</p>
-    <div class="tip"><span>💡</span><div>${esc(DICAS[t % DICAS.length])}</div></div>`;
+    <div class="tip"><span>💡</span><div>${esc(DICAS[t % DICAS.length])}</div></div></details>`;
   $("#start")?.addEventListener("click", startSession);
+  $("#hojeLeve")?.addEventListener("click", () => { definirMetaDiaria(5, true); startSession({ leve: true }); });
+  document.querySelectorAll("[data-meta]").forEach(b => b.addEventListener("click", () => { definirMetaDiaria(+b.dataset.meta); renderHoje(); }));
+  $("#hojeExplorar")?.addEventListener("toggle", e => { S.hojeExplorar = e.target.open; });
   document.querySelectorAll(".dcard").forEach(b => b.addEventListener("click", () => { S.hojeDisc = b.dataset.d; S.temasTodas = false; renderHoje(); }));
   document.querySelectorAll("#temSeg button").forEach(b => b.addEventListener("click", () => { S.temasTodas = b.dataset.v === "1"; renderHoje(); }));
   document.querySelectorAll("[data-modo]").forEach(b => b.addEventListener("click", () => startModo(b.dataset.modo)));
   $("#goEstudar")?.addEventListener("click", () => { S.session = null; go("sessao"); });
   $("#instGo")?.addEventListener("click", instalarApp);
   $("#instX")?.addEventListener("click", () => { ensureAj(); S.ajustes.instalarOculto = true; queue("ajustes"); renderHoje(); });
-  try { if (navigator.setAppBadge) { restante ? navigator.setAppBadge(restante) : navigator.clearAppBadge(); } } catch (e) {}
+  try { if (navigator.setAppBadge) { dia.restantes && restante ? navigator.setAppBadge(dia.restantes) : navigator.clearAppBadge(); } } catch (e) {}
   document.querySelectorAll("[data-weak]").forEach(b => b.addEventListener("click", () => startModo("tema", weak[+b.dataset.weak])));
   $("#fsave")?.addEventListener("click", () => { const v = $("#fdate").value; if (v) { S.ajustes.prova = v; queue("ajustes"); renderHoje(); } });
 }
@@ -4032,9 +4109,8 @@ function sugNota(u, s) {   // nota sugerida: botão destacado e espaço/Enter
 }
 function calibSessaoHtml(s) {   // confiança × acerto só desta sessão (não grava nada)
   const k = s.cal; if (!k || k[0][0] + k[1][0] + k[2][0] < 5) return "";
-  const L = ["Chutei", "Acho", "Tenho certeza"], txt = [2, 1, 0].filter(i => k[i][0]).map(i => `“${L[i]}”: ${k[i][1]} de ${k[i][0]} certos`).join(" · ");
-  const obs = k[2][0] >= 5 ? (k[2][1] / k[2][0] < .85 ? "Algumas certezas falharam; elas já estão em Erros com certeza." : "Sua certeza bateu com o acerto.") : "";
-  return `<p class="sub">Confiança × acerto nesta sessão: ${txt}. ${obs}</p>`;
+  const L = ["Chutei", "Acho", "Tenho certeza"], txt = [2, 1, 0].filter(i => k[i][0]).map(i => `“${L[i]}”: ${k[i][1]} de ${k[i][0]} resultados positivos`).join(" · ");
+  return `<p class="sub">Confiança × resultado nesta sessão: ${txt}. Há correção por gabarito e autoavaliação; acertos imediatos não comprovam retenção futura.</p>`;
 }
 let pausaTimer = null;
 function renderPausa(s) {   // pausa curta sugerida no meio da sessão
@@ -4061,7 +4137,8 @@ function renderSession() {
     let liq = 0, pctSim = 0;
     if (sim) { liq = s.sim.c - s.sim.e; pctSim = Math.max(0, Math.round(liq / Math.max(1, s.queue.length) * 100)); if (!s.finalized) { s.finalized = true; S.ajustes.simulados = (S.ajustes.simulados || 0) + 1; S.ajustes.simBest = Math.max(S.ajustes.simBest || 0, pctSim); queue("ajustes"); checkConq(); } }
     const conf = tot ? [...Array(28)].map((_, i) => `<i style="left:${Math.round(Math.random() * 100)}%;background:${["var(--accent)", "var(--amber)", "var(--info)", "var(--ok)", "var(--bad)"][i % 5]};animation-delay:${(Math.random() * .8).toFixed(2)}s"></i>`).join("") : "";
-    const titulo = sim ? (pctSim >= 70 ? "Meta de 70% líquido atingida!" : "Simulado concluído") : ac >= .8 ? "Excelente sessão!" : ac >= .5 ? "Boa sessão, continue assim!" : "Sessão concluída: o que errou volta para fixar";
+    const dia = rotinaDiaria();
+    const titulo = sim ? (pctSim >= 70 ? "Meta de 70% líquido atingida!" : "Simulado concluído") : s.modo === "plano" ? (dia.concluida ? "Você cuidou da sua meta de hoje" : "Bloco de foco concluído") : ac >= .8 ? "Excelente sessão!" : ac >= .5 ? "Boa sessão, continue assim!" : "Sessão concluída: o que errou volta para fixar";
     $("#main").innerHTML = `${s.pendErr ? errBarHtml() : ""}<div class="done"><div class="conf" aria-hidden="true">${conf}</div>
       <div class="onb-art">${mascote(nv.stage, "feliz", 130)}</div>
       <p class="big">${titulo}</p>
@@ -4071,9 +4148,9 @@ function renderSession() {
       ${calibSessaoHtml(s)}
       <div class="xp" style="max-width:320px;margin:10px auto 0"><div class="xp-top"><span>${esc(nv.nome)} · nível ${nv.lvl}</span><span class="mono">${nv.x - nv.lo}/${nv.hi - nv.lo}</span></div><div class="xpbar light"><i style="width:${Math.round(nv.pct * 100)}%"></i></div></div>
       ${s.modo === "tese2f" && r[1] ? `<p class="sub">Os casos fracos voltam nas próximas revisões para você reescrever com calma.</p>` : ""}
-      ${nRest ? `<p class="sub" style="margin-top:12px">Bloco concluído. Ainda há ${plural(nRest, "cartão", "cartões")} para hoje.${s.sugPausa ? "" : " Faça uma pausa de 5 minutos (levante, beba água, olhe para longe) e, se quiser, comece outro bloco."}</p>`
+      ${s.modo === "plano" ? `<p class="sub" style="margin-top:12px">${dia.feitos} cartões diferentes estudados hoje, de uma meta escolhida de ${dia.meta}. ${dia.concluida ? "Pode encerrar e descansar; a fila restante continua salva." : "Esse esforço já conta. Se quiser, faça outro bloco pequeno ou retome em outro dia."}</p><p class="count">Tentativas e XP registram atividade, não comprovam domínio do conteúdo.</p>`
         : `<p class="sub" style="margin-top:12px">${amanha ? `Amanhã voltam ${plural(amanha, "cartão", "cartões")} para você reforçar.` : "Volte amanhã para continuar."}</p>`}
-      <div class="row" style="justify-content:center">${nRest ? `<button class="btn primary" id="maisBloco">Mais um bloco</button>` : ""}<button class="btn${nRest ? "" : " primary"}" id="toHoje">Voltar para Hoje</button><button class="btn" id="maisModos">Outro modo</button><button class="btn" id="shareBtn">Compartilhar</button></div></div>`;
+      <div class="row" style="justify-content:center"><button class="btn primary" id="toHoje">${s.modo === "plano" ? "Encerrar por hoje" : "Voltar para Hoje"}</button>${nRest ? `<button class="btn" id="maisBloco">Outro bloco (opcional)</button>` : ""}<button class="btn" id="maisModos">Outro modo</button><button class="btn" id="shareBtn">Compartilhar</button></div></div>`;
     $("#toHoje").onclick = () => go("hoje"); $("#maisBloco")?.addEventListener("click", startSession); $("#maisModos").onclick = () => { S.session = null; renderSession(); }; $("#shareBtn").onclick = compartilhar; bindErrBar(); flush(); sincronizarSuave(true);
     if (tot && !s.celebrated) { s.celebrated = true; buzz([20, 40, 20]); if ([3, 7, 14, 30, 60, 100].includes(st.n)) toast(`🔥 ${st.n} dias seguidos! Sequência e tanto.`); }
     return;
@@ -4501,9 +4578,10 @@ function renderAjustes() {
       <div class="field"><label for="a-prova">Data da prova objetiva</label>
         <input id="a-prova" type="date" value="${esc(a.prova)}">
         <span class="hint">Edital da DPE/RN ainda não publicado. Com a data, nenhum intervalo passa do dia da prova e a prioridade sobe nos últimos 6 meses.</span></div>
-      <div class="field"><label for="a-min">Minutos por dia</label>
+      <div class="field"><label for="a-meta">Meta habitual: cartões diferentes por dia</label><input id="a-meta" type="number" min="5" max="50" step="1" value="${normalizarMetaDiaria(a.metaDiaria)}"><span class="hint">Padrão inicial: 10. Repetir um cartão não duplica progresso. Esta escolha não aumenta com a fila.</span></div>
+      <div class="field"><label for="a-min">Tempo disponível por dia (minutos)</label>
         <input id="a-min" type="number" min="5" max="240" step="5" value="${a.minutos}">
-        <span class="hint">O app calcula quantos cartões novos cabem depois das revisões (cerca de 15 s por revisão e 40 s por cartão novo).</span></div>
+        <span class="hint">Limite de planejamento, não uma obrigação. Cada bloco tem até 10 cartões e uma estimativa adaptada ao ritmo do seu histórico; a meta de cartões é escolhida separadamente.</span></div>
       <div class="field"><label for="a-novos">Limite de cartões novos por dia</label>
         <input id="a-novos" type="number" min="0" max="100" value="${a.novosMax}"></div>
       <div class="field"><label for="a-ret">Meta de retenção</label>
@@ -4530,7 +4608,8 @@ function renderAjustes() {
   $("#aj").onsubmit = e => {
     e.preventDefault();
     const dsel = DECK.disciplinas.filter(d => $("#a-d-" + d.id).checked).map(d => d.id);
-    S.ajustes = { ...S.ajustes, som: $("#a-som").checked, vibra: $("#a-vib").checked, disciplinas: dsel.length === DECK.disciplinas.length ? null : dsel, estado: $("#a-estado").value, prova: $("#a-prova").value, minutos: Math.max(5, +$("#a-min").value || 30), novosMax: Math.max(0, +$("#a-novos").value || 0), retencao: +$("#a-ret").value };
+    S.ajustes = { ...S.ajustes, som: $("#a-som").checked, vibra: $("#a-vib").checked, disciplinas: dsel.length === DECK.disciplinas.length ? null : dsel, estado: $("#a-estado").value, prova: $("#a-prova").value, metaDiaria: normalizarMetaDiaria($("#a-meta").value), minutos: Math.min(240, Math.max(5, +$("#a-min").value || 10)), novosMax: Math.max(0, +$("#a-novos").value || 0), retencao: +$("#a-ret").value };
+    delete S.ajustes.metaHoje;
     queue("ajustes"); $("#aj-ok").textContent = "Ajustes salvos.";
   };
   $("#exp").onclick = exportBackup;
@@ -4820,4 +4899,7 @@ try { const t = localStorage.getItem("revisao-dpe-tema"); if (t === "claro" || t
 })();
 </script>
 
+<script src="arquivos/metacognicao.js"></script>
+<script src="arquivos/cronograma.js"></script>
+<script src="arquivos/interface.js"></script>
 </body></html>
