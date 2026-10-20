@@ -64,3 +64,15 @@ Conferência em Chromium com dados fictícios não certifica Safari/iPhone, tecl
 ## Limites desta etapa
 
 A validação confirma estrutura e integridade dos vínculos, não atesta a fidelidade editorial do texto frente a retificações ou aos documentos-fonte. Rubricas e tópicos equivalentes continuam separados por edital para preservar proveniência e localizadores. Nenhum conteúdo protegido, serviço, dado de estudante ou publicação foi alterado; a branch permanece local para revisão.
+
+# Etapa 8 — carregamento inicial e acessibilidade do gate
+
+- [x] **Shell enxuto.** O baralho cifrado foi separado em `deck.enc`; os 1,87 MB de app-source saíram do HTML para `app-src.txt`. `build.mjs` gera os três artefatos. O gate só executa o app-source e os módulos lazy após validar/descriptografar o conteúdo; o service worker continua incluindo os arquivos essenciais no cache offline.
+- [x] **Publicação e integridade.** `app-src.txt` entrou no CORE, no artefato do Pages e na validação de sintaxe. O deploy exige `deck.enc` no checkout; o artefato binário não descriptografado foi conferido contra o ciphertext do `index.html` público da base e só difere pela quebra de linha terminal, sem alterar o conteúdo cifrado. Cache do gate/service worker sincronizado em `review-dpe-assuntos-v4`. Atualizado o README sobre artefatos e ciclo offline.
+- [x] **Acessibilidade preservada/melhorada.** Campos de e-mail e senha têm `<label>` associado e o botão Entrar mede no mínimo 44 px. Chromium confirmou ausência de overflow em 375, 768, 1280 e 1920 px; a captura móvel conserva a disposição da tela.
+- [x] **Regressão e desbloqueio.** **125/125 testes**, incluindo geração dos três artefatos por fixture de build, sincronização do cache, reconstrução da fonte a partir de `app-src.txt`, `npm run check`, compilação do app-source e validador do site real aprovados. Teste E2E com ciphertext e chave fictícios confirmou a leitura de `deck.enc`, execução de `app-src.txt` depois do gate e sua gravação no CacheStorage v4, sem erros no console.
+- [x] **Medição comparativa isolada.** Chromium headless, perfis novos, mesmo servidor local e rede 4G simulada (150 ms de latência, 500 kB/s de download, sem compressão HTTP): documento HTML de 5.842.326 para 128.807 bytes (−97,8%); login utilizável de 12,09 s para 0,925 s (13,1× mais rápido); `loadEventEnd` de 18,18 s para 1,149 s (−93,7%). São resultados sintéticos de uma amostra, não telemetria nem garantia de produção.
+
+## Limites desta etapa
+
+A validação de desbloqueio usa baralho e chave descartáveis, não a senha, a conta ou o baralho real. O teste de performance é local, não mede compressão/CDN, LCP/INP/CLS de usuários reais nem autenticação da API de produção. `app-src.txt` é código público, não conteúdo de estudo; o conteúdo continua em `deck.enc` cifrado. Nenhuma credencial foi usada.

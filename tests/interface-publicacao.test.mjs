@@ -9,7 +9,8 @@ async function fixture(t, op = {}) {
   const pasta = await mkdtemp(join(tmpdir(), 'review-design-publicacao-'));
   t.after(() => rm(pasta, { recursive: true, force: true }));
   await mkdir(join(pasta, 'arquivos'));
-  const core = op.core || ['./', 'index.html', 'arquivos/metacognicao.js', 'arquivos/interface.js', 'arquivos/interface.css'];
+  await writeFile(join(pasta, 'deck.enc'), JSON.stringify({ v: 2, z: 'gzip', it: 100000, s: 'AAAAAAAAAAAAAAAAAAAAAA==', iv: 'AAAAAAAAAAAAAAAA', ct: 'AAAAAAAAAAAAAAAAAAAAAA==' }));
+  const core = op.core || ['./', 'index.html', 'deck.enc', 'arquivos/metacognicao.js', 'arquivos/interface.js', 'arquivos/interface.css'];
   const cssLink = op.cssLink ?? '<link rel="stylesheet" href="arquivos/interface.css">';
   const jsTag = op.jsTag ?? '<script src="arquivos/interface.js"></script>';
   await writeFile(join(pasta, 'sw.js'), `const CORE = ${JSON.stringify(core)}; self.addEventListener('install',()=>{});\n`);
@@ -22,7 +23,7 @@ async function fixture(t, op = {}) {
 
 test('publicação aceita o design completo e reconhece atributos reais variados', async t => {
   const pasta = await fixture(t, { cssLink: "<link media='all' REL='stylesheet' href='./arquivos/interface.css'>", jsTag: "<script defer data-src='fixture' SRC='./arquivos/interface.js'></script>" });
-  assert.equal(validarSite(pasta).core.length, 5);
+  assert.equal(validarSite(pasta).core.length, 6);
 });
 
 test('publicação falha se o CSS da interface estiver ausente ou vazio', async t => {
@@ -49,6 +50,6 @@ test('publicação rejeita referência parcial, duplicada e data-src no lugar de
 });
 
 test('publicação exige as dependências visuais também no cache offline', async t => {
-  const pasta = await fixture(t, { core: ['./', 'index.html', 'arquivos/metacognicao.js', 'arquivos/interface.js'] });
+  const pasta = await fixture(t, { core: ['./', 'index.html', 'deck.enc', 'arquivos/metacognicao.js', 'arquivos/interface.js'] });
   assert.throws(() => validarSite(pasta), /CORE offline.*interface.css/);
 });
