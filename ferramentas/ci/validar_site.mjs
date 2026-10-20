@@ -4,6 +4,7 @@ import { readFileSync, statSync } from "node:fs";
 import { basename, dirname, extname, isAbsolute, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import vm from "node:vm";
+import { validarFontesCatalogo } from "./validar_conteudo.mjs";
 
 const OPÇÕES_PADRÃO = Object.freeze({
   serviceWorker: "sw.js",
@@ -212,8 +213,9 @@ export function validarSite(pastaSite, opções = {}) {
       if (scripts.indexOf(refsPerfil[0]) > posiçãoModulo) throw erro("cronograma-pesos.js precisa carregar antes de cronograma.js.");
       validarSintaxeJavaScript(lerTexto(caminhoDentroDaPasta(site, perfil, "catálogo de pesos"), "catálogo de pesos"), perfil, "catálogo de pesos");
     }
-    const conteúdo = "arquivos/cronograma-conteudo.js", motor = "arquivos/cronograma-motor.js";
-    const dependências = [conteúdo, motor];
+    const taxonomia = "arquivos/cronograma-taxonomia.js", conteúdo = "arquivos/cronograma-conteudo.js", motor = "arquivos/cronograma-motor.js";
+    const precisaTaxonomia = js.includes("DPE_DISCIPLINAS_CANONICAS") || scripts.some(s => referenciaÉ(atributo(s.abertura, "src"), taxonomia)) || core.some(e => referenciaÉ(e, taxonomia));
+    const dependências = precisaTaxonomia ? [taxonomia, conteúdo, motor] : [conteúdo, motor];
     if (js.includes("DPE_CONTEUDOS_EDITAIS") || dependências.some(f => scripts.some(s => referenciaÉ(atributo(s.abertura, "src"), f)) || core.some(e => referenciaÉ(e, f)))) {
       const posiçãoModulo = scripts.findIndex(s => referenciaÉ(atributo(s.abertura, "src"), scriptCronograma));
       let anterior = -1;
@@ -222,9 +224,22 @@ export function validarSite(pastaSite, opções = {}) {
         if (refs.length !== 1) throw erro(`O cronograma por assuntos precisa de uma referência única a ${f}.`);
         if (!core.some(e => referenciaÉ(e, f))) throw erro(`O cronograma por assuntos precisa estar no CORE offline: ${f}.`);
         const posição = scripts.indexOf(refs[0]);
-        if (posição >= posiçãoModulo || posição <= anterior) throw erro("Ordem obrigatória: cronograma-conteudo.js, cronograma-motor.js, cronograma.js.");
+        if (posição >= posiçãoModulo || posição <= anterior) throw erro(`Ordem obrigatória: ${dependências.join(", ")}, ${scriptCronograma}.`);
         anterior = posição;
         validarSintaxeJavaScript(lerTexto(caminhoDentroDaPasta(site, f, "dependência de assuntos"), f), f, f);
+      }
+      if (precisaTaxonomia) {
+        const pesosDeclarados = js.includes("DPE_PESOS_EDITAIS") || refsPerfil.length || core.some(e => referenciaÉ(e, perfil));
+        try {
+          validarFontesCatalogo({
+            fonteTaxonomia: lerTexto(caminhoDentroDaPasta(site, taxonomia, "taxonomia"), "taxonomia"),
+            fonteProgramas: lerTexto(caminhoDentroDaPasta(site, conteúdo, "catálogo de editais"), "catálogo de editais"),
+            fontePesos: pesosDeclarados ? lerTexto(caminhoDentroDaPasta(site, perfil, "catálogo de pesos"), "catálogo de pesos") : undefined,
+            nomes: { taxonomia, programas: conteúdo, pesos: perfil },
+          });
+        } catch (cause) {
+          throw erro(`Contrato estrutural do conteúdo inválido: ${cause.message}`, cause);
+        }
       }
     }
     if (!css.trim()) throw erro("cronograma.css não pode estar vazio.");

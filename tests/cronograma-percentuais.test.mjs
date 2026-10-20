@@ -25,6 +25,7 @@ function ambiente() {
   run(app);
   run(`S.mode = 'local'; S.ajustes.metaOn = false; S.ajustes.onboard = true; S.ajustes.som = false; S.ajustes.vibra = false; S.ajustes.minutos = 10; S.ajustes.novosMax = 10; ensureAj();`);
   if (perfis) run(perfis);
+  run(readFileSync(new URL('../arquivos/cronograma-taxonomia.js', import.meta.url), 'utf8'));
   run(readFileSync(new URL('../arquivos/cronograma-conteudo.js', import.meta.url), 'utf8'));
   run(readFileSync(new URL('../arquivos/cronograma-motor.js', import.meta.url), 'utf8'));
   run(cronograma);

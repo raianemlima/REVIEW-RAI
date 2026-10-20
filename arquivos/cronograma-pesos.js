@@ -1126,10 +1126,9 @@ window.DPE_PESOS_EDITAIS = {
         "subjects": [
           "direito_constitucional",
           "direitos_humanos",
-          "direito_filosofia_formacao_humanistica",
           "direito_da_crianca_e_adolescente"
         ],
-        "evidencia": "Cap. 11.1, p. 27: 21 questões compartilhadas entre Direito Constitucional, Direitos Humanos e Grupos Vulnerabilizados e Direito da Infância e da Juventude. Formação Humanística é mapeamento do catálogo para conteúdo de grupos vulnerabilizados."
+        "evidencia": "Cap. 11.1, p. 27: 21 questões compartilhadas entre Direito Constitucional, Direitos Humanos e Grupos Vulnerabilizados e Direito da Infância e da Juventude. Formação Humanística é mapeada no catálogo para conteúdo de grupos vulnerabilizados; o programa RS não tem ID canônico autônomo para essa área."
       },
       {
         "label": "Bloco II",
