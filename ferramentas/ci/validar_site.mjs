@@ -192,6 +192,23 @@ export function validarSite(pastaSite, opções = {}) {
     if (!css.trim()) throw erro("interface.css não pode estar vazio.");
   }
 
+  const scriptDashboard = "arquivos/dashboard-editais.js", cssDashboard = "arquivos/dashboard-editais.css";
+  const refsDashboard = scriptsDoHtml(index).filter(s => referenciaÉ(atributo(s.abertura, "src"), scriptDashboard));
+  const linksDashboard = [...index.matchAll(/<link\b[^>]*>/gi)].map(m => m[0]).filter(tag => referenciaÉ(atributo(tag, "href"), cssDashboard) && (atributo(tag, "rel") || "").toLowerCase() === "stylesheet");
+  const temDashboard = refsDashboard.length || linksDashboard.length || core.some(e => referenciaÉ(e, scriptDashboard) || referenciaÉ(e, cssDashboard));
+  if (temDashboard) {
+    if (refsDashboard.length !== 1 || linksDashboard.length !== 1) throw erro("O dashboard precisa de uma referência única a dashboard-editais.js e dashboard-editais.css no HTML.");
+    for (const f of [scriptDashboard, cssDashboard]) if (!core.some(e => referenciaÉ(e, f))) throw erro(`O dashboard precisa estar no CORE offline: ${f}.`);
+    const scripts = scriptsDoHtml(index);
+    const posição = scripts.findIndex(s => referenciaÉ(atributo(s.abertura, "src"), scriptDashboard));
+    const posiçãoInterface = scripts.findIndex(s => referenciaÉ(atributo(s.abertura, "src"), scriptVisual));
+    const posiçãoPesos = scripts.findIndex(s => referenciaÉ(atributo(s.abertura, "src"), "arquivos/cronograma-pesos.js"));
+    const posiçãoConteúdo = scripts.findIndex(s => referenciaÉ(atributo(s.abertura, "src"), "arquivos/cronograma-conteudo.js"));
+    if (posição <= posiçãoInterface || posição <= posiçãoPesos || posição <= posiçãoConteúdo) throw erro("dashboard-editais.js precisa carregar depois de interface.js e dos catálogos documentais.");
+    validarSintaxeJavaScript(lerTexto(caminhoDentroDaPasta(site, scriptDashboard, "dashboard"), "dashboard"), scriptDashboard, "dashboard-editais.js");
+    if (!lerTexto(caminhoDentroDaPasta(site, cssDashboard, "estilos do dashboard"), "estilos do dashboard").trim()) throw erro("dashboard-editais.css não pode estar vazio.");
+  }
+
   const scriptCronograma = "arquivos/cronograma.js", cssCronograma = "arquivos/cronograma.css";
   const refsCronograma = scriptsDoHtml(index).filter(s => referenciaÉ(atributo(s.abertura, "src"), scriptCronograma));
   const linksCronograma = [...index.matchAll(/<link\b[^>]*>/gi)].map(m => m[0]).filter(tag => referenciaÉ(atributo(tag, "href"), cssCronograma) && (atributo(tag, "rel") || "").toLowerCase() === "stylesheet");
