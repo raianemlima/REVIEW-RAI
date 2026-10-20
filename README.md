@@ -39,6 +39,8 @@ Em **Cronograma**, o aluno escolhe um edital de Defensoria, horas por semana, di
 
 Na aba **Progresso**, o **Relatório dos editais** resume a frequência das matérias e os pesos diretamente observados, com filtro por concurso e atalho para usar o edital no Cronograma. O [relatório de matérias e pesos](docs/RELATORIO-MATERIAS-E-PESOS-DPE.md) explica a amostra, a mediana, as faixas e por que pesos por grupo não são repartidos artificialmente.
 
+O arquivo interativo [Direitos Humanos · DPESP](direitos-humanos-dpesp.html) separa o núcleo recorrente dos programas e as ampliações do X Concurso. Ele funciona offline, tem busca, filtros, modo escuro, impressão e checklist salvo apenas no navegador.
+
 ## Interface integrada ao design fornecido
 
 O menu lateral no computador, a barra inferior no celular e o painel de estudo seguem a referência de MelhorarDesignDoApp, usando os controles e dados reais deste aplicativo. A camada visual não troca o FSRS, o login, o histórico ou os backups. Consulte o [guia da interface](docs/INTERFACE.md) para conhecer a integração e o alcance desta primeira etapa.

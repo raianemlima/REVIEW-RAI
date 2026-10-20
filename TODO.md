@@ -62,3 +62,15 @@ Conferência em Chromium com dados fictícios não certifica Safari/iPhone, tecl
 - [x] **Integração segura.** Carregar qualquer novo módulo uma única vez, validar sintaxe/cache/artefato público, preservar conteúdo protegido e não alterar `S.ajustes`, `S.cards`, `S.logs` ou o cronograma automaticamente. **Evidência:** `npm test` 109/109, `npm run check`, `git diff --check`, validador público com 31 entradas no CORE e invariantes de `gate.js`, `build.mjs` e `app-src` iguais à base `afdadf9`; dashboard e CSS têm referência única e cache offline.
 - [x] **Relatório acessível na publicação.** Servir junto do site o relatório metodológico que o dashboard referencia, sem copiar documentação privada ou arquivos protegidos para o artefato público. **Evidência:** workflow copia somente `docs/RELATORIO-MATERIAS-E-PESOS-DPE.md` para `_site/docs/`; artefato local validou o arquivo com 14.995 bytes e o link relativo do módulo.
 - [x] **Evidência visual e regressão.** Testar a rota com dados fictícios em 390×844, 768×1024, 1280×720 e 1440×900, conferir filtros/CTA/teclado/tema e manter testes existentes verdes. Sem acesso a contas de estudantes, produção, publicação ou merge automático. **Evidência:** aceitação CDP em seis dimensões, filtro `ma-2026` retornando fonte e questões, CTA abrindo Cronograma; suíte focada 8/8 e suíte completa 109/109. Nenhuma conta, segredo, publicação, merge ou dado de estudante foi usado.
+
+
+# Etapa 8 — arquivo interativo Direitos Humanos · DPESP
+
+- [x] **Recorrência didática.** Exibir os dez eixos temáticos mais úteis do corpus, com frequência em 17 programas e nota explícita de que a métrica é presença em edital, não número de questões.
+- [x] **Comparação IX/X.** Separar nove conteúdos novos ou significativamente ampliados no X Concurso, com item do Anexo II, diferença em relação ao IX e orientação de estudo.
+- [x] **Marca e interação.** Usar a logo real do Review DPE, manter os tokens aprovados, oferecer abas, busca, filtros, detalhes expansíveis, modo escuro, impressão e checklist persistente.
+- [x] **Fontes.** Linkar o Diário Oficial do X Concurso, o edital oficial do IX Concurso e a notícia oficial da DPESP; registrar no arquivo a diferença entre novidade documental e assunto absolutamente inédito.
+- [x] **Verificação.** Sintaxe embutida aprovada; 3 testes interativos verdes; conferência CDP em 1440, 390 e 320 px sem overflow; abas, busca e checklist funcionando.
+- [x] **Publicação segura.** Workflow preparado para copiar o HTML para o Pages junto da pasta `icons`; o arquivo não lê o baralho protegido e não altera o progresso do app.
+
+Limites: o recorte temático é uma classificação didática por presença de termos e tópicos no programa; não é contagem de questões aplicadas. A comparação não substitui retificações posteriores do edital nem a conferência da legislação e jurisprudência vigentes.
