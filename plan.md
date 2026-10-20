@@ -156,3 +156,26 @@ Não alterar IDs de cartões, FSRS, login, sincronização, backup, chaves `S.aj
 ## Maior risco e fallback
 
 O maior risco é aumentar a densidade do Progresso e esconder novamente a ação principal. A entrega reduz esse risco colocando o dashboard no início de Progresso, com resumo curto e detalhes progressivos; conquistas e estatísticas antigas continuam abaixo. Se a densidade precisar ser reduzida no futuro, o painel pode virar uma subvista recolhida sem alterar contratos de estudo ou dados.
+
+
+# Etapa 8 — arquivo interativo Direitos Humanos · DPESP
+
+## Escopo
+
+Criar um arquivo HTML autônomo, com a marca real do Review DPE, para transformar o corpus de programas em uma ferramenta didática. O arquivo deve separar recorrência temática de novidade documental, sem apresentar presença em edital como contagem de questões ou promessa de aprovação.
+
+## Conteúdo verificado
+
+- Corpus local: 17 editais com disciplina de Direitos Humanos no recorte de 18 editais de carreira.
+- Novo documento: X Concurso da DPESP, publicado no Diário Oficial de São Paulo em 09/10/2026.
+- Comparação histórica: edital oficial do IX Concurso da DPESP.
+- O X Concurso prevê duas questões dissertativas de Direitos Humanos, valendo cinco pontos cada, na Terceira Prova Escrita.
+- “Novo” no material significa eixo não destacado no IX ou ampliação textual relevante no X; quando o IX já trazia o assunto em forma geral, isso é rotulado como ampliação, não como surgimento absoluto.
+
+## Contratos
+
+O arquivo é independente e offline, usa `icons/icon-192.png`, não modifica o app, não grava dados acadêmicos e salva apenas o checklist no `localStorage` do navegador. A publicação copia o HTML junto dos assets existentes; fontes oficiais ficam como links de conferência.
+
+## Aceitação
+
+Testar sintaxe embutida, recorrência, comparação IX/X, busca, filtros, abas, tema, impressão e checklist. Conferir visualmente 1440, 390 e 320 pixels sem overflow horizontal. Entregar em branch própria, preferencialmente como PR rascunho, sem merge ou publicação automática.
