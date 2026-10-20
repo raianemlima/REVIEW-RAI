@@ -179,3 +179,22 @@ O arquivo é independente e offline, usa `icons/icon-192.png`, não modifica o a
 ## Aceitação
 
 Testar sintaxe embutida, recorrência, comparação IX/X, busca, filtros, abas, tema, impressão e checklist. Conferir visualmente 1440, 390 e 320 pixels sem overflow horizontal. Entregar em branch própria, preferencialmente como PR rascunho, sem merge ou publicação automática.
+
+
+# Etapa 9 — comparação DPESP × DPE-RN
+
+## Escopo
+
+Ampliar o arquivo interativo de Direitos Humanos com uma terceira visão comparativa para quem fará o X Concurso da DPESP e o III Concurso da DPE-RN. A comparação deve distinguir núcleo comum, ênfases específicas e formato de cobrança, sem transformar a presença de um tema em previsão de questão.
+
+## Fonte e limite documental
+
+Usar a Resolução nº 344, de 14 de março de 2025, do Conselho Superior da DPE-RN, publicada no DOE/RN nº 15.871, em 15 de março de 2025, fornecida em PDF pela usuária. No bloco de Direitos Humanos, o documento legível salta da numeração 2 para a 6; os itens 3–5 não serão reconstruídos por inferência. A ferramenta destacará a lacuna para conferência em edital/retificação posterior.
+
+## Síntese esperada
+
+O DPE-RN concentra o bloco visível em teoria geral, ordenamento brasileiro, controle de convencionalidade, antidiscriminação, igualdade, racismo, deficiência, LGBTQIAPN+, população em situação de rua, ações afirmativas, políticas públicas, grupos vulnerabilizados, atuação da Defensoria e jurisprudência STJ/STF. O DPESP X é mais extenso e internacional, incluindo sistemas de proteção, processo internacional, humanitário/refugiados, direitos em espécie, democracia, socioambiental e tecnologia.
+
+## Aceitação
+
+Testar a terceira aba, cards de sobreposição, diferenças específicas e alerta da lacuna 3–5; manter busca/filtros/checklist e o layout sem overflow em telas móveis. Não adicionar o PDF ao repositório nem modificar o app protegido.
