@@ -6,6 +6,16 @@ O cronograma deixou de repetir uma lista de disciplinas com poucos minutos todos
 
 O catálogo reúne **18 editais de carreira, de 16 estados**, com 253 rubricas e 5.364 tópicos/unidades extraídas, incluindo seus subtemas. O recorte dos arquivos recebidos é 2021–2026; isso não representa todos os estados brasileiros nem uma janela móvel exata de cinco anos. Foram excluídos documentos de servidores, provas isoladas e o edital antigo do RJ. Contagens de tópicos variam conforme a estrutura de cada documento: não medem dificuldade ou carga equivalente.
 
+## Contrato e manutenção do conteúdo
+
+Os dados permanecem estáticos para o app funcionar sem rede. `arquivos/cronograma-taxonomia.js` é a fonte única dos IDs canônicos, nomes, notas de cobertura, aliases de compatibilidade com o baralho e sinalização `nucleoComum`; hoje o vínculo com o baralho considera o nome e o primeiro alias, enquanto a busca de assuntos consulta o texto/rubrica, não os aliases. O núcleo inicial da interface é derivado da sinalização. `somenteUI: true` identifica uma opção de interface sem rubrica editorial associada. Hoje, 32 IDs canônicos são usados no conteúdo e uma entrada é apenas de interface.
+
+`arquivos/cronograma-conteudo.js` preserva o recorte documental por edital: `id`, `fonte`, `disciplinas` e, quando existentes, `fonteUrl` e `lacunas`. Cada rubrica conserva seu `id`, nome, `canonicais` e `topicos`; `canonicais` é um vínculo de zero ou mais IDs à taxonomia. O array pode ficar vazio quando a fonte traz uma rubrica — como Português ou legislação estadual — que não tem correspondência segura no catálogo canônico. Rubricas combinadas podem apontar para mais de um ID, sem dividir nem duplicar o texto original. Cada tópico mantém `id`, título, texto e `pagina` (texto não vazio ou inteiro positivo que identifica página/localizador), além de arrays de `leis` e `juris`, que podem estar vazios. Os perfis em `cronograma-pesos.js` apontam para IDs ligados ao conteúdo do mesmo edital; grupos sem `subjects` representam áreas da fonte sem vínculo seguro.
+
+O texto de cada edital é um registro histórico da fonte recebida, não uma cópia canônica para deduplicar. Mesmo quando textos de tópicos são iguais, mantenha cada ocorrência, ID e localizador sob seu edital; correções devem ser feitas conferindo o documento de origem, sem completar lacunas por memória. IDs de edital, rubrica e tópico são chaves estáveis usadas por planos e progresso sincronizados: não os renomeie sem migração explícita.
+
+O carregamento offline é `cronograma-taxonomia.js` → `cronograma-conteudo.js` → `cronograma-motor.js` → `cronograma.js`; os arquivos estão no CORE do service worker. A validação executa os módulos de dados em VM isolada, sem DOM, rede ou acesso ao processo, e verifica tipos, campos obrigatórios, IDs únicos e referências entre taxonomia, rubricas e pesos. Para testar localmente, use `npm ci --ignore-scripts`, `npm test` e `npm run check`; a verificação de publicação também valida o contrato quando recebe a pasta pronta do site.
+
 ## Como montar seu plano
 
 1. Abra **Cronograma**, pelo acesso em Hoje ou Ajustes. Escolha seu edital. Todas as rubricas do programa ficam disponíveis, mesmo quando não existem cartões delas no app.

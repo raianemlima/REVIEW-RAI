@@ -8,7 +8,7 @@ import { JSDOM } from "jsdom";
 
 const raiz = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const modulo = readFileSync(resolve(raiz, "arquivos/metacognicao.js"), "utf8");
-const htmlApp = readFileSync(resolve(raiz, "index.html"), "utf8");
+const htmlApp = readFileSync(resolve(raiz, "app-src.txt"), "utf8");
 
 /** Extrai uma função do HTML versionado sem carregar o baralho ou os scripts do app. */
 function funcaoReal(nome) {

@@ -1,7 +1,8 @@
-// Gera o index.html criptografado a partir do arquivo-fonte (sem criptografia).
+// Gera o shell index.html, o código público app-src.txt e o baralho cifrado deck.enc a partir do arquivo-fonte.
 // Uso: SENHA='...' node build.mjs caminho/para/fonte.html [saida.html]
 // O arquivo-fonte NÃO deve ficar no repositório.
 import { readFileSync, writeFileSync } from "node:fs";
+import { dirname, join } from "node:path";
 import { webcrypto as crypto, randomBytes } from "node:crypto";
 import { gzipSync } from "node:zlib";
 
@@ -15,7 +16,7 @@ let html = readFileSync(src, "utf8");
 const m = html.match(/^const DECK = (\{.*\});$/m);
 if (!m) throw new Error("const DECK não encontrado");
 const appStart = html.indexOf("<script>", html.indexOf(m[0]));
-const appEnd = html.lastIndexOf("</script>");
+const appEnd = html.indexOf("</script>", appStart);
 if (appStart < 0 || appEnd < appStart) throw new Error("script do app não encontrado");
 const appSrc = html.slice(appStart + 8, appEnd);
 if (/<\/script/i.test(appSrc)) throw new Error("app contém </script>");
@@ -29,18 +30,31 @@ const payload = JSON.stringify({ v: 2, z: "gzip", it: ITER, s: b64(salt), iv: b6
 
 const gate = readFileSync(new URL("./gate.js", import.meta.url), "utf8");
 // CSP: o GitHub Pages não deixa configurar cabeçalhos, então vai como <meta>. Limita para onde o app pode enviar dados (Supabase e API do GitHub).
-// 'unsafe-inline' é necessário porque o app inteiro roda em scripts inline (o baralho só existe depois de decifrado).
+// 'unsafe-inline' é necessário para o gate e para executar o app-source após o desbloqueio; o baralho só existe após decifrado.
 const CSP = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; " +
   "connect-src 'self' https://hlenhmgnqqnkjqmntnpz.supabase.co https://api.github.com; worker-src 'self'; manifest-src 'self'; media-src 'self' data: blob:; " +
   "object-src 'none'; base-uri 'none'; form-action 'none'";
 if (!/http-equiv="Content-Security-Policy"/i.test(html)) html = html.replace(/<meta charset=[^>]*>/i, m => m + `<meta http-equiv="Content-Security-Policy" content="${CSP}">`);
 if (!/http-equiv="Content-Security-Policy"/i.test(html)) throw new Error("não consegui inserir a CSP (falta <meta charset>)");
 html = html.replace(m[0], "/* baralho criptografado: ver gate */");
-const a = html.indexOf("<script>", html.indexOf("/* baralho criptografado"));
-const b = html.lastIndexOf("</script>");
+const marcador = html.indexOf("/* baralho criptografado: ver gate */");
+const a = html.indexOf("<script>", marcador + "/* baralho criptografado: ver gate */".length);
+const b = a < 0 ? -1 : html.indexOf("</script>", a);
+if (a < 0 || b < a) throw new Error("script do app não encontrado após o marcador do baralho");
 html = html.slice(0, a) +
-  `<script type="text/plain" id="app-src">${appSrc}</script>\n` +
-  `<script type="application/json" id="deck-enc">${payload}</script>\n` +
+  `<script type="text/plain" id="app-src" data-src="app-src.txt"></script>\n` +
   `<script>${gate}</script>` + html.slice(b + 9);
+
+const módulosPreguiçosos = ["arquivos/metacognicao.js", "arquivos/cronograma-pesos.js", "arquivos/cronograma-taxonomia.js", "arquivos/cronograma-conteudo.js", "arquivos/cronograma-motor.js", "arquivos/cronograma.js", "arquivos/interface.js", "arquivos/dashboard-editais.js"];
+for (const caminho of módulosPreguiçosos) {
+  const escaped = caminho.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const referência = new RegExp(`<script\\b(?=[^>]*\\bsrc=[\"'](?:\\./)?${escaped}[\"'])[^>]*>\\s*<\\/script>`, "gi");
+  const encontradas = [...html.matchAll(referência)].length;
+  if (encontradas !== 1) throw new Error(`esperava uma referência a ${caminho}, encontrei ${encontradas}`);
+  html = html.replace(referência, `<script data-lazy-src="${caminho}"></script>`);
+}
+
+writeFileSync(join(dirname(out), "deck.enc"), payload);
+writeFileSync(join(dirname(out), "app-src.txt"), appSrc);
 writeFileSync(out, html);
-console.log("ok:", out, (html.length / 1e6).toFixed(2) + " MB");
+console.log("ok:", out, (html.length / 1e6).toFixed(2) + " MB", "app-src.txt", (appSrc.length / 1e6).toFixed(2) + " MB");

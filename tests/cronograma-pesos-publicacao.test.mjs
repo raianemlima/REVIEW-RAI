@@ -9,11 +9,12 @@ async function site(t, options={}) {
   const dir=await mkdtemp(join(tmpdir(),'pesos-publicacao-'));
   t.after(()=>rm(dir,{recursive:true,force:true}));
   await mkdir(join(dir,'arquivos'));
+  await writeFile(join(dir,'deck.enc'),JSON.stringify({v:2,z:'gzip',it:100000,s:'AAAAAAAAAAAAAAAAAAAAAA==',iv:'AAAAAAAAAAAAAAAA',ct:'AAAAAAAAAAAAAAAAAAAAAA=='}));
   const perfil='<script src="arquivos/cronograma-pesos.js"></script>';
   const modulo='<script src="arquivos/cronograma.js"></script>';
   const refs=options.ordemErrada ? modulo+perfil : perfil+modulo;
   await writeFile(join(dir,'index.html'),'<html><head><link rel="stylesheet" href="arquivos/cronograma.css"></head><body><script id="app-src">const fixture=true;</script><script src="arquivos/metacognicao.js"></script>'+refs+'</body></html>');
-  const core=['./','index.html','arquivos/metacognicao.js','arquivos/cronograma.js','arquivos/cronograma.css'];
+  const core=['./','index.html','deck.enc','arquivos/metacognicao.js','arquivos/cronograma.js','arquivos/cronograma.css'];
   if(!options.semCache) core.push('arquivos/cronograma-pesos.js');
   await writeFile(join(dir,'sw.js'),'const CORE='+JSON.stringify(core)+';');
   await writeFile(join(dir,'arquivos/metacognicao.js'),'const fixtureMeta=true;');

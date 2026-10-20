@@ -5,7 +5,7 @@ import vm from 'node:vm';
 import { JSDOM } from 'jsdom';
 
 const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
-const appOriginal = html.match(/<script type="text\/plain" id="app-src">([\s\S]*?)<\/script>/)[1];
+const appOriginal = readFileSync(new URL('../app-src.txt', import.meta.url), 'utf8');
 const app = appOriginal.replace(/\nboot\(\);\s*$/, '\n');
 const motorInicio = html.indexOf('// Motor de revisão:');
 const motor = html.slice(motorInicio, html.indexOf('</script>', motorInicio));
@@ -22,6 +22,7 @@ function ambiente() {
   run(motor);
   run(app);
   run(`S.mode = 'local'; S.ajustes.metaOn = false; S.ajustes.onboard = true; S.ajustes.som = false; S.ajustes.vibra = false; S.ajustes.minutos = 10; S.ajustes.novosMax = 10; ensureAj();`);
+  run(readFileSync(new URL('../arquivos/cronograma-taxonomia.js', import.meta.url), 'utf8'));
   run(readFileSync(new URL('../arquivos/cronograma-conteudo.js', import.meta.url), 'utf8'));
   run(readFileSync(new URL('../arquivos/cronograma-motor.js', import.meta.url), 'utf8'));
   run(cronograma);

@@ -5,7 +5,7 @@ import vm from 'node:vm';
 import { JSDOM } from 'jsdom';
 
 const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
-const appOriginal = html.match(/<script type="text\/plain" id="app-src">([\s\S]*?)<\/script>/)[1];
+const appOriginal = readFileSync(new URL('../app-src.txt', import.meta.url), 'utf8');
 assert.match(appOriginal, /\nboot\(\);\s*$/);
 const app = appOriginal.replace(/\nboot\(\);\s*$/, '\n');
 const motorInicio = html.indexOf('// Motor de revisão:');

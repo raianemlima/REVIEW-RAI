@@ -156,3 +156,20 @@ Não alterar IDs de cartões, FSRS, login, sincronização, backup, chaves `S.aj
 ## Maior risco e fallback
 
 O maior risco é aumentar a densidade do Progresso e esconder novamente a ação principal. A entrega reduz esse risco colocando o dashboard no início de Progresso, com resumo curto e detalhes progressivos; conquistas e estatísticas antigas continuam abaixo. Se a densidade precisar ser reduzida no futuro, o painel pode virar uma subvista recolhida sem alterar contratos de estudo ou dados.
+
+# Etapa 8 — contrato de conteúdo e taxonomia
+
+Separar o registro semântico de disciplinas da lógica da interface, em `arquivos/cronograma-taxonomia.js`, mantendo a classificação editorial e os textos por edital em `arquivos/cronograma-conteudo.js`. Cada rubrica conserva seu identificador de origem e relaciona zero ou mais IDs canônicos; o vazio é válido para itens sem equivalência segura, e rubricas combinadas podem apontar para vários canônicos. Não deduplicar tópicos repetidos entre editais nem alterar texto, IDs ou localizadores de origem.
+
+Derivar o núcleo comum e os metadados de disciplinas do catálogo, deixando `EDITAIS_DPE` apenas com os metadados do edital e matérias canônicas derivadas do crosswalk. Adicionar validação estrutural e de referências de pesos em sandbox isolado, incluindo campos obrigatórios, unicidade de IDs e presença de referências válidas. A publicação deve carregar taxonomia, conteúdo e motor nessa ordem, incluir todos no cache offline e falhar claramente se o contrato estiver incompleto.
+
+Documentar campos, relações, proveniência, estabilidade de IDs e casos legítimos sem vínculo. Testar contra os dados reais e fixtures inválidas, preservando planos/progresso sincronizados, o baralho, FSRS e conteúdo protegido. Não migrar para CMS, não acessar dados de estudantes e não publicar nem mesclar automaticamente.
+
+
+# Etapa 9 — carregamento inicial e acessibilidade do gate
+
+Reduzir o custo perceptível da tela pública de entrada sem redesign nem alteração do FSRS, dos dados de estudante, do esquema de armazenamento ou da autenticação. O HTML deve conter somente o shell/gate e referências. Separar o baralho cifrado em `deck.enc` e o código do app em `app-src.txt`; o gate os consome somente no caminho de desbloqueio. Manter módulos dependentes em referências lazy, respeitando sua ordem. O service worker deve precachear os artefatos necessários para o uso offline.
+
+Atualizar `build.mjs`, `gate.js`, `sw.js`, `.github/workflows/pages.yml`, `ferramentas/ci/validar_site.mjs` e `ferramentas/ajustes/sincronizar_fonte.py` em conjunto. O build gera `index.html`, `deck.enc` e `app-src.txt`; CI exige os artefatos, o contrato criptográfico e a sintaxe do código externo. A sincronização deve ler o arquivo irmão `app-src.txt` e restaurar referências lazy para tags `src` na fonte, para que a preparação seguinte continue compatível com o build. As revisões editoriais e a injeção dos PDFs devem recriptografar `deck.enc`, sem inserir dados no HTML. Versionar sincronizadamente `CACHE` e `APP_CACHE`. Atualizar testes que extraíam o código do HTML para ler `app-src.txt`; usar somente baralho, credencial e chave fictícios nos testes de desbloqueio.
+
+Preservar marca e composição da entrada. Rótulos devem estar associados aos campos; área tocável do botão primário deve ter ao menos 44 px. Conferir overflow em 375, 768, 1280 e 1920 px. Medir antes/depois em condições idênticas e registrar método e limitações; não tratar teste local como telemetria de produção. Não usar contas ou segredos reais para validar o fluxo.

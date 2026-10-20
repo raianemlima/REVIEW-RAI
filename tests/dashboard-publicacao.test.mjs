@@ -9,6 +9,8 @@ async function site(t, opcoes = {}) {
   const pasta = await mkdtemp(join(tmpdir(), "dashboard-publicacao-"));
   t.after(() => rm(pasta, { recursive: true, force: true }));
   await mkdir(join(pasta, "arquivos"));
+  await writeFile(join(pasta, "deck.enc"), JSON.stringify({ v: 2, z: "gzip", it: 100000, s: "AAAAAAAAAAAAAAAAAAAAAA==", iv: "AAAAAAAAAAAAAAAA", ct: "AAAAAAAAAAAAAAAAAAAAAA==" }));
+  await writeFile(join(pasta, "app-src.txt"), "const appPronto = true;\n");
   const arquivos = {
     "metacognicao.js": "const metacognicao = true;",
     "interface.js": "const interfaceVisual = true;", "interface.css": ".interface{}",
@@ -19,8 +21,8 @@ async function site(t, opcoes = {}) {
   const ordem = opcoes.ordemIncorreta ? ["cronograma-pesos.js", "cronograma-conteudo.js", "dashboard-editais.js", "cronograma-motor.js", "cronograma.js", "interface.js"] : ["cronograma-pesos.js", "cronograma-conteudo.js", "cronograma-motor.js", "cronograma.js", "interface.js", "dashboard-editais.js"];
   const scripts = ["metacognicao.js", ...ordem.filter(f => !(opcoes.semTag && f === "dashboard-editais.js"))].map(f => `<script src="arquivos/${f}"></script>`).join("");
   const links = ["interface.css", "cronograma.css", ...(opcoes.semLink ? [] : ["dashboard-editais.css"])].map(f => `<link rel="stylesheet" href="arquivos/${f}">`).join("");
-  await writeFile(join(pasta, "index.html"), `<html><head>${links}</head><body>${scripts}</body></html>`);
-  const core = ["./", "index.html", ...Object.keys(arquivos).filter(f => !(opcoes.semCache && f === "dashboard-editais.js")).map(f => `arquivos/${f}`)];
+  await writeFile(join(pasta, "index.html"), `<html><head>${links}</head><body><script type="text/plain" id="app-src" data-src="app-src.txt"></script>${scripts}</body></html>`);
+  const core = ["./", "index.html", "deck.enc", "app-src.txt", ...Object.keys(arquivos).filter(f => !(opcoes.semCache && f === "dashboard-editais.js")).map(f => `arquivos/${f}`)];
   await writeFile(join(pasta, "sw.js"), `const CORE=${JSON.stringify(core)};`);
   await Promise.all(Object.entries(arquivos).map(([nome, conteudo]) => writeFile(join(pasta, "arquivos", nome), conteudo)));
   return pasta;
