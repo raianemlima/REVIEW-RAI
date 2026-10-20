@@ -74,12 +74,12 @@ async function apagar(pasta) {
   await rm(pasta, { recursive: true, force: true });
 }
 
-test("build separa deck e app-source e converte os sete módulos para lazy", async t => {
+test("build separa deck e app-source e converte os oito módulos para lazy", async t => {
   const pasta = await mkdtemp(join(tmpdir(), "review-build-"));
   t.after(() => apagar(pasta));
   const source = join(pasta, "fonte.html"), output = join(pasta, "index.html");
   const deck = { versao: "fixture", cartoes: [], disciplinas: [] }, app = "globalThis.fixtureApp = true;\n";
-  const modulos = ["arquivos/metacognicao.js", "arquivos/cronograma-pesos.js", "arquivos/cronograma-taxonomia.js", "arquivos/cronograma-conteudo.js", "arquivos/cronograma-motor.js", "arquivos/cronograma.js", "arquivos/interface.js"];
+  const modulos = ["arquivos/metacognicao.js", "arquivos/cronograma-pesos.js", "arquivos/cronograma-taxonomia.js", "arquivos/cronograma-conteudo.js", "arquivos/cronograma-motor.js", "arquivos/cronograma.js", "arquivos/interface.js", "arquivos/dashboard-editais.js"];
   const html = [
     '<!doctype html><html><head><meta charset="utf-8"></head><body>',
     `<script>\nconst DECK = ${JSON.stringify(deck)};\n</script>`,
