@@ -44,6 +44,19 @@ test("busca, filtros e aba de novidades funcionam sem recarregar a página", asy
   dom.window.close();
 });
 
+test("comparação DPESP × DPE-RN mostra sobreposição, ênfases e lacuna documental", async () => {
+  const dom = await abrir();
+  const { document } = dom.window;
+  document.querySelector("#tabCompare").click();
+  assert.equal(document.querySelector("#compareView").hidden, false);
+  assert.equal(document.querySelector("#newView").hidden, true);
+  assert.match(document.querySelector("#compareView").textContent, /Lei 14\.821\/2024/);
+  assert.match(document.querySelector("#compareView").textContent, /Processo internacional/);
+  assert.match(document.querySelector("#compareView").textContent, /itens 3–5/);
+  assert.equal(document.querySelectorAll("#compareView .compare-card").length, 6);
+  dom.window.close();
+});
+
 test("checklist calcula, persiste e limpa o progresso local", async () => {
   const dom = await abrir();
   const { document, localStorage } = dom.window;

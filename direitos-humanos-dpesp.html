@@ -147,6 +147,27 @@
     .compare div { min-width: 0; padding: 10px; border-radius: 11px; background: var(--surface-muted); }
     .compare b { display: block; margin-bottom: 4px; color: var(--ink); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
     .compare span { color: var(--muted); font-size: 12px; }
+    .document-warning { margin: 20px 0; padding: 17px 19px; border: 1px solid color-mix(in srgb, var(--amber) 38%, var(--line)); border-radius: var(--radius-sm); background: var(--amber-soft); color: var(--muted); }
+    .document-warning strong { color: var(--ink); }
+    .exam-grid, .compare-grid, .route-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .exam-card, .compare-card, .route-card { min-width: 0; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow-soft); padding: 20px; }
+    .exam-card { border-top: 4px solid var(--brand); }
+    .exam-card.rn { border-top-color: var(--amber); }
+    .exam-card h3, .compare-card h3, .route-card h3 { margin: 7px 0 8px; font-size: 18px; line-height: 1.15; letter-spacing: -.04em; }
+    .exam-card p, .compare-card p, .route-card p { margin: 0; color: var(--muted); }
+    .compare-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 14px; }
+    .compare-card { box-shadow: none; }
+    .compare-card.common { background: var(--brand-soft); }
+    .compare-card.rn { border-color: color-mix(in srgb, var(--amber) 36%, var(--line)); }
+    .compare-card.sp { border-color: color-mix(in srgb, var(--brand) 36%, var(--line)); }
+    .compare-card ul, .route-card ul { margin: 12px 0 0; padding-left: 18px; color: var(--muted); }
+    .compare-card li, .route-card li { margin: 5px 0; }
+    .compare-label { color: var(--brand); font-size: 10px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+    .compare-card.rn .compare-label { color: #a66912; }
+    [data-theme="dark"] .compare-card.rn .compare-label { color: var(--amber); }
+    .route-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 14px; }
+    .route-card { background: var(--surface-muted); box-shadow: none; }
+    .route-card strong { display: inline-grid; place-items: center; min-width: 28px; min-height: 28px; border-radius: 9px; background: var(--brand); color: white; font-size: 12px; }
     .study { margin-top: 34px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); padding: clamp(20px, 4vw, 32px); }
     .study-head { display: flex; justify-content: space-between; align-items: start; gap: 20px; }
     .study-head h2 { margin: 4px 0 5px; font-size: 26px; letter-spacing: -.06em; }
@@ -173,7 +194,7 @@
     footer { padding: 22px 0 42px; color: var(--muted); font-size: 12px; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
     @media (max-width: 800px) {
-      .hero-grid, .theme-grid, .new-grid { grid-template-columns: 1fr; }
+      .hero-grid, .theme-grid, .new-grid, .exam-grid, .compare-grid, .route-grid { grid-template-columns: 1fr; }
       .hero-grid { gap: 23px; }
       .toolbar, .section-head, .study-head { align-items: stretch; flex-direction: column; }
       .filter-row { justify-content: flex-start; }
@@ -191,7 +212,7 @@
       h1 { font-size: 42px; }
       .hero-copy { font-size: 15px; }
       .callout { padding: 14px; }
-      .theme-card, .new-card { padding: 16px; }
+      .theme-card, .new-card, .exam-card, .compare-card, .route-card { padding: 16px; }
       .compare { grid-template-columns: 1fr; }
       .study { padding: 19px 15px; }
     }
@@ -248,6 +269,7 @@
     <nav class="tabs" role="tablist" aria-label="Modo de leitura">
       <button class="tab" id="tabFrequency" type="button" role="tab" aria-selected="true" aria-controls="frequencyView">Mais recorrentes</button>
       <button class="tab" id="tabNew" type="button" role="tab" aria-selected="false" aria-controls="newView">Novidades do X Concurso</button>
+      <button class="tab" id="tabCompare" type="button" role="tab" aria-selected="false" aria-controls="compareView">DPESP × DPE-RN</button>
     </nav>
 
     <section class="view" id="frequencyView" role="tabpanel" aria-labelledby="tabFrequency">
@@ -281,6 +303,78 @@
       <div class="new-grid" id="newGrid"></div>
     </section>
 
+    <section class="view" id="compareView" role="tabpanel" aria-labelledby="tabCompare" hidden>
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Dois concursos · uma preparação</span>
+          <h2>Onde os editais se encontram</h2>
+        </div>
+        <p>O DPE-RN é mais concentrado no ordenamento brasileiro, na proteção antidiscriminatória e em referências nacionais. O DPESP X abre uma frente internacional, crítica e contemporânea bem mais extensa.</p>
+      </div>
+
+      <div class="document-warning"><strong>Atenção ao documento do RN:</strong> no PDF da Resolução nº 344/2025, o bloco de Direitos Humanos apresenta os itens 1 e 2 e depois salta para o item 6. Os itens 3–5 não aparecem no texto legível fornecido. A comparação não preenche essa lacuna por inferência; confirme eventual retificação ou edital de abertura.</div>
+
+      <div class="exam-grid">
+        <article class="exam-card rn">
+          <span class="compare-label">DPE-RN · Resolução 344/2025</span>
+          <h3>Como DH entra na prova</h3>
+          <p><strong>Objetiva:</strong> Grupo IV com 25 questões distribuídas entre Direitos Humanos, Direitos Difusos e Coletivos e Direito da Criança e do Adolescente. O regulamento não separa quantas são de DH.</p>
+          <p style="margin-top:10px"><strong>Discursiva:</strong> Prova Discursiva II, com duas questões e uma peça do Grupo II, que reúne Civil, Processo Civil, Consumidor, DH, Difusos e Criança/Adolescente. A resolução não fixa número de questões de DH.</p>
+        </article>
+        <article class="exam-card">
+          <span class="compare-label">DPESP · X Concurso</span>
+          <h3>Como DH entra na prova</h3>
+          <p><strong>Terceira Prova Escrita:</strong> duas questões dissertativas de Direitos Humanos, valendo cinco pontos cada. O programa é muito mais longo e segmentado em sistemas internacionais, direitos em espécie, grupos, democracia e socioambiental.</p>
+        </article>
+      </div>
+
+      <div class="compare-grid">
+        <article class="compare-card common">
+          <span class="compare-label">Núcleo comum</span>
+          <h3>Teoria e fundamentos</h3>
+          <p>Os dois regulamentos começam pelo conceito, fundamentos, evolução histórica, estrutura e teoria crítica dos Direitos Humanos.</p>
+          <ul><li>Conceitos e terminologia</li><li>Fundamentos filosóficos</li><li>Características e evolução</li></ul>
+        </article>
+        <article class="compare-card common">
+          <span class="compare-label">Núcleo comum</span>
+          <h3>Brasil, tratados e controle</h3>
+          <p>Ambos cobram incorporação, hierarquia dos tratados, eficácia interna, execução de decisões internacionais, controle de convencionalidade e diálogo entre cortes.</p>
+          <ul><li>Ordenamento jurídico brasileiro</li><li>Tratados e posição hierárquica</li><li>Controle de convencionalidade</li></ul>
+        </article>
+        <article class="compare-card common">
+          <span class="compare-label">Núcleo comum</span>
+          <h3>Igualdade e proteção de grupos</h3>
+          <p>O encontro mais direto está no antidiscriminatório: igualdade, racismo, interseccionalidade, deficiência, população LGBTQIAPN+, pessoas vulnerabilizadas e ações afirmativas.</p>
+          <ul><li>Discriminações e racismos</li><li>Deficiência e capacitismo</li><li>Políticas públicas e vulnerabilidades</li></ul>
+        </article>
+        <article class="compare-card rn">
+          <span class="compare-label">Ênfase DPE-RN</span>
+          <h3>Legislação nacional aplicada</h3>
+          <p>O RN deixa mais explícitos diplomas e políticas brasileiras, úteis para uma revisão objetiva e jurisprudencial.</p>
+          <ul><li>Lei 12.288/2010 e Lei 7.716/1989</li><li>Lei 7.853/1989 e Lei 13.146/2015</li><li>Princípios de Yogyakarta</li><li>Lei 14.821/2024, Decreto 7.053/2009 e Resolução CNJ 425/2021</li></ul>
+        </article>
+        <article class="compare-card rn">
+          <span class="compare-label">Ênfase DPE-RN</span>
+          <h3>Defensoria e jurisprudência nacional</h3>
+          <p>O bloco visível termina com a tutela dos grupos vulneráveis pela Defensoria e jurisprudência do STJ e STF sobre a matéria.</p>
+          <ul><li>Tutela da população em situação de rua</li><li>Capacidade civil, curatela e decisão apoiada</li><li>Reforma psiquiátrica e desinstitucionalização</li><li>STJ e STF</li></ul>
+        </article>
+        <article class="compare-card sp">
+          <span class="compare-label">Ênfase DPESP X</span>
+          <h3>Internacional, crítica e contemporânea</h3>
+          <p>O DPESP acrescenta camadas que não aparecem no bloco específico de DH do RN, embora algumas possam aparecer em outras disciplinas do regulamento potiguar.</p>
+          <ul><li>ONU, OEA, Comissão e Corte Interamericana</li><li>Processo internacional, humanitário e refugiados</li><li>Democracia, clima, IA, dados e segurança pública</li><li>Colonialidade, amefricanidade e teoria crítica racial</li></ul>
+        </article>
+      </div>
+
+      <div class="section-head" style="margin-top:32px"><div><span class="eyebrow">Ordem de ataque</span><h2>Como estudar para os dois</h2></div><p>Use a interseção para ganhar velocidade e reserve blocos específicos para aquilo que só um dos concursos explicita.</p></div>
+      <div class="route-grid">
+        <article class="route-card"><strong>1</strong><h3>Base compartilhada</h3><p>Teoria geral, ordem brasileira, tratados, controle de convencionalidade, igualdade, racismo, deficiência, LGBTQIAPN+, rua e ações afirmativas.</p></article>
+        <article class="route-card"><strong>2</strong><h3>Bloco DPE-RN</h3><p>Lei seca e políticas nacionais, tutela concreta de grupos, pessoas com deficiência e população em situação de rua; depois jurisprudência STJ/STF.</p></article>
+        <article class="route-card"><strong>3</strong><h3>Bloco DPESP</h3><p>Sistemas internacionais, processo internacional, DH em espécie, democracia, socioambiental, IA/dados e referências decoloniais.</p></article>
+      </div>
+    </section>
+
     <section class="study" aria-labelledby="studyTitle">
       <div class="study-head">
         <div>
@@ -301,7 +395,7 @@
     <section class="sources" aria-labelledby="sourcesTitle">
       <span class="eyebrow">Conferência</span>
       <h2 id="sourcesTitle">Fontes usadas</h2>
-      <p>O novo edital foi conferido no Diário Oficial. A comparação histórica usa o edital oficial do IX Concurso. O mapa de recorrência usa o corpus documental já organizado pelo Review DPE.</p>
+      <p>O novo edital foi conferido no Diário Oficial. A comparação histórica usa o edital oficial do IX Concurso. A comparação potiguar usa a Resolução nº 344/2025 do CSDP/RN, publicada no DOE/RN nº 15.871 em 15/03/2025, fornecida em PDF. O mapa de recorrência usa o corpus documental já organizado pelo Review DPE.</p>
       <div class="source-list">
         <a href="https://doe.sp.gov.br/executivo/defensoria-publica-do-estado/x-concurso-publico-de-provas-e-titulos-para-ingresso-na-carreira-de-defensora-ou-defensor-publico-do-estado-202610081341662194000" target="_blank" rel="noopener">Diário Oficial · X Concurso DPESP ↗</a>
         <a href="https://www.defensoria.sp.def.br/documents/20122/4537429/edital_ix_concurso_para_csdp_publicacao_do_completo.pdf/3eedf605-76d2-2a54-ee18-7f55873b402c?t=1671136659267&download=true" target="_blank" rel="noopener">Edital oficial · IX Concurso DPESP ↗</a>
@@ -379,10 +473,13 @@
       }
       function setTab(which) {
         const frequency = which === "frequency";
+        const novelty = which === "new";
         $("#frequencyView").hidden = !frequency;
-        $("#newView").hidden = frequency;
+        $("#newView").hidden = !novelty;
+        $("#compareView").hidden = frequency || novelty;
         $("#tabFrequency").setAttribute("aria-selected", String(frequency));
-        $("#tabNew").setAttribute("aria-selected", String(!frequency));
+        $("#tabNew").setAttribute("aria-selected", String(novelty));
+        $("#tabCompare").setAttribute("aria-selected", String(!frequency && !novelty));
       }
       const progressKey = "review-dpe:direitos-humanos-dpesp:v1";
       const storage = {
@@ -410,6 +507,7 @@
       $$("[data-filter]").forEach(button => button.addEventListener("click", () => { activeFilter = button.dataset.filter; $$("[data-filter]").forEach(b => b.setAttribute("aria-pressed", String(b === button))); renderThemes(); }));
       $("#tabFrequency").addEventListener("click", () => setTab("frequency"));
       $("#tabNew").addEventListener("click", () => setTab("new"));
+      $("#tabCompare").addEventListener("click", () => setTab("compare"));
       $("#themeToggle").addEventListener("click", () => { const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark"; document.documentElement.dataset.theme = next; storage.set("review-dpe:theme", next); });
       $("#printPage").addEventListener("click", () => window.print());
       $("#checklist").addEventListener("change", updateProgress);

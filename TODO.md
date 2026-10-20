@@ -74,3 +74,13 @@ Conferência em Chromium com dados fictícios não certifica Safari/iPhone, tecl
 - [x] **Publicação segura.** Workflow preparado para copiar o HTML para o Pages junto da pasta `icons`; o arquivo não lê o baralho protegido e não altera o progresso do app.
 
 Limites: o recorte temático é uma classificação didática por presença de termos e tópicos no programa; não é contagem de questões aplicadas. A comparação não substitui retificações posteriores do edital nem a conferência da legislação e jurisprudência vigentes.
+
+
+# Etapa 9 — comparação DPESP × DPE-RN
+
+- [x] **Sobreposição.** Mostrar teoria geral, ordenamento brasileiro, controle de convencionalidade, igualdade, antidiscriminação, racismo, deficiência, LGBTQIAPN+, população em situação de rua, ações afirmativas, grupos vulnerabilizados e papel da Defensoria.
+- [x] **DPE-RN específico.** Destacar leis e referências visíveis no regulamento: Estatuto da Igualdade Racial, Lei 7.716/1989, Lei Brasileira de Inclusão, Princípios de Yogyakarta, Política Nacional para a População em Situação de Rua, Lei 14.821/2024, Decreto 7.053/2009, Resolução CNJ 425/2021 e jurisprudência STJ/STF.
+- [x] **DPESP específico.** Destacar sistemas internacional/global/interamericano, processo internacional, humanitário/refugiados, tortura e segurança pública, democracia/transição, socioambiental, IA/dados e colonialidade/teoria crítica.
+- [x] **Prova.** Diferenciar DPERN: Grupo IV com 25 questões objetivas distribuídas entre DH, Difusos e Criança/Adolescente; Grupo II da discursiva inclui DH, Difusos, Criança/Adolescente e Civil/Processo Civil/Consumidor. DPESP X: duas questões discursivas de DH de 5 pontos na Terceira Prova Escrita.
+- [x] **Lacuna documental.** Alertar que o PDF da Resolução 344 salta do item 2 para o item 6; não preencher os itens 3–5 sem uma fonte oficial complementar.
+- [x] **Regressão.** Manter 112 testes anteriores verdes e acrescentar cobertura da terceira aba, do alerta, das sobreposições e da ausência de overflow. **Evidência:** 113/113 testes verdes; sintaxe e diff aprovados; CDP confirmou a aba e `scrollWidth` dentro da viewport em 1440, 390 e 320 px.
