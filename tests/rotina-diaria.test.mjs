@@ -7,7 +7,7 @@ import { test } from "node:test";
 import { JSDOM } from "jsdom";
 
 const raiz = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const htmlApp = readFileSync(resolve(raiz, "index.html"), "utf8");
+const htmlApp = readFileSync(resolve(raiz, "app-src.txt"), "utf8");
 const DAY = 86400000;
 const AGORA = Date.parse("2026-10-19T12:00:00Z");
 

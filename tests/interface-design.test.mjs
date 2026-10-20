@@ -8,7 +8,7 @@ const index = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 const html = index.match(/<header class="top">[\s\S]*?<\/header>/)?.[0] + index.match(/<main class="wrap" id="main"><\/main>/)?.[0];
 assert.match(html, /header class="top"/);
 assert.match(html, /nav class="tabs"[^>]+id="tabs"/);
-const appOriginal = index.match(/<script type="text\/plain" id="app-src">([\s\S]*?)<\/script>/)[1];
+const appOriginal = readFileSync(new URL('../app-src.txt', import.meta.url), 'utf8');
 assert.match(appOriginal, /\nboot\(\);\s*$/);
 const app = appOriginal.replace(/\nboot\(\);\s*$/, '\n');
 const motorInicio = index.indexOf('// Motor de revisão:');

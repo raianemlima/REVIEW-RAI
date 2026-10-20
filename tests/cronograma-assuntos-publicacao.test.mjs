@@ -15,6 +15,7 @@ function conteudoFixture(opt={}) {
 }
 async function site(t,opt={}){
  const dir=await mkdtemp(join(tmpdir(),'assuntos-publicacao-'));t.after(()=>rm(dir,{recursive:true,force:true}));await mkdir(join(dir,'arquivos'));
+ await writeFile(join(dir,'deck.enc'),JSON.stringify({v:2,z:'gzip',it:100000,s:'AAAAAAAAAAAAAAAAAAAAAA==',iv:'AAAAAAAAAAAAAAAA',ct:'AAAAAAAAAAAAAAAAAAAAAA=='}));
  const arquivos={
   'metacognicao.js':'const fixture=true;',
   'cronograma.js':'const fixture=window.DPE_CONTEUDOS_EDITAIS; const taxonomy=window.DPE_DISCIPLINAS_CANONICAS;',
@@ -29,7 +30,7 @@ async function site(t,opt={}){
  if(opt.semTaxTag)ordem=ordem.filter(f=>f!=='cronograma-taxonomia.js');
  const refs=['metacognicao.js',...ordem].map(f=>'<script src="arquivos/'+f+'"></script>').join('');
  await writeFile(join(dir,'index.html'),'<html><head><link rel="stylesheet" href="arquivos/cronograma.css"></head><body>'+refs+'</body></html>');
- const core=['./','index.html',...Object.keys(arquivos).filter(f=>!opt.semCache||f!=='cronograma-motor.js').map(f=>'arquivos/'+f)];
+ const core=['./','index.html','deck.enc',...Object.keys(arquivos).filter(f=>!opt.semCache||f!=='cronograma-motor.js').map(f=>'arquivos/'+f)];
  await writeFile(join(dir,'sw.js'),'const CORE='+JSON.stringify(core)+';');
  for(const [f,s] of Object.entries(arquivos)){
   if(opt.semArquivo&&f==='cronograma-conteudo.js')continue;

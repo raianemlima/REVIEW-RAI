@@ -4,7 +4,7 @@ import {test} from 'node:test';
 import vm from 'node:vm';
 import {JSDOM} from 'jsdom';
 const html=readFileSync(new URL('../index.html',import.meta.url),'utf8');
-const app=html.match(/<script type="text\/plain" id="app-src">([\s\S]*?)<\/script>/)[1].replace(/\nboot\(\);\s*$/,'\n');
+const app=readFileSync(new URL('../app-src.txt',import.meta.url),'utf8').replace(/\nboot\(\);\s*$/,'\n');
 const motorStart=html.indexOf('// Motor de revisão:');
 const fsrs=html.slice(motorStart,html.indexOf('</script>',motorStart));
 const fontes=['cronograma-pesos.js','cronograma-taxonomia.js','cronograma-conteudo.js','cronograma-motor.js','cronograma.js'].map(f=>readFileSync(new URL('../arquivos/'+f,import.meta.url),'utf8'));

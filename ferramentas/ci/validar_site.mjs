@@ -9,6 +9,8 @@ import { validarFontesCatalogo } from "./validar_conteudo.mjs";
 const OPÇÕES_PADRÃO = Object.freeze({
   serviceWorker: "sw.js",
   index: "index.html",
+  deck: "deck.enc",
+  appSource: "app-src.txt",
   metacognicao: "arquivos/metacognicao.js",
   exigirAppSrc: false,
 });
@@ -92,6 +94,10 @@ function atributo(tag, nome) {
   return match ? (match[1] ?? match[2] ?? match[3] ?? "") : null;
 }
 
+function referenciaScript(script) {
+  return atributo(script.abertura, "src") ?? atributo(script.abertura, "data-lazy-src");
+}
+
 function scriptsDoHtml(html) {
   const scripts = [];
   const padrão = /<script\b([^>]*)>([\s\S]*?)<\/script\s*>/gi;
@@ -128,7 +134,7 @@ function validarSintaxeJavaScript(fonte, caminho, descrição) {
 function localizarAppSrc(html) {
   const encontrados = [];
   for (const script of scriptsDoHtml(html)) {
-    if ((atributo(script.abertura, "id") || "") === "app-src") encontrados.push(script.conteúdo);
+    if ((atributo(script.abertura, "id") || "") === "app-src") encontrados.push(script);
   }
   return encontrados;
 }
@@ -170,7 +176,22 @@ export function validarSite(pastaSite, opções = {}) {
   }
 
   const index = lerTexto(caminhoIndex, "index.html");
-  const referênciaMeta = scriptsDoHtml(index).some(script => referenciaÉ(atributo(script.abertura, "src"), config.metacognicao));
+  const caminhoDeck = caminhoDentroDaPasta(site, config.deck, "baralho cifrado");
+  const deckTexto = lerTexto(caminhoDeck, "deck.enc");
+  if (!core.some(entrada => referenciaÉ(entrada, config.deck))) throw erro(`deck.enc precisa estar no CORE offline: ${config.deck}.`);
+  let deck;
+  try { deck = JSON.parse(deckTexto); }
+  catch (cause) { throw erro("deck.enc não contém JSON válido.", cause); }
+  const base64Valida = valor => typeof valor === "string" && /^[A-Za-z0-9+/]+={0,2}$/.test(valor);
+  const decodificar = valor => base64Valida(valor) && Buffer.from(valor, "base64").toString("base64") === valor ? Buffer.from(valor, "base64") : null;
+  const sal = deck && decodificar(deck.s), vetor = deck && decodificar(deck.iv), textoCifrado = deck && decodificar(deck.ct);
+  if (!deck || deck.v !== 2 || deck.z !== "gzip" || !Number.isInteger(deck.it) || deck.it < 100000 || !sal || sal.length !== 16 || !vetor || vetor.length !== 12 || !textoCifrado || textoCifrado.length < 16) {
+    throw erro("deck.enc não corresponde ao formato cifrado v2 esperado.");
+  }
+  if (scriptsDoHtml(index).some(script => atributo(script.abertura, "id") === "deck-enc")) {
+    throw erro("index.html ainda embute o baralho cifrado; use o arquivo externo deck.enc.");
+  }
+  const referênciaMeta = scriptsDoHtml(index).some(script => referenciaÉ(referenciaScript(script), config.metacognicao));
   if (!referênciaMeta) {
     throw erro(`index.html não referencia o módulo servido ${config.metacognicao}.`);
   }
@@ -181,7 +202,7 @@ export function validarSite(pastaSite, opções = {}) {
   // Retrocompatível com artefatos anteriores: se uma parte do design estiver
   // declarada, exigir as duas dependências e suas referências reais no HTML.
   const scriptVisual = "arquivos/interface.js", cssVisual = "arquivos/interface.css";
-  const referencias = scriptsDoHtml(index).filter(s => referenciaÉ(atributo(s.abertura, "src"), scriptVisual));
+  const referencias = scriptsDoHtml(index).filter(s => referenciaÉ(referenciaScript(s), scriptVisual));
   const links = [...index.matchAll(/<link\b[^>]*>/gi)].map(m => m[0]).filter(tag => referenciaÉ(atributo(tag, "href"), cssVisual) && (atributo(tag, "rel") || "").toLowerCase() === "stylesheet");
   const temVisual = referencias.length || links.length || core.some(e => referenciaÉ(e, scriptVisual) || referenciaÉ(e, cssVisual));
   if (temVisual) {
@@ -194,7 +215,7 @@ export function validarSite(pastaSite, opções = {}) {
   }
 
   const scriptCronograma = "arquivos/cronograma.js", cssCronograma = "arquivos/cronograma.css";
-  const refsCronograma = scriptsDoHtml(index).filter(s => referenciaÉ(atributo(s.abertura, "src"), scriptCronograma));
+  const refsCronograma = scriptsDoHtml(index).filter(s => referenciaÉ(referenciaScript(s), scriptCronograma));
   const linksCronograma = [...index.matchAll(/<link\b[^>]*>/gi)].map(m => m[0]).filter(tag => referenciaÉ(atributo(tag, "href"), cssCronograma) && (atributo(tag, "rel") || "").toLowerCase() === "stylesheet");
   const temCronograma = refsCronograma.length || linksCronograma.length || core.some(e => referenciaÉ(e, scriptCronograma) || referenciaÉ(e, cssCronograma));
   if (temCronograma) {
@@ -205,22 +226,22 @@ export function validarSite(pastaSite, opções = {}) {
     const css = lerTexto(caminhoDentroDaPasta(site, cssCronograma, "estilos do cronograma"), "cronograma.css");
     const perfil = "arquivos/cronograma-pesos.js";
     const scripts = scriptsDoHtml(index);
-    const refsPerfil = scripts.filter(s => referenciaÉ(atributo(s.abertura, "src"), perfil));
+    const refsPerfil = scripts.filter(s => referenciaÉ(referenciaScript(s), perfil));
     if (js.includes("DPE_PESOS_EDITAIS") || refsPerfil.length || core.some(e => referenciaÉ(e, perfil))) {
       if (refsPerfil.length !== 1) throw erro("O catálogo de pesos precisa de uma referência única a cronograma-pesos.js.");
       if (!core.some(e => referenciaÉ(e, perfil))) throw erro("O catálogo de pesos precisa estar no CORE offline.");
-      const posiçãoModulo = scripts.findIndex(s => referenciaÉ(atributo(s.abertura, "src"), scriptCronograma));
+      const posiçãoModulo = scripts.findIndex(s => referenciaÉ(referenciaScript(s), scriptCronograma));
       if (scripts.indexOf(refsPerfil[0]) > posiçãoModulo) throw erro("cronograma-pesos.js precisa carregar antes de cronograma.js.");
       validarSintaxeJavaScript(lerTexto(caminhoDentroDaPasta(site, perfil, "catálogo de pesos"), "catálogo de pesos"), perfil, "catálogo de pesos");
     }
     const taxonomia = "arquivos/cronograma-taxonomia.js", conteúdo = "arquivos/cronograma-conteudo.js", motor = "arquivos/cronograma-motor.js";
-    const precisaTaxonomia = js.includes("DPE_DISCIPLINAS_CANONICAS") || scripts.some(s => referenciaÉ(atributo(s.abertura, "src"), taxonomia)) || core.some(e => referenciaÉ(e, taxonomia));
+    const precisaTaxonomia = js.includes("DPE_DISCIPLINAS_CANONICAS") || scripts.some(s => referenciaÉ(referenciaScript(s), taxonomia)) || core.some(e => referenciaÉ(e, taxonomia));
     const dependências = precisaTaxonomia ? [taxonomia, conteúdo, motor] : [conteúdo, motor];
-    if (js.includes("DPE_CONTEUDOS_EDITAIS") || dependências.some(f => scripts.some(s => referenciaÉ(atributo(s.abertura, "src"), f)) || core.some(e => referenciaÉ(e, f)))) {
-      const posiçãoModulo = scripts.findIndex(s => referenciaÉ(atributo(s.abertura, "src"), scriptCronograma));
+    if (js.includes("DPE_CONTEUDOS_EDITAIS") || dependências.some(f => scripts.some(s => referenciaÉ(referenciaScript(s), f)) || core.some(e => referenciaÉ(e, f)))) {
+      const posiçãoModulo = scripts.findIndex(s => referenciaÉ(referenciaScript(s), scriptCronograma));
       let anterior = -1;
       for (const f of dependências) {
-        const refs = scripts.filter(s => referenciaÉ(atributo(s.abertura, "src"), f));
+        const refs = scripts.filter(s => referenciaÉ(referenciaScript(s), f));
         if (refs.length !== 1) throw erro(`O cronograma por assuntos precisa de uma referência única a ${f}.`);
         if (!core.some(e => referenciaÉ(e, f))) throw erro(`O cronograma por assuntos precisa estar no CORE offline: ${f}.`);
         const posição = scripts.indexOf(refs[0]);
@@ -253,7 +274,16 @@ export function validarSite(pastaSite, opções = {}) {
     avisos.push(mensagem);
   } else {
     if (appSrc.length > 1) throw erro("index.html contém mais de um script id=app-src.");
-    validarSintaxeJavaScript(appSrc[0], `${caminhoIndex}#app-src`, "app-src");
+    const referênciaApp = atributo(appSrc[0].abertura, "data-src");
+    if (referênciaApp !== null) {
+      if (appSrc[0].conteúdo.trim()) throw erro("O script app-src não deve duplicar código inline quando usa data-src.");
+      if (!referenciaÉ(referênciaApp, config.appSource)) throw erro(`app-src deve referenciar o arquivo externo ${config.appSource}.`);
+      if (!core.some(entrada => referenciaÉ(entrada, config.appSource))) throw erro(`O código externo do app precisa estar no CORE offline: ${config.appSource}.`);
+      const caminhoApp = caminhoDentroDaPasta(site, config.appSource, "código principal do app");
+      validarSintaxeJavaScript(lerTexto(caminhoApp, config.appSource), caminhoApp, "app-src externo");
+    } else {
+      validarSintaxeJavaScript(appSrc[0].conteúdo, `${caminhoIndex}#app-src`, "app-src");
+    }
   }
 
   return { pastaSite: site, core, arquivosCore, avisos };
