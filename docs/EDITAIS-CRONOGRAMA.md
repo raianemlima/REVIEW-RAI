@@ -86,3 +86,18 @@ Os testes usam código real com baralho fictício e rede bloqueada: cobrem conte
 A conferência pontual no Chromium utilizou larguras de 320, 390 e 1440 pixels, agenda longa, Hoje e reflexão; mediu barra, rolagem, foco e alcance das ações finais. Isso **não é certificação de Safari/iPhone nem teste autenticado de produção ou offline real**. A cópia pública é validada sem os segredos dos materiais protegidos.
 
 O catálogo é estático e derivado das fontes indicadas. Não monitora retificações futuras, não substitui a conferência do edital original e não disponibiliza uma biblioteca completa de doutrina ou precedentes comentados. A entrega é em branch/PR de revisão, sem publicação ou merge automático.
+
+## Ligação do assunto com o conteúdo do app
+
+Quando o cronograma monta os blocos da semana (prévia) e os assuntos de **Hoje**, cada bloco passa por `DPE_CRONOGRAMA_MOTOR.relacionarConteudo(fontes, consulta)` (em `arquivos/cronograma-motor.js`, função pura e sem DOM). As fontes são as que o app já carrega: `DECK.cartoes`, `DECK.leiseca`, teses (`tsDados().itens`), súmulas (`dpeDados().sumulas`) e questões de provas (`provasDados()`).
+
+Resultados em quatro grupos, com contagem visível no cabeçalho do bloco:
+
+| Grupo | O que entra | Atalho |
+|---|---|---|
+| Assunto/tema | cartões conceito, comparativo, tese defensiva, certo/errado | Biblioteca filtrada pelo ID do cartão |
+| Lei e lei seca | cartões `lei_seca` e diplomas da Lei seca (com até 3 artigos sobre o assunto) | aba Lei seca no diploma/artigo |
+| Súmulas e jurisprudência | cartões `jurisprudencia`, teses (RG/repetitivos) e súmulas | Teses (busca pelo processo/tema) ou Defensoria (ramo) |
+| Questões | questões reais das provas e cartões de múltipla escolha | Provas, abrindo a questão |
+
+Critérios: título do assunto (sem numeração e subitens) reduzido a raízes de palavras, números das leis citadas no item do edital (`Lei nº 11.343/2006` → `11343`), referências numeradas (Súmula/SV/Tema) e compatibilidade da disciplina (ID do baralho ou ramo/matéria). Itens de outra disciplina só entram por referência citada. É busca por correspondência, não curadoria: a interface avisa isso e, sem resultado interno, abre as fontes oficiais externas. Navegar pelos atalhos não cria nem altera estado FSRS. Testes: `tests/cronograma-busca.test.mjs`.
