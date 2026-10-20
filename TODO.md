@@ -84,3 +84,12 @@ A validação confirma estrutura e integridade dos vínculos, não atesta a fide
 ## Limites desta etapa
 
 A validação de desbloqueio usa baralho e chave descartáveis, não a senha, a conta ou o baralho real. O teste de performance é local, não mede compressão/CDN, LCP/INP/CLS de usuários reais nem autenticação da API de produção. `app-src.txt` é código público, não conteúdo de estudo; o conteúdo continua em `deck.enc` cifrado. Nenhuma credencial foi usada.
+
+# Etapa 10 — ligação dos assuntos do cronograma com o conteúdo do app
+
+- [x] **Busca por assunto, lei, súmula/jurisprudência e questão.** Cada bloco do cronograma (prévia semanal e Hoje) mostra quantos itens do app existem para o assunto e lista os principais em quatro grupos, com atalhos para Biblioteca, Lei seca (diploma/artigo), Teses, Defensoria (súmulas), Provas (questão) e Buscar em tudo. **Evidência:** `tests/cronograma-busca.test.mjs` (3 testes) com fixtures e com teses/súmulas/questões reais; suíte 136/136, `npm run check` e `git diff --check` aprovados; cache `review-dpe-assuntos-v6`.
+- [x] **Sem falsa precisão e sem efeito colateral.** Correspondência por título, leis citadas e disciplina, com aviso explícito; outras disciplinas só por referência citada. FSRS, histórico e progresso não são alterados pela navegação.
+
+## Limites desta etapa
+
+Não foi possível conferir com o baralho real (`deck.enc` cifrado); cartões e Lei seca foram validados com fixtures. A pertinência depende das palavras do edital; termos muito genéricos podem trazer poucos ou nenhum resultado. Sem publicação ou merge automático.
