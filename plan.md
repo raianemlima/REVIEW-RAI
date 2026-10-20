@@ -109,3 +109,12 @@ Distribuir o orçamento semanal inteiro em dias e blocos de duração útil, com
 Estrutura: arquivos/cronograma.js integra editor e Hoje ao app; arquivos/cronograma-conteudo.js fornece o catálogo documental; arquivos/cronograma-motor.js calcula ciclos e materiais sem depender do baralho; arquivos/cronograma.css estiliza agenda/assuntos; arquivos/interface.js e interface.css corrigem apenas a barra móvel. Fontes oficiais verificadas ficam em catálogo de materiais e links de consulta, sem dependência de IA paga em execução. Reutilizar visual e serviços atuais.
 
 Corrigir barra inferior com posicionamento estável no viewport, fora de ancestrais transformados e com espaço reservado medido; áreas seguras e teclado móvel não podem esconder botões de reflexão/salvar. Conferir defeito real em navegador com fixtures offline de celular, sem conta de produção. Entrega em branch/PR rascunho, incorporando correção de percentuais ainda não integrada; sem merge/publicação automática.
+
+
+# Etapa 7 — contrato de conteúdo e taxonomia
+
+Separar o registro semântico de disciplinas da lógica da interface, em `arquivos/cronograma-taxonomia.js`, mantendo a classificação editorial e os textos por edital em `arquivos/cronograma-conteudo.js`. Cada rubrica conserva seu identificador de origem e relaciona zero ou mais IDs canônicos; o vazio é válido para itens sem equivalência segura, e rubricas combinadas podem apontar para vários canônicos. Não deduplicar tópicos repetidos entre editais nem alterar texto, IDs ou localizadores de origem.
+
+Derivar o núcleo comum e os metadados de disciplinas do catálogo, deixando `EDITAIS_DPE` apenas com os metadados do edital e matérias canônicas derivadas do crosswalk. Adicionar validação estrutural e de referências de pesos em sandbox isolado, incluindo campos obrigatórios, unicidade de IDs e presença de referências válidas. A publicação deve carregar taxonomia, conteúdo e motor nessa ordem, incluir todos no cache offline e falhar claramente se o contrato estiver incompleto.
+
+Documentar campos, relações, proveniência, estabilidade de IDs e casos legítimos sem vínculo. Testar contra os dados reais e fixtures inválidas, preservando planos/progresso sincronizados, o baralho, FSRS e conteúdo protegido. Não migrar para CMS, não acessar dados de estudantes e não publicar nem mesclar automaticamente.

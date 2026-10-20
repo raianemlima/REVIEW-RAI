@@ -54,3 +54,13 @@ Teste em DOM simulado não equivale a teste no Safari/iPhone da captura, nem a t
 ## Limites desta etapa
 
 Conferência em Chromium com dados fictícios não certifica Safari/iPhone, teclado real de todos os aparelhos, uso offline ou autenticação em produção. Links abrem consultas, não uma biblioteca de doutrina ou precedentes previamente comentados. A agenda avança por calendário; assuntos pendentes não são transferidos automaticamente. A fonte estática não monitora futuras retificações. Não houve publicação ou merge automático.
+
+# Etapa 7 — contrato de conteúdo e taxonomia
+
+- [x] **Taxonomia em fonte única.** IDs, nomes, cobertura, aliases e sinalização do núcleo comum ficam em `arquivos/cronograma-taxonomia.js`; o cronograma deriva `CORE`, `DISC_MAP` e as matérias de fallback dos catálogos, sem cópias manuais de `subjects`. A opção exclusiva de interface está marcada como `somenteUI`; rubricas sem correspondência segura conservam `canonicais: []`.
+- [x] **Contrato estrutural verificável.** `ferramentas/ci/validar_conteudo.mjs` valida taxonomia, 18 programas, 253 rubricas, 5.364 tópicos, referências cruzadas e grupos de pesos em VM isolada, sem DOM, rede ou acesso ao processo. Os pesos precisam apontar para canônicos presentes no crosswalk do mesmo edital; isso removeu uma referência órfã do grupo I do RS, conforme a evidência da fonte. O validador de publicação exige os módulos, a ordem e o CORE offline corretos. O catálogo-fonte dos editais não foi reescrito nem deduplicado.
+- [x] **Documentação e regressão.** Contrato, campos, IDs estáveis, rubricas combinadas, entradas sem mapeamento e fluxo offline documentados em `docs/EDITAIS-CRONOGRAMA.md`. Testes cobrem erros de publicação, IDs canônicos desconhecidos, ausência/número de localizador, referências derivadas e catálogo real. **Evidência:** 118/118 testes, `npm run check` e validação da pasta real aprovados; cache atualizado para `review-dpe-assuntos-v2`. A documentação esclarece que aliases não são usados na busca de assuntos.
+
+## Limites desta etapa
+
+A validação confirma estrutura e integridade dos vínculos, não atesta a fidelidade editorial do texto frente a retificações ou aos documentos-fonte. Rubricas e tópicos equivalentes continuam separados por edital para preservar proveniência e localizadores. Nenhum conteúdo protegido, serviço, dado de estudante ou publicação foi alterado; a branch permanece local para revisão.

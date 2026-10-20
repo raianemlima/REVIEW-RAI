@@ -7,7 +7,7 @@ const html=readFileSync(new URL('../index.html',import.meta.url),'utf8');
 const app=html.match(/<script type="text\/plain" id="app-src">([\s\S]*?)<\/script>/)[1].replace(/\nboot\(\);\s*$/,'\n');
 const motorStart=html.indexOf('// Motor de revisão:');
 const fsrs=html.slice(motorStart,html.indexOf('</script>',motorStart));
-const fontes=['cronograma-pesos.js','cronograma-conteudo.js','cronograma-motor.js','cronograma.js'].map(f=>readFileSync(new URL('../arquivos/'+f,import.meta.url),'utf8'));
+const fontes=['cronograma-pesos.js','cronograma-taxonomia.js','cronograma-conteudo.js','cronograma-motor.js','cronograma.js'].map(f=>readFileSync(new URL('../arquivos/'+f,import.meta.url),'utf8'));
 function ambiente(){
  const dom=new JSDOM('<!doctype html><html><body><header><button id="goBusca"></button><button id="goAjustes"></button><span id="save"></span><nav id="tabs"></nav></header><main id="main"></main></body></html>',{url:'https://fixture.invalid/',runScripts:'outside-only'});
  dom.window.scrollTo=()=>{};dom.window.fetch=()=>{throw Error('Rede bloqueada');};
@@ -23,6 +23,10 @@ function ambiente(){
 test('programas incluem todas as rubricas e tópicos com localizador; Português e conteúdo local não dependem do baralho',()=>{
  const a=ambiente();try{
   const dados=a.run('window.DPE_CONTEUDOS_EDITAIS');assert.equal(Object.keys(dados).length,18);
+  const taxonomia=a.run('window.DPE_DISCIPLINAS_CANONICAS');assert.ok(taxonomia.length>25);
+  const nucleo=Array.from(taxonomia.filter(d=>d.nucleoComum).map(d=>d.id));assert.equal(nucleo.length,7);assert.deepEqual(Array.from(a.run('window.__cronogramaCatalogo.CORE')),nucleo);
+  const metadados=Array.from(a.run('window.__cronogramaCatalogo.EDITAIS_DPE'));
+  for(const [id,p] of Object.entries(dados)){const meta=metadados.find(e=>e.id===id),canonicas=Array.from(new Set(p.disciplinas.flatMap(d=>Array.from(d.canonicais))));assert.deepEqual(Array.from(meta.subjects),canonicas,`matérias de ${id} derivadas do crosswalk do conteúdo`);}
   let count=0;for(const [id,p] of Object.entries(dados)){
    assert.ok(p.fonte);assert.ok(p.disciplinas.length);assert.equal(new Set(p.disciplinas.map(d=>d.id)).size,p.disciplinas.length);
    for(const d of p.disciplinas){assert.ok(d.nome);assert.ok(d.topicos.length,`${id} ${d.nome}`);assert.equal(new Set(d.topicos.map(t=>t.id)).size,d.topicos.length);for(const t of d.topicos){count++;assert.ok(t.texto&&t.titulo&&t.pagina);assert.ok(Array.isArray(t.leis)&&Array.isArray(t.juris));}}

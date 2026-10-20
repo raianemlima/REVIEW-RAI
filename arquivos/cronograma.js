@@ -1,74 +1,38 @@
 // Review DPE · cronograma orientado por editais de Defensor(a) Público(a).
 // O catálogo é uma síntese documental dos anexos fornecidos pelo usuário.
 // Este módulo não cria cartões: ele organiza horas, dias, disciplinas e metas já existentes.
-(function () {
-  "use strict";
+  (function () {
+    "use strict";
 
-  const CORE = [
-    "direito_constitucional", "direito_administrativo", "direito_civil",
-    "direito_processual_civil", "direito_penal", "direito_processual_penal",
-    "direito_institucional_defensoria_publica"
-  ];
-
-  const DISCIPLINAS_EDITAIS = [
-    ["direito_constitucional", "Direito Constitucional", "núcleo comum documentado em 18/18 editais", ["constitucional"]],
-    ["direito_administrativo", "Direito Administrativo", "núcleo comum documentado em 18/18 editais", ["administrativo"]],
-    ["direito_civil", "Direito Civil", "núcleo comum; alguns editais agrupam com Empresarial", ["direito civil", "civil"]],
-    ["direito_processual_civil", "Direito Processual Civil", "núcleo comum documentado em 18/18 editais", ["processual civil"]],
-    ["direito_penal", "Direito Penal", "núcleo comum; alguns editais agrupam com Criminologia", ["direito penal", "penal"]],
-    ["direito_processual_penal", "Direito Processual Penal", "núcleo comum; alguns editais agrupam com Execução Penal", ["processual penal"]],
-    ["direito_institucional_defensoria_publica", "Direito Institucional da Defensoria Pública", "núcleo comum; títulos variam entre princípios, atribuições, legislação e organização", ["defensoria pública", "direito institucional", "princípios institucionais", "organização da defensoria"]],
-    ["direitos_humanos", "Direitos Humanos", "recorrente, mas não universal no corpus", ["direitos humanos"]],
-    ["direito_do_consumidor", "Direito do Consumidor", "recorrente, mas não universal no corpus", ["direito do consumidor", "consumidor"]],
-    ["direito_da_crianca_e_adolescente", "Direito da Criança e do Adolescente", "recorrente; alguns editais agregam outros grupos vulnerabilizados", ["criança e do adolescente", "criança e adolescente", "infância e juventude"]],
-    ["execucao_penal", "Execução Penal", "frequente, mas não presente com o mesmo título em todos", ["execução penal", "execuções penais"]],
-    ["direitos_difusos_e_coletivos", "Direitos Difusos e Coletivos", "cobertura parcial relevante", ["direitos difusos e coletivos"]],
-    ["direito_tributario", "Direito Tributário", "opcional; aparece em parte dos editais", ["direito tributário", "tributário"]],
-    ["criminologia", "Criminologia", "opcional; às vezes vem junto de Direito Penal", ["criminologia"]],
-    ["direito_empresarial", "Direito Empresarial", "opcional; às vezes vem junto de Direito Civil", ["direito empresarial", "civil e empresarial"]],
-    ["direito_do_idoso", "Direito do Idoso", "opcional e frequentemente agrupado com outros grupos", ["direito do idoso", "pessoas idosas"]],
-    ["filosofia_sociologia_juridica", "Filosofia/Sociologia Jurídica", "opcional; títulos e escopos variam", ["filosofia do direito", "sociologia jurídica", "filosofia jurídica"]],
-    ["direito_antidiscriminatorio", "Direito Antidiscriminatório", "opcional e específico de alguns editais", ["antidiscriminatório", "antidiscriminatorio"]],
-    ["direito_ambiental_urbanistico", "Direito Ambiental e Urbanístico", "opcional; às vezes agrupado com Agrário", ["ambiental e urbanístico", "ambiental e urbanistico", "direito ambiental"]],
-    ["direito_agrario", "Direito Agrário", "opcional e específico de alguns editais", ["direito agrário", "direito agrario"]],
-    ["tutela_coletiva", "Tutela Coletiva", "opcional; não foi fundida automaticamente a Direitos Difusos", ["tutela coletiva"]],
-    ["direito_pessoas_idosas_deficiencia", "Direito das Pessoas Idosas e com Deficiência", "opcional e geralmente agrupado", ["pessoas idosas e com deficiência", "idoso e da pessoa com deficiência"]],
-    ["direito_sanitario", "Direito Sanitário", "opcional e específico do edital de Rondônia", ["direito sanitário"]],
-    ["direito_do_trabalho", "Direito do Trabalho", "opcional e específico do edital do Ceará", ["direito do trabalho"]],
-    ["direito_previdenciario", "Direito Previdenciário", "opcional e específico do edital do Ceará", ["direito previdenciário"]],
-    ["direito_a_saude", "Direito à Saúde", "opcional e específico de alguns editais", ["direito à saúde", "direito a saúde"]],
-    ["historia_geografia_local", "História e Geografia do estado", "opcional; depende do edital escolhido", ["história e geografia"]],
-    ["direito_filosofia_formacao_humanistica", "Formação Humanística e Relações Étnico-raciais", "opcional; aparece em conteúdos específicos", ["formação humanística", "relações étnico-raciais"]],
-    ["legislacao_penal_extravagante", "Legislação Penal e Processual Penal Extravagante", "opcional e específica de alguns editais", ["legislação penal e processual penal extravagante"]],
-    ["medicina_legal", "Medicina Legal", "opcional e específica do edital do Tocantins", ["medicina legal"]],
-    ["direito_urbanistico_fundiario", "Direito Urbanístico e Fundiário", "opcional; título conjunto do edital de Rondônia", ["urbanístico e fundiário", "urbanistico e fundiario"]],
-    ["direito_sociologia_estado", "Sociologia Jurídica e Teoria Geral do Estado", "opcional; título conjunto de alguns editais", ["sociologia jurídica e teoria geral do estado"]],
-    ["direito_saude_local", "Direito à Saúde e legislação local", "opcional; não substitui o edital do aluno", ["direito à saúde e legislação"]]
-  ];
-  const DISC_MAP = Object.fromEntries(DISCIPLINAS_EDITAIS.map(([id, nome, cobertura, aliases]) => [id, { id, nome, cobertura, aliases }]));
+  const DISCIPLINAS_EDITAIS = Array.isArray(window.DPE_DISCIPLINAS_CANONICAS) ? window.DPE_DISCIPLINAS_CANONICAS : [];
+  const CORE = DISCIPLINAS_EDITAIS.filter(d => d.nucleoComum === true).map(d => d.id);
+  const DISC_MAP = Object.fromEntries(DISCIPLINAS_EDITAIS.map(d => [d.id, { ...d }]));
 
   // 18 editais para a carreira de Defensor(a) Público(a), publicados entre 2021 e 2026.
   // Provas discursivas isoladas, caderno de prova, concurso de servidores e edital de 2014 ficaram fora.
   const EDITAIS_DPE = [
-    ["ac-2024", "AC", 2024, "DPE/AC · VI Concurso", ["direito_civil", "direito_processual_civil", "direito_penal", "direito_processual_penal", "direito_constitucional", "direito_administrativo", "direito_da_crianca_e_adolescente", "direito_do_idoso", "direito_do_consumidor", "direitos_humanos", "direitos_difusos_e_coletivos", "direito_institucional_defensoria_publica"]],
-    ["ap-2022", "AP", 2022, "DPE/AP · II Concurso", ["direito_constitucional", "direito_administrativo", "direito_penal", "direito_processual_penal", "execucao_penal", "direito_civil", "direito_processual_civil", "direito_do_consumidor", "direitos_difusos_e_coletivos", "direitos_humanos", "direito_da_crianca_e_adolescente", "direito_pessoas_idosas_deficiencia", "direito_agrario", "direito_ambiental_urbanistico", "direito_institucional_defensoria_publica"]],
-    ["am-2025", "AM", 2025, "DPE/AM · V Concurso", ["direitos_humanos", "direito_constitucional", "direito_administrativo", "direito_penal", "direito_processual_penal", "execucao_penal", "criminologia", "direito_civil", "direito_do_idoso", "direito_do_consumidor", "direito_a_saude", "direito_antidiscriminatorio", "direito_processual_civil", "direito_da_crianca_e_adolescente", "direitos_difusos_e_coletivos", "direito_institucional_defensoria_publica", "filosofia_sociologia_juridica", "historia_geografia_local"]],
-    ["ce-2022", "CE", 2022, "DPE/CE · Edital 01/2022", ["direito_constitucional", "direito_civil", "direito_penal", "direito_processual_civil", "direito_processual_penal", "direito_do_trabalho", "direito_administrativo", "direito_previdenciario", "direito_empresarial", "direito_do_consumidor", "direito_institucional_defensoria_publica"]],
-    ["es-2023", "ES", 2023, "DPE/ES · V Concurso", ["direito_constitucional", "direitos_humanos", "direito_administrativo", "direito_tributario", "direito_institucional_defensoria_publica", "direito_civil", "direito_empresarial", "direito_do_consumidor", "direito_processual_civil", "direitos_difusos_e_coletivos", "direito_da_crianca_e_adolescente", "direito_penal", "direito_processual_penal", "execucao_penal", "criminologia"]],
-    ["ma-2026", "MA", 2026, "DPE/MA · VII Concurso", ["direito_constitucional", "direito_do_consumidor", "direito_institucional_defensoria_publica", "direito_administrativo", "direito_civil", "direito_ambiental_urbanistico", "direito_agrario", "direito_processual_civil", "historia_geografia_local", "direitos_difusos_e_coletivos", "direito_da_crianca_e_adolescente", "direito_penal", "criminologia", "direito_processual_penal", "execucao_penal", "direitos_humanos", "direito_filosofia_formacao_humanistica"]],
-    ["mg-2023", "MG", 2023, "DPE/MG · IX Concurso", ["direito_penal", "criminologia", "direito_processual_penal", "execucao_penal", "direito_constitucional", "direitos_humanos", "direito_administrativo", "direito_civil", "direito_processual_civil", "direitos_difusos_e_coletivos", "direito_da_crianca_e_adolescente", "direito_do_consumidor", "direito_institucional_defensoria_publica"]],
-    ["mt-2022", "MT", 2022, "DPE/MT · VI Concurso", ["direito_civil", "direito_processual_civil", "direito_da_crianca_e_adolescente", "direito_do_consumidor", "direitos_difusos_e_coletivos", "direito_penal", "criminologia", "direito_processual_penal", "execucao_penal", "direito_constitucional", "direito_administrativo", "direito_tributario", "direitos_humanos", "direito_institucional_defensoria_publica"]],
-    ["mt-2025", "MT", 2025, "DPE/MT · VII Concurso", ["direito_civil", "direito_processual_civil", "direito_da_crianca_e_adolescente", "direito_do_consumidor", "direitos_difusos_e_coletivos", "direito_penal", "criminologia", "direito_processual_penal", "execucao_penal", "direito_constitucional", "direito_administrativo", "direito_tributario", "direitos_humanos", "direito_institucional_defensoria_publica"]],
-    ["pe-2025", "PE", 2025, "DPE/PE · IV Concurso", ["direito_constitucional", "direito_administrativo", "direito_civil", "direito_processual_civil", "direito_penal", "direito_processual_penal", "execucao_penal", "direito_do_consumidor", "direito_da_crianca_e_adolescente", "direitos_humanos", "direito_institucional_defensoria_publica"]],
-    ["rj-2026", "RJ", 2026, "DPE/RJ · XXIX Concurso", ["direito_civil", "direito_processual_civil", "direito_do_consumidor", "tutela_coletiva", "direito_empresarial", "direito_penal", "direito_processual_penal", "execucao_penal", "criminologia", "direito_constitucional", "direito_administrativo", "direitos_humanos", "direito_da_crianca_e_adolescente", "direito_institucional_defensoria_publica"]],
-    ["ro-2022", "RO", 2022, "DPE/RO · Edital 01/2022", ["direitos_humanos", "direito_constitucional", "direito_administrativo", "direito_urbanistico_fundiario", "direito_tributario", "direito_penal", "criminologia", "execucao_penal", "direito_processual_penal", "direito_civil", "direito_do_consumidor", "direito_processual_civil", "direito_sanitario", "direito_da_crianca_e_adolescente", "direito_sociologia_estado", "tutela_coletiva", "direito_pessoas_idosas_deficiencia", "direito_institucional_defensoria_publica"]],
-    ["rs-2025", "RS", 2025, "DPE/RS · VII Concurso", ["direito_constitucional", "direitos_humanos", "direito_filosofia_formacao_humanistica", "direito_da_crianca_e_adolescente", "direito_processual_civil", "direito_civil", "direito_do_consumidor", "direitos_difusos_e_coletivos", "direito_ambiental_urbanistico", "direito_processual_penal", "execucao_penal", "direito_penal", "criminologia", "direito_administrativo", "direito_tributario", "direito_institucional_defensoria_publica"]],
-    ["sc-2024", "SC", 2024, "DPE/SC · Concurso 01/2024", ["direito_constitucional", "direito_da_crianca_e_adolescente", "direitos_humanos", "direito_penal", "direito_processual_penal", "execucao_penal", "direito_civil", "direito_empresarial", "direito_processual_civil", "direitos_difusos_e_coletivos", "direito_do_consumidor", "direito_administrativo", "direito_tributario", "filosofia_sociologia_juridica", "direito_institucional_defensoria_publica"]],
-    ["sc-2026", "SC", 2026, "DPE/SC · Concurso 01/2026", ["direito_constitucional", "direito_administrativo", "direito_ambiental_urbanistico", "direito_civil", "direito_empresarial", "direito_da_crianca_e_adolescente", "execucao_penal", "direito_do_consumidor", "direito_institucional_defensoria_publica", "direito_penal", "direito_processual_civil", "direito_processual_penal", "direito_tributario", "direitos_difusos_e_coletivos", "direitos_humanos", "filosofia_sociologia_juridica", "criminologia", "historia_geografia_local"]],
-    ["se-2021", "SE", 2021, "DPE/SE · Edital 01/2021", ["direito_civil", "direito_processual_civil", "direito_do_consumidor", "direito_penal", "direito_processual_penal", "execucao_penal", "direito_constitucional", "direito_administrativo", "direito_da_crianca_e_adolescente", "direito_do_idoso", "direitos_humanos", "direitos_difusos_e_coletivos", "direito_institucional_defensoria_publica"]],
-    ["sp-2026", "SP", 2026, "DPE/SP · X Concurso", ["direito_constitucional", "direito_administrativo", "direito_tributario", "direito_penal", "direito_processual_penal", "direito_civil", "direito_empresarial", "direito_processual_civil", "direitos_difusos_e_coletivos", "direito_da_crianca_e_adolescente", "direitos_humanos", "direito_institucional_defensoria_publica", "filosofia_sociologia_juridica"]],
-    ["to-2021", "TO", 2021, "DPE/TO · Edital 01/2021", ["direito_constitucional", "direitos_humanos", "direito_administrativo", "direito_tributario", "direito_civil", "direito_empresarial", "direito_processual_civil", "direito_agrario", "direitos_difusos_e_coletivos", "filosofia_sociologia_juridica", "direito_institucional_defensoria_publica", "direito_antidiscriminatorio", "direito_penal", "direito_processual_penal", "execucao_penal", "legislacao_penal_extravagante", "criminologia", "medicina_legal"]]
-  ].map(([id, estado, ano, nome, subjects]) => ({ id, estado, ano, nome, subjects }));
+    ["ac-2024","AC",2024,"DPE/AC · VI Concurso"],
+    ["ap-2022","AP",2022,"DPE/AP · II Concurso"],
+    ["am-2025","AM",2025,"DPE/AM · V Concurso"],
+    ["ce-2022","CE",2022,"DPE/CE · Edital 01/2022"],
+    ["es-2023","ES",2023,"DPE/ES · V Concurso"],
+    ["ma-2026","MA",2026,"DPE/MA · VII Concurso"],
+    ["mg-2023","MG",2023,"DPE/MG · IX Concurso"],
+    ["mt-2022","MT",2022,"DPE/MT · VI Concurso"],
+    ["mt-2025","MT",2025,"DPE/MT · VII Concurso"],
+    ["pe-2025","PE",2025,"DPE/PE · IV Concurso"],
+    ["rj-2026","RJ",2026,"DPE/RJ · XXIX Concurso"],
+    ["ro-2022","RO",2022,"DPE/RO · Edital 01/2022"],
+    ["rs-2025","RS",2025,"DPE/RS · VII Concurso"],
+    ["sc-2024","SC",2024,"DPE/SC · Concurso 01/2024"],
+    ["sc-2026","SC",2026,"DPE/SC · Concurso 01/2026"],
+    ["se-2021","SE",2021,"DPE/SE · Edital 01/2021"],
+    ["sp-2026","SP",2026,"DPE/SP · X Concurso"],
+    ["to-2021","TO",2021,"DPE/TO · Edital 01/2021"]
+  ].map(([id, estado, ano, nome]) => {
+    const canonicas = window.DPE_CONTEUDOS_EDITAIS?.[id]?.disciplinas.flatMap(d => d.canonicais || []) || [];
+    return { id, estado, ano, nome, subjects: [...new Set(canonicas)] };
+  });
 
   const dias = [[1,'Seg'],[2,'Ter'],[3,'Qua'],[4,'Qui'],[5,'Sex'],[6,'Sáb'],[7,'Dom']];
   const escLocal = v => typeof esc === 'function' ? esc(v) : String(v ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -177,7 +141,7 @@
   function renderCronograma() {
     const salvo=planoAtual();if(!S.cronogramaDraft)S.cronogramaDraft=prepararDraft(planoAtual());
     const draft=S.cronogramaDraft, source=programas()[draft.conteudoId], ds=unidades(draft);
-    const offered=ds.length?ds.map(d=>d.id):DISCIPLINAS_EDITAIS.map(d=>d[0]);
+    const offered=ds.length?ds.map(d=>d.id):DISCIPLINAS_EDITAIS.map(d=>d.id);
     const selected=draft.subjects.filter(id=>offered.includes(id));draft.subjects=selected;draft.topicosSelecionados=draft.topicosSelecionados||{};
     let w=semanaAtual(draft);
     const opcoes=selecionado=>EDITAIS_DPE.map(e=>`<option value="${e.id}" ${e.id===selecionado?'selected':''}>${escLocal(e.nome)}</option>`).join('');
