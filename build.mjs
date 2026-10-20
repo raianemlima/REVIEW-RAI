@@ -45,7 +45,7 @@ html = html.slice(0, a) +
   `<script type="text/plain" id="app-src" data-src="app-src.txt"></script>\n` +
   `<script>${gate}</script>` + html.slice(b + 9);
 
-const módulosPreguiçosos = ["arquivos/metacognicao.js", "arquivos/cronograma-pesos.js", "arquivos/cronograma-taxonomia.js", "arquivos/cronograma-conteudo.js", "arquivos/cronograma-motor.js", "arquivos/cronograma.js", "arquivos/interface.js"];
+const módulosPreguiçosos = ["arquivos/metacognicao.js", "arquivos/cronograma-pesos.js", "arquivos/cronograma-taxonomia.js", "arquivos/cronograma-conteudo.js", "arquivos/cronograma-motor.js", "arquivos/cronograma.js", "arquivos/interface.js", "arquivos/dashboard-editais.js"];
 for (const caminho of módulosPreguiçosos) {
   const escaped = caminho.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const referência = new RegExp(`<script\\b(?=[^>]*\\bsrc=[\"'](?:\\./)?${escaped}[\"'])[^>]*>\\s*<\\/script>`, "gi");

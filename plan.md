@@ -110,8 +110,54 @@ Estrutura: arquivos/cronograma.js integra editor e Hoje ao app; arquivos/cronogr
 
 Corrigir barra inferior com posicionamento estável no viewport, fora de ancestrais transformados e com espaço reservado medido; áreas seguras e teclado móvel não podem esconder botões de reflexão/salvar. Conferir defeito real em navegador com fixtures offline de celular, sem conta de produção. Entrega em branch/PR rascunho, incorporando correção de percentuais ainda não integrada; sem merge/publicação automática.
 
+# Etapa 7 — revisão visual e dashboard de matérias/pesos
 
-# Etapa 7 — contrato de conteúdo e taxonomia
+## Design Read
+
+- **Artefato:** dashboard analítico dentro da rota Progresso, com uma leitura rápida para orientar decisões de estudo e uma camada detalhada de frequência/pesos dos editais.
+- **Público:** alunos de Defensoria Pública usando celular como dispositivo principal e desktop para planejamento mais longo.
+- **Linguagem visual:** editorial institucional orientada a dados — calma, legível e comparativa, sem transformar o relatório em um cockpit de métricas.
+- **Modo:** extensão / redesign-preserve. A identidade atual, rotas e fluxos de estudo permanecem; o dashboard entra como uma camada de análise.
+- **Dials:** variação 3/10, movimento 2/10, densidade 7/10, dependência de assets 2/10, fidelidade à marca 9/10.
+
+## Auditoria visual executável
+
+A fixture offline foi conferida em 1440×900, 1280×720, 1024×900, 768×1024, 390×844 e 320×720, além de sessão de estudo e planejamento escuro. Não houve acesso a conta, rede de produção ou dados de alunos. A navegação não apresentou overflow horizontal; a barra inferior permaneceu estável no celular; o CTA do bloco e os controles do cartão ficaram alcançáveis; o tema escuro preservou contraste suficiente.
+
+Pontos de melhoria observados: a tela Progresso começa com uma área extensa de conquistas e deixa o conteúdo analítico abaixo da primeira viewport; no celular, a primeira tela é quase toda ocupada por medalhas, enquanto o aluno precisa rolar para chegar às estatísticas; a tela Hoje possui boa hierarquia de ação, mas o relatório precisa de um ponto de entrada explícito; o planejamento escuro tem boa legibilidade, mas muito espaço vazio no desktop. O dashboard deve resolver descoberta e hierarquia sem remover conquistas, FSRS ou dados existentes.
+
+## Direção visual proposta
+
+- **Preservar:** logotipo, Rubik, violeta da marca, superfícies claras/escuras, navegação lateral/ inferior, estados de foco, rotas existentes, cartões, FSRS e chaves de persistência.
+- **Melhorar:** criar um cabeçalho “Relatório dos editais” com contexto e CTA “Usar no cronograma”; mostrar 18 editais, 7 matérias universais, 14 perfis com peso numérico e 16 estados como sinais de orientação; ordenar a leitura por frequência antes de expor pesos e limitações.
+- **Compor:** painel de resumo + ranking de frequência + matriz de mediana/faixa de questões + grupos compartilhados em disclosure; em telas pequenas, uma coluna com barras horizontais e tabelas convertidas em cartões legíveis.
+- **Não fazer:** não colocar 5.364 tópicos na primeira vista, não transformar frequência em promessa de aprovação, não substituir a tela de conquistas, não introduzir uma nova barra de navegação principal, não inventar pesos individuais para blocos.
+
+## Sistema visual
+
+- **Paleta:** tokens atuais `--rd-bg`, `--rd-surface`, `--rd-brand`, `--rd-ok`, `--rd-amber` e `--rd-line`; violeta identifica a ação e o relatório, verde indica dado concluído/estável, âmbar sinaliza atenção metodológica e vermelho fica reservado a erro.
+- **Tipografia:** Rubik para interface e números; Newsreader/itálico apenas em notas metodológicas curtas, preservando o contraste editorial já usado pelo app.
+- **Espaçamento:** base de 8 px, agrupamentos de 16/24 px, largura confortável de leitura e barras com rótulo textual — nenhum dado dependerá apenas de cor.
+- **Raio e elevação:** cartões de dados com os mesmos raios do produto; sombra suave só para a camada de resumo; linhas finas para tabelas e disclosures.
+- **Movimento:** apenas entrada suave e feedback de filtro; respeitar `prefers-reduced-motion`.
+
+## Arquitetura proposta
+
+1. A rota **Progresso** mantém conquistas e estatísticas existentes, mas recebe um CTA/atalho claro para **Relatório dos editais**.
+2. O dashboard usa os catálogos estáticos existentes (`cronograma-conteudo.js` e `cronograma-pesos.js`) e não grava dados de aluno.
+3. O primeiro bloco resume a amostra; o segundo apresenta o núcleo universal e a frequência; o terceiro compara pesos individuais com mediana e intervalo; o quarto explica grupos e limitações.
+4. Um filtro por edital permite ver o programa selecionado e encaminha ao Cronograma; não haverá uma nova aba principal.
+5. Todos os componentes reaproveitam a camada `interface.css`, com estados claros para carregamento, vazio e sem peso verificável. A implementação fica em `arquivos/dashboard-editais.js` e `arquivos/dashboard-editais.css`; a validação de publicação exige referências únicas e cache offline; o relatório é copiado para `docs/` no artefato do GitHub Pages.
+
+## Contratos protegidos
+
+Não alterar IDs de cartões, FSRS, login, sincronização, backup, chaves `S.ajustes`/`S.cards`/`S.logs`, rotas existentes, labels principais de navegação, conteúdo protegido, ações de estudo ou comportamento da barra móvel. O dashboard é informativo e não modifica automaticamente o cronograma do aluno.
+
+## Maior risco e fallback
+
+O maior risco é aumentar a densidade do Progresso e esconder novamente a ação principal. A entrega reduz esse risco colocando o dashboard no início de Progresso, com resumo curto e detalhes progressivos; conquistas e estatísticas antigas continuam abaixo. Se a densidade precisar ser reduzida no futuro, o painel pode virar uma subvista recolhida sem alterar contratos de estudo ou dados.
+
+# Etapa 8 — contrato de conteúdo e taxonomia
 
 Separar o registro semântico de disciplinas da lógica da interface, em `arquivos/cronograma-taxonomia.js`, mantendo a classificação editorial e os textos por edital em `arquivos/cronograma-conteudo.js`. Cada rubrica conserva seu identificador de origem e relaciona zero ou mais IDs canônicos; o vazio é válido para itens sem equivalência segura, e rubricas combinadas podem apontar para vários canônicos. Não deduplicar tópicos repetidos entre editais nem alterar texto, IDs ou localizadores de origem.
 
@@ -120,7 +166,7 @@ Derivar o núcleo comum e os metadados de disciplinas do catálogo, deixando `ED
 Documentar campos, relações, proveniência, estabilidade de IDs e casos legítimos sem vínculo. Testar contra os dados reais e fixtures inválidas, preservando planos/progresso sincronizados, o baralho, FSRS e conteúdo protegido. Não migrar para CMS, não acessar dados de estudantes e não publicar nem mesclar automaticamente.
 
 
-# Etapa 8 — carregamento inicial e acessibilidade do gate
+# Etapa 9 — carregamento inicial e acessibilidade do gate
 
 Reduzir o custo perceptível da tela pública de entrada sem redesign nem alteração do FSRS, dos dados de estudante, do esquema de armazenamento ou da autenticação. O HTML deve conter somente o shell/gate e referências. Separar o baralho cifrado em `deck.enc` e o código do app em `app-src.txt`; o gate os consome somente no caminho de desbloqueio. Manter módulos dependentes em referências lazy, respeitando sua ordem. O service worker deve precachear os artefatos necessários para o uso offline.
 
