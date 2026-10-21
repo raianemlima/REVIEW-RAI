@@ -637,7 +637,7 @@ async function sincronizar(manual) {
     for (let t = 0; t < 3 && !feito; t++) {
       const rem = await be.ler();
       const local = snapshot();
-      const merged = rem ? mesclar(local, rem.data) : { cards: local.cards, logs: local.logs, flags: local.flags, ajustes: local.ajustes };
+      const merged = rem ? mesclar(local, limparProgresso(rem.data)) : { cards: local.cards, logs: local.logs, flags: local.flags, ajustes: local.ajustes };
       const antes = canon({ c: S.cards, l: S.logs, f: S.flags });
       aplicarMesclado(merged);
       const novo = snapshot();
@@ -2158,6 +2158,21 @@ function setSave(txt) { $("#save").textContent = txt; }
 function localSave() { try { localStorage.setItem(LS, JSON.stringify({ ajustes: S.ajustes, cards: S.cards, logs: S.logs, flags: S.flags })); nativeSave(); lembreteSync(); setSave(lblLocal()); } catch (e) { setSave("sem onde salvar: exporte um backup"); } }
 function cardsOf(d) { return Object.fromEntries(Object.entries(S.cards).filter(([id]) => ((byId[id] || {}).disc || "pi") === d)); }
 function cleanCards(o) { const out = {}; for (const [k, v] of Object.entries(o || {})) if (v && typeof v.s === "number") out[k] = { ...v }; return out; }
+// progresso vindo de fora (backup importado, GitHub, nuvem): descarta o que tem formato errado antes de mesclar ou aplicar
+const objPuro = v => v !== null && typeof v === "object" && !Array.isArray(v);
+function limparProgresso(d) {
+  d = objPuro(d) ? d : {};
+  const aj = objPuro(d.ajustes) ? { ...d.ajustes } : {};
+  for (const k of ["conq", "nvLidas", "nvFeitas", "lsLidos", "dtLidos"]) if (k in aj && !Array.isArray(aj[k])) delete aj[k];
+  for (const k of ["calib", "pares", "erros", "t2f"]) if (k in aj) { if (Array.isArray(aj[k])) aj[k] = aj[k].filter(Array.isArray); else delete aj[k]; }
+  for (const k of ["caderno", "meus"]) if (k in aj) { if (Array.isArray(aj[k])) aj[k] = aj[k].filter(x => objPuro(x) && typeof x.id === "string"); else delete aj[k]; }
+  if (Array.isArray(aj.meus)) aj.meus = aj.meus.filter(m => typeof m.frente === "string" && typeof m.verso === "string");
+  for (const k of ["notas", "desafios", "jogo"]) if (k in aj && !objPuro(aj[k])) delete aj[k];
+  const logs = {}, flags = {};
+  if (objPuro(d.logs)) for (const [m, v] of Object.entries(d.logs)) if (objPuro(v)) logs[m] = v;
+  if (objPuro(d.flags)) for (const [id, v] of Object.entries(d.flags)) if (objPuro(v)) flags[id] = v;
+  return { ...d, cards: cleanCards(d.cards), logs, flags, ajustes: aj };
+}
 function localLoad() { try { const j = JSON.parse(localStorage.getItem(LS) || "null"); if (j) Object.assign(S, { ajustes: { ...DEFAULTS, ...j.ajustes }, cards: cleanCards(j.cards), logs: j.logs || {}, flags: j.flags || {} }); } catch (e) {} }
 
 function queue(kind, key, val, month) {
@@ -3088,7 +3103,7 @@ function renderHoje() {
     ${flagged ? `<div class="note">${plural(flagged, "cartão sinalizado", "cartões sinalizados")} como possível erro. Veja na Biblioteca, filtro “Sinalizados”.</div>` : ""}
 
     <section class="panel"><div class="ph"><h3>Sua semana</h3><span class="count">${wkOn}/5 dias · meta semanal</span></div>
-      <div class="week">${wk.map(x => `<div class="wd ${x.on ? "on" : ""} ${x.hoje ? "today" : ""} ${x.fut ? "fut" : ""}" title="${x.nome}" aria-label="${x.nome}${x.on ? ", estudou" : ""}"><i>${x.on ? "🔥" : ""}</i><span>${x.l}</span></div>`).join("")}</div>
+      <div class="week">${wk.map(x => `<div class="wd ${x.on ? "on" : ""} ${x.hoje ? "today" : ""} ${x.fut ? "fut" : ""}" title="${esc(x.nome)}" aria-label="${esc(x.nome)}${x.on ? ", estudou" : ""}"><i>${x.on ? "🔥" : ""}</i><span>${x.l}</span></div>`).join("")}</div>
       <p class="count" style="margin:10px 0 0">${st.n ? "O calendário registra sua presença. Descansar não apaga respostas, XP ou conquistas; não é preciso compensar amanhã." : "Cada dia de estudo conta, mesmo com um bloco pequeno. A sugestão de 5 dias não é uma obrigação."}</p></section>
 
     ${(() => { const n = modoCards("noite").length; return new Date().getHours() >= 19 && n ? `<section class="panel" style="border-left:5px solid #5b6f8f"><div class="ph"><h3>🌙 Antes de dormir</h3><span class="count">5 minutos</span></div><p style="margin:0 0 10px">Revise os ${plural(n, "cartão", "cartões")} que você errou ou achou difícil hoje. Recuperar a informação antes de dormir ajuda o sono a consolidá-la.</p><button class="btn primary" data-modo="noite">Revisar agora</button></section>` : ""; })()}
@@ -3689,7 +3704,8 @@ function readBackup(file) {
       <div class="row"><button class="btn primary" id="impYes">Restaurar</button><button class="btn" id="impNo">Cancelar</button></div></div>`;
     $("#impNo").onclick = () => $("#impMsg").innerHTML = "";
     $("#impYes").onclick = async () => {
-      S.ajustes = { ...DEFAULTS, ...j.ajustes }; S.cards = cleanCards(j.cards); S.logs = j.logs || {}; S.flags = j.flags || {}; S.session = null;
+      const lim = limparProgresso(j);
+      S.ajustes = { ...DEFAULTS, ...lim.ajustes }; S.cards = lim.cards; S.logs = lim.logs; S.flags = lim.flags; S.session = null;
       if (S.mode === "db") {
         setSave("salvando…");
         try {
