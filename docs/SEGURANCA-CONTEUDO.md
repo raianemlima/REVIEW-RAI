@@ -38,8 +38,8 @@ Faça quando houver suspeita de vazamento da senha, ou em intervalos que você d
 
 ## Privacidade (leia antes de rodar a parte 6)
 O registro guarda **IP e navegador ligados à conta**, que são dados pessoais. Antes de ativar:
-- Atualize `privacidade.html` informando a coleta, a finalidade (segurança e detecção de compartilhamento de conta) e o prazo de retenção. Não alterei o arquivo: o texto de política é decisão sua, e convém conferir com quem cuida da conformidade LGPD do projeto.
-- Texto de partida, para você ajustar: "Para proteger o conteúdo contra uso indevido, registramos a data, o IP e o navegador de cada liberação de acesso ao conteúdo, vinculados à sua conta, por até 180 dias. Esses dados são usados só para segurança e para detectar compartilhamento de conta."
+- `privacidade.html` (seção "Registro de acesso ao conteúdo") e o item 9 de `termos.html` já descrevem a coleta, a finalidade (segurança e detecção de compartilhamento de conta) e o prazo de retenção de 180 dias. **São textos-base, escritos por IA: revise com quem cuida da conformidade LGPD do projeto antes de ativar.** Se mudar o prazo, mude também o passo 6.4 e a política.
+- O item 15 dos Termos promete avisar por e-mail ou no app **antes** de mudanças relevantes valerem. Avise os assinantes antes de ativar a parte 6.
 - Combine o prazo do passo 6.4 com o que a política disser.
 
 ## Alternativas que **não** foram implementadas

@@ -146,7 +146,7 @@ alter table public.liberados add constraint liberados_email_normalizado_ck check
 -- ============ 6) Registro de entregas da chave (S2): detectar compartilhamento — NÃO rodar às cegas ============
 -- A senha do baralho é única e o deck.enc é público: um assinante que a repassa dá acesso a quem a receber.
 -- Isso não tem correção técnica no navegador. O que dá para fazer é DETECTAR contas usadas em muitos lugares.
--- Antes de rodar: (1) leia docs/SEGURANCA-CONTEUDO.md; (2) atualize a Política de Privacidade (o registro guarda IP e navegador
+-- Antes de rodar: (1) leia docs/SEGURANCA-CONTEUDO.md; (2) publique a Política de Privacidade e os Termos atualizados e avise os assinantes (o registro guarda IP e navegador
 -- por conta, o que é dado pessoal); (3) rode depois das partes 2 e 5; (4) faça backup. Um passo por vez.
 
 -- 6.1) Tabela do registro. Sem policy e sem permissão para anon/authenticated: só o painel e a função (security definer) acessam.

@@ -49,3 +49,15 @@ test("o guia avisa sobre privacidade, limites e rotação, e a parte 6 aponta pa
   assert.match(parte6, /Política de Privacidade/);
   for (const trecho of ["Não existe correção técnica", "Privacidade", "Rotação da senha", "histórico do Git", "IP e navegador"]) assert.ok(doc.includes(trecho), trecho);
 });
+
+test("Termos e Política descrevem o registro antes de ele ser ativado, com o mesmo prazo do passo 6.4", () => {
+  const priv = readFileSync(resolve(raiz, "privacidade.html"), "utf8");
+  const termos = readFileSync(resolve(raiz, "termos.html"), "utf8");
+  assert.match(priv, /<h2>Registro de acesso ao conteúdo<\/h2>/);
+  for (const t of ["endereço IP", "user agent", "180 dias", "compartilhamento da conta"]) assert.ok(priv.includes(t), t);
+  assert.match(termos, /registramos a data, o IP e o navegador/);
+  assert.match(termos, /href="privacidade\.html">Política de Privacidade<\/a>\. Se esse registro/);
+  assert.match(parte6, /180 days/);
+  assert.doesNotMatch(priv, /não usamos rastreamento\.<\/b>/);
+  assert.equal(priv.match(/Última atualização: (\S+)</)[1], termos.match(/Última atualização: (\S+)</)[1]);
+});
