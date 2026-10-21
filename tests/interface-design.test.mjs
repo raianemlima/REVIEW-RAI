@@ -103,6 +103,12 @@ test('Hoje usa data, fila, meta e sequência reais e não injeta identidade ou s
     const hero = doc.querySelector('.hero');
     assert.equal(doc.querySelector('#main').dataset.rdView, 'hoje');
     assert.match(hero.textContent, /10 cartões no próximo bloco/);
+    const metaDetails = hero.querySelector('.rd-goal-details');
+    assert.ok(metaDetails);
+    assert.equal(metaDetails.open, false);
+    assert.equal(metaDetails.contains(hero.querySelector('.frase')), true);
+    assert.equal(metaDetails.contains(hero.querySelector('.day-metas')), true);
+    assert.match(doc.querySelector('#goEstudar').textContent, /Ver modos/);
     click(a, '[data-meta="20"]');
     assert.equal(a.run('S.ajustes.metaDiaria'), 20);
     a.run(`S.ajustes.metaDiaria = 10; renderHoje();`);

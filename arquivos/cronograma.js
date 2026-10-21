@@ -111,45 +111,89 @@
     if(typeof DECK==='undefined')return[];
     return (DECK.disciplinas||[]).filter(d=>subjects.some(id=>{const refs=DISC_MAP[id]?.canonicais||[id];return refs.some(c=>{const nome=normLocal(DISC_MAP[c]?.nome||c),deck=normLocal(d.nome||d.curto||d.id);return deck===nome||deck===normLocal(DISC_MAP[c]?.aliases?.[0]);});})).map(d=>d.id);
   }
-  const PALAVRAS_IGNORADAS = new Set('a ao aos as com da das de do dos e em entre fazer geral gerais uma um uns umas na nas no nos o os para por que seu sua suas sobre até após aplicação aplicacao conceito conceitos direito direitos lei leis normas norma princípios principios processo processos teoria disposições disposicoes parte partes forma formas'.split(' '));
-  function palavrasAssunto(v) { return [...new Set(normLocal(v).split(' ').filter(p=>p.length>=4&&!PALAVRAS_IGNORADAS.has(p)))]; }
   function disciplinaDeckIds(subjectId,p) {
     if(typeof DECK==='undefined')return new Set();
     const d=disciplina(subjectId,p), nomes=[subjectId,d.nome,...(d.canonicais||[]),...(DISC_MAP[subjectId]?.aliases||[])].map(normLocal).filter(Boolean), ids=new Set([subjectId,...(d.canonicais||[])]);
     for(const item of DECK.disciplinas||[]) if(nomes.includes(normLocal(item.id))||nomes.includes(normLocal(item.nome))||nomes.includes(normLocal(item.curto))) ids.add(item.id);
     return ids;
   }
-  function conteudoPlataforma(p,b) {
-    const t=b.objeto||{}, cards=typeof DECK==='undefined'||!Array.isArray(DECK.cartoes)?[]:DECK.cartoes, ids=disciplinaDeckIds(b.disciplinaId,p), assunto=palavrasAssunto(`${t.titulo||''} ${t.texto||''}`), titulo=normLocal(t.titulo||'').replace(/^\d+(?:\.\d+)*\s*/,'');
-    const daDisciplina=cards.filter(c=>ids.has(c.disc)), avaliados=daDisciplina.map(c=>{
-      const tema=normLocal(c.tema||''), texto=normLocal(`${c.tema||''} ${c.frente||''} ${c.verso||''} ${c.porque||''}`), temaPalavras=palavrasAssunto(c.tema||''), inter=assunto.filter(x=>texto.includes(x)), interTema=assunto.filter(x=>temaPalavras.includes(x));
-      const exato=!!titulo&&(tema===titulo||tema.includes(titulo)||titulo.includes(tema)), score=(exato?100:0)+interTema.length*12+inter.length*2;
-      return {c,score,exato,inter:inter.length,interTema:interTema.length};
-    }).filter(x=>x.exato||x.interTema>=2||(x.inter>=2&&assunto.length<=5)).sort((a,b)=>b.score-a.score||String(a.c.id).localeCompare(String(b.c.id))).slice(0,4).map(x=>x.c);
-    const termo=(assunto.slice(0,3).join(' ')||titulo||b.topico||'').trim();
-    return {cards:avaliados,totalDisciplina:daDisciplina.length,disciplinaId:[...ids].find(id=>cards.some(c=>c.disc===id))||b.disciplinaId,termo};
+  // ---- ligação do assunto do dia com o conteúdo do próprio app ----
+  const globalOu = (fn, fallback) => { try { const v = fn(); return v === undefined ? fallback : v; } catch (_) { return fallback; } };
+  let _fontesApp = null;
+  function fontesApp() {
+    const deck = typeof DECK === 'undefined' ? {} : DECK;
+    const teses = globalOu(() => (typeof tsDados === 'function' ? tsDados() : TESES_PUBLICO).itens, []);
+    const sumulas = globalOu(() => (typeof dpeDados === 'function' ? dpeDados() : DPE_PUBLICO).sumulas, []);
+    const provas = globalOu(() => typeof provasDados === 'function' ? provasDados() : PROVAS_PUBLICO, []);
+    const k = [deck.cartoes?.length, deck.leiseca?.length, teses?.length, sumulas?.length, provas?.length].join(':');
+    if (!_fontesApp || _fontesApp.k !== k || _fontesApp.f.cartoes !== deck.cartoes) _fontesApp = { k, f: { cartoes: deck.cartoes || [], leiseca: deck.leiseca || [], teses: teses || [], sumulas: sumulas || [], provas: provas || [] } };
+    return _fontesApp.f;
   }
-  function bibliotecaUrlData(resultado) { return `data-cr-biblio-disc="${escLocal(resultado.disciplinaId)}" data-cr-biblio-query="${escLocal(resultado.termo)}"`; }
-  function plataformaHtml(resultado) {
-    if(resultado.cards.length) return `<section class="cr-platform"><div class="cr-platform-heading"><b>Já temos na plataforma</b><span>${resultado.cards.length} ${resultado.cards.length===1?'cartão relacionado':'cartões relacionados'}</span></div><p>Comece por estes cartões da Biblioteca; eles são a revisão disponível para este assunto, não substituem a leitura do edital.</p><ul class="cr-platform-list">${resultado.cards.map(c=>`<li><b>${escLocal(c.tema||'Cartão de revisão')}</b><span>${escLocal(String(c.frente||c.verso||'').replace(/\s+/g,' ').slice(0,220))}${String(c.frente||c.verso||'').length>220?'…':''}</span></li>`).join('')}</ul><button type="button" class="btn small" data-cr-biblioteca ${bibliotecaUrlData(resultado)}>Abrir estes conteúdos na Biblioteca</button></section>`;
-    return `<section class="cr-platform cr-platform-empty"><div class="cr-platform-heading"><b>Conteúdo da plataforma</b><span>${resultado.totalDisciplina?`${resultado.totalDisciplina} cartões na disciplina`:'nenhum cartão associado'}</span></div><p>Não encontrei um cartão específico para este assunto. ${resultado.totalDisciplina?'Você pode consultar os cartões da disciplina e complementar a leitura do edital.':'Este assunto ainda não tem cartões associados no baralho atual.'}</p><button type="button" class="btn small" data-cr-biblioteca ${bibliotecaUrlData(resultado)}>Ver a disciplina na Biblioteca</button></section>`;
+  const _relCache = new Map();
+  function conteudoRelacionado(p, b) {
+    const f = fontesApp(), t = b.objeto || {}, k = `${p.conteudoId}:${b.disciplinaId}:${b.topicoId}:${f.cartoes.length}:${f.teses.length}:${f.provas.length}`;
+    if (_relCache.has(k)) return _relCache.get(k);
+    const d = disciplina(b.disciplinaId, p), ids = [...disciplinaDeckIds(b.disciplinaId, p)];
+    const nomes = [d.nome, b.nome, ...(d.canonicais || []).map(c => DISC_MAP[c]?.nome), ...ids.map(id => (f.cartoes.length && typeof DISC === 'object' ? DISC[id]?.nome : ''))].filter(Boolean);
+    const r = motor().relacionarConteudo ? motor().relacionarConteudo(f, { titulo: t.titulo, texto: t.texto, leis: t.leis, juris: t.juris, discIds: ids, discNomes: nomes }) : null;
+    if (r) r.disciplinaId = ids.find(id => f.cartoes.some(c => c.disc === id)) || '';
+    if (_relCache.size > 400) _relCache.clear(); _relCache.set(k, r); return r;
+  }
+  const irAttr = o => `data-cr-ir="${escLocal(JSON.stringify(o))}"`;
+  const resumir = (s, n = 160) => { const x = String(s || '').replace(/\s+/g, ' ').trim(); return x.length > n ? x.slice(0, n) + '…' : x; };
+  const frenteCartao = c => c.tipo === 'multipla_escolha' && typeof parseMC === 'function' ? globalOu(() => parseMC(c.frente).stem, c.frente) : c.frente;
+  function itemRelHtml(x) {
+    if (x.fonte === 'cartao') { const c = x.item; return `<li><b>${escLocal(c.tema || 'Cartão')}</b><span>${escLocal(resumir(frenteCartao(c)))}</span><button type="button" class="btn small ghost" ${irAttr({ v: 'lib', disc: c.disc || '', q: c.id })}>Abrir cartão</button></li>`; }
+    if (x.fonte === 'leiseca') { const d = x.item, arts = x.artigos || []; return `<li><b>${escLocal(d.nome || d.curto || d.id)}</b><span>${arts.length ? 'Artigos sobre o assunto: ' + arts.map(a => escLocal(a.r || 'art. ' + a.a)).join(', ') : escLocal(x.motivo)}</span><button type="button" class="btn small ghost" ${irAttr({ v: 'lei', dip: d.id, gi: arts[0]?.gi || 0, q: arts.length === 1 ? String(arts[0].a) : '' })}>Ler na Lei seca</button>${arts.length > 1 ? arts.map(a => `<button type="button" class="btn small ghost" ${irAttr({ v: 'lei', dip: d.id, gi: a.gi, q: String(a.a) })}>${escLocal(a.r || 'Art. ' + a.a)}</button>`).join('') : ''}</li>`; }
+    if (x.fonte === 'tese') { const t = x.item; return `<li><b>${escLocal(`${t.tribunal || ''} · ${t.tipo || ''}${t.num ? ' ' + t.num : ''}`)}</b><span>${escLocal(resumir(t.texto))}</span><button type="button" class="btn small ghost" ${irAttr({ v: 'tese', q: t.processo || (t.num ? 'tema ' + t.num : resumir(t.texto, 40)) })}>Ver em Teses</button></li>`; }
+    if (x.fonte === 'sumula') { const s = x.item; return `<li><b>${escLocal(`${s.tribunal || ''} · ${s.tipo || 'Súmula'}`)}</b><span>${escLocal(resumir(s.enunciado))}</span><button type="button" class="btn small ghost" ${irAttr({ v: 'sum', ramo: s.ramo || '', tri: s.tribunal || '' })}>Ver em Defensoria</button></li>`; }
+    if (x.fonte === 'prova') { const q = x.item, P = x.prova; return `<li><b>${escLocal(`${P.nome} · questão ${q.n}`)}</b><span>${escLocal(resumir(q.assunto || q.enunciado))}${q.fonte ? ' · ' + escLocal(q.fonte) : ''}</span><button type="button" class="btn small ghost" ${irAttr({ v: 'prova', id: P.id, mat: q.materia || '', n: q.n })}>Resolver questão</button></li>`; }
+    return '';
+  }
+  const GRUPOS_REL = [['tema', 'Assunto/tema', 'cartões de conceito, comparativos, teses defensivas e certo/errado', ''], ['lei', 'Lei e lei seca', 'dispositivos e cartões de lei seca', 'lei_seca'], ['juris', 'Súmulas e jurisprudência', 'teses, súmulas e cartões de jurisprudência', 'jurisprudencia'], ['questoes', 'Questões', 'questões reais de provas e cartões de múltipla escolha', 'multipla_escolha']];
+  function resumoRelacionado(r) {
+    if (!r) return '';
+    const partes = GRUPOS_REL.filter(([g]) => r[g].total).map(([g, nome]) => `${r[g].total} ${nome.toLowerCase()}`);
+    return `<p class="cr-app-resumo" data-cr-app-resumo>${partes.length ? `<b>No app para este assunto:</b> ${escLocal(partes.join(' · '))}` : 'Ainda não há conteúdo específico do app para este assunto; use o edital e as fontes oficiais.'}</p>`;
+  }
+  function plataformaHtml(r, p, b) {
+    if (!r) return '';
+    const termo = r.assunto || '';
+    const grupos = GRUPOS_REL.map(([g, nome, desc, tipoCard]) => {
+      const G = r[g], cartoes = G.itens.filter(x => x.fonte === 'cartao').length;
+      const verTodos = G.total > G.itens.length && r.disciplinaId ? `<button type="button" class="btn small" ${irAttr({ v: 'lib', disc: r.disciplinaId, tipo: tipoCard, q: '', tema: '' })}>Ver todos na Biblioteca</button>` : '';
+      return `<section class="cr-rel-grupo" data-cr-rel="${g}"><div class="cr-platform-heading"><b>${nome}</b><span>${G.total ? `${G.total} ${G.total === 1 ? 'item' : 'itens'} no app` : 'nada específico'}</span></div>${G.total ? `<ul class="cr-platform-list">${G.itens.map(itemRelHtml).join('')}</ul>${cartoes ? verTodos : ''}` : `<p>Não encontrei ${desc} ligados a este assunto.</p>`}</section>`;
+    }).join('');
+    return `<section class="cr-platform ${r.total ? '' : 'cr-platform-empty'}"><div class="cr-platform-heading"><b>Estudar com o conteúdo do app</b><span>${r.total ? `${r.total} ${r.total === 1 ? 'resultado' : 'resultados'}` : 'sem resultado interno'}</span></div><p>Ligação automática pelo assunto${termo ? ` “${escLocal(termo)}”` : ''}, pelas leis citadas no edital e pela disciplina. Confira a pertinência: é uma busca por correspondência, não uma curadoria.</p>${grupos}${r.disciplinaId ? `<button type="button" class="btn small" ${irAttr({ v: 'busca', q: (b.objeto?.titulo || '').replace(/^\s*\d+(?:\.\d+)*\s*/, '').replace(/[.;:]+$/, '').slice(0, 60) })}>Buscar este assunto em tudo</button>` : ''}</section>`;
+  }
+  function irPara(o) {
+    if (!o || typeof S !== 'object') return;
+    if (o.v === 'lib') { S.libView = ''; S.libDisc = o.disc || ''; S.libTema = o.tema || ''; S.libTipo = o.tipo || ''; S.libStatus = ''; S.libQuery = o.q || ''; go('biblioteca'); }
+    else if (o.v === 'lei') { S.lsDip = o.dip; S.lsGrp = Number(o.gi) || 0; S.lsQ = o.q || ''; S.lsCaiu = false; go('leiseca'); }
+    else if (o.v === 'tese') { S.tsQ = o.q || ''; S.tsRamo = ''; S.tsTri = ''; S.tsTipo = ''; S.tsNovas = false; go('teses'); }
+    else if (o.v === 'sum') { S.defTri = o.tri || ''; S.defRamo = o.ramo || ''; go('defensoria'); }
+    else if (o.v === 'prova') { S.pvId = o.id; S.pvMat = o.mat || ''; const P = globalOu(() => provasDados(), []).find(x => x.id === o.id), lista = P ? P.questoes.filter(q => !S.pvMat || q.materia === S.pvMat) : []; S.pvI = Math.max(0, lista.findIndex(q => q.n === o.n)); go('prova'); }
+    else if (o.v === 'busca') { S.buscaQ = o.q || ''; go('busca'); }
+  }
+  function bindBiblioteca(root=document) {
+    root.querySelectorAll('[data-cr-ir]').forEach(b => b.onclick = e => { e.preventDefault(); let o = null; try { o = JSON.parse(b.dataset.crIr); } catch (_) {} irPara(o); });
   }
   function resumoPlano(p) { return `${escLocal(editalSelecionado(p)?.nome||'Núcleo comum')} · ${p.horasSemana} h/semana · ${p.dias.map(id=>dias.find(x=>x[0]===id)[1]).join(', ')}`; }
   function distribuicaoHtml(ids,weights,p) { return ids.map(id=>`<label class="cr-peso"><span>${escLocal(disciplina(id,p).nome)}</span><input type="text" inputmode="decimal" required autocomplete="off" data-cr-peso="${escLocal(id)}" value="${fmt(weights[id])}" aria-label="Percentual de ${escLocal(disciplina(id,p).nome)}" aria-describedby="crTotal"><b>%</b></label>`).join(''); }
   const registros = () => S.ajustes.cronogramaProgresso || {};
   const chave = (p,b) => motor().chaveTopico(p.conteudoId,b.disciplinaId,b.topicoId);
   function materialHtml(p,b) {
-    const t=b.objeto, m=motor().materiais(t,b.nome), origem=programas()[p.conteudoId], plataforma=conteudoPlataforma(p,b);
+    const t=b.objeto, m=motor().materiais(t,b.nome), origem=programas()[p.conteudoId], plataforma=conteudoRelacionado(p,b);
     const pagina=/^\d+$/.test(t.pagina)?`página ${t.pagina}`:t.pagina;
     const nomes={lexml:'Consultar normas · LexML',stf:'Pesquisar STF',stj:'Pesquisar STJ',volp:'Consultar grafia · VOLP/ABL',ibge:'Consultar dados locais · IBGE'};
     const links=Object.entries(m.consulta).map(([tipo,url])=>`<a href="${url}" target="_blank" rel="noopener noreferrer">${nomes[tipo]}</a>`).join(' ');
-    return `<details class="cr-material"><summary>Assunto completo e materiais</summary>${plataformaHtml(plataforma)}<p class="cr-source">${escLocal(origem?.fonte)} · ${escLocal(pagina||'localizador não disponível')}${origem?.fonteUrl?` · <a href="${escLocal(origem.fonteUrl)}" target="_blank" rel="noopener noreferrer">Documento oficial</a>`:''}</p><p class="cr-texto">${escLocal(t.texto)}</p>${m.leis.length?`<p><b>Lei/norma citada neste item:</b> ${escLocal(m.leis.join('; '))}</p>`:m.tipo?'':'<p>O item não numera uma lei específica. Estude primeiro os conceitos; consulte a norma pertinente quando aplicável.</p>'}${m.juris.length?`<p><b>Jurisprudência citada no item:</b> ${escLocal(m.juris.join('; '))}</p>`:m.tipo?'':'<p><b>Jurisprudência:</b> pesquise o assunto abaixo; este item não cita um precedente numerado.</p>'}<p><b>Termo de consulta:</b> ${escLocal(t.titulo)}</p><details class="cr-consulta-externa" ${plataforma.cards.length?'':'open'}><summary>${plataforma.cards.length?'Conferência complementar (opcional)':'Não há cartão específico: conferir nas fontes externas'}</summary><p>Use estas consultas para confirmar vigência, texto original ou jurisprudência depois de estudar o conteúdo da plataforma. Elas não são acórdãos ou materiais didáticos selecionados.</p><div class="cr-fontes">${links}</div></details><ol>${m.orientacao.map(s=>`<li>${escLocal(s)}</li>`).join('')}</ol></details>`;
+    return `<details class="cr-material"><summary>Assunto completo e materiais</summary>${plataformaHtml(plataforma,p,b)}<p class="cr-source">${escLocal(origem?.fonte)} · ${escLocal(pagina||'localizador não disponível')}${origem?.fonteUrl?` · <a href="${escLocal(origem.fonteUrl)}" target="_blank" rel="noopener noreferrer">Documento oficial</a>`:''}</p><p class="cr-texto">${escLocal(t.texto)}</p>${m.leis.length?`<p><b>Lei/norma citada neste item:</b> ${escLocal(m.leis.join('; '))}</p>`:m.tipo?'':'<p>O item não numera uma lei específica. Estude primeiro os conceitos; consulte a norma pertinente quando aplicável.</p>'}${m.juris.length?`<p><b>Jurisprudência citada no item:</b> ${escLocal(m.juris.join('; '))}</p>`:m.tipo?'':'<p><b>Jurisprudência:</b> pesquise o assunto abaixo; este item não cita um precedente numerado.</p>'}<p><b>Termo de consulta:</b> ${escLocal(t.titulo)}</p><details class="cr-consulta-externa" ${plataforma?.total?'':'open'}><summary>${plataforma?.total?'Conferência complementar (opcional)':'Sem conteúdo interno específico: conferir nas fontes externas'}</summary><p>Use estas consultas para confirmar vigência, texto original ou jurisprudência depois de estudar o conteúdo da plataforma. Elas não são acórdãos ou materiais didáticos selecionados.</p><div class="cr-fontes">${links}</div></details><ol>${m.orientacao.map(s=>`<li>${escLocal(s)}</li>`).join('')}</ol></details>`;
   }
   function blocoHtml(p,b,ativo=false) {
     if(!b.disciplinaId)return `<article class="cr-bloco cr-revisao"><b>Revisão complementar · ${b.minutos} min</b><p>Revisar não substitui ler o assunto. A fila e o FSRS continuam independentes.</p></article>`;
     const feito=!!registros()[chave(p,b)]?.concluido;
     const disponiveis=disciplina(b.disciplinaId,p).topicos||[];
-    return `<article class="cr-bloco ${feito?'cr-feito':''}" data-cr-bloco="${b.id}"><small>${escLocal(b.nome)} · ${b.minutos} min${b.tipo==='revisita'?' · revisita após percorrer os assuntos':''}</small><h4>${escLocal(b.topico)}</h4>${materialHtml(p,b)}${ativo?`<label class="cr-concluir"><input type="checkbox" data-cr-concluir="${escLocal(chave(p,b))}" ${feito?'checked':''}> Estudei este assunto</label>`:`<label class="field cr-trocar"><span>Escolher outro assunto deste bloco</span><select data-cr-trocar="${b.id}">${disponiveis.filter(t=>t.id===b.topicoId||!registros()[motor().chaveTopico(p.conteudoId,b.disciplinaId,t.id)]?.concluido).map(t=>`<option value="${escLocal(t.id)}" ${t.id===b.topicoId?'selected':''}>${escLocal(t.titulo)}</option>`).join('')}</select></label>`}</article>`;
+    return `<article class="cr-bloco ${feito?'cr-feito':''}" data-cr-bloco="${b.id}"><small>${escLocal(b.nome)} · ${b.minutos} min${b.tipo==='revisita'?' · revisita após percorrer os assuntos':''}</small><h4>${escLocal(b.topico)}</h4>${resumoRelacionado(conteudoRelacionado(p,b))}${materialHtml(p,b)}${ativo?`<label class="cr-concluir"><input type="checkbox" data-cr-concluir="${escLocal(chave(p,b))}" ${feito?'checked':''}> Estudei este assunto</label>`:`<label class="field cr-trocar"><span>Escolher outro assunto deste bloco</span><select data-cr-trocar="${b.id}">${disponiveis.filter(t=>t.id===b.topicoId||!registros()[motor().chaveTopico(p.conteudoId,b.disciplinaId,t.id)]?.concluido).map(t=>`<option value="${escLocal(t.id)}" ${t.id===b.topicoId?'selected':''}>${escLocal(t.titulo)}</option>`).join('')}</select></label>`}</article>`;
   }
   function semanaPreview(p,w=0) {
     if(!motor()||!unidades(p).length)return dias.map(([id,n])=>`<div class="cr-dia ${p.dias.includes(id)?'':'off'}"><b>${n}</b><small>${p.dias.includes(id)?minutosPorDia(p)+' min disponíveis':'dia livre'}</small>${p.dias.includes(id)?'<p>Escolha o edital de conteúdo para montar os assuntos.</p>':''}</div>`).join('');
@@ -218,7 +262,6 @@
     const a=motor().gerarAgenda(p,semanaAtual(p)),dia=a.dias[(dataApp().getDay()||7)-1],bs=[...new Map(dia.blocos.filter(b=>b.disciplinaId).map(b=>[chave(p,b),b])).values()],feitos=bs.filter(b=>registros()[chave(p,b)]?.concluido).length;
     return `<section class="panel cr-today cr-hoje-conteudo" id="cronogramaHoje"><div><span class="cr-eyebrow">Cronograma ativo · assuntos de hoje</span><b>${resumoPlano(p)}</b><p>${dia.minutos?`${feitos}/${bs.length} assuntos registrados · ${dia.conteudoMin} min de conteúdo · ${dia.revisaoMin} min de revisão`:'Dia livre. Seu ciclo continua no próximo dia escolhido, sem dívida de cartões.'}</p><small>Conclusão registrada não é medida de domínio.</small></div><button class="btn small" id="goCronograma">Editar cronograma</button>${p.aplicarMetas!==false?`<div class="cr-hoje-blocos">${dia.blocos.map(b=>blocoHtml(p,b,true)).join('')}</div>`:''}</section>`;
   }
-  function bindBiblioteca(root=document) { root.querySelectorAll('[data-cr-biblioteca]').forEach(b=>b.onclick=()=>{S.libView='';S.libDisc=b.dataset.crBiblioDisc||'';S.libTema='';S.libTipo='';S.libStatus='';S.libQuery=b.dataset.crBiblioQuery||'';go('biblioteca');}); }
   function bindHoje() { $('#goCronograma')?.addEventListener('click',()=>go('cronograma'));bindBiblioteca($('#cronogramaHoje')||document);$('#cronogramaHoje')?.addEventListener('change',e=>{if(!e.target.matches('[data-cr-concluir]'))return;const k=e.target.dataset.crConcluir;S.ajustes.cronogramaProgresso={...registros(),[k]:{concluido:e.target.checked,em:Math.max(Date.now(),(registros()[k]?.em||0)+1)}};queue('ajustes');renderHoje();}); }
   function instalar() {
     if(window.__cronogramaInstalado)return;window.__cronogramaInstalado=true;window.renderCronograma=renderCronograma;
