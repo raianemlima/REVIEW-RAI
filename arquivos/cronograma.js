@@ -1,74 +1,38 @@
 // Review DPE · cronograma orientado por editais de Defensor(a) Público(a).
 // O catálogo é uma síntese documental dos anexos fornecidos pelo usuário.
 // Este módulo não cria cartões: ele organiza horas, dias, disciplinas e metas já existentes.
-(function () {
-  "use strict";
+  (function () {
+    "use strict";
 
-  const CORE = [
-    "direito_constitucional", "direito_administrativo", "direito_civil",
-    "direito_processual_civil", "direito_penal", "direito_processual_penal",
-    "direito_institucional_defensoria_publica"
-  ];
-
-  const DISCIPLINAS_EDITAIS = [
-    ["direito_constitucional", "Direito Constitucional", "núcleo comum documentado em 18/18 editais", ["constitucional"]],
-    ["direito_administrativo", "Direito Administrativo", "núcleo comum documentado em 18/18 editais", ["administrativo"]],
-    ["direito_civil", "Direito Civil", "núcleo comum; alguns editais agrupam com Empresarial", ["direito civil", "civil"]],
-    ["direito_processual_civil", "Direito Processual Civil", "núcleo comum documentado em 18/18 editais", ["processual civil"]],
-    ["direito_penal", "Direito Penal", "núcleo comum; alguns editais agrupam com Criminologia", ["direito penal", "penal"]],
-    ["direito_processual_penal", "Direito Processual Penal", "núcleo comum; alguns editais agrupam com Execução Penal", ["processual penal"]],
-    ["direito_institucional_defensoria_publica", "Direito Institucional da Defensoria Pública", "núcleo comum; títulos variam entre princípios, atribuições, legislação e organização", ["defensoria pública", "direito institucional", "princípios institucionais", "organização da defensoria"]],
-    ["direitos_humanos", "Direitos Humanos", "recorrente, mas não universal no corpus", ["direitos humanos"]],
-    ["direito_do_consumidor", "Direito do Consumidor", "recorrente, mas não universal no corpus", ["direito do consumidor", "consumidor"]],
-    ["direito_da_crianca_e_adolescente", "Direito da Criança e do Adolescente", "recorrente; alguns editais agregam outros grupos vulnerabilizados", ["criança e do adolescente", "criança e adolescente", "infância e juventude"]],
-    ["execucao_penal", "Execução Penal", "frequente, mas não presente com o mesmo título em todos", ["execução penal", "execuções penais"]],
-    ["direitos_difusos_e_coletivos", "Direitos Difusos e Coletivos", "cobertura parcial relevante", ["direitos difusos e coletivos"]],
-    ["direito_tributario", "Direito Tributário", "opcional; aparece em parte dos editais", ["direito tributário", "tributário"]],
-    ["criminologia", "Criminologia", "opcional; às vezes vem junto de Direito Penal", ["criminologia"]],
-    ["direito_empresarial", "Direito Empresarial", "opcional; às vezes vem junto de Direito Civil", ["direito empresarial", "civil e empresarial"]],
-    ["direito_do_idoso", "Direito do Idoso", "opcional e frequentemente agrupado com outros grupos", ["direito do idoso", "pessoas idosas"]],
-    ["filosofia_sociologia_juridica", "Filosofia/Sociologia Jurídica", "opcional; títulos e escopos variam", ["filosofia do direito", "sociologia jurídica", "filosofia jurídica"]],
-    ["direito_antidiscriminatorio", "Direito Antidiscriminatório", "opcional e específico de alguns editais", ["antidiscriminatório", "antidiscriminatorio"]],
-    ["direito_ambiental_urbanistico", "Direito Ambiental e Urbanístico", "opcional; às vezes agrupado com Agrário", ["ambiental e urbanístico", "ambiental e urbanistico", "direito ambiental"]],
-    ["direito_agrario", "Direito Agrário", "opcional e específico de alguns editais", ["direito agrário", "direito agrario"]],
-    ["tutela_coletiva", "Tutela Coletiva", "opcional; não foi fundida automaticamente a Direitos Difusos", ["tutela coletiva"]],
-    ["direito_pessoas_idosas_deficiencia", "Direito das Pessoas Idosas e com Deficiência", "opcional e geralmente agrupado", ["pessoas idosas e com deficiência", "idoso e da pessoa com deficiência"]],
-    ["direito_sanitario", "Direito Sanitário", "opcional e específico do edital de Rondônia", ["direito sanitário"]],
-    ["direito_do_trabalho", "Direito do Trabalho", "opcional e específico do edital do Ceará", ["direito do trabalho"]],
-    ["direito_previdenciario", "Direito Previdenciário", "opcional e específico do edital do Ceará", ["direito previdenciário"]],
-    ["direito_a_saude", "Direito à Saúde", "opcional e específico de alguns editais", ["direito à saúde", "direito a saúde"]],
-    ["historia_geografia_local", "História e Geografia do estado", "opcional; depende do edital escolhido", ["história e geografia"]],
-    ["direito_filosofia_formacao_humanistica", "Formação Humanística e Relações Étnico-raciais", "opcional; aparece em conteúdos específicos", ["formação humanística", "relações étnico-raciais"]],
-    ["legislacao_penal_extravagante", "Legislação Penal e Processual Penal Extravagante", "opcional e específica de alguns editais", ["legislação penal e processual penal extravagante"]],
-    ["medicina_legal", "Medicina Legal", "opcional e específica do edital do Tocantins", ["medicina legal"]],
-    ["direito_urbanistico_fundiario", "Direito Urbanístico e Fundiário", "opcional; título conjunto do edital de Rondônia", ["urbanístico e fundiário", "urbanistico e fundiario"]],
-    ["direito_sociologia_estado", "Sociologia Jurídica e Teoria Geral do Estado", "opcional; título conjunto de alguns editais", ["sociologia jurídica e teoria geral do estado"]],
-    ["direito_saude_local", "Direito à Saúde e legislação local", "opcional; não substitui o edital do aluno", ["direito à saúde e legislação"]]
-  ];
-  const DISC_MAP = Object.fromEntries(DISCIPLINAS_EDITAIS.map(([id, nome, cobertura, aliases]) => [id, { id, nome, cobertura, aliases }]));
+  const DISCIPLINAS_EDITAIS = Array.isArray(window.DPE_DISCIPLINAS_CANONICAS) ? window.DPE_DISCIPLINAS_CANONICAS : [];
+  const CORE = DISCIPLINAS_EDITAIS.filter(d => d.nucleoComum === true).map(d => d.id);
+  const DISC_MAP = Object.fromEntries(DISCIPLINAS_EDITAIS.map(d => [d.id, { ...d }]));
 
   // 18 editais para a carreira de Defensor(a) Público(a), publicados entre 2021 e 2026.
   // Provas discursivas isoladas, caderno de prova, concurso de servidores e edital de 2014 ficaram fora.
   const EDITAIS_DPE = [
-    ["ac-2024", "AC", 2024, "DPE/AC · VI Concurso", ["direito_civil", "direito_processual_civil", "direito_penal", "direito_processual_penal", "direito_constitucional", "direito_administrativo", "direito_da_crianca_e_adolescente", "direito_do_idoso", "direito_do_consumidor", "direitos_humanos", "direitos_difusos_e_coletivos", "direito_institucional_defensoria_publica"]],
-    ["ap-2022", "AP", 2022, "DPE/AP · II Concurso", ["direito_constitucional", "direito_administrativo", "direito_penal", "direito_processual_penal", "execucao_penal", "direito_civil", "direito_processual_civil", "direito_do_consumidor", "direitos_difusos_e_coletivos", "direitos_humanos", "direito_da_crianca_e_adolescente", "direito_pessoas_idosas_deficiencia", "direito_agrario", "direito_ambiental_urbanistico", "direito_institucional_defensoria_publica"]],
-    ["am-2025", "AM", 2025, "DPE/AM · V Concurso", ["direitos_humanos", "direito_constitucional", "direito_administrativo", "direito_penal", "direito_processual_penal", "execucao_penal", "criminologia", "direito_civil", "direito_do_idoso", "direito_do_consumidor", "direito_a_saude", "direito_antidiscriminatorio", "direito_processual_civil", "direito_da_crianca_e_adolescente", "direitos_difusos_e_coletivos", "direito_institucional_defensoria_publica", "filosofia_sociologia_juridica", "historia_geografia_local"]],
-    ["ce-2022", "CE", 2022, "DPE/CE · Edital 01/2022", ["direito_constitucional", "direito_civil", "direito_penal", "direito_processual_civil", "direito_processual_penal", "direito_do_trabalho", "direito_administrativo", "direito_previdenciario", "direito_empresarial", "direito_do_consumidor", "direito_institucional_defensoria_publica"]],
-    ["es-2023", "ES", 2023, "DPE/ES · V Concurso", ["direito_constitucional", "direitos_humanos", "direito_administrativo", "direito_tributario", "direito_institucional_defensoria_publica", "direito_civil", "direito_empresarial", "direito_do_consumidor", "direito_processual_civil", "direitos_difusos_e_coletivos", "direito_da_crianca_e_adolescente", "direito_penal", "direito_processual_penal", "execucao_penal", "criminologia"]],
-    ["ma-2026", "MA", 2026, "DPE/MA · VII Concurso", ["direito_constitucional", "direito_do_consumidor", "direito_institucional_defensoria_publica", "direito_administrativo", "direito_civil", "direito_ambiental_urbanistico", "direito_agrario", "direito_processual_civil", "historia_geografia_local", "direitos_difusos_e_coletivos", "direito_da_crianca_e_adolescente", "direito_penal", "criminologia", "direito_processual_penal", "execucao_penal", "direitos_humanos", "direito_filosofia_formacao_humanistica"]],
-    ["mg-2023", "MG", 2023, "DPE/MG · IX Concurso", ["direito_penal", "criminologia", "direito_processual_penal", "execucao_penal", "direito_constitucional", "direitos_humanos", "direito_administrativo", "direito_civil", "direito_processual_civil", "direitos_difusos_e_coletivos", "direito_da_crianca_e_adolescente", "direito_do_consumidor", "direito_institucional_defensoria_publica"]],
-    ["mt-2022", "MT", 2022, "DPE/MT · VI Concurso", ["direito_civil", "direito_processual_civil", "direito_da_crianca_e_adolescente", "direito_do_consumidor", "direitos_difusos_e_coletivos", "direito_penal", "criminologia", "direito_processual_penal", "execucao_penal", "direito_constitucional", "direito_administrativo", "direito_tributario", "direitos_humanos", "direito_institucional_defensoria_publica"]],
-    ["mt-2025", "MT", 2025, "DPE/MT · VII Concurso", ["direito_civil", "direito_processual_civil", "direito_da_crianca_e_adolescente", "direito_do_consumidor", "direitos_difusos_e_coletivos", "direito_penal", "criminologia", "direito_processual_penal", "execucao_penal", "direito_constitucional", "direito_administrativo", "direito_tributario", "direitos_humanos", "direito_institucional_defensoria_publica"]],
-    ["pe-2025", "PE", 2025, "DPE/PE · IV Concurso", ["direito_constitucional", "direito_administrativo", "direito_civil", "direito_processual_civil", "direito_penal", "direito_processual_penal", "execucao_penal", "direito_do_consumidor", "direito_da_crianca_e_adolescente", "direitos_humanos", "direito_institucional_defensoria_publica"]],
-    ["rj-2026", "RJ", 2026, "DPE/RJ · XXIX Concurso", ["direito_civil", "direito_processual_civil", "direito_do_consumidor", "tutela_coletiva", "direito_empresarial", "direito_penal", "direito_processual_penal", "execucao_penal", "criminologia", "direito_constitucional", "direito_administrativo", "direitos_humanos", "direito_da_crianca_e_adolescente", "direito_institucional_defensoria_publica"]],
-    ["ro-2022", "RO", 2022, "DPE/RO · Edital 01/2022", ["direitos_humanos", "direito_constitucional", "direito_administrativo", "direito_urbanistico_fundiario", "direito_tributario", "direito_penal", "criminologia", "execucao_penal", "direito_processual_penal", "direito_civil", "direito_do_consumidor", "direito_processual_civil", "direito_sanitario", "direito_da_crianca_e_adolescente", "direito_sociologia_estado", "tutela_coletiva", "direito_pessoas_idosas_deficiencia", "direito_institucional_defensoria_publica"]],
-    ["rs-2025", "RS", 2025, "DPE/RS · VII Concurso", ["direito_constitucional", "direitos_humanos", "direito_filosofia_formacao_humanistica", "direito_da_crianca_e_adolescente", "direito_processual_civil", "direito_civil", "direito_do_consumidor", "direitos_difusos_e_coletivos", "direito_ambiental_urbanistico", "direito_processual_penal", "execucao_penal", "direito_penal", "criminologia", "direito_administrativo", "direito_tributario", "direito_institucional_defensoria_publica"]],
-    ["sc-2024", "SC", 2024, "DPE/SC · Concurso 01/2024", ["direito_constitucional", "direito_da_crianca_e_adolescente", "direitos_humanos", "direito_penal", "direito_processual_penal", "execucao_penal", "direito_civil", "direito_empresarial", "direito_processual_civil", "direitos_difusos_e_coletivos", "direito_do_consumidor", "direito_administrativo", "direito_tributario", "filosofia_sociologia_juridica", "direito_institucional_defensoria_publica"]],
-    ["sc-2026", "SC", 2026, "DPE/SC · Concurso 01/2026", ["direito_constitucional", "direito_administrativo", "direito_ambiental_urbanistico", "direito_civil", "direito_empresarial", "direito_da_crianca_e_adolescente", "execucao_penal", "direito_do_consumidor", "direito_institucional_defensoria_publica", "direito_penal", "direito_processual_civil", "direito_processual_penal", "direito_tributario", "direitos_difusos_e_coletivos", "direitos_humanos", "filosofia_sociologia_juridica", "criminologia", "historia_geografia_local"]],
-    ["se-2021", "SE", 2021, "DPE/SE · Edital 01/2021", ["direito_civil", "direito_processual_civil", "direito_do_consumidor", "direito_penal", "direito_processual_penal", "execucao_penal", "direito_constitucional", "direito_administrativo", "direito_da_crianca_e_adolescente", "direito_do_idoso", "direitos_humanos", "direitos_difusos_e_coletivos", "direito_institucional_defensoria_publica"]],
-    ["sp-2026", "SP", 2026, "DPE/SP · X Concurso", ["direito_constitucional", "direito_administrativo", "direito_tributario", "direito_penal", "direito_processual_penal", "direito_civil", "direito_empresarial", "direito_processual_civil", "direitos_difusos_e_coletivos", "direito_da_crianca_e_adolescente", "direitos_humanos", "direito_institucional_defensoria_publica", "filosofia_sociologia_juridica"]],
-    ["to-2021", "TO", 2021, "DPE/TO · Edital 01/2021", ["direito_constitucional", "direitos_humanos", "direito_administrativo", "direito_tributario", "direito_civil", "direito_empresarial", "direito_processual_civil", "direito_agrario", "direitos_difusos_e_coletivos", "filosofia_sociologia_juridica", "direito_institucional_defensoria_publica", "direito_antidiscriminatorio", "direito_penal", "direito_processual_penal", "execucao_penal", "legislacao_penal_extravagante", "criminologia", "medicina_legal"]]
-  ].map(([id, estado, ano, nome, subjects]) => ({ id, estado, ano, nome, subjects }));
+    ["ac-2024","AC",2024,"DPE/AC · VI Concurso"],
+    ["ap-2022","AP",2022,"DPE/AP · II Concurso"],
+    ["am-2025","AM",2025,"DPE/AM · V Concurso"],
+    ["ce-2022","CE",2022,"DPE/CE · Edital 01/2022"],
+    ["es-2023","ES",2023,"DPE/ES · V Concurso"],
+    ["ma-2026","MA",2026,"DPE/MA · VII Concurso"],
+    ["mg-2023","MG",2023,"DPE/MG · IX Concurso"],
+    ["mt-2022","MT",2022,"DPE/MT · VI Concurso"],
+    ["mt-2025","MT",2025,"DPE/MT · VII Concurso"],
+    ["pe-2025","PE",2025,"DPE/PE · IV Concurso"],
+    ["rj-2026","RJ",2026,"DPE/RJ · XXIX Concurso"],
+    ["ro-2022","RO",2022,"DPE/RO · Edital 01/2022"],
+    ["rs-2025","RS",2025,"DPE/RS · VII Concurso"],
+    ["sc-2024","SC",2024,"DPE/SC · Concurso 01/2024"],
+    ["sc-2026","SC",2026,"DPE/SC · Concurso 01/2026"],
+    ["se-2021","SE",2021,"DPE/SE · Edital 01/2021"],
+    ["sp-2026","SP",2026,"DPE/SP · X Concurso"],
+    ["to-2021","TO",2021,"DPE/TO · Edital 01/2021"]
+  ].map(([id, estado, ano, nome]) => {
+    const canonicas = window.DPE_CONTEUDOS_EDITAIS?.[id]?.disciplinas.flatMap(d => d.canonicais || []) || [];
+    return { id, estado, ano, nome, subjects: [...new Set(canonicas)] };
+  });
 
   const dias = [[1,'Seg'],[2,'Ter'],[3,'Qua'],[4,'Qui'],[5,'Sex'],[6,'Sáb'],[7,'Dom']];
   const escLocal = v => typeof esc === 'function' ? esc(v) : String(v ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -147,22 +111,89 @@
     if(typeof DECK==='undefined')return[];
     return (DECK.disciplinas||[]).filter(d=>subjects.some(id=>{const refs=DISC_MAP[id]?.canonicais||[id];return refs.some(c=>{const nome=normLocal(DISC_MAP[c]?.nome||c),deck=normLocal(d.nome||d.curto||d.id);return deck===nome||deck===normLocal(DISC_MAP[c]?.aliases?.[0]);});})).map(d=>d.id);
   }
+  function disciplinaDeckIds(subjectId,p) {
+    if(typeof DECK==='undefined')return new Set();
+    const d=disciplina(subjectId,p), nomes=[subjectId,d.nome,...(d.canonicais||[]),...(DISC_MAP[subjectId]?.aliases||[])].map(normLocal).filter(Boolean), ids=new Set([subjectId,...(d.canonicais||[])]);
+    for(const item of DECK.disciplinas||[]) if(nomes.includes(normLocal(item.id))||nomes.includes(normLocal(item.nome))||nomes.includes(normLocal(item.curto))) ids.add(item.id);
+    return ids;
+  }
+  // ---- ligação do assunto do dia com o conteúdo do próprio app ----
+  const globalOu = (fn, fallback) => { try { const v = fn(); return v === undefined ? fallback : v; } catch (_) { return fallback; } };
+  let _fontesApp = null;
+  function fontesApp() {
+    const deck = typeof DECK === 'undefined' ? {} : DECK;
+    const teses = globalOu(() => (typeof tsDados === 'function' ? tsDados() : TESES_PUBLICO).itens, []);
+    const sumulas = globalOu(() => (typeof dpeDados === 'function' ? dpeDados() : DPE_PUBLICO).sumulas, []);
+    const provas = globalOu(() => typeof provasDados === 'function' ? provasDados() : PROVAS_PUBLICO, []);
+    const k = [deck.cartoes?.length, deck.leiseca?.length, teses?.length, sumulas?.length, provas?.length].join(':');
+    if (!_fontesApp || _fontesApp.k !== k || _fontesApp.f.cartoes !== deck.cartoes) _fontesApp = { k, f: { cartoes: deck.cartoes || [], leiseca: deck.leiseca || [], teses: teses || [], sumulas: sumulas || [], provas: provas || [] } };
+    return _fontesApp.f;
+  }
+  const _relCache = new Map();
+  function conteudoRelacionado(p, b) {
+    const f = fontesApp(), t = b.objeto || {}, k = `${p.conteudoId}:${b.disciplinaId}:${b.topicoId}:${f.cartoes.length}:${f.teses.length}:${f.provas.length}`;
+    if (_relCache.has(k)) return _relCache.get(k);
+    const d = disciplina(b.disciplinaId, p), ids = [...disciplinaDeckIds(b.disciplinaId, p)];
+    const nomes = [d.nome, b.nome, ...(d.canonicais || []).map(c => DISC_MAP[c]?.nome), ...ids.map(id => (f.cartoes.length && typeof DISC === 'object' ? DISC[id]?.nome : ''))].filter(Boolean);
+    const r = motor().relacionarConteudo ? motor().relacionarConteudo(f, { titulo: t.titulo, texto: t.texto, leis: t.leis, juris: t.juris, discIds: ids, discNomes: nomes }) : null;
+    if (r) r.disciplinaId = ids.find(id => f.cartoes.some(c => c.disc === id)) || '';
+    if (_relCache.size > 400) _relCache.clear(); _relCache.set(k, r); return r;
+  }
+  const irAttr = o => `data-cr-ir="${escLocal(JSON.stringify(o))}"`;
+  const resumir = (s, n = 160) => { const x = String(s || '').replace(/\s+/g, ' ').trim(); return x.length > n ? x.slice(0, n) + '…' : x; };
+  const frenteCartao = c => c.tipo === 'multipla_escolha' && typeof parseMC === 'function' ? globalOu(() => parseMC(c.frente).stem, c.frente) : c.frente;
+  function itemRelHtml(x) {
+    if (x.fonte === 'cartao') { const c = x.item; return `<li><b>${escLocal(c.tema || 'Cartão')}</b><span>${escLocal(resumir(frenteCartao(c)))}</span><button type="button" class="btn small ghost" ${irAttr({ v: 'lib', disc: c.disc || '', q: c.id })}>Abrir cartão</button></li>`; }
+    if (x.fonte === 'leiseca') { const d = x.item, arts = x.artigos || []; return `<li><b>${escLocal(d.nome || d.curto || d.id)}</b><span>${arts.length ? 'Artigos sobre o assunto: ' + arts.map(a => escLocal(a.r || 'art. ' + a.a)).join(', ') : escLocal(x.motivo)}</span><button type="button" class="btn small ghost" ${irAttr({ v: 'lei', dip: d.id, gi: arts[0]?.gi || 0, q: arts.length === 1 ? String(arts[0].a) : '' })}>Ler na Lei seca</button>${arts.length > 1 ? arts.map(a => `<button type="button" class="btn small ghost" ${irAttr({ v: 'lei', dip: d.id, gi: a.gi, q: String(a.a) })}>${escLocal(a.r || 'Art. ' + a.a)}</button>`).join('') : ''}</li>`; }
+    if (x.fonte === 'tese') { const t = x.item; return `<li><b>${escLocal(`${t.tribunal || ''} · ${t.tipo || ''}${t.num ? ' ' + t.num : ''}`)}</b><span>${escLocal(resumir(t.texto))}</span><button type="button" class="btn small ghost" ${irAttr({ v: 'tese', q: t.processo || (t.num ? 'tema ' + t.num : resumir(t.texto, 40)) })}>Ver em Teses</button></li>`; }
+    if (x.fonte === 'sumula') { const s = x.item; return `<li><b>${escLocal(`${s.tribunal || ''} · ${s.tipo || 'Súmula'}`)}</b><span>${escLocal(resumir(s.enunciado))}</span><button type="button" class="btn small ghost" ${irAttr({ v: 'sum', ramo: s.ramo || '', tri: s.tribunal || '' })}>Ver em Defensoria</button></li>`; }
+    if (x.fonte === 'prova') { const q = x.item, P = x.prova; return `<li><b>${escLocal(`${P.nome} · questão ${q.n}`)}</b><span>${escLocal(resumir(q.assunto || q.enunciado))}${q.fonte ? ' · ' + escLocal(q.fonte) : ''}</span><button type="button" class="btn small ghost" ${irAttr({ v: 'prova', id: P.id, mat: q.materia || '', n: q.n })}>Resolver questão</button></li>`; }
+    return '';
+  }
+  const GRUPOS_REL = [['tema', 'Assunto/tema', 'cartões de conceito, comparativos, teses defensivas e certo/errado', ''], ['lei', 'Lei e lei seca', 'dispositivos e cartões de lei seca', 'lei_seca'], ['juris', 'Súmulas e jurisprudência', 'teses, súmulas e cartões de jurisprudência', 'jurisprudencia'], ['questoes', 'Questões', 'questões reais de provas e cartões de múltipla escolha', 'multipla_escolha']];
+  function resumoRelacionado(r) {
+    if (!r) return '';
+    const partes = GRUPOS_REL.filter(([g]) => r[g].total).map(([g, nome]) => `${r[g].total} ${nome.toLowerCase()}`);
+    return `<p class="cr-app-resumo" data-cr-app-resumo>${partes.length ? `<b>No app para este assunto:</b> ${escLocal(partes.join(' · '))}` : 'Ainda não há conteúdo específico do app para este assunto; use o edital e as fontes oficiais.'}</p>`;
+  }
+  function plataformaHtml(r, p, b) {
+    if (!r) return '';
+    const termo = r.assunto || '';
+    const grupos = GRUPOS_REL.map(([g, nome, desc, tipoCard]) => {
+      const G = r[g], cartoes = G.itens.filter(x => x.fonte === 'cartao').length;
+      const verTodos = G.total > G.itens.length && r.disciplinaId ? `<button type="button" class="btn small" ${irAttr({ v: 'lib', disc: r.disciplinaId, tipo: tipoCard, q: '', tema: '' })}>Ver todos na Biblioteca</button>` : '';
+      return `<section class="cr-rel-grupo" data-cr-rel="${g}"><div class="cr-platform-heading"><b>${nome}</b><span>${G.total ? `${G.total} ${G.total === 1 ? 'item' : 'itens'} no app` : 'nada específico'}</span></div>${G.total ? `<ul class="cr-platform-list">${G.itens.map(itemRelHtml).join('')}</ul>${cartoes ? verTodos : ''}` : `<p>Não encontrei ${desc} ligados a este assunto.</p>`}</section>`;
+    }).join('');
+    return `<section class="cr-platform ${r.total ? '' : 'cr-platform-empty'}"><div class="cr-platform-heading"><b>Estudar com o conteúdo do app</b><span>${r.total ? `${r.total} ${r.total === 1 ? 'resultado' : 'resultados'}` : 'sem resultado interno'}</span></div><p>Ligação automática pelo assunto${termo ? ` “${escLocal(termo)}”` : ''}, pelas leis citadas no edital e pela disciplina. Confira a pertinência: é uma busca por correspondência, não uma curadoria.</p>${grupos}${r.disciplinaId ? `<button type="button" class="btn small" ${irAttr({ v: 'busca', q: (b.objeto?.titulo || '').replace(/^\s*\d+(?:\.\d+)*\s*/, '').replace(/[.;:]+$/, '').slice(0, 60) })}>Buscar este assunto em tudo</button>` : ''}</section>`;
+  }
+  function irPara(o) {
+    if (!o || typeof S !== 'object') return;
+    if (o.v === 'lib') { S.libView = ''; S.libDisc = o.disc || ''; S.libTema = o.tema || ''; S.libTipo = o.tipo || ''; S.libStatus = ''; S.libQuery = o.q || ''; go('biblioteca'); }
+    else if (o.v === 'lei') { S.lsDip = o.dip; S.lsGrp = Number(o.gi) || 0; S.lsQ = o.q || ''; S.lsCaiu = false; go('leiseca'); }
+    else if (o.v === 'tese') { S.tsQ = o.q || ''; S.tsRamo = ''; S.tsTri = ''; S.tsTipo = ''; S.tsNovas = false; go('teses'); }
+    else if (o.v === 'sum') { S.defTri = o.tri || ''; S.defRamo = o.ramo || ''; go('defensoria'); }
+    else if (o.v === 'prova') { S.pvId = o.id; S.pvMat = o.mat || ''; const P = globalOu(() => provasDados(), []).find(x => x.id === o.id), lista = P ? P.questoes.filter(q => !S.pvMat || q.materia === S.pvMat) : []; S.pvI = Math.max(0, lista.findIndex(q => q.n === o.n)); go('prova'); }
+    else if (o.v === 'busca') { S.buscaQ = o.q || ''; go('busca'); }
+  }
+  function bindBiblioteca(root=document) {
+    root.querySelectorAll('[data-cr-ir]').forEach(b => b.onclick = e => { e.preventDefault(); let o = null; try { o = JSON.parse(b.dataset.crIr); } catch (_) {} irPara(o); });
+  }
   function resumoPlano(p) { return `${escLocal(editalSelecionado(p)?.nome||'Núcleo comum')} · ${p.horasSemana} h/semana · ${p.dias.map(id=>dias.find(x=>x[0]===id)[1]).join(', ')}`; }
   function distribuicaoHtml(ids,weights,p) { return ids.map(id=>`<label class="cr-peso"><span>${escLocal(disciplina(id,p).nome)}</span><input type="text" inputmode="decimal" required autocomplete="off" data-cr-peso="${escLocal(id)}" value="${fmt(weights[id])}" aria-label="Percentual de ${escLocal(disciplina(id,p).nome)}" aria-describedby="crTotal"><b>%</b></label>`).join(''); }
   const registros = () => S.ajustes.cronogramaProgresso || {};
   const chave = (p,b) => motor().chaveTopico(p.conteudoId,b.disciplinaId,b.topicoId);
   function materialHtml(p,b) {
-    const t=b.objeto, m=motor().materiais(t,b.nome), origem=programas()[p.conteudoId];
+    const t=b.objeto, m=motor().materiais(t,b.nome), origem=programas()[p.conteudoId], plataforma=conteudoRelacionado(p,b);
     const pagina=/^\d+$/.test(t.pagina)?`página ${t.pagina}`:t.pagina;
     const nomes={lexml:'Consultar normas · LexML',stf:'Pesquisar STF',stj:'Pesquisar STJ',volp:'Consultar grafia · VOLP/ABL',ibge:'Consultar dados locais · IBGE'};
     const links=Object.entries(m.consulta).map(([tipo,url])=>`<a href="${url}" target="_blank" rel="noopener noreferrer">${nomes[tipo]}</a>`).join(' ');
-    return `<details class="cr-material"><summary>Assunto completo e materiais</summary><p class="cr-source">${escLocal(origem?.fonte)} · ${escLocal(pagina||'localizador não disponível')}${origem?.fonteUrl?` · <a href="${escLocal(origem.fonteUrl)}" target="_blank" rel="noopener noreferrer">Documento oficial</a>`:''}</p><p class="cr-texto">${escLocal(t.texto)}</p>${m.leis.length?`<p><b>Lei/norma citada neste item:</b> ${escLocal(m.leis.join('; '))}</p>`:m.tipo?'':'<p>O item não numera uma lei específica. Estude primeiro os conceitos; consulte a norma pertinente quando aplicável.</p>'}${m.juris.length?`<p><b>Jurisprudência citada no item:</b> ${escLocal(m.juris.join('; '))}</p>`:m.tipo?'':'<p><b>Jurisprudência:</b> pesquise o assunto abaixo; este item não cita um precedente numerado.</p>'}<p><b>Termo de consulta:</b> ${escLocal(t.titulo)}</p><div class="cr-fontes">${links}</div><ol>${m.orientacao.map(s=>`<li>${escLocal(s)}</li>`).join('')}</ol><small>Os links abrem fontes e consultas, não um material já estudado ou acórdão individual verificado. Confira vigência e alterações do edital.</small></details>`;
+    return `<details class="cr-material"><summary>Assunto completo e materiais</summary>${plataformaHtml(plataforma,p,b)}<p class="cr-source">${escLocal(origem?.fonte)} · ${escLocal(pagina||'localizador não disponível')}${origem?.fonteUrl?` · <a href="${escLocal(origem.fonteUrl)}" target="_blank" rel="noopener noreferrer">Documento oficial</a>`:''}</p><p class="cr-texto">${escLocal(t.texto)}</p>${m.leis.length?`<p><b>Lei/norma citada neste item:</b> ${escLocal(m.leis.join('; '))}</p>`:m.tipo?'':'<p>O item não numera uma lei específica. Estude primeiro os conceitos; consulte a norma pertinente quando aplicável.</p>'}${m.juris.length?`<p><b>Jurisprudência citada no item:</b> ${escLocal(m.juris.join('; '))}</p>`:m.tipo?'':'<p><b>Jurisprudência:</b> pesquise o assunto abaixo; este item não cita um precedente numerado.</p>'}<p><b>Termo de consulta:</b> ${escLocal(t.titulo)}</p><details class="cr-consulta-externa" ${plataforma?.total?'':'open'}><summary>${plataforma?.total?'Conferência complementar (opcional)':'Sem conteúdo interno específico: conferir nas fontes externas'}</summary><p>Use estas consultas para confirmar vigência, texto original ou jurisprudência depois de estudar o conteúdo da plataforma. Elas não são acórdãos ou materiais didáticos selecionados.</p><div class="cr-fontes">${links}</div></details><ol>${m.orientacao.map(s=>`<li>${escLocal(s)}</li>`).join('')}</ol></details>`;
   }
   function blocoHtml(p,b,ativo=false) {
     if(!b.disciplinaId)return `<article class="cr-bloco cr-revisao"><b>Revisão complementar · ${b.minutos} min</b><p>Revisar não substitui ler o assunto. A fila e o FSRS continuam independentes.</p></article>`;
     const feito=!!registros()[chave(p,b)]?.concluido;
     const disponiveis=disciplina(b.disciplinaId,p).topicos||[];
-    return `<article class="cr-bloco ${feito?'cr-feito':''}" data-cr-bloco="${b.id}"><small>${escLocal(b.nome)} · ${b.minutos} min${b.tipo==='revisita'?' · revisita após percorrer os assuntos':''}</small><h4>${escLocal(b.topico)}</h4>${materialHtml(p,b)}${ativo?`<label class="cr-concluir"><input type="checkbox" data-cr-concluir="${escLocal(chave(p,b))}" ${feito?'checked':''}> Estudei este assunto</label>`:`<label class="field cr-trocar"><span>Escolher outro assunto deste bloco</span><select data-cr-trocar="${b.id}">${disponiveis.filter(t=>t.id===b.topicoId||!registros()[motor().chaveTopico(p.conteudoId,b.disciplinaId,t.id)]?.concluido).map(t=>`<option value="${escLocal(t.id)}" ${t.id===b.topicoId?'selected':''}>${escLocal(t.titulo)}</option>`).join('')}</select></label>`}</article>`;
+    return `<article class="cr-bloco ${feito?'cr-feito':''}" data-cr-bloco="${b.id}"><small>${escLocal(b.nome)} · ${b.minutos} min${b.tipo==='revisita'?' · revisita após percorrer os assuntos':''}</small><h4>${escLocal(b.topico)}</h4>${resumoRelacionado(conteudoRelacionado(p,b))}${materialHtml(p,b)}${ativo?`<label class="cr-concluir"><input type="checkbox" data-cr-concluir="${escLocal(chave(p,b))}" ${feito?'checked':''}> Estudei este assunto</label>`:`<label class="field cr-trocar"><span>Escolher outro assunto deste bloco</span><select data-cr-trocar="${b.id}">${disponiveis.filter(t=>t.id===b.topicoId||!registros()[motor().chaveTopico(p.conteudoId,b.disciplinaId,t.id)]?.concluido).map(t=>`<option value="${escLocal(t.id)}" ${t.id===b.topicoId?'selected':''}>${escLocal(t.titulo)}</option>`).join('')}</select></label>`}</article>`;
   }
   function semanaPreview(p,w=0) {
     if(!motor()||!unidades(p).length)return dias.map(([id,n])=>`<div class="cr-dia ${p.dias.includes(id)?'':'off'}"><b>${n}</b><small>${p.dias.includes(id)?minutosPorDia(p)+' min disponíveis':'dia livre'}</small>${p.dias.includes(id)?'<p>Escolha o edital de conteúdo para montar os assuntos.</p>':''}</div>`).join('');
@@ -177,7 +208,7 @@
   function renderCronograma() {
     const salvo=planoAtual();if(!S.cronogramaDraft)S.cronogramaDraft=prepararDraft(planoAtual());
     const draft=S.cronogramaDraft, source=programas()[draft.conteudoId], ds=unidades(draft);
-    const offered=ds.length?ds.map(d=>d.id):DISCIPLINAS_EDITAIS.map(d=>d[0]);
+    const offered=ds.length?ds.map(d=>d.id):DISCIPLINAS_EDITAIS.map(d=>d.id);
     const selected=draft.subjects.filter(id=>offered.includes(id));draft.subjects=selected;draft.topicosSelecionados=draft.topicosSelecionados||{};
     let w=semanaAtual(draft);
     const opcoes=selecionado=>EDITAIS_DPE.map(e=>`<option value="${e.id}" ${e.id===selecionado?'selected':''}>${escLocal(e.nome)}</option>`).join('');
@@ -191,7 +222,7 @@
     const capturar=()=>{draft.horasSemana=Number($('#crHoras').value);draft.blocoMin=Number($('#crBloco').value);draft.dias=[...document.querySelectorAll('[data-cr-dia]:checked')].map(x=>+x.dataset.crDia);draft.revisaoMin=Number($('#crRevisao').value)||0;draft.aplicarMetas=$('#crAplicar').checked;};
     const lerCampos=()=>{let valido=true;const pesos={};for(const f of document.querySelectorAll('[data-cr-peso]')){const n=lerPercentual(f.value),erro=!Number.isFinite(n);f.setCustomValidity(erro?'Digite de 0 a 100, até duas casas (ex.: 7,69).':'');f.setAttribute('aria-invalid',String(erro));valido=valido&&!erro;pesos[f.dataset.crPeso]=n;}return{pesos,valido};};
     const previa=()=>{capturar();const l=lerCampos();draft.subjects=ids();$('#crSelecionadas').textContent=`${draft.subjects.length} selecionadas`;$('#crTotal').textContent=!l.valido?'Confira os percentuais.':`Total: ${fmt(somaPesos(l.pesos))}%`;if(!l.valido)return;draft.pesos=l.pesos;
-      const p={...draft,pesos:normalizarPercentuais(draft.subjects,draft.pesos)},a=motor()?.gerarAgenda(p,w);$('#crSemana').innerHTML=semanaPreview(p,w);$('#crSemanaNumero').textContent=`Semana ${w+1}`;$('#crSemanaAnterior').disabled=w===0;$('#crSemanaProxima').disabled=w===51;$('#crPrevResumo').textContent=`${Math.round(p.horasSemana*60)} min na semana`;
+      const p={...draft,pesos:normalizarPercentuais(draft.subjects,draft.pesos)},a=motor()?.gerarAgenda(p,w);$('#crSemana').innerHTML=semanaPreview(p,w);bindBiblioteca($('#crSemana'));$('#crSemanaNumero').textContent=`Semana ${w+1}`;$('#crSemanaAnterior').disabled=w===0;$('#crSemanaProxima').disabled=w===51;$('#crPrevResumo').textContent=`${Math.round(p.horasSemana*60)} min na semana`;
       $('#crCicloInfo').textContent=!ds.length?'Escolha o edital de conteúdo.':a.naoAlocado?'Há tempo sem assunto selecionado. Confira disciplinas, percentuais e tópicos.':`${a.totalConteudoMin} min de conteúdo + ${a.totalRevisaoMin} min de revisão. Rodízio de aproximadamente ${a.cicloSemanas} semana(s). Percentuais são prioridade aproximada, ajustada a blocos úteis.`;
       $('#crFuturas').textContent=a?.proximas.length?'Outras matérias entram nas próximas semanas do ciclo: '+a.proximas.map(id=>disciplina(id,p).nome).join('; ')+'.':a?.fora.length?'Fora da agenda por 0% ou nenhum assunto marcado: '+a.fora.map(id=>disciplina(id,p).nome).join('; ')+'.':'';
     };
@@ -231,7 +262,7 @@
     const a=motor().gerarAgenda(p,semanaAtual(p)),dia=a.dias[(dataApp().getDay()||7)-1],bs=[...new Map(dia.blocos.filter(b=>b.disciplinaId).map(b=>[chave(p,b),b])).values()],feitos=bs.filter(b=>registros()[chave(p,b)]?.concluido).length;
     return `<section class="panel cr-today cr-hoje-conteudo" id="cronogramaHoje"><div><span class="cr-eyebrow">Cronograma ativo · assuntos de hoje</span><b>${resumoPlano(p)}</b><p>${dia.minutos?`${feitos}/${bs.length} assuntos registrados · ${dia.conteudoMin} min de conteúdo · ${dia.revisaoMin} min de revisão`:'Dia livre. Seu ciclo continua no próximo dia escolhido, sem dívida de cartões.'}</p><small>Conclusão registrada não é medida de domínio.</small></div><button class="btn small" id="goCronograma">Editar cronograma</button>${p.aplicarMetas!==false?`<div class="cr-hoje-blocos">${dia.blocos.map(b=>blocoHtml(p,b,true)).join('')}</div>`:''}</section>`;
   }
-  function bindHoje() { $('#goCronograma')?.addEventListener('click',()=>go('cronograma'));$('#cronogramaHoje')?.addEventListener('change',e=>{if(!e.target.matches('[data-cr-concluir]'))return;const k=e.target.dataset.crConcluir;S.ajustes.cronogramaProgresso={...registros(),[k]:{concluido:e.target.checked,em:Math.max(Date.now(),(registros()[k]?.em||0)+1)}};queue('ajustes');renderHoje();}); }
+  function bindHoje() { $('#goCronograma')?.addEventListener('click',()=>go('cronograma'));bindBiblioteca($('#cronogramaHoje')||document);$('#cronogramaHoje')?.addEventListener('change',e=>{if(!e.target.matches('[data-cr-concluir]'))return;const k=e.target.dataset.crConcluir;S.ajustes.cronogramaProgresso={...registros(),[k]:{concluido:e.target.checked,em:Math.max(Date.now(),(registros()[k]?.em||0)+1)}};queue('ajustes');renderHoje();}); }
   function instalar() {
     if(window.__cronogramaInstalado)return;window.__cronogramaInstalado=true;window.renderCronograma=renderCronograma;
     if(typeof mesclar==='function'){const anterior=mesclar;mesclar=function(L,R){const out=anterior.apply(this,arguments),l=L.ajustes?.cronogramaProgresso||{},r=R.ajustes?.cronogramaProgresso||{},merged={};for(const k of new Set([...Object.keys(l),...Object.keys(r)])){const a=l[k],b=r[k];merged[k]=!a?b:!b?a:(b.em||0)>(a.em||0)?b:a;}out.ajustes.cronogramaProgresso=merged;return out;};}

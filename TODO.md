@@ -54,3 +54,42 @@ Teste em DOM simulado não equivale a teste no Safari/iPhone da captura, nem a t
 ## Limites desta etapa
 
 Conferência em Chromium com dados fictícios não certifica Safari/iPhone, teclado real de todos os aparelhos, uso offline ou autenticação em produção. Links abrem consultas, não uma biblioteca de doutrina ou precedentes previamente comentados. A agenda avança por calendário; assuntos pendentes não são transferidos automaticamente. A fonte estática não monitora futuras retificações. Não houve publicação ou merge automático.
+
+# Etapa 7 — revisão visual e dashboard de matérias/pesos
+
+- [x] **Dashboard didático dos editais.** Dentro da rota Progresso, oferecer uma subvisão identificável com resumo da amostra, núcleo universal, ranking de frequência, mediana/faixa de questões, pesos por grupos e CTA para o Cronograma. Usar os catálogos reais sem gravar dados do aluno e explicar que frequência/peso não são promessa de aprovação. **Evidência:** painel real mostra 18 editais, 7 matérias universais, 14 perfis numéricos e 16 estados; inclui rubricas fora do mapa inicial, filtro documentado e fallback para perfis equilibrados; CTA muda para `cronograma` sem tocar no estado de estudo.
+- [x] **Hierarquia e responsividade.** Manter logo, tokens, rotas, navegação, conquistas, estatísticas, FSRS, sincronização, backup e acessibilidade. Corrigir a descoberta do conteúdo analítico sem remover a tela existente; no celular, converter tabelas em cartões/barras legíveis, sem overflow e sem esconder ações na barra inferior. **Evidência:** dashboard é o primeiro bloco de Progresso, tabela de pesos cabe sem corte em desktop, barras e KPIs se reorganizam em uma coluna/duas colunas no celular; Chromium confirmou `scrollWidth` dentro da viewport em 1440, 1280, 1024, 768, 390 e 320px, com navegação inferior fixa.
+- [x] **Integração segura.** Carregar qualquer novo módulo uma única vez, validar sintaxe/cache/artefato público, preservar conteúdo protegido e não alterar `S.ajustes`, `S.cards`, `S.logs` ou o cronograma automaticamente. **Evidência:** `npm test` 109/109, `npm run check`, `git diff --check`, validador público com 31 entradas no CORE e invariantes de `gate.js`, `build.mjs` e `app-src` iguais à base `afdadf9`; dashboard e CSS têm referência única e cache offline.
+- [x] **Relatório acessível na publicação.** Servir junto do site o relatório metodológico que o dashboard referencia, sem copiar documentação privada ou arquivos protegidos para o artefato público. **Evidência:** workflow copia somente `docs/RELATORIO-MATERIAS-E-PESOS-DPE.md` para `_site/docs/`; artefato local validou o arquivo com 14.995 bytes e o link relativo do módulo.
+- [x] **Evidência visual e regressão.** Testar a rota com dados fictícios em 390×844, 768×1024, 1280×720 e 1440×900, conferir filtros/CTA/teclado/tema e manter testes existentes verdes. Sem acesso a contas de estudantes, produção, publicação ou merge automático. **Evidência:** aceitação CDP em seis dimensões, filtro `ma-2026` retornando fonte e questões, CTA abrindo Cronograma; suíte focada 8/8 e suíte completa 109/109. Nenhuma conta, segredo, publicação, merge ou dado de estudante foi usado.
+
+# Etapa 8 — contrato de conteúdo e taxonomia
+
+- [x] **Taxonomia em fonte única.** IDs, nomes, cobertura, aliases e sinalização do núcleo comum ficam em `arquivos/cronograma-taxonomia.js`; o cronograma deriva `CORE`, `DISC_MAP` e as matérias de fallback dos catálogos, sem cópias manuais de `subjects`. A opção exclusiva de interface está marcada como `somenteUI`; rubricas sem correspondência segura conservam `canonicais: []`.
+- [x] **Contrato estrutural verificável.** `ferramentas/ci/validar_conteudo.mjs` valida taxonomia, 18 programas, 253 rubricas, 5.364 tópicos, referências cruzadas e grupos de pesos em VM isolada, sem DOM, rede ou acesso ao processo. Os pesos precisam apontar para canônicos presentes no crosswalk do mesmo edital; isso removeu uma referência órfã do grupo I do RS, conforme a evidência da fonte. O validador de publicação exige os módulos, a ordem e o CORE offline corretos. O catálogo-fonte dos editais não foi reescrito nem deduplicado.
+- [x] **Documentação e regressão.** Contrato, campos, IDs estáveis, rubricas combinadas, entradas sem mapeamento e fluxo offline documentados em `docs/EDITAIS-CRONOGRAMA.md`. Testes cobrem erros de publicação, IDs canônicos desconhecidos, ausência/número de localizador, referências derivadas e catálogo real. **Evidência:** 118/118 testes, `npm run check` e validação da pasta real aprovados; cache atualizado para `review-dpe-assuntos-v2`. A documentação esclarece que aliases não são usados na busca de assuntos.
+
+## Limites desta etapa
+
+A validação confirma estrutura e integridade dos vínculos, não atesta a fidelidade editorial do texto frente a retificações ou aos documentos-fonte. Rubricas e tópicos equivalentes continuam separados por edital para preservar proveniência e localizadores. Nenhum conteúdo protegido, serviço, dado de estudante ou publicação foi alterado; a branch permanece local para revisão.
+
+# Etapa 9 — carregamento inicial e acessibilidade do gate
+
+- [x] **Shell enxuto.** O baralho cifrado foi separado em `deck.enc`; os 1,87 MB de app-source saíram do HTML para `app-src.txt`. `build.mjs` gera os três artefatos. O gate só executa o app-source e os módulos lazy após validar/descriptografar o conteúdo; o service worker continua incluindo os arquivos essenciais no cache offline.
+- [x] **Publicação e integridade.** `app-src.txt` entrou no CORE, no artefato do Pages e na validação de sintaxe. O deploy exige `deck.enc` no checkout; o artefato binário não descriptografado foi conferido contra o ciphertext do `index.html` público da base e só difere pela quebra de linha terminal, sem alterar o conteúdo cifrado. Cache do gate/service worker sincronizado em `review-dpe-assuntos-v4`. Atualizado o README sobre artefatos e ciclo offline.
+- [x] **Acessibilidade preservada/melhorada.** Campos de e-mail e senha têm `<label>` associado e o botão Entrar mede no mínimo 44 px. Chromium confirmou ausência de overflow em 375, 768, 1280 e 1920 px; a captura móvel conserva a disposição da tela.
+- [x] **Regressão e desbloqueio.** **125/125 testes**, incluindo geração dos três artefatos por fixture de build, sincronização do cache, reconstrução da fonte a partir de `app-src.txt`, `npm run check`, compilação do app-source e validador do site real aprovados. Teste E2E com ciphertext e chave fictícios confirmou a leitura de `deck.enc`, execução de `app-src.txt` depois do gate e sua gravação no CacheStorage v4, sem erros no console.
+- [x] **Medição comparativa isolada.** Chromium headless, perfis novos, mesmo servidor local e rede 4G simulada (150 ms de latência, 500 kB/s de download, sem compressão HTTP): documento HTML de 5.842.326 para 128.807 bytes (−97,8%); login utilizável de 12,09 s para 0,925 s (13,1× mais rápido); `loadEventEnd` de 18,18 s para 1,149 s (−93,7%). São resultados sintéticos de uma amostra, não telemetria nem garantia de produção.
+
+## Limites desta etapa
+
+A validação de desbloqueio usa baralho e chave descartáveis, não a senha, a conta ou o baralho real. O teste de performance é local, não mede compressão/CDN, LCP/INP/CLS de usuários reais nem autenticação da API de produção. `app-src.txt` é código público, não conteúdo de estudo; o conteúdo continua em `deck.enc` cifrado. Nenhuma credencial foi usada.
+
+# Etapa 10 — ligação dos assuntos do cronograma com o conteúdo do app
+
+- [x] **Busca por assunto, lei, súmula/jurisprudência e questão.** Cada bloco do cronograma (prévia semanal e Hoje) mostra quantos itens do app existem para o assunto e lista os principais em quatro grupos, com atalhos para Biblioteca, Lei seca (diploma/artigo), Teses, Defensoria (súmulas), Provas (questão) e Buscar em tudo. **Evidência:** `tests/cronograma-busca.test.mjs` (3 testes) com fixtures e com teses/súmulas/questões reais; suíte 136/136, `npm run check` e `git diff --check` aprovados; cache `review-dpe-assuntos-v6`.
+- [x] **Sem falsa precisão e sem efeito colateral.** Correspondência por título, leis citadas e disciplina, com aviso explícito; outras disciplinas só por referência citada. FSRS, histórico e progresso não são alterados pela navegação.
+
+## Limites desta etapa
+
+Não foi possível conferir com o baralho real (`deck.enc` cifrado); cartões e Lei seca foram validados com fixtures. A pertinência depende das palavras do edital; termos muito genéricos podem trazer poucos ou nenhum resultado. Sem publicação ou merge automático.

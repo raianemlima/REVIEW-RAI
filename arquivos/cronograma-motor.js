@@ -100,5 +100,81 @@
       cicloSemanas:Math.max(1,Math.ceil(ciclo.length/Math.max(1,slots.length))),naSemana,proximas:elegiveis.map(x => x.id).filter(id => !naSemana.includes(id)),fora,
       naoAlocado:Math.max(0,totalDesejado-saida.reduce((n,d) => n+d.minutos,0)),aviso: 'Rodízio com visita mínima por disciplina. Percentuais orientam a frequência aproximada; o tempo real depende de blocos inteiros.'};
   }
-  root.DPE_CRONOGRAMA_MOTOR = { gerarAgenda, obterDisciplinas, chaveTopico, materiais };
+  // ---- ligação assunto do cronograma → conteúdo do próprio app (cartões, lei seca, teses/súmulas, questões) ----
+  const normB = v => String(v ?? '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/(\d)\.(?=\d{3}\b)/g,'$1').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();
+  const IGNORADAS = new Set('a ao aos as com da das de do dos e em entre fazer geral gerais uma um uns umas na nas no nos o os ou para pela pelas pelo pelos por que se seu sua seus suas sobre ate apos aplicacao conceito conceitos direito direitos lei leis normas norma principios processo processos teoria disposicoes parte partes forma formas especie especies regime regras tipos tipo natureza juridica juridico juridicos efeitos caracteristicas classificacao nocoes legislacao brasileiro brasileira codigo artigo artigos inclusive demais outros outras decreto constituicao constitucional federal brasil relativo relativa relativos relativas acordo especial especiais'.split(' '));
+  const raiz = w => w.length >= 7 ? w.slice(0, 6) : w.replace(/s$/, '');
+  const raizes = txt => [...new Set(normB(txt).split(' ').filter(w => w.length >= 4 && !IGNORADAS.has(w) && !/^\d+$/.test(w)).map(raiz))];
+  const numerosLei = txt => [...new Set([...normB(txt).matchAll(/\b(\d{3,6})(?: (?:de )?\d{4}| \d{2}\b)?/g)].map(m => m[1]).filter(n => !/^(19|20)\d\d$/.test(n)))];
+  const NOMES_CODIGO = [['codigo penal','cp'],['processo penal','cpp'],['codigo civil','cc'],['processo civil','cpc'],['constituicao','cf'],['execucao penal','lep'],['crianca e do adolescente','eca'],['defesa do consumidor','cdc'],['introducao as normas','lindb']];
+  function siglasLei(txt) { const n = normB(txt); return NOMES_CODIGO.filter(([nome]) => n.includes(nome)).map(([, s]) => s); }
+  function refsJuris(txt) { const n = normB(txt), out = []; for (const m of n.matchAll(/\bsumula (vinculante )?(?:n )?(\d{1,3})\b/g)) out.push((m[1] ? 'sv' : 's') + m[2]); for (const m of n.matchAll(/\btema (?:n )?(\d{1,4})\b/g)) out.push('t' + m[1]); return out; }
+  const _cacheIdx = new WeakMap();
+  function prep(texto, extra = '') { return { n: ' ' + normB(texto) + ' ', r: new Set(raizes(texto + ' ' + extra)), refs: new Set(refsJuris(texto)) }; }
+  function indexar(fontes) {
+    const chaveLen = (fontes.cartoes || []).length + ':' + (fontes.leiseca || []).length;
+    const hit = _cacheIdx.get(fontes); if (hit && hit.k === chaveLen) return hit.idx;
+    const cartoes = arr(fontes.cartoes).map(c => ({ c, p: prep(`${c.tema || ''} ${c.frente || ''} ${c.verso || ''} ${c.porque || ''} ${c.origem || ''}`), t: new Set(raizes(c.tema || '')) }));
+    const leis = arr(fontes.leiseca).map(d => {
+      const nome = `${d.nome || ''} ${d.curto || ''} ${d.id || ''}`, arts = [];
+      arr(d.grupos).forEach((g, gi) => arr(g?.itens).forEach(x => { if (x && x.a !== undefined && x.a !== '') arts.push({ a: x.a, r: x.r, gi, p: prep(x.x || '') }); }));
+      return { d, nome: ' ' + normB(nome) + ' ', nums: new Set(numerosLei(nome)), siglas: new Set([...siglasLei(nome), normB(d.id)]), r: new Set(raizes(nome)), arts };
+    });
+    const teses = arr(fontes.teses).map(x => ({ x, p: prep(`${x.tipo || ''} ${x.num ? 'tema ' + x.num : ''} ${x.processo || ''} ${x.texto || ''}`), ramo: x.ramo || '' }));
+    const sumulas = arr(fontes.sumulas).map(x => ({ x, p: prep(`${x.tipo || ''} ${x.enunciado || ''}`), ramo: x.ramo || '' }));
+    const questoes = []; arr(fontes.provas).forEach(P => arr(P?.questoes).forEach(q => questoes.push({ P, q, p: prep(`${q.enunciado || ''} ${Object.values(q.alternativas || {}).join(' ')}`), t: new Set(raizes(`${q.assunto || ''}`)), ramo: q.materia || '' })));
+    const idx = { cartoes, leis, teses, sumulas, questoes }; _cacheIdx.set(fontes, { k: chaveLen, idx }); return idx;
+  }
+  const semDireito = s => normB(s).replace(/^(direitos? |nocoes de |legislacao )(do |da |de |dos |das )?/, '').trim();
+  function ramoCompativel(ramo, nomes) { if (!ramo) return null; const partes = String(ramo).split(/[\/,;·]| e /).map(semDireito).filter(x => x.length >= 4); return partes.some(r => nomes.some(n => n && (n === r || n.includes(r) || r.includes(n)))); }
+  function avaliar(p, q, extraTitulo) {
+    const tit = q.tit.filter(r => p.r.has(r) || (extraTitulo && extraTitulo.has(r))).length;
+    const txt = q.txt.filter(r => p.r.has(r)).length;
+    const lei = q.nums.some(n => p.n.includes(' ' + n + ' ')) || q.siglas.some(s => p.n.includes(' ' + s + ' '));
+    const ref = q.refs.some(r => p.refs.has(r));
+    return { tit, txt, lei, ref };
+  }
+  function aceita(a, q, discOk) {
+    if (a.ref) return discOk !== false || a.tit >= 1;
+    if (discOk === false) return false;
+    const n = q.tit.length, minTit = n <= 2 ? n : Math.max(2, Math.ceil(n * 0.5));
+    if (n === 1 && q.txt.length && !a.lei && a.txt < 1) return false;
+    if (a.lei) return a.tit >= Math.min(1, n) && (discOk || a.tit >= Math.min(2, n));
+    if (!n) return false;
+    return discOk === null ? a.tit >= Math.max(minTit, Math.min(n, 3)) : a.tit >= minTit;
+  }
+  const pontos = (a, discOk) => a.ref * 60 + a.lei * 30 + a.tit * 12 + a.txt * 2 + (discOk ? 6 : 0);
+  // consulta: {titulo, texto, leis[], juris[], discIds[], discNomes[]}; devolve grupos tema/lei/juris/questoes já ordenados
+  function relacionarConteudo(fontes, consulta, limite = 4) {
+    const idx = indexar(fontes || {}), c = consulta || {};
+    const titulo = String(c.titulo || '').replace(/^\s*\d+(?:\.\d+)*\.?\s*/, '').split(/\s\d+\.\d+\.?\s/)[0].split(/[:;]/)[0], textoLeis = arr(c.leis).join(' ') + ' ' + titulo + ' ' + (c.texto || '');
+    const q = { tit: raizes(titulo), txt: raizes(c.texto || '').filter(r => !raizes(titulo).includes(r)).slice(0, 14), nums: numerosLei(arr(c.leis).join(' ') + ' ' + titulo), siglas: siglasLei(arr(c.leis).join(' ')), refs: refsJuris(arr(c.juris).join(' ') + ' ' + textoLeis) };
+    if (!q.tit.length) q.tit = q.txt.splice(0, 3);
+    const discIds = new Set(arr(c.discIds)), nomes = arr(c.discNomes).map(semDireito).filter(Boolean);
+    const top = l => l.sort((a, b) => b.s - a.s || String(a.k).localeCompare(String(b.k)));
+    const tema = [], lei = [], juris = [], questoes = [];
+    for (const it of idx.cartoes) {
+      const discOk = it.c.disc == null ? null : discIds.has(it.c.disc), a = avaliar(it.p, q, it.t);
+      if (!aceita(a, q, discOk)) continue;
+      const tipo = it.c.tipo, alvo = tipo === 'lei_seca' ? lei : tipo === 'jurisprudencia' ? juris : tipo === 'multipla_escolha' ? questoes : tema;
+      alvo.push({ fonte: 'cartao', k: it.c.id, s: pontos(a, discOk), item: it.c, motivo: a.ref ? 'referência citada' : a.lei ? 'mesma lei' : 'mesmo assunto' });
+    }
+    for (const L of idx.leis) {
+      const porLei = q.nums.some(n => L.nums.has(n)) || q.siglas.some(s => L.siglas.has(s)), arts = [];
+      for (const art of L.arts) { const a = avaliar(art.p, q); if (a.tit >= Math.min(2, q.tit.length || 2) || (porLei && a.tit + a.txt >= 2)) arts.push({ art, s: a.tit * 12 + a.txt * 2 }); }
+      top(arts.map(x => ({ ...x, k: x.art.a })));
+      if (porLei || arts.length) lei.push({ fonte: 'leiseca', k: L.d.id, s: (porLei ? 50 : 0) + (arts[0]?.s || 0), item: L.d, artigos: arts.slice(0, 3).map(x => ({ a: x.art.a, r: x.art.r, gi: x.art.gi })), motivo: porLei ? 'lei citada no edital' : 'artigos sobre o assunto' });
+    }
+    for (const [lista, fonte] of [[idx.teses, 'tese'], [idx.sumulas, 'sumula']]) for (const it of lista) {
+      const discOk = ramoCompativel(it.ramo, nomes), a = avaliar(it.p, q);
+      if (aceita(a, q, discOk === null ? null : discOk)) juris.push({ fonte, k: fonte + (it.x.num || it.x.tipo || ''), s: pontos(a, discOk), item: it.x, motivo: a.ref ? 'precedente citado' : a.lei ? 'mesma lei' : 'mesmo assunto' });
+    }
+    for (const it of idx.questoes) {
+      const discOk = ramoCompativel(it.ramo, nomes), a = avaliar(it.p, q, it.t), b = avaliar({ n: it.p.n, r: it.t, refs: it.p.refs }, q);
+      if (aceita({ ...a, tit: b.tit }, q, discOk)) questoes.push({ fonte: 'prova', k: it.P.id + ':' + it.q.n, s: pontos(a, discOk) + (it.q.gabarito === 'X' ? -20 : 0), item: it.q, prova: it.P, motivo: a.ref ? 'referência citada' : a.lei ? 'mesma lei' : 'mesmo assunto' });
+    }
+    const g = (l) => ({ total: l.length, itens: top(l).slice(0, limite) });
+    return { tema: g(tema), lei: g(lei), juris: g(juris), questoes: g(questoes), termos: q.tit.slice(0, 4), assunto: titulo.trim().replace(/[.;:,]+$/, ''), leisCitadas: q.nums, total: tema.length + lei.length + juris.length + questoes.length };
+  }
+  root.DPE_CRONOGRAMA_MOTOR = { gerarAgenda, obterDisciplinas, chaveTopico, materiais, relacionarConteudo };
 })(typeof window !== 'undefined' ? window : globalThis);

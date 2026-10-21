@@ -93,3 +93,27 @@
 .cr-form .hint, .cr-form .ph h3 { overflow-wrap:anywhere; }
 html[data-rd-design="figma"] body.rd-shell .cr-form input:not([type=checkbox]),
 html[data-rd-design="figma"] body.rd-shell .cr-form select { box-sizing:border-box; min-width:0; max-width:100%; width:100%; font-size:16px; }
+
+/* Conteúdo próprio primeiro; consultas externas ficam como confirmação. */
+.cr-platform { margin:12px 0 16px; padding:14px; border:1px solid color-mix(in srgb, var(--ok) 34%, var(--line)); border-radius:12px; background:color-mix(in srgb, var(--ok-soft) 42%, var(--surface)); }
+.cr-platform-empty { border-color:var(--line); background:var(--bg); }
+.cr-platform-heading { display:flex; align-items:baseline; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+.cr-platform-heading b { color:var(--ink); font:700 .95rem/1.3 var(--f-ui); }
+.cr-platform-heading span { color:var(--muted); font-size:.78rem; }
+.cr-platform p { margin:6px 0 10px; color:var(--muted); font-size:.84rem; line-height:1.45; }
+.cr-platform-list { display:grid; gap:8px; margin:0 0 12px; padding:0; list-style:none; }
+.cr-platform-list li { display:grid; gap:3px; padding:9px 10px; border-radius:9px; background:var(--surface); border:1px solid var(--line); }
+.cr-platform-list li b { font-size:.78rem; color:var(--accent); }
+.cr-platform-list li span { font-size:.82rem; line-height:1.4; color:var(--ink); }
+.cr-consulta-externa { margin:12px 0; padding:0 10px; border:1px dashed var(--line); border-radius:10px; }
+.cr-consulta-externa summary { color:var(--muted); font-size:.84rem; }
+.cr-consulta-externa p { color:var(--muted); font-size:.8rem; line-height:1.45; }
+/* ligação do assunto com o conteúdo do app */
+.cr-app-resumo { margin:4px 0 8px; font-size:.82rem; line-height:1.4; color:var(--muted); }
+.cr-app-resumo b { color:var(--ink); }
+.cr-rel-grupo { margin:10px 0 0; padding-top:10px; border-top:1px solid var(--line); }
+.cr-rel-grupo:first-of-type { border-top:0; padding-top:0; }
+.cr-rel-grupo .cr-platform-heading b { font-size:.86rem; }
+.cr-rel-grupo p { margin:4px 0 6px; }
+.cr-platform-list li .btn { justify-self:start; margin-top:4px; min-height:36px; overflow-wrap:anywhere; white-space:normal; text-align:left; }
+.cr-platform-list li span { overflow-wrap:anywhere; }

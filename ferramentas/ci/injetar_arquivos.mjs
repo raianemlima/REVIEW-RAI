@@ -1,4 +1,4 @@
-// Usado na publicação (GitHub Actions): coloca as chaves dos PDFs protegidos dentro do baralho cifrado do index.html.
+// Usado na publicação (GitHub Actions): coloca as chaves dos PDFs protegidos dentro do baralho cifrado em deck.enc.
 // Uso: APP_SENHA=... CHAVE_ARQUIVOS='[...]' node ferramentas/ci/injetar_arquivos.mjs _site/index.html
 //
 // Os dois valores vêm dos segredos do repositório (Settings › Secrets and variables › Actions) e nunca ficam no código.
@@ -39,13 +39,13 @@ function jáCarregaMetacognição(html) {
   let match;
   while ((match = scripts.exec(html))) {
     const abertura = `<script${match[1]}>`;
-    if (normalizarReferencia(atributo(abertura, "src")) === "arquivos/metacognicao.js") return true;
+    if (normalizarReferencia(atributo(abertura, "src") || atributo(abertura, "data-lazy-src")) === "arquivos/metacognicao.js") return true;
   }
   return false;
 }
 
-// Módulo de metacognição (arquivos/metacognicao.js): entra antes do </body>, depois dos scripts do app,
-// para se encaixar nas funções globais já definidas. A existência é conferida antes de qualquer modificação.
+// Módulo de metacognição (arquivos/metacognicao.js): entra na fila lazy antes dos demais módulos do app.
+// A existência é conferida antes de qualquer modificação.
 const caminhoMódulo = join(dirname(arq), "arquivos", "metacognicao.js");
 if (!móduloRegular(caminhoMódulo)) {
   console.error(`::error::Módulo obrigatório ausente ou não é arquivo: ${caminhoMódulo}`);
@@ -64,10 +64,12 @@ if (jáCarregaMetacognição(h)) console.log("index.html já carrega arquivos/me
 else {
   const corpo = /<\/body\s*>/i.exec(h);
   if (!corpo) { console.error("::error::</body> não encontrado no index.html."); process.exit(1); }
-  const TAG = '<script src="arquivos/metacognicao.js"></script>';
-  writeFileSync(arq, h.slice(0, corpo.index) + TAG + "\n" + h.slice(corpo.index));
-  h = h.slice(0, corpo.index) + TAG + "\n" + h.slice(corpo.index);
-  console.log("ok: arquivos/metacognicao.js injetado no index.html");
+  const primeiroModulo = /<script\b[^>]*\bdata-lazy-src\s*=/i.exec(h);
+  const ponto = primeiroModulo ? primeiroModulo.index : corpo.index;
+  const TAG = '<script data-lazy-src="arquivos/metacognicao.js"></script>';
+  writeFileSync(arq, h.slice(0, ponto) + TAG + "\n" + h.slice(ponto));
+  h = h.slice(0, ponto) + TAG + "\n" + h.slice(ponto);
+  console.log("ok: arquivos/metacognicao.js adicionado à fila lazy do index.html");
 }
 
 if (!senha || !chaves) { console.log("::notice::Segredos APP_SENHA e CHAVE_ARQUIVOS não configurados: PDFs protegidos não entram no baralho."); process.exit(0); }
@@ -76,9 +78,14 @@ let lista;
 try { lista = JSON.parse(chaves); if (!Array.isArray(lista) || !lista.every(a => a.id && a.k && a.iv && a.arquivo)) throw 0; }
 catch { console.error("::error::O segredo CHAVE_ARQUIVOS não é o conteúdo do chave-arquivos.json."); process.exit(1); }
 
-const re = /(<script type="application\/json" id="deck-enc">)(.*?)(<\/script>)/s, m = h.match(re);
-if (!m) { console.error("::error::deck-enc não encontrado no index.html."); process.exit(1); }
-const enc = JSON.parse(m[2]), unb64 = s => Buffer.from(s, "base64"), b64 = u => Buffer.from(u).toString("base64");
+const caminhoDeck = join(dirname(arq), "deck.enc");
+let textoDeck;
+try { textoDeck = readFileSync(caminhoDeck, "utf8"); }
+catch (cause) { console.error(`::error::deck.enc ausente ou ilegível: ${cause.message}`); process.exit(1); }
+let enc;
+try { enc = JSON.parse(textoDeck); }
+catch { console.error("::error::deck.enc não contém JSON válido."); process.exit(1); }
+const unb64 = s => Buffer.from(s, "base64"), b64 = u => Buffer.from(u).toString("base64");
 const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(senha), "PBKDF2", false, ["deriveKey"]);
 const key = await crypto.subtle.deriveKey({ name: "PBKDF2", salt: unb64(enc.s), iterations: enc.it, hash: "SHA-256" }, base, { name: "AES-GCM", length: 256 }, false, ["encrypt", "decrypt"]);
 let pt;
@@ -90,5 +97,5 @@ deck.arquivos = lista;
 const iv = randomBytes(12);
 const ct = new Uint8Array(await crypto.subtle.encrypt({ name: "AES-GCM", iv }, key, gzipSync(Buffer.from(JSON.stringify(deck), "utf8"), { level: 9 })));
 const novo = JSON.stringify({ ...enc, z: "gzip", iv: b64(iv), ct: b64(ct) });
-writeFileSync(arq, h.replace(re, (_, a, __, c) => a + novo + c));
+writeFileSync(caminhoDeck, novo);
 console.log(`ok: ${lista.length} arquivo(s) protegido(s) no baralho (PDFs e pacotes de doutrina) (${lista.map(a => a.id).join(", ")})`);

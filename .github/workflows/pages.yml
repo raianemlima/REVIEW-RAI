@@ -20,8 +20,10 @@ jobs:
       - name: Montar a pasta do site (só o que é público)
         run: |
           mkdir _site
-          cp CNAME index.html conheca.html sw.js manifest.webmanifest privacidade.html termos.html _site/
+          cp CNAME index.html deck.enc app-src.txt conheca.html sw.js manifest.webmanifest privacidade.html termos.html _site/
           cp -r icons fonts screenshots arquivos _site/
+          mkdir -p _site/docs
+          cp docs/RELATORIO-MATERIAS-E-PESOS-DPE.md _site/docs/
       - name: Chaves dos PDFs protegidos no baralho (segredos APP_SENHA e CHAVE_ARQUIVOS)
         env:
           APP_SENHA: ${{ secrets.APP_SENHA }}

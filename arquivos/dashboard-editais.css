@@ -1,0 +1,86 @@
+/* Dashboard documental: extensão visual da rota Progresso. */
+html[data-rd-design="figma"] body.rd-shell .rd-edital-dashboard {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--rd-brand-soft) 78%, var(--rd-surface)) 0%, var(--rd-surface) 62%);
+  border: 1px solid var(--rd-line);
+  border-radius: var(--rd-radius-lg);
+  box-shadow: var(--rd-shadow-soft);
+  margin: 0 0 30px;
+  overflow: hidden;
+  padding: 28px;
+}
+html[data-rd-design="figma"] body.rd-shell .rd-edital-hero { align-items: flex-end; display: flex; gap: 24px; justify-content: space-between; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-hero > div { max-width: 710px; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-hero h2 { color: var(--rd-ink); font-size: clamp(27px, 3.4vw, 39px); letter-spacing: -1.3px; line-height: 1.05; margin: 8px 0 10px; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-hero p, html[data-rd-design="figma"] body.rd-shell .rd-edital-intro, html[data-rd-design="figma"] body.rd-shell .rd-edital-filter p { color: var(--rd-muted); line-height: 1.55; margin: 0; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-hero .btn { flex: 0 0 auto; min-height: 44px; white-space: nowrap; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-kpis { display: grid; gap: 10px; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 25px 0; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-kpis > div { background: color-mix(in srgb, var(--rd-surface) 74%, transparent); border: 1px solid var(--rd-line); border-radius: 14px; min-width: 0; padding: 13px 14px; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-kpis b { color: var(--rd-brand); display: block; font: 600 clamp(22px, 2.3vw, 30px)/1 "IBM Plex Mono", ui-monospace, monospace; letter-spacing: -1.5px; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-kpis span { color: var(--rd-muted); display: block; font-size: 11px; line-height: 1.25; margin-top: 6px; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-grid { display: grid; gap: 16px; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-card { background: var(--rd-surface); border: 1px solid var(--rd-line); border-radius: 18px; min-width: 0; padding: 20px; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-card-heading { align-items: flex-start; display: flex; gap: 12px; justify-content: space-between; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-card h3 { color: var(--rd-ink); font-size: 18px; letter-spacing: -.35px; line-height: 1.2; margin: 6px 0 0; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-chip { background: var(--rd-ok-soft); border-radius: 999px; color: var(--rd-ok); flex: 0 0 auto; font-size: 10px; font-weight: 800; letter-spacing: .45px; padding: 6px 8px; text-transform: uppercase; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-chip-amber { background: var(--rd-amber-soft); color: #9b5d00; }
+html[data-rd-design="figma"][data-theme="dark"] body.rd-shell .rd-edital-chip-amber { color: var(--rd-amber); }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-intro { font-size: 12px; margin: 12px 0 17px; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-frequency ol, html[data-rd-design="figma"] body.rd-shell .rd-edital-profile-list { list-style: none; margin: 0; padding: 0; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-rank { align-items: center; display: grid; gap: 10px; grid-template-columns: minmax(135px, 1fr) minmax(70px, 1.55fr) 36px; margin: 0 0 12px; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-rank > div:first-child { min-width: 0; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-rank b { color: var(--rd-ink); display: block; font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-rank span { color: var(--rd-muted); display: block; font-size: 10px; margin-top: 2px; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-track { background: var(--rd-surface-muted); border-radius: 999px; height: 8px; overflow: hidden; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-track i { background: linear-gradient(90deg, var(--rd-brand-deep), var(--rd-brand)); border-radius: inherit; display: block; height: 100%; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-rank > strong { color: var(--rd-brand); font: 600 11px "IBM Plex Mono", ui-monospace, monospace; text-align: right; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-details { border-top: 1px solid var(--rd-line); margin-top: 18px; padding-top: 13px; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-details summary { color: var(--rd-brand); cursor: pointer; font-size: 12px; font-weight: 700; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-details ol { margin-top: 15px; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-table-wrap { overflow-x: auto; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-table-wrap table { border-collapse: collapse; font-size: 12px; table-layout: fixed; width: 100%; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-table-wrap th, html[data-rd-design="figma"] body.rd-shell .rd-edital-table-wrap td { border-bottom: 1px solid var(--rd-line); padding: 10px 7px; text-align: left; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-table-wrap th:first-child, html[data-rd-design="figma"] body.rd-shell .rd-edital-table-wrap td:first-child { overflow-wrap: anywhere; width: 49%; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-table-wrap th:not(:first-child), html[data-rd-design="figma"] body.rd-shell .rd-edital-table-wrap td:not(:first-child) { width: 17%; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-table-wrap thead th { color: var(--rd-muted); font-size: 10px; letter-spacing: .45px; text-transform: uppercase; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-table-wrap tbody th { color: var(--rd-ink); font-weight: 600; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-table-wrap td { color: var(--rd-muted); font-family: "IBM Plex Mono", ui-monospace, monospace; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-table-wrap td b { color: var(--rd-brand); }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-filter { margin-top: 16px; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-filter-top { align-items: end; display: flex; gap: 18px; justify-content: space-between; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-filter-top > div { max-width: 590px; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-filter label { color: var(--rd-muted); display: grid; flex: 0 1 255px; font-size: 11px; font-weight: 700; gap: 6px; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-filter select { background: var(--rd-bg); border: 1px solid var(--rd-line); border-radius: 10px; color: var(--rd-ink); min-height: 39px; padding: 7px 10px; }
+html[data-rd-design="figma"] body.rd-shell #rdEditalPerfil { margin-top: 18px; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-profile-head { align-items: center; display: flex; gap: 10px; justify-content: space-between; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-profile-head b { color: var(--rd-ink); font-size: 13px; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-profile-head span { color: var(--rd-muted); font-size: 11px; overflow-wrap: anywhere; text-align: right; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-profile-list { display: grid; gap: 7px; margin-top: 12px; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-profile-list li { background: var(--rd-bg); border-left: 3px solid var(--rd-brand); border-radius: 8px; padding: 9px 11px; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-profile-list b, html[data-rd-design="figma"] body.rd-shell .rd-edital-profile-list span { display: block; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-profile-list b { color: var(--rd-ink); font-size: 12px; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-profile-list span, html[data-rd-design="figma"] body.rd-shell .rd-edital-caveat, html[data-rd-design="figma"] body.rd-shell .rd-edital-empty { color: var(--rd-muted); font-size: 11px; line-height: 1.45; margin: 3px 0 0; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-caveat { border-top: 1px solid var(--rd-line); margin-top: 13px; padding-top: 12px; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-alert { background: var(--rd-amber-soft); border-radius: 12px; color: var(--rd-ink); padding: 13px; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-alert b { color: var(--rd-amber); }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-alert p { font-size: 12px; margin-top: 5px; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-method { border-top: 1px solid var(--rd-line); color: var(--rd-muted); font-size: 12px; line-height: 1.55; margin-top: 20px; padding-top: 16px; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-method b { color: var(--rd-ink); font-size: 13px; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-method p { margin: 5px 0 7px; max-width: 900px; }
+html[data-rd-design="figma"] body.rd-shell .rd-edital-method a { color: var(--rd-brand); font-weight: 700; }
+@media (max-width: 900px) {
+  html[data-rd-design="figma"] body.rd-shell .rd-edital-dashboard { border-radius: 20px; margin-bottom: 24px; padding: 20px 16px; }
+  html[data-rd-design="figma"] body.rd-shell .rd-edital-hero, html[data-rd-design="figma"] body.rd-shell .rd-edital-filter-top { align-items: stretch; flex-direction: column; }
+  html[data-rd-design="figma"] body.rd-shell .rd-edital-hero .btn, html[data-rd-design="figma"] body.rd-shell .rd-edital-filter label { flex-basis: auto; width: 100%; }
+  html[data-rd-design="figma"] body.rd-shell .rd-edital-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  html[data-rd-design="figma"] body.rd-shell .rd-edital-grid { grid-template-columns: minmax(0, 1fr); }
+  html[data-rd-design="figma"] body.rd-shell .rd-edital-rank { grid-template-columns: minmax(118px, 1fr) minmax(55px, 1fr) 34px; }
+  html[data-rd-design="figma"] body.rd-shell .rd-edital-profile-head { align-items: flex-start; flex-direction: column; }
+  html[data-rd-design="figma"] body.rd-shell .rd-edital-profile-head span { text-align: left; }
+}
+@media (max-width: 400px) {
+  html[data-rd-design="figma"] body.rd-shell .rd-edital-card { padding: 16px 13px; }
+  html[data-rd-design="figma"] body.rd-shell .rd-edital-kpis > div { padding: 11px; }
+  html[data-rd-design="figma"] body.rd-shell .rd-edital-kpis b { font-size: 23px; }
+  html[data-rd-design="figma"] body.rd-shell .rd-edital-rank { gap: 7px; grid-template-columns: minmax(105px, 1fr) minmax(44px, 1fr) 31px; }
+  html[data-rd-design="figma"] body.rd-shell .rd-edital-rank b { font-size: 11px; }
+}

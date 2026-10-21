@@ -2,9 +2,19 @@
 
 ## O que mudou
 
-O cronograma deixou de repetir uma lista de disciplinas com poucos minutos todos os dias. Agora distribui **blocos de estudo de assuntos do programa escolhido**, alterna disciplinas e continua o ciclo entre semanas. Cartões são revisão complementar, não a fonte do conteúdo nem a medida de conclusão do edital.
+O cronograma deixou de repetir uma lista de disciplinas com poucos minutos todos os dias. Agora distribui **blocos de estudo de assuntos do programa escolhido**, alterna disciplinas e continua o ciclo entre semanas. A Biblioteca própria aparece primeiro: quando há cartões relacionados ao assunto, o bloco mostra seus temas e perguntas e oferece acesso direto a esses conteúdos. Cartões são revisão complementar, não a medida de conclusão do edital.
 
 O catálogo reúne **18 editais de carreira, de 16 estados**, com 253 rubricas e 5.364 tópicos/unidades extraídas, incluindo seus subtemas. O recorte dos arquivos recebidos é 2021–2026; isso não representa todos os estados brasileiros nem uma janela móvel exata de cinco anos. Foram excluídos documentos de servidores, provas isoladas e o edital antigo do RJ. Contagens de tópicos variam conforme a estrutura de cada documento: não medem dificuldade ou carga equivalente.
+
+## Contrato e manutenção do conteúdo
+
+Os dados permanecem estáticos para o app funcionar sem rede. `arquivos/cronograma-taxonomia.js` é a fonte única dos IDs canônicos, nomes, notas de cobertura, aliases de compatibilidade com o baralho e sinalização `nucleoComum`; hoje o vínculo com o baralho considera o nome e o primeiro alias, enquanto a busca de assuntos consulta o texto/rubrica, não os aliases. O núcleo inicial da interface é derivado da sinalização. `somenteUI: true` identifica uma opção de interface sem rubrica editorial associada. Hoje, 32 IDs canônicos são usados no conteúdo e uma entrada é apenas de interface.
+
+`arquivos/cronograma-conteudo.js` preserva o recorte documental por edital: `id`, `fonte`, `disciplinas` e, quando existentes, `fonteUrl` e `lacunas`. Cada rubrica conserva seu `id`, nome, `canonicais` e `topicos`; `canonicais` é um vínculo de zero ou mais IDs à taxonomia. O array pode ficar vazio quando a fonte traz uma rubrica — como Português ou legislação estadual — que não tem correspondência segura no catálogo canônico. Rubricas combinadas podem apontar para mais de um ID, sem dividir nem duplicar o texto original. Cada tópico mantém `id`, título, texto e `pagina` (texto não vazio ou inteiro positivo que identifica página/localizador), além de arrays de `leis` e `juris`, que podem estar vazios. Os perfis em `cronograma-pesos.js` apontam para IDs ligados ao conteúdo do mesmo edital; grupos sem `subjects` representam áreas da fonte sem vínculo seguro.
+
+O texto de cada edital é um registro histórico da fonte recebida, não uma cópia canônica para deduplicar. Mesmo quando textos de tópicos são iguais, mantenha cada ocorrência, ID e localizador sob seu edital; correções devem ser feitas conferindo o documento de origem, sem completar lacunas por memória. IDs de edital, rubrica e tópico são chaves estáveis usadas por planos e progresso sincronizados: não os renomeie sem migração explícita.
+
+O carregamento offline é `cronograma-taxonomia.js` → `cronograma-conteudo.js` → `cronograma-motor.js` → `cronograma.js`; os arquivos estão no CORE do service worker. A validação executa os módulos de dados em VM isolada, sem DOM, rede ou acesso ao processo, e verifica tipos, campos obrigatórios, IDs únicos e referências entre taxonomia, rubricas e pesos. Para testar localmente, use `npm ci --ignore-scripts`, `npm test` e `npm run check`; a verificação de publicação também valida o contrato quando recebe a pasta pronta do site.
 
 ## Como montar seu plano
 
@@ -28,7 +38,9 @@ A sequência automática percorre os assuntos antes de voltar ao início. Uma es
 
 ## O que estudar em cada bloco
 
-Expanda **Assunto completo e materiais**. O bloco apresenta o texto extraído do programa, sua fonte e página/localizador, além das normas ou referências jurisprudenciais identificadas naquele item.
+Expanda **Assunto completo e materiais**. O bloco começa por **Já temos na plataforma**, com os cartões relacionados encontrados na Biblioteca, seus temas e uma prévia da pergunta. Use **Abrir estes conteúdos na Biblioteca** para consultar respostas, explicações, notas e situação de revisão dentro do app. Se não houver correspondência específica, o bloco informa essa lacuna e oferece a disciplina para consulta ampla na Biblioteca.
+
+As consultas externas ficam recolhidas em **Conferência complementar (opcional)** quando já existe conteúdo próprio. Elas ficam abertas como fallback quando não há cartão específico. Assim, LexML, STF e STJ servem para confirmar texto, vigência, tese e jurisprudência — não substituem o material didático da plataforma quando ele existe.
 
 - **Conteúdo jurídico:** leia os conceitos e a lei/artigo indicado, quando houver; consulte STF/STJ para estudar a tese, o contexto e os limites do precedente. Resolva questões do assunto e registre dúvidas.
 - **Português:** estude a regra gramatical e exemplos, faça questões e use o VOLP/ABL para dúvidas de grafia. O VOLP não substitui uma gramática.
@@ -74,3 +86,18 @@ Os testes usam código real com baralho fictício e rede bloqueada: cobrem conte
 A conferência pontual no Chromium utilizou larguras de 320, 390 e 1440 pixels, agenda longa, Hoje e reflexão; mediu barra, rolagem, foco e alcance das ações finais. Isso **não é certificação de Safari/iPhone nem teste autenticado de produção ou offline real**. A cópia pública é validada sem os segredos dos materiais protegidos.
 
 O catálogo é estático e derivado das fontes indicadas. Não monitora retificações futuras, não substitui a conferência do edital original e não disponibiliza uma biblioteca completa de doutrina ou precedentes comentados. A entrega é em branch/PR de revisão, sem publicação ou merge automático.
+
+## Ligação do assunto com o conteúdo do app
+
+Quando o cronograma monta os blocos da semana (prévia) e os assuntos de **Hoje**, cada bloco passa por `DPE_CRONOGRAMA_MOTOR.relacionarConteudo(fontes, consulta)` (em `arquivos/cronograma-motor.js`, função pura e sem DOM). As fontes são as que o app já carrega: `DECK.cartoes`, `DECK.leiseca`, teses (`tsDados().itens`), súmulas (`dpeDados().sumulas`) e questões de provas (`provasDados()`).
+
+Resultados em quatro grupos, com contagem visível no cabeçalho do bloco:
+
+| Grupo | O que entra | Atalho |
+|---|---|---|
+| Assunto/tema | cartões conceito, comparativo, tese defensiva, certo/errado | Biblioteca filtrada pelo ID do cartão |
+| Lei e lei seca | cartões `lei_seca` e diplomas da Lei seca (com até 3 artigos sobre o assunto) | aba Lei seca no diploma/artigo |
+| Súmulas e jurisprudência | cartões `jurisprudencia`, teses (RG/repetitivos) e súmulas | Teses (busca pelo processo/tema) ou Defensoria (ramo) |
+| Questões | questões reais das provas e cartões de múltipla escolha | Provas, abrindo a questão |
+
+Critérios: título do assunto (sem numeração e subitens) reduzido a raízes de palavras, números das leis citadas no item do edital (`Lei nº 11.343/2006` → `11343`), referências numeradas (Súmula/SV/Tema) e compatibilidade da disciplina (ID do baralho ou ramo/matéria). Itens de outra disciplina só entram por referência citada. É busca por correspondência, não curadoria: a interface avisa isso e, sem resultado interno, abre as fontes oficiais externas. Navegar pelos atalhos não cria nem altera estado FSRS. Testes: `tests/cronograma-busca.test.mjs`.
