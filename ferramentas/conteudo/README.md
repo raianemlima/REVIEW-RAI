@@ -20,6 +20,29 @@ SENHA='sua senha' node build.mjs fonte.html index.html
 # 5. subir a versão nova do sw.js (CACHE 'revisao-dpe-vNN') e fazer commit só do index.html e do sw.js
 ```
 
+## Estudo em Markdown: Aprofundamento e cartões Certo ou errado
+
+Textos de estudo (por exemplo, pesquisas em `.md` ou exportadas de `.docx`) entram no app de duas formas. **Nada disso vai para o Git:** o texto e os resultados ficam em `dados/ebooks/` (ignorada), porque o repositório é público.
+
+```bash
+# 1. guardar o texto limpo em dados/ebooks/fonte/<id>.md
+#    (# Título geral; cada "# Capítulo"; "## Questão N" com a afirmação em negrito e "**Certo.**"/"**Errado.**" + comentário;
+#     tabelas "| Afirmação | Avaliação |" com "Errada: ..." / "Correta.")
+
+# 2. estudo em capítulos (Biblioteca › Aprofundamento)
+python ferramentas/conteudo/ebooks.py preparar dados/ebooks/fonte/<id>.md <id> dh "Título" "Subtítulo"
+python ferramentas/conteudo/ebooks.py inserir deck.json ferramentas/conteudo/dados/ebooks/*.json
+
+# 3. cartões Certo ou errado para a revisão espaçada (FSRS)
+python ferramentas/conteudo/estudo_md.py cartoes dados/ebooks/fonte/<id>.md --id <id> --tema "Título" --abr SP
+python ferramentas/conteudo/estudo_md.py inserir baralho/ ferramentas/conteudo/dados/ebooks/cartoes/*.json
+```
+
+- `--abr` é a abrangência do cartão: `nucleo_comum` (todos) ou a sigla do estado (`SP`, `RN`...); o cartão só aparece para quem escolheu aquele concurso. `--disc` padrão: `dh`.
+- Os ids são `ps-<id>-qNN` (questões) e `ps-<id>-pNN` (pegadinhas). `inserir` pode ser repetido: atualiza pelo id e não duplica. Recusa disciplina que o baralho não tem e id que já existe em outra disciplina.
+- Depois, o fluxo normal: `baralho.py montar`, `SENHA=... node build.mjs`, subir `CACHE`/`APP_CACHE`.
+- O renderizador do Aprofundamento mostra links só como texto (por segurança). Por isso as URLs das fontes devem aparecer por extenso numa lista "Fontes" ao fim do texto.
+
 ## Alterações no app feitas direto no `index.html`
 
 Algumas mudanças no código do app foram aplicadas direto no `index.html` publicado, por scripts em `ferramentas/ajustes/`. Antes de cada `node build.mjs`, aplique essas mudanças no seu `fonte.html`, senão o build volta o app à versão antiga. Um comando faz tudo:
