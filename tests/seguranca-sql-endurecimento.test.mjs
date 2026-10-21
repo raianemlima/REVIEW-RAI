@@ -5,7 +5,8 @@ import { fileURLToPath } from "node:url";
 import { test } from "node:test";
 
 const sql = readFileSync(resolve(dirname(fileURLToPath(import.meta.url)), "..", "supabase/seguranca.sql"), "utf8");
-const parte5 = sql.slice(sql.indexOf("-- ============ 5)"));
+const inicio5 = sql.indexOf("-- ============ 5)"), fim5 = sql.indexOf("-- ============ 6)");
+const parte5 = sql.slice(inicio5, fim5 < 0 ? undefined : fim5);
 
 test("a parte 5 existe e vem depois das partes 2 e 4", () => {
   assert.ok(sql.indexOf("-- ============ 5)") > sql.indexOf("-- ============ 4)"));
