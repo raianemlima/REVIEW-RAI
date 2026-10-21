@@ -100,15 +100,19 @@ test("build separa deck e app-source e converte os oito módulos para lazy", asy
 });
 
 test("gate e service worker compartilham a mesma versão de cache offline", async () => {
-  const [gate, sw] = await Promise.all([
+  const [gate, sw, index] = await Promise.all([
     readFile(join(raiz, "gate.js"), "utf8"),
     readFile(join(raiz, "sw.js"), "utf8"),
+    readFile(join(raiz, "index.html"), "utf8"),
   ]);
   const appCache = gate.match(/APP_CACHE\s*=\s*["']([^"']+)["']/)?.[1];
   const workerCache = sw.match(/\bCACHE\s*=\s*["']([^"']+)["']/)?.[1];
   assert.ok(appCache, "APP_CACHE ausente no gate");
   assert.ok(workerCache, "CACHE ausente no service worker");
   assert.equal(appCache, workerCache);
+  const embutido = index.match(/<script type="text\/plain" id="app-src"[^>]*>[\s\S]*?<\/script>\s*<script>([\s\S]*?)<\/script>/)?.[1];
+  assert.ok(embutido, "gate embutido ausente depois do app-src");
+  assert.equal(embutido.trim(), gate.trim(), "index.html precisa ser regenerado quando gate.js mudar");
   assert.match(sw, /["']app-src\.txt["']/);
 });
 

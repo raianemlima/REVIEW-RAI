@@ -30,8 +30,10 @@ Criar os links: no Asaas, **Cobranças → Links de pagamento → Criar link**.
 Painel do Supabase: https://supabase.com/dashboard/project/hlenhmgnqqnkjqmntnpz
 
 **1. Banco de dados.** Menu lateral **SQL Editor → New query**. Cole e rode (**Run**) cada parte de [`supabase/seguranca.sql`](../supabase/seguranca.sql) separadamente:
-   - parte 2 (validade da assinatura na `chave_do_app`);
+   - parte 2 (gatilho que bloqueia novos cadastros sem liberação, validade da assinatura e autorização da `chave_do_app`);
    - parte 4 (Asaas).
+
+O Supabase Auth pode ainda autenticar uma conta antiga que não esteja em `liberados`. O app agora encerra essa sessão assim que a RPC negar a chave. A `chave_do_app` é a autorização efetiva do conteúdo; o gatilho de `auth.users` também impede novos cadastros por senha ou código fora da lista. Este SQL precisa ser aplicado no projeto Supabase para que a trava de novos cadastros passe a valer em produção.
 
 **2. Chave da API do Asaas.** No Asaas: **Integrações → Chaves de API → Gerar chave**. Copie (começa com `$aact_`). Ela não vai para o repositório nem para o app.
 

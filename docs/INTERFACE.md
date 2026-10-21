@@ -12,7 +12,11 @@ No computador, as cinco áreas principais passam para um menu lateral. No celula
 
 A tela Hoje ganha uma abertura com data calculada e o cartão de foco em destaque. Semana, fila e extras ficam numa região complementar quando há espaço. No celular, o conteúdo se organiza em uma coluna. Novos atalhos levam a Lei seca, Modos de estudo e Biblioteca reais.
 
+O botão principal continua iniciando ou retomando o bloco diário; os controles de meta e o texto explicativo ficam recolhidos para reduzir a altura do cartão. O atalho secundário diz “Ver modos” para deixar claro que abre a biblioteca de formatos de estudo.
+
 O visual utiliza violeta, superfícies claras e lavanda, verde para progresso, sombras discretas e os tipos Rubik e Newsreader fornecidos. O tema automático/claro/escuro permanece o mesmo do aplicativo. A marca e o mascote escolhido pelo aluno foram preservados. Planejamento, cartão, notas e reflexão recebem a aparência nova sem exigir etapas adicionais.
+
+A tela de login também usa essa identidade visual, sem mostrar navegação do conteúdo bloqueado. O gate ativa o tema antes de renderizar o formulário; depois da autorização, a navegação e o shell são preparados antes do primeiro render do app para evitar a alternância entre o CSS antigo e o novo.
 
 ## O que não muda
 
@@ -42,7 +46,7 @@ node ferramentas/ci/validar_site.mjs .
 
 Os testes usam o código real com um baralho fictício, sem autenticar estudantes ou gravar em serviços de produção. Comparações de preservação são feitas contra a base `d21fdd3`. Testes em DOM simulado verificam eventos e dados, mas não demonstram sozinhos a renderização visual em todos os navegadores ou uso offline autenticado.
 
-Nesta etapa, **66 testes passaram**: os 51 anteriores, 10 da integração visual e 5 de publicação dos arquivos visuais. Os blocos originais de scripts, motor FSRS, conteúdo protegido, carregador, build e módulo de metacognição foram comparados com a base e permaneceram intactos. A pasta pública foi validada com 24 entradas obrigatórias no cache.
+Na integração inicial, 66 testes cobriam o comportamento anterior e visual. Com a cobertura acrescentada desde então, **136 testes passaram** nesta revisão, incluindo os fluxos de autorização e a sincronização do gate embutido. Os blocos originais de scripts, motor FSRS, conteúdo protegido, carregador, build e módulo de metacognição foram comparados com a base e permaneceram intactos. A pasta pública foi validada com 34 entradas obrigatórias no cache.
 
 Uma conferência pontual no Chromium, motivada pelos conflitos de CSS encontrados na revisão, mediu as larguras reais de 320, 390, 1024 e 1440 pixels sem transbordamento horizontal. Também foram conferidos o cartão no celular e o planejamento em tema escuro com um baralho fictício. Menu herdado, link de acessibilidade, logotipo e respiro do planejamento foram corrigidos. Isso não é teste autenticado de produção nem garantia de compatibilidade com todos os navegadores.
 

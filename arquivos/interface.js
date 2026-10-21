@@ -97,7 +97,7 @@
     window.visualViewport?.addEventListener("resize", ajustarTeclado);
     document.documentElement.dataset.rdDesign = "figma";
     document.body.classList.add("rd-shell");
-    atualizarShell();
+    if (typeof S === "object") atualizarShell();
     ajustarTeclado();
   }
   function decorarHoje() {
@@ -105,6 +105,19 @@
     if (S.mode === "loading" || S.tab !== "hoje") return;
     const main = $rd("#main"), hero = main?.querySelector(".hero");
     if (!main || !hero || main.querySelector(".rd-dashboard")) return;
+    const frase = hero.querySelector(".frase"), metas = hero.querySelector(".day-metas");
+    if ((frase || metas) && !hero.querySelector(".rd-goal-details")) {
+      const detalhes = document.createElement("details"); detalhes.className = "rd-goal-details";
+      const resumo = document.createElement("summary"); resumo.textContent = "Ajustar meta diária e ver detalhes";
+      detalhes.appendChild(resumo);
+      const explicacao = metas?.nextElementSibling;
+      if (frase) detalhes.appendChild(frase);
+      if (metas) {
+        detalhes.appendChild(metas);
+        if (explicacao?.classList.contains("count")) detalhes.appendChild(explicacao);
+      }
+      hero.appendChild(detalhes);
+    }
     const data = dayToDate(today()), hora = new Date().getHours(), oi = hora < 12 ? "Bom dia" : hora < 18 ? "Boa tarde" : "Boa noite";
     const welcome = document.createElement("section");
     welcome.className = "rd-welcome";
@@ -127,6 +140,8 @@
     dashboard.after(recursos);
     recursos.querySelectorAll("[data-rd-go]").forEach(b => b.onclick = () => go(b.dataset.rdGo));
     hero.classList.add("rd-focus");
+    const modos = main.querySelector("#goEstudar");
+    if (modos) modos.textContent = "Ver modos →";
   }
   function decorarSessao() {
     atualizarShell();
@@ -137,7 +152,9 @@
     main.querySelector(".mc-plan")?.classList.add("rd-planning");
   }
   function instalar() {
-    if (document.documentElement.dataset.rdDesign === "figma") return;
+    if (document.documentElement.dataset.rdInterfaceReady === "true") return;
+    document.documentElement.dataset.rdDesign = "figma";
+    document.body.classList.add("rd-shell");
     montarShell();
     if (!document.body.classList.contains("rd-shell")) return;
     const antesHoje = renderHoje;
@@ -160,10 +177,17 @@
     };
     temaAplicar();
     render();
+    document.documentElement.dataset.rdInterfaceReady = "true";
   }
   function pronto() {
     try { return typeof S === "object" && S.ajustes && typeof render === "function" && typeof renderHoje === "function" && typeof renderSession === "function" && typeof temaAplicar === "function" && typeof dayToDate === "function" && !!$rd("#tabs") && !!$rd("header.top .brand h1"); }
     catch (_) { return false; }
+  }
+  // Prepara tokens e navegação antes do primeiro render do app, evitando o flash do tema legado.
+  if ($rd("#tabs") && $rd("header.top .brand h1")) {
+    document.documentElement.dataset.rdDesign = "figma";
+    document.body.classList.add("rd-shell");
+    montarShell();
   }
   (function esperar() { if (pronto()) instalar(); else setTimeout(esperar, 250); })();
 })();
