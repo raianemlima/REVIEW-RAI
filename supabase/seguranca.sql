@@ -142,3 +142,67 @@ for each row execute function public.normalizar_email_liberado();
 alter table public.liberados drop constraint if exists liberados_email_normalizado_ck;
 alter table public.liberados add constraint liberados_email_normalizado_ck check (email = lower(btrim(email))) not valid;
 -- alter table public.liberados validate constraint liberados_email_normalizado_ck;   -- rode só depois do passo 5.3
+
+-- ============ 6) Registro de entregas da chave (S2): detectar compartilhamento — NÃO rodar às cegas ============
+-- A senha do baralho é única e o deck.enc é público: um assinante que a repassa dá acesso a quem a receber.
+-- Isso não tem correção técnica no navegador. O que dá para fazer é DETECTAR contas usadas em muitos lugares.
+-- Antes de rodar: (1) leia docs/SEGURANCA-CONTEUDO.md; (2) publique a Política de Privacidade e os Termos atualizados e avise os assinantes (o registro guarda IP e navegador
+-- por conta, o que é dado pessoal); (3) rode depois das partes 2 e 5; (4) faça backup. Um passo por vez.
+
+-- 6.1) Tabela do registro. Sem policy e sem permissão para anon/authenticated: só o painel e a função (security definer) acessam.
+create table if not exists public.chave_acessos (
+  id bigserial primary key,
+  em timestamptz not null default now(),
+  uid uuid not null,
+  ip text,
+  agente text
+);
+alter table public.chave_acessos enable row level security;
+revoke all on public.chave_acessos from public, anon, authenticated;
+revoke all on sequence public.chave_acessos_id_seq from public, anon, authenticated;
+create index if not exists chave_acessos_uid_em on public.chave_acessos (uid, em desc);
+
+-- 6.2) chave_do_app passa a registrar cada entrega. A regra de quem recebe a chave é IDÊNTICA à da parte 2.
+--      O registro nunca bloqueia a entrega: se o insert falhar por qualquer motivo, a chave é entregue do mesmo jeito.
+--      Deixa de ser "stable" porque grava; o app chama por POST, que o PostgREST aceita para funções voláteis.
+create or replace function public.chave_do_app()
+returns text language plpgsql volatile security definer set search_path = '' as $$
+declare v_senha text; v_h jsonb;
+begin
+  select c.senha into v_senha from public.chave_app c
+  where exists (
+    select 1 from auth.users u
+    join public.liberados l on lower(btrim(l.email)) = lower(btrim(u.email))
+    where u.id = auth.uid()
+      and u.email_confirmed_at is not null
+      and (l.valido_ate is null or l.valido_ate > now())
+  );
+  if v_senha is not null then
+    begin
+      begin
+        v_h := coalesce(nullif(current_setting('request.headers', true), ''), '{}')::jsonb;
+      exception when others then
+        v_h := '{}'::jsonb;
+      end;
+      insert into public.chave_acessos (uid, ip, agente)
+      values (auth.uid(), nullif(btrim(split_part(coalesce(v_h->>'x-forwarded-for', ''), ',', 1)), ''), left(v_h->>'user-agent', 300));
+    exception when others then
+      null;
+    end;
+  end if;
+  return v_senha;
+end $$;
+revoke execute on function public.chave_do_app() from public, anon;
+grant execute on function public.chave_do_app() to authenticated;
+
+-- 6.3) Detecção (só leitura). Contas com a chave pedida de muitos IPs ou navegadores nos últimos 30 dias.
+--      É um indício, não uma prova: quem usa dados móveis troca de IP. Compare com a quantidade de acessos e investigue caso a caso.
+-- select u.email, count(*) as entregas, count(distinct a.ip) as ips, count(distinct a.agente) as navegadores, min(a.em) as primeira, max(a.em) as ultima
+-- from public.chave_acessos a join auth.users u on u.id = a.uid
+-- where a.em > now() - interval '30 days'
+-- group by u.email
+-- having count(distinct a.ip) >= 6 or count(distinct a.agente) >= 4
+-- order by ips desc, entregas desc;
+
+-- 6.4) Retenção: apague registros antigos (guarde só o necessário; combine o prazo com a Política de Privacidade).
+-- delete from public.chave_acessos where em < now() - interval '180 days';
