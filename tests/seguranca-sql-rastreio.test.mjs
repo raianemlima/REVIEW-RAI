@@ -8,7 +8,8 @@ const raiz = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const sql = readFileSync(resolve(raiz, "supabase/seguranca.sql"), "utf8");
 const doc = readFileSync(resolve(raiz, "docs/SEGURANCA-CONTEUDO.md"), "utf8");
 const parte2 = sql.slice(sql.indexOf("-- ============ 2)"), sql.indexOf("-- ============ 3)"));
-const parte6 = sql.slice(sql.indexOf("-- ============ 6)"));
+const parte6 = sql.slice(sql.indexOf("-- ============ 6)"), sql.indexOf("-- ============ 7)"));
+const parte7 = sql.slice(sql.indexOf("-- ============ 7)"));
 const norm = s => s.replace(/\s+/g, " ").trim();
 const regra = s => { const i = s.indexOf("where exists ("); return norm(s.slice(i, s.indexOf(")\n", s.indexOf("valido_ate > now())", i)) + 1)); };
 
@@ -60,4 +61,14 @@ test("Termos e Política descrevem o registro antes de ele ser ativado, com o me
   assert.match(parte6, /180 days/);
   assert.doesNotMatch(priv, /não usamos rastreamento\.<\/b>/);
   assert.equal(priv.match(/Última atualização: (\S+)</)[1], termos.match(/Última atualização: (\S+)</)[1]);
+});
+
+test("o hook de cadastro usa a mesma regra de liberação e só o Auth o executa", () => {
+  assert.match(parte7, /create or replace function public\.hook_before_user_created\(event jsonb\)/);
+  assert.match(parte7, /security definer set search_path = ''/);
+  assert.ok(norm(parte7).includes("lower(btrim(l.email)) = v_email and (l.valido_ate is null or l.valido_ate > now())"));
+  assert.match(parte7, /'message', 'email_nao_liberado'/);
+  assert.match(parte7, /revoke all on function public\.hook_before_user_created\(jsonb\) from public, anon, authenticated;/);
+  assert.match(parte7, /grant execute on function public\.hook_before_user_created\(jsonb\) to supabase_auth_admin;/);
+  assert.doesNotMatch(parte7, /grant execute[^;]*\b(anon|authenticated)\b/);
 });

@@ -43,6 +43,18 @@ python ferramentas/conteudo/estudo_md.py inserir baralho/ ferramentas/conteudo/d
 - Depois, o fluxo normal: `baralho.py montar`, `SENHA=... node build.mjs`, subir `CACHE`/`APP_CACHE`.
 - O renderizador do Aprofundamento mostra links só como texto (por segurança). Por isso as URLs das fontes devem aparecer por extenso numa lista "Fontes" ao fim do texto.
 
+## Inserir conteúdo sem o `fonte.html` (só repositório + senha)
+Se o `fonte.html` não está à mão, dá para abrir o `deck.enc` do repositório com a senha (a mesma de `chave_app`), inserir o conteúdo e cifrar de novo:
+```bash
+SENHA='...' node ferramentas/conteudo/deck_cifrado.mjs decifrar deck.enc /tmp/fonte-min.html   # "const DECK = {...};"
+python ferramentas/conteudo/baralho.py extrair /tmp/fonte-min.html /tmp/baralho/
+python ferramentas/conteudo/estudo_md.py inserir /tmp/baralho/ cartoes.json                   # cartões novos com "ord" próprio (ex.: 100001+)
+python ferramentas/conteudo/baralho.py montar /tmp/baralho/ /tmp/fonte-min.html
+# estudos: extraia o objeto DECK para deck.json, rode `ebooks.py inserir deck.json estudos/*.json`, ajuste "versao" se quiser
+SENHA='...' node ferramentas/conteudo/deck_cifrado.mjs cifrar deck.json deck.enc
+```
+Suba `CACHE`/`APP_CACHE` (sw.js, gate.js, gate do index.html). Os arquivos em claro (`/tmp/...`) não vão para o repositório; apague-os e a senha do ambiente ao terminar.
+
 ## Alterações no app feitas direto no `index.html`
 
 Algumas mudanças no código do app foram aplicadas direto no `index.html` publicado, por scripts em `ferramentas/ajustes/`. Antes de cada `node build.mjs`, aplique essas mudanças no seu `fonte.html`, senão o build volta o app à versão antiga. Um comando faz tudo:
