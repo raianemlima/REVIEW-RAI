@@ -20,13 +20,34 @@ alter table public.liberados add column if not exists valido_ate timestamptz;
 -- Um e-mail por linha (o Asaas atualiza a linha existente em vez de duplicar).
 create unique index if not exists liberados_email_unico on public.liberados (email);
 
+-- Impede a criação de contas por senha ou código para e-mails sem liberação ativa.
+-- Contas existentes ainda podem autenticar no Supabase, mas a RPC abaixo continua
+-- sendo a autorização efetiva para receber a chave e abrir o conteúdo do app.
+create or replace function public.validar_email_liberado()
+returns trigger language plpgsql security definer set search_path = '' as $$
+begin
+  if new.email is null or not exists (
+    select 1 from public.liberados l
+    where lower(btrim(l.email)) = lower(btrim(new.email))
+      and (l.valido_ate is null or l.valido_ate > now())
+  ) then
+    raise exception 'email_nao_liberado' using errcode = 'P0001';
+  end if;
+  return new;
+end $$;
+revoke all on function public.validar_email_liberado() from public, anon, authenticated;
+drop trigger if exists review_dpe_email_liberado on auth.users;
+create trigger review_dpe_email_liberado
+before insert on auth.users
+for each row execute function public.validar_email_liberado();
+
 -- Mesma função de antes (só e-mail liberado e confirmado), agora também exigindo assinatura em dia.
 create or replace function public.chave_do_app()
 returns text language sql stable security definer set search_path to '' as $$
   select c.senha from public.chave_app c
   where exists (
     select 1 from auth.users u
-    join public.liberados l on l.email = lower(u.email)
+    join public.liberados l on lower(btrim(l.email)) = lower(btrim(u.email))
     where u.id = auth.uid()
       and u.email_confirmed_at is not null
       and (l.valido_ate is null or l.valido_ate > now())
