@@ -206,3 +206,24 @@ grant execute on function public.chave_do_app() to authenticated;
 
 -- 6.4) Retenção: apague registros antigos (guarde só o necessário; combine o prazo com a Política de Privacidade).
 -- delete from public.chave_acessos where em < now() - interval '180 days';
+
+-- ============ 7) Cadastro só para e-mail liberado, via hook do Auth (alternativa ao gatilho da parte 2) ============
+-- Motivo: no projeto de produção o usuário do SQL (postgres) não é dono de auth.users, e o create trigger do passo
+-- "validar_email_liberado" da parte 2 não conclui (timeout). O hook "Before User Created" faz o mesmo sem tocar em auth.users.
+-- A função não faz nada até ser ligada em: Authentication → Hooks → Before User Created → Postgres function → public.hook_before_user_created.
+-- Use este hook OU o gatilho da parte 2, não os dois. O app já trata a resposta ("nao_liberado") com a mensagem "Esse e-mail ainda não foi liberado".
+create or replace function public.hook_before_user_created(event jsonb)
+returns jsonb language plpgsql stable security definer set search_path = '' as $$
+declare v_email text := lower(btrim(coalesce(event->'user'->>'email', '')));
+begin
+  if v_email <> '' and exists (
+    select 1 from public.liberados l
+    where lower(btrim(l.email)) = v_email
+      and (l.valido_ate is null or l.valido_ate > now())
+  ) then
+    return '{}'::jsonb;
+  end if;
+  return jsonb_build_object('error', jsonb_build_object('http_code', 403, 'message', 'email_nao_liberado'));
+end $$;
+revoke all on function public.hook_before_user_created(jsonb) from public, anon, authenticated;
+grant execute on function public.hook_before_user_created(jsonb) to supabase_auth_admin;
