@@ -10,6 +10,8 @@ permissions:
   id-token: write
 jobs:
   deploy:
+    # Só o main publica. Sem isto, "Run workflow" em outra branch (ou na branch padrão antiga) publicava uma versão antiga do app.
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
