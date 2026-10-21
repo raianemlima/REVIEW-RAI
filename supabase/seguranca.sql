@@ -94,3 +94,51 @@ grant execute on function public.asaas_aplicar(text, text, timestamptz, text, te
 --   últimos eventos:            select * from public.asaas_log order by id desc limit 50;
 --   pagou mas sem e-mail:       select * from public.asaas_log where acao = 'sem_email' order by id desc;
 --   assinaturas que vencem em 7 dias: select email, valido_ate from public.liberados where valido_ate between now() and now() + interval '7 days';
+
+-- ============ 5) Endurecimento (S7 e E2) — NÃO rodar às cegas ============
+-- Rode DEPOIS das partes 2 e 4. Faça um passo por vez, no SQL Editor, lendo o resultado de cada diagnóstico.
+-- Nenhum passo apaga dado. Os passos 5.2 a 5.4 alteram a tabela public.liberados: faça um backup antes
+-- (Database → Backups, ou: create table public.liberados_bkp as select * from public.liberados;).
+
+-- 5.1) S7: asaas_aplicar com search_path vazio (as outras funções já usam). Todas as referências já são qualificadas
+--      (public.liberados, public.asaas_log); lower/greatest/coalesce/now vêm do pg_catalog, que é sempre pesquisado.
+create or replace function public.asaas_aplicar(p_email text, p_acao text, p_ate timestamptz, p_evento_id text, p_evento text, p_pagamento text)
+returns void language plpgsql security definer set search_path = '' as $$
+declare v_ate timestamptz;
+begin
+  if p_acao = 'liberar' then
+    insert into public.liberados (email, valido_ate) values (lower(p_email), p_ate)
+    on conflict (email) do update set valido_ate = greatest(coalesce(public.liberados.valido_ate, excluded.valido_ate), excluded.valido_ate)
+    returning valido_ate into v_ate;
+  elsif p_acao = 'cortar' then
+    update public.liberados set valido_ate = now() where email = lower(p_email) returning valido_ate into v_ate;
+  end if;
+  insert into public.asaas_log (evento_id, evento, pagamento, email, acao, valido_ate) values (p_evento_id, p_evento, p_pagamento, lower(p_email), p_acao, v_ate);
+end $$;
+revoke all on function public.asaas_aplicar(text, text, timestamptz, text, text, text) from public, anon, authenticated;
+grant execute on function public.asaas_aplicar(text, text, timestamptz, text, text, text) to service_role;
+
+-- 5.2) E2, diagnóstico (só leitura): e-mails fora do padrão (maiúsculas ou espaços) e colisões depois de normalizar.
+select email, lower(btrim(email)) as normalizado from public.liberados where email <> lower(btrim(email));
+select lower(btrim(email)) as normalizado, count(*) as linhas from public.liberados group by 1 having count(*) > 1;
+--    Se a segunda consulta devolver linhas, NÃO siga: duas linhas virariam a mesma e o índice único falharia.
+--    Resolva à mão (mantenha a de maior valido_ate e apague a outra) e refaça o diagnóstico.
+
+-- 5.3) E2, correção (só depois de 5.2 sem colisões): normaliza os e-mails existentes.
+-- update public.liberados set email = lower(btrim(email)) where email <> lower(btrim(email));
+
+-- 5.4) E2, prevenção: a partir daqui qualquer inserção ou alteração manual grava o e-mail já normalizado.
+--      A restrição entra "not valid" (vale para linhas novas) e é validada em seguida; se a validação falhar, o passo 5.3 não foi feito.
+create or replace function public.normalizar_email_liberado()
+returns trigger language plpgsql set search_path = '' as $$
+begin
+  new.email := lower(btrim(new.email));
+  return new;
+end $$;
+drop trigger if exists liberados_email_normalizado on public.liberados;
+create trigger liberados_email_normalizado
+before insert or update of email on public.liberados
+for each row execute function public.normalizar_email_liberado();
+alter table public.liberados drop constraint if exists liberados_email_normalizado_ck;
+alter table public.liberados add constraint liberados_email_normalizado_ck check (email = lower(btrim(email))) not valid;
+-- alter table public.liberados validate constraint liberados_email_normalizado_ck;   -- rode só depois do passo 5.3
