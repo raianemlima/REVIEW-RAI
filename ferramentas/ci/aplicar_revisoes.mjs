@@ -7,7 +7,7 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
 import { webcrypto as crypto, randomBytes } from "node:crypto";
 import { gzipSync, gunzipSync } from "node:zlib";
-import { join } from "node:path";
+import { dirname, join } from "node:path";
 
 const arq = process.argv[2], senha = process.env.APP_SENHA, chave = process.env.REVISOES_CHAVE, pasta = "revisoes";
 if (!arq) { console.error("Uso: node aplicar_revisoes.mjs index.html"); process.exit(1); }
@@ -27,10 +27,10 @@ for (const f of bins) {
   Object.assign(rev, JSON.parse(gunzipSync(pt).toString("utf8")));
 }
 
-const html = readFileSync(arq, "utf8");
-const re = /(<script type="application\/json" id="deck-enc">)(.*?)(<\/script>)/s, m = html.match(re);
-if (!m) { console.error("::error::deck-enc não encontrado no index.html."); process.exit(1); }
-const enc = JSON.parse(m[2]);
+const caminhoDeck = join(dirname(arq), "deck.enc");
+let enc;
+try { enc = JSON.parse(readFileSync(caminhoDeck, "utf8")); }
+catch (cause) { console.error(`::error::deck.enc ausente, ilegível ou inválido: ${cause.message}`); process.exit(1); }
 const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(senha), "PBKDF2", false, ["deriveKey"]);
 const key = await crypto.subtle.deriveKey({ name: "PBKDF2", salt: unb64(enc.s), iterations: enc.it, hash: "SHA-256" }, base, { name: "AES-GCM", length: 256 }, false, ["encrypt", "decrypt"]);
 let pt;
@@ -50,5 +50,5 @@ if (faltam.length) console.log(`::warning::${faltam.length} cartão(ões) da rev
 if (!campos) { console.log("Baralho já está com as revisões: nada a fazer."); process.exit(0); }
 const iv = randomBytes(12);
 const ct = new Uint8Array(await crypto.subtle.encrypt({ name: "AES-GCM", iv }, key, gzipSync(Buffer.from(JSON.stringify(deck), "utf8"), { level: 9 })));
-writeFileSync(arq, html.replace(re, (_, a, __, c) => a + JSON.stringify({ ...enc, z: "gzip", iv: b64(iv), ct: b64(ct) }) + c));
+writeFileSync(caminhoDeck, JSON.stringify({ ...enc, z: "gzip", iv: b64(iv), ct: b64(ct) }));
 console.log(`ok: ${campos} campo(s) revisado(s) em ${cartoes} cartão(ões) (${bins.join(", ")})`);
