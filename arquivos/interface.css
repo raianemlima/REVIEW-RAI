@@ -8,26 +8,26 @@
 
 :root[data-rd-design="figma"] {
   color-scheme: light;
-  --rd-bg: #f7f7fc;
+  --rd-bg: #f5f7f6;
   --rd-surface: #ffffff;
-  --rd-surface-soft: #f0efff;
-  --rd-surface-muted: #ececf4;
-  --rd-ink: #18152f;
-  --rd-muted: #625d75;
-  --rd-line: #e5e3f1;
-  --rd-brand: #6653e7;
-  --rd-brand-deep: #4d3bc6;
-  --rd-brand-soft: #eeeaff;
-  --rd-ok: #24b981;
-  --rd-ok-soft: #e7f8f1;
-  --rd-amber: #ef9c26;
-  --rd-amber-soft: #fff3dd;
-  --rd-bad: #d95145;
-  --rd-bad-soft: #fde9e6;
-  --rd-info: #5a71b8;
-  --rd-info-soft: #e9edfb;
-  --rd-shadow: 0 18px 48px rgba(40, 30, 100, 0.08);
-  --rd-shadow-soft: 0 8px 24px rgba(40, 30, 100, 0.06);
+  --rd-surface-soft: #eaf3ee;
+  --rd-surface-muted: #eef1ef;
+  --rd-ink: #1b2723;
+  --rd-muted: #55625c;
+  --rd-line: #d9e1dd;
+  --rd-brand: #08775c;
+  --rd-brand-deep: #055642;
+  --rd-brand-soft: #e5f1ea;
+  --rd-ok: #1e7a3c;
+  --rd-ok-soft: #e3f4e8;
+  --rd-amber: #8a5a00;
+  --rd-amber-soft: #fbf0d9;
+  --rd-bad: #b42318;
+  --rd-bad-soft: #fce8e6;
+  --rd-info: #2f5daa;
+  --rd-info-soft: #e6edf8;
+  --rd-shadow: 0 12px 32px rgba(16, 40, 32, 0.08);
+  --rd-shadow-soft: 0 1px 2px rgba(16, 40, 32, 0.04), 0 4px 14px rgba(16, 40, 32, 0.05);
   --rd-radius: 18px;
   --rd-radius-lg: 24px;
 
@@ -59,53 +59,53 @@
 
 :root[data-rd-design="figma"][data-theme="dark"] {
   color-scheme: dark;
-  --rd-bg: #11101d;
-  --rd-surface: #1b192a;
-  --rd-surface-soft: #27233d;
-  --rd-surface-muted: #242231;
-  --rd-ink: #f6f4ff;
-  --rd-muted: #b8b3ca;
-  --rd-line: #302d43;
-  --rd-brand: #8b7cf6;
-  --rd-brand-deep: #7665ec;
-  --rd-brand-soft: #302a55;
-  --rd-ok: #4ed6a5;
-  --rd-ok-soft: #173a31;
-  --rd-amber: #f5b74f;
-  --rd-amber-soft: #3b2e19;
-  --rd-bad: #f28b80;
-  --rd-bad-soft: #442522;
-  --rd-info: #9eaff0;
-  --rd-info-soft: #29304e;
-  --rd-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+  --rd-bg: #0f1513;
+  --rd-surface: #161e1b;
+  --rd-surface-soft: #1a2c25;
+  --rd-surface-muted: #1d2622;
+  --rd-ink: #eef3f1;
+  --rd-muted: #aebbb5;
+  --rd-line: #2c3833;
+  --rd-brand: #4dd6a6;
+  --rd-brand-deep: #3cb98c;
+  --rd-brand-soft: #173a2f;
+  --rd-ok: #6fcf8f;
+  --rd-ok-soft: #16362a;
+  --rd-amber: #f2c062;
+  --rd-amber-soft: #3a2f18;
+  --rd-bad: #f49a90;
+  --rd-bad-soft: #3d201d;
+  --rd-info: #9db8f0;
+  --rd-info-soft: #1f2a40;
+  --rd-shadow: 0 20px 60px rgba(0, 0, 0, 0.32);
   --rd-shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.16);
-  --accent-ink: #17132e;
+  --accent-ink: #08251c;
 }
 
 @media (prefers-color-scheme: dark) {
   :root[data-rd-design="figma"]:not([data-theme="light"]):not([data-theme="dark"]) {
     color-scheme: dark;
-    --rd-bg: #11101d;
-    --rd-surface: #1b192a;
-    --rd-surface-soft: #27233d;
-    --rd-surface-muted: #242231;
-    --rd-ink: #f6f4ff;
-    --rd-muted: #b8b3ca;
-    --rd-line: #302d43;
-    --rd-brand: #8b7cf6;
-    --rd-brand-deep: #7665ec;
-    --rd-brand-soft: #302a55;
-    --rd-ok: #4ed6a5;
-    --rd-ok-soft: #173a31;
-    --rd-amber: #f5b74f;
-    --rd-amber-soft: #3b2e19;
-    --rd-bad: #f28b80;
-    --rd-bad-soft: #442522;
-    --rd-info: #9eaff0;
-    --rd-info-soft: #29304e;
-    --rd-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+    --rd-bg: #0f1513;
+    --rd-surface: #161e1b;
+    --rd-surface-soft: #1a2c25;
+    --rd-surface-muted: #1d2622;
+    --rd-ink: #eef3f1;
+    --rd-muted: #aebbb5;
+    --rd-line: #2c3833;
+    --rd-brand: #4dd6a6;
+    --rd-brand-deep: #3cb98c;
+    --rd-brand-soft: #173a2f;
+    --rd-ok: #6fcf8f;
+    --rd-ok-soft: #16362a;
+    --rd-amber: #f2c062;
+    --rd-amber-soft: #3a2f18;
+    --rd-bad: #f49a90;
+    --rd-bad-soft: #3d201d;
+    --rd-info: #9db8f0;
+    --rd-info-soft: #1f2a40;
+    --rd-shadow: 0 20px 60px rgba(0, 0, 0, 0.32);
     --rd-shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.16);
-    --accent-ink: #17132e;
+    --accent-ink: #08251c;
   }
 }
 
@@ -241,7 +241,7 @@ html[data-rd-design="figma"] body.rd-shell .rd-skip-link {
   padding: 12px 18px;
   border-radius: 12px;
   background: var(--rd-brand);
-  color: #fff;
+  color: var(--accent-ink);
   font-weight: 600;
 }
 html[data-rd-design="figma"] body.rd-shell .rd-skip-link:focus {
@@ -301,7 +301,7 @@ html[data-rd-design="figma"] body.rd-shell #rdSidebar nav.tabs button .ic {
 }
 
 html[data-rd-design="figma"] body.rd-shell #rdSidebar nav.tabs button .tab-n {
-  background: #e8452a;
+  background: #b42318;
   border-radius: 999px;
   color: #fff;
   font: 700 10px/1 "IBM Plex Mono", ui-monospace, monospace;
@@ -312,7 +312,7 @@ html[data-rd-design="figma"] body.rd-shell #rdSidebar nav.tabs button .tab-n {
 }
 
 html[data-rd-design="figma"] body.rd-shell #rdSidebar nav.tabs button[data-n]:not([data-n=""])::after {
-  background: #e8452a;
+  background: #b42318;
   border: 2px solid var(--rd-surface);
   border-radius: 999px;
   color: #fff;
@@ -805,7 +805,7 @@ html[data-rd-design="figma"] body.rd-shell .hero .fenix {
 }
 
 html[data-rd-design="figma"] body.rd-shell .hero .mascot {
-  filter: drop-shadow(0 7px 10px rgba(40, 30, 100, 0.16));
+  filter: drop-shadow(0 7px 10px rgba(16, 40, 32, 0.16));
 }
 
 html[data-rd-design="figma"] body.rd-shell .hero .mascot .lvl {
@@ -893,7 +893,7 @@ html[data-rd-design="figma"] body.rd-shell .hero .cta {
   border: 0;
   border-radius: 14px;
   box-shadow: none;
-  color: #fff;
+  color: var(--accent-ink);
   display: flex;
   font: 700 15px/1.2 "Rubik", system-ui, sans-serif;
   justify-content: center;
@@ -955,7 +955,7 @@ html[data-rd-design="figma"] body.rd-shell .hero .day-metas button {
 html[data-rd-design="figma"] body.rd-shell .hero .day-metas button[aria-pressed="true"] {
   background: var(--rd-brand);
   border-color: var(--rd-brand);
-  color: #fff;
+  color: var(--accent-ink);
 }
 
 /* Side panels: the parent moves the real nodes here, not copies of their data. */
@@ -1007,7 +1007,7 @@ html[data-rd-design="figma"] body.rd-shell .rd-side .wd i {
 html[data-rd-design="figma"] body.rd-shell .rd-side .wd.on i {
   background: var(--rd-ok);
   box-shadow: none;
-  color: #fff;
+  color: var(--accent-ink);
 }
 
 html[data-rd-design="figma"] body.rd-shell .rd-side .wd.today i {
@@ -1465,7 +1465,7 @@ html[data-rd-design="figma"] body.rd-shell #tabs button {
     border-right: 0;
     border-top: 1px solid var(--rd-line);
     bottom: 0;
-    box-shadow: 0 -8px 28px rgba(40, 30, 100, 0.08);
+    box-shadow: 0 -8px 28px rgba(16, 40, 32, 0.08);
     height: auto;
     left: 0;
     padding: 4px 7px max(4px, env(safe-area-inset-bottom, 0px));
@@ -1532,7 +1532,7 @@ html[data-rd-design="figma"] body.rd-shell #tabs button {
   }
 
   html[data-rd-design="figma"] body.rd-shell #rdSidebar nav.tabs button .tab-n {
-    background: #e8452a;
+    background: #b42318;
     border: 2px solid var(--rd-surface);
     border-radius: 999px;
     color: #fff;
@@ -1794,3 +1794,254 @@ html[data-rd-design="figma"] body.rd-shell #tabs button {
     animation: none !important;
   }
 }
+
+/* =====================================================================
+   Acadêmico Moderno (2026-10) — fundação de tokens + refinamento visual.
+   Mantém ids, classes e eventos. Só apresenta: nenhum seletor aqui muda
+   fluxo, dados, FSRS, rotas ou persistência.
+   ===================================================================== */
+:root[data-rd-design="figma"] {
+  /* tipografia: interface em sans, conteúdo de estudo em serifa */
+  --f-ui: "Rubik", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-read: "Newsreader", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --f-code: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --t-page: clamp(24px, 2.4vw + 12px, 30px);
+  --t-section: clamp(19px, 1vw + 14px, 22px);
+  --t-component: 17px;
+  --t-body: 15px;
+  --t-read: 17.5px;
+  --t-meta: 13px;
+  --t-micro: 11px;
+  /* espaço (base 4) e forma */
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px; --s-6: 32px; --s-7: 48px;
+  --r-sm: 8px; --r-md: 12px; --r-lg: 16px; --r-pill: 999px;
+  --rd-line-strong: #7f8c86;
+  --rd-reward: #e9bf63;
+  /* aliases semânticos (nomes estáveis para novos componentes) */
+  --c-bg: var(--rd-bg); --c-surface: var(--rd-surface); --c-surface-2: var(--rd-surface-muted);
+  --c-text: var(--rd-ink); --c-text-2: var(--rd-muted); --c-border: var(--rd-line); --c-border-strong: var(--rd-line-strong);
+  --c-primary: var(--rd-brand); --c-primary-ink: var(--accent-ink); --c-primary-soft: var(--rd-brand-soft);
+  --c-success: var(--rd-ok); --c-warning: var(--rd-amber); --c-danger: var(--rd-bad); --c-info: var(--rd-info);
+  --c-focus: var(--rd-brand);
+  --amber: var(--rd-amber); --ouro: var(--rd-reward);
+}
+:root[data-rd-design="figma"][data-theme="dark"] { --rd-line-strong: #6a7a73; }
+@media (prefers-color-scheme: dark) {
+  :root[data-rd-design="figma"]:not([data-theme="light"]):not([data-theme="dark"]) { --rd-line-strong: #6a7a73; }
+}
+
+/* Foco visível único, nos dois temas */
+html[data-rd-design="figma"] body :focus-visible {
+  outline: 2px solid var(--rd-brand);
+  outline-offset: 2px;
+}
+
+/* ---- Tipografia de leitura (enunciados, alternativas, lei, súmulas, teses, doutrina) ---- */
+html[data-rd-design="figma"] body.rd-shell :is(.front, .opt, .answer, .frase, .jg-p, .dpe-enun, .dpe-teses, .ts-txt, .ts-card p, .pv-enun, .eb-texto, .ls-a, .dt-body, .dt-leit, .cad-nota, .nv-r) {
+  font-family: var(--f-read);
+  font-optical-sizing: auto;
+  letter-spacing: 0;
+}
+html[data-rd-design="figma"] body.rd-shell .front {
+  font-size: clamp(19px, 0.8vw + 15px, 23px);
+  font-weight: 500;
+  line-height: 1.42;
+  max-width: 64ch;
+}
+html[data-rd-design="figma"] body.rd-shell :is(.answer, .opt, .dpe-enun, .ts-txt, .ts-card p, .pv-enun, .eb-texto, .ls-a, .dt-body, .dt-leit, .frase, .jg-p) {
+  font-size: var(--t-read);
+  font-weight: 400;
+  line-height: 1.6;
+}
+html[data-rd-design="figma"] body.rd-shell :is(.dpe-enun, .ts-txt, .ts-card p, .pv-enun, .eb-texto, .ls-a, .dt-body, .dt-leit) { max-width: 70ch; }
+html[data-rd-design="figma"] body.rd-shell :is(.cad-nota, .nv-r) { font-size: 16px; line-height: 1.55; }
+html[data-rd-design="figma"] body.rd-shell .lib .q { font-family: var(--f-read); font-size: 16.5px; font-weight: 500; line-height: 1.45; }
+html[data-rd-design="figma"] body.rd-shell :is(.front, .answer, .dpe-enun, .ts-txt, .ls-a, .dt-body) :is(b, strong) { font-weight: 600; }
+
+/* ---- Hierarquia de títulos (interface em Rubik, pesos contidos) ---- */
+html[data-rd-design="figma"] body.rd-shell #main :is(h1, h2, h3, .es-sec) { font-family: var(--f-ui); letter-spacing: -0.01em; }
+html[data-rd-design="figma"] body.rd-shell #main h2 { font-weight: 600; }
+html[data-rd-design="figma"] body.rd-shell #main > h2:first-child,
+html[data-rd-design="figma"] body.rd-shell #main > :is(a, button).rd-back + h2,
+html[data-rd-design="figma"] body.rd-shell .rd-title,
+html[data-rd-design="figma"] body.rd-shell #main > h2:first-of-type {
+  font-size: var(--t-page);
+  font-weight: 650;
+  line-height: 1.15;
+}
+html[data-rd-design="figma"] body.rd-shell #main h3 { font-weight: 600; }
+html[data-rd-design="figma"] body.rd-shell .rd-section-heading h2 { font-size: var(--t-section); }
+html[data-rd-design="figma"] body.rd-shell :is(.rd-eyebrow, .dpe-kicker, .rd-resource-copy small) {
+  font-size: var(--t-micro);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+html[data-rd-design="figma"] body.rd-shell .rd-focus h2 { font-size: clamp(24px, 1.6vw + 12px, 32px); font-weight: 650; letter-spacing: -0.02em; line-height: 1.12; }
+/* Hoje: a saudação já está no cabeçalho da página; o selo de sequência continua visível */
+html[data-rd-design="figma"] body.rd-shell .rd-focus .hero-top .hi { visibility: hidden; }
+
+/* ---- Botões: frase normal, quatro variantes ---- */
+html[data-rd-design="figma"] body.rd-shell :is(.btn, .cta, button.primary) {
+  text-transform: none;
+  letter-spacing: 0;
+}
+html[data-rd-design="figma"] body.rd-shell .btn { font-size: 14px; border-radius: 10px; }
+html[data-rd-design="figma"] body.rd-shell .btn.primary,
+html[data-rd-design="figma"] body.rd-shell .btn.primary:hover:not(:disabled) {
+  background: var(--rd-brand);
+  border-color: var(--rd-brand);
+  color: var(--accent-ink);
+}
+html[data-rd-design="figma"] body.rd-shell .btn.primary:hover:not(:disabled) {
+  background: var(--rd-brand-deep);
+  border-color: var(--rd-brand-deep);
+}
+html[data-rd-design="figma"] body.rd-shell :is(.btn.danger, .btn.bad, .btn.destrutivo) {
+  background: var(--rd-surface);
+  border-color: color-mix(in srgb, var(--rd-bad) 45%, var(--rd-line));
+  color: var(--rd-bad);
+}
+html[data-rd-design="figma"] body.rd-shell .btn:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+
+/* Atalho de teclado dentro do botão (C, E, 1–4) */
+html[data-rd-design="figma"] body.rd-shell .btn .mono.count,
+html[data-rd-design="figma"] body.rd-shell kbd {
+  font: 500 11px/1 var(--f-code);
+  color: var(--rd-muted);
+  background: var(--rd-surface-muted);
+  border: 1px solid var(--rd-line);
+  border-radius: 4px;
+  padding: 3px 5px;
+  margin-left: 8px;
+}
+html[data-rd-design="figma"] body.rd-shell kbd { margin-left: 0; }
+html[data-rd-design="figma"] body.rd-shell .btn.primary .mono.count {
+  color: inherit;
+  background: transparent;
+  border-color: color-mix(in srgb, currentColor 35%, transparent);
+}
+
+/* ---- Cabeçalho global: ícones do mesmo tamanho, status discreto ---- */
+html[data-rd-design="figma"] body.rd-shell header.top :is(#goTema, #goBusca, #goAjustes, .iconbtn) {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--rd-line);
+  border-radius: 10px;
+  background: var(--rd-surface);
+  box-shadow: none;
+  color: var(--rd-muted);
+  transform: none;
+}
+html[data-rd-design="figma"] body.rd-shell header.top :is(#goTema, #goBusca, #goAjustes, .iconbtn):hover {
+  border-color: var(--rd-line-strong);
+  color: var(--rd-ink);
+  transform: none;
+}
+html[data-rd-design="figma"] body.rd-shell header.top :is(#goTema, #goBusca, #goAjustes, .iconbtn) :is(svg, img) {
+  width: 18px;
+  height: 18px;
+}
+html[data-rd-design="figma"] body.rd-shell header.top :is(#goAjustes, #goTema)[aria-pressed="true"] {
+  border-color: var(--rd-brand);
+  color: var(--rd-brand);
+}
+html[data-rd-design="figma"] body.rd-shell header.top #save {
+  font: 400 12px/1.2 var(--f-ui);
+  letter-spacing: 0;
+  color: var(--rd-muted);
+}
+
+/* Menu lateral: sequência como metadado, não como alerta */
+html[data-rd-design="figma"] body.rd-shell .rd-presenca {
+  background: var(--rd-surface-muted);
+  border: 1px solid var(--rd-line);
+  box-shadow: none;
+}
+html[data-rd-design="figma"] body.rd-shell .rd-presenca strong { color: var(--rd-ink); }
+html[data-rd-design="figma"] body.rd-shell .rd-presenca p { color: var(--rd-muted); }
+
+/* ---- Cabeçalhos de seção (hero): superfície discreta em vez de bloco saturado ---- */
+html[data-rd-design="figma"] body.rd-shell :is(.dpe-hero, .es-hoje) {
+  background: var(--rd-brand-soft);
+  border: 1px solid color-mix(in srgb, var(--rd-brand) 22%, var(--rd-line));
+  border-radius: var(--r-lg);
+  box-shadow: none;
+  color: var(--rd-ink);
+}
+html[data-rd-design="figma"] body.rd-shell :is(.dpe-hero, .es-hoje)::before,
+html[data-rd-design="figma"] body.rd-shell :is(.dpe-hero, .es-hoje)::after { display: none; }
+html[data-rd-design="figma"] body.rd-shell :is(.dpe-hero, .es-hoje) :is(h2, h3, b, strong) {
+  color: var(--rd-ink);
+  text-shadow: none;
+}
+html[data-rd-design="figma"] body.rd-shell :is(.dpe-hero, .es-hoje) :is(p, small, span:not(.dpe-kicker)) { color: var(--rd-muted); opacity: 1; }
+html[data-rd-design="figma"] body.rd-shell .dpe-hero .dpe-kicker { color: var(--rd-brand-deep); }
+html[data-rd-design="figma"][data-theme="dark"] body.rd-shell .dpe-hero .dpe-kicker { color: var(--rd-brand); }
+html[data-rd-design="figma"] body.rd-shell .dpe-hero .dpe-stat {
+  background: var(--rd-surface);
+  border: 1px solid var(--rd-line);
+  box-shadow: none;
+  color: var(--rd-ink);
+}
+html[data-rd-design="figma"] body.rd-shell .dpe-hero .dpe-stat :is(b, strong) { color: var(--rd-ink); }
+html[data-rd-design="figma"] body.rd-shell .dpe-hero .dpe-stat :is(small, span) { color: var(--rd-muted); }
+
+/* ---- Formulários: contorno com contraste ≥ 3:1 ---- */
+html[data-rd-design="figma"] body :is(input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), select, textarea) {
+  border-color: var(--rd-line-strong);
+  color: var(--rd-ink);
+  background-color: var(--rd-surface);
+}
+html[data-rd-design="figma"] body :is(input, select, textarea)::placeholder { color: var(--rd-muted); opacity: 1; }
+html[data-rd-design="figma"] body :is(input[type="checkbox"], input[type="radio"]) { accent-color: var(--rd-brand); }
+
+/* Login: botão secundário coerente no escuro */
+html[data-rd-design="figma"] body.rd-gate #gate .btn:not(.primary),
+html[data-rd-design="figma"] body.rd-gate #gate button:not(#gOk):not(.link) {
+  background: var(--rd-surface);
+  border: 1px solid var(--rd-line-strong);
+  color: var(--rd-ink);
+}
+
+/* ---- Responsividade ---- */
+/* Provas: os quatro atalhos não podem empurrar a página para os lados em 360 px */
+html[data-rd-design="figma"] body.rd-shell .es-atalhos { flex-wrap: wrap; }
+html[data-rd-design="figma"] body.rd-shell .es-atalhos a { flex: 1 1 calc(50% - 8px); min-width: 0; }
+@media (min-width: 560px) {
+  html[data-rd-design="figma"] body.rd-shell .es-atalhos a { flex-basis: 0; }
+}
+html[data-rd-design="figma"] body.rd-shell #main { overflow-wrap: anywhere; }
+html[data-rd-design="figma"] body.rd-shell #main :is(pre, table) { overflow-wrap: normal; }
+/* Microtexto nunca abaixo de 11 px */
+html[data-rd-design="figma"] body.rd-shell :is(.rd-date small, .rd-date span, .rd-resource-copy small) { font-size: var(--t-micro); }
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-rd-design="figma"] body * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+}
+
+/* Texto sobre a cor primária: usa --accent-ink (branco no claro, verde-escuro no escuro) */
+html[data-rd-design="figma"] body :is(.ls-seg button[aria-selected="true"], .es-sec span, .cta, .hero .cta, .es-hoje .cta, .mascot .lvl, .cad-pop button, #gate #gOk) {
+  color: var(--accent-ink);
+}
+html[data-rd-design="figma"] body .ls-seg button[aria-selected="true"] { background: var(--rd-brand); background-image: none; }
+
+/* Ação dentro de faixas de destaque (Estudar, hero): botão primário sólido */
+html[data-rd-design="figma"] body.rd-shell :is(.es-hoje .cta, .hero .cta, .rd-focus .cta) {
+  background: var(--rd-brand);
+  border: 1px solid var(--rd-brand);
+  box-shadow: none;
+  color: var(--accent-ink);
+}
+html[data-rd-design="figma"] body.rd-shell :is(.es-hoje .cta, .hero .cta, .rd-focus .cta):hover { background: var(--rd-brand-deep); border-color: var(--rd-brand-deep); }
+
+/* Segmentos e escolhas marcadas: fundo suave + contorno da marca, texto principal */
+html[data-rd-design="figma"] body :is(.day-metas, .seg, .conf-row) button[aria-pressed="true"] {
+  background: var(--rd-brand-soft);
+  border-color: var(--rd-brand);
+  color: var(--rd-ink);
+  font-weight: 600;
+}
+/* Indicadores de incidência: pontos vazios visíveis (≥ 3:1) */
+html[data-rd-design="figma"] body .dots b { color: var(--rd-line-strong); }
+/* Selos "novo": vermelho com contraste AA nos dois temas */
+html[data-rd-design="figma"] body :is(.badge.new, .es-n.novo) { background: #b42318; color: #fff; }

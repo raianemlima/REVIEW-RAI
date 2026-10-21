@@ -132,7 +132,7 @@
       const el = main.querySelector("#" + id); if (el) lado.appendChild(el);
     }
     const recursos = document.createElement("section"); recursos.className = "rd-resources";
-    recursos.innerHTML = `<div class="rd-section-heading"><div><span class="rd-eyebrow">Escolha seu caminho</span><h2>Seu estudo, organizado</h2><p>Os recursos completos continuam aqui. Explore quando fizer sentido para você.</p></div></div><div class="rd-resource-grid">${[
+    recursos.innerHTML = `<div class="rd-section-heading"><div><span class="rd-eyebrow">Escolha seu caminho</span><h2>Recursos de estudo</h2><p>Os recursos completos continuam aqui. Explore quando fizer sentido para você.</p></div></div><div class="rd-resource-grid">${[
       ["leiseca", "scale", "Ler e aprender", "Lei seca", "Artigos e novidades legislativas"],
       ["sessao", "book", "Praticar e revisar", "Modos de estudo", "Temas, questões, erros e segunda fase"],
       ["biblioteca", "library", "Consultar e organizar", "Biblioteca", "Seu baralho, filtros e cartões sinalizados"],
@@ -172,7 +172,7 @@
     temaAplicar = function () {
       const out = antesTema.apply(this, arguments), btn = $rd("#goTema");
       if (btn) btn.innerHTML = icone(temaEscuro() ? "sun" : "moon");
-      document.querySelectorAll('meta[name="theme-color"]').forEach(m => m.setAttribute("content", temaEscuro() ? "#11101d" : "#f7f7fc"));
+      document.querySelectorAll('meta[name="theme-color"]').forEach(m => m.setAttribute("content", temaEscuro() ? "#0f1513" : "#f5f7f6"));
       return out;
     };
     temaAplicar();
