@@ -36,7 +36,7 @@
 
   const dias = [[1,'Seg'],[2,'Ter'],[3,'Qua'],[4,'Qui'],[5,'Sex'],[6,'Sáb'],[7,'Dom']];
   const escLocal = v => typeof esc === 'function' ? esc(v) : String(v ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const normLocal = v => String(v || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();
+  const normLocal = v => String(v || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();
   const clamp = (n,a,b) => Math.min(b,Math.max(a,n));
   const motor = () => window.DPE_CRONOGRAMA_MOTOR;
   const programas = () => window.DPE_CONTEUDOS_EDITAIS || {};
