@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6653e7">
+  <title>Review DPE · Direitos Humanos DPESP</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f7fc;
+      --surface: #ffffff;
+      --surface-soft: #eeeaff;
+      --surface-muted: #f0eff7;
+      --ink: #18152f;
+      --muted: #625d75;
+      --line: #e5e3f1;
+      --brand: #6653e7;
+      --brand-deep: #4d3bc6;
+      --brand-soft: #eeeaff;
+      --ok: #24b981;
+      --ok-soft: #e7f8f1;
+      --amber: #ef9c26;
+      --amber-soft: #fff3dd;
+      --shadow: 0 18px 48px rgba(40, 30, 100, .09);
+      --shadow-soft: 0 8px 24px rgba(40, 30, 100, .07);
+      --radius: 22px;
+      --radius-sm: 14px;
+    }
+    [data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #11101d;
+      --surface: #1b192a;
+      --surface-soft: #302a55;
+      --surface-muted: #242231;
+      --ink: #f6f4ff;
+      --muted: #b8b3ca;
+      --line: #302d43;
+      --brand: #8b7cf6;
+      --brand-deep: #7665ec;
+      --brand-soft: #302a55;
+      --ok: #4ed6a5;
+      --ok-soft: #173a31;
+      --amber: #f5b74f;
+      --amber-soft: #3b2e19;
+      --shadow: 0 20px 60px rgba(0, 0, 0, .22);
+      --shadow-soft: 0 8px 24px rgba(0, 0, 0, .18);
+    }
+    * { box-sizing: border-box; }
+    html { min-width: 320px; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 15px/1.55 ui-rounded, "Avenir Next", "Segoe UI", system-ui, sans-serif;
+      transition: background .2s ease, color .2s ease;
+    }
+    a { color: inherit; }
+    button, input, select { font: inherit; }
+    button, a, input { -webkit-tap-highlight-color: transparent; }
+    button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visible {
+      outline: 3px solid color-mix(in srgb, var(--brand) 62%, #fff);
+      outline-offset: 3px;
+    }
+    .shell { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+    .topbar {
+      border-bottom: 1px solid var(--line);
+      background: color-mix(in srgb, var(--bg) 92%, transparent);
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      backdrop-filter: blur(16px);
+    }
+    .topbar-inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; font-size: 21px; font-weight: 800; letter-spacing: -.05em; text-decoration: none; }
+    .brand img { width: 34px; height: 34px; border-radius: 10px; box-shadow: var(--shadow-soft); }
+    .brand strong { color: var(--brand); }
+    .top-actions { display: flex; align-items: center; gap: 8px; }
+    .icon-btn, .ghost-btn {
+      min-width: 44px; min-height: 44px; border: 1px solid var(--line); border-radius: 13px; background: var(--surface); color: var(--ink); cursor: pointer; transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+    .icon-btn:hover, .ghost-btn:hover { border-color: var(--brand); transform: translateY(-1px); }
+    .icon-btn { font-size: 19px; }
+    main { padding: 42px 0 70px; }
+    .eyebrow { color: var(--brand); font-size: 11px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+    .hero {
+      background: linear-gradient(135deg, color-mix(in srgb, var(--brand-soft) 80%, var(--surface)) 0%, var(--surface) 62%);
+      border: 1px solid var(--line); border-radius: 30px; box-shadow: var(--shadow); padding: clamp(26px, 5vw, 56px); overflow: hidden; position: relative;
+    }
+    .hero::after { content: ""; width: 250px; height: 250px; border-radius: 50%; background: color-mix(in srgb, var(--brand) 16%, transparent); filter: blur(4px); position: absolute; right: -90px; top: -110px; pointer-events: none; }
+    .hero-grid { display: grid; grid-template-columns: 1.25fr .75fr; align-items: end; gap: 32px; position: relative; z-index: 1; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 720px; margin-bottom: 16px; font-size: clamp(34px, 6vw, 70px); line-height: .98; letter-spacing: -.075em; text-wrap: pretty; }
+    h1 span { color: var(--brand); }
+    .hero-copy { max-width: 690px; color: var(--muted); font-size: 17px; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .badge { display: inline-flex; align-items: center; min-height: 30px; border-radius: 999px; padding: 5px 11px; background: var(--surface); border: 1px solid var(--line); color: var(--muted); font-size: 12px; font-weight: 750; }
+    .badge.primary { background: var(--brand); border-color: var(--brand); color: white; }
+    .hero-note { border-left: 3px solid var(--brand); padding: 17px 0 17px 20px; color: var(--muted); }
+    .hero-note strong { display: block; color: var(--ink); font-size: 30px; line-height: 1; letter-spacing: -.05em; }
+    .hero-note span { display: block; margin-top: 7px; font-size: 13px; }
+    .callout { display: flex; gap: 16px; align-items: flex-start; margin: 24px 0; padding: 18px 20px; border: 1px solid color-mix(in srgb, var(--amber) 32%, var(--line)); border-radius: var(--radius-sm); background: var(--amber-soft); color: var(--ink); }
+    .callout-mark { flex: 0 0 auto; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 10px; background: var(--amber); color: #281d0a; font-weight: 900; }
+    .callout p { margin: 0; color: var(--muted); }
+    .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 20px; }
+    .tab { min-height: 45px; padding: 8px 15px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--muted); font-weight: 800; cursor: pointer; transition: .18s ease; }
+    .tab:hover { border-color: var(--brand); color: var(--brand); }
+    .tab[aria-selected="true"] { border-color: var(--brand); background: var(--brand); color: white; box-shadow: 0 7px 18px color-mix(in srgb, var(--brand) 22%, transparent); }
+    .toolbar { display: flex; justify-content: space-between; gap: 16px; align-items: center; margin: 18px 0; }
+    .search { display: flex; align-items: center; gap: 9px; width: min(440px, 100%); min-height: 46px; padding: 0 13px; border: 1px solid var(--line); border-radius: 13px; background: var(--surface); color: var(--muted); }
+    .search input { width: 100%; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--ink); }
+    .filter-row { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 7px; }
+    .filter { min-height: 36px; padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; background: transparent; color: var(--muted); cursor: pointer; font-size: 12px; font-weight: 800; }
+    .filter[aria-pressed="true"] { border-color: var(--brand); color: var(--brand); background: var(--brand-soft); }
+    .view[hidden] { display: none; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin: 30px 0 14px; }
+    .section-head h2 { margin: 3px 0 0; font-size: clamp(23px, 3vw, 34px); line-height: 1.05; letter-spacing: -.06em; }
+    .section-head p { max-width: 590px; margin: 0; color: var(--muted); }
+    .theme-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .theme-card { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow-soft); padding: 20px; min-width: 0; }
+    .theme-card[hidden] { display: none; }
+    .theme-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; }
+    .theme-card h3 { margin: 0; font-size: 18px; letter-spacing: -.035em; line-height: 1.15; }
+    .count { flex: 0 0 auto; display: grid; place-items: center; min-width: 66px; min-height: 46px; border-radius: 13px; background: var(--brand-soft); color: var(--brand-deep); font-weight: 900; line-height: 1; }
+    [data-theme="dark"] .count { color: var(--brand); }
+    .count b { display: block; font-size: 21px; text-align: center; }
+    .count small { display: block; margin-top: 3px; font-size: 10px; font-weight: 800; }
+    .bar { height: 8px; margin: 17px 0 13px; border-radius: 999px; background: var(--surface-muted); overflow: hidden; }
+    .bar i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--brand-deep), var(--brand)); }
+    .theme-card p { margin: 0; color: var(--muted); }
+    .theme-card details { margin-top: 15px; border-top: 1px solid var(--line); padding-top: 12px; }
+    .theme-card summary { cursor: pointer; color: var(--brand); font-size: 13px; font-weight: 850; }
+    .theme-card ul, .new-card ul { margin: 11px 0 0; padding-left: 19px; color: var(--muted); }
+    .theme-card li, .new-card li { margin: 5px 0; }
+    .empty { grid-column: 1/-1; padding: 30px; border: 1px dashed var(--line); border-radius: var(--radius); color: var(--muted); text-align: center; }
+    .new-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .new-card { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow-soft); padding: 20px; position: relative; overflow: hidden; }
+    .new-card::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: var(--brand); }
+    .new-card.expand::before { background: var(--amber); }
+    .new-card h3 { margin: 9px 0 7px; font-size: 19px; letter-spacing: -.04em; line-height: 1.15; }
+    .new-card p { margin-bottom: 0; color: var(--muted); }
+    .new-tag { display: inline-flex; min-height: 25px; align-items: center; padding: 4px 9px; border-radius: 999px; background: var(--brand-soft); color: var(--brand-deep); font-size: 10px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
+    .new-card.expand .new-tag { background: var(--amber-soft); color: #935c0c; }
+    [data-theme="dark"] .new-tag { color: var(--brand); }
+    [data-theme="dark"] .new-card.expand .new-tag { color: var(--amber); }
+    .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
+    .compare div { min-width: 0; padding: 10px; border-radius: 11px; background: var(--surface-muted); }
+    .compare b { display: block; margin-bottom: 4px; color: var(--ink); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+    .compare span { color: var(--muted); font-size: 12px; }
+    .document-warning { margin: 20px 0; padding: 17px 19px; border: 1px solid color-mix(in srgb, var(--amber) 38%, var(--line)); border-radius: var(--radius-sm); background: var(--amber-soft); color: var(--muted); }
+    .document-warning strong { color: var(--ink); }
+    .exam-grid, .compare-grid, .route-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .exam-card, .compare-card, .route-card { min-width: 0; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow-soft); padding: 20px; }
+    .exam-card { border-top: 4px solid var(--brand); }
+    .exam-card.rn { border-top-color: var(--amber); }
+    .exam-card h3, .compare-card h3, .route-card h3 { margin: 7px 0 8px; font-size: 18px; line-height: 1.15; letter-spacing: -.04em; }
+    .exam-card p, .compare-card p, .route-card p { margin: 0; color: var(--muted); }
+    .compare-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 14px; }
+    .compare-card { box-shadow: none; }
+    .compare-card.common { background: var(--brand-soft); }
+    .compare-card.rn { border-color: color-mix(in srgb, var(--amber) 36%, var(--line)); }
+    .compare-card.sp { border-color: color-mix(in srgb, var(--brand) 36%, var(--line)); }
+    .compare-card ul, .route-card ul { margin: 12px 0 0; padding-left: 18px; color: var(--muted); }
+    .compare-card li, .route-card li { margin: 5px 0; }
+    .compare-label { color: var(--brand); font-size: 10px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+    .compare-card.rn .compare-label { color: #a66912; }
+    [data-theme="dark"] .compare-card.rn .compare-label { color: var(--amber); }
+    .route-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 14px; }
+    .route-card { background: var(--surface-muted); box-shadow: none; }
+    .route-card strong { display: inline-grid; place-items: center; min-width: 28px; min-height: 28px; border-radius: 9px; background: var(--brand); color: white; font-size: 12px; }
+    .study { margin-top: 34px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); padding: clamp(20px, 4vw, 32px); }
+    .study-head { display: flex; justify-content: space-between; align-items: start; gap: 20px; }
+    .study-head h2 { margin: 4px 0 5px; font-size: 26px; letter-spacing: -.06em; }
+    .study-head p { margin: 0; color: var(--muted); }
+    .progress-box { flex: 0 0 150px; text-align: right; }
+    .progress-box strong { display: block; color: var(--brand); font-size: 25px; line-height: 1; }
+    .progress-box span { color: var(--muted); font-size: 11px; }
+    .progress { height: 8px; margin-top: 8px; border-radius: 999px; background: var(--surface-muted); overflow: hidden; }
+    .progress i { display: block; width: 0; height: 100%; border-radius: inherit; background: var(--ok); transition: width .25s ease; }
+    .checklist { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; margin-top: 22px; }
+    .check { display: flex; align-items: flex-start; gap: 11px; padding: 13px; border: 1px solid var(--line); border-radius: 13px; background: var(--surface-muted); cursor: pointer; }
+    .check:hover { border-color: var(--brand); }
+    .check input { width: 19px; height: 19px; margin: 1px 0 0; accent-color: var(--brand); }
+    .check span { color: var(--ink); font-size: 13px; font-weight: 700; }
+    .check input:checked + span { color: var(--muted); text-decoration: line-through; }
+    .study-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
+    .ghost-btn { padding: 8px 12px; font-size: 12px; font-weight: 800; }
+    .sources { margin-top: 34px; padding-top: 25px; border-top: 1px solid var(--line); }
+    .sources h2 { margin: 0 0 6px; font-size: 22px; letter-spacing: -.045em; }
+    .sources p { color: var(--muted); }
+    .source-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 15px; }
+    .source-list a { display: block; padding: 13px; border: 1px solid var(--line); border-radius: 13px; background: var(--surface); color: var(--brand); font-size: 12px; font-weight: 800; text-decoration: none; }
+    .source-list a:hover { border-color: var(--brand); }
+    footer { padding: 22px 0 42px; color: var(--muted); font-size: 12px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    @media (max-width: 800px) {
+      .hero-grid, .theme-grid, .new-grid, .exam-grid, .compare-grid, .route-grid { grid-template-columns: 1fr; }
+      .hero-grid { gap: 23px; }
+      .toolbar, .section-head, .study-head { align-items: stretch; flex-direction: column; }
+      .filter-row { justify-content: flex-start; }
+      .progress-box { flex-basis: auto; text-align: left; }
+      .source-list, .checklist { grid-template-columns: 1fr; }
+      .source-list { gap: 8px; }
+    }
+    @media (max-width: 480px) {
+      .shell { width: min(100% - 22px, 1180px); }
+      main { padding-top: 24px; }
+      .topbar-inner { min-height: 64px; }
+      .brand { font-size: 18px; }
+      .brand img { width: 29px; height: 29px; }
+      .hero { border-radius: 22px; padding: 23px 18px; }
+      h1 { font-size: 42px; }
+      .hero-copy { font-size: 15px; }
+      .callout { padding: 14px; }
+      .theme-card, .new-card, .exam-card, .compare-card, .route-card { padding: 16px; }
+      .compare { grid-template-columns: 1fr; }
+      .study { padding: 19px 15px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+    @media print {
+      .topbar, .tabs, .toolbar, .study-actions, .icon-btn { display: none !important; }
+      body, [data-theme="dark"] { background: #fff; color: #111; }
+      .hero, .theme-card, .new-card, .study { box-shadow: none; break-inside: avoid; }
+      .view[hidden] { display: block !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="./" aria-label="Review DPE — início">
+        <img src="icons/icon-192.png" alt="Logo Review DPE">
+        <span>Review <strong>DPE</strong></span>
+      </a>
+      <div class="top-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Alternar tema" title="Alternar tema">◐</button>
+        <button class="icon-btn" id="printPage" type="button" aria-label="Imprimir ou salvar em PDF" title="Imprimir ou salvar em PDF">↗</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero" aria-labelledby="pageTitle">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Direitos Humanos · DPESP</span>
+          <h1 id="pageTitle">O que mais aparece <span>e o que mudou</span></h1>
+          <p class="hero-copy">Um mapa de estudo para o X Concurso da Defensoria Pública de São Paulo. Primeiro, veja os eixos mais recorrentes nos programas. Depois, isole as ampliações que merecem uma leitura específica no novo edital.</p>
+          <div class="hero-meta">
+            <span class="badge primary">X Concurso · 2026</span>
+            <span class="badge">17 editais com Direitos Humanos</span>
+            <span class="badge">Análise de programas, não de questões</span>
+          </div>
+        </div>
+        <div class="hero-note">
+          <strong>2 × 5 pts</strong>
+          <span>Direitos Humanos aparece na Terceira Prova Escrita do X Concurso: duas questões dissertativas de cinco pontos cada.</span>
+        </div>
+      </div>
+    </section>
+
+    <aside class="callout" aria-label="Nota metodológica">
+      <div class="callout-mark">i</div>
+      <p><strong>Como usar este mapa:</strong> as frequências mostram em quantos editais o eixo aparece. Elas ajudam a priorizar a primeira passada, mas não dizem quantas questões cairão nem substituem o edital, a legislação, a jurisprudência ou a orientação da banca.</p>
+    </aside>
+
+    <nav class="tabs" role="tablist" aria-label="Modo de leitura">
+      <button class="tab" id="tabFrequency" type="button" role="tab" aria-selected="true" aria-controls="frequencyView">Mais recorrentes</button>
+      <button class="tab" id="tabNew" type="button" role="tab" aria-selected="false" aria-controls="newView">Novidades do X Concurso</button>
+      <button class="tab" id="tabCompare" type="button" role="tab" aria-selected="false" aria-controls="compareView">DPESP × DPE-RN</button>
+    </nav>
+
+    <section class="view" id="frequencyView" role="tabpanel" aria-labelledby="tabFrequency">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Corpus Review DPE</span>
+          <h2>Núcleo de Direitos Humanos</h2>
+        </div>
+        <p>Os quatro primeiros eixos aparecem em todos os 17 programas de Direitos Humanos identificados no recorte. Os demais indicam assuntos recorrentes ou em expansão.</p>
+      </div>
+      <div class="toolbar">
+        <label class="search" for="searchInput"><span aria-hidden="true">⌕</span><span class="sr-only">Buscar eixo</span><input id="searchInput" type="search" placeholder="Buscar teoria, sistema, grupos..." autocomplete="off"></label>
+        <div class="filter-row" aria-label="Filtrar recorrência">
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">Todos</button>
+          <button class="filter" type="button" data-filter="core" aria-pressed="false">Núcleo 17/17</button>
+          <button class="filter" type="button" data-filter="high" aria-pressed="false">Alta 14–16</button>
+          <button class="filter" type="button" data-filter="emerging" aria-pressed="false">Em expansão</button>
+        </div>
+      </div>
+      <div class="theme-grid" id="themeGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="view" id="newView" role="tabpanel" aria-labelledby="tabNew" hidden>
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Comparação textual</span>
+          <h2>O que merece uma leitura nova</h2>
+        </div>
+        <p>“Novo” aqui significa um eixo que não aparecia assim destacado no IX Concurso ou uma ampliação textual relevante no X. É uma comparação de programas, não uma afirmação de que o tema nunca tenha sido estudado antes.</p>
+      </div>
+      <div class="new-grid" id="newGrid"></div>
+    </section>
+
+    <section class="view" id="compareView" role="tabpanel" aria-labelledby="tabCompare" hidden>
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Dois concursos · uma preparação</span>
+          <h2>Onde os editais se encontram</h2>
+        </div>
+        <p>O DPE-RN é mais concentrado no ordenamento brasileiro, na proteção antidiscriminatória e em referências nacionais. O DPESP X abre uma frente internacional, crítica e contemporânea bem mais extensa.</p>
+      </div>
+
+      <div class="document-warning"><strong>Atenção ao documento do RN:</strong> no PDF da Resolução nº 344/2025, o bloco de Direitos Humanos apresenta os itens 1 e 2 e depois salta para o item 6. Os itens 3–5 não aparecem no texto legível fornecido. A comparação não preenche essa lacuna por inferência; confirme eventual retificação ou edital de abertura.</div>
+
+      <div class="exam-grid">
+        <article class="exam-card rn">
+          <span class="compare-label">DPE-RN · Resolução 344/2025</span>
+          <h3>Como DH entra na prova</h3>
+          <p><strong>Objetiva:</strong> Grupo IV com 25 questões distribuídas entre Direitos Humanos, Direitos Difusos e Coletivos e Direito da Criança e do Adolescente. O regulamento não separa quantas são de DH.</p>
+          <p style="margin-top:10px"><strong>Discursiva:</strong> Prova Discursiva II, com duas questões e uma peça do Grupo II, que reúne Civil, Processo Civil, Consumidor, DH, Difusos e Criança/Adolescente. A resolução não fixa número de questões de DH.</p>
+        </article>
+        <article class="exam-card">
+          <span class="compare-label">DPESP · X Concurso</span>
+          <h3>Como DH entra na prova</h3>
+          <p><strong>Terceira Prova Escrita:</strong> duas questões dissertativas de Direitos Humanos, valendo cinco pontos cada. O programa é muito mais longo e segmentado em sistemas internacionais, direitos em espécie, grupos, democracia e socioambiental.</p>
+        </article>
+      </div>
+
+      <div class="compare-grid">
+        <article class="compare-card common">
+          <span class="compare-label">Núcleo comum</span>
+          <h3>Teoria e fundamentos</h3>
+          <p>Os dois regulamentos começam pelo conceito, fundamentos, evolução histórica, estrutura e teoria crítica dos Direitos Humanos.</p>
+          <ul><li>Conceitos e terminologia</li><li>Fundamentos filosóficos</li><li>Características e evolução</li></ul>
+        </article>
+        <article class="compare-card common">
+          <span class="compare-label">Núcleo comum</span>
+          <h3>Brasil, tratados e controle</h3>
+          <p>Ambos cobram incorporação, hierarquia dos tratados, eficácia interna, execução de decisões internacionais, controle de convencionalidade e diálogo entre cortes.</p>
+          <ul><li>Ordenamento jurídico brasileiro</li><li>Tratados e posição hierárquica</li><li>Controle de convencionalidade</li></ul>
+        </article>
+        <article class="compare-card common">
+          <span class="compare-label">Núcleo comum</span>
+          <h3>Igualdade e proteção de grupos</h3>
+          <p>O encontro mais direto está no antidiscriminatório: igualdade, racismo, interseccionalidade, deficiência, população LGBTQIAPN+, pessoas vulnerabilizadas e ações afirmativas.</p>
+          <ul><li>Discriminações e racismos</li><li>Deficiência e capacitismo</li><li>Políticas públicas e vulnerabilidades</li></ul>
+        </article>
+        <article class="compare-card rn">
+          <span class="compare-label">Ênfase DPE-RN</span>
+          <h3>Legislação nacional aplicada</h3>
+          <p>O RN deixa mais explícitos diplomas e políticas brasileiras, úteis para uma revisão objetiva e jurisprudencial.</p>
+          <ul><li>Lei 12.288/2010 e Lei 7.716/1989</li><li>Lei 7.853/1989 e Lei 13.146/2015</li><li>Princípios de Yogyakarta</li><li>Lei 14.821/2024, Decreto 7.053/2009 e Resolução CNJ 425/2021</li></ul>
+        </article>
+        <article class="compare-card rn">
+          <span class="compare-label">Ênfase DPE-RN</span>
+          <h3>Defensoria e jurisprudência nacional</h3>
+          <p>O bloco visível termina com a tutela dos grupos vulneráveis pela Defensoria e jurisprudência do STJ e STF sobre a matéria.</p>
+          <ul><li>Tutela da população em situação de rua</li><li>Capacidade civil, curatela e decisão apoiada</li><li>Reforma psiquiátrica e desinstitucionalização</li><li>STJ e STF</li></ul>
+        </article>
+        <article class="compare-card sp">
+          <span class="compare-label">Ênfase DPESP X</span>
+          <h3>Internacional, crítica e contemporânea</h3>
+          <p>O DPESP acrescenta camadas que não aparecem no bloco específico de DH do RN, embora algumas possam aparecer em outras disciplinas do regulamento potiguar.</p>
+          <ul><li>ONU, OEA, Comissão e Corte Interamericana</li><li>Processo internacional, humanitário e refugiados</li><li>Democracia, clima, IA, dados e segurança pública</li><li>Colonialidade, amefricanidade e teoria crítica racial</li></ul>
+        </article>
+      </div>
+
+      <div class="section-head" style="margin-top:32px"><div><span class="eyebrow">Ordem de ataque</span><h2>Como estudar para os dois</h2></div><p>Use a interseção para ganhar velocidade e reserve blocos específicos para aquilo que só um dos concursos explicita.</p></div>
+      <div class="route-grid">
+        <article class="route-card"><strong>1</strong><h3>Base compartilhada</h3><p>Teoria geral, ordem brasileira, tratados, controle de convencionalidade, igualdade, racismo, deficiência, LGBTQIAPN+, rua e ações afirmativas.</p></article>
+        <article class="route-card"><strong>2</strong><h3>Bloco DPE-RN</h3><p>Lei seca e políticas nacionais, tutela concreta de grupos, pessoas com deficiência e população em situação de rua; depois jurisprudência STJ/STF.</p></article>
+        <article class="route-card"><strong>3</strong><h3>Bloco DPESP</h3><p>Sistemas internacionais, processo internacional, DH em espécie, democracia, socioambiental, IA/dados e referências decoloniais.</p></article>
+      </div>
+    </section>
+
+    <section class="study" aria-labelledby="studyTitle">
+      <div class="study-head">
+        <div>
+          <span class="eyebrow">Seu próximo bloco</span>
+          <h2 id="studyTitle">Checklist de estudo</h2>
+          <p>Marque o que você já revisou. O progresso fica salvo somente neste navegador.</p>
+        </div>
+        <div class="progress-box" aria-live="polite">
+          <strong id="progressLabel">0%</strong>
+          <span id="progressText">0 de 8 itens concluídos</span>
+          <div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
+        </div>
+      </div>
+      <div class="checklist" id="checklist"></div>
+      <div class="study-actions"><button class="ghost-btn" id="copyChecklist" type="button">Copiar checklist</button><button class="ghost-btn" id="resetChecklist" type="button">Limpar progresso</button></div>
+    </section>
+
+    <section class="sources" aria-labelledby="sourcesTitle">
+      <span class="eyebrow">Conferência</span>
+      <h2 id="sourcesTitle">Fontes usadas</h2>
+      <p>O novo edital foi conferido no Diário Oficial. A comparação histórica usa o edital oficial do IX Concurso. A comparação potiguar usa a Resolução nº 344/2025 do CSDP/RN, publicada no DOE/RN nº 15.871 em 15/03/2025, fornecida em PDF. O mapa de recorrência usa o corpus documental já organizado pelo Review DPE.</p>
+      <div class="source-list">
+        <a href="https://doe.sp.gov.br/executivo/defensoria-publica-do-estado/x-concurso-publico-de-provas-e-titulos-para-ingresso-na-carreira-de-defensora-ou-defensor-publico-do-estado-202610081341662194000" target="_blank" rel="noopener">Diário Oficial · X Concurso DPESP ↗</a>
+        <a href="https://www.defensoria.sp.def.br/documents/20122/4537429/edital_ix_concurso_para_csdp_publicacao_do_completo.pdf/3eedf605-76d2-2a54-ee18-7f55873b402c?t=1671136659267&download=true" target="_blank" rel="noopener">Edital oficial · IX Concurso DPESP ↗</a>
+        <a href="https://www.defensoria.sp.def.br/noticias/-/noticia/7558991/defensoria-publica-de-sp-abre-inscricoes-para-o-x-concurso-de-ingresso-na-carreira-em-13-de-outubro" target="_blank" rel="noopener">Notícia oficial · publicação do X Concurso ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">Review DPE · material didático interativo. Consulte sempre a versão vigente do edital.</footer>
+
+  <script>
+    (() => {
+      "use strict";
+      const TOTAL = 17;
+      const themes = [
+        { name: "Teoria geral, fundamentos e dignidade", freq: 17, level: "core", text: "Comece por conceitos, fundamentos filosóficos e históricos, dignidade humana, características, princípios, dimensões e críticas à visão geracional.", examples: ["Origem, sentido e evolução histórica", "Dignidade humana e releituras", "Universalismo, relativismo e efetividade"] },
+        { name: "Direito internacional e processo internacional", freq: 17, level: "core", text: "O eixo atravessa fontes, obrigações estatais, responsabilidade internacional, reparação, mecanismos de monitoramento e admissibilidade.", examples: ["Tratados, reservas, denúncias e hierarquia", "Responsabilidade e formas de reparação", "Acesso, decisões e supervisão de cumprimento"] },
+        { name: "Sistemas global e interamericano", freq: 17, level: "core", text: "ONU, OEA, Comissão Interamericana e Corte Interamericana aparecem como estrutura permanente de proteção e promoção.", examples: ["Órgãos convencionais e extraconvencionais", "Jurisdição consultiva e contenciosa", "Medidas urgentes, cautelares e provisórias"] },
+        { name: "Direitos em espécie e proteção concreta", freq: 17, level: "core", text: "A parte mais aplicada conecta Direitos Humanos à proteção contra violações, à segurança pública, ao sistema prisional, à manifestação e ao acesso à informação.", examples: ["Tortura, violência de Estado e sistema prisional", "Defensores de direitos humanos e manifestação", "Relações privadas e empresas e Direitos Humanos"] },
+        { name: "Direito Internacional Humanitário e refugiados", freq: 16, level: "high", text: "Conflitos armados, proteção internacional e deslocamentos forçados formam um bloco muito estável no corpus.", examples: ["Princípios e incidência do Direito Humanitário", "Direito Internacional Penal", "Referenciais normativos sobre refugiados"] },
+        { name: "Democracia, acesso à justiça e participação", freq: 14, level: "high", text: "O conteúdo conecta direitos, instituições e formas concretas de participação, além de vulnerabilidades no acesso à Justiça.", examples: ["Crises democráticas e ameaças aos direitos", "Acesso à justiça e vulnerabilidade", "Participação social e amicus curiae"] },
+        { name: "Grupos vulnerabilizados e antidiscriminatório", freq: 12, level: "high", text: "A recorrência cresce quando o edital explicita raça, gênero, sexualidade, deficiência, infância, povos tradicionais, migração e outras vulnerabilidades.", examples: ["Igualdade e proteção especial", "Racismos, feminismos e interseccionalidades", "Pessoas com deficiência e acessibilidade"] },
+        { name: "Teoria crítica, colonialidade e resistência", freq: 10, level: "emerging", text: "Aparecem teoria crítica, biopolítica, necropolítica, colonialidade, amefricanidade e movimentos sociais como chaves de leitura.", examples: ["Dominação e emancipação", "Estado de exceção e necropolítica", "Pluralismo, interculturalidade e resistências"] },
+        { name: "Defesa socioambiental e povos tradicionais", freq: 6, level: "emerging", text: "O eixo é menos universal no recorte, mas ganhou densidade no X Concurso com clima, consulta prévia e proteção de territórios.", examples: ["Justiça climática e futuras gerações", "Racismo ambiental e territorialidades", "Convenção 169 da OIT e consulta prévia"] },
+        { name: "Tecnologia, informação e privacidade", freq: 4, level: "emerging", text: "Ainda é seletivo no corpus anterior, mas se torna estratégico no novo edital com inteligência artificial, racismo algorítmico e inclusão digital.", examples: ["Reconhecimento facial e vieses", "Privacidade e dados pessoais", "Desinformação, expressão e informação"] }
+      ];
+      const novelties = [
+        { kind: "new", tag: "Novo eixo destacado", title: "Direitos Humanos e democracia", item: "Item 13 do X Concurso", body: "O novo programa separa um bloco próprio para justiça de transição, Comissão Nacional da Verdade, justiça, memória, verdade, reparação, garantias de não repetição, graves violações no contexto democrático e imprescritibilidade.", before: "No IX, democracia aparecia ligada a crises e ameaças, mas não como item autônomo com esse conjunto.", now: "No X, vira um eixo próprio para estudo e resposta discursiva." },
+        { kind: "expand", tag: "Ampliação contemporânea", title: "IA, racismo algorítmico e tecnologias digitais", item: "Item 11 · Direitos Humanos em Espécie", body: "O X explicita inteligência artificial, proteção de dados, racismo algorítmico, reconhecimento facial, privacidade, liberdade de expressão, direito à informação, inclusão digital e desinformação.", before: "O IX já mencionava mídia, meios de comunicação e tecnologias.", now: "O X transforma a tecnologia em problemas concretos de direitos e discriminação." },
+        { kind: "expand", tag: "Proteção penal atualizada", title: "Tortura, prova e segurança pública", item: "Item 11 · Direitos Humanos em Espécie", body: "Entram com destaque a proibição absoluta da tortura, audiências de custódia, Protocolo de Istambul, prova obtida mediante tortura, prevenção e combate à tortura, reconhecimento de pessoas e erro judiciário.", before: "O IX tratava de enfrentamento da tortura e justiça/segurança pública em termos mais gerais.", now: "O X verticaliza protocolos, prova, prevenção, erro judiciário e responsabilização." },
+        { kind: "expand", tag: "Jurisprudência e política pública", title: "Letalidade policial, câmeras e sistema prisional", item: "Item 11 · Direitos Humanos em Espécie", body: "O X cita letalidade policial, execuções sumárias, desaparecimentos forçados, controle externo, ADPF 635, Suspensão de Liminar 1696, câmeras corporais, uso proporcional da força, estado de coisas inconstitucional e Regras de Mandela e Bangkok.", before: "No IX, justiça e segurança pública apareciam sem esse conjunto de referências expressas.", now: "O X exige uma leitura muito mais aplicada e jurisprudencial da atuação policial e prisional." },
+        { kind: "expand", tag: "Acesso à justiça", title: "Litigância estrutural e barreiras de acesso", item: "Item 11 · Direitos Humanos em Espécie", body: "O novo edital inclui litigância estrutural e processo estrutural, barreiras econômicas, sociais, culturais e institucionais, Regras de Brasília, participação social e amicus curiae.", before: "O IX trazia acesso e proteção, mas não detalhava esse pacote de processo estrutural dentro de Direitos Humanos em Espécie.", now: "O X aproxima a matéria da atuação estratégica da Defensoria e da transformação institucional." },
+        { kind: "expand", tag: "Socioambiental", title: "Clima, futuras gerações e consulta prévia", item: "Item 14 · Direitos Humanos e direitos socioambientais", body: "O X acrescenta direito ao meio ambiente saudável e ecologicamente equilibrado, justiça climática, emergência climática, futuras gerações, consulta prévia livre e informada, protocolos comunitários e direitos de catadores.", before: "O IX já mencionava meio ambiente, racismo ambiental, territorialidades e povos tradicionais.", now: "O X amplia o bloco para clima, consulta, resíduos e proteção socioambiental aplicada." },
+        { kind: "new", tag: "Referenciais ampliados", title: "Constitucionalismo haitiano e Carta Mandinga", item: "Item 1 · Teoria Geral", body: "O X explicita a crítica à narrativa hegemônica sobre a invenção dos Direitos Humanos, as características do constitucionalismo haitiano e a influência da Carta Mandinga.", before: "Essas referências não aparecem com essa formulação no programa do IX.", now: "O X desloca o estudo histórico para uma leitura mais plural e crítica da formação dos direitos." },
+        { kind: "expand", tag: "Antidiscriminatório", title: "Perspectiva racial, de gênero e deficiência", item: "Item 12 · Grupos vulnerabilizados", body: "O X detalha liberalismo racial brasileiro, privilégio racial, vieses cognitivos, imagens de controle, perfilamento racial, ações afirmativas, protocolos de julgamento, feminismo civilizatório, divisão sexual e racial do trabalho, LGBTQIA+ e modelos de deficiência.", before: "O IX já tinha raça, branquitude, feminismo negro, LGBTQfobia, teoria queer e microagressões.", now: "O X torna mais operacional o estudo de discriminação, protocolos e barreiras." },
+        { kind: "expand", tag: "Teoria geral", title: "Mínimo existencial e proibição de proteção insuficiente", item: "Item 1 · Teoria Geral", body: "O X passa a explicitar mínimo existencial, reserva do possível, vedação ao retrocesso social, proporcionalidade e proibição de proteção insuficiente.", before: "O IX já abordava obrigações estatais, políticas públicas, efetividade e justiciabilidade.", now: "O X acrescenta vocabulário constitucional aplicado para organizar conflitos de implementação." }
+      ];
+      const checklistItems = [
+        "Teoria geral, fundamentos, dignidade e dimensões",
+        "Fontes, tratados, responsabilidade e reparação internacional",
+        "ONU, OEA, Comissão e Corte Interamericana",
+        "Processo internacional, admissibilidade e medidas urgentes",
+        "Grupos vulnerabilizados, antidiscriminatório e interseccionalidades",
+        "Direitos em espécie: tortura, segurança e sistema prisional",
+        "Novidades do X: democracia, clima, IA e acesso estrutural",
+        "Separar uma sessão para jurisprudência e uma questão discursiva"
+      ];
+      const $ = (sel, root = document) => root.querySelector(sel);
+      const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
+      const esc = value => String(value ?? "").replace(/[&<>'"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" }[c]));
+      let activeFilter = "all";
+      function themeVisible(item, term) {
+        const filterOk = activeFilter === "all" || (activeFilter === "core" && item.freq === 17) || (activeFilter === "high" && item.freq >= 14 && item.freq < 17) || (activeFilter === "emerging" && item.freq < 14);
+        const haystack = `${item.name} ${item.text} ${item.examples.join(" ")}`.toLocaleLowerCase("pt-BR");
+        return filterOk && (!term || haystack.includes(term.toLocaleLowerCase("pt-BR")));
+      }
+      function renderThemes() {
+        const term = $("#searchInput").value.trim();
+        const visible = themes.filter(item => themeVisible(item, term));
+        $("#themeGrid").innerHTML = visible.length ? visible.map(item => `
+          <article class="theme-card">
+            <div class="theme-top"><div><span class="eyebrow">${item.level === "core" ? "Núcleo universal" : item.level === "high" ? "Alta recorrência" : "Em expansão"}</span><h3>${esc(item.name)}</h3></div><div class="count"><b>${item.freq}</b><small>de ${TOTAL}</small></div></div>
+            <div class="bar" role="progressbar" aria-label="${esc(item.name)} aparece em ${item.freq} de ${TOTAL} editais" aria-valuenow="${item.freq}" aria-valuemin="0" aria-valuemax="${TOTAL}"><i style="width:${Math.round(item.freq / TOTAL * 100)}%"></i></div>
+            <p>${esc(item.text)}</p>
+            <details><summary>Ver o que entra neste eixo</summary><ul>${item.examples.map(example => `<li>${esc(example)}</li>`).join("")}</ul></details>
+          </article>`).join("") : `<div class="empty">Nenhum eixo encontrado. Tente “sistema”, “grupos” ou “tecnologia”.</div>`;
+      }
+      function renderNovelties() {
+        $("#newGrid").innerHTML = novelties.map(item => `
+          <article class="new-card ${item.kind === "expand" ? "expand" : "new"}">
+            <span class="new-tag">${esc(item.tag)}</span><h3>${esc(item.title)}</h3><p>${esc(item.body)}</p>
+            <div class="compare"><div><b>IX Concurso</b><span>${esc(item.before)}</span></div><div><b>X Concurso</b><span>${esc(item.now)}</span></div></div>
+            <details><summary>Como estudar este bloco</summary><ul><li>Localize o item indicado no Anexo II do X Concurso.</li><li>Monte uma página de revisão com conceito, norma de referência e um caso ou decisão.</li><li>Escreva uma resposta curta explicando o impacto para a atuação da Defensoria.</li></ul></details>
+          </article>`).join("");
+      }
+      function setTab(which) {
+        const frequency = which === "frequency";
+        const novelty = which === "new";
+        $("#frequencyView").hidden = !frequency;
+        $("#newView").hidden = !novelty;
+        $("#compareView").hidden = frequency || novelty;
+        $("#tabFrequency").setAttribute("aria-selected", String(frequency));
+        $("#tabNew").setAttribute("aria-selected", String(novelty));
+        $("#tabCompare").setAttribute("aria-selected", String(!frequency && !novelty));
+      }
+      const progressKey = "review-dpe:direitos-humanos-dpesp:v1";
+      const storage = {
+        get(key, fallback = null) { try { return localStorage.getItem(key) ?? fallback; } catch (_) { return fallback; } },
+        set(key, value) { try { localStorage.setItem(key, value); } catch (_) {} },
+        remove(key) { try { localStorage.removeItem(key); } catch (_) {} }
+      };
+      function readProgress() { try { return JSON.parse(storage.get(progressKey, "[]")); } catch (_) { return []; } }
+      function renderChecklist() {
+        const saved = new Set(readProgress());
+        $("#checklist").innerHTML = checklistItems.map((item, index) => `<label class="check"><input type="checkbox" data-check="${index}" ${saved.has(index) ? "checked" : ""}><span>${esc(item)}</span></label>`).join("");
+        updateProgress();
+      }
+      function updateProgress() {
+        const checks = $$("[data-check]");
+        const done = checks.filter(input => input.checked).length;
+        const pct = Math.round(done / checks.length * 100);
+        $("#progressLabel").textContent = `${pct}%`;
+        $("#progressText").textContent = `${done} de ${checks.length} itens concluídos`;
+        $("#progressBar").style.width = `${pct}%`;
+        storage.set(progressKey, JSON.stringify(checks.filter(input => input.checked).map(input => Number(input.dataset.check))));
+      }
+      $("#themeGrid").addEventListener("change", renderThemes);
+      $("#searchInput").addEventListener("input", renderThemes);
+      $$("[data-filter]").forEach(button => button.addEventListener("click", () => { activeFilter = button.dataset.filter; $$("[data-filter]").forEach(b => b.setAttribute("aria-pressed", String(b === button))); renderThemes(); }));
+      $("#tabFrequency").addEventListener("click", () => setTab("frequency"));
+      $("#tabNew").addEventListener("click", () => setTab("new"));
+      $("#tabCompare").addEventListener("click", () => setTab("compare"));
+      $("#themeToggle").addEventListener("click", () => { const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark"; document.documentElement.dataset.theme = next; storage.set("review-dpe:theme", next); });
+      $("#printPage").addEventListener("click", () => window.print());
+      $("#checklist").addEventListener("change", updateProgress);
+      $("#resetChecklist").addEventListener("click", () => { storage.remove(progressKey); renderChecklist(); });
+      $("#copyChecklist").addEventListener("click", async () => { const checked = $$('[data-check]').filter(input => input.checked).map(input => `✓ ${checklistItems[Number(input.dataset.check)]}`); const text = `Review DPE · Direitos Humanos DPESP\n${checked.length ? checked.join("\n") : "Nenhum item marcado ainda."}`; try { await navigator.clipboard.writeText(text); $("#copyChecklist").textContent = "Copiado"; setTimeout(() => $("#copyChecklist").textContent = "Copiar checklist", 1400); } catch (_) { window.prompt("Copie sua checklist:", text); } });
+      document.documentElement.dataset.theme = storage.get("review-dpe:theme", "light") || "light";
+      renderThemes(); renderNovelties(); renderChecklist();
+    })();
+  </script>
+</body>
+</html>
