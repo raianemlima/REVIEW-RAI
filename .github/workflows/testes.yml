@@ -1,0 +1,22 @@
+name: Verificar aplicativo
+on:
+  push:
+    branches: [main, claude/dpe-spaced-review-app-1h0ks9, "manus/**"]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Instalar ferramentas de teste (sem scripts de instalação)
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Verificar sintaxe
+        run: npm run check
+      - name: Testar com dados fictícios, sem serviços de produção
+        run: npm test

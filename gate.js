@@ -2,37 +2,90 @@
 // A senha do baralho vem do Supabase (função chave_do_app), entregue só a e-mails liberados, confirmados e com assinatura válida.
 // A chave fica guardada no aparelho para abrir offline, mas só por PRAZO: depois disso o app exige confirmar a assinatura online.
 // tema escolhido no app (diurno/noturno) já na tela de entrada
-try { const t = localStorage.getItem("revisao-dpe-tema"); if (t === "claro" || t === "escuro") document.documentElement.dataset.theme = t === "claro" ? "light" : "dark"; } catch (e) {}
+try {
+  const t = localStorage.getItem("revisao-dpe-tema");
+  if (t === "claro" || t === "escuro") document.documentElement.dataset.theme = t === "claro" ? "light" : "dark";
+} catch (e) {}
+document.documentElement.dataset.rdDesign = "figma";
+document.body.classList.add("rd-gate");
 (() => {
-  const KEY = "revisao-dpe-chave", CONTA = "revisao-dpe-conta", VERIF = "revisao-dpe-verif", PRAZO = 7 * 86400000;
+  const KEY = "revisao-dpe-chave", KEY_UID = "revisao-dpe-chave-uid", CONTA = "revisao-dpe-conta", VERIF = "revisao-dpe-verif", PRAZO = 7 * 86400000;
   const SB_URL = "https://hlenhmgnqqnkjqmntnpz.supabase.co", SB_KEY = "sb_publishable_UbPHvOFSbd-dgyDx6SI7mg_UBx4_o9l";   // chave pública: a proteção é a RLS
   const $ = s => document.querySelector(s);
-  const enc = JSON.parse($("#deck-enc").textContent);
+  const APP_CACHE = "review-dpe-assuntos-v6";
+  async function carregarTexto(url, tipo, motivo) {
+    let resposta;
+    try { resposta = await fetch(url); } catch (_) { throw new Error(motivo); }
+    if (!resposta.ok) throw new Error(motivo);
+    const texto = await resposta.text();
+    try { const cache = await caches.open(APP_CACHE); await cache.put(url, new Response(texto, { headers: { "Content-Type": tipo } })); } catch (_) {}
+    return texto;
+  }
+  async function carregarDeck() {
+    const bruto = await carregarTexto(new URL("deck.enc", document.baseURI).href, "application/json", "deck-indisponivel");
+    let deck; try { deck = JSON.parse(bruto); } catch (_) { throw new Error("deck-invalido"); }
+    if (!deck || deck.v !== 2 || deck.z !== "gzip" || !Number.isInteger(deck.it) || deck.it < 100000 || ![deck.s, deck.iv, deck.ct].every(x => typeof x === "string" && /^[A-Za-z0-9+/]+={0,2}$/.test(x))) throw new Error("deck-invalido");
+    try { if (unb64(deck.s).length !== 16 || unb64(deck.iv).length !== 12 || unb64(deck.ct).length < 16) throw new Error(); }
+    catch (_) { throw new Error("deck-invalido"); }
+    return deck;
+  }
+  const modulosCarregados = new Set(); let carregandoModulos = null;
+  async function carregarModulos() {
+    if (!carregandoModulos) carregandoModulos = (async () => {
+      for (const ref of document.querySelectorAll("script[data-lazy-src]")) {
+        const url = new URL(ref.getAttribute("data-lazy-src"), document.baseURI).href;
+        if (modulosCarregados.has(url)) continue;
+        const codigo = await carregarTexto(url, "text/javascript; charset=utf-8", "modulo-indisponivel");
+        const script = document.createElement("script"); script.textContent = codigo; document.body.appendChild(script);
+        modulosCarregados.add(url);
+      }
+    })().catch(e => { carregandoModulos = null; throw e; });
+    return carregandoModulos;
+  }
   const unb64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
   const b64 = u => btoa(String.fromCharCode(...new Uint8Array(u)));
   const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
   // ---- baralho ----
-  async function tryKey(key) {
+  async function tryKey(key, enc) {
     const pt = await crypto.subtle.decrypt({ name: "AES-GCM", iv: unb64(enc.iv) }, key, unb64(enc.ct));
     if (!enc.z) return new TextDecoder().decode(pt);
     if (typeof DecompressionStream === "undefined") throw new Error("sem-gzip");
     return new Response(new Blob([pt]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
   }
-  function start(deckJson) {
-    $("#main").innerHTML = "";
-    const s = document.createElement("script");
-    s.textContent = "const DECK = " + deckJson + ";\n" + $("#app-src").textContent;
-    document.body.appendChild(s);
+  async function start(deckJson) {
+    const status = $("#save");
+    if (status) { status.hidden = false; status.textContent = "Carregando o app…"; }
+    try {
+      await carregarModulos();
+      const marcador = $("#app-src"), referência = marcador && marcador.getAttribute("data-src");
+      const appSrc = referência ? await carregarTexto(new URL(referência, document.baseURI).href, "text/plain; charset=utf-8", "app-indisponivel") : marcador && marcador.textContent;
+      if (typeof appSrc !== "string") throw new Error("app-indisponivel");
+      $("#main").innerHTML = "";
+      document.body.classList.remove("rd-gate");
+      document.body.classList.add("rd-shell");
+      document.documentElement.dataset.rdDesign = "figma";
+      const script = document.createElement("script");
+      script.textContent = "const DECK = " + deckJson + ";\n" + appSrc;
+      document.body.appendChild(script);
+    }
+    catch (e) { if (status) { status.hidden = true; status.textContent = ""; } throw e; }
   }
-  async function deriveFromPassword(pw) {
+  async function deriveFromPassword(pw, enc) {
     const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveKey"]);
     return crypto.subtle.deriveKey({ name: "PBKDF2", salt: unb64(enc.s), iterations: enc.it, hash: "SHA-256" }, base, { name: "AES-GCM", length: 256 }, true, ["decrypt"]);
   }
-  async function guardarChave(key) { try { localStorage.setItem(KEY, b64(await crypto.subtle.exportKey("raw", key))); localStorage.setItem(VERIF, String(Date.now())); } catch (_) {} }
-  const esquecerChave = () => { try { localStorage.removeItem(KEY); localStorage.removeItem(VERIF); } catch (_) {} };
+  async function guardarChave(key, uid) {
+    try {
+      if (!uid) throw new Error("conta-invalida");
+      localStorage.setItem(KEY, b64(await crypto.subtle.exportKey("raw", key)));
+      localStorage.setItem(KEY_UID, uid);
+      localStorage.setItem(VERIF, String(Date.now()));
+    } catch (_) { esquecerChave(); }
+  }
+  const esquecerChave = () => { try { localStorage.removeItem(KEY); localStorage.removeItem(KEY_UID); localStorage.removeItem(VERIF); } catch (_) {} };
   const verificadoEm = () => { try { return +localStorage.getItem(VERIF) || 0; } catch (_) { return 0; } };
-  const msgDecifrar = err => err && err.message === "sem-gzip" ? "Este navegador é antigo demais para abrir o app. Atualize o navegador e tente de novo." : null;
+  const msgDecifrar = err => !err ? null : err.message === "sem-gzip" ? "Este navegador é antigo demais para abrir o app. Atualize o navegador e tente de novo." : err.message === "deck-indisponivel" || err.message === "modulo-indisponivel" || err.message === "app-indisponivel" ? "Não consegui carregar o app. Verifique a conexão e tente novamente." : err.message === "deck-invalido" ? "O conteúdo do app está indisponível nesta versão. Atualize a página e tente de novo." : null;
 
   // ---- conta (mesmo formato que o app usa para sincronizar) ----
   const lerConta = () => { try { return JSON.parse(localStorage.getItem(CONTA) || "null"); } catch (_) { return null; } };
@@ -78,35 +131,56 @@ try { const t = localStorage.getItem("revisao-dpe-tema"); if (t === "claro" || t
   // abre o app pela conta; devolve false se não há sessão válida
   async function abrirComConta() {
     const c = await token(); if (!c) return false;
-    const pw = await sb("/rest/v1/rpc/chave_do_app", {}, c.at);
-    if (!pw) { esquecerChave(); st.email = c.email; tela("aguardando"); return true; }
+    let pw;
+    try { pw = await sb("/rest/v1/rpc/chave_do_app", {}, c.at); }
+    catch (e) {
+      if (e.st === 401 || e.st === 403) { await negarAcesso(c, "O Supabase não autorizou esta conta a abrir o conteúdo. Confirme a liberação do e-mail da compra com o suporte."); return true; }
+      throw e;
+    }
+    if (typeof pw !== "string" || !pw.trim()) { await negarAcesso(c); return true; }
     let deck, key;
-    try { key = await deriveFromPassword(pw); deck = await tryKey(key); }
+    try { const enc = await carregarDeck(); key = await deriveFromPassword(pw, enc); deck = await tryKey(key, enc); }
     catch (err) { throw new Erro(msgDecifrar(err) || "Sua conta está liberada, mas a chave do app no servidor não confere com esta versão. Avise o suporte.", 0); }
-    await guardarChave(key); start(deck); return true;
+    await guardarChave(key, c.uid); await start(deck); return true;
   }
   // com o app já aberto pela chave guardada: confirma a assinatura em segundo plano. Sem internet ou sessão, não faz nada (o PRAZO cuida disso).
   async function revalidar() {
     try {
-      const c = await token(); if (!c) return;
+      const antes = lerConta(), c = await token();
+      if (!c) {
+        if (antes && (antes.at || antes.rt)) { esquecerChave(); gravarConta(antes.email ? { email: antes.email } : null); location.reload(); }
+        return;
+      }
       const pw = await sb("/rest/v1/rpc/chave_do_app", {}, c.at);
-      if (pw) { try { localStorage.setItem(VERIF, String(Date.now())); } catch (_) {} }
-      else esquecerChave();   // assinatura encerrada: na próxima abertura, o app volta para a tela de entrada
-    } catch (_) {}
+      if (typeof pw === "string" && pw.trim() && localStorage.getItem(KEY_UID) === c.uid) { try { localStorage.setItem(VERIF, String(Date.now())); } catch (_) {} }
+      else { esquecerChave(); gravarConta(c.email ? { email: c.email } : null); location.reload(); }
+    } catch (e) {
+      if (e.st === 401 || e.st === 403) {
+        const c = lerConta(); esquecerChave(); gravarConta(c && c.email ? { email: c.email } : null); location.reload();
+      }
+    }
   }
   const entrou = async j => { gravarConta(sessao(j)); st.msg = ""; if (!(await abrirComConta())) tela("entrar", "Não consegui abrir a sessão. Tente de novo."); };
+  async function negarAcesso(c, mensagem = "Este e-mail não tem uma liberação ativa. Use o mesmo e-mail da compra ou fale com o suporte.") {
+    esquecerChave();
+    gravarConta(c && c.email ? { email: c.email } : null);
+    if (c && c.at) { try { await sb("/auth/v1/logout", {}, c.at); } catch (_) {} }
+    st.email = c && c.email || st.email;
+    tela("entrar", mensagem);
+  }
 
   // ---- telas ----
   const st = { tela: "entrar", email: "", msg: "", ok: false };
-  const inp = "padding:12px;font:16px var(--f-ui);border:1px solid var(--line);border-radius:var(--r);background:var(--surface);color:var(--ink);width:100%;box-sizing:border-box";
-  const btn = "padding:12px;font:600 16px var(--f-ui);border:0;border-radius:var(--r);background:var(--accent);color:var(--accent-ink);cursor:pointer";
-  const btn2 = "padding:10px 12px;font:500 15px var(--f-ui);border:1px solid var(--line);border-radius:var(--r);background:var(--surface);color:var(--ink);cursor:pointer";
-  const lnk = "padding:6px 0;font:500 15px var(--f-ui);border:0;background:none;color:var(--accent);text-decoration:underline;cursor:pointer;text-align:left";
-  const campoEmail = () => `<input id="gEmail" type="email" inputmode="email" autocomplete="email" autocapitalize="off" placeholder="E-mail" value="${esc(st.email)}" required style="${inp}">`;
-  const campoSenha = (id, ph, auto) => `<div style="display:flex;gap:6px"><input id="${id}" type="password" autocomplete="${auto}" placeholder="${ph}" required style="${inp};flex:1;min-width:0"><button type="button" data-ver="${id}" style="${btn2}">Mostrar</button></div>`;
-  const campoCod = () => `<label for="gCod" style="color:var(--muted)">Código enviado para <b>${esc(st.email)}</b></label><input id="gCod" inputmode="numeric" autocomplete="one-time-code" maxlength="10" placeholder="000000" required style="${inp};letter-spacing:.2em;font-size:20px">`;
+  const inp = "min-height:44px;padding:12px;font:16px var(--f-ui);border:1px solid var(--line);border-radius:var(--r);background:var(--surface);color:var(--ink);width:100%;box-sizing:border-box";
+  const btn = "min-height:44px;padding:12px;font:600 16px var(--f-ui);border:0;border-radius:var(--r);background:var(--accent);color:var(--accent-ink);cursor:pointer";
+  const btn2 = "min-width:44px;min-height:44px;padding:10px 12px;font:500 15px var(--f-ui);border:1px solid var(--line);border-radius:var(--r);background:var(--surface);color:var(--ink);cursor:pointer";
+  const lnk = "min-height:44px;display:flex;align-items:center;padding:6px 0;font:500 15px var(--f-ui);border:0;background:none;color:var(--accent);text-decoration:underline;cursor:pointer;text-align:left";
+  const campoEmail = () => `<label for="gEmail" style="display:grid;gap:5px;color:var(--muted);font-size:14px;font-weight:500">E-mail<input id="gEmail" type="email" inputmode="email" autocomplete="email" autocapitalize="off" placeholder="nome@exemplo.com" value="${esc(st.email)}" required aria-describedby="gmsg" style="${inp}"></label>`;
+  const campoSenha = (id, ph, auto) => { const nome = id === "gSenha2" ? "senha de confirmação" : /Nova senha/.test(ph) ? "nova senha" : "senha"; return `<div style="display:grid;gap:5px"><label for="${id}" style="color:var(--muted);font-size:14px;font-weight:500">${esc(ph)}</label><div style="display:flex;gap:6px"><input id="${id}" type="password" autocomplete="${auto}" placeholder="${esc(ph)}" required aria-describedby="gmsg" style="${inp};flex:1;min-width:0"><button type="button" data-ver="${id}" data-nome="${nome}" aria-controls="${id}" aria-pressed="false" aria-label="Mostrar ${nome}" style="${btn2}">Mostrar</button></div></div>`; };
+  const campoCod = () => `<label for="gCod" style="display:grid;gap:5px;color:var(--muted);font-size:14px">Código enviado para <b>${esc(st.email)}</b><input id="gCod" inputmode="numeric" autocomplete="one-time-code" maxlength="10" placeholder="000000" required aria-describedby="gmsg" style="${inp};letter-spacing:.2em;font-size:20px"></label>`;
   const ir = (t, txt) => `<button type="button" data-ir="${t}" style="${lnk}">${txt}</button>`;
   const naoChegou = `<p style="margin:0;color:var(--muted);font-size:14px">Não chegou? Veja a caixa de spam e as promoções. O código vale por 1 hora.</p>`;
+  const TITULOS = { entrar: "Acesse sua conta", criar: "Crie sua conta", confirmar: "Confirme seu e-mail", esqueci: "Recuperar acesso", esqueci2: "Defina uma nova senha", codigo: "Entrar sem senha", codigo2: "Confirme o código", novaSenha: "Atualize sua senha", aguardando: "Acesso pendente" };
   const TELAS = {
     entrar: () => [`Entre na sua conta.`, `${campoEmail()}${campoSenha("gSenha", "Senha", "current-password")}<button id="gOk" style="${btn}">Entrar</button>`,
       ir("criar", "Criar conta") + ir("esqueci", "Esqueci minha senha")],
@@ -124,24 +198,30 @@ try { const t = localStorage.getItem("revisao-dpe-tema"); if (t === "claro" || t
     if (msg !== undefined) { st.msg = msg; st.ok = !!ok; }
     const [intro, corpo, links] = TELAS[st.tela]();
     $("#main").innerHTML = `<form id="gate" novalidate style="max-width:380px;margin:48px auto 0;padding:0 16px;display:grid;gap:12px">
-      <h1 style="font:600 22px var(--f-ui);margin:0">Review DPE</h1>
+      <h1 style="font:600 22px var(--f-ui);margin:0">${TITULOS[st.tela] || "Acesse sua conta"}</h1>
       <p style="margin:0;color:var(--muted)">${intro}</p>${corpo}
       <p id="gmsg" role="alert" style="margin:0;color:${st.ok ? "var(--ink)" : "var(--bad)"}">${esc(st.msg)}</p>
+      <p id="gstatus" role="status" aria-live="polite" aria-atomic="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0"></p>
       <div style="display:grid;gap:2px;justify-items:start">${links}</div></form>`;
     const f = $("#gate");
+    const save = $("#save"); if (save) { save.hidden = true; save.textContent = ""; }
     f.querySelectorAll("[data-ir]").forEach(b => b.onclick = () => { const e = $("#gEmail"); if (e) st.email = e.value.trim(); tela(b.dataset.ir, ""); });
-    f.querySelectorAll("[data-ver]").forEach(b => b.onclick = () => { const i = $("#" + b.dataset.ver), v = i.type === "password"; i.type = v ? "text" : "password"; b.textContent = v ? "Ocultar" : "Mostrar"; });
+    f.querySelectorAll("[data-ver]").forEach(b => b.onclick = () => { const i = $("#" + b.dataset.ver), v = i.type === "password"; i.type = v ? "text" : "password"; b.textContent = v ? "Ocultar" : "Mostrar"; b.setAttribute("aria-pressed", String(v)); b.setAttribute("aria-label", (v ? "Ocultar " : "Mostrar ") + b.dataset.nome); });
     const cod = $("#gCod"); if (cod) cod.oninput = () => { cod.value = cod.value.replace(/\D/g, ""); };
     const reenviar = $("#gReenviar"); if (reenviar) reenviar.onclick = () => rodar(reenviar, "Enviando…", REENVIAR[st.tela]);
-    const sair = $("#gSair"); if (sair) sair.onclick = () => { const c = lerConta(); gravarConta(c && c.email ? { email: c.email } : null); if (c && c.at) sb("/auth/v1/logout", {}, c.at).catch(() => {}); tela("entrar", ""); };
+    const sair = $("#gSair"); if (sair) sair.onclick = () => negarAcesso(lerConta(), "Você saiu da conta.");
     f.onsubmit = e => { e.preventDefault(); rodar($("#gOk"), "Aguarde…", ACOES[st.tela]); };
     const foco = f.querySelector("#gCod,#gSenha" + (st.email ? "" : ",#gEmail")) || f.querySelector("input"); if (foco) foco.focus();
   }
   async function rodar(b, txt, fn) {
     if (!fn) return;
-    const orig = b.textContent; b.disabled = true; b.textContent = txt;
+    const orig = b.textContent, form = b.closest("form"), status = $("#gstatus");
+    b.disabled = true; b.textContent = txt;
+    if (form) form.setAttribute("aria-busy", "true");
+    if (status) status.textContent = txt;
     try { await fn(); }
-    catch (e) { if (document.body.contains(b)) { b.disabled = false; b.textContent = orig; } const m = $("#gmsg"); if (m) { m.style.color = "var(--bad)"; m.textContent = e.message || "Algo deu errado. Tente de novo."; } }
+    catch (e) { if (document.body.contains(b)) { b.disabled = false; b.textContent = orig; } const m = $("#gmsg"); if (m) { m.style.color = "var(--bad)"; m.textContent = msgDecifrar(e) || e.message || "Algo deu errado. Tente de novo."; } }
+    finally { if (form && document.body.contains(form)) form.removeAttribute("aria-busy"); if (status && document.body.contains(status)) status.textContent = ""; }
   }
   const val = id => ($(id) || {}).value || "";
   const pegaEmail = () => (st.email = normEmail(val("#gEmail")));
@@ -210,13 +290,27 @@ try { const t = localStorage.getItem("revisao-dpe-tema"); if (t === "claro" || t
     const verif = verificadoEm(), recente = verif > 0 && Date.now() - verif < PRAZO;
     try {
       const raw = localStorage.getItem(KEY);
-      if (raw && recente) { const key = await crypto.subtle.importKey("raw", unb64(raw), "AES-GCM", false, ["decrypt"]); start(await tryKey(key)); revalidar(); return; }
-    } catch (_) { esquecerChave(); }   // versão nova do app: a chave muda e a conta busca a nova
+      const c = lerConta(), chaveDaConta = !!(raw && c && c.uid && localStorage.getItem(KEY_UID) === c.uid);
+      if (raw && recente && chaveDaConta) {
+        let enc;
+        try { enc = await carregarDeck(); }
+        catch (e) { st.msg = msgDecifrar(e) || "Não consegui carregar o conteúdo offline. Conecte-se e tente novamente."; }
+        if (enc) {
+          let deck = null;
+          try { const key = await crypto.subtle.importKey("raw", unb64(raw), "AES-GCM", false, ["decrypt"]); deck = await tryKey(key, enc); }
+          catch (_) { esquecerChave(); }   // versão nova do app: a chave muda e a conta busca a nova
+          if (deck !== null) {
+            try { await start(deck); revalidar(); return; }
+            catch (e) { st.msg = msgDecifrar(e) || "Não consegui iniciar o app. Atualize a página e tente de novo."; }
+          }
+        }
+      }
+    } catch (_) { esquecerChave(); }
     const c = lerConta();
     if (c && c.email) st.email = c.email;
     if (c && c.at) {
       try { if (await abrirComConta()) return; st.msg = "Sua sessão expirou. Entre de novo."; }
-      catch (e) { st.msg = e.rede && verif ? "Conecte-se à internet para confirmar a sua assinatura. O app pede isso a cada 7 dias." : e.message; }
+      catch (e) { st.msg = e.rede && verif ? "Conecte-se à internet para confirmar a sua assinatura. O app pede isso a cada 7 dias." : msgDecifrar(e) || e.message; }
     }
     else if (c && c.expirada) st.msg = "Sua sessão expirou. Entre de novo.";
     tela("entrar");

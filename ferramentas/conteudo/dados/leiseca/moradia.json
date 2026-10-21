@@ -1,0 +1,147 @@
+{
+ "id": "moradia",
+ "nome": "Moradia · Estatuto da Cidade, Reurb e bem de família",
+ "curto": "Moradia",
+ "disc": "df",
+ "fonte": "Seleção do Review DPE com os dispositivos mais cobrados em provas de Defensoria. Texto conferido em planalto.gov.br em 18/10/2026",
+ "grupos": [
+  {
+   "nome": "Estatuto da Cidade · Lei 10.257/2001",
+   "itens": [
+    {
+     "h": "Usucapião especial urbana"
+    },
+    {
+     "a": "9",
+     "x": "Art. 9º Aquele que possuir como sua área ou edificação urbana de até duzentos e cinqüenta metros quadrados, por cinco anos, ininterruptamente e sem oposição, utilizando-a para sua moradia ou de sua família, adquirir-lhe-á o domínio, desde que não seja proprietário de outro imóvel urbano ou rural.\n§ 1º O título de domínio será conferido ao homem ou à mulher, ou a ambos, independentemente do estado civil.\n§ 2º O direito de que trata este artigo não será reconhecido ao mesmo possuidor mais de uma vez.\n§ 3º Para os efeitos deste artigo, o herdeiro legítimo continua, de pleno direito, a posse de seu antecessor, desde que já resida no imóvel por ocasião da abertura da sucessão."
+    },
+    {
+     "a": "10",
+     "x": "Art. 10. Os núcleos urbanos informais existentes sem oposição há mais de cinco anos e cuja área total dividida pelo número de possuidores seja inferior a duzentos e cinquenta metros quadrados por possuidor são suscetíveis de serem usucapidos coletivamente, desde que os possuidores não sejam proprietários de outro imóvel urbano ou rural. (Redação dada pela lei nº 13.465, de 2017)\n§ 1º O possuidor pode, para o fim de contar o prazo exigido por este artigo, acrescentar sua posse à de seu antecessor, contanto que ambas sejam contínuas.\n§ 2º A usucapião especial coletiva de imóvel urbano será declarada pelo juiz, mediante sentença, a qual servirá de título para registro no cartório de registro de imóveis.\n§ 3º Na sentença, o juiz atribuirá igual fração ideal de terreno a cada possuidor, independentemente da dimensão do terreno que cada um ocupe, salvo hipótese de acordo escrito entre os condôminos, estabelecendo frações ideais diferenciadas.\n§ 4º O condomínio especial constituído é indivisível, não sendo passível de extinção, salvo deliberação favorável tomada por, no mínimo, dois terços dos condôminos, no caso de execução de urbanização posterior à constituição do condomínio.\n§ 5º As deliberações relativas à administração do condomínio especial serão tomadas por maioria de votos dos condôminos presentes, obrigando também os demais, discordantes ou ausentes."
+    },
+    {
+     "a": "12",
+     "x": "Art. 12. São partes legítimas para a propositura da ação de usucapião especial urbana:\nI – o possuidor, isoladamente ou em litisconsórcio originário ou superveniente;\nII – os possuidores, em estado de composse;\nIII – como substituto processual, a associação de moradores da comunidade, regularmente constituída, com personalidade jurídica, desde que explicitamente autorizada pelos representados.\n§ 1º Na ação de usucapião especial urbana é obrigatória a intervenção do Ministério Público.\n§ 2º O autor terá os benefícios da justiça e da assistência judiciária gratuita, inclusive perante o cartório de registro de imóveis."
+    },
+    {
+     "a": "14",
+     "x": "Art. 14. Na ação judicial de usucapião especial de imóvel urbano, o rito processual a ser observado é o sumário."
+    },
+    {
+     "h": "Função social"
+    },
+    {
+     "a": "39",
+     "x": "Art. 39. A propriedade urbana cumpre sua função social quando atende às exigências fundamentais de ordenação da cidade expressas no plano diretor, assegurando o atendimento das necessidades dos cidadãos quanto à qualidade de vida, à justiça social e ao desenvolvimento das atividades econômicas, respeitadas as diretrizes previstas no art. 2o desta Lei."
+    }
+   ],
+   "pre": "Est. Cidade"
+  },
+  {
+   "nome": "Reurb · Lei 13.465/2017",
+   "itens": [
+    {
+     "a": "10",
+     "x": "Art. 10. Constituem objetivos da Reurb, a serem observados pela União, Estados, Distrito Federal e Municípios:\nI - identificar os núcleos urbanos informais que devam ser regularizados, organizá-los e assegurar a prestação de serviços públicos aos seus ocupantes, de modo a melhorar as condições urbanísticas e ambientais em relação à situação de ocupação informal anterior;\nII - criar unidades imobiliárias compatíveis com o ordenamento territorial urbano e constituir sobre elas direitos reais em favor dos seus ocupantes;\nIII - ampliar o acesso à terra urbanizada pela população de baixa renda, de modo a priorizar a permanência dos ocupantes nos próprios núcleos urbanos informais regularizados;\nIV - promover a integração social e a geração de emprego e renda;\nV - estimular a resolução extrajudicial de conflitos, em reforço à consensualidade e à cooperação entre Estado e sociedade;\nVI - garantir o direito social à moradia digna e às condições de vida adequadas;\nVII - garantir a efetivação da função social da propriedade;\nVIII - ordenar o pleno desenvolvimento das funções sociais da cidade e garantir o bem-estar de seus habitantes;\nIX - concretizar o princípio constitucional da eficiência na ocupação e no uso do solo;\nX - prevenir e desestimular a formação de novos núcleos urbanos informais;\nXI - conceder direitos reais, preferencialmente em nome da mulher;\nXII - franquear participação dos interessados nas etapas do processo de regularização fundiária."
+    },
+    {
+     "a": "13",
+     "x": "Art. 13. A Reurb compreende duas modalidades:\nI - Reurb de Interesse Social (Reurb-S) - regularização fundiária aplicável aos núcleos urbanos informais ocupados predominantemente por população de baixa renda, assim declarados em ato do Poder Executivo municipal; e\nII - Reurb de Interesse Específico (Reurb-E) - regularização fundiária aplicável aos núcleos urbanos informais ocupados por população não qualificada na hipótese de que trata o inciso I deste artigo.\n§ 1º Serão isentos de custas e emolumentos, entre outros, os seguintes atos registrais relacionados à Reurb-S:\nI - o primeiro registro da Reurb-S, o qual confere direitos reais aos seus beneficiários;\nII - o registro da legitimação fundiária;\nIII - o registro do título de legitimação de posse e a sua conversão em título de propriedade;\nIV - o registro da CRF e do projeto de regularização fundiária, com abertura de matrícula para cada unidade imobiliária urbana regularizada;\nV - a primeira averbação de construção residencial, desde que respeitado o limite de até setenta metros quadrados;\nVI - a aquisição do primeiro direito real sobre unidade imobiliária derivada da Reurb-S;\nVII - o primeiro registro do direito real de laje no âmbito da Reurb-S; e\nVIII - o fornecimento de certidões de registro para os atos previstos neste artigo.\n§ 2º Os atos de que trata este artigo independem da comprovação do pagamento de tributos ou penalidades tributárias, sendo vedado ao oficial de registro de imóveis exigir sua comprovação.\n§ 3º O disposto nos §§ 1º e 2º deste artigo aplica-se também à Reurb-S que tenha por objeto conjuntos habitacionais ou condomínios de interesse social construídos pelo poder público, diretamente ou por meio da administração pública indireta, que já se encontrem implantados em 22 de dezembro de 2016."
+    }
+   ],
+   "pre": "Reurb"
+  },
+  {
+   "nome": "Bem de família · Lei 8.009/1990",
+   "itens": [
+    {
+     "a": "1",
+     "x": "Art. 1º O imóvel residencial próprio do casal, ou da entidade familiar, é impenhorável e não responderá por qualquer tipo de dívida civil, comercial, fiscal, previdenciária ou de outra natureza, contraída pelos cônjuges ou pelos pais ou filhos que sejam seus proprietários e nele residam, salvo nas hipóteses previstas nesta lei.\nParágrafo único. A impenhorabilidade compreende o imóvel sobre o qual se assentam a construção, as plantações, as benfeitorias de qualquer natureza e todos os equipamentos, inclusive os de uso profissional, ou móveis que guarnecem a casa, desde que quitados."
+    },
+    {
+     "a": "3",
+     "x": "Art. 3º A impenhorabilidade é oponível em qualquer processo de execução civil, fiscal, previdenciária, trabalhista ou de outra natureza, salvo se movido:\nII - pelo titular do crédito decorrente do financiamento destinado à construção ou à aquisição do imóvel, no limite dos créditos e acréscimos constituídos em função do respectivo contrato;\nIII – pelo credor da pensão alimentícia, resguardados os direitos, sobre o bem, do seu coproprietário que, com o devedor, integre união estável ou conjugal, observadas as hipóteses em que ambos responderão pela dívida; (Redação dada pela Lei nº 13.144 de 2015)\nIV - para cobrança de impostos, predial ou territorial, taxas e contribuições devidas em função do imóvel familiar;\nV - para execução de hipoteca sobre o imóvel oferecido como garantia real pelo casal ou pela entidade familiar;\nVI - por ter sido adquirido com produto de crime ou para execução de sentença penal condenatória a ressarcimento, indenização ou perdimento de bens.\nVII - por obrigação decorrente de fiança concedida em contrato de locação. (Incluído pela Lei nº 8.245, de 1991)"
+    },
+    {
+     "a": "5",
+     "x": "Art. 5º Para os efeitos de impenhorabilidade, de que trata esta lei, considera-se residência um único imóvel utilizado pelo casal ou pela entidade familiar para moradia permanente.\nParágrafo único. Na hipótese de o casal, ou entidade familiar, ser possuidor de vários imóveis utilizados como residência, a impenhorabilidade recairá sobre o de menor valor, salvo se outro tiver sido registrado, para esse fim, no Registro de Imóveis e na forma do art. 70 do Código Civil."
+    }
+   ],
+   "pre": "Lei 8.009"
+  }
+ ],
+ "cartoes": [
+  {
+   "g": 0,
+   "a": "9",
+   "origem": "Est. Cidade, art. 9",
+   "tema": "Usucapião urbana",
+   "frente": "Estatuto da Cidade, art. 9º: a usucapião especial urbana individual exige posse de área urbana de até ____ m², por ____ anos, ininterrupta e sem oposição, para moradia, sem ser proprietário de outro imóvel.",
+   "verso": "250; cinco (Lei 10.257, art. 9º).",
+   "porque": "Mesmo requisito do art. 183 da CF; o direito não é reconhecido ao mesmo possuidor mais de uma vez (§ 2º)."
+  },
+  {
+   "g": 0,
+   "a": "10",
+   "origem": "Est. Cidade, art. 10",
+   "tema": "Usucapião urbana",
+   "frente": "Estatuto da Cidade, art. 10: núcleos urbanos informais com mais de 5 anos, sem oposição, cuja área total dividida pelo número de possuidores seja inferior a ____ m² por possuidor, podem ser usucapidos ____.",
+   "verso": "250; coletivamente (Lei 10.257, art. 10).",
+   "porque": "Na sentença, cada possuidor recebe igual fração ideal, salvo acordo escrito (§ 3º)."
+  },
+  {
+   "g": 0,
+   "a": "12",
+   "origem": "Est. Cidade, art. 12",
+   "tema": "Usucapião urbana",
+   "frente": "Estatuto da Cidade, art. 12, III: a associação de moradores pode propor a usucapião especial urbana como ____, desde que explicitamente autorizada pelos representados.",
+   "verso": "Substituto processual (Lei 10.257, art. 12, III).",
+   "porque": "A intervenção do MP é obrigatória (§ 1º) e o autor tem gratuidade inclusive no registro de imóveis (§ 2º)."
+  },
+  {
+   "g": 0,
+   "a": "14",
+   "origem": "Est. Cidade, art. 14",
+   "tema": "Usucapião urbana",
+   "frente": "Estatuto da Cidade, art. 14: na ação de usucapião especial de imóvel urbano, o rito previsto na lei é o ____.",
+   "verso": "Sumário (Lei 10.257, art. 14).",
+   "porque": "Com o CPC/2015, que extinguiu o rito sumário, aplica-se o procedimento comum."
+  },
+  {
+   "g": 1,
+   "a": "13",
+   "origem": "Reurb, art. 13",
+   "tema": "Reurb",
+   "frente": "Lei 13.465/2017, art. 13, I: a Reurb-S é a regularização de núcleos urbanos informais ocupados predominantemente por ____, assim declarados em ato do Poder Executivo municipal.",
+   "verso": "População de baixa renda (Lei 13.465, art. 13, I).",
+   "porque": "A Reurb-E se aplica aos demais casos; os atos registrais da Reurb-S são isentos de custas e emolumentos (§ 1º)."
+  },
+  {
+   "g": 1,
+   "a": "10",
+   "origem": "Reurb, art. 10",
+   "tema": "Reurb",
+   "frente": "Lei 13.465/2017, art. 10, XI: é objetivo da Reurb conceder direitos reais, preferencialmente em nome ____.",
+   "verso": "Da mulher (Lei 13.465, art. 10, XI).",
+   "porque": "Também é objetivo garantir o direito social à moradia digna (inciso VI)."
+  },
+  {
+   "g": 2,
+   "a": "3",
+   "origem": "Lei 8.009, art. 3",
+   "tema": "Bem de família",
+   "frente": "Lei 8.009/90, art. 3º, VII: a impenhorabilidade do bem de família não é oponível em execução de obrigação decorrente de ____ concedida em contrato de locação.",
+   "verso": "Fiança (Lei 8.009, art. 3º, VII).",
+   "porque": "O STF (Tema 1127) admite a penhora do bem de família do fiador tanto na locação residencial quanto na comercial."
+  },
+  {
+   "g": 2,
+   "a": "5",
+   "origem": "Lei 8.009, art. 5",
+   "tema": "Bem de família",
+   "frente": "Lei 8.009/90, art. 5º, parágrafo único: se a entidade familiar tiver vários imóveis usados como residência, a impenhorabilidade recai sobre o de ____ valor, salvo registro de outro.",
+   "verso": "Menor (Lei 8.009, art. 5º, parágrafo único).",
+   "porque": "A Súmula 364 do STJ estende a proteção ao imóvel de pessoa solteira, separada ou viúva."
+  }
+ ]
+}

@@ -1,0 +1,1419 @@
+{
+ "id": "dpesp-2025-propria",
+ "nome": "DPE-SP 2025",
+ "cargo": "Carreiras jurídicas · concurso de banca própria da Defensoria de SP",
+ "banca": "banca própria (DPE-SP)",
+ "gabarito": "oficial",
+ "questoes": [
+  {
+   "n": 1,
+   "materia": "Direito Administrativo",
+   "assunto": "Princípio da Publicidade e Eficiência",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "O princípio da eficiência na Administração Pública implica:",
+   "alternativas": {
+    "A": "A realização de atos com rapidez, mesmo sem legalidade.",
+    "B": "A busca por menor custo, independentemente da qualidade.",
+    "C": "A obtenção do melhor resultado com o menor custo possível, observada a legalidade.",
+    "D": "A anulação de atos regulares mas lentos.",
+    "E": "A terceirização obrigatória de serviços públicos."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 2,
+   "materia": "Direito Administrativo",
+   "assunto": "Responsabilidade Civil do Estado",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "De acordo com jurisprudência do STF, é correto afirmar que:",
+   "alternativas": {
+    "A": "O Estado não é responsável pelos ferimentos causados pela polícia a jornalistas.",
+    "B": "Há responsabilidade objetiva do Estado por danos causados a jornalistas em manifestações.",
+    "C": "A polícia pode impedir qualquer cobertura de imprensa por motivo de segurança.",
+    "D": "O jornalista não tem garantia de proteção constitucional em eventos públicos.",
+    "E": "O uso da força em manifestações impede qualquer responsabilização estatal."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 3,
+   "materia": "Direito Administrativo",
+   "assunto": "Princípios implícitos e princípios infraconstitucionais do direito administrativo",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "O princípio da moralidade administrativa:",
+   "alternativas": {
+    "A": "Não se aplica aos agentes políticos.",
+    "B": "É requisito de validade do ato administrativo.",
+    "C": "Pode ser relativizado por conveniência e oportunidade.",
+    "D": "Exige apenas adequação à lei.",
+    "E": "Refere-se exclusivamente à conduta ética privada do agente."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 4,
+   "materia": "Direito Administrativo",
+   "assunto": "Atos Administrativos",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "O controle exercido pela sociedade sobre os atos da Administração Pública denomina-se:",
+   "alternativas": {
+    "A": "Controle legislativo.",
+    "B": "Controle jurisdicional.",
+    "C": "Controle interno.",
+    "D": "Controle popular ou social.",
+    "E": "Controle financeiro."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 5,
+   "materia": "Direito Administrativo",
+   "assunto": "Licitações e Contratos Administrativos",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A licitação é inexigível quando:",
+   "alternativas": {
+    "A": "Houver restrição orçamentária no órgão público.",
+    "B": "A Administração optar pela contratação mais célere.",
+    "C": "Não for possível a competição entre fornecedores.",
+    "D": "A urgência impedir a tramitação regular do procedimento.",
+    "E": "Houver necessidade de parcelamento da execução."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 6,
+   "materia": "Direito Administrativo",
+   "assunto": "Contratos Administrativos e Negócios Jurídicos da Administração",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "O princípio do equilíbrio econômico-financeiro nos contratos administrativos garante:",
+   "alternativas": {
+    "A": "O direito à revisão contratual unilateral pelo contratado.",
+    "B": "O reajuste dos valores sempre que houver inflação.",
+    "C": "A manutenção das condições originais da contratação frente a fatos imprevisíveis.",
+    "D": "O repasse integral de todos os riscos ao Estado.",
+    "E": "A vedação à rescisão contratual por qualquer das partes."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 7,
+   "materia": "Direito Administrativo",
+   "assunto": "Administração Pública e Organização Administrativa",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "O poder disciplinar da Administração Pública autoriza:",
+   "alternativas": {
+    "A": "Julgamento de ações penais contra servidores.",
+    "B": "Investigação de atos de particulares em contratos privados.",
+    "C": "Aplicação de sanções a seus servidores e a particulares com vínculo jurídico com o Estado.",
+    "D": "Controle da moralidade da conduta de qualquer cidadão.",
+    "E": "Redução de vencimentos a critério do gestor público."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 8,
+   "materia": "Direito Administrativo",
+   "assunto": "Princípios básicos e correlatos.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Configura violação ao princípio da segregação de funções:",
+   "alternativas": {
+    "A": "A atuação do pregoeiro no julgamento de propostas.",
+    "B": "O mesmo servidor elaborar projeto básico e atuar como pregoeiro.",
+    "C": "A elaboração de edital por servidor não efetivo.",
+    "D": "A contratação direta sem processo licitatório.",
+    "E": "A participação do gestor no julgamento de lances."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 9,
+   "materia": "Direito Administrativo",
+   "assunto": "Agentes Públicos e Servidores",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A transferência de servidor público entre unidades administrativas do mesmo município:",
+   "alternativas": {
+    "A": "Depende de remoção disciplinar.",
+    "B": "Exige obrigatoriamente permuta.",
+    "C": "Pode ocorrer como relotação, desde que haja interesse público.",
+    "D": "Depende de concurso interno específico.",
+    "E": "Somente é possível mediante ato do governador."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 10,
+   "materia": "Direito Administrativo",
+   "assunto": "Modalidades de licitação: concorrência, pregão, concurso, leilão, diálogo competitivo, consulta.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Sobre o diálogo competitivo, modalidade de licitação da nova Lei nº 14.133/2021, é correto afirmar:",
+   "alternativas": {
+    "A": "Está restrita a obras e serviços comuns.",
+    "B": "Dispensa a fase de julgamento.",
+    "C": "Exige que o edital seja elaborado com apoio técnico externo.",
+    "D": "Permite a interação prévia com licitantes para definição da solução.",
+    "E": "É exclusiva para compras internacionais."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 11,
+   "materia": "Direito Administrativo",
+   "assunto": "Serviços Públicos",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "De acordo com a Constituição Federal, é vedada a acumulação remunerada de cargos públicos, exceto quando:",
+   "alternativas": {
+    "A": "Ambos forem de natureza comissionada.",
+    "B": "Houver compatibilidade de horários e forem dois cargos de professor.",
+    "C": "Um dos cargos for técnico-administrativo.",
+    "D": "Houver decisão judicial autorizando.",
+    "E": "Ambos forem da área militar."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 12,
+   "materia": "Direito Administrativo",
+   "assunto": "Responsabilidade Civil do Estado",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Em caso de dano moral causado por agente público no exercício da função:",
+   "alternativas": {
+    "A": "A vítima deve processar diretamente o agente.",
+    "B": "O Estado responde subjetivamente.",
+    "C": "O Estado responde objetivamente.",
+    "D": "Não há possibilidade de indenização.",
+    "E": "O agente é sempre responsabilizado solidariamente."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 13,
+   "materia": "Direito Administrativo",
+   "assunto": "Licitações e Contratos Administrativos",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Na fase de habilitação, é exigido do licitante:",
+   "alternativas": {
+    "A": "Apenas proposta técnica.",
+    "B": "Comprovação de capacidade econômico-financeira.",
+    "C": "Certidão negativa de protesto.",
+    "D": "Carta de intenções do fornecedor.",
+    "E": "Indicação de garantia real."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 14,
+   "materia": "Direito Administrativo",
+   "assunto": "Responsabilidade Civil do Estado",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A responsabilidade civil objetiva do Estado baseia-se:",
+   "alternativas": {
+    "A": "No dolo ou culpa do agente público.",
+    "B": "Na teoria da culpa administrativa.",
+    "C": "Na teoria do risco integral.",
+    "D": "Na teoria do risco administrativo.",
+    "E": "Na teoria do enriquecimento sem causa."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 15,
+   "materia": "Direito Administrativo",
+   "assunto": "Extinção dos atos administrativos: cassação, anulação, revogação, convalidação e sanatória.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A revogação do ato administrativo ocorre:",
+   "alternativas": {
+    "A": "Quando o ato for ilegal.",
+    "B": "Para corrigir vícios de competência.",
+    "C": "Quando o ato se tornar inconveniente ou inoportuno.",
+    "D": "Para anular direitos adquiridos.",
+    "E": "Quando o ato for nulo de pleno direito."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 16,
+   "materia": "Direito Administrativo",
+   "assunto": "Estabilidade.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Nos termos da Constituição Federal, o servidor público nomeado para cargo de provimento efetivo adquire estabilidade:",
+   "alternativas": {
+    "A": "No momento da posse.",
+    "B": "Após 12 meses de efetivo exercício.",
+    "C": "Depois de avaliação de desempenho com nota mínima 7.",
+    "D": "Após 3 anos de efetivo exercício, se aprovado em avaliação especial.",
+    "E": "Ao ser aprovado em estágio probatório de 6 meses."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 17,
+   "materia": "Direito Administrativo",
+   "assunto": "Atos Administrativos",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "São elementos do ato administrativo, EXCETO:",
+   "alternativas": {
+    "A": "Competência.",
+    "B": "Finalidade.",
+    "C": "Forma.",
+    "D": "Prazo.",
+    "E": "Motivo."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 18,
+   "materia": "Direito Administrativo",
+   "assunto": "Serviços Públicos",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "É princípio básico dos serviços públicos:",
+   "alternativas": {
+    "A": "Lucro como prioridade na gestão do serviço.",
+    "B": "Exclusividade da iniciativa privada.",
+    "C": "Universalidade do acesso e continuidade.",
+    "D": "Redução obrigatória de tarifas em todos os casos.",
+    "E": "Regulação apenas por entidades privadas."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 19,
+   "materia": "Direito Administrativo",
+   "assunto": "Licitações e Contratos Administrativos",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "É princípio da licitação pública:",
+   "alternativas": {
+    "A": "Sigilo das propostas antes da adjudicação.",
+    "B": "Menor preço em qualquer hipótese.",
+    "C": "Publicidade e isonomia entre os licitantes.",
+    "D": "Preferência à contratação direta.",
+    "E": "Exclusão de propostas de MEIs."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 20,
+   "materia": "Direito Ambiental",
+   "assunto": "Princípio da prevenção.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Segundo entendimento do STF, fere o princípio da prevenção:",
+   "alternativas": {
+    "A": "A exigência de dados extras de segurança ambiental.",
+    "B": "A revogação de normas protetivas sem substituição.",
+    "C": "A concessão automática de licenças a empresas de médio risco.",
+    "D": "A atuação conjunta de entes federativos.",
+    "E": "A criação de órgão ambiental específico por Estado."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 21,
+   "materia": "Direito Civil",
+   "assunto": "Personalidade e capacidade.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A personalidade civil da pessoa natural começa:",
+   "alternativas": {
+    "A": "Com a concepção.",
+    "B": "Com a maioridade.",
+    "C": "Com o nascimento com vida.",
+    "D": "Com o registro civil.",
+    "E": "Aos 18 anos completos."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 22,
+   "materia": "Direito Civil",
+   "assunto": "Direito das Obrigações",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Em caso de inadimplemento absoluto da obrigação, o credor:",
+   "alternativas": {
+    "A": "Deve aceitar o cumprimento parcial.",
+    "B": "Pode exigir perdas e danos.",
+    "C": "Perde o direito à prestação.",
+    "D": "É obrigado a conceder novo prazo.",
+    "E": "Pode anular o contrato de pleno direito."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 23,
+   "materia": "Direito Civil",
+   "assunto": "Responsabilidade Civil",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A indenização por dano moral, segundo a jurisprudência do STJ:",
+   "alternativas": {
+    "A": "Deve ser fixada de forma simbólica, apenas para reconhecimento do ilícito.",
+    "B": "Tem valor tarifado em lei e não admite variação.",
+    "C": "Deve observar critérios de razoabilidade, considerando a extensão do dano e a capacidade econômica do ofensor.",
+    "D": "Somente é cabível quando houver lesão corporal.",
+    "E": "É substituída por pedido de retratação pública."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 24,
+   "materia": "Direito Civil",
+   "assunto": "Emancipação.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A emancipação de pessoa menor de 18 anos:",
+   "alternativas": {
+    "A": "Apenas ocorre por decisão judicial.",
+    "B": "Nunca pode ser concedida aos 16 anos.",
+    "C": "Pode ocorrer por casamento, mesmo sem autorização dos pais.",
+    "D": "Dá capacidade plena para todos os atos da vida civil.",
+    "E": "Retira a obrigação dos pais de prestar alimentos."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 25,
+   "materia": "Direito Civil",
+   "assunto": "Obrigações solidárias.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Em uma obrigação solidária ativa:",
+   "alternativas": {
+    "A": "O devedor escolhe a quem pagar.",
+    "B": "Cada credor só pode cobrar sua parte.",
+    "C": "Qualquer credor pode exigir a totalidade da prestação.",
+    "D": "Todos os credores devem ajuizar a ação em conjunto.",
+    "E": "Cada credor responde por si, mas paga pelo outro."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 26,
+   "materia": "Direito Constitucional",
+   "assunto": "Poder Executivo",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Compete privativamente ao Presidente da República:",
+   "alternativas": {
+    "A": "Expedir medidas provisórias.",
+    "B": "Votar nas sessões do Congresso Nacional.",
+    "C": "Elaborar as leis orçamentárias.",
+    "D": "Nomear e exonerar os Ministros de Estado.",
+    "E": "Propor emendas à Constituição."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 27,
+   "materia": "Direito Constitucional",
+   "assunto": "Intervenção",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A intervenção federal poderá ocorrer:",
+   "alternativas": {
+    "A": "Sempre que o Presidente desejar.",
+    "B": "Por infração de qualquer norma infraconstitucional.",
+    "C": "Para assegurar o livre exercício dos Poderes nas unidades da Federação.",
+    "D": "Quando o governador solicitar auxílio para obras públicas.",
+    "E": "Como medida disciplinar contra Estados inadimplentes."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 28,
+   "materia": "Direito Constitucional",
+   "assunto": "Ação Direta de Inconstitucionalidade por Omissão (ADO).",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "O mandado de injunção é cabível:",
+   "alternativas": {
+    "A": "Quando há ameaça ao direito líquido e certo.",
+    "B": "Contra atos omissivos de autoridades administrativas.",
+    "C": "Para suprir a ausência de norma regulamentadora que torne inviável o exercício de direito constitucional.",
+    "D": "Para garantir a anulação de ato administrativo ilegal.",
+    "E": "Quando o direito for patrimonial."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 29,
+   "materia": "Direito Constitucional",
+   "assunto": "Habeas corpus.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "O habeas corpus pode ser impetrado:",
+   "alternativas": {
+    "A": "Apenas pelo defensor público.",
+    "B": "Mediante o recolhimento de custas judiciais.",
+    "C": "Por qualquer pessoa, em seu favor ou de outrem.",
+    "D": "Somente após o trânsito em julgado.",
+    "E": "Exclusivamente por advogado com procuração específica."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 30,
+   "materia": "Direito Constitucional",
+   "assunto": "Medidas Provisórias: conceito, limites e controle.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A Medida Provisória:",
+   "alternativas": {
+    "A": "Tem vigência por 90 dias, prorrogáveis por igual período.",
+    "B": "Não pode tratar de matéria penal.",
+    "C": "É ato normativo primário de iniciativa exclusiva do Congresso Nacional.",
+    "D": "Depende de aprovação prévia do STF.",
+    "E": "Deve ser submetida imediatamente ao Congresso Nacional."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 31,
+   "materia": "Direito Constitucional",
+   "assunto": "Poder Legislativo",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A fiscalização contábil, financeira e orçamentária da União é exercida:",
+   "alternativas": {
+    "A": "Exclusivamente pelo Presidente da República.",
+    "B": "Pelos Tribunais de Contas estaduais.",
+    "C": "Pelo Poder Judiciário em parceria com o MP.",
+    "D": "Pelo Congresso Nacional, com o auxílio do Tribunal de Contas da União.",
+    "E": "Apenas pelo Ministério da Economia."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 32,
+   "materia": "Direito Constitucional",
+   "assunto": "Povos tradicionais: indígenas, quilombolas, ciganos, ribeirinhos, comunidades de terreiro, pescadores artesanais e outros.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "De acordo com o STF, as terras tradicionalmente ocupadas pelos povos indígenas:",
+   "alternativas": {
+    "A": "são inalienáveis, disponíveis e de posse provisória da União.",
+    "B": "pertencem aos Estados, podendo ser arrendadas.",
+    "C": "são de posse permanente dos indígenas, com usufruto exclusivo da União.",
+    "D": "são passíveis de compra e venda mediante decisão judicial.",
+    "E": "devem ser exploradas por empresas privadas sob concessão da União."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 33,
+   "materia": "Direito Constitucional",
+   "assunto": "União, Estados, DF, Municípios e Territórios",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Conforme a Constituição do Estado de São Paulo, quem pode propor ação de inconstitucionalidade estadual?",
+   "alternativas": {
+    "A": "Qualquer cidadão que demonstre interesse jurídico.",
+    "B": "Apenas o Governador do Estado.",
+    "C": "A Defensoria Pública, como substituto processual.",
+    "D": "O Procurador-Geral do Estado, dentre outros legitimados.",
+    "E": "Apenas as Mesas das Câmaras Municipais."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 34,
+   "materia": "Direito Constitucional",
+   "assunto": "Defesa do Estado e das Instituições Democráticas",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Assinale a alternativa que apresenta uma característica comum ao estado de defesa e ao estado de sítio:",
+   "alternativas": {
+    "A": "Vigência máxima de 15 dias, sem possibilidade de prorrogação.",
+    "B": "Decretação por ato conjunto do Congresso Nacional e do STF.",
+    "C": "Oitiva prévia obrigatória dos Conselhos da República e de Defesa Nacional.",
+    "D": "Abrangência apenas municipal, dependendo da urgência.",
+    "E": "Aplicação exclusivamente em casos de calamidade pública."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 35,
+   "materia": "Direito Constitucional",
+   "assunto": "Liberdades públicas (expressão, reunião, associação, locomoção, crença e consciência).",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Segundo decisão do STF com efeito vinculante, o fenômeno da desinformação na internet:",
+   "alternativas": {
+    "A": "Deve ser tolerado como consequência da liberdade de expressão.",
+    "B": "Justifica a criação de um órgão censor independente.",
+    "C": "Pode restringir a formação livre da vontade do eleitor.",
+    "D": "Não afeta significativamente os processos democráticos.",
+    "E": "É combatido exclusivamente por redes sociais."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 36,
+   "materia": "Direito Constitucional",
+   "assunto": "Autonomia, bens e competências; regiões metropolitanas, aglomerações urbanas e microrregiões.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Segundo jurisprudência do STF, sobre regiões metropolitanas é correto afirmar:",
+   "alternativas": {
+    "A": "Devem ser criadas por lei federal.",
+    "B": "São entes federativos com autonomia plena.",
+    "C": "Possuem personalidade jurídica própria.",
+    "D": "Devem ter governança paritária entre estado e municípios.",
+    "E": "Podem substituir os municípios em funções administrativas."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 37,
+   "materia": "Direito Constitucional",
+   "assunto": "Igualdade formal e material.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A igualdade material prevista na Constituição Federal exige:",
+   "alternativas": {
+    "A": "Tratamento absolutamente igual a todos.",
+    "B": "Ausência de qualquer diferenciação legal.",
+    "C": "Medidas de discriminação positiva para equilíbrio de grupos vulneráveis.",
+    "D": "Afastamento da legalidade estrita.",
+    "E": "Adoção de normas apenas genéricas."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 38,
+   "materia": "Direito Constitucional",
+   "assunto": "Educação, saúde, trabalho, moradia, lazer, previdência, maternidade e infância, assistência social.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A saúde é um direito:",
+   "alternativas": {
+    "A": "Exclusivo dos trabalhadores contribuintes.",
+    "B": "Fundamental, garantido mediante políticas públicas.",
+    "C": "Vinculado ao princípio da subsidiariedade estatal.",
+    "D": "Que pode ser condicionado à capacidade contributiva.",
+    "E": "Vinculado apenas à seguridade social contributiva."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 39,
+   "materia": "Direito Constitucional",
+   "assunto": "Teoria da Constituição",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "O princípio da reserva legal determina que:",
+   "alternativas": {
+    "A": "Os direitos fundamentais podem ser restringidos por decretos.",
+    "B": "Apenas a lei pode criar ou restringir direitos e obrigações.",
+    "C": "O Judiciário pode suprimir direitos por conveniência.",
+    "D": "As normas administrativas são suficientes para criar deveres.",
+    "E": "A Constituição pode ser modificada por medida provisória."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 40,
+   "materia": "Direito Constitucional",
+   "assunto": "Liberdades públicas (expressão, reunião, associação, locomoção, crença e consciência).",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Sobre a liberdade de expressão segundo a Constituição Federal, é correto afirmar:",
+   "alternativas": {
+    "A": "Pode ser restringida por medida provisória.",
+    "B": "Garante a livre manifestação do pensamento, vedado o anonimato.",
+    "C": "Permite o anonimato como forma de proteger o direito à privacidade.",
+    "D": "Confere imunidade a qualquer discurso, inclusive ofensivo.",
+    "E": "É um direito exclusivo da imprensa."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 41,
+   "materia": "Direito Eleitoral",
+   "assunto": "Inelegibilidades constitucionais e infraconstitucionais.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A Lei da Ficha Limpa prevê que será inelegível:",
+   "alternativas": {
+    "A": "O servidor público demitido há mais de 10 anos.",
+    "B": "O candidato com condenação criminal ainda não transitada em julgado.",
+    "C": "Quem tiver condenação por órgão colegiado por ato doloso de improbidade administrativa.",
+    "D": "Qualquer cidadão investigado em inquérito civil.",
+    "E": "Aquele que não tenha prestado contas de campanha, mesmo com aprovação posterior."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 42,
+   "materia": "Direito Eleitoral",
+   "assunto": "Alistamento eleitoral",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "O alistamento eleitoral e o voto são:",
+   "alternativas": {
+    "A": "Facultativos para os maiores de 70 anos e obrigatórios a partir dos 21.",
+    "B": "Obrigatórios apenas para quem exerce função pública.",
+    "C": "Obrigatórios para maiores de 18 anos e facultativos para analfabetos, maiores de 70 anos e entre 16 e 18 anos.",
+    "D": "Facultativos em caso de doença ou viagem.",
+    "E": "Obrigatórios para todos os maiores de 16 anos."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 43,
+   "materia": "Direito Internacional",
+   "assunto": "Povo e nacionalidade",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Segundo a jurisprudência atual do STF, a perda da nacionalidade brasileira:",
+   "alternativas": {
+    "A": "É automática com a aquisição de qualquer outra nacionalidade.",
+    "B": "Exige renúncia expressa, independentemente de motivação.",
+    "C": "Pode ser evitada se a nacionalidade estrangeira for adquirida por imposição legal.",
+    "D": "Acontece sempre que houver dupla cidadania.",
+    "E": "É irreversível, salvo decisão do Congresso Nacional."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 44,
+   "materia": "Direito Internacional",
+   "assunto": "Povo e nacionalidade",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Considerando o caso de Jaime, adotado por estrangeiros e nascido no Brasil, ele é:",
+   "alternativas": {
+    "A": "Apátrida.",
+    "B": "Brasileiro naturalizado.",
+    "C": "Brasileiro nato.",
+    "D": "Quase-nacional.",
+    "E": "Estrangeiro residente."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 45,
+   "materia": "Direito Internacional",
+   "assunto": "Povo e nacionalidade",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "São considerados brasileiros naturalizados, conforme a CF:",
+   "alternativas": {
+    "A": "Os nascidos no estrangeiro, filhos de pais brasileiros, ainda que não registrados no consulado.",
+    "B": "Os que adquirirem nacionalidade brasileira por meio de casamento.",
+    "C": "Os estrangeiros de qualquer nacionalidade que requeiram a nacionalidade após residência por prazo legal e fluência em português.",
+    "D": "Apenas os estrangeiros que se tornarem brasileiros por sentença judicial.",
+    "E": "Os residentes no exterior por mais de 15 anos."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 46,
+   "materia": "Direito Penal",
+   "assunto": "Imputabilidade Penal e Concurso de Pessoas",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "É penalmente inimputável:",
+   "alternativas": {
+    "A": "Quem age por motivo torpe.",
+    "B": "O maior de 16 e menor de 18 anos.",
+    "C": "Quem comete o crime por motivo de vingança.",
+    "D": "Quem comete crime durante o sono natural.",
+    "E": "O reincidente habitual."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 47,
+   "materia": "Direito Penal",
+   "assunto": "Aplicação da Lei Penal",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A lei penal mais severa:",
+   "alternativas": {
+    "A": "Aplica-se a fatos futuros e passados.",
+    "B": "Pode retroagir em caso de reincidência.",
+    "C": "Só se aplica aos fatos futuros, respeitando o princípio da irretroatividade.",
+    "D": "Aplica-se aos réus primários com menor rigor.",
+    "E": "Depende de autorização judicial para vigorar."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 48,
+   "materia": "Direito Penal",
+   "assunto": "Penas",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "O regime inicial de cumprimento de pena:",
+   "alternativas": {
+    "A": "É sempre fechado.",
+    "B": "É fixado exclusivamente pelo juiz da execução.",
+    "C": "Depende da quantidade de pena aplicada e da reincidência.",
+    "D": "É escolhido pelo réu.",
+    "E": "Deve ser definido somente após o trânsito em julgado."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 49,
+   "materia": "Direito Penal",
+   "assunto": "Prescrição: prazos, causas impeditivas e interruptivas.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Sobre a prescrição penal, é correto afirmar:",
+   "alternativas": {
+    "A": "A prescrição começa a correr a partir da data do oferecimento da denúncia.",
+    "B": "A prescrição é a causa de extinção da punibilidade.",
+    "C": "A pena cumprida parcialmente impede o curso da prescrição.",
+    "D": "A prescrição não se aplica à pena de multa.",
+    "E": "A prescrição se interrompe com o trânsito em julgado da sentença absolutória."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 50,
+   "materia": "Direito Penal",
+   "assunto": "Crimes de tortura.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Conforme a Lei nº 9.455/1997, configura crime de tortura:",
+   "alternativas": {
+    "A": "A exposição da vítima a situações vexatórias sem violência física.",
+    "B": "A imposição de sofrimento físico ou mental com a finalidade de obter confissão, informação ou por discriminação.",
+    "C": "A prisão de pessoas em cela escura e sem ventilação.",
+    "D": "A ausência de alimentação adequada ao preso.",
+    "E": "A prática de abuso de autoridade, exclusivamente."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 51,
+   "materia": "Direito Penal",
+   "assunto": "Circunstâncias judiciais, agravantes e atenuantes.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "É considerada circunstância agravante, conforme o Código Penal:",
+   "alternativas": {
+    "A": "O réu ser primário.",
+    "B": "O crime ter sido cometido por motivo torpe.",
+    "C": "O agente ser menor de 21 anos.",
+    "D": "A vítima ter colaborado com a investigação.",
+    "E": "A embriaguez fortuita."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 52,
+   "materia": "Direito Penal",
+   "assunto": "Erro sobre a ilicitude do fato",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "O erro de proibição, conforme o art. 21 do Código Penal:",
+   "alternativas": {
+    "A": "Sempre exclui a ilicitude da conduta.",
+    "B": "Impede a tipicidade do crime.",
+    "C": "É irrelevante para a análise penal.",
+    "D": "Pode excluir a culpabilidade se for inevitável.",
+    "E": "Impede a execução da pena, mas não o processo."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 53,
+   "materia": "Direito Penal",
+   "assunto": "Imputabilidade Penal e Concurso de Pessoas",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "No concurso de pessoas, o partícipe:",
+   "alternativas": {
+    "A": "Pratica diretamente o núcleo do tipo.",
+    "B": "Atua com animus auctoris.",
+    "C": "Concorre para o crime, sem executar o núcleo do tipo.",
+    "D": "Age de forma autônoma e independente.",
+    "E": "É inimputável por definição."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 54,
+   "materia": "Direito Penal",
+   "assunto": "Extinção da punibilidade: hipóteses.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "O indulto:",
+   "alternativas": {
+    "A": "Depende de sentença judicial.",
+    "B": "É ato discricionário do Poder Legislativo.",
+    "C": "Extingue a punibilidade.",
+    "D": "Reduz o tempo da pena.",
+    "E": "Suspende a execução penal."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 55,
+   "materia": "Direito Penal",
+   "assunto": "Crime",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Assinale o elemento que não integra o fato típico:",
+   "alternativas": {
+    "A": "Conduta.",
+    "B": "Resultado.",
+    "C": "Culpabilidade.",
+    "D": "Nexo causal.",
+    "E": "Tipicidade."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 56,
+   "materia": "Direito Penal",
+   "assunto": "Princípios constitucionais penais.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "O princípio da legalidade penal determina que:",
+   "alternativas": {
+    "A": "A analogia pode ser usada para criar novos crimes.",
+    "B": "A pena pode ser aplicada mesmo sem previsão legal.",
+    "C": "Ninguém será punido por fato que lei posterior deixou de considerar crime.",
+    "D": "A norma penal pode retroagir, ainda que prejudique o réu.",
+    "E": "O juiz pode criar crimes por meio de jurisprudência consolidada."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 57,
+   "materia": "Direito Penal",
+   "assunto": "Aplicação da Lei Penal",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Não se pune a tentativa quando:",
+   "alternativas": {
+    "A": "O agente desiste voluntariamente da execução.",
+    "B": "O agente é inimputável.",
+    "C": "O resultado é naturalisticamente impossível.",
+    "D": "Há erro de tipo.",
+    "E": "A pena é de multa."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 58,
+   "materia": "Direito Processual Civil",
+   "assunto": "Jurisdição",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A jurisdição voluntária é caracterizada por:",
+   "alternativas": {
+    "A": "Existência de lide entre as partes.",
+    "B": "Obrigatoriedade da atuação do Ministério Público.",
+    "C": "Atuação do juiz sem caráter contencioso.",
+    "D": "A impossibilidade de produção de prova.",
+    "E": "Finalidade exclusivamente fiscalizatória."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 59,
+   "materia": "Direito Processual Civil",
+   "assunto": "Embargos de declaração.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Os embargos de declaração são cabíveis quando:",
+   "alternativas": {
+    "A": "O juiz for suspeito.",
+    "B": "A sentença apresentar obscuridade, omissão ou contradição.",
+    "C": "A parte desejar rediscutir o mérito da decisão.",
+    "D": "A sentença for injusta, segundo critério subjetivo da parte.",
+    "E": "O recurso anterior tenha sido negado."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 60,
+   "materia": "Direito Processual Civil",
+   "assunto": "Sentença e coisa julgada",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A coisa julgada:",
+   "alternativas": {
+    "A": "Permite rediscussão da mesma matéria em novo processo.",
+    "B": "É relativa nos processos de execução.",
+    "C": "Incide apenas sobre a fundamentação da sentença.",
+    "D": "Faz coisa julgada apenas a parte dispositiva da sentença.",
+    "E": "É inaplicável em matéria de direito público."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 61,
+   "materia": "Direito Processual Civil",
+   "assunto": "Procedimento Comum",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "De acordo com o CPC, a audiência de conciliação e mediação será:",
+   "alternativas": {
+    "A": "Obrigatória, mesmo que ambas as partes manifestem desinteresse.",
+    "B": "Facultativa, realizada apenas por solicitação do juiz.",
+    "C": "Designada como regra, podendo ser dispensada por ambas as partes.",
+    "D": "Realizada apenas em causas que envolvam direito patrimonial.",
+    "E": "Utilizada apenas nas ações de família."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 62,
+   "materia": "Direito Processual Civil",
+   "assunto": "Peças Cíveis",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Entre os requisitos da petição inicial, conforme o CPC/2015, está:",
+   "alternativas": {
+    "A": "Indicação da autoridade coatora.",
+    "B": "Indicação das provas pretendidas.",
+    "C": "Exposição dos fatos com fundamentação jurídica.",
+    "D": "Endereçamento ao Ministério Público.",
+    "E": "Anexação de documentos públicos autenticados."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 63,
+   "materia": "Direito Processual Civil",
+   "assunto": "Jurisdição",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A jurisdição é:",
+   "alternativas": {
+    "A": "Facultativa.",
+    "B": "Um poder administrativo do juiz.",
+    "C": "Uma função legislativa do Estado.",
+    "D": "A atuação estatal na solução de conflitos.",
+    "E": "Exclusiva das partes."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 64,
+   "materia": "Direito Processual Civil",
+   "assunto": "Tutela de urgência.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A tutela de urgência pode ser concedida:",
+   "alternativas": {
+    "A": "Apenas após sentença.",
+    "B": "Somente em ações possessórias.",
+    "C": "Em qualquer grau de jurisdição.",
+    "D": "Mediante caução em qualquer caso.",
+    "E": "Apenas com trânsito em julgado."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 65,
+   "materia": "Direito Processual Civil",
+   "assunto": "Processo Civil",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Segundo o CPC/2015, o princípio da cooperação determina que:",
+   "alternativas": {
+    "A": "As partes devem atuar de forma adversarial para garantir o contraditório.",
+    "B": "O juiz pode substituir a parte na produção de provas.",
+    "C": "As partes e o juiz devem cooperar para alcançar a decisão de mérito justa e efetiva.",
+    "D": "Apenas as partes devem se comportar com lealdade.",
+    "E": "A cooperação se limita à fase de instrução."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 66,
+   "materia": "Direito Processual Civil",
+   "assunto": "Recursos",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "O prazo para interposição de apelação, segundo o CPC, é de:",
+   "alternativas": {
+    "A": "5 dias.",
+    "B": "10 dias.",
+    "C": "15 dias úteis.",
+    "D": "30 dias corridos.",
+    "E": "20 dias úteis."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 67,
+   "materia": "Direito Processual Civil",
+   "assunto": "Provas",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Com base no Código de Processo Civil de 2015, o ônus da prova:",
+   "alternativas": {
+    "A": "É sempre do réu, que deve provar a inexistência do direito do autor.",
+    "B": "Cabe exclusivamente ao juiz decidir de ofício quem deve produzi-la.",
+    "C": "Pode ser distribuído de maneira diversa por convenção entre as partes.",
+    "D": "Não se aplica em ações de natureza pública.",
+    "E": "É irrelevante, pois o juiz pode decidir independentemente de provas."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 68,
+   "materia": "Direito Processual Civil",
+   "assunto": "Tutela de evidência.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A tutela da evidência poderá ser concedida:",
+   "alternativas": {
+    "A": "Somente se houver risco de dano irreparável.",
+    "B": "Independentemente da demonstração de urgência.",
+    "C": "Exclusivamente após instrução completa.",
+    "D": "Apenas quando requerida pelo réu.",
+    "E": "Com base apenas na verossimilhança."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 69,
+   "materia": "Direito Processual Civil",
+   "assunto": "Sentença e coisa julgada",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A sentença que extingue o processo sem resolução de mérito:",
+   "alternativas": {
+    "A": "Aplica coisa julgada material.",
+    "B": "Impede a rediscussão da matéria.",
+    "C": "Pode ser reapreciada com nova ação.",
+    "D": "Vincula o juiz em eventual novo processo.",
+    "E": "É considerada decisão interlocutória."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 70,
+   "materia": "Direito Processual Civil",
+   "assunto": "Sentença e coisa julgada",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A coisa julgada material alcança:",
+   "alternativas": {
+    "A": "Apenas os argumentos apresentados pelas partes.",
+    "B": "As partes e terceiros que tenham interesse na causa.",
+    "C": "Apenas os efeitos financeiros da decisão.",
+    "D": "Somente os dispositivos legais mencionados.",
+    "E": "As partes do processo e seus sucessores."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 71,
+   "materia": "Direito Processual Civil",
+   "assunto": "Produção antecipada da prova.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A produção antecipada de provas é cabível:",
+   "alternativas": {
+    "A": "Apenas no curso de uma ação ordinária.",
+    "B": "Quando houver risco de que a prova se perca.",
+    "C": "Em substituição à audiência de instrução.",
+    "D": "Somente se houver lide já instaurada.",
+    "E": "Como meio de encerrar o processo sem mérito."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 72,
+   "materia": "Direito Processual Civil",
+   "assunto": "Petição Inicial",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A petição inicial será indeferida:",
+   "alternativas": {
+    "A": "Se for apresentada digitalmente.",
+    "B": "Quando não indicar valor da causa, salvo quando for inestimável.",
+    "C": "Se não atender aos requisitos legais mesmo após emenda.",
+    "D": "Quando o autor não for representado por advogado.",
+    "E": "Quando não houver audiência de conciliação."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 73,
+   "materia": "Direito Processual Civil",
+   "assunto": "Efeitos da interposição e do julgamento dos recursos",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "O efeito suspensivo dos recursos no processo civil:",
+   "alternativas": {
+    "A": "Impede automaticamente a execução da sentença.",
+    "B": "É regra geral para todos os recursos.",
+    "C": "É atribuído automaticamente à apelação.",
+    "D": "Pode ser concedido pelo juiz quando presentes os requisitos legais.",
+    "E": "Depende de autorização do STF."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 74,
+   "materia": "Direito Processual Civil",
+   "assunto": "Procedimento Comum",
+   "fonte": "DPE-SP 2025 · Defensor Público",
+   "enunciado": "Na audiência de instrução e julgamento no CPC/2015:",
+   "alternativas": {
+    "A": "O juiz ouve primeiro os peritos.",
+    "B": "As partes apresentam alegações finais orais após a oitiva das testemunhas.",
+    "C": "O Ministério Público atua como assistente.",
+    "D": "A fase instrutória ocorre antes da contestação.",
+    "E": "A prova pericial é substituída por depoimento pessoal."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 75,
+   "materia": "Direito Processual Penal",
+   "assunto": "Nulidades",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A nulidade absoluta:",
+   "alternativas": {
+    "A": "Deve ser arguida pela parte prejudicada, sob pena de preclusão.",
+    "B": "É sanada pela ausência de prejuízo.",
+    "C": "Pode ser conhecida de ofício pelo juiz a qualquer tempo.",
+    "D": "Só pode ser alegada em segunda instância.",
+    "E": "Não existe no processo penal."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 76,
+   "materia": "Direito Processual Penal",
+   "assunto": "Prova ilícita e ilegítima",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A prova obtida por meio ilícito:",
+   "alternativas": {
+    "A": "Sempre pode ser admitida, se obtida de boa-fé.",
+    "B": "Deve ser excluída do processo, salvo quando derivada de fonte independente ou descoberta inevitável.",
+    "C": "Pode ser utilizada em ações penais, mas não em civis.",
+    "D": "É válida se tiver origem estatal.",
+    "E": "Pode ser ratificada por confissão."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 77,
+   "materia": "Direito Processual Penal",
+   "assunto": "Ação Penal",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A ação penal pública incondicionada:",
+   "alternativas": {
+    "A": "Depende da representação da vítima para ser iniciada.",
+    "B": "Pode ser promovida pelo advogado da vítima.",
+    "C": "É iniciada pelo Ministério Público, independentemente de qualquer autorização.",
+    "D": "Só pode ser proposta após autorização judicial.",
+    "E": "É exclusiva para crimes contra a administração pública."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 78,
+   "materia": "Direito Processual Penal",
+   "assunto": "Prisão preventiva",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "De acordo com o Código de Processo Penal, a prisão preventiva poderá ser decretada:",
+   "alternativas": {
+    "A": "Como forma de antecipar a pena.",
+    "B": "Sempre que o acusado tiver antecedentes criminais.",
+    "C": "Apenas se houver sentença condenatória.",
+    "D": "Para garantir a ordem pública, a ordem econômica ou a aplicação da lei penal.",
+    "E": "Automaticamente em caso de prisão em flagrante."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 79,
+   "materia": "Direito Processual Penal",
+   "assunto": "Recursos",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A apelação no processo penal deve ser interposta:",
+   "alternativas": {
+    "A": "Sempre em segunda instância.",
+    "B": "Contra decisões interlocutórias.",
+    "C": "Para reexame da sentença de mérito.",
+    "D": "Exclusivamente pelo Ministério Público.",
+    "E": "Após trânsito em julgado da sentença."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 80,
+   "materia": "Direito Processual Penal",
+   "assunto": "Prisão em flagrante",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "O indivíduo poderá ser preso em flagrante:",
+   "alternativas": {
+    "A": "Apenas por ordem judicial.",
+    "B": "Somente após condenação transitada em julgado.",
+    "C": "Quando encontrado logo após cometer o crime.",
+    "D": "Se for reincidente em crime doloso.",
+    "E": "Quando não for possível localizá-lo para intimação."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 81,
+   "materia": "Direito Tributário",
+   "assunto": "Processo Tributário",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "O sócio de empresa poderá ser responsabilizado por dívidas tributárias da pessoa jurídica:",
+   "alternativas": {
+    "A": "Sempre que houver dívida ativa.",
+    "B": "Apenas em casos de encerramento irregular da empresa.",
+    "C": "Quando ficar comprovado que agiu com excesso de poderes, infração à lei ou ao contrato.",
+    "D": "Apenas por decisão judicial transitada em julgado.",
+    "E": "Quando o débito superar 50 salários mínimos."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 82,
+   "materia": "Direito Tributário",
+   "assunto": "Tributos em Espécie",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "O imposto é um tributo que se caracteriza por:",
+   "alternativas": {
+    "A": "Vinculação direta à atividade estatal que gera benefício ao contribuinte.",
+    "B": "Contraprestação específica de serviço público.",
+    "C": "Caráter não vinculado, sem relação com atividade estatal específica.",
+    "D": "Destinação obrigatória à seguridade social.",
+    "E": "Finalidade exclusivamente punitiva."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 83,
+   "materia": "Direito do Consumidor",
+   "assunto": "Cláusulas contratuais abusivas.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Considera-se cláusula abusiva:",
+   "alternativas": {
+    "A": "A que limita o valor da indenização.",
+    "B": "A que prevê revisão judicial.",
+    "C": "A que impõe obrigações iníquas ao consumidor.",
+    "D": "A que trata de foro de eleição.",
+    "E": "A que prevê multa por descumprimento contratual."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 84,
+   "materia": "Direito do Consumidor",
+   "assunto": "Publicidade (conceitos, princípios, formas especiais).",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A publicidade enganosa, segundo o CDC, é aquela que:",
+   "alternativas": {
+    "A": "Utiliza imagens fortes ou impactantes.",
+    "B": "Divulga preços promocionais por tempo limitado.",
+    "C": "Induz ou pode induzir o consumidor a erro sobre o produto ou serviço.",
+    "D": "Compara produtos com marcas concorrentes.",
+    "E": "É realizada por meios digitais."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 85,
+   "materia": "Direito do Consumidor",
+   "assunto": "Princípios Aplicáveis",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "O Código de Defesa do Consumidor parte do princípio de que o consumidor é:",
+   "alternativas": {
+    "A": "Parte tecnicamente equiparada ao fornecedor.",
+    "B": "Naturalmente informado e responsável por suas escolhas.",
+    "C": "Parte vulnerável na relação de consumo.",
+    "D": "Agente capaz de influenciar o mercado.",
+    "E": "Equivalente ao fornecedor em termos contratuais."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 86,
+   "materia": "Direito do Consumidor",
+   "assunto": "Responsabilidade Civil nas Relações de Consumo",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Em caso de acidente de consumo causado por produto defeituoso, o Código de Defesa do Consumidor impõe:",
+   "alternativas": {
+    "A": "Responsabilidade subjetiva do fabricante.",
+    "B": "Obrigatoriedade de prova da culpa pelo consumidor.",
+    "C": "Responsabilidade objetiva do fornecedor, independentemente de culpa.",
+    "D": "Exclusão de responsabilidade se houver retratação pública.",
+    "E": "Aplicação das normas do Código Civil."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 87,
+   "materia": "Direitos Humanos",
+   "assunto": "Declaração Universal dos Direitos Humanos.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Segundo a Declaração Universal dos Direitos Humanos, todos os seres humanos nascem:",
+   "alternativas": {
+    "A": "Com direitos civis e não políticos.",
+    "B": "Sem deveres perante a sociedade.",
+    "C": "Iguais em dignidade e direitos.",
+    "D": "Vinculados à ordem constitucional de seu país.",
+    "E": "Destinados ao progresso econômico."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 88,
+   "materia": "Direitos Humanos",
+   "assunto": "Direito Internacional dos Direitos Humanos",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "A Corte Interamericana de Direitos Humanos pode conceder medidas provisórias:",
+   "alternativas": {
+    "A": "Apenas se o caso já houver sentença definitiva.",
+    "B": "Quando se tratar de interesse público genérico.",
+    "C": "Em casos graves e urgentes, para evitar danos irreparáveis.",
+    "D": "Apenas por provocação do Estado membro.",
+    "E": "Apenas se o caso já estiver julgado em todas as instâncias internas."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 89,
+   "materia": "Direitos Humanos",
+   "assunto": "Direito Internacional dos Direitos Humanos",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "O Pacto Internacional sobre Direitos Civis e Políticos estabelece:",
+   "alternativas": {
+    "A": "Direitos apenas econômicos.",
+    "B": "A tortura como meio excepcional de investigação.",
+    "C": "A proteção à liberdade de expressão, associação e religião.",
+    "D": "O direito de guerra a povos autônomos.",
+    "E": "A vedação à nacionalidade múltipla."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 90,
+   "materia": "Língua Portuguesa",
+   "assunto": "Sintaxe",
+   "fonte": "DPE-SP 2025 · Analista da Defensoria Pública",
+   "enunciado": "Está gramaticalmente correta a redação da seguinte frase:",
+   "alternativas": {
+    "A": "Não devemos temer a IA em si, mas sim adotar uma postura cautelosa e pró-ativa em relação ao seu desenvolvimento e uso. Não só o medo excessivo pode impedir avanços tecnológicos, que traz benefícios significativos, como também melhorias na saúde, eficiência energética e soluções para problemas globais.",
+    "B": "Novas tecnologias trazem benefícios à humanidade. Tanto é crucial estar ciente dos riscos e desafios associados a inteligência artificial usada atualmente, como o viés algorítmico, perda de privacidade, impactos no mercado de trabalho e possíveis usos maliciosos.",
+    "C": "Graças ao aumento esponencial do poder computacional, à disponibilidade de grandes volumes de dados (Big Data) e a avanços em algoritmos, as redes neurais profundas tornaram-se capazes de realizar tarefas impressionantes.",
+    "D": "O surgimento da IA foi um processo gradual, impulsionado pela curiosidade humana, por avanços tecnológicos e pela colaboração entre pesquisadores. Embora ainda haja desafios a superar, a IA continua a evoluir, prometendo revolucionar ainda mais o futuro da humanidade.",
+    "E": "Na década de 50, haviam muitas expectativas em relação ao potencial da IA, que logo ficou claro que os desafios eram maiores do que se imaginava. A falta de poder computacional e a escassez de dados limitou o progresso, levando a um período conhecido como o \"Inverno da IA\"."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 91,
+   "materia": "Língua Portuguesa",
+   "assunto": "Compreensão, leitura e interpretação de textos",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Medo do futuro 2: a ascensão da inteligência artificial\n\nA ciência que poderia desafiar a morte combina tecnologias digitais aliadas à inteligência artificial e à engenharia genética\n\n\"O homem é um deus em ruínas\", escreveu o americano Ralph Waldo Emerson no século 19. Desde que nossos antepassados distantes contemplaram, pela primeira vez, a dimensão divina, vivemos uma divisão profunda entre o nosso lado animal e o nosso lado capaz de imaginar o eterno.\n\nEssa natureza dual entre o animal e o semidivino, o mortal e o imortal, é nossa característica mais marcante, tema de grandes livros e pensamentos filosóficos. Hoje é, também, tema que inspira várias pesquisas científicas, da engenharia genética à inteligência artificial. Será que a ciência vai ser capaz de transformar o ser humano a ponto de redefinir nossa relação com a morte?\n\nDuzentos anos atrás, Mary Shelley publicava \"Frankenstein\", um romance gótico que continua sendo tão relevante hoje quanto foi no início do século 19. A ideia de que a ciência pode vencer a morte é pelo menos tão antiga quanto os alquimistas. No caso de Shelley, a ciência de ponta da época era o uso de correntes elétricas para estimular o movimento muscular, relação descoberta por Luigi Galvani e Alessandro Volta.\n\nHoje, a ciência de ponta que poderia desafiar a morte combina tecnologias digitais aliadas à inteligência artificial (IA) com a engenharia genética. Dos vários temas correlatos, discuto aqui a IA e se devemos ou não nos preocupar com esse tipo de tecnologia. Não que esteja prestes a desafiar a morte, longe disso. Mas seu impacto no mundo em que vivemos e no futuro da espécie humana deve ser considerado com cuidado, e quanto antes melhor.\n\nO mundo depende fundamentalmente dos computadores. Carros, redes elétricas, aeroportos, trens, o sistema bancário, eleitoral, hospitais, as atividades individuais e profissionais do leitor, nada escapa. Paralelamente a essa dependência crescente, os computadores estão ficando mais espertos, dominando o mundo um pouco mais a cada dia. Com isso, passam a controlar tarefas cada vez mais complexas, tomando o lugar dos humanos.\n\nDas cirurgias de alta precisão e diagnósticos médicos à automação de fábricas e linhas de produção, da exploração e tratamento de minérios em minas ou águas profundas ou em ambientes altamente radioativos até tomadas de decisão no mercado de capitais, nada parece escapar das máquinas digitais. Em breve, com veículos autônomos, será a vez dos caminhoneiros, dos motoristas de ônibus escolares, dos motoristas de táxi, dos maquinistas, criando um vácuo perigoso no mercado de trabalho, afetando milhões de pessoas, que precisariam ser retreinadas.\n\nPor enquanto, ao menos, a tecnologia digital está se apoderando do mundo porque nós assim queremos. A questão, e temor de muitos, é se isso pode mudar. Se as tecnologias de IA tornarem-se autônomas, capazes de se programar e de ter intenções próprias, poderiam efetivamente controlar o mundo. Este é o argumento do filósofo Nick Bostrom, em seu livro \"Superinteligência\", da cruzada anti-IA do bilionário Elon Musk e do medo do físico Stephen Hawking, dentre outros.\n\nUm dos problemas dessa conversa é como definir inteligência. Existe a IA do futuro, aquela que vemos nos filmes e livros de ficção científica, e a do presente, que está muito longe dela. A gente vê o acrônimo IA por toda a parte, algoritmos de aprendizado de máquinas, redes neurais, programas que vão aprimorando sua eficiência por si mesmos, computadores que ganham de mestres mundiais de xadrez e de Go.\n\nEsse tipo de aplicação presente de IA não ameaça o futuro da espécie humana. Por enquanto, refletem a inteligência de seus programadores que, no fim das contas, servem aos interesses de suas empresas, tentando ganhar nossa atenção e dinheiro. Níveis atuais de IA (que não chamaria de IA) cumprem funções especificadas por seus programadores. Não têm autonomia ou intenção própria.\n\nEsta situação pode mudar? É aqui que começa o problema. Não sabemos a resposta; não sabemos se uma máquina pode desenvolver autonomia e autoconsciência. As IA de hoje estão muito, muito longe do famoso Hall, o computador no filme (e livro) \"2001: Uma Odisseia no Espaço\", que resolveu matar todos os humanos na espaçonave por não julgá-los competentes para contatar alienígenas superinteligentes.\n\nPor outro lado, avançar cegamente com a pesquisa em IA \"porque podemos\" me parece profundamente irresponsável. Muito antes de construirmos uma máquina de fato inteligente, se isso é realmente possível, a IA de menor porte causará sérios problemas sociais, redefinindo o mercado de trabalho e o tipo de habilidades e perícias que serão relevantes no futuro. Isso já está, aliás, acontecendo. Portanto, antes de nos preocuparmos com os primos do Hall dominando o mundo, deveríamos estar criando salvaguardas com a função de garantir que as máquinas que criamos estão aqui para servir a humanidade, e não para destruí-la aos poucos.\n\n(Adaptado de: GLEISER, Marcelo. \"Medo do futuro 2: a ascensão da inteligência artificial\".\n\nDisponível em: <https://www1 .folha.uol.com.br/colunas/marcelogleiser/2018/>\n\nPublicado em: 28 de out. de 2018. Acesso em: 10 de mar. de 2025)\n\nNo texto \"Medo do futuro 2: a ascensão da inteligência artificial\", a metáfora \"o homem é um deus em ruínas\" é usada para:",
+   "alternativas": {
+    "A": "Indicar a queda espiritual do homem contemporâneo.",
+    "B": "Demonstrar que a ciência substitui a fé.",
+    "C": "Apontar a dualidade humana entre o instinto e a busca por eternidade.",
+    "D": "Ressaltar a decadência das religiões na era tecnológica.",
+    "E": "Defender o avanço genético como nova forma de divindade."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 92,
+   "materia": "Língua Portuguesa",
+   "assunto": "Mecanismos de coesão textual (referenciação, substituição, repetição, conectores e sequenciação).",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "No trecho \"a tecnologia digital está se apoderando do mundo\", a partícula \"se\" classifica-se como:",
+   "alternativas": {
+    "A": "índice de indeterminação do sujeito.",
+    "B": "partícula expletiva.",
+    "C": "pronome reflexivo.",
+    "D": "partícula apassivadora.",
+    "E": "índice de sujeito oculto."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 93,
+   "materia": "Língua Portuguesa",
+   "assunto": "Sentido e emprego dos vocábulos.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Em \"essa natureza dual entre o animal e o semidivino, o mortal e o imortal, é nossa característica mais marcante\", a forma verbal \"é\" concorda com:",
+   "alternativas": {
+    "A": "o termo \"animal e o semidivino\".",
+    "B": "\"natureza dual\".",
+    "C": "\"característica mais marcante\".",
+    "D": "\"entre o animal e o semidivino\".",
+    "E": "\"essa natureza\"."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 94,
+   "materia": "Língua Portuguesa",
+   "assunto": "Regência nominal e verbal.",
+   "fonte": "DPE-SP 2025 · Carreiras Jurídicas",
+   "enunciado": "Assinale a frase gramaticalmente correta conforme o padrão culto:",
+   "alternativas": {
+    "A": "O surgimento da IA foi um processo gradual, impulsionado por tecnologia e pela colaboração entre pesquisadores.",
+    "B": "Houve várias expectativas com a IA, que levou à criação de soluções inovadoras.",
+    "C": "As IA vêm substituindo profissionais, embora não sejam ainda autônomas.",
+    "D": "Apesar de termos tecnologia, ainda carecemos de meios para impedir o avanço das máquinas autônomas.",
+    "E": "Mesmo sendo avançadas, as IA carecem de intencionalidade."
+   },
+   "gabarito": "A"
+  }
+ ]
+}

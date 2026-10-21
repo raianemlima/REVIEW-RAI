@@ -15,3 +15,6 @@ teses-app/
 
 # chaves dos PDFs protegidos: ficam junto do fonte.html, nunca no GitHub
 chave-arquivos*.json
+
+# e-books (conteúdo pago): só entram cifrados no baralho, nunca abertos neste repositório público
+ferramentas/conteudo/dados/ebooks/
