@@ -42,7 +42,7 @@ document.body.classList.add("rd-gate");
     })().catch(e => { carregandoModulos = null; throw e; });
     return carregandoModulos;
   }
-  const unb64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+  const unb64 = s => { const d = atob(s), n = d.length, o = new Uint8Array(n); for (let i = 0; i < n; i++) o[i] = d.charCodeAt(i); return o; };
   const b64 = u => btoa(String.fromCharCode(...new Uint8Array(u)));
   const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
