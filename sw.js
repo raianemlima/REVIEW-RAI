@@ -1,11 +1,15 @@
 // Review DPE · service worker
 // Offline: o app e as fontes ficam guardados no aparelho. Atualização: a versão nova espera o aviso "Atualizar".
-const CACHE = "revisao-dpe-v90", DADOS = "revisao-dpe-dados";
-const CORE = ["./", "index.html", "manifest.webmanifest", "privacidade.html", "termos.html", "icons/icon.svg", "icons/icon-180.png", "icons/icon-192.png", "icons/icon-512.png", "icons/icon-maskable-512.png",
+const CACHE = "review-dpe-assuntos-v6", DADOS = "revisao-dpe-dados";
+const CORE = ["./", "index.html", "deck.enc", "app-src.txt", "arquivos/metacognicao.js", "arquivos/cronograma-taxonomia.js", "arquivos/cronograma-conteudo.js", "arquivos/cronograma-motor.js", "arquivos/cronograma.js", "arquivos/cronograma-pesos.js", "arquivos/cronograma.css", "arquivos/interface.js", "arquivos/interface.css", "arquivos/dashboard-editais.js", "arquivos/dashboard-editais.css", "manifest.webmanifest", "privacidade.html", "termos.html", "icons/icon.svg", "icons/icon-180.png", "icons/icon-192.png", "icons/icon-512.png", "icons/icon-maskable-512.png",
   "fonts/fonts.css", "fonts/ibm-plex-sans-latin-400-normal.woff2", "fonts/ibm-plex-sans-latin-500-normal.woff2", "fonts/ibm-plex-sans-latin-600-normal.woff2",
   "fonts/ibm-plex-mono-latin-400-normal.woff2", "fonts/ibm-plex-mono-latin-500-normal.woff2",
   "fonts/newsreader-latin-400-normal.woff2", "fonts/newsreader-latin-500-normal.woff2", "fonts/newsreader-latin-600-normal.woff2", "fonts/newsreader-latin-400-italic.woff2", "fonts/rubik-latin-wght-normal.woff2"];
-self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE))); });
+self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(async c => {
+  const pendentes = [];
+  for (const url of CORE) if (!(await c.match(url))) pendentes.push(url);
+  return c.addAll(pendentes);
+})); });
 self.addEventListener("activate", e => {
   e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE && k !== DADOS).map(k => caches.delete(k)))).then(() => self.clients.claim()));
 });

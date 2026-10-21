@@ -20,8 +20,10 @@ jobs:
       - name: Montar a pasta do site (só o que é público)
         run: |
           mkdir _site
-          cp CNAME index.html conheca.html sw.js manifest.webmanifest privacidade.html termos.html _site/
+          cp CNAME index.html deck.enc app-src.txt conheca.html sw.js manifest.webmanifest privacidade.html termos.html _site/
           cp -r icons fonts screenshots arquivos _site/
+          mkdir -p _site/docs
+          cp docs/RELATORIO-MATERIAS-E-PESOS-DPE.md _site/docs/
       - name: Chaves dos PDFs protegidos no baralho (segredos APP_SENHA e CHAVE_ARQUIVOS)
         env:
           APP_SENHA: ${{ secrets.APP_SENHA }}
@@ -32,6 +34,8 @@ jobs:
           APP_SENHA: ${{ secrets.APP_SENHA }}
           REVISOES_CHAVE: ${{ secrets.REVISOES_CHAVE }}
         run: node ferramentas/ci/aplicar_revisoes.mjs _site/index.html
+      - name: Validar os arquivos obrigatórios do app e do cache offline
+        run: node ferramentas/ci/validar_site.mjs _site
       - uses: actions/upload-pages-artifact@v3
         with: { path: _site }
       - id: d

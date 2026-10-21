@@ -1,0 +1,184 @@
+{
+ "id": "jec",
+ "nome": "Juizados Especiais · Lei 9.099/1995",
+ "curto": "Lei 9.099",
+ "disc": "pp",
+ "fonte": "Seleção do Review DPE com os dispositivos mais cobrados em provas de Defensoria. Texto conferido em planalto.gov.br em 18/10/2026",
+ "grupos": [
+  {
+   "nome": "Juizado Especial Criminal",
+   "itens": [
+    {
+     "a": "60",
+     "x": "Art. 60. O Juizado Especial Criminal, provido por juízes togados ou togados e leigos, tem competência para a conciliação, o julgamento e a execução das infrações penais de menor potencial ofensivo, respeitadas as regras de conexão e continência. (Redação dada pela Lei nº 11.313, de 2006)\nParágrafo único. Na reunião de processos, perante o juízo comum ou o tribunal do júri, decorrentes da aplicação das regras de conexão e continência, observar-se-ão os institutos da transação penal e da composição dos danos civis. (Incluído pela Lei nº 11.313, de 2006)"
+    },
+    {
+     "a": "61",
+     "x": "Art. 61. Consideram-se infrações penais de menor potencial ofensivo, para os efeitos desta Lei, as contravenções penais e os crimes a que a lei comine pena máxima não superior a 2 (dois) anos, cumulada ou não com multa. (Redação dada pela Lei nº 11.313, de 2006)"
+    },
+    {
+     "a": "62",
+     "x": "Art. 62. O processo perante o Juizado Especial orientar-se-á pelos critérios da oralidade, simplicidade, informalidade, economia processual e celeridade, objetivando, sempre que possível, a reparação dos danos sofridos pela vítima e a aplicação de pena não privativa de liberdade. (Redação dada pela Lei nº 13.603, de 2018)"
+    },
+    {
+     "a": "69",
+     "x": "Art. 69. A autoridade policial que tomar conhecimento da ocorrência lavrará termo circunstanciado e o encaminhará imediatamente ao Juizado, com o autor do fato e a vítima, providenciando-se as requisições dos exames periciais necessários.\nParágrafo único. Ao autor do fato que, após a lavratura do termo, for imediatamente encaminhado ao juizado ou assumir o compromisso de a ele comparecer, não se imporá prisão em flagrante, nem se exigirá fiança. Em caso de violência doméstica, o juiz poderá determinar, como medida de cautela, seu afastamento do lar, domicílio ou local de convivência com a vítima. (Redação dada pela Lei nº 10.455, de 13.5.2002)"
+    },
+    {
+     "a": "72",
+     "x": "Art. 72. Na audiência preliminar, presente o representante do Ministério Público, o autor do fato e a vítima e, se possível, o responsável civil, acompanhados por seus advogados, o Juiz esclarecerá sobre a possibilidade da composição dos danos e da aceitação da proposta de aplicação imediata de pena não privativa de liberdade."
+    },
+    {
+     "a": "74",
+     "x": "Art. 74. A composição dos danos civis será reduzida a escrito e, homologada pelo Juiz mediante sentença irrecorrível, terá eficácia de título a ser executado no juízo civil competente.\nParágrafo único. Tratando-se de ação penal de iniciativa privada ou de ação penal pública condicionada à representação, o acordo homologado acarreta a renúncia ao direito de queixa ou representação."
+    },
+    {
+     "a": "75",
+     "x": "Art. 75. Não obtida a composição dos danos civis, será dada imediatamente ao ofendido a oportunidade de exercer o direito de representação verbal, que será reduzida a termo.\nParágrafo único. O não oferecimento da representação na audiência preliminar não implica decadência do direito, que poderá ser exercido no prazo previsto em lei."
+    },
+    {
+     "a": "76",
+     "x": "Art. 76. Havendo representação ou tratando-se de crime de ação penal pública incondicionada, não sendo caso de arquivamento, o Ministério Público poderá propor a aplicação imediata de pena restritiva de direitos ou multas, a ser especificada na proposta.\n§ 1º Nas hipóteses de ser a pena de multa a única aplicável, o Juiz poderá reduzi-la até a metade.\n§ 2º Não se admitirá a proposta se ficar comprovado:\nI - ter sido o autor da infração condenado, pela prática de crime, à pena privativa de liberdade, por sentença definitiva;\nII - ter sido o agente beneficiado anteriormente, no prazo de cinco anos, pela aplicação de pena restritiva ou multa, nos termos deste artigo;\nIII - não indicarem os antecedentes, a conduta social e a personalidade do agente, bem como os motivos e as circunstâncias, ser necessária e suficiente a adoção da medida.\n§ 3º Aceita a proposta pelo autor da infração e seu defensor, será submetida à apreciação do Juiz.\n§ 4º Acolhendo a proposta do Ministério Público aceita pelo autor da infração, o Juiz aplicará a pena restritiva de direitos ou multa, que não importará em reincidência, sendo registrada apenas para impedir novamente o mesmo benefício no prazo de cinco anos.\n§ 5º Da sentença prevista no parágrafo anterior caberá a apelação referida no art. 82 desta Lei.\n§ 6º A imposição da sanção de que trata o § 4º deste artigo não constará de certidão de antecedentes criminais, salvo para os fins previstos no mesmo dispositivo, e não terá efeitos civis, cabendo aos interessados propor ação cabível no juízo cível."
+    },
+    {
+     "a": "88",
+     "x": "Art. 88. Além das hipóteses do Código Penal e da legislação especial, dependerá de representação a ação penal relativa aos crimes de lesões corporais leves e lesões culposas."
+    },
+    {
+     "a": "89",
+     "x": "Art. 89. Nos crimes em que a pena mínima cominada for igual ou inferior a um ano, abrangidas ou não por esta Lei, o Ministério Público, ao oferecer a denúncia, poderá propor a suspensão do processo, por dois a quatro anos, desde que o acusado não esteja sendo processado ou não tenha sido condenado por outro crime, presentes os demais requisitos que autorizariam a suspensão condicional da pena (art. 77 do Código Penal).\n§ 1º Aceita a proposta pelo acusado e seu defensor, na presença do Juiz, este, recebendo a denúncia, poderá suspender o processo, submetendo o acusado a período de prova, sob as seguintes condições:\nI - reparação do dano, salvo impossibilidade de fazê-lo;\nII - proibição de freqüentar determinados lugares;\nIII - proibição de ausentar-se da comarca onde reside, sem autorização do Juiz;\nIV - comparecimento pessoal e obrigatório a juízo, mensalmente, para informar e justificar suas atividades.\n§ 2º O Juiz poderá especificar outras condições a que fica subordinada a suspensão, desde que adequadas ao fato e à situação pessoal do acusado.\n§ 3º A suspensão será revogada se, no curso do prazo, o beneficiário vier a ser processado por outro crime ou não efetuar, sem motivo justificado, a reparação do dano.\n§ 4º A suspensão poderá ser revogada se o acusado vier a ser processado, no curso do prazo, por contravenção, ou descumprir qualquer outra condição imposta.\n§ 5º Expirado o prazo sem revogação, o Juiz declarará extinta a punibilidade.\n§ 6º Não correrá a prescrição durante o prazo de suspensão do processo.\n§ 7º Se o acusado não aceitar a proposta prevista neste artigo, o processo prosseguirá em seus ulteriores termos."
+    }
+   ]
+  },
+  {
+   "nome": "Juizado Especial Cível",
+   "itens": [
+    {
+     "a": "3",
+     "x": "Art. 3º O Juizado Especial Cível tem competência para conciliação, processo e julgamento das causas cíveis de menor complexidade, assim consideradas:\nI - as causas cujo valor não exceda a quarenta vezes o salário mínimo;\nII - as enumeradas no art. 275, inciso II, do Código de Processo Civil;\nIII - a ação de despejo para uso próprio;\nIV - as ações possessórias sobre bens imóveis de valor não excedente ao fixado no inciso I deste artigo.\n§ 1º Compete ao Juizado Especial promover a execução:\nI - dos seus julgados;\nII - dos títulos executivos extrajudiciais, no valor de até quarenta vezes o salário mínimo, observado o disposto no § 1º do art. 8º desta Lei.\n§ 2º Ficam excluídas da competência do Juizado Especial as causas de natureza alimentar, falimentar, fiscal e de interesse da Fazenda Pública, e também as relativas a acidentes de trabalho, a resíduos e ao estado e capacidade das pessoas, ainda que de cunho patrimonial.\n§ 3º A opção pelo procedimento previsto nesta Lei importará em renúncia ao crédito excedente ao limite estabelecido neste artigo, excetuada a hipótese de conciliação."
+    },
+    {
+     "a": "9",
+     "x": "Art. 9º Nas causas de valor até vinte salários mínimos, as partes comparecerão pessoalmente, podendo ser assistidas por advogado; nas de valor superior, a assistência é obrigatória.\n§ 1º Sendo facultativa a assistência, se uma das partes comparecer assistida por advogado, ou se o réu for pessoa jurídica ou firma individual, terá a outra parte, se quiser, assistência judiciária prestada por órgão instituído junto ao Juizado Especial, na forma da lei local.\n§ 2º O Juiz alertará as partes da conveniência do patrocínio por advogado, quando a causa o recomendar.\n§ 3º O mandato ao advogado poderá ser verbal, salvo quanto aos poderes especiais.\n§ 4º O réu, sendo pessoa jurídica ou titular de firma individual, poderá ser representado por preposto credenciado, munido de carta de preposição com poderes para transigir, sem haver necessidade de vínculo empregatício. (Redação dada pela Lei nº 12.137, de 2009)"
+    },
+    {
+     "a": "41",
+     "x": "Art. 41. Da sentença, excetuada a homologatória de conciliação ou laudo arbitral, caberá recurso para o próprio Juizado.\n§ 1º O recurso será julgado por uma turma composta por três Juízes togados, em exercício no primeiro grau de jurisdição, reunidos na sede do Juizado.\n§ 2º No recurso, as partes serão obrigatoriamente representadas por advogado."
+    }
+   ]
+  }
+ ],
+ "cartoes": [
+  {
+   "g": 0,
+   "a": "61",
+   "origem": "Lei 9.099, art. 61",
+   "tema": "Juizado Criminal",
+   "frente": "Lei 9.099/95, art. 61: infrações de menor potencial ofensivo são as contravenções penais e os crimes com pena máxima não superior a ____, cumulada ou não com multa.",
+   "verso": "2 anos (Lei 9.099, art. 61).",
+   "porque": "Redação da Lei 11.313/2006. Na violência doméstica contra a mulher não se aplica a Lei 9.099 (Lei 11.340, art. 41)."
+  },
+  {
+   "g": 0,
+   "a": "62",
+   "origem": "Lei 9.099, art. 62",
+   "tema": "Juizado Criminal",
+   "frente": "Lei 9.099/95, art. 62: o processo no Juizado orienta-se pela oralidade, ____, informalidade, economia processual e celeridade.",
+   "verso": "Simplicidade (Lei 9.099, art. 62).",
+   "porque": "Busca a reparação dos danos à vítima e a pena não privativa de liberdade."
+  },
+  {
+   "g": 0,
+   "a": "69",
+   "origem": "Lei 9.099, art. 69",
+   "tema": "Juizado Criminal",
+   "frente": "Lei 9.099/95, art. 69, parágrafo único: ao autor do fato que for encaminhado ao juizado ou assumir o compromisso de comparecer, não se imporá ____ nem se exigirá ____.",
+   "verso": "Prisão em flagrante; fiança (Lei 9.099, art. 69, parágrafo único).",
+   "porque": "Lavra-se termo circunstanciado em vez de auto de prisão."
+  },
+  {
+   "g": 0,
+   "a": "74",
+   "origem": "Lei 9.099, art. 74",
+   "tema": "Juizado Criminal",
+   "frente": "Lei 9.099/95, art. 74, parágrafo único: na ação penal privada ou pública condicionada, o acordo de composição dos danos homologado acarreta ____.",
+   "verso": "Renúncia ao direito de queixa ou representação (Lei 9.099, art. 74, parágrafo único).",
+   "porque": "A sentença homologatória é irrecorrível e vale como título executivo no cível."
+  },
+  {
+   "g": 0,
+   "a": "76",
+   "origem": "Lei 9.099, art. 76",
+   "tema": "Juizado Criminal",
+   "frente": "Lei 9.099/95, art. 76, § 2º, II: não cabe transação penal se o agente foi beneficiado anteriormente por ela no prazo de ____.",
+   "verso": "5 anos (Lei 9.099, art. 76, § 2º, II).",
+   "porque": "Também impede a condenação anterior, por crime, a pena privativa de liberdade por sentença definitiva (inciso I)."
+  },
+  {
+   "g": 0,
+   "a": "76",
+   "origem": "Lei 9.099, art. 76",
+   "tema": "Juizado Criminal",
+   "frente": "Lei 9.099/95, art. 76, § 4º: a pena aplicada na transação penal ____ importa em reincidência.",
+   "verso": "Não (Lei 9.099, art. 76, § 4º).",
+   "porque": "É registrada só para impedir novo benefício em 5 anos e não consta de certidão de antecedentes (§ 6º)."
+  },
+  {
+   "g": 0,
+   "a": "88",
+   "origem": "Lei 9.099, art. 88",
+   "tema": "Juizado Criminal",
+   "frente": "Lei 9.099/95, art. 88: depende de representação a ação penal relativa aos crimes de lesões corporais ____ e lesões ____.",
+   "verso": "Leves; culposas (Lei 9.099, art. 88).",
+   "porque": "Na violência doméstica contra a mulher a lesão leve é de ação pública incondicionada (Súmula 542 STJ)."
+  },
+  {
+   "g": 0,
+   "a": "89",
+   "origem": "Lei 9.099, art. 89",
+   "tema": "Juizado Criminal",
+   "frente": "Lei 9.099/95, art. 89: cabe suspensão condicional do processo nos crimes com pena ____ igual ou inferior a ____, por ____ anos de prova.",
+   "verso": "Mínima; um ano; dois a quatro (Lei 9.099, art. 89).",
+   "porque": "Aplica-se a crimes dentro ou fora do Juizado; não corre a prescrição durante a suspensão (§ 6º)."
+  },
+  {
+   "g": 0,
+   "a": "89",
+   "origem": "Lei 9.099, art. 89",
+   "tema": "Juizado Criminal",
+   "frente": "Lei 9.099/95, art. 89, § 3º: a suspensão será revogada (obrigatoriamente) se o beneficiário vier a ser processado por outro ____ ou não reparar o dano sem motivo justificado.",
+   "verso": "Crime (Lei 9.099, art. 89, § 3º).",
+   "porque": "Processo por contravenção ou descumprimento de outra condição gera revogação facultativa (§ 4º)."
+  },
+  {
+   "g": 1,
+   "a": "3",
+   "origem": "JEC, art. 3",
+   "tema": "Juizado Cível",
+   "frente": "Lei 9.099/95, art. 3º, I: o Juizado Especial Cível julga causas de valor até ____ salários mínimos.",
+   "verso": "40 (Lei 9.099, art. 3º, I).",
+   "porque": "Excluídas as causas alimentares, falimentares, fiscais, de interesse da Fazenda e de estado e capacidade (§ 2º).",
+   "disc": "pc"
+  },
+  {
+   "g": 1,
+   "a": "9",
+   "origem": "JEC, art. 9",
+   "tema": "Juizado Cível",
+   "frente": "Lei 9.099/95, art. 9º: nas causas de até ____ salários mínimos, as partes podem comparecer sem advogado; acima disso, a assistência é obrigatória.",
+   "verso": "20 (Lei 9.099, art. 9º).",
+   "porque": "Se uma parte vier com advogado, a outra pode ter assistência judiciária (§ 1º).",
+   "disc": "pc"
+  },
+  {
+   "g": 1,
+   "a": "41",
+   "origem": "JEC, art. 41",
+   "tema": "Juizado Cível",
+   "frente": "Lei 9.099/95, art. 41, § 1º: o recurso é julgado por turma de ____ juízes togados em exercício no primeiro grau.",
+   "verso": "Três (Lei 9.099, art. 41, § 1º).",
+   "porque": "No recurso, a representação por advogado é obrigatória (§ 2º).",
+   "disc": "pc"
+  }
+ ]
+}
