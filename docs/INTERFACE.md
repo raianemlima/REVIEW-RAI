@@ -51,3 +51,14 @@ Na integração inicial, 66 testes cobriam o comportamento anterior e visual. Co
 Uma conferência pontual no Chromium, motivada pelos conflitos de CSS encontrados na revisão, mediu as larguras reais de 320, 390, 1024 e 1440 pixels sem transbordamento horizontal. Também foram conferidos o cartão no celular e o planejamento em tema escuro com um baralho fictício. Menu herdado, link de acessibilidade, logotipo e respiro do planejamento foram corrigidos. Isso não é teste autenticado de produção nem garantia de compatibilidade com todos os navegadores.
 
 A entrega é feita em branch separada e pull request em rascunho. Não altera o repositório original de design e não publica uma nova versão automaticamente.
+
+## Acadêmico Moderno (outubro de 2026)
+
+Decisões aprovadas: cor primária **verde Defensoria** (unifica app, manifesto, páginas legais e a página de vendas) e **Newsreader nos textos de estudo**. O `app-src.txt` não foi editado; tudo é apresentação.
+
+- **Tokens.** `arquivos/interface.css` é a fonte única de cor. Verde `#08775c` (claro) / `#4dd6a6` com texto `#08251c` (escuro); neutros levemente esverdeados; estados (`--rd-ok`, `--rd-amber`, `--rd-bad`, `--rd-info`) com contraste AA nos dois temas. Aliases semânticos `--c-*`, escala de espaço `--s-1…7` (base 4), tipos `--t-page…--t-micro`, raios `--r-*`, contorno de campo `--rd-line-strong` (≥ 3:1).
+- **Tipografia.** Rubik na interface (pesos 500–650); Newsreader em enunciado, alternativas, resposta, súmulas, teses, lei seca, doutrina e caderno (altura de linha 1,6, até ~70 caracteres); IBM Plex Mono só nos atalhos de teclado (`--f-code`).
+- **Componentes.** Botões em frase normal; texto sobre a primária usa `--accent-ink`; segmentos marcados com fundo suave; cabeçalhos de seção (`.dpe-hero`, `.es-hoje`) como superfície discreta; ícones do cabeçalho com o mesmo tamanho; selos "novo" em `#b42318`.
+- **Temas.** Mesmo mecanismo (`revisao-dpe-tema`: automático/claro/escuro). Script mínimo no `<head>` aplica o tema antes do primeiro pixel; `meta theme-color` por esquema e `color-scheme`. Ícones do app com fundo verde.
+- **Correções.** Provas não transborda mais em 360 px; Ajustes mostra o título antes do atalho do cronograma; cache `review-dpe-assuntos-v7`.
+- **Pendências.** Capturas da página de vendas (`screenshots/site-*.webp`) ainda mostram o app violeta e precisam ser refeitas com conta real; cores do PDF exportado (no `app-src.txt`) seguem violetas; Lei seca, Doutrina e Jogo só foram vistos sem conteúdo.
