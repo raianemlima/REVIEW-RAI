@@ -792,7 +792,11 @@ function bindSync() {
   $("#syGo")?.addEventListener("click", () => conectar($("#syRepo").value, $("#syTok").value));
   $("#syCodGo")?.addEventListener("click", () => { try { const k = lerCodigo($("#syCod").value); conectar(k.repo, k.token); } catch (e) { msg(e.message); } });
   $("#sySync")?.addEventListener("click", async () => { await sincronizar(true); renderAjustes(); });
-  $("#syCopy")?.addEventListener("click", async () => { try { await navigator.clipboard.writeText(syncCodigo()); toast("Código copiado. Cole no outro aparelho."); } catch (e) { prompt("Copie o código:", syncCodigo()); } });
+  $("#syCopy")?.addEventListener("click", () => {
+    $("#syMsg").innerHTML = `<div class="confirm" style="margin-top:10px"><p style="margin:0">O código <b>não é criptografado</b>: quem o tiver acessa o seu repositório de progresso. Cole só no seu outro aparelho, nunca em conversa, e-mail ou rede social. Se vazar, apague o token no GitHub.</p><div class="row"><button class="btn primary" id="syCopyYes">Copiar mesmo assim</button><button class="btn" id="syCopyNo">Cancelar</button></div></div>`;
+    $("#syCopyNo").onclick = () => $("#syMsg").innerHTML = "";
+    $("#syCopyYes").onclick = async () => { $("#syMsg").innerHTML = ""; try { await navigator.clipboard.writeText(syncCodigo()); toast("Código copiado. Cole no outro aparelho."); } catch (e) { prompt("Copie o código:", syncCodigo()); } };
+  });
   $("#syOff")?.addEventListener("click", () => { $("#syMsg").innerHTML = `<div class="confirm" style="margin-top:10px"><p style="margin:0">Desconectar este aparelho? O progresso continua aqui e no GitHub, mas deixa de sincronizar.</p><div class="row"><button class="btn primary" id="syOffYes">Desconectar</button><button class="btn" id="syOffNo">Cancelar</button></div></div>`; $("#syOffNo").onclick = () => $("#syMsg").innerHTML = ""; $("#syOffYes").onclick = () => { syncSet(null); S.syncMsg = ""; renderAjustes(); }; });
 }
 
