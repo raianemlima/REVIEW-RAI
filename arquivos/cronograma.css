@@ -108,3 +108,12 @@ html[data-rd-design="figma"] body.rd-shell .cr-form select { box-sizing:border-b
 .cr-consulta-externa { margin:12px 0; padding:0 10px; border:1px dashed var(--line); border-radius:10px; }
 .cr-consulta-externa summary { color:var(--muted); font-size:.84rem; }
 .cr-consulta-externa p { color:var(--muted); font-size:.8rem; line-height:1.45; }
+/* ligação do assunto com o conteúdo do app */
+.cr-app-resumo { margin:4px 0 8px; font-size:.82rem; line-height:1.4; color:var(--muted); }
+.cr-app-resumo b { color:var(--ink); }
+.cr-rel-grupo { margin:10px 0 0; padding-top:10px; border-top:1px solid var(--line); }
+.cr-rel-grupo:first-of-type { border-top:0; padding-top:0; }
+.cr-rel-grupo .cr-platform-heading b { font-size:.86rem; }
+.cr-rel-grupo p { margin:4px 0 6px; }
+.cr-platform-list li .btn { justify-self:start; margin-top:4px; min-height:36px; overflow-wrap:anywhere; white-space:normal; text-align:left; }
+.cr-platform-list li span { overflow-wrap:anywhere; }
