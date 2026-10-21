@@ -3491,7 +3491,7 @@ function renderLib() {
     <h2>Biblioteca</h2>
     <p class="sub">${DECK.cartoes.length} cartões em ${plural(DECK.disciplinas.length, "disciplina", "disciplinas")}, versão ${esc(DECK.versao)}.</p>
     ${ebLista().length ? `<button class="btn primary eb-entrar" id="ebBtn">📘 Aprofundamento (${ebLista().length})</button>` : ""}
-    <div class="libnav"><button class="btn" id="glBtn">📖 Glossário (${(DECK.glossario || []).length})</button><button class="btn" id="quBtn">🗂️ Quadros (${(DECK.quadros || []).length})</button><button class="btn" id="meBtn">➕ Meus cartões${(S.ajustes.meus || []).length ? " (" + S.ajustes.meus.length + ")" : ""}</button></div>
+    <div class="libnav"><button class="btn" id="glBtn">📖 Glossário (${(DECK.glossario || []).length})</button><button class="btn" id="quBtn">🗂️ Quadros (${(DECK.quadros || []).length})</button><button class="btn" id="meBtn">➕ Meus cartões${(S.ajustes.meus || []).length ? " (" + S.ajustes.meus.length + ")" : ""}</button><a class="btn" id="dhLink" href="direitos-humanos-dpesp.html" target="_blank" rel="noopener" style="text-decoration:none;text-align:center;box-sizing:border-box">⚖️ Direitos Humanos · DPESP</a></div>
     <div class="filters">
       <input id="lq" type="search" placeholder="Buscar: artigo, julgado, palavra…" value="${esc(S.libQuery)}">
       <select id="ld"><option value="">Todas as disciplinas</option>${DECK.disciplinas.map(d => `<option value="${d.id}" ${d.id === S.libDisc ? "selected" : ""}>${esc(d.nome)}</option>`).join("")}</select>
