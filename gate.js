@@ -12,7 +12,7 @@ document.body.classList.add("rd-gate");
   const KEY = "revisao-dpe-chave", KEY_UID = "revisao-dpe-chave-uid", CONTA = "revisao-dpe-conta", VERIF = "revisao-dpe-verif", PRAZO = 7 * 86400000;
   const SB_URL = "https://hlenhmgnqqnkjqmntnpz.supabase.co", SB_KEY = "sb_publishable_UbPHvOFSbd-dgyDx6SI7mg_UBx4_o9l";   // chave pública: a proteção é a RLS
   const $ = s => document.querySelector(s);
-  const APP_CACHE = "review-dpe-assuntos-v12";
+  const APP_CACHE = "review-dpe-assuntos-v13";
   async function carregarTexto(url, tipo, motivo) {
     let resposta;
     try { resposta = await fetch(url); } catch (_) { throw new Error(motivo); }
