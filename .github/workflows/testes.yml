@@ -20,3 +20,5 @@ jobs:
         run: npm run check
       - name: Testar com dados fictícios, sem serviços de produção
         run: npm test
+      - name: Testar as regras de cobrança do webhook (sem rede)
+        run: npm run test:webhook
