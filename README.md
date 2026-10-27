@@ -19,6 +19,7 @@ O baralho fica em `deck.enc`, separado do `index.html`, cifrado com AES-256-GCM 
 - Configuração de segurança do Supabase: [`supabase/seguranca.sql`](supabase/seguranca.sql).
 - Senha compartilhada do baralho, limites da proteção, detecção de compartilhamento e rotação da senha: [`docs/SEGURANCA-CONTEUDO.md`](docs/SEGURANCA-CONTEUDO.md).
 - Cobrança e liberação automática pelo Asaas: [`docs/ASAAS.md`](docs/ASAAS.md).
+- Divulgação (página de vendas no domínio, material gratuito com captação de e-mail, cupons de parceiro, depoimentos e links com UTM): [`docs/DIVULGACAO.md`](docs/DIVULGACAO.md).
 
 ## Carregamento inicial e uso offline
 
