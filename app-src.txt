@@ -308,7 +308,15 @@ async function compartilharApp() {
   try { if (navigator.share) { await navigator.share(dados); return; } } catch (e) { if (e && e.name === "AbortError") return; }
   try { await navigator.clipboard.writeText(dados.url); toast("Link copiado. É só colar na conversa."); } catch (e) { prompt("Copie o link:", dados.url); }
 }
-// -- aviso de nova versão
+// -- nova versão: aplica sozinha quando não há estudo em andamento; senão avisa e aplica ao sair do app
+function estudoEmAndamento() {
+  const campo = document.activeElement;
+  return (S.tab === "sessao" && !!S.session) || S.tab === "jogo" || !!(campo && campo.matches && campo.matches("input, textarea, select, [contenteditable]"));
+}
+async function aplicarAtualizacao(w) {
+  try { await flush(); } catch (e) {}   // grava o que estiver pendente antes de recarregar
+  w.postMessage({ type: "SKIP_WAITING" });
+}
 function mostrarAtualizar(w) {
   if ($("#updbar")) return; const b = document.createElement("div"); b.id = "updbar"; b.className = "updbar";
   b.innerHTML = `<span>Nova versão do app pronta.</span><button class="btn small primary" id="updGo">Atualizar</button>`; document.body.appendChild(b);
@@ -2241,7 +2249,13 @@ async function boot() {
 if ("serviceWorker" in navigator && !isNative()) {
   const tinhaSW = !!navigator.serviceWorker.controller; let recarregou = false;
   navigator.serviceWorker.register("sw.js").then(reg => {
-    const avisa = w => { if (w && navigator.serviceWorker.controller) mostrarAtualizar(w); };
+    let pendente = null;
+    const avisa = w => {
+      if (!w || !navigator.serviceWorker.controller) return;
+      if (!estudoEmAndamento()) { aplicarAtualizacao(w); return; }
+      pendente = w; mostrarAtualizar(w);
+    };
+    document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden" && pendente) { const w = pendente; pendente = null; aplicarAtualizacao(w); } });
     if (reg.waiting) avisa(reg.waiting);
     reg.addEventListener("updatefound", () => { const w = reg.installing; if (w) w.addEventListener("statechange", () => { if (w.state === "installed") avisa(w); }); });
     setInterval(() => reg.update().catch(() => {}), 3600000);
