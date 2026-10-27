@@ -45,6 +45,8 @@ export function validarCatalogoConteudo({ taxonomia, programas, pesos }) {
       if (!['http:', 'https:'].includes(url.protocol)) falha(caminho, "fonteUrl deve usar HTTP ou HTTPS.");
     }
     if (programa.lacunas !== undefined && !listaDeTextos(programa.lacunas)) falha(caminho, "lacunas deve ser um array de textos não vazios.");
+    if (programa.cargo !== undefined && !["defensor", "servidor"].includes(programa.cargo)) falha(caminho, "cargo, quando presente, deve ser \"defensor\" ou \"servidor\".");
+    if (programa.plano !== undefined && !(texto(programa.plano) && /^[a-z0-9]+(?:-[a-z0-9]+)*\.html$/.test(programa.plano))) falha(caminho, "plano, quando presente, deve ser um arquivo .html relativo da raiz do site.");
     if (!Array.isArray(programa.disciplinas) || programa.disciplinas.length === 0) falha(caminho, "disciplinas deve ser um array não vazio.");
     const idsDisciplinas = new Set();
     for (const [di, disciplina] of programa.disciplinas.entries()) {

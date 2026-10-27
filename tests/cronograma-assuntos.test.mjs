@@ -22,7 +22,7 @@ function ambiente(){
 }
 test('programas incluem todas as rubricas e tópicos com localizador; Português e conteúdo local não dependem do baralho',()=>{
  const a=ambiente();try{
-  const dados=a.run('window.DPE_CONTEUDOS_EDITAIS');assert.equal(Object.keys(dados).length,18);
+  const dados=a.run('window.DPE_CONTEUDOS_EDITAIS');assert.equal(Object.keys(dados).length,19);
   const taxonomia=a.run('window.DPE_DISCIPLINAS_CANONICAS');assert.ok(taxonomia.length>25);
   const nucleo=Array.from(taxonomia.filter(d=>d.nucleoComum).map(d=>d.id));assert.equal(nucleo.length,7);assert.deepEqual(Array.from(a.run('window.__cronogramaCatalogo.CORE')),nucleo);
   const metadados=Array.from(a.run('window.__cronogramaCatalogo.EDITAIS_DPE'));

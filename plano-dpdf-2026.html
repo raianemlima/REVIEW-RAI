@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6653e7">
+  <title>Review DPE · Plano DPDF 2026</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f7fc; --surface: #ffffff; --surface-soft: #eeeaff; --surface-muted: #f0eff7;
+      --ink: #18152f; --muted: #625d75; --line: #e5e3f1;
+      --brand: #6653e7; --brand-deep: #4d3bc6; --brand-soft: #eeeaff;
+      --ok: #24b981; --ok-soft: #e7f8f1; --amber: #ef9c26; --amber-soft: #fff3dd;
+      --bar: #c9c6d8;
+      --shadow-soft: 0 8px 24px rgba(40, 30, 100, .07);
+      --radius: 22px; --radius-sm: 14px;
+    }
+    [data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #11101d; --surface: #1b192a; --surface-soft: #302a55; --surface-muted: #242231;
+      --ink: #f6f4ff; --muted: #b8b3ca; --line: #302d43;
+      --brand: #8b7cf6; --brand-deep: #7665ec; --brand-soft: #302a55;
+      --ok: #4ed6a5; --ok-soft: #173a31; --amber: #f5b74f; --amber-soft: #3b2e19;
+      --bar: #46425c;
+      --shadow-soft: 0 8px 24px rgba(0, 0, 0, .18);
+    }
+    * { box-sizing: border-box; }
+    html { min-width: 320px; scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 ui-rounded, "Avenir Next", "Segoe UI", system-ui, sans-serif; }
+    a { color: inherit; }
+    button { font: inherit; }
+    button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visible { outline: 3px solid color-mix(in srgb, var(--brand) 62%, #fff); outline-offset: 3px; }
+    .shell { width: min(1080px, calc(100% - 32px)); margin: 0 auto; }
+    .topbar { border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 92%, transparent); position: sticky; top: 0; z-index: 5; backdrop-filter: blur(16px); }
+    .topbar-inner { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 800; letter-spacing: -.05em; text-decoration: none; }
+    .brand img { width: 32px; height: 32px; border-radius: 10px; }
+    .brand strong { color: var(--brand); }
+    .top-actions { display: flex; gap: 8px; }
+    .icon-btn, .ghost-btn { min-width: 44px; min-height: 44px; border: 1px solid var(--line); border-radius: 13px; background: var(--surface); color: var(--ink); cursor: pointer; }
+    .ghost-btn { padding: 0 14px; font-weight: 700; }
+    .icon-btn:hover, .ghost-btn:hover { border-color: var(--brand); }
+    main { padding: 32px 0 64px; display: grid; gap: 22px; }
+    .eyebrow { color: var(--brand); font-size: 11px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+    h1 { font-size: clamp(28px, 5vw, 42px); line-height: 1.08; letter-spacing: -.04em; margin: 8px 0 12px; }
+    h2 { font-size: 22px; letter-spacing: -.03em; margin: 0 0 6px; }
+    h3 { font-size: 16px; margin: 0 0 6px; }
+    p { margin: 0 0 10px; }
+    .lead { color: var(--muted); max-width: 70ch; }
+    .hero, .panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow-soft); }
+    .hero { background: linear-gradient(135deg, color-mix(in srgb, var(--brand-soft) 80%, var(--surface)) 0%, var(--surface) 62%); }
+    .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 18px; }
+    .stat { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 14px; }
+    .stat b { display: block; font-size: 26px; letter-spacing: -.04em; color: var(--brand); }
+    .stat span { color: var(--muted); font-size: 13px; }
+    nav.toc { display: flex; flex-wrap: wrap; gap: 8px; }
+    nav.toc a { text-decoration: none; border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 7px 13px; font-size: 13px; font-weight: 700; }
+    nav.toc a:hover { border-color: var(--brand); color: var(--brand); }
+    .point { font-weight: 700; margin-bottom: 14px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { text-align: left; vertical-align: top; padding: 10px 10px; border-bottom: 1px solid var(--line); }
+    th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+    .table-wrap { overflow-x: auto; }
+    .bars { display: grid; gap: 6px; margin: 8px 0 14px; }
+    .bar-row { display: grid; grid-template-columns: minmax(150px, 34%) 1fr; gap: 12px; align-items: center; font-size: 13px; }
+    .bar-row > span:first-child { text-align: right; }
+    .bar-track { display: flex; align-items: center; gap: 8px; }
+    .bar-track i { display: block; height: 16px; border-radius: 5px; background: var(--bar); }
+    .bar-row.core .bar-track i { background: var(--brand); }
+    .bar-track small { color: var(--muted); white-space: nowrap; }
+    .legend { color: var(--brand); font-size: 13px; font-weight: 700; }
+    ol, ul { margin: 0 0 10px; padding-left: 20px; }
+    li { margin-bottom: 6px; }
+    .weeks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .week { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 16px; background: var(--surface-muted); }
+    .week .when { color: var(--brand); font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+    .check { display: flex; gap: 10px; align-items: flex-start; padding: 9px 0; border-bottom: 1px solid var(--line); cursor: pointer; }
+    .check:last-child { border-bottom: 0; }
+    .check input { width: 20px; height: 20px; margin-top: 1px; accent-color: var(--brand); flex: none; }
+    .check.done span { color: var(--muted); text-decoration: line-through; }
+    .progress { height: 8px; border-radius: 999px; background: var(--surface-muted); overflow: hidden; margin: 8px 0 4px; }
+    .progress i { display: block; height: 100%; width: 0; background: var(--ok); transition: width .2s ease; }
+    .note { background: var(--amber-soft); border-radius: var(--radius-sm); padding: 12px 14px; font-size: 14px; }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; }
+    footer { color: var(--muted); font-size: 13px; padding: 0 0 40px; }
+    @media (max-width: 800px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } .weeks { grid-template-columns: 1fr; } }
+    @media (max-width: 480px) { .hero, .panel { padding: 18px; } .bar-row { grid-template-columns: 1fr; gap: 2px; } .bar-row > span:first-child { text-align: left; } }
+    @media print { .topbar, nav.toc, .no-print { display: none !important; } body, [data-theme="dark"] { background: #fff; color: #111; } .hero, .panel { box-shadow: none; break-inside: avoid; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="./" aria-label="Review DPE — início">
+        <img src="icons/icon-192.png" alt="Logo Review DPE">
+        <span>Review <strong>DPE</strong></span>
+      </a>
+      <div class="top-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Alternar tema" title="Alternar tema">◐</button>
+        <button class="icon-btn" id="printPage" type="button" aria-label="Imprimir ou salvar em PDF" title="Imprimir ou salvar em PDF">↗</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero" aria-labelledby="pageTitle">
+      <div class="eyebrow">Edital nº 1 – DPDF, de 26/10/2026 · Instituto ACCESS</div>
+      <h1 id="pageTitle">Plano estratégico · Analista de Apoio à Assistência Judiciária – Direito e Legislação</h1>
+      <p class="lead">Provas objetiva e discursiva em 21/02/2027, no Distrito Federal, em dois turnos no mesmo dia. A classificação soma objetiva (119 pontos), discursiva (50) e títulos (6). Os assuntos do edital já estão no <b>Cronograma</b> do app: escolha “DPDF · Analista Direito e Legislação”.</p>
+      <p class="lead" id="countdown" aria-live="polite"></p>
+      <div class="stats">
+        <div class="stat"><b>70</b><span>questões objetivas, 4h30, sem desconto por erro</span></div>
+        <div class="stat"><b>98/119</b><span>pontos vêm dos Conhecimentos Específicos (peso 2)</span></div>
+        <div class="stat"><b>850</b><span>discursivas corrigidas (Direito e Legislação)</span></div>
+        <div class="stat"><b>10 + 15</b><span>cortes da discursiva: dissertação e soma das questões</span></div>
+      </div>
+    </section>
+
+    <nav class="toc" aria-label="Seções do plano">
+      <a href="#diagnostico">Diagnóstico</a><a href="#prioridades">Prioridades</a><a href="#fases">Fases</a><a href="#piloto">Piloto</a><a href="#sessao">Sessão</a><a href="#discursiva">Discursiva</a><a href="#acompanhamento">Acompanhamento</a><a href="#datas">Datas</a>
+    </nav>
+
+    <section class="panel" id="diagnostico" aria-labelledby="diagTitle">
+      <h2 id="diagTitle">1. Diagnóstico provisório</h2>
+      <p class="point">O plano treina objetiva e discursiva desde o início; não há prova oral nem prática neste cargo.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Regra do edital</th><th>Consequência para o estudo</th></tr></thead>
+        <tbody>
+          <tr><td>Pontuação = acertos × peso, sem desconto por erro (item 10.14.2)</td><td>Nunca deixar questão em branco; cerca de 3,8 min por questão.</td></tr>
+          <tr><td>Corte da objetiva: 50% do total, 50% dos básicos (11 acertos), 50% dos específicos (25 acertos) e Português ≠ 0 (item 10.14.4)</td><td>Os básicos não podem ser abandonados; o corte é mínimo, não meta.</td></tr>
+          <tr><td>Discursiva: dissertação de atualidade (30 linhas, 20 pts) + 3 questões específicas (20 linhas, 10 pts cada)</td><td>Escrita manuscrita sob tempo toda semana, não só leitura.</td></tr>
+          <tr><td>Desconto de língua: 4 × erros ÷ linhas (dissertação) e 2 × erros ÷ linhas (questões)</td><td>Português pesa também na discursiva.</td></tr>
+          <tr><td>Legislação vigente e jurisprudência pacificada até 26/10/2026 (itens 17.8 a 17.11)</td><td>Estudo “congelado” nessa data; novidades posteriores não são cobradas.</td></tr>
+          <tr><td>Anexo I: questões de compreensão, aplicação e análise</td><td>Casos e questões aplicadas desde a primeira semana.</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Hipóteses a confirmar na Semana 1</h3>
+      <ul>
+        <li>Itens distritais (LODF, LC 828/2010, LC 840/2011, Lei 4.516/2010, resoluções do CSDPDF, Lei Distrital 7.462/2024) tendem a ser a maior lacuna para quem não é do DF.</li>
+        <li>O estilo da banca ACCESS (literalidade × aplicação) ainda não foi observado: colete 2 ou 3 provas dela.</li>
+      </ul>
+      <h3>Informações que faltam para personalizar</h3>
+      <ul><li>Horas reais por dia útil e fim de semana.</li><li>Resultado do diagnóstico por disciplina.</li><li>Materiais já usados.</li></ul>
+    </section>
+
+    <section class="panel" id="prioridades" aria-labelledby="prioTitle">
+      <h2 id="prioTitle">2. Prioridades justificadas</h2>
+      <p class="point">O bloco institucional e distrital soma 20 pontos — mais que qualquer disciplina isolada — porque as mesmas normas aparecem em mais de um bloco.</p>
+      <p class="legend">Barras em destaque: normas que reaparecem em mais de um bloco.</p>
+      <div class="bars" id="bars" role="list" aria-label="Pontos da objetiva por disciplina"></div>
+      <ol>
+        <li><b>Alavanca:</b> bloco institucional-distrital (LC 80/1994, LC 828/2010, LODF arts. 114–116, LC 840/2011, Maria da Penha, Lei 4.516/2010, Resoluções CSDPDF 224/2020 e 271/2023); Civil e Processo Civil (24 pts); Português.</li>
+        <li><b>Volume:</b> Constitucional, Penal, Processo Penal (30 pts); Administrativo (8 pts).</li>
+        <li><b>Perfil Defensoria:</b> ECA, Consumidor, Difusos e Coletivos, Direitos Humanos (28 pts).</li>
+        <li><b>Garantia de corte:</b> DF e Mulheres, Informática, Primeiros Socorros (6 pts) — estudo enxuto por questões.</li>
+      </ol>
+      <p class="note">Ponto de partida ajustável: cerca de 75–80% do tempo nos específicos. Se o diagnóstico mostrar Português abaixo de 3/5 ou básicos perto de 11 acertos, os básicos ganham tempo até sair da zona de risco. A recorrência de provas passadas descreve o estilo da banca; não garante o conteúdo da próxima.</p>
+    </section>
+
+    <section class="panel" id="fases" aria-labelledby="fasesTitle">
+      <h2 id="fasesTitle">3. Fases até 21/02/2027</h2>
+      <p class="point">Piloto (4 semanas), cobertura com retomadas (8), treino no formato (4) e semana final; aplicar desde o início.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Fase</th><th>Período</th><th>Foco</th><th>Produto que comprova avanço</th></tr></thead>
+        <tbody>
+          <tr><td>1. Piloto</td><td>26/10 a 22/11</td><td>Diagnóstico, bloco institucional-distrital, início de Civil e Processo Civil</td><td>Mapa de lacunas e reavaliação</td></tr>
+          <tr><td>2. Cobertura com retomadas</td><td>23/11 a 17/01</td><td>Programa por camadas; conteúdo antigo volta por perguntas e casos</td><td>Cada disciplina com um ciclo e uma retomada sem consulta</td></tr>
+          <tr><td>3. Integração e formato</td><td>18/01 a 14/02</td><td>Questões intercaladas, simulados nos dois turnos, discursivas sob tempo</td><td>Simulados corrigidos e erros recorrentes tratados</td></tr>
+          <tr><td>4. Semana da prova</td><td>15/02 a 21/02</td><td>Registro de erros, sono e logística; nada de conteúdo novo</td><td>Lista curta de pontos instáveis revista</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note">De 21/12 a 03/01 a disponibilidade tende a cair: planeje como semanas de retomada e questões, não de conteúdo novo.</p>
+    </section>
+
+    <section class="panel" id="piloto" aria-labelledby="pilotoTitle">
+      <div class="row"><h2 id="pilotoTitle">4. Piloto de quatro semanas</h2><span id="pilotProgressText" class="lead"></span></div>
+      <p class="point">A unidade é a tarefa concluída, não a hora; marque o produto de cada semana quando ele existir.</p>
+      <div class="progress" aria-hidden="true"><i id="pilotProgress"></i></div>
+      <div class="weeks" id="weeks"></div>
+      <p class="note">No piloto, evite cadastrar todo o material em flashcards, reler resumos inteiros como revisão ou adiar questões até “terminar a teoria”.</p>
+    </section>
+
+    <section class="panel" id="sessao" aria-labelledby="sessaoTitle">
+      <h2 id="sessaoTitle">5. Modelo de sessão</h2>
+      <p class="point">Cada sessão termina com uma entrega verificável e a próxima retomada marcada.</p>
+      <ol>
+        <li><b>Diagnosticar:</b> 2 a 3 perguntas sem consulta sobre o tema do dia.</li>
+        <li><b>Adquirir ou reparar:</b> estudar só o necessário; na lei seca, extrair hipótese, sujeitos, requisitos, prazos e exceções.</li>
+        <li><b>Recuperar:</b> fechar o material e reconstruir regra, requisitos e exceção.</li>
+        <li><b>Conferir:</b> comparar com a fonte e anotar a diferença no registro de erros.</li>
+        <li><b>Aplicar:</b> questões do formato ou caso com um fato alterado; explicar por que a alternativa próxima está errada.</li>
+        <li><b>Retomar:</b> marcar a próxima recuperação. Exemplo ajustável: 1–3 dias, depois cerca de 1 semana, depois 2–4 semanas.</li>
+      </ol>
+      <h3>Escala da semana (estrutura, não carga fixa)</h3>
+      <ul>
+        <li>Dias úteis: um bloco de conteúdo novo ou reparo + um bloco de questões mistas de temas anteriores + 15–20 min de Português ou de um básico.</li>
+        <li>Uma vez por semana: produção discursiva, alternando dissertação e questões de 20 linhas.</li>
+        <li>Fim de semana: bateria intercalada, correção comentada e atualização do registro de erros.</li>
+        <li>Se faltar tempo, corte primeiro conteúdo novo; preserve retomadas e questões.</li>
+      </ul>
+      <p class="lead">No app, os cartões da Biblioteca servem à etapa de recuperação; a conclusão de um assunto no Cronograma é marcada por você e não comprova domínio.</p>
+    </section>
+
+    <section class="panel" id="discursiva" aria-labelledby="discTitle">
+      <h2 id="discTitle">6. Treino discursivo</h2>
+      <p class="point">Escrever à mão, em folha de 30/20 linhas, com caneta preta ou azul, como na prova.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Peça</th><th>Formato</th><th>Progressão</th><th>Rubrica provisória</th></tr></thead>
+        <tbody>
+          <tr><td>Dissertação</td><td>Atualidade, até 30 linhas, 20 pts; corte 10</td><td>Esquema em 10 min → parágrafos → texto integral em 1h</td><td>Atende ao tema; tese clara; dois argumentos; conclusão; erros contados</td></tr>
+          <tr><td>Questões específicas</td><td>3 × 20 linhas, 10 pts cada; corte 15 na soma</td><td>Resposta oral → tópicos → 20 linhas em ~40 min</td><td>Responde ao comando; conceito; fundamento normativo; aplicação; conclusão</td></tr>
+        </tbody>
+      </table></div>
+      <ul>
+        <li>Temas para treino: acesso à justiça, violência contra a mulher, população em situação de rua, mobilidade e moradia no DF, proteção de dados.</li>
+        <li>Na dissertação, cada erro tira cerca de 0,13 ponto em 30 linhas; dez erros custam cerca de 1,3 ponto.</li>
+        <li>Sem espelho oficial, a rubrica é provisória; ajuste quando a banca divulgar o padrão de respostas.</li>
+      </ul>
+    </section>
+
+    <section class="panel" id="acompanhamento" aria-labelledby="acompTitle">
+      <h2 id="acompTitle">7. Acompanhamento e ajuste</h2>
+      <p class="point">Avanço = recuperação posterior, questões inéditas e qualidade da escrita; horas e páginas medem esforço.</p>
+      <h3>Registro de erros</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Tema</th><th>Tarefa</th><th>Resposta dada</th><th>Falha principal</th><th>Correção</th><th>Próxima verificação</th></tr></thead>
+        <tbody><tr><td>Prescrição × decadência</td><td>Caso sobre prazo para anular negócio</td><td>Aplicou prazo prescricional</td><td>Discriminação</td><td>Anulação de negócio jurídico: prazo decadencial (CC, art. 178)</td><td>Caso novo em 3 dias</td></tr></tbody>
+      </table></div>
+      <p class="lead">Falha principal: conhecimento · recuperação · interpretação do comando · discriminação · aplicação · atualização · execução (tempo, língua).</p>
+      <h3>Regras de ajuste</h3>
+      <ul>
+        <li>Não entende o conceito → exposição inicial ou exemplo comentado.</li>
+        <li>Entende consultando, esquece depois → recuperação com intervalo menor.</li>
+        <li>Confunde institutos → casos contrastantes.</li>
+        <li>Lembra a regra, erra o caso → mais problemas variados.</li>
+        <li>Resolve, mas estoura o tempo → treino cronometrado progressivo.</li>
+        <li>Plano não cabe → cortar conteúdo novo, nunca as retomadas.</li>
+      </ul>
+      <p class="lead">Revisões do plano: 22/11, por volta de 20/12 e 18/01. Mude um componente por vez e anote por quê.</p>
+    </section>
+
+    <section class="panel" id="datas" aria-labelledby="datasTitle">
+      <div class="row"><h2 id="datasTitle">8. Datas administrativas</h2><button class="ghost-btn no-print" id="resetChecklist" type="button">Limpar marcações</button></div>
+      <p class="point">Marcações ficam salvas só neste aparelho.</p>
+      <div class="progress" aria-hidden="true"><i id="adminProgress"></i></div>
+      <div id="checklist"></div>
+    </section>
+  </main>
+  <footer class="shell">Review DPE · plano de estudo derivado do Edital nº 1 – DPDF/2026 (DODF nº 199, 26/10/2026). Confira sempre retificações e a versão vigente do edital. Estratégias de estudo são propostas ajustáveis, não promessa de aprovação.</footer>
+
+  <script>
+    (() => {
+      "use strict";
+      const $ = s => document.querySelector(s);
+      const $$ = s => [...document.querySelectorAll(s)];
+      const esc = v => String(v ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+      const storage = {
+        get(key, fallback = null) { try { return localStorage.getItem(key) ?? fallback; } catch (_) { return fallback; } },
+        set(key, value) { try { localStorage.setItem(key, value); } catch (_) {} },
+        remove(key) { try { localStorage.removeItem(key); } catch (_) {} }
+      };
+      // Pontos = questões × peso (itens 10.1 e 10.2); "core" = norma que reaparece em mais de um bloco.
+      const disciplinas = [
+        ["Direito Civil", 6, 2], ["Processo Civil", 6, 2], ["Normas Institucionais DP/DPDF", 5, 2, true],
+        ["Direito Constitucional", 5, 2], ["Direito Penal", 5, 2], ["Processo Penal", 5, 2],
+        ["Direito Administrativo", 4, 2], ["Criança e Adolescente", 4, 2], ["Consumidor", 3, 2],
+        ["Difusos e Coletivos", 3, 2], ["Direitos Humanos", 3, 2], ["Língua Portuguesa (básico)", 5, 1],
+        ["LODF e LC 828/2010 (básico)", 4, 1, true], ["Regime Jurídico – LC 840 (básico)", 3, 1, true], ["Lei Maria da Penha (básico)", 3, 1, true],
+        ["DF e Política para Mulheres (básico)", 2, 1], ["Informática (básico)", 2, 1], ["Primeiros Socorros (básico)", 2, 1]
+      ];
+      const semanas = [
+        { quando: "Semana 1 · 26/10–01/11", foco: "Diagnóstico", fazer: "5 a 8 questões por disciplina, sem consulta, registrando confiança antes de corrigir; leitura ativa da LC 80/1994 e da estrutura da LC 828/2010; uma dissertação diagnóstica de 30 linhas em 1h.", produto: "Mapa de lacunas por disciplina e primeira nota provisória de dissertação", ajuste: "Faltam conceitos básicos → exposição inicial antes de testes." },
+        { quando: "Semana 2 · 02–08/11", foco: "Recuperação com correção", fazer: "Reconstruir sem consulta LC 80, LC 828 e LODF arts. 114–116; iniciar Civil (LINDB, pessoas, negócio jurídico) e Processo Civil (normas fundamentais, prazos, gratuidade arts. 98–102, prerrogativas da DP arts. 185–187); Português 2 vezes.", produto: "Respostas abertas, dias depois, aos pontos da Semana 1", ajuste: "Acerto só com pistas das alternativas → perguntas abertas." },
+        { quando: "Semana 3 · 09–15/11", foco: "Discriminação e aplicação", fazer: "Pares que se confundem: prescrição × decadência; anulação × revogação × convalidação; Defensoria × advocacia; gratuidade × assistência jurídica integral; LC 840 com Administrativo; medidas protetivas da Maria da Penha.", produto: "Casos curtos com a categoria oculta e uma questão discursiva de 20 linhas em 40 min", ajuste: "Lembra a regra mas erra o caso → mais casos contrastantes." },
+        { quando: "Semana 4 · 16–22/11", foco: "Avaliar o sistema", fazer: "Reavaliar temas da Semana 1 sem leitura prévia; mini-simulado de 35 questões em 2h15; comparar com o diagnóstico.", produto: "Tabela diagnóstico × reavaliação e decisão sobre a Fase 2", ajuste: "Plano não coube → reduzir escopo antes de aumentar volume." }
+      ];
+      const datas = [
+        "Impugnação do edital, se houver motivo: 27/10 a 04/11/2026",
+        "Pedido de isenção de taxa, se aplicável: 10 a 12/11/2026",
+        "Certidões de nada-consta criminal do TJDFT e dos TJs onde residiu nos últimos 5 anos (upload na inscrição)",
+        "Foto recente (até 6 meses), cabeça descoberta e ombros",
+        "Inscrição: 03/12/2026 a 07/01/2027; pagamento até 08/01/2027",
+        "Escolher modalidade de concorrência e condições especiais dentro do prazo de inscrição",
+        "Conferir o resultado definitivo das inscrições: 27/01/2027",
+        "Consultar local de prova: 15/02/2027",
+        "Provas apenas no DF: deslocamento chegando ao menos na véspera; dois turnos no mesmo dia",
+        "Títulos, só se aprovado(a) nas duas provas: envio de 01 a 04/06/2027 — separar documentos"
+      ];
+      const PROVA = new Date(2027, 1, 21);
+      function renderCountdown() {
+        const hoje = new Date(); hoje.setHours(0, 0, 0, 0);
+        const dias = Math.round((PROVA - hoje) / 86400000);
+        $("#countdown").textContent = dias > 1 ? `Faltam ${dias} dias para a prova.` : dias === 1 ? "A prova é amanhã." : dias === 0 ? "A prova é hoje." : "A data prevista da prova já passou; confira o cronograma vigente.";
+      }
+      function renderBars() {
+        const max = Math.max(...disciplinas.map(([, q, p]) => q * p));
+        $("#bars").innerHTML = disciplinas.map(([nome, q, p, core]) => {
+          const pts = q * p;
+          return `<div class="bar-row${core ? " core" : ""}" role="listitem"><span>${esc(nome)}</span><span class="bar-track"><i style="width:${Math.round(pts / max * 100)}%"></i><small>${pts} pts · ${q} q</small></span></div>`;
+        }).join("");
+      }
+      function lista(chave) { try { const v = JSON.parse(storage.get(chave, "[]")); return Array.isArray(v) ? v : []; } catch (_) { return []; } }
+      const chavePiloto = "review-dpe:plano-dpdf-2026:piloto:v1", chaveDatas = "review-dpe:plano-dpdf-2026:datas:v1";
+      function renderWeeks() {
+        const feitos = new Set(lista(chavePiloto));
+        $("#weeks").innerHTML = semanas.map((s, i) => `<article class="week"><div class="when">${esc(s.quando)}</div><h3>${esc(s.foco)}</h3><p>${esc(s.fazer)}</p><label class="check${feitos.has(i) ? " done" : ""}"><input type="checkbox" data-week="${i}" ${feitos.has(i) ? "checked" : ""}><span><b>Produto:</b> ${esc(s.produto)}</span></label><p class="lead"><b>Ajuste se…</b> ${esc(s.ajuste)}</p></article>`).join("");
+        atualizar("[data-week]", chavePiloto, "week", "#pilotProgress", "#pilotProgressText");
+      }
+      function renderChecklist() {
+        const feitos = new Set(lista(chaveDatas));
+        $("#checklist").innerHTML = datas.map((d, i) => `<label class="check${feitos.has(i) ? " done" : ""}"><input type="checkbox" data-check="${i}" ${feitos.has(i) ? "checked" : ""}><span>${esc(d)}</span></label>`).join("");
+        atualizar("[data-check]", chaveDatas, "check", "#adminProgress");
+      }
+      function atualizar(seletor, chave, campo, barra, texto) {
+        const caixas = $$(seletor), marcadas = caixas.filter(c => c.checked);
+        caixas.forEach(c => c.closest(".check").classList.toggle("done", c.checked));
+        $(barra).style.width = `${caixas.length ? Math.round(marcadas.length / caixas.length * 100) : 0}%`;
+        if (texto) $(texto).textContent = `${marcadas.length} de ${caixas.length} produtos`;
+        storage.set(chave, JSON.stringify(marcadas.map(c => Number(c.dataset[campo]))));
+      }
+      $("#weeks").addEventListener("change", () => atualizar("[data-week]", chavePiloto, "week", "#pilotProgress", "#pilotProgressText"));
+      $("#checklist").addEventListener("change", () => atualizar("[data-check]", chaveDatas, "check", "#adminProgress"));
+      $("#resetChecklist").addEventListener("click", () => { storage.remove(chaveDatas); renderChecklist(); });
+      $("#themeToggle").addEventListener("click", () => { const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark"; document.documentElement.dataset.theme = next; storage.set("review-dpe:theme", next); });
+      $("#printPage").addEventListener("click", () => window.print());
+      document.documentElement.dataset.theme = storage.get("review-dpe:theme", "light") || "light";
+      renderCountdown(); renderBars(); renderWeeks(); renderChecklist();
+    })();
+  </script>
+</body>
+</html>
