@@ -1492,5 +1492,146 @@ window.DPE_PESOS_EDITAIS = {
       }
     ],
     "nota": "Perfil de tempo inferido da distribuição da prova objetiva: 25 questões por grupo (100 no total), portanto 25% do tempo para cada grupo; o edital não discrimina quantidade por disciplina. A divisão interna de cada grupo é hipótese de tempo, não peso oficial individual. Foram considerados apenas os grupos e a contagem da objetiva; não foram somadas fases discursivas, prova oral, tribuna nem pesos de outras fases. Subjects usam apenas IDs canônicos do catálogo para este edital. O Grupo III também menciona matérias internas não catalogadas como disciplinas autônomas (p.ex. criança e adolescente, idoso, pessoas com deficiência, quilombola, consumidor e ambiental); elas permanecem sob o ID catalogado direitos_difusos_e_coletivos, sem criar IDs. A legislação local (LC estadual nº 55/2009 e normativas internas) aparece no Grupo III, mas não tem ID próprio no catálogo; Português não aparece na distribuição objetiva indicada no item 8.1."
+  },
+  "df-2026": {
+    "fonte": "Edital nº 1 – DPDF, de 26/10/2026 (DODF nº 199, pp. 39–59) · Analista de Apoio à Assistência Judiciária – Direito e Legislação",
+    "tipo": "pontos",
+    "grupos": [
+      {
+        "label": "Língua Portuguesa",
+        "valor": 5,
+        "subjects": [],
+        "evidencia": "Item 10.1, quadro da prova objetiva: 5 questões × peso 1 = 5 pontos (Conhecimentos Básicos)."
+      },
+      {
+        "label": "Lei Orgânica do Distrito Federal e Lei Complementar Distrital nº 828/2010",
+        "valor": 4,
+        "subjects": [
+          "direito_institucional_defensoria_publica"
+        ],
+        "evidencia": "Item 10.1, quadro da prova objetiva: 4 questões × peso 1 = 4 pontos (Conhecimentos Básicos)."
+      },
+      {
+        "label": "Regime Jurídico dos Servidores Públicos do Distrito Federal",
+        "valor": 3,
+        "subjects": [
+          "direito_administrativo"
+        ],
+        "evidencia": "Item 10.1, quadro da prova objetiva: 3 questões × peso 1 = 3 pontos (Conhecimentos Básicos)."
+      },
+      {
+        "label": "Conhecimentos Acerca do Distrito Federal e da Política para Mulheres",
+        "valor": 2,
+        "subjects": [],
+        "evidencia": "Item 10.1, quadro da prova objetiva: 2 questões × peso 1 = 2 pontos (Conhecimentos Básicos)."
+      },
+      {
+        "label": "Lei Maria da Penha",
+        "valor": 3,
+        "subjects": [],
+        "evidencia": "Item 10.1, quadro da prova objetiva: 3 questões × peso 1 = 3 pontos (Conhecimentos Básicos)."
+      },
+      {
+        "label": "Noções de Informática",
+        "valor": 2,
+        "subjects": [],
+        "evidencia": "Item 10.1, quadro da prova objetiva: 2 questões × peso 1 = 2 pontos (Conhecimentos Básicos)."
+      },
+      {
+        "label": "Noções de Primeiros Socorros",
+        "valor": 2,
+        "subjects": [],
+        "evidencia": "Item 10.1, quadro da prova objetiva: 2 questões × peso 1 = 2 pontos (Conhecimentos Básicos)."
+      },
+      {
+        "label": "Direito Constitucional",
+        "valor": 10,
+        "subjects": [
+          "direito_constitucional"
+        ],
+        "evidencia": "Item 10.1 e 10.2, quadro da prova objetiva: 5 questões × peso 2 = 10 pontos (Conhecimentos Específicos)."
+      },
+      {
+        "label": "Direito Administrativo",
+        "valor": 8,
+        "subjects": [
+          "direito_administrativo"
+        ],
+        "evidencia": "Item 10.1 e 10.2, quadro da prova objetiva: 4 questões × peso 2 = 8 pontos (Conhecimentos Específicos)."
+      },
+      {
+        "label": "Direito Civil",
+        "valor": 12,
+        "subjects": [
+          "direito_civil"
+        ],
+        "evidencia": "Item 10.1 e 10.2, quadro da prova objetiva: 6 questões × peso 2 = 12 pontos (Conhecimentos Específicos)."
+      },
+      {
+        "label": "Direito Processual Civil",
+        "valor": 12,
+        "subjects": [
+          "direito_processual_civil"
+        ],
+        "evidencia": "Item 10.1 e 10.2, quadro da prova objetiva: 6 questões × peso 2 = 12 pontos (Conhecimentos Específicos)."
+      },
+      {
+        "label": "Direito Penal",
+        "valor": 10,
+        "subjects": [
+          "direito_penal"
+        ],
+        "evidencia": "Item 10.1 e 10.2, quadro da prova objetiva: 5 questões × peso 2 = 10 pontos (Conhecimentos Específicos)."
+      },
+      {
+        "label": "Direito Processual Penal",
+        "valor": 10,
+        "subjects": [
+          "direito_processual_penal"
+        ],
+        "evidencia": "Item 10.1 e 10.2, quadro da prova objetiva: 5 questões × peso 2 = 10 pontos (Conhecimentos Específicos)."
+      },
+      {
+        "label": "Direito da Criança e do Adolescente",
+        "valor": 8,
+        "subjects": [
+          "direito_da_crianca_e_adolescente"
+        ],
+        "evidencia": "Item 10.1 e 10.2, quadro da prova objetiva: 4 questões × peso 2 = 8 pontos (Conhecimentos Específicos)."
+      },
+      {
+        "label": "Direito do Consumidor",
+        "valor": 6,
+        "subjects": [
+          "direito_do_consumidor"
+        ],
+        "evidencia": "Item 10.1 e 10.2, quadro da prova objetiva: 3 questões × peso 2 = 6 pontos (Conhecimentos Específicos)."
+      },
+      {
+        "label": "Direitos Difusos e Coletivos",
+        "valor": 6,
+        "subjects": [
+          "direitos_difusos_e_coletivos"
+        ],
+        "evidencia": "Item 10.1 e 10.2, quadro da prova objetiva: 3 questões × peso 2 = 6 pontos (Conhecimentos Específicos)."
+      },
+      {
+        "label": "Direitos Humanos",
+        "valor": 6,
+        "subjects": [
+          "direitos_humanos"
+        ],
+        "evidencia": "Item 10.1 e 10.2, quadro da prova objetiva: 3 questões × peso 2 = 6 pontos (Conhecimentos Específicos)."
+      },
+      {
+        "label": "Normas Institucionais da Defensoria Pública e da Defensoria Pública do Distrito Federal",
+        "valor": 10,
+        "subjects": [
+          "direito_institucional_defensoria_publica"
+        ],
+        "evidencia": "Item 10.1 e 10.2, quadro da prova objetiva: 5 questões × peso 2 = 10 pontos (Conhecimentos Específicos)."
+      }
+    ],
+    "nota": "Cargo de servidor (Analista de Apoio à Assistência Judiciária – Direito e Legislação). A prova objetiva tem 70 questões: 21 de Conhecimentos Básicos com peso 1 (21 pontos) e 49 de Conhecimentos Específicos com peso 2 (98 pontos), total de 119 pontos (itens 10.1 e 10.2). Aqui o valor de cada grupo é a pontuação oficial (questões × peso), porque o peso dobrado muda o retorno de uma hora de estudo; ainda assim, os percentuais orientam TEMPO e não são pesos de aprovação. Cada grupo corresponde a uma rubrica do programa com o mesmo nome; o vínculo canônico de LODF/LC 828 e do Regime Jurídico serve só para relacionar conteúdo da Biblioteca e não soma pontos a Normas Institucionais ou Administrativo. Cortes da objetiva (item 10.14.4): 50% do total, 50% nos básicos, 50% nos específicos e Português diferente de zero. A prova discursiva (dissertação de 20 pontos e 3 questões de 10 pontos, item 11.1) e os títulos não foram somados."
   }
 };

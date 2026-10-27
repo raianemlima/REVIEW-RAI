@@ -6,7 +6,7 @@ import { JSDOM } from "jsdom";
 const modulo = fs.readFileSync(new URL("../arquivos/dashboard-editais.js", import.meta.url), "utf8");
 const esperar = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-function ambiente() {
+function ambiente({ comServidor = false } = {}) {
   const programas = {}, pesos = {};
   for (let i = 0; i < 18; i++) {
     const id = `xx-${2020 + i}`;
@@ -17,6 +17,11 @@ function ambiente() {
       ...(i < 16 ? [{ id: "direito_do_consumidor", canonicais: ["direito_do_consumidor"] }] : []),
     ] };
     pesos[id] = i < 14 ? { tipo: "questoes", fonte: `fonte-${i}`, grupos: [{ label: "Constitucional", valor: 10, subjects: ["direito_constitucional"] }, { label: "Grupo penal", valor: 20, subjects: ["direito_penal", "criminologia"] }] } : { tipo: "equilibrada", fonte: `fonte-${i}`, grupos: [] };
+  }
+  if (comServidor) {
+    // Programa de servidor: aparece no Cronograma, mas não entra no relatório dos editais de Defensor.
+    programas["df-2026"] = { cargo: "servidor", disciplinas: [{ id: "lingua_portuguesa", canonicais: [] }, { id: "direito_penal", canonicais: ["direito_penal"] }] };
+    pesos["df-2026"] = { tipo: "pontos", fonte: "fonte-df", grupos: [{ label: "Direito Penal", valor: 999, subjects: ["direito_penal"] }] };
   }
   const dom = new JSDOM('<!doctype html><html data-rd-design="figma"><body class="rd-shell"><main id="main"></main></body></html>', { runScripts: "outside-only" });
   const { window } = dom;
@@ -64,5 +69,17 @@ test("perfil equilibrado explica a ausência de peso em vez de inventar distribu
     filtro.value = "xx-2035";
     filtro.dispatchEvent(new window.Event("change", { bubbles: true }));
     assert.match(window.document.querySelector("#rdEditalPerfil").textContent, /Sem peso individual verificável/);
+  } finally { dom.window.close(); }
+});
+
+test("dashboard ignora programas de servidor na frequência e nos pesos", async () => {
+  const { window, dom } = ambiente({ comServidor: true });
+  try {
+    await esperar(240);
+    const painel = window.document.querySelector("#rdDashboardEditais");
+    assert.ok(painel);
+    assert.match(painel.textContent, /18[\s\S]*editais analisados/);
+    assert.doesNotMatch(painel.textContent, /999/);
+    assert.equal(painel.querySelector('option[value="df-2026"]'), null);
   } finally { dom.window.close(); }
 });

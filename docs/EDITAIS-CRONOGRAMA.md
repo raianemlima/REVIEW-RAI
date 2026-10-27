@@ -61,6 +61,15 @@ O anexo enviado do RJ não continha o programa detalhado. Foi utilizado o comple
 
 O [documento de pontos](https://conhecimento.fgv.br/sites/default/files/concursos/pontos-das-materias_dpe-rj.pdf) mantém ponto e alínea como localizador. Os assuntos de Tutela Coletiva estão compartilhados com Processo Civil nessa relação; o app mostra a rubrica combinada, sem fabricar uma lista independente ou contar o conteúdo duas vezes.
 
+### Edital DPDF 2026 (servidor)
+
+O catálogo também traz o **Edital nº 1 – DPDF, de 26/10/2026** (DODF nº 199), para o cargo de **Analista de Apoio à Assistência Judiciária – Direito e Legislação**. É um cargo de servidor, por isso o programa tem `cargo: "servidor"` e fica **fora do relatório de frequência dos editais de Defensor** (aba Progresso); no Cronograma ele aparece como “DPDF · Analista Direito e Legislação (servidor)”.
+
+- Conteúdo: Conhecimentos Básicos (7 rubricas) e Conhecimentos Específicos do Cargo 1 (11 rubricas), 233 tópicos extraídos do Anexo I com localizador `DODF nº 199, p. N`. Cargos de Contabilidade e Informática não foram incluídos. A extração uniu quebras de página e removeu cabeçalhos/rodapés do DODF sem completar texto por memória; a numeração anômala de Direito Penal (item 28 impresso como 42) está registrada em `lacunas`.
+- Pesos: perfil `tipo: "pontos"`, com valor = questões × peso (básicos peso 1 = 21 pontos; específicos peso 2 = 98 pontos; total 119). Cada grupo tem o mesmo nome da rubrica, então a sugestão de percentuais usa a pontuação da própria rubrica; o vínculo canônico de LODF/LC 828 e do Regime Jurídico serve para relacionar a Biblioteca e não soma pontos a outras rubricas.
+- Plano: o campo opcional `plano` aponta para `plano-dpdf-2026.html`, página offline com diagnóstico, prioridades, fases até 21/02/2027, piloto de quatro semanas, modelo de sessão, treino discursivo, acompanhamento e checklist das datas do edital (salva só no aparelho). O Cronograma mostra o link “Plano estratégico deste edital” ao escolher esse programa; só aceita um `.html` da raiz do site.
+- Contrato: `cargo` (opcional) aceita `"defensor"` ou `"servidor"`; `plano` (opcional) aceita apenas `nome-do-arquivo.html`. Ambos são verificados por `ferramentas/ci/validar_conteudo.mjs`. Testes: `tests/plano-dpdf-2026.test.mjs` e `tests/dashboard-editais.test.mjs`.
+
 ## Metas de assuntos e revisão são diferentes
 
 Em **Hoje**, acompanhe os assuntos planejados e marque **Estudei este assunto** após estudar. A conclusão é registrada pelo aluno: não é automática pelo relógio, não comprova domínio e não altera a nota ou o intervalo FSRS de um cartão.

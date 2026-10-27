@@ -8,8 +8,10 @@
   const CORE = DISCIPLINAS_EDITAIS.filter(d => d.nucleoComum === true).map(d => d.id);
   const DISC_MAP = Object.fromEntries(DISCIPLINAS_EDITAIS.map(d => [d.id, { ...d }]));
 
-  // 18 editais para a carreira de Defensor(a) Público(a), publicados entre 2021 e 2026.
-  // Provas discursivas isoladas, caderno de prova, concurso de servidores e edital de 2014 ficaram fora.
+  // 18 editais para a carreira de Defensor(a) Público(a), publicados entre 2021 e 2026,
+  // e o Edital nº 1 – DPDF/2026 (servidor: Analista de Apoio à Assistência Judiciária – Direito e Legislação),
+  // identificado como cargo de servidor e excluído do relatório de frequência dos editais de Defensor.
+  // Provas discursivas isoladas, caderno de prova, outros concursos de servidores e edital de 2014 ficaram fora.
   const EDITAIS_DPE = [
     ["ac-2024","AC",2024,"DPE/AC · VI Concurso"],
     ["ap-2022","AP",2022,"DPE/AP · II Concurso"],
@@ -28,7 +30,8 @@
     ["sc-2026","SC",2026,"DPE/SC · Concurso 01/2026"],
     ["se-2021","SE",2021,"DPE/SE · Edital 01/2021"],
     ["sp-2026","SP",2026,"DPE/SP · X Concurso"],
-    ["to-2021","TO",2021,"DPE/TO · Edital 01/2021"]
+    ["to-2021","TO",2021,"DPE/TO · Edital 01/2021"],
+    ["df-2026","DF",2026,"DPDF · Analista Direito e Legislação (servidor) · Edital 1/2026"]
   ].map(([id, estado, ano, nome]) => {
     const canonicas = window.DPE_CONTEUDOS_EDITAIS?.[id]?.disciplinas.flatMap(d => d.canonicais || []) || [];
     return { id, estado, ano, nome, subjects: [...new Set(canonicas)] };
@@ -101,6 +104,8 @@
     if(!p.ativo&&p.pesosModo==='edital')p.pesos=sugerirPesos(p.editalId,p.subjects);
     return p;
   }
+  // Só arquivos .html da raiz do site: o campo vem do catálogo estático, mas não vira URL arbitrária.
+  const planoSeguro = v => typeof v === 'string' && /^[a-z0-9]+(?:-[a-z0-9]+)*\.html$/.test(v);
   function editalSelecionado(p) { return EDITAIS_DPE.find(x=>x.id===p.editalId); }
   const minutosPorDia = p => Math.round(p.horasSemana*60/Math.max(1,p.dias.length));
   const metaCartoesPorDia = p => p.v===2 ? (p.revisaoMin>0?clamp(Math.round(p.revisaoMin/4),5,50):0) : clamp(Math.round(minutosPorDia(p)/4),5,50);
@@ -213,7 +218,7 @@
     let w=semanaAtual(draft);
     const opcoes=selecionado=>EDITAIS_DPE.map(e=>`<option value="${e.id}" ${e.id===selecionado?'selected':''}>${escLocal(e.nome)}</option>`).join('');
     $('#main').innerHTML=`<button class="btn small ghost cr-back" id="crBack">← Hoje</button><section class="cr-hero"><span class="cr-eyebrow">Do edital ao estudo</span><h2>Seu cronograma por assuntos</h2><p>Escolha conteúdo, horas e dias. Estude um assunto de cada vez, com rodízio de disciplinas, lei e jurisprudência. Cartões ficam como revisão complementar.</p>${salvo.ativo?`<div class="cr-status"><b>Plano ativo</b><span>${resumoPlano(salvo)}</span></div>${salvo.v!==2?'<p class="hint">Seu plano anterior permanece salvo. Ative esta versão para trocar a prévia repetitiva por assuntos.</p>':''}`:''}</section>
-    <form class="cr-form" id="crForm"><section class="panel"><div class="ph"><h3>1. Conteúdo de referência</h3><span class="count">18 editais</span></div><label class="field"><span>Referência para disciplinas e pesos</span><select id="crEdital"><option value="comum" ${draft.editalId==='comum'?'selected':''}>Núcleo comum dos editais</option>${opcoes(draft.editalId)}</select></label><label class="field"><span>Programa que fornece os assuntos</span><select id="crConteudo"><option value="">Escolha o edital de conteúdo</option>${opcoes(draft.conteudoId)}</select><small class="hint">Use o programa da sua prova. No núcleo comum, você escolhe de qual edital serão os assuntos; não misturamos conteúdos locais.</small></label>${source?`<p class="hint">${escLocal(source.fonte)} · ${ds.length} rubricas · ${ds.reduce((n,d)=>n+d.topicos.length,0)} assuntos${source.fonteUrl?` · <a href="${escLocal(source.fonteUrl)}" target="_blank" rel="noopener noreferrer">Fonte oficial complementar</a>`:''}</p>`:''}</section>
+    <form class="cr-form" id="crForm"><section class="panel"><div class="ph"><h3>1. Conteúdo de referência</h3><span class="count">${EDITAIS_DPE.length} editais</span></div><label class="field"><span>Referência para disciplinas e pesos</span><select id="crEdital"><option value="comum" ${draft.editalId==='comum'?'selected':''}>Núcleo comum dos editais</option>${opcoes(draft.editalId)}</select></label><label class="field"><span>Programa que fornece os assuntos</span><select id="crConteudo"><option value="">Escolha o edital de conteúdo</option>${opcoes(draft.conteudoId)}</select><small class="hint">Use o programa da sua prova. No núcleo comum, você escolhe de qual edital serão os assuntos; não misturamos conteúdos locais.</small></label>${source?`<p class="hint">${escLocal(source.fonte)} · ${ds.length} rubricas · ${ds.reduce((n,d)=>n+d.topicos.length,0)} assuntos${source.fonteUrl?` · <a href="${escLocal(source.fonteUrl)}" target="_blank" rel="noopener noreferrer">Fonte oficial complementar</a>`:''}${planoSeguro(source.plano)?` · <a class="cr-plano" href="${escLocal(source.plano)}" target="_blank" rel="noopener">Plano estratégico deste edital</a>`:''}</p>`:''}</section>
     <section class="panel"><div class="ph"><h3>2. Tempo que cabe na semana</h3></div><div class="cr-grid"><label class="field"><span>Horas por semana</span><input id="crHoras" type="number" min="1" max="60" step="0.5" required value="${draft.horasSemana}"></label><label class="field"><span>Bloco preferido (min)</span><input id="crBloco" type="number" min="15" max="180" step="5" required value="${draft.blocoMin}"><small class="hint">Restos pequenos são incorporados ao bloco, não viram sessões de 3 minutos.</small></label></div><fieldset class="field cr-days"><legend>Dias de estudo</legend><div>${dias.map(([id,n])=>`<label><input type="checkbox" data-cr-dia="${id}" ${draft.dias.includes(id)?'checked':''}> ${n}</label>`).join('')}</div></fieldset><label class="field"><span>Revisão complementar por dia (min)</span><input type="number" id="crRevisao" min="0" max="60" step="5" value="${draft.revisaoMin}"><small class="hint">Opcional. Este tempo sai do orçamento acima; não é uma carga extra. Zero mantém suas preferências atuais de cartões.</small></label></section>
     <section class="panel"><div class="ph"><h3>3. Disciplinas e assuntos</h3><span class="count" id="crSelecionadas">${selected.length} selecionadas</span></div><div class="row"><button type="button" class="btn small" id="crTodos">Selecionar todas do programa</button><button type="button" class="btn small" id="crComuns">Apenas núcleo comum</button></div><div class="cr-subjects">${offered.map(id=>{const d=disciplina(id,draft);return `<label class="cr-subject"><input type="checkbox" data-cr-subject="${escLocal(id)}" ${selected.includes(id)?'checked':''}><span><b>${escLocal(d.nome)}</b><small>${ds.length?d.topicos.length+' assuntos no programa':escLocal(d.cobertura)}</small></span></label>`;}).join('')}</div><p class="hint">Disciplinas sem cartões também entram. Títulos combinados mantêm os assuntos completos do edital.</p><label class="field"><span>Buscar assunto no programa</span><input id="crBuscaAssunto" type="search" placeholder="Ex.: alimentos, execução, português"></label><div id="crPrograma">${programaHtml(draft)}</div></section>
     <section class="panel"><div class="ph"><h3>4. Prioridade dos blocos</h3><div class="row"><button type="button" class="btn small primary" id="crSugerir">Sugerir pelo edital</button><button type="button" class="btn small" id="crIgual">Dividir igualmente</button></div></div><div id="crPesos">${distribuicaoHtml(selected,draft.pesos,draft)}</div><p id="crTotal" class="hint" role="status" aria-live="polite"></p><div id="crMetodo" class="hint">${metodoHtml(draft.editalId,selected,draft.pesosModo)}</div></section>

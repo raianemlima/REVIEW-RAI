@@ -34,8 +34,10 @@
   const numero = valor => Number.isInteger(valor) ? String(valor) : String(valor).replace(".", ",");
 
   function dados() {
-    const conteudos = window.DPE_CONTEUDOS_EDITAIS || {};
-    const pesos = window.DPE_PESOS_EDITAIS || {};
+    // O relatório compara editais de Defensor(a); programas de servidor ficam só no Cronograma.
+    const deDefensor = ([, programa]) => programa?.cargo !== "servidor";
+    const conteudos = Object.fromEntries(Object.entries(window.DPE_CONTEUDOS_EDITAIS || {}).filter(deDefensor));
+    const pesos = Object.fromEntries(Object.entries(window.DPE_PESOS_EDITAIS || {}).filter(([id]) => Object.hasOwn(conteudos, id)));
     const frequencia = new Map(), diretos = new Map();
     for (const programa of Object.values(conteudos)) {
       const vistos = new Set();
