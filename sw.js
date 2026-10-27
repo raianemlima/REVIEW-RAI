@@ -1,6 +1,6 @@
 // Review DPE · service worker
 // Offline: o app e as fontes ficam guardados no aparelho. Atualização: a versão nova espera o aviso "Atualizar".
-const CACHE = "review-dpe-assuntos-v14", DADOS = "revisao-dpe-dados";
+const CACHE = "review-dpe-assuntos-v15", DADOS = "revisao-dpe-dados";
 const CORE = ["./", "index.html", "deck.enc", "app-src.txt", "arquivos/metacognicao.js", "arquivos/cronograma-taxonomia.js", "arquivos/cronograma-conteudo.js", "arquivos/cronograma-motor.js", "arquivos/cronograma.js", "arquivos/cronograma-pesos.js", "arquivos/cronograma.css", "arquivos/interface.js", "arquivos/interface.css", "arquivos/dashboard-editais.js", "arquivos/dashboard-editais.css", "manifest.webmanifest", "privacidade.html", "termos.html", "direitos-humanos-dpesp.html", "plano-dpdf-2026.html", "icons/icon.svg", "icons/icon-180.png", "icons/icon-192.png", "icons/icon-512.png", "icons/icon-maskable-512.png",
   "fonts/fonts.css", "fonts/ibm-plex-sans-latin-400-normal.woff2", "fonts/ibm-plex-sans-latin-500-normal.woff2", "fonts/ibm-plex-sans-latin-600-normal.woff2",
   "fonts/ibm-plex-mono-latin-400-normal.woff2", "fonts/ibm-plex-mono-latin-500-normal.woff2",
@@ -8,7 +8,7 @@ const CORE = ["./", "index.html", "deck.enc", "app-src.txt", "arquivos/metacogni
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(async c => {
   const pendentes = [];
   for (const url of CORE) if (!(await c.match(url))) pendentes.push(url);
-  return c.addAll(pendentes);
+  return c.addAll(pendentes.map(url => new Request(url, { cache: "reload" })));   // ignora o cache HTTP: a versão nova não herda arquivo velho
 })); });
 self.addEventListener("activate", e => {
   e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE && k !== DADOS).map(k => caches.delete(k)))).then(() => self.clients.claim()));

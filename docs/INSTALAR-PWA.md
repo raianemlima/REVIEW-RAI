@@ -35,4 +35,4 @@ Depois de instalado, o app tem ícone da fênix, abre em tela cheia (sem a barra
 O progresso fica no navegador do aparelho. Se você **limpar os dados do navegador** ou **remover o app**, perde o progresso. O iOS também pode apagar dados de sites que ficam muito tempo sem uso (quando o app não está instalado). Por isso: instale o app e faça um **backup** de vez em quando (Ajustes → Backup).
 
 ## Atualizar
-Quando houver versão nova, aparece a faixa **"Nova versão do app pronta. Atualizar"**. Toque nela. Para forçar, feche o app por completo e abra de novo.
+Quando houver versão nova, o app se atualiza sozinho e recarrega, gravando antes o que estiver pendente. Se você estiver no meio de uma sessão de revisão, no jogo ou digitando, ele não interrompe: mostra a faixa **"Nova versão do app pronta. Atualizar"** e aplica a versão nova quando você sai do app (ou na hora, se tocar em Atualizar). Ele procura versão nova ao abrir, ao voltar para o app e a cada hora; para forçar, feche o app por completo e abra de novo com internet.
