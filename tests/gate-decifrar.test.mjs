@@ -24,7 +24,7 @@ const resp = (status, corpo) => ({ ok: status >= 200 && status < 300, status, as
 
 async function abrir({ senhaDoServidor, armazenamento }) {
   const { payload, key } = await cifrar(DECK);
-  const dom = new JSDOM(`<!doctype html><html><body><span id="save"></span><main id="main"></main><script type="text/plain" id="app-src" data-src="app-src.txt"></script></body></html>`, { url: "https://review.invalid/", runScripts: "outside-only" });
+  const dom = new JSDOM(`<!doctype html><html><body><span id="save"></span><main id="main"></main><script type="text/plain" id="app-src" data-src="app-src.txt"></script></body></html>`, { url: "https://review.invalid/?entrar=1", runScripts: "outside-only" });
   const w = dom.window;
   Object.defineProperty(w, "crypto", { value: webcrypto, configurable: true });
   Object.assign(w, { TextEncoder, TextDecoder, Blob, Response, DecompressionStream });

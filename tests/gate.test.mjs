@@ -11,9 +11,9 @@ function resposta(status, body) {
   return { ok: status >= 200 && status < 300, status, async json() { return body; } };
 }
 
-function ambiente({ storage = {}, rpc = null } = {}) {
+function ambiente({ storage = {}, rpc = null, url = "https://review.invalid/?entrar=1" } = {}) {
   const dom = new JSDOM(`<!doctype html><html><body><header class="top"><div class="brand"><h1>Review DPE</h1></div></header><span id="save"></span><main id="main" class="wrap"></main></body></html>`, {
-    url: "https://review.invalid/", runScripts: "outside-only", pretendToBeVisual: true,
+    url, runScripts: "outside-only", pretendToBeVisual: true,
   });
   const w = dom.window;
   for (const [key, value] of Object.entries(storage)) w.localStorage.setItem(key, value);
@@ -86,4 +86,33 @@ test("SQL bloqueia novos cadastros fora da lista e a RPC só entrega chave a ass
   assert.match(seguranca, /lower\(btrim\(l\.email\)\)\s*=\s*lower\(btrim\(new\.email\)\)/i);
   assert.match(seguranca, /grant execute on function public\.chave_do_app\(\) to authenticated/i);
   assert.match(seguranca, /l\.valido_ate is null or l\.valido_ate > now\(\)/i);
+});
+
+const espera = (w, ms) => new Promise(r => w.setTimeout(r, ms));
+
+test("visitante novo pelo navegador não vê a tela de login nem consulta o servidor (vai para a divulgação)", async () => {
+  const a = ambiente({ url: "https://review.invalid/?utm_source=instagram" });
+  try {
+    await espera(a.w, 150);
+    assert.equal(a.w.document.querySelector("#gate"), null);
+    assert.equal(a.chamadas.length, 0);
+  } finally { a.dom.window.close(); }
+});
+
+test("quem já usou o app, quem clica em Entrar e o app instalado continuam na tela de entrada", async () => {
+  for (const opcoes of [
+    { url: "https://review.invalid/", storage: { "revisao-dpe-tema": "escuro" } },
+    { url: "https://review.invalid/?entrar=1" },
+    { url: "https://review.invalid/?origem=pwa" },
+  ]) {
+    const a = ambiente(opcoes);
+    try { await aguardar(a.w, () => !!a.w.document.querySelector("#gate")); }
+    finally { a.dom.window.close(); }
+  }
+});
+
+test("links Entrar da página de divulgação pedem a tela de entrada explicitamente", async () => {
+  const conheca = await readFile(new URL("../conheca.html", import.meta.url), "utf8");
+  assert.doesNotMatch(conheca, /href="\.\/"/);
+  assert.match(conheca, /href="\.\/\?entrar=1"/);
 });

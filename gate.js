@@ -274,6 +274,21 @@ document.body.classList.add("rd-gate");
     codigo2: async () => { await sb("/auth/v1/otp?redirect_to=" + volta(), { email: st.email, create_user: true }); tela(null, "Código reenviado.", true); }
   };
 
+  // Visitante novo: nunca usou o app neste aparelho, abriu pelo navegador (não pelo app instalado) e está online.
+  // ?entrar (links "Entrar" da divulgação) e ?origem=pwa (atalho do app instalado) sempre mostram a tela de entrada.
+  function visitanteNovo(c) {
+    try {
+      if (c || st.msg) return false;
+      const q = new URLSearchParams(location.search);
+      if (q.has("entrar") || q.get("origem") === "pwa") return false;
+      if (navigator.standalone === true) return false;
+      if (typeof matchMedia === "function" && (matchMedia("(display-mode: standalone)").matches || matchMedia("(display-mode: minimal-ui)").matches)) return false;
+      if (navigator.onLine === false) return false;
+      for (let i = 0; i < localStorage.length; i++) if (/^revisao-dpe/.test(localStorage.key(i) || "")) return false;
+      return true;
+    } catch (_) { return false; }
+  }
+
   // ---- início ----
   (async () => {
     // link do e-mail (confirmação ou recuperação): o Supabase volta com a sessão no #hash
@@ -313,6 +328,8 @@ document.body.classList.add("rd-gate");
       catch (e) { st.msg = e.rede && verif ? "Conecte-se à internet para confirmar a sua assinatura. O app pede isso a cada 7 dias." : msgDecifrar(e) || e.message; }
     }
     else if (c && c.expirada) st.msg = "Sua sessão expirou. Entre de novo.";
+    // quem chega pela primeira vez pelo navegador (link da bio, busca, indicação) vê antes a página de divulgação
+    if (visitanteNovo(c)) { location.replace("conheca.html" + location.search); return; }
     tela("entrar");
   })();
 })();
