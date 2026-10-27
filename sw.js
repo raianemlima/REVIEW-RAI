@@ -22,8 +22,8 @@ self.addEventListener("message", e => {
 self.addEventListener("fetch", e => {
   if (e.request.method !== "GET") return;
   if (new URL(e.request.url).origin !== self.location.origin) return;   // só o próprio site: a API do GitHub (sincronização) nunca passa pelo cache
-  // termos, privacidade e site de divulgação: sempre a versão publicada (o cache só serve sem internet)
-  if (/\/(termos|privacidade|conheca)\.html$/.test(new URL(e.request.url).pathname)) {
+  // termos, privacidade e páginas de divulgação: sempre a versão publicada (o cache só serve sem internet)
+  if (/\/(termos|privacidade|conheca|materias-dpe)\.html$/.test(new URL(e.request.url).pathname)) {
     e.respondWith(fetch(e.request).then(r => { if (r.ok) { const copy = r.clone(); caches.open(CACHE).then(c => c.put(e.request, copy)); } return r; })
       .catch(() => caches.match(e.request, { ignoreSearch: true }).then(hit => hit || caches.match("index.html"))));
     return;

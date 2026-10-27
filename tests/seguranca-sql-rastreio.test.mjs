@@ -60,7 +60,9 @@ test("Termos e Política descrevem o registro antes de ele ser ativado, com o me
   assert.match(termos, /href="privacidade\.html">Política de Privacidade<\/a>\. Se esse registro/);
   assert.match(parte6, /180 days/);
   assert.doesNotMatch(priv, /não usamos rastreamento\.<\/b>/);
-  assert.equal(priv.match(/Última atualização: (\S+)</)[1], termos.match(/Última atualização: (\S+)</)[1]);
+  // a política pode ser atualizada sozinha (ex.: lista de e-mails do material gratuito), mas nunca fica mais antiga que os Termos
+  const data = html => { const [d, m, a] = html.match(/Última atualização: (\d{2})\/(\d{2})\/(\d{4})</).slice(1); return a + m + d; };
+  assert.ok(data(priv) >= data(termos), "privacidade.html não pode ter data anterior à dos Termos de Uso");
 });
 
 test("o hook de cadastro usa a mesma regra de liberação e só o Auth o executa", () => {
