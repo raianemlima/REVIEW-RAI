@@ -151,6 +151,18 @@ footer .links { display: flex; gap: 16px; flex-wrap: wrap; font-weight: 600; }
 .fixo .btn { width: 100%; }
 @media (max-width: 759px) { .fixo.on { display: block; } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+/* depoimentos (só aparecem quando houver depoimentos reais e autorizados) */
+.dep { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.dep blockquote { margin: 0; font-size: 1rem; line-height: 1.6; }
+.dep figcaption { color: var(--muted); font-size: .9rem; }
+.dep figcaption b { color: var(--ink); }
+/* material gratuito */
+.gratis { display: grid; gap: 18px; align-items: center; background: var(--accent-soft); border: 2px solid var(--line); border-bottom-width: 5px; border-radius: 22px; padding: 24px; }
+@media (min-width: 820px) { .gratis { grid-template-columns: 1fr auto; padding: 28px 32px; } }
+.gratis h2 { font-size: clamp(1.35rem, 3.6vw, 1.8rem); }
+.gratis p { margin: 8px 0 0; color: var(--muted); }
+/* cupom de parceiro */
+.cupom { margin: 0 0 18px; background: #e9bf63; color: #072d27; border-radius: 16px; padding: 12px 16px; font-weight: 600; }
 </style>
 </head>
 <body>
@@ -269,6 +281,14 @@ footer .links { display: flex; gap: 16px; flex-wrap: wrap; font-weight: 600; }
   </div>
 </section>
 
+<section id="depoimentos" hidden>
+  <div class="wrap">
+    <p class="kicker">Quem usa</p>
+    <h2>O que dizem os alunos.</h2>
+    <div class="cards" id="lista-depoimentos"></div>
+  </div>
+</section>
+
 <section id="como">
   <div class="wrap">
     <p class="kicker">Como funciona</p>
@@ -295,6 +315,7 @@ footer .links { display: flex; gap: 16px; flex-wrap: wrap; font-weight: 600; }
         </ul>
       </div>
       <div class="planos">
+        <p class="cupom" id="cupom" hidden></p>
         <div class="valor plano destaque">
           <span class="selo">Economize 32%</span>
           <p style="margin:6px 0 0;font-weight:800">Anual</p>
@@ -309,6 +330,19 @@ footer .links { display: flex; gap: 16px; flex-wrap: wrap; font-weight: 600; }
           <a class="btn cta1 sec" data-assinar="mensal" href="#" style="width:100%">Assinar o mensal</a>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="gratis" style="padding-top:0">
+  <div class="wrap">
+    <div class="gratis">
+      <div>
+        <p class="kicker">Grátis</p>
+        <h2>Ainda não é hora de assinar?</h2>
+        <p>Receba o relatório com as matérias que mais caem em 18 editais de Defensoria e quantas questões cada uma costuma ter.</p>
+      </div>
+      <a class="btn solid" href="materias-dpe.html" data-utm>Quero o relatório grátis</a>
     </div>
   </div>
 </section>
@@ -343,11 +377,54 @@ const VENDA = {
   linkMensal: "https://www.asaas.com/000/c/vnzrkizmvd9ox5rp",   // assinatura mensal de R$ 15,99
   linkAnual: "https://www.asaas.com/000/c/2xb0fesdmp9hps3d"     // R$ 129,99 à vista ou até 12x de R$ 11,20 no cartão (vale 12 meses)
 };
+// Parceiros: cada professor ou curso ganha um código e, se quiser desconto, links de pagamento próprios no Asaas.
+// O link de divulgação fica: https://reviewdpe.com.br/conheca.html?cupom=CODIGO (veja docs/DIVULGACAO.md).
+// Sem links próprios, o código só registra de onde veio a visita e os botões usam os links normais.
+const PARCEIROS = {
+  // PROFANA: { nome: "Prof.ª Ana", texto: "10% de desconto no anual", linkMensal: "", linkAnual: "https://www.asaas.com/c/..." },
+};
+// Depoimentos REAIS, com autorização por escrito para nome, concurso e texto. Nunca inventar.
+// A seção só aparece quando houver pelo menos um.
+const DEPOIMENTOS = [
+  // { texto: "…", nome: "Maria S.", detalhe: "estuda para a DPE-CE" },
+];
 // ==============================================
 (() => {
+  const q = new URLSearchParams(location.search);
+  // origem da visita (UTM, indicação, cupom) segue para o material gratuito
+  const repassa = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "ref", "cupom"].filter(k => q.has(k));
+  if (repassa.length) document.querySelectorAll("a[data-utm]").forEach(a => {
+    const u = new URL(a.getAttribute("href"), location.href);
+    repassa.forEach(k => u.searchParams.set(k, q.get(k)));
+    a.href = u.pathname.replace(/^\//, "") + u.search + u.hash;
+  });
+  // cupom de parceiro: vale nesta visita e nas próximas 30 dias neste aparelho
+  let codigo = (q.get("cupom") || "").trim().toUpperCase();
+  try {
+    if (codigo && PARCEIROS[codigo]) localStorage.setItem("rdpe-cupom", JSON.stringify({ codigo, ate: Date.now() + 30 * 86400000 }));
+    else { const g = JSON.parse(localStorage.getItem("rdpe-cupom") || "null"); codigo = g && g.ate > Date.now() ? g.codigo : codigo; }
+  } catch (_) {}
+  const parceiro = PARCEIROS[codigo];
+  if (parceiro) {
+    if (parceiro.linkMensal) VENDA.linkMensal = parceiro.linkMensal;
+    if (parceiro.linkAnual) VENDA.linkAnual = parceiro.linkAnual;
+    const aviso = document.getElementById("cupom");
+    aviso.textContent = "Cupom " + codigo + (parceiro.nome ? " (" + parceiro.nome + ")" : "") + (parceiro.texto ? ": " + parceiro.texto : " aplicado");
+    aviso.hidden = false;
+  }
+  // depoimentos: texto puro (textContent), nunca HTML
+  const lista = document.getElementById("lista-depoimentos");
+  DEPOIMENTOS.filter(d => d && d.texto && d.nome).forEach(d => {
+    const f = document.createElement("figure"); f.className = "card dep";
+    const b = document.createElement("blockquote"); b.textContent = "“" + d.texto + "”";
+    const c = document.createElement("figcaption"); const n = document.createElement("b"); n.textContent = d.nome;
+    c.append(n, d.detalhe ? " · " + d.detalhe : "");
+    f.append(b, c); lista.append(f);
+  });
+  if (lista.children.length) document.getElementById("depoimentos").hidden = false;
   const contato = "https://wa.me/5588921957455?text=" + encodeURIComponent("Olá! Quero assinar o Review DPE");
   // botões dentro dos planos vão direto para o pagamento; os de cima levam até os planos
-  const plano = new URLSearchParams(location.search).get("plano");
+  const plano = q.get("plano");
   document.querySelectorAll("[data-assinar]").forEach(a => {
     const p = a.dataset.assinar; if (!p) return;
     const link = p === "anual" ? VENDA.linkAnual : VENDA.linkMensal;
