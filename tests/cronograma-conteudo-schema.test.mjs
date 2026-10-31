@@ -15,7 +15,7 @@ test('catálogos reais cumprem o contrato e mantêm rubricas/tópicos ligados à
     fonteProgramas: ler('cronograma-conteudo.js'),
     fontePesos: ler('cronograma-pesos.js'),
   });
-  assert.deepEqual(resultado, {editais:19,disciplinas:271,topicos:5597,canonicas:33,usadas:32});
+  assert.deepEqual(resultado, {editais:20,disciplinas:281,topicos:5681,canonicas:33,usadas:32});
 });
 
 test('site real carrega e inclui a taxonomia no CORE offline', () => {

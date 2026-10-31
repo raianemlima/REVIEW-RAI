@@ -22,7 +22,7 @@ jobs:
       - name: Montar a pasta do site (só o que é público)
         run: |
           mkdir _site
-          cp CNAME index.html deck.enc app-src.txt conheca.html materias-dpe.html robots.txt sitemap.xml direitos-humanos-dpesp.html plano-dpdf-2026.html sw.js manifest.webmanifest privacidade.html termos.html _site/
+          cp CNAME index.html deck.enc app-src.txt conheca.html materias-dpe.html robots.txt sitemap.xml direitos-humanos-dpesp.html plano-dpdf-2026.html plano-tjpb-2026.html sw.js manifest.webmanifest privacidade.html termos.html _site/
           cp -r icons fonts screenshots arquivos _site/
           mkdir -p _site/docs
           cp docs/RELATORIO-MATERIAS-E-PESOS-DPE.md _site/docs/
@@ -36,6 +36,11 @@ jobs:
           APP_SENHA: ${{ secrets.APP_SENHA }}
           REVISOES_CHAVE: ${{ secrets.REVISOES_CHAVE }}
         run: node ferramentas/ci/aplicar_revisoes.mjs _site/index.html
+      - name: Lei seca do curso no baralho (segredos APP_SENHA e LEISECA_CHAVE)
+        env:
+          APP_SENHA: ${{ secrets.APP_SENHA }}
+          LEISECA_CHAVE: ${{ secrets.LEISECA_CHAVE }}
+        run: node ferramentas/ci/aplicar_leiseca.mjs _site/index.html
       - name: Validar os arquivos obrigatórios do app e do cache offline
         run: node ferramentas/ci/validar_site.mjs _site
       - uses: actions/upload-pages-artifact@v3
