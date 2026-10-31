@@ -53,7 +53,7 @@ test("insere a lei seca do curso e os cartões no baralho, mantendo o sal e reso
   });
   await writeFile(join(pasta, "index.html"), "<!doctype html>");
   await cifrarLei(bins, chave, leiFicticia);
-  const { stdout } = await run("node", [script, join(pasta, "index.html")], { env: { ...process.env, APP_SENHA: senha, LEISECA_CHAVE: chave, LEISECA_PASTA: bins } });
+  const { stdout } = await run("node", [script, join(pasta, "index.html")], { env: { ...process.env, APP_SENHA: senha, LEISECA_CHAVE: chave, LEISECA_PASTA: bins, LEISECA_PUBLICA: join(pasta, "sem-publicas") } });
   assert.match(stdout, /ok: 1 lei\(s\) e 1 cartão/);
   const { payload, deck } = await lerDeck(pasta, senha);
   assert.equal(payload.s, antes.s, "o sal não muda: a chave derivada continua a mesma");
@@ -71,12 +71,12 @@ test("sem os segredos ou sem leis cifradas, não mexe no baralho", async () => {
   const pasta = await mkdtemp(join(tmpdir(), "leiseca-")), bins = join(pasta, "bins");
   await mkdir(bins);
   await writeFile(join(pasta, "deck.enc"), "{}");
-  const vazio = await run("node", [script, join(pasta, "index.html")], { env: { ...process.env, LEISECA_PASTA: bins } });
+  const vazio = await run("node", [script, join(pasta, "index.html")], { env: { ...process.env, LEISECA_PASTA: bins, LEISECA_PUBLICA: join(pasta, "sem-publicas") } });
   assert.match(vazio.stdout, /Nenhuma lei/);
   await cifrarLei(bins, randomBytes(32).toString("base64"), leiFicticia);
-  const env = { ...process.env, LEISECA_PASTA: bins }; delete env.APP_SENHA; delete env.LEISECA_CHAVE;
+  const env = { ...process.env, LEISECA_PASTA: bins, LEISECA_PUBLICA: join(pasta, "sem-publicas") }; delete env.APP_SENHA; delete env.LEISECA_CHAVE;
   const semSegredo = await run("node", [script, join(pasta, "index.html")], { env });
-  assert.match(semSegredo.stdout, /não configurados/);
+  assert.match(semSegredo.stdout, /não configurado/);
   assert.equal(await readFile(join(pasta, "deck.enc"), "utf8"), "{}");
 });
 
@@ -85,4 +85,36 @@ test("a publicação aplica a lei seca depois das revisões e a chave nunca entr
   assert.ok(pages.indexOf("aplicar_leiseca.mjs") > pages.indexOf("aplicar_revisoes.mjs"));
   assert.match(pages, /LEISECA_CHAVE: \$\{\{ secrets\.LEISECA_CHAVE \}\}/);
   assert.match(await readFile(join(raiz, ".gitignore"), "utf8"), /^chave-leiseca\*\.txt$/m);
+});
+
+test("a lei seca pública (resoluções do CNJ) entra só com APP_SENHA, sem a chave do curso", async () => {
+  const pasta = await mkdtemp(join(tmpdir(), "leiseca-")), bins = join(pasta, "bins");
+  await mkdir(bins);
+  await cifrarLei(bins, randomBytes(32).toString("base64"), leiFicticia);
+  const senha = "senha-de-teste";
+  await escreverDeck(pasta, senha, { disciplinas: [{ id: "dp", nome: "Direito Penal", curto: "Penal" }], cartoes: [], leiseca: [] });
+  const env = { ...process.env, APP_SENHA: senha, LEISECA_PASTA: bins, LEISECA_PUBLICA: join(raiz, "ferramentas/conteudo/dados/leiseca-publica") };
+  delete env.LEISECA_CHAVE;
+  const { stdout } = await run("node", [script, join(pasta, "index.html")], { env });
+  assert.match(stdout, /LEISECA_CHAVE não configurado/);
+  const { deck } = await lerDeck(pasta, senha);
+  assert.deepEqual(deck.leiseca.map(l => l.id).sort(), ["res-cnj-351", "res-cnj-363", "res-cnj-400", "res-cnj-401"]);
+  const r351 = deck.leiseca.find(l => l.id === "res-cnj-351");
+  assert.equal(r351.completa, true);
+  assert.equal(r351.disc, "", "sem disciplina de Administrativo no baralho de teste, a lei entra sem disciplina");
+  assert.ok(r351.grupos[0].itens.some(i => i.a === "1" && /^Art\. 1º Instituir a Política de Prevenção e Enfrentamento do Assédio/.test(i.x)));
+});
+
+test("as resoluções públicas usam o texto vigente: nada tachado, a Res. 230/2016 revogada fica de fora", async () => {
+  const pasta = join(raiz, "ferramentas/conteudo/dados/leiseca-publica");
+  const ids = (await import("node:fs")).readdirSync(pasta).map(f => f.replace(".json", "")).sort();
+  assert.deepEqual(ids, ["res-cnj-351", "res-cnj-363", "res-cnj-400", "res-cnj-401"]);
+  for (const id of ids) {
+    const lei = JSON.parse(await readFile(join(pasta, id + ".json"), "utf8"));
+    const arts = lei.grupos.flatMap(g => g.itens).filter(i => i.a !== undefined);
+    assert.ok(arts.length >= 3, id);
+    for (const a of arts) assert.match(a.x, /^Art\. \d+º?(-[A-Z])?\.? /, `${id} art. ${a.a}`);
+    assert.doesNotMatch(JSON.stringify(lei), /<\/?s>|§ \d+ o /);
+  }
+  assert.match(JSON.parse(await readFile(join(pasta, "res-cnj-401.json"), "utf8")).nome, /substituiu a Res\. 230\/2016/);
 });
