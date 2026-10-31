@@ -36,7 +36,7 @@ jobs:
           APP_SENHA: ${{ secrets.APP_SENHA }}
           REVISOES_CHAVE: ${{ secrets.REVISOES_CHAVE }}
         run: node ferramentas/ci/aplicar_revisoes.mjs _site/index.html
-      - name: Lei seca extra no baralho, pública e do curso (segredos APP_SENHA e LEISECA_CHAVE)
+      - name: Lei seca extra no baralho, pública e do curso (segredo APP_SENHA; LEISECA_CHAVE só para .bin antigos)
         env:
           APP_SENHA: ${{ secrets.APP_SENHA }}
           LEISECA_CHAVE: ${{ secrets.LEISECA_CHAVE }}
