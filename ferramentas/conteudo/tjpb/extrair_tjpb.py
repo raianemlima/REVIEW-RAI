@@ -158,7 +158,7 @@ def extrair(pdf):
             "Prova objetiva (60 questões, 1 ponto cada) e discursiva (1 estudo de caso de 30 linhas, 40 pontos) em 24/01/2027, das 13h às 18h, em João Pessoa (itens 10.1, 10.6 e 10.7). Nota final = objetiva + discursiva (item 12.1).",
             "A 1ª retificação (23/10/2026) mudou a carga horária para 30 horas semanais, encerrou a isenção em 27/10/2026 e corrigiu o corte da objetiva para 60% (item 10.12).",
             "O Anexo I manda considerar súmulas, recursos repetitivos e a jurisprudência dominante dos tribunais superiores, e admite cobrar alterações legislativas posteriores ao edital.",
-            "A Resolução CNJ nº 230 aparece no edital como 230/2021; o número foi mantido como impresso.",
+            "A Resolução CNJ nº 230 aparece no edital como 230/2021; o número foi mantido como impresso. A Res. CNJ nº 230/2016 foi revogada pela Res. CNJ nº 401, de 16/06/2021, que trata hoje da acessibilidade e inclusão de pessoas com deficiência no Judiciário: estude a 401.",
         ],
         "disciplinas": disciplinas,
     }
