@@ -1,0 +1,922 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f3fae">
+<title>Review DPE · Plano TJPB 2026</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+:root{
+  /* Layout: folha de estudo em coluna única (~68ch de texto corrido); cartões só onde há ação (matéria, dia). Prioridade = cor de marca-texto; acento = azul de caneta esferográfica, a cor exigida na prova. */
+  --paper:#f3f5f8;
+  --sheet:#ffffff;
+  --ink:#16202b;
+  --ink-2:#56606e;
+  --rule:#dbe0e8;
+  --pen:#1f3fae;
+  --pen-soft:#e7ecfb;
+  --on-pen:#ffffff;
+  --hl-3:#ffe45a;
+  --hl-2:#b9efc9;
+  --stamp:#b3261e;
+  --stamp-soft:#fbe9e7;
+  --c-pub:#2c5bd0;
+  --c-priv:#0d8577;
+  --c-crim:#c03a2b;
+  --c-dh:#7a4bc4;
+  --c-ger:#a86400;
+  --c-rev:#5d6877;
+  --f-display:"Newsreader", Georgia, "Times New Roman", serif;
+  --f-body:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0e131a; --sheet:#151c25; --ink:#e4e9f0; --ink-2:#9ba6b5; --rule:#283241;
+    --pen:#93a9ff; --pen-soft:#1c2747; --on-pen:#0e131a;
+    --hl-3:rgba(255,220,40,.30); --hl-2:rgba(70,210,120,.24);
+    --stamp:#ff8f84; --stamp-soft:#3a1d1b;
+    --c-pub:#7ea2ff; --c-priv:#4fd1bd; --c-crim:#ff8a7a; --c-dh:#b99bff; --c-ger:#f0b056; --c-rev:#9aa5b4;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0e131a; --sheet:#151c25; --ink:#e4e9f0; --ink-2:#9ba6b5; --rule:#283241;
+  --pen:#93a9ff; --pen-soft:#1c2747; --on-pen:#0e131a;
+  --hl-3:rgba(255,220,40,.30); --hl-2:rgba(70,210,120,.24);
+  --stamp:#ff8f84; --stamp-soft:#3a1d1b;
+  --c-pub:#7ea2ff; --c-priv:#4fd1bd; --c-crim:#ff8a7a; --c-dh:#b99bff; --c-ger:#f0b056; --c-rev:#9aa5b4;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left,0px));padding-right:max(16px, env(safe-area-inset-right,0px))}
+h1,h2,h3{text-wrap:balance}
+a{color:var(--pen)}
+:focus-visible{outline:2px solid var(--pen);outline-offset:2px;border-radius:4px}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--ink-2)}
+p{margin:0}
+.prose{max-width:68ch;display:grid;gap:12px}
+
+/* Cabeçalho */
+.top{background:var(--sheet);border-bottom:1px solid var(--rule)}
+.top .wrap{padding-block:40px 32px;display:grid;gap:22px}
+.eyebrow{font:600 12px/1.3 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--pen)}
+.top h1{font:600 clamp(34px,6vw,54px)/1.04 var(--f-display);margin:6px 0 0;letter-spacing:-.01em}
+.lead{font-size:18px;max-width:60ch;color:var(--ink-2)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:10px;overflow:hidden;margin:0}
+.facts div{background:var(--sheet);padding:14px 16px;display:grid;gap:4px;min-width:0}
+.facts dt{font:600 11px/1.2 var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.facts dd{margin:0;font-weight:600;font-size:15.5px}
+.facts .count dd{font:600 26px/1.1 var(--f-display);color:var(--pen)}
+
+/* Navegação */
+.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--rule)}
+.toc ul{list-style:none;margin:0;padding:0;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.toc ul::-webkit-scrollbar{display:none}
+.toc a{display:block;padding:12px 10px;white-space:nowrap;text-decoration:none;color:var(--ink-2);font-weight:600;font-size:14px;border-bottom:2px solid transparent}
+.toc a:hover{color:var(--ink);border-bottom-color:var(--pen)}
+
+/* Seções */
+section{padding-block:52px 8px;scroll-margin-top:56px}
+.sec-head{display:grid;gap:8px;margin-bottom:24px}
+.sec-head .kicker{font:600 12px/1.2 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.sec-head h2{font:600 clamp(26px,4vw,34px)/1.12 var(--f-display);margin:0}
+h3.sub{font:600 21px/1.25 var(--f-display);margin:32px 0 12px}
+
+/* Tabelas */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--rule);border-radius:10px;background:var(--sheet)}
+table{width:100%;border-collapse:collapse;font-size:14.5px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font:600 11.5px/1.3 var(--f-body);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);background:var(--paper)}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;white-space:nowrap}
+tr.total td{font-weight:700;background:var(--paper)}
+tr.hi td{background:var(--pen-soft)}
+
+/* Barra da nota final */
+.bar-block{margin-top:28px;display:grid;gap:10px}
+.bar-title{font-weight:600}
+.bar{display:flex;height:46px;border-radius:8px;overflow:hidden;gap:2px;background:var(--rule)}
+.seg{display:flex;align-items:center;padding:0 12px;color:var(--on-pen);font:600 13px/1 var(--f-body);white-space:nowrap;overflow:hidden;min-width:0}
+.s-esp{background:var(--c-priv)} .s-disc{background:var(--pen)} .s-port{background:var(--c-ger)} .s-et{background:var(--c-dh)} .s-inf{background:var(--c-rev)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;list-style:none;margin:0;padding:0;font-size:13.5px;color:var(--ink-2)}
+.legend li{display:flex;align-items:center;gap:7px}
+.legend i{width:11px;height:11px;border-radius:3px;display:inline-block}
+@media (max-width:640px){ .seg.small span{display:none} }
+
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px 28px;margin:28px 0 0;padding:0}
+.rules div{display:grid;gap:2px;padding-top:12px;border-top:1px solid var(--rule);min-width:0}
+.rules dt{font:600 11.5px/1.3 var(--f-body);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.rules dd{margin:0}
+
+.notice{margin-top:28px;border:1px solid var(--stamp);background:var(--stamp-soft);border-radius:10px;padding:16px 18px;display:grid;gap:8px}
+.notice h3{font:700 13px/1.2 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--stamp);margin:0}
+.notice ul{margin:0;padding-left:18px;display:grid;gap:4px}
+
+/* Estratégia */
+.insights{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:22px 36px}
+.insights li{display:grid;gap:6px;align-content:start;min-width:0}
+.insights h3{font:600 19px/1.25 var(--f-display);margin:0}
+.insights p{color:var(--ink-2);font-size:15px}
+.synergy{margin-top:30px;display:grid;gap:10px}
+.syn-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:8px 24px;list-style:none;margin:0;padding:0}
+.syn-list li{padding:9px 0;border-bottom:1px dashed var(--rule);font-size:14.5px;min-width:0}
+.syn-list b{font-weight:600}
+.syn-list span{color:var(--ink-2)}
+.goal{margin-top:30px;background:var(--sheet);border:1px solid var(--rule);border-left:4px solid var(--pen);border-radius:6px;padding:16px 18px;display:grid;gap:6px;max-width:78ch}
+.goal strong{font:600 20px/1.2 var(--f-display)}
+
+/* Prioridades */
+.marks{display:flex;flex-wrap:wrap;gap:10px 22px;margin:0 0 20px;padding:0;list-style:none;font-size:14.5px}
+.marks li{display:flex;align-items:center;gap:8px}
+.hl3{background:linear-gradient(transparent 8%, var(--hl-3) 8%, var(--hl-3) 92%, transparent 92%);padding:0 4px;border-radius:2px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hl2{background:linear-gradient(transparent 8%, var(--hl-2) 8%, var(--hl-2) 92%, transparent 92%);padding:0 4px;border-radius:2px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.subjects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:980px){ .subjects{grid-template-columns:repeat(2,minmax(0,1fr))} .subj:last-child:nth-child(odd){grid-column:1 / -1} }
+@media (max-width:680px){ .subjects{grid-template-columns:minmax(0,1fr)} }
+.subj{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:18px 18px 16px;min-width:0}
+.subj header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid var(--rule);padding-bottom:10px}
+.subj h3{font:600 20px/1.2 var(--f-display);margin:0}
+.qtd{font:600 13px/1 var(--f-mono);color:var(--ink-2);white-space:nowrap}
+.qtd.exact{color:var(--pen)}
+.tier h4{font:600 11px/1 var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin:14px 0 7px}
+.tier ul{margin:0;padding:0;list-style:none;display:grid;gap:6px}
+.tier li{font-size:14.5px;line-height:1.5}
+.t3 li span{background:linear-gradient(transparent 8%, var(--hl-3) 8%, var(--hl-3) 92%, transparent 92%);padding:0 3px;border-radius:2px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.t2 li span{background:linear-gradient(transparent 8%, var(--hl-2) 8%, var(--hl-2) 92%, transparent 92%);padding:0 3px;border-radius:2px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.t1 li{color:var(--ink-2)}
+.footnote{margin-top:14px;font-size:13.5px;color:var(--ink-2);max-width:78ch}
+
+/* Banca */
+.two{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:32px}
+@media (max-width:860px){ .two{grid-template-columns:minmax(0,1fr)} }
+.howto{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.howto li{display:grid;gap:3px}
+.howto b{font-weight:700}
+.howto span{color:var(--ink-2);font-size:15px}
+.pairs{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.pairs li{border:1px solid var(--rule);background:var(--sheet);border-radius:999px;padding:6px 12px;font-size:13.5px}
+.side-title{font:600 11.5px/1.3 var(--f-body);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin:0 0 10px}
+.deadlines{margin-top:26px}
+
+/* Rotina */
+.timeline{display:flex;gap:4px;margin:4px 0 22px}
+.tl{border-radius:8px;padding:12px;display:grid;gap:3px;min-width:0;background:var(--sheet);border:1px solid var(--rule)}
+.tl b{font:600 12px/1.2 var(--f-mono);color:var(--pen)}
+.tl span{font-size:13.5px;line-height:1.35}
+@media (max-width:640px){ .timeline{flex-direction:column} .tl{flex:auto !important} }
+.blocks{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px;list-style:none;margin:0 0 8px;padding:0}
+.blocks li{display:grid;gap:6px;align-content:start;padding-top:12px;border-top:2px solid var(--pen);min-width:0}
+.blocks h3{font:600 17px/1.25 var(--f-display);margin:0}
+.blocks p{font-size:14.5px;color:var(--ink-2)}
+.grid-tbl td{font-size:14px;min-width:118px}
+.grid-tbl td:first-child{min-width:92px;white-space:nowrap}
+.grid-tbl .tag{margin-right:4px}
+
+/* Tags de matéria */
+.tag{display:inline-flex;align-items:center;gap:6px;font:600 11px/1.2 var(--f-body);letter-spacing:.05em;text-transform:uppercase;color:var(--c,var(--ink-2))}
+.tag::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor;flex:none}
+.tag[data-k="pub"]{--c:var(--c-pub)}
+.tag[data-k="priv"]{--c:var(--c-priv)}
+.tag[data-k="crim"]{--c:var(--c-crim)}
+.tag[data-k="dh"]{--c:var(--c-dh)}
+.tag[data-k="ger"]{--c:var(--c-ger)}
+.tag[data-k="pen"]{--c:var(--pen)}
+.tag[data-k="rev"]{--c:var(--c-rev)}
+.tag[data-k="stamp"]{--c:var(--stamp)}
+
+/* Cronograma */
+.planner-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:12px;margin-bottom:14px}
+.btn{font:600 14px/1 var(--f-body);border:1px solid var(--pen);background:transparent;color:var(--pen);border-radius:8px;padding:10px 14px;cursor:pointer}
+.btn:hover{background:var(--pen-soft)}
+.phases{display:flex;gap:18px;overflow-x:auto;padding:2px 2px 10px;scrollbar-width:thin}
+.phase{display:grid;gap:7px;flex:none}
+.phase > span{font:600 11px/1.2 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);white-space:nowrap}
+.phase .chips{display:flex;gap:6px}
+.chip{display:grid;gap:3px;min-width:62px;padding:8px 10px 7px;border:1px solid var(--rule);border-radius:8px;background:var(--sheet);color:var(--ink);cursor:pointer;text-align:left;font:inherit}
+.chip b{font:600 14px/1 var(--f-body)}
+.chip small{font:500 11.5px/1 var(--f-mono);color:var(--ink-2)}
+.chip .pg{height:3px;border-radius:2px;background:var(--rule);overflow:hidden;margin-top:3px}
+.chip .pg i{display:block;height:100%;background:var(--c-priv);width:0}
+.chip[aria-pressed="true"]{border-color:var(--pen);background:var(--pen);color:var(--on-pen)}
+.chip[aria-pressed="true"] small{color:var(--on-pen);opacity:.85}
+.chip[aria-pressed="true"] .pg{background:rgba(255,255,255,.35)}
+.chip[aria-pressed="true"] .pg i{background:var(--on-pen)}
+.chip.has-today{box-shadow:inset 0 -3px 0 var(--stamp)}
+.week-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px;margin:18px 0 14px;padding:16px 18px;background:var(--sheet);border:1px solid var(--rule);border-radius:10px}
+.week-head h3{font:600 24px/1.15 var(--f-display);margin:0}
+.week-head p{font-size:14.5px;color:var(--ink-2);max-width:62ch}
+.wk-prog{display:grid;gap:6px;min-width:180px}
+.wk-prog span{font:600 12.5px/1 var(--f-mono);color:var(--ink-2)}
+.wk-prog .track{height:6px;border-radius:3px;background:var(--rule);overflow:hidden}
+.wk-prog .track i{display:block;height:100%;background:var(--c-priv);width:0;transition:width .25s}
+.days{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,310px),1fr));gap:14px}
+.day{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:14px 14px 12px;min-width:0}
+.day.is-today{border-color:var(--stamp);box-shadow:inset 0 0 0 1px var(--stamp)}
+.day h4{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:0 0 12px;font:700 16px/1.2 var(--f-body)}
+.day h4 .mono{font-size:13px;color:var(--ink-2);font-weight:500}
+.today-pill{font:700 10.5px/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--stamp);border:1px solid var(--stamp);border-radius:999px;padding:3px 7px}
+.day ul{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+.item{display:grid;grid-template-columns:20px minmax(0,1fr);gap:10px;align-items:start}
+.item input{width:18px;height:18px;margin:2px 0 0;accent-color:var(--c-priv);cursor:pointer}
+.item label{display:grid;gap:3px;cursor:pointer;min-width:0}
+.item .meta{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.item .blk{font:500 11.5px/1.2 var(--f-mono);color:var(--ink-2)}
+.item .txt{font-size:14.5px;line-height:1.45}
+.item input:checked + label .txt{text-decoration:line-through;text-decoration-color:var(--ink-2);color:var(--ink-2)}
+.item.alert .txt{color:var(--stamp);font-weight:600}
+
+/* Discursiva */
+.disc-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:32px}
+@media (max-width:860px){ .disc-grid{grid-template-columns:minmax(0,1fr)} }
+.steps{margin:0;padding-left:22px;display:grid;gap:10px}
+.steps li{padding-left:4px}
+.steps li::marker{font-family:var(--f-mono);font-weight:600;color:var(--pen)}
+.sheet{background:var(--sheet);border:1px solid var(--rule);border-radius:8px;padding:10px 12px 12px;display:grid;gap:0}
+.sheet-title{font:600 11.5px/1.3 var(--f-body);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
+.ln{display:grid;grid-template-columns:22px 4px minmax(0,1fr);gap:8px;align-items:end;height:17px;border-bottom:1px solid var(--rule)}
+.ln em{font:500 10px/1 var(--f-mono);font-style:normal;color:var(--ink-2);text-align:right;padding-bottom:3px}
+.ln i{height:100%;display:block}
+.ln span{font-size:11.5px;line-height:1;padding-bottom:3px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ln.ctx i{background:var(--c-ger)} .ln.qa i{background:var(--pen)} .ln.qb i{background:var(--c-priv)} .ln.qc i{background:var(--c-dh)} .ln.end i{background:var(--c-rev)}
+.checks{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.checks li{display:grid;grid-template-columns:18px minmax(0,1fr);gap:8px;font-size:14.5px}
+.checks li::before{content:"";width:12px;height:12px;border:1.5px solid var(--ink-2);border-radius:3px;margin-top:5px}
+.zero{margin-top:22px}
+.themes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:10px 28px;list-style:none;margin:0;padding:0}
+.themes li{display:grid;gap:4px;padding:10px 0;border-top:1px solid var(--rule);font-size:14.5px;min-width:0}
+
+/* Prova e materiais */
+.kit{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px 28px;list-style:none;margin:0;padding:0}
+.kit li{padding:10px 0;border-top:1px solid var(--rule);font-size:14.5px;min-width:0}
+.kit b{font-weight:600}
+footer{margin-top:56px;border-top:1px solid var(--rule)}
+footer .wrap{padding-block:22px 40px;font-size:13px;color:var(--ink-2);display:grid;gap:6px}
+
+@media (prefers-reduced-motion: reduce){ *{transition:none !important;scroll-behavior:auto !important} }
+html{scroll-behavior:smooth}
+
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+.voltar{display:inline-flex;margin-bottom:6px;font-weight:600;font-size:14px;color:var(--pen)}
+.app-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px 28px;list-style:none;margin:0;padding:0}
+.app-links li{padding:10px 0;border-top:1px solid var(--rule);font-size:14.5px;min-width:0}
+.app-links b{font-weight:600}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--c-rev);display:inline-block;margin-top:7px}
+.item.ro{grid-template-columns:12px minmax(0,1fr)}
+</style>
+</head>
+<body>
+
+
+<header class="top">
+  <div class="wrap">
+    <div>
+      <a class="voltar" href="index.html">← Voltar ao app</a>
+      <div class="eyebrow">TJPB 2026 · Analista Judiciário · Área Judiciária · Banca FGV</div>
+      <h1>Plano de Estudos TJPB</h1>
+    </div>
+    <p class="lead">Análise do Edital nº 01/2026 (já com a 1ª retificação) e um cronograma de 12 semanas, com 4 horas por dia, organizado pelo que a FGV mais cobra em provas de tribunal.</p>
+    <dl class="facts">
+      <div class="count"><dt id="countLabel">Faltam</dt><dd id="countdown">85 dias</dd></div>
+      <div><dt>Prova</dt><dd>Dom, 24/01/2027 · 13h às 18h · João Pessoa</dd></div>
+      <div><dt>Formato</dt><dd>60 objetivas + 1 discursiva (estudo de caso)</dd></div>
+      <div><dt>Inscrição</dt><dd>Até 18/11, 16h · boleto até 19/11 · R$ 120</dd></div>
+    </dl>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Seções">
+  <div class="wrap">
+    <ul>
+      <li><a href="#raio-x">Raio-x do edital</a></li>
+      <li><a href="#estrategia">Leitura estratégica</a></li>
+      <li><a href="#prioridades">O que mais cai</a></li>
+      <li><a href="#banca">Perfil FGV</a></li>
+      <li><a href="#rotina">Rotina de 4h</a></li>
+      <li><a href="#cronograma">Cronograma</a></li>
+      <li><a href="#plataforma">No app</a></li>
+      <li><a href="#discursiva">Discursiva</a></li>
+      <li><a href="#prova">Dia da prova</a></li>
+      <li><a href="#materiais">Materiais e ajustes</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="raio-x">
+  <div class="sec-head">
+    <span class="kicker">Raio-x do edital</span>
+    <h2>Como a sua nota é formada</h2>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Disciplina</th><th class="num">Questões</th><th class="num">% da objetiva</th><th class="num">Pontos na nota final</th></tr></thead>
+      <tbody>
+        <tr><td>Língua Portuguesa <span class="muted">(fora do seu cronograma)</span></td><td class="num">10</td><td class="num">16,7%</td><td class="num">10</td></tr>
+        <tr><td>Ética e Gestão no Serviço Público</td><td class="num">5</td><td class="num">8,3%</td><td class="num">5</td></tr>
+        <tr><td>Noções de Informática e Proteção de Dados</td><td class="num">5</td><td class="num">8,3%</td><td class="num">5</td></tr>
+        <tr><td>Conhecimentos Específicos (7 matérias jurídicas)</td><td class="num">40</td><td class="num">66,7%</td><td class="num">40</td></tr>
+        <tr class="hi"><td>Discursiva: 1 estudo de caso, 30 linhas</td><td class="num">1</td><td class="num">fora da objetiva</td><td class="num">40</td></tr>
+        <tr class="total"><td>Total</td><td class="num">60 + 1</td><td class="num">100%</td><td class="num">100</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="bar-block">
+    <span class="bar-title">Composição da nota final (100 pontos)</span>
+    <div class="bar" role="img" aria-label="Nota final: 40 pontos das questões específicas, 40 da discursiva, 10 de Português, 5 de Ética e Gestão e 5 de Informática">
+      <div class="seg s-esp" style="flex:40"><span>Específicas · 40</span></div>
+      <div class="seg s-disc" style="flex:40"><span>Discursiva · 40</span></div>
+      <div class="seg s-port small" style="flex:10"><span>Port. 10</span></div>
+      <div class="seg s-et small" style="flex:5"></div>
+      <div class="seg s-inf small" style="flex:5"></div>
+    </div>
+    <ul class="legend">
+      <li><i class="s-esp"></i>Objetivas específicas 40</li>
+      <li><i class="s-disc"></i>Discursiva 40</li>
+      <li><i class="s-port"></i>Português 10</li>
+      <li><i class="s-et"></i>Ética e Gestão 5</li>
+      <li><i class="s-inf"></i>Informática e LGPD 5</li>
+    </ul>
+  </div>
+
+  <dl class="rules">
+    <div><dt>Vagas da sua especialidade</dt><dd>25 vagas: 15 ampla concorrência, 2 PcD, 6 negros, 1 indígena, 1 quilombola.</dd></div>
+    <div><dt>Remuneração</dt><dd>R$ 7.526,14 + auxílio-alimentação de R$ 2.200 + auxílio-saúde de R$ 1.800. Jornada de 30h semanais.</dd></div>
+    <div><dt>Aprovação na objetiva</dt><dd>36 de 60 pontos (60%). Para cotas e PcD, 20% abaixo disso (28,8).</dd></div>
+    <div><dt>Correção da discursiva</dt><dd>Só até a 300ª posição na ampla concorrência. Aprovação com 24 de 40.</dd></div>
+    <div><dt>Nota final</dt><dd>Objetiva + discursiva, no máximo 100 pontos.</dd></div>
+    <div><dt>Desempate</dt><dd>60 anos ou mais, depois maior nota em Específicas, depois ter sido jurado, depois o mais velho.</dd></div>
+    <div><dt>Regras de sala</dt><dd>Sem relógio de qualquer tipo. Mínimo de 2h na sala. Caderno de questões só sai nos últimos 30 minutos.</dd></div>
+    <div><dt>Validade</dt><dd>2 anos, prorrogável por mais 2. Nomeação para qualquer comarca da Paraíba.</dd></div>
+  </dl>
+
+  <div class="notice">
+    <h3>O que mudou na 1ª retificação</h3>
+    <ul>
+      <li>Carga horária passou de 40h para <b>30h semanais</b>.</li>
+      <li>O pedido de isenção da taxa <b>encerrou em 27/10/2026</b> (antes ia até 18/11). A inscrição paga segue até 18/11.</li>
+      <li>O corte da objetiva é <b>60%</b>. O texto anterior dizia “60% (cinquenta por cento)” por erro.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="estrategia">
+  <div class="sec-head">
+    <span class="kicker">Leitura estratégica</span>
+    <h2>O que este edital diz nas entrelinhas</h2>
+  </div>
+  <ul class="insights">
+    <li><h3>A discursiva vale o mesmo que as 40 específicas</h3><p>A nota final soma objetiva (60) e discursiva (40). A maioria dos candidatos só treina escrita no fim. Aqui há uma discursiva por semana desde a semana 1 e duas nas semanas 10 e 11.</p></li>
+    <li><h3>A objetiva funciona como filtro</h3><p>Só as 300 melhores notas da ampla concorrência têm a discursiva corrigida. Cotistas e PcD aprovados na objetiva têm correção garantida. O objetivo da objetiva é entrar nesse grupo com folga.</p></li>
+    <li><h3>Português fica fora do estudo, não da prova</h3><p>As 10 questões continuam valendo. Responda todas com leitura atenta, porque errar não desconta. O tempo que seria de Português foi para súmulas e teses do STF e do STJ, que a FGV cobra em todas as matérias jurídicas.</p></li>
+    <li><h3>Sete matérias jurídicas em 40 questões</h3><p>Dá cerca de 5 a 7 questões por matéria. Amplitude rende mais que profundidade: lei seca, súmulas e jurisprudência dominante, como o próprio Anexo I avisa. Doutrina aprofundada não se paga nesta prova.</p></li>
+    <li><h3>Sem mínimo por bloco e sem desconto por erro</h3><p>O corte é 36 acertos no total e errar não tira ponto. Nenhuma questão fica em branco. Abaixo dos 60 anos, o primeiro desempate é a nota em Conhecimentos Específicos.</p></li>
+    <li><h3>Normas do TJPB e do CNJ são pontos baratos</h3><p>Res. TJPB 20/2025 e 21/2025 e Res. CNJ 230, 351/2020 e 400/2021 são curtas, específicas deste concurso e pouca gente lê com atenção. Leia na íntegra.</p></li>
+    <li><h3>O que ficou de fora do edital</h3><p>Controle de constitucionalidade não é tópico próprio (aparece só pelas competências do STF). Não há estatuto de servidor nem Lei 8.112 listados. Nada disso merece estudo aprofundado.</p></li>
+    <li><h3>Lei nova pode cair</h3><p>O edital admite cobrar alterações legislativas posteriores à sua publicação. Reserve 20 minutos do domingo para informativos e novidades legislativas.</p></li>
+  </ul>
+
+  <div class="synergy">
+    <h3 class="sub">Estude uma vez, pontue em duas ou três matérias</h3>
+    <ul class="syn-list">
+      <li><b>Improbidade (Lei 8.429/1992)</b> <span>Ética e Gestão + Administrativo</span></li>
+      <li><b>Lei Anticorrupção (12.846/2013)</b> <span>Ética e Gestão + Administrativo</span></li>
+      <li><b>LGPD (13.709/2018)</b> <span>Informática + Civil</span></li>
+      <li><b>Princípios da Administração e PAD</b> <span>Ética + Administrativo + Constitucional</span></li>
+      <li><b>Responsabilidade civil do Estado</b> <span>Administrativo + Civil + Constitucional</span></li>
+      <li><b>ACP, ação popular e mandado de segurança</b> <span>Proc. Civil + Administrativo + Constitucional + DH</span></li>
+      <li><b>CDC</b> <span>Civil + Proc. Civil (tutela coletiva)</span></li>
+      <li><b>Maria da Penha, ECA, Idoso, PcD, LEP, Henry Borel</b> <span>Penal + Proc. Penal + Direitos Humanos</span></li>
+    </ul>
+  </div>
+
+  <div class="goal">
+    <strong>Meta de trabalho: 40 de 50 nas questões que você vai estudar e 28 de 40 na discursiva</strong>
+    <p class="muted">Não existe histórico de nota de corte deste concurso. Com 15 vagas de ampla concorrência e prova FGV, uns 45 acertos no total são uma margem prudente para ficar entre os 300 corrigidos. Sem estudar Português, isso pede 80% no resto da objetiva mais uns 5 acertos em Português. Use como régua nos simulados, não como previsão.</p>
+  </div>
+</section>
+
+<section id="prioridades">
+  <div class="sec-head">
+    <span class="kicker">O que mais cai</span>
+    <h2>Mapa de prioridades por matéria</h2>
+  </div>
+  <ul class="marks">
+    <li><span class="hl3">Amarelo</span> cai muito: estude primeiro e revise toda semana</li>
+    <li><span class="hl2">Verde</span> cai com frequência: estude na fase 2</li>
+    <li><span class="muted">Sem marca</span> cai pouco: leitura rápida</li>
+  </ul>
+  <p class="prose muted" style="margin-bottom:18px">Use as mesmas cores para grifar a lei seca. Na reta final, você relê só o amarelo.</p>
+
+  <div class="subjects">
+    <article class="subj">
+      <header><h3>Direito Processual Civil</h3><span class="qtd">≈ 7 questões</span></header>
+      <div class="tier t3"><h4>Cai muito</h4><ul>
+        <li><span>Normas fundamentais e prazos em dias úteis</span></li>
+        <li><span>Tutela provisória: urgência, evidência, estabilização (art. 304)</span></li>
+        <li><span>Recursos: apelação, agravo de instrumento (art. 1.015 e Tema 988 do STJ), embargos de declaração</span></li>
+        <li><span>Cumprimento de sentença (art. 523), Fazenda Pública e alimentos</span></li>
+      </ul></div>
+      <div class="tier t2"><h4>Cai com frequência</h4><ul>
+        <li><span>Competência; intervenção de terceiros e IDPJ</span></li>
+        <li><span>Petição inicial, improcedência liminar (art. 332), audiência do art. 334, revelia, saneamento</span></li>
+        <li><span>Provas e distribuição dinâmica do ônus (art. 373)</span></li>
+        <li><span>Sentença, coisa julgada e remessa necessária</span></li>
+        <li><span>Precedentes (art. 927), IRDR, IAC; ACP, ação popular e MS</span></li>
+      </ul></div>
+      <div class="tier t1"><h4>Cai pouco</h4><ul>
+        <li>Ação rescisória, reclamação, execução extrajudicial e medidas atípicas</li>
+        <li>Juizados, jurisdição voluntária, arbitragem e processo estrutural</li>
+      </ul></div>
+    </article>
+
+    <article class="subj">
+      <header><h3>Direito Administrativo</h3><span class="qtd">≈ 7 questões</span></header>
+      <div class="tier t3"><h4>Cai muito</h4><ul>
+        <li><span>Lei 14.133/2021: modalidades, dispensa e inexigibilidade, contratos, sanções</span></li>
+        <li><span>Improbidade após a Lei 14.230/2021: dolo, arts. 9º a 11, prescrição, Tema 1199 do STF</span></li>
+        <li><span>Responsabilidade civil do Estado: art. 37, § 6º, omissão, Tema 940 do STF</span></li>
+        <li><span>Atos administrativos: atributos, anulação x revogação, convalidação, Súmula 473</span></li>
+      </ul></div>
+      <div class="tier t2"><h4>Cai com frequência</h4><ul>
+        <li><span>Poderes administrativos e abuso de poder</span></li>
+        <li><span>Lei 9.784/1999: prazos, recursos, decadência de 5 anos (art. 54)</span></li>
+        <li><span>Agentes públicos, acumulação, estabilidade e PAD</span></li>
+        <li><span>Organização administrativa e controle da Administração</span></li>
+        <li><span>Lei 12.846/2013 e acordo de leniência</span></li>
+      </ul></div>
+      <div class="tier t1"><h4>Cai pouco</h4><ul>
+        <li>Serviços públicos, concessões, PPPs e agências reguladoras</li>
+        <li>Intervenção na propriedade, bens públicos e política urbana</li>
+      </ul></div>
+    </article>
+
+    <article class="subj">
+      <header><h3>Direito Constitucional</h3><span class="qtd">≈ 6 questões</span></header>
+      <div class="tier t3"><h4>Cai muito</h4><ul>
+        <li><span>Direitos e garantias do art. 5º e remédios constitucionais</span></li>
+        <li><span>Repartição de competências (arts. 21 a 24 e 30)</span></li>
+        <li><span>Poder Judiciário: garantias, vedações, STF, STJ, súmula vinculante e CNJ (art. 103-B)</span></li>
+      </ul></div>
+      <div class="tier t2"><h4>Cai com frequência</h4><ul>
+        <li><span>Administração Pública na CF (arts. 37 a 41)</span></li>
+        <li><span>Processo legislativo e Tribunais de Contas</span></li>
+        <li><span>Nacionalidade e direitos políticos</span></li>
+        <li><span>Funções essenciais: MP, Defensoria, Advocacia Pública</span></li>
+        <li><span>Justiça Estadual, precatórios e direitos sociais</span></li>
+      </ul></div>
+      <div class="tier t1"><h4>Cai pouco</h4><ul>
+        <li>Conceito e classificação das constituições; princípios fundamentais</li>
+        <li>Poder Legislativo (estrutura), Executivo e intervenção</li>
+      </ul></div>
+    </article>
+
+    <article class="subj">
+      <header><h3>Direito Civil e Consumidor</h3><span class="qtd">≈ 6 questões</span></header>
+      <div class="tier t3"><h4>Cai muito</h4><ul>
+        <li><span>Negócio jurídico: defeitos, nulidade x anulabilidade</span></li>
+        <li><span>Prescrição e decadência</span></li>
+        <li><span>Responsabilidade civil e súmulas do STJ sobre dano moral</span></li>
+        <li><span>CDC: fato x vício do produto e do serviço, prazos dos arts. 26 e 27</span></li>
+      </ul></div>
+      <div class="tier t2"><h4>Cai com frequência</h4><ul>
+        <li><span>LINDB, inclusive arts. 20 a 30</span></li>
+        <li><span>Capacidade após a Lei 13.146/2015; desconsideração da PJ (art. 50)</span></li>
+        <li><span>Contratos: boa-fé, função social, extinção</span></li>
+        <li><span>CDC: práticas e cláusulas abusivas, superendividamento (Lei 14.181/2021)</span></li>
+        <li><span>Família (regime de bens, união estável, alimentos), sucessão legítima, usucapião</span></li>
+      </ul></div>
+      <div class="tier t1"><h4>Cai pouco</h4><ul>
+        <li>Obrigações em espécie, direitos reais menores, direito de laje</li>
+        <li>Inquilinato, bem de família, Marco Civil da Internet</li>
+      </ul></div>
+    </article>
+
+    <article class="subj">
+      <header><h3>Direito Processual Penal</h3><span class="qtd">≈ 6 questões</span></header>
+      <div class="tier t3"><h4>Cai muito</h4><ul>
+        <li><span>Prisões e cautelares: flagrante, preventiva, revisão a cada 90 dias, custódia, art. 319</span></li>
+        <li><span>Provas: ilicitude, cadeia de custódia (arts. 158-A a F), reconhecimento (art. 226)</span></li>
+        <li><span>Inquérito, arquivamento (art. 28) e ANPP (art. 28-A)</span></li>
+        <li><span>Ação penal: espécies, condições, denúncia e queixa</span></li>
+      </ul></div>
+      <div class="tier t2"><h4>Cai com frequência</h4><ul>
+        <li><span>Competência e foro por prerrogativa (atenção à virada do STF em 2025)</span></li>
+        <li><span>Juiz das garantias (ADIs 6298 e outras)</span></li>
+        <li><span>Júri, procedimentos e absolvição sumária (art. 397)</span></li>
+        <li><span>Lei 9.099: transação e suspensão condicional do processo</span></li>
+        <li><span>Nulidades, recursos, HC e execução penal (art. 112 da LEP)</span></li>
+      </ul></div>
+      <div class="tier t1"><h4>Cai pouco</h4><ul>
+        <li>Citação, revelia (art. 366), emendatio e mutatio libelli</li>
+        <li>Questões incidentes, revisão criminal, depoimento especial</li>
+      </ul></div>
+    </article>
+
+    <article class="subj">
+      <header><h3>Direito Penal</h3><span class="qtd">≈ 5 questões</span></header>
+      <div class="tier t3"><h4>Cai muito</h4><ul>
+        <li><span>Teoria do crime: dolo, culpa, erro de tipo x erro de proibição, excludentes</span></li>
+        <li><span>Iter criminis: tentativa, desistência, arrependimento, crime impossível</span></li>
+        <li><span>Crimes contra a Administração Pública (peculato, concussão, corrupção, prevaricação)</span></li>
+        <li><span>Extinção da punibilidade e prescrição</span></li>
+      </ul></div>
+      <div class="tier t2"><h4>Cai com frequência</h4><ul>
+        <li><span>Lei penal no tempo; concurso de pessoas e de crimes</span></li>
+        <li><span>Penas, dosimetria e regimes</span></li>
+        <li><span>Patrimônio (furto, roubo, estelionato) e pessoa (feminicídio do art. 121-A, Lei 14.994/2024)</span></li>
+        <li><span>Drogas, hediondos, Maria da Penha, abuso de autoridade</span></li>
+      </ul></div>
+      <div class="tier t1"><h4>Cai pouco</h4><ul>
+        <li>Sursis, livramento, medidas de segurança, dignidade sexual, fé pública</li>
+        <li>Desarmamento, trânsito, ambientais, informáticos, lavagem, orcrim</li>
+      </ul></div>
+    </article>
+
+    <article class="subj">
+      <header><h3>Direitos Humanos e Tutela Coletiva</h3><span class="qtd">≈ 3 questões</span></header>
+      <div class="tier t3"><h4>Cai muito</h4><ul>
+        <li><span>Hierarquia dos tratados (art. 5º, §§ 2º e 3º; supralegalidade, RE 466.343)</span></li>
+        <li><span>Sistema interamericano: Comissão x Corte IDH e casos contra o Brasil</span></li>
+        <li><span>Controle de convencionalidade</span></li>
+      </ul></div>
+      <div class="tier t2"><h4>Cai com frequência</h4><ul>
+        <li><span>Características e dimensões dos direitos humanos</span></li>
+        <li><span>ACP como tutela de direitos fundamentais; mínimo existencial</span></li>
+        <li><span>Grupos vulneráveis e Lei 14.532/2023 (injúria racial)</span></li>
+        <li><span>Sistema prisional (ADPF 347)</span></li>
+      </ul></div>
+      <div class="tier t1"><h4>Cai pouco</h4><ul>
+        <li>Sistema global (ONU), povos tradicionais, PNMA, Lei 9.807/1999</li>
+      </ul></div>
+    </article>
+
+    <article class="subj">
+      <header><h3>Ética e Gestão no Serviço Público</h3><span class="qtd exact">5 questões</span></header>
+      <div class="tier t3"><h4>Cai muito</h4><ul>
+        <li><span>Lei 8.429/1992 aplicada a casos</span></li>
+        <li><span>Res. TJPB 21/2025: Código de Conduta Ética dos Servidores</span></li>
+        <li><span>Princípios, moralidade e conflito de interesses</span></li>
+      </ul></div>
+      <div class="tier t2"><h4>Cai com frequência</h4><ul>
+        <li><span>Lei 12.846/2013, leniência e programa de integridade</span></li>
+        <li><span>Res. TJPB 20/2025 (Programa de Integridade) e Res. CNJ 351/2020 (assédio)</span></li>
+        <li><span>Motivação e liderança (Maslow, Herzberg, McClelland, Vroom)</span></li>
+        <li><span>Deveres, vedações e PAD</span></li>
+      </ul></div>
+      <div class="tier t1"><h4>Cai pouco</h4><ul>
+        <li>Cultura x clima, equipes, conflitos; Res. CNJ 230 e 400/2021</li>
+      </ul></div>
+    </article>
+
+    <article class="subj">
+      <header><h3>Informática e Proteção de Dados</h3><span class="qtd exact">5 questões</span></header>
+      <div class="tier t3"><h4>Cai muito</h4><ul>
+        <li><span>LGPD: conceitos (art. 5º), princípios (art. 6º), bases legais (arts. 7º e 11), direitos do titular (art. 18)</span></li>
+        <li><span>Segurança da informação: princípios, malware, phishing, engenharia social</span></li>
+      </ul></div>
+      <div class="tier t2"><h4>Cai com frequência</h4><ul>
+        <li><span>Controlador, operador, encarregado, ANPD e sanções</span></li>
+        <li><span>LGPD no Poder Público (arts. 23 a 32) e Res. CNJ 363/2021</span></li>
+        <li><span>Backup, criptografia, certificado digital, MFA</span></li>
+      </ul></div>
+      <div class="tier t1"><h4>Cai pouco</h4><ul>
+        <li>Hardware, software, sistemas operacionais, redes e internet</li>
+      </ul></div>
+    </article>
+  </div>
+  <p class="footnote">O edital não divide as 40 questões específicas entre as sete matérias. Os números com “≈” são uma estimativa pela extensão de cada conteúdo e pelo padrão da FGV em provas de analista de tribunal. A classificação de incidência segue o mesmo critério. Ajuste com o seu diagnóstico.</p>
+</section>
+
+<section id="banca">
+  <div class="sec-head">
+    <span class="kicker">Perfil da banca</span>
+    <h2>Como a FGV pergunta em provas de tribunal</h2>
+  </div>
+  <div class="two">
+    <ul class="howto">
+      <li><b>Caso concreto no enunciado.</b><span>Personagens, datas e valores, e a pergunta é a consequência jurídica. Antes de ler as alternativas, diga para si qual instituto está em jogo.</span></li>
+      <li><b>Alternativas longas e parecidas.</b><span>O erro costuma estar num detalhe: prazo, exceção (“salvo”), competência, legitimidade, ou a troca por um instituto vizinho.</span></li>
+      <li><b>Lei seca e tribunais superiores.</b><span>Súmulas, temas de repercussão geral e repetitivos aparecem com frequência. O Anexo I manda considerá-los em todas as matérias.</span></li>
+      <li><b>Leis recentes.</b><span>Lei 14.230/2021, Lei 14.133/2021, Pacote Anticrime, Lei 14.181/2021 e Lei 14.994/2024 são terreno preferido.</span></li>
+      <li><b>Discursiva por quesitos.</b><span>O estudo de caso costuma pedir 2 ou 3 respostas fundamentadas, e a pontuação se distribui entre elas.</span></li>
+    </ul>
+    <div>
+      <p class="side-title">Pares que a FGV troca nas alternativas</p>
+      <ul class="pairs">
+        <li>erro de tipo × erro de proibição</li>
+        <li>desistência voluntária × arrependimento eficaz</li>
+        <li>peculato × apropriação indébita</li>
+        <li>concussão × corrupção passiva</li>
+        <li>transação penal × suspensão do processo</li>
+        <li>flagrante × preventiva</li>
+        <li>nulidade × anulabilidade</li>
+        <li>prescrição × decadência</li>
+        <li>vício × fato do produto</li>
+        <li>anulação × revogação</li>
+        <li>dispensa × inexigibilidade</li>
+        <li>urgência × evidência</li>
+        <li>competência absoluta × relativa</li>
+        <li>controlador × operador</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="deadlines">
+    <h3 class="sub">Prazos que derrubam candidatos</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Regra</th><th>Onde está</th></tr></thead>
+        <tbody>
+          <tr><td>Prazos processuais civis contam só dias úteis</td><td class="mono">CPC, art. 219</td></tr>
+          <tr><td>Juizados Especiais Cíveis também contam dias úteis</td><td class="mono">Lei 9.099, art. 12-A</td></tr>
+          <tr><td>Prazos penais são contínuos</td><td class="mono">CPP, art. 798</td></tr>
+          <tr><td>Processo administrativo federal: prazos contínuos</td><td class="mono">Lei 9.784, art. 66, § 2º</td></tr>
+          <tr><td>Anular ato favorável ao administrado: 5 anos, salvo má-fé</td><td class="mono">Lei 9.784, art. 54</td></tr>
+          <tr><td>Preventiva revista a cada 90 dias</td><td class="mono">CPP, art. 316, par. único</td></tr>
+          <tr><td>Vício: 30 dias (não durável) ou 90 dias (durável); fato do produto: 5 anos</td><td class="mono">CDC, arts. 26 e 27</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="rotina">
+  <div class="sec-head">
+    <span class="kicker">Rotina de 4 horas</span>
+    <h2>Quatro blocos por dia, sempre na mesma ordem</h2>
+  </div>
+  <div class="timeline" aria-label="Divisão das 4 horas diárias">
+    <div class="tl" style="flex:60"><b>B1 · 60 min</b><span>Específica 1: teoria</span></div>
+    <div class="tl" style="flex:60"><b>B2 · 60 min</b><span>Específica 2: teoria</span></div>
+    <div class="tl" style="flex:50"><b>B3 · 50 min</b><span>Gerais, DH ou súmulas</span></div>
+    <div class="tl" style="flex:70"><b>B4 · 70 min</b><span>Questões FGV + revisão</span></div>
+  </div>
+  <ul class="blocks">
+    <li><h3>B1 e B2: teoria ativa</h3><p>35 min no material (PDF ou aula em 1,5x), 15 min na lei seca do tópico grifando com as cores do mapa, 10 min fazendo 5 a 10 flashcards.</p></li>
+    <li><h3>B3: gerais e jurisprudência</h3><p>Ética e Gestão, Informática e LGPD e Direitos Humanos uma vez cada. Nos outros três dias, súmulas e teses do STF e do STJ sobre os temas do B1 e do B2.</p></li>
+    <li><h3>B4: questões e revisão</h3><p>25 a 30 questões FGV dos tópicos do dia (45 min), cada erro anotado no caderno de erros (15 min) e flashcards do dia anterior (10 min).</p></li>
+    <li><h3>Domingo: consolidar</h3><p>2h de revisão semanal (erros, flashcards, lei seca, informativos) e 2h de questões mistas. Nas semanas 5, 7, 9, 10 e 11, simulado completo.</p></li>
+  </ul>
+  <p class="footnote">Faça 3 pausas de 10 minutos entre os blocos, fora das 4 horas líquidas.</p>
+
+  <h3 class="sub">Grade semanal das fases 1 e 2 (semanas 1 a 9)</h3>
+  <div class="tbl-wrap">
+    <table class="grid-tbl">
+      <thead><tr><th>Bloco</th><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th><th>Dom</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">B1 · 60′</td><td><span class="tag" data-k="priv">Proc. Civil</span></td><td><span class="tag" data-k="pub">Constitucional</span></td><td><span class="tag" data-k="priv">Civil e CDC</span></td><td><span class="tag" data-k="priv">Proc. Civil</span></td><td><span class="tag" data-k="pub">Constitucional</span></td><td><span class="tag" data-k="priv">Civil e CDC</span></td><td rowspan="2"><span class="tag" data-k="rev">Revisão semanal</span><br><span class="muted">2h</span></td></tr>
+        <tr><td class="mono">B2 · 60′</td><td><span class="tag" data-k="pub">Administrativo</span></td><td><span class="tag" data-k="crim">Proc. Penal</span></td><td><span class="tag" data-k="crim">Penal</span></td><td><span class="tag" data-k="pub">Administrativo</span></td><td><span class="tag" data-k="crim">Proc. Penal</span></td><td><span class="tag" data-k="crim">Penal</span></td></tr>
+        <tr><td class="mono">B3 · 50′</td><td><span class="tag" data-k="rev">Súmulas e teses</span></td><td><span class="tag" data-k="ger">Ética e Gestão</span></td><td><span class="tag" data-k="rev">Súmulas e teses</span></td><td><span class="tag" data-k="ger">Informática e LGPD</span></td><td><span class="tag" data-k="rev">Súmulas e teses</span></td><td><span class="tag" data-k="dh">Direitos Humanos</span></td><td rowspan="2"><span class="tag" data-k="rev">40 questões mistas</span><br><span class="muted">2h, ou simulado de 4h</span></td></tr>
+        <tr><td class="mono">B4 · 70′</td><td><span class="tag" data-k="rev">Questões</span></td><td><span class="tag" data-k="rev">Questões</span></td><td><span class="tag" data-k="rev">Questões</span></td><td><span class="tag" data-k="rev">Questões</span></td><td><span class="tag" data-k="rev">Questões</span></td><td><span class="tag" data-k="pen">Discursiva</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="footnote">Teoria por semana: 2h em cada uma das seis matérias jurídicas principais, 2h30 de súmulas e teses, 50 min de Ética, Informática e DH, 1h10 de discursiva e quase 10h de questões e revisão. Cada matéria é vista em dias alternados, o que já cria a revisão de 48 horas.</p>
+</section>
+
+<section id="cronograma">
+  <div class="sec-head">
+    <span class="kicker">Cronograma</span>
+    <h2>12 semanas, dia a dia</h2>
+  </div>
+  <div class="prose muted" style="margin-bottom:18px">
+    <p>Os temas de cada matéria estão em ordem de incidência: até a semana 5 você passa por todo o amarelo do mapa, a fase 2 completa o edital e a fase 3 só revisa. Marque o que concluir na aba <b>Tribunal</b> do app: lá o progresso sincroniza entre aparelhos e cada bloco abre o conteúdo da plataforma ligado ao assunto.</p>
+  </div>
+  <div class="planner-top">
+    <div class="phases" id="phases" role="group" aria-label="Escolha a semana"></div>
+    <button class="btn" id="goToday" type="button">Ir para hoje</button>
+  </div>
+  <div id="weekView"></div>
+</section>
+
+<section id="plataforma">
+  <div class="sec-head">
+    <span class="kicker">No app</span>
+    <h2>Onde cada parte do plano aparece na plataforma</h2>
+  </div>
+  <ul class="app-links">
+    <li><b>Aba Tribunal.</b> O mesmo cronograma, com caixas de marcar que sincronizam entre aparelhos. Em cada bloco, “No app para este bloco” lista os cartões, a lei seca, as súmulas, as teses e as questões ligadas ao assunto.</li>
+    <li><b>Cronograma por assuntos.</b> Escolha “TJPB · Analista Judiciário – Área Judiciária” para estudar pelos 84 assuntos do Anexo I, com a página do edital e as leis citadas em cada item.</li>
+    <li><b>Lei seca.</b> Com a lei seca do curso no baralho, cada artigo mostra os grifos (pegadinha, ponto cobrado, caiu dos dois jeitos), o número de questões, a jurisprudência correlata e as assertivas das bancas. Use os filtros “muito cobrado” e “caiu na FGV”.</li>
+    <li><b>Biblioteca, Teses e Provas.</b> Os botões de cada bloco levam direto ao cartão, à tese ou à questão; “Buscar em tudo” procura o assunto no app inteiro.</li>
+  </ul>
+</section>
+
+<section id="discursiva">
+  <div class="sec-head">
+    <span class="kicker">Discursiva</span>
+    <h2>40 pontos em 30 linhas</h2>
+  </div>
+  <div class="prose" style="margin-bottom:24px">
+    <p>Um estudo de caso sobre qualquer matéria de Conhecimentos Específicos. O edital pede análise crítica do caso, identificação dos problemas, aplicação da lei e proposta de solução. Nota mínima: 24 de 40.</p>
+  </div>
+  <div class="disc-grid">
+    <div>
+      <h3 class="sub" style="margin-top:0">Método para cada resposta</h3>
+      <ol class="steps">
+        <li>Leia o comando antes do caso e sublinhe os verbos: explique, indique, fundamente.</li>
+        <li>Separe os quesitos. Cada um vira um parágrafo, na ordem pedida.</li>
+        <li>No rascunho, para cada quesito: instituto jurídico, artigo de lei, súmula ou tese se souber, e a conclusão aplicada aos fatos.</li>
+        <li>Distribua as 30 linhas antes de escrever, como na folha ao lado.</li>
+        <li>Abra cada parágrafo com a resposta direta e depois fundamente. Use os nomes e fatos do caso.</li>
+        <li>Revise concordância, acentuação e letra. Não assine nem escreva nada que identifique você.</li>
+      </ol>
+
+      <h3 class="sub">Autocorreção depois de cada treino</h3>
+      <ul class="checks">
+        <li>Respondi tudo o que foi perguntado, na ordem?</li>
+        <li>Nomeei o instituto certo?</li>
+        <li>Citei o dispositivo correto? Se não lembrava o número, deixei sem número em vez de inventar?</li>
+        <li>Liguei a regra aos fatos do caso?</li>
+        <li>Cheguei a uma conclusão clara para cada quesito?</li>
+        <li>Fiquei dentro das 30 linhas, sem rasuras que atrapalhem a leitura?</li>
+      </ul>
+
+      <div class="notice zero">
+        <h3>Nota zero automática (item 10.7.3)</h3>
+        <ul>
+          <li>Folha em branco, fuga ao tema ou texto fora do formato de estudo de caso.</li>
+          <li>Texto ilegível, em versos, desenhos ou com espaçamento exagerado.</li>
+          <li>Caneta que não seja azul ou preta.</li>
+          <li>Qualquer marca que identifique o candidato; cópia ou plágio.</li>
+          <li>Resposta técnica totalmente incorreta.</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="sheet" id="sheet" aria-label="Distribuição sugerida das 30 linhas para um caso com 3 quesitos">
+        <div class="sheet-title">Folha de 30 linhas, caso com 3 quesitos</div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub">Temas com mais chance de virar estudo de caso</h3>
+  <ul class="themes">
+    <li><span class="tag" data-k="priv">Proc. Civil</span>Tutela provisória, recurso cabível, cumprimento de sentença, legitimidade na ACP.</li>
+    <li><span class="tag" data-k="pub">Administrativo</span>Improbidade, responsabilidade do Estado, contratação direta, anulação de ato.</li>
+    <li><span class="tag" data-k="crim">Proc. Penal</span>Preventiva x cautelares, ANPP, cadeia de custódia e prova ilícita, competência.</li>
+    <li><span class="tag" data-k="priv">Civil e CDC</span>Fato x vício do produto, responsabilidade civil, alimentos, invalidade do negócio.</li>
+    <li><span class="tag" data-k="crim">Penal</span>Concurso de pessoas, crimes contra a Administração, violência doméstica.</li>
+    <li><span class="tag" data-k="pub">Constitucional</span>Direito fundamental violado e remédio cabível; competência legislativa.</li>
+  </ul>
+</section>
+
+<section id="prova">
+  <div class="sec-head">
+    <span class="kicker">Dia da prova</span>
+    <h2>Domingo, 24 de janeiro: 5 horas para tudo</h2>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Horário</th><th>O que fazer</th><th>Ritmo</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">13h00 – 15h00</td><td>40 questões de Conhecimentos Específicos</td><td>3 min por questão; marque as difíceis e siga</td></tr>
+        <tr><td class="mono">15h00 – 16h10</td><td>Discursiva</td><td>25 min de rascunho em tópicos, 35 min passando a limpo, 10 min revisando</td></tr>
+        <tr><td class="mono">16h10 – 17h10</td><td>20 questões de Conhecimentos Gerais</td><td>Ética e Informática primeiro (25 min); depois Português, começando pelas questões de interpretação, que dependem mais de leitura atenta</td></tr>
+        <tr><td class="mono">17h10 – 17h30</td><td>Questões puladas</td><td>Nenhuma em branco: errar não desconta</td></tr>
+        <tr><td class="mono">17h30 – 17h50</td><td>Cartão de respostas</td><td>Transcreva com calma; rasura zera a questão</td></tr>
+        <tr><td class="mono">17h50 – 18h00</td><td>Folga</td><td>Conferir nome e número de inscrição</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="footnote">Teste essa ordem nos simulados. O edital proíbe relógio de qualquer tipo, então o controle de tempo depende do aviso da sala e do ritmo treinado nos simulados.</p>
+
+  <h3 class="sub">Leve e lembre</h3>
+  <ul class="kit">
+    <li><b>Documento original com foto</b>, em papel. Documento digital e cópia não são aceitos.</li>
+    <li><b>Canetas azuis ou pretas de corpo transparente</b>. Leve três.</li>
+    <li><b>Chegue até 11h30.</b> Os portões fecham às 12h30.</li>
+    <li><b>Fica fora:</b> relógio, boné, óculos escuros, lápis, borracha e corretivo.</li>
+    <li><b>Mínimo de 2h na sala.</b> O caderno de questões só sai com você nos últimos 30 minutos.</li>
+    <li><b>Comprovante de inscrição</b> ou de pagamento da taxa.</li>
+  </ul>
+</section>
+
+<section id="materiais">
+  <div class="sec-head">
+    <span class="kicker">Materiais e ajustes</span>
+    <h2>O que usar e como corrigir a rota</h2>
+  </div>
+  <ul class="kit">
+    <li><b>Lei seca atualizada</b> (site do Planalto) de CF, CPC, CC, CDC, CP, CPP, LEP e das leis listadas no Anexo I, grifada com as cores do mapa.</li>
+    <li><b>Banco de questões</b> com filtro Banca FGV + Analista Judiciário + Tribunais de Justiça, últimos 5 anos. Quando acabar, amplie para outros cargos jurídicos da FGV.</li>
+    <li><b>Informativos e súmulas</b> do STF e do STJ, por resumo comentado, 20 min aos domingos.</li>
+    <li><b>Normas locais</b> no site do TJPB (Res. 20 e 21/2025) e atos do CNJ no site do CNJ (Res. 230, 351, 363 e 400).</li>
+    <li><b>Caderno de erros</b>: uma linha por erro, com tema, regra correta e motivo do erro.</li>
+    <li><b>Flashcards</b> (Anki ou papel): 5 a 10 por sessão de teoria, revisados no B4 do dia seguinte e no domingo.</li>
+  </ul>
+
+  <h3 class="sub">Regras de ajuste</h3>
+  <ul class="kit">
+    <li><b>Abaixo de 60% numa matéria</b> por duas semanas seguidas: troque um B3 de súmulas e teses daquela semana por ela.</li>
+    <li><b>Acima de 85% numa matéria</b>: corte a teoria pela metade e use o tempo em questões.</li>
+    <li><b>Perdeu um dia</b>: não acumule. Siga o cronograma e recupere só os itens em amarelo no domingo.</li>
+    <li><b>Feriados (25/12 e 01/01)</b>: pode folgar. Leve os blocos de teoria para o domingo e reduza a bateria de questões.</li>
+  </ul>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Baseado no Edital nº 01/2026 do TJPB (versão retificada de 29/10/2026) e no extrato da 1ª retificação (23/10/2026), para Analista Judiciário, especialidade Área Judiciária.</p>
+    <p>Estimativas de questões por matéria, incidência de temas e metas de nota são hipóteses de estudo, não dados oficiais.</p>
+  </div>
+</footer>
+
+<script>
+const TJPB_PLANO = {"edital":"tjpb-2026","prova":"2027-01-24","provaHora":"13h às 18h","local":"João Pessoa","nota":"Cronograma pessoal de 12 semanas, 4 horas por dia, sem Língua Portuguesa por escolha da titular do app (as 10 questões continuam valendo na prova).","fases":[{"nome":"Preparação","semanas":[0],"desc":"Organize o material e meça seu ponto de partida."},{"nome":"Fase 1 · Base","semanas":[1,2,3,4,5],"desc":"Os temas que mais caem em cada matéria, com questões FGV todos os dias. Simulado 1 no domingo da semana 5."},{"nome":"Fase 2 · Aprofundamento","semanas":[6,7,8,9],"desc":"Completa o edital com os temas de incidência média e baixa. Simulados nas semanas 7 e 9."},{"nome":"Fase 3 · Reta final","semanas":[10,11,12],"desc":"Revisão por prioridade, jurisprudência e lei seca. Simulados semanais e descanso antes da prova."}],"semanas":[{"n":0,"dias":[{"data":"2026-10-31","itens":[{"b":"1h","s":"meta","t":"Leia os itens 10 a 13 e o Anexo I do edital junto com este plano"},{"b":"30 min","s":"meta","t":"Inscrição até 18/11, 16h, e boleto até 19/11. Se ainda não fez, faça hoje","alerta":true},{"b":"1h30","s":"meta","t":"Monte o material: lei seca atualizada e banco de questões filtrado em FGV"},{"b":"1h","s":"meta","t":"Crie o caderno de erros e o baralho de flashcards"}]},{"data":"2026-11-01","itens":[{"b":"2h","s":"q","t":"Diagnóstico: 40 questões FGV mistas de Analista Judiciário de TJ, cronometradas"},{"b":"1h","s":"rev","t":"Anote acertos por matéria. Abaixo de 50% numa matéria significa prioridade extra nas semanas 1 a 5"},{"b":"1h","s":"disc","t":"Leia 2 estudos de caso FGV com padrão de resposta, ainda sem escrever"}]}]},{"n":1,"dias":[{"data":"2026-11-02","itens":[{"b":"B1 · 60 min","s":"pc","t":"Normas fundamentais (arts. 1º a 15) e prazos em dias úteis (arts. 218 a 232)"},{"b":"B2 · 60 min","s":"adm","t":"Princípios da Administração (expressos e implícitos) e regime jurídico-administrativo"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses do STF e do STJ sobre os temas de hoje de Proc. Civil e Administrativo"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Proc. Civil, Administrativo + caderno de erros + flashcards de ontem"}]},{"data":"2026-11-03","itens":[{"b":"B1 · 60 min","s":"const","t":"Constituição: conceito e classificações; princípios fundamentais (arts. 1º a 4º)"},{"b":"B2 · 60 min","s":"pp","t":"Princípios, sistemas processuais, lei processual no tempo e juiz das garantias"},{"b":"B3 · 50 min","s":"etica","t":"Princípios da Administração, moralidade, probidade e conflito de interesses"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Constitucional, Proc. Penal, Ética e Gestão + caderno de erros + flashcards de ontem"}]},{"data":"2026-11-04","itens":[{"b":"B1 · 60 min","s":"civ","t":"Negócio jurídico: elementos, representação, condição, termo e encargo"},{"b":"B2 · 60 min","s":"pen","t":"Princípios penais e lei penal no tempo e no espaço (arts. 1º a 12)"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses do STF e do STJ sobre os temas de hoje de Civil e CDC e Penal"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Civil e CDC, Penal + caderno de erros + flashcards de ontem"}]},{"data":"2026-11-05","itens":[{"b":"B1 · 60 min","s":"pc","t":"Tutela provisória: urgência, evidência e estabilização (arts. 294 a 311)"},{"b":"B2 · 60 min","s":"adm","t":"Ato administrativo: requisitos, atributos e classificação"},{"b":"B3 · 50 min","s":"info","t":"Segurança da informação: princípios, malware, phishing e engenharia social"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Proc. Civil, Administrativo, Informática e LGPD + caderno de erros + flashcards de ontem"}]},{"data":"2026-11-06","itens":[{"b":"B1 · 60 min","s":"const","t":"Teoria dos direitos fundamentais e art. 5º, incisos I a XXXVI"},{"b":"B2 · 60 min","s":"pp","t":"Inquérito policial: características, prazos e arquivamento (art. 28)"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses do STF e do STJ sobre os temas de hoje de Constitucional e Proc. Penal"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Constitucional, Proc. Penal + caderno de erros + flashcards de ontem"}]},{"data":"2026-11-07","itens":[{"b":"B1 · 60 min","s":"civ","t":"Defeitos do negócio jurídico e invalidade (nulidade x anulabilidade)"},{"b":"B2 · 60 min","s":"pen","t":"Fato típico: conduta, resultado, nexo causal e tipicidade"},{"b":"B3 · 50 min","s":"dh","t":"Teoria geral: fontes, características, dimensões e obrigações do Estado"},{"b":"B4 · 70 min","s":"disc","t":"Método: leia 3 estudos de caso FGV com padrão de resposta e monte seu roteiro de 30 linhas. Escreva à mão em 60 min e corrija em 10"}]},{"data":"2026-11-08","itens":[{"b":"2h","s":"rev","t":"Revisão semanal: caderno de erros, flashcards, lei seca grifada da semana e 20 min de informativos"},{"b":"2h","s":"q","t":"Bateria cronometrada: 40 questões FGV mistas da semana, 3 min por questão"}]}]},{"n":2,"dias":[{"data":"2026-11-09","itens":[{"b":"B1 · 60 min","s":"pc","t":"Petição inicial, indeferimento, improcedência liminar (art. 332) e audiência do art. 334"},{"b":"B2 · 60 min","s":"adm","t":"Ato administrativo: anulação, revogação, convalidação e Súmula 473 do STF"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses do STF e do STJ sobre os temas de hoje de Proc. Civil e Administrativo"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Proc. Civil, Administrativo + caderno de erros + flashcards de ontem"}]},{"data":"2026-11-10","itens":[{"b":"B1 · 60 min","s":"const","t":"Art. 5º, incisos XXXVII a LXXIX: garantias penais e processuais"},{"b":"B2 · 60 min","s":"pp","t":"Acordo de não persecução penal (art. 28-A) e investigação pelo Ministério Público"},{"b":"B3 · 50 min","s":"etica","t":"Res. TJPB 21/2025: Código de Conduta Ética dos Servidores (leitura integral)"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Constitucional, Proc. Penal, Ética e Gestão + caderno de erros + flashcards de ontem"}]},{"data":"2026-11-11","itens":[{"b":"B1 · 60 min","s":"civ","t":"Prescrição e decadência; atos ilícitos e abuso de direito"},{"b":"B2 · 60 min","s":"pen","t":"Dolo, culpa e preterdolo; erro de tipo e erro de proibição"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses do STF e do STJ sobre os temas de hoje de Civil e CDC e Penal"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Civil e CDC, Penal + caderno de erros + flashcards de ontem"}]},{"data":"2026-11-12","itens":[{"b":"B1 · 60 min","s":"pc","t":"Contestação, reconvenção, revelia, julgamento conforme o estado do processo e saneamento"},{"b":"B2 · 60 min","s":"adm","t":"Responsabilidade civil do Estado: art. 37, § 6º, omissão, excludentes e Tema 940 do STF"},{"b":"B3 · 50 min","s":"info","t":"LGPD (1): aplicação (arts. 1º a 4º), conceitos (art. 5º) e princípios (art. 6º)"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Proc. Civil, Administrativo, Informática e LGPD + caderno de erros + flashcards de ontem"}]},{"data":"2026-11-13","itens":[{"b":"B1 · 60 min","s":"const","t":"Remédios constitucionais: HC, MS, MI, habeas data e ação popular"},{"b":"B2 · 60 min","s":"pp","t":"Ação penal: espécies, condições, denúncia, queixa e rejeição (art. 395)"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses do STF e do STJ sobre os temas de hoje de Constitucional e Proc. Penal"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Constitucional, Proc. Penal + caderno de erros + flashcards de ontem"}]},{"data":"2026-11-14","itens":[{"b":"B1 · 60 min","s":"civ","t":"Responsabilidade civil: subjetiva x objetiva, dano moral e material, súmulas do STJ"},{"b":"B2 · 60 min","s":"pen","t":"Iter criminis: tentativa, desistência voluntária, arrependimento eficaz e posterior, crime impossível"},{"b":"B3 · 50 min","s":"dh","t":"Incorporação e hierarquia dos tratados (art. 5º, §§ 2º e 3º) e controle de convencionalidade"},{"b":"B4 · 70 min","s":"disc","t":"Estudo de caso: responsabilidade civil do Estado por omissão. Escreva à mão em 60 min e corrija em 10"}]},{"data":"2026-11-15","itens":[{"b":"2h","s":"rev","t":"Revisão semanal: caderno de erros, flashcards, lei seca grifada da semana e 20 min de informativos"},{"b":"2h","s":"q","t":"Bateria cronometrada: 40 questões FGV mistas da semana, 3 min por questão"}]}]},{"n":3,"dias":[{"data":"2026-11-16","itens":[{"b":"B1 · 60 min","s":"pc","t":"Teoria geral dos recursos e apelação"},{"b":"B2 · 60 min","s":"adm","t":"Improbidade (1): sujeitos e atos dos arts. 9º, 10 e 11 após a Lei 14.230/2021"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses do STF e do STJ sobre os temas de hoje de Proc. Civil e Administrativo"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Proc. Civil, Administrativo + caderno de erros + flashcards de ontem"}]},{"data":"2026-11-17","itens":[{"b":"B1 · 60 min","s":"const","t":"Organização do Estado: entes federativos e bens da União (arts. 18 a 20)"},{"b":"B2 · 60 min","s":"pp","t":"Provas (1): teoria geral, prova ilícita e cadeia de custódia (arts. 158-A a 158-F)"},{"b":"B3 · 50 min","s":"etica","t":"Lei 8.429/1992 aplicada a casos (mesma semana de improbidade em Administrativo)"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Constitucional, Proc. Penal, Ética e Gestão + caderno de erros + flashcards de ontem"}]},{"data":"2026-11-18","itens":[{"b":"B1 · 60 min","s":"civ","t":"CDC (1): princípios, consumidor e fornecedor, direitos básicos e inversão do ônus da prova"},{"b":"B2 · 60 min","s":"pen","t":"Ilicitude (excludentes) e culpabilidade (imputabilidade e embriaguez)"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses do STF e do STJ sobre os temas de hoje de Civil e CDC e Penal"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Civil e CDC, Penal + caderno de erros + flashcards de ontem"},{"b":"Prazo","s":"meta","t":"Inscrição termina hoje às 16h. Boleto até amanhã, 19/11","alerta":true}]},{"data":"2026-11-19","itens":[{"b":"B1 · 60 min","s":"pc","t":"Agravo de instrumento (art. 1.015 e Tema 988 do STJ), agravo interno e embargos de declaração"},{"b":"B2 · 60 min","s":"adm","t":"Improbidade (2): sanções, ação, prescrição, acordo de não persecução civil e Tema 1199 do STF"},{"b":"B3 · 50 min","s":"info","t":"LGPD (2): bases legais (arts. 7º e 11), dados de crianças (art. 14) e término do tratamento"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Proc. Civil, Administrativo, Informática e LGPD + caderno de erros + flashcards de ontem"}]},{"data":"2026-11-20","itens":[{"b":"B1 · 60 min","s":"const","t":"Repartição de competências (arts. 21 a 24 e 30)"},{"b":"B2 · 60 min","s":"pp","t":"Provas (2): interrogatório, testemunhas, reconhecimento (art. 226) e interceptação (Lei 9.296/1996)"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses do STF e do STJ sobre os temas de hoje de Constitucional e Proc. Penal"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Constitucional, Proc. Penal + caderno de erros + flashcards de ontem"}]},{"data":"2026-11-21","itens":[{"b":"B1 · 60 min","s":"civ","t":"CDC (2): fato x vício do produto e do serviço, prazos (arts. 26 e 27) e excludentes"},{"b":"B2 · 60 min","s":"pen","t":"Crimes contra a Administração Pública (arts. 312 a 359)"},{"b":"B3 · 50 min","s":"dh","t":"Sistema interamericano: CADH, Comissão e Corte IDH, procedimento e reparações"},{"b":"B4 · 70 min","s":"disc","t":"Estudo de caso: tutela de urgência e estabilização. Escreva à mão em 60 min e corrija em 10"}]},{"data":"2026-11-22","itens":[{"b":"2h","s":"rev","t":"Revisão semanal: caderno de erros, flashcards, lei seca grifada da semana e 20 min de informativos"},{"b":"2h","s":"q","t":"Bateria cronometrada: 40 questões FGV mistas da semana, 3 min por questão"}]}]},{"n":4,"dias":[{"data":"2026-11-23","itens":[{"b":"B1 · 60 min","s":"pc","t":"Cumprimento de sentença (art. 523), impugnação, alimentos e Fazenda Pública"},{"b":"B2 · 60 min","s":"adm","t":"Lei 14.133/2021 (1): princípios, agentes, fases, modalidades e critérios de julgamento"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses do STF e do STJ sobre os temas de hoje de Proc. Civil e Administrativo"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Proc. Civil, Administrativo + caderno de erros + flashcards de ontem"}]},{"data":"2026-11-24","itens":[{"b":"B1 · 60 min","s":"const","t":"Poder Judiciário (1): disposições gerais, garantias, vedações e quinto constitucional"},{"b":"B2 · 60 min","s":"pp","t":"Prisão em flagrante e audiência de custódia"},{"b":"B3 · 50 min","s":"etica","t":"Res. TJPB 20/2025: Programa de Integridade do Judiciário da Paraíba"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Constitucional, Proc. Penal, Ética e Gestão + caderno de erros + flashcards de ontem"}]},{"data":"2026-11-25","itens":[{"b":"B1 · 60 min","s":"civ","t":"CDC (3): oferta, publicidade, práticas e cláusulas abusivas, superendividamento"},{"b":"B2 · 60 min","s":"pen","t":"Penas: espécies, dosimetria trifásica, regimes, restritivas de direitos e multa"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses do STF e do STJ sobre os temas de hoje de Civil e CDC e Penal"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Civil e CDC, Penal + caderno de erros + flashcards de ontem"}]},{"data":"2026-11-26","itens":[{"b":"B1 · 60 min","s":"pc","t":"Sentença, coisa julgada e remessa necessária (art. 496)"},{"b":"B2 · 60 min","s":"adm","t":"Lei 14.133/2021 (2): dispensa, inexigibilidade e procedimentos auxiliares"},{"b":"B3 · 50 min","s":"info","t":"LGPD (3): direitos do titular (arts. 17 a 22), controlador, operador, encarregado, ANPD e sanções"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Proc. Civil, Administrativo, Informática e LGPD + caderno de erros + flashcards de ontem"}]},{"data":"2026-11-27","itens":[{"b":"B1 · 60 min","s":"const","t":"Poder Judiciário (2): STF, STJ, súmula vinculante, repercussão geral e CNJ (art. 103-B)"},{"b":"B2 · 60 min","s":"pp","t":"Prisão preventiva, cautelares diversas (art. 319), liberdade provisória e fiança"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses do STF e do STJ sobre os temas de hoje de Constitucional e Proc. Penal"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Constitucional, Proc. Penal + caderno de erros + flashcards de ontem"}]},{"data":"2026-11-28","itens":[{"b":"B1 · 60 min","s":"civ","t":"LINDB: vigência, interpretação, conflito de leis e arts. 20 a 30"},{"b":"B2 · 60 min","s":"pen","t":"Extinção da punibilidade e prescrição"},{"b":"B3 · 50 min","s":"dh","t":"Casos do Brasil na Corte IDH e responsabilidade internacional do Estado"},{"b":"B4 · 70 min","s":"disc","t":"Estudo de caso: ato de improbidade após a Lei 14.230/2021. Escreva à mão em 60 min e corrija em 10"}]},{"data":"2026-11-29","itens":[{"b":"2h","s":"rev","t":"Revisão semanal: caderno de erros, flashcards, lei seca grifada da semana e 20 min de informativos"},{"b":"2h","s":"q","t":"Bateria cronometrada: 40 questões FGV mistas da semana, 3 min por questão"}]}]},{"n":5,"dias":[{"data":"2026-11-30","itens":[{"b":"B1 · 60 min","s":"pc","t":"Jurisdição, ação e competência: absoluta x relativa, modificação e conflito"},{"b":"B2 · 60 min","s":"adm","t":"Lei 14.133/2021 (3): contratos, alterações, extinção e sanções"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses do STF e do STJ sobre os temas de hoje de Proc. Civil e Administrativo"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Proc. Civil, Administrativo + caderno de erros + flashcards de ontem"}]},{"data":"2026-12-01","itens":[{"b":"B1 · 60 min","s":"const","t":"Justiça Estadual (arts. 125 e 126) e precatórios (art. 100)"},{"b":"B2 · 60 min","s":"pp","t":"Competência (1): critérios; ação civil ex delicto"},{"b":"B3 · 50 min","s":"etica","t":"Res. CNJ 351/2020 (assédio e discriminação), 230 (pessoa com deficiência) e 400/2021 (sustentabilidade)"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Constitucional, Proc. Penal, Ética e Gestão + caderno de erros + flashcards de ontem"}]},{"data":"2026-12-02","itens":[{"b":"B1 · 60 min","s":"civ","t":"Pessoa natural: personalidade, capacidade após a Lei 13.146/2015 e ausência"},{"b":"B2 · 60 min","s":"pen","t":"Concurso de pessoas e concurso de crimes"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses do STF e do STJ sobre os temas de hoje de Civil e CDC e Penal"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Civil e CDC, Penal + caderno de erros + flashcards de ontem"}]},{"data":"2026-12-03","itens":[{"b":"B1 · 60 min","s":"pc","t":"Litisconsórcio, intervenção de terceiros, IDPJ e amicus curiae"},{"b":"B2 · 60 min","s":"adm","t":"Poderes administrativos e abuso de poder"},{"b":"B3 · 50 min","s":"info","t":"Boas práticas: backup, criptografia, certificado digital, MFA e senhas"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Proc. Civil, Administrativo, Informática e LGPD + caderno de erros + flashcards de ontem"}]},{"data":"2026-12-04","itens":[{"b":"B1 · 60 min","s":"const","t":"Administração Pública na Constituição (arts. 37 a 41)"},{"b":"B2 · 60 min","s":"pp","t":"Competência (2): conexão, continência e foro por prerrogativa de função"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses do STF e do STJ sobre os temas de hoje de Constitucional e Proc. Penal"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Constitucional, Proc. Penal + caderno de erros + flashcards de ontem"}]},{"data":"2026-12-05","itens":[{"b":"B1 · 60 min","s":"civ","t":"Pessoa jurídica, desconsideração (art. 50), domicílio e bens"},{"b":"B2 · 60 min","s":"pen","t":"Crimes contra a pessoa: homicídio, feminicídio (art. 121-A), lesão corporal e honra"},{"b":"B3 · 50 min","s":"dh","t":"Igualdade e não discriminação: Lei 14.532/2023, pessoa com deficiência e perspectiva de gênero"},{"b":"B4 · 70 min","s":"disc","t":"Estudo de caso: prisão preventiva x cautelares diversas. Escreva à mão em 60 min e corrija em 10"}]},{"data":"2026-12-06","itens":[{"b":"13h – 17h","s":"sim","t":"Simulado 1: 60 questões + discursiva, cronometrado em 4h (a prova real tem 5h)"},{"b":"Depois","s":"rev","t":"Só confira o gabarito. A correção detalhada fica para o B4 de segunda"}]}]},{"n":6,"dias":[{"data":"2026-12-07","itens":[{"b":"B1 · 60 min","s":"pc","t":"Provas: ônus e distribuição dinâmica (art. 373), prova emprestada, testemunhal e pericial"},{"b":"B2 · 60 min","s":"adm","t":"Lei 9.784/1999: competência, impedimento, prazos, recursos e decadência (art. 54)"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses do STF e do STJ sobre os temas de hoje de Proc. Civil e Administrativo"},{"b":"B4 · 70 min","s":"rev","t":"Correção do simulado 1: refaça os erros e registre no caderno de erros"}]},{"data":"2026-12-08","itens":[{"b":"B1 · 60 min","s":"const","t":"Processo legislativo (arts. 59 a 69) e fiscalização pelos Tribunais de Contas"},{"b":"B2 · 60 min","s":"pp","t":"Procedimentos comum, sumário e sumaríssimo; absolvição sumária (art. 397)"},{"b":"B3 · 50 min","s":"etica","t":"Motivação (Maslow, Herzberg, McClelland, Vroom) e liderança"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Constitucional, Proc. Penal, Ética e Gestão + caderno de erros + flashcards de ontem"}]},{"data":"2026-12-09","itens":[{"b":"B1 · 60 min","s":"civ","t":"Contratos: princípios, formação, vícios redibitórios, evicção e extinção"},{"b":"B2 · 60 min","s":"pen","t":"Crimes contra o patrimônio (1): furto, roubo e extorsão"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses do STF e do STJ sobre os temas de hoje de Civil e CDC e Penal"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Civil e CDC, Penal + caderno de erros + flashcards de ontem"}]},{"data":"2026-12-10","itens":[{"b":"B1 · 60 min","s":"pc","t":"Precedentes (art. 927), IRDR, IAC, recursos repetitivos, reclamação e ação rescisória"},{"b":"B2 · 60 min","s":"adm","t":"Agentes públicos: espécies, cargos, acumulação e estabilidade (CF, arts. 37 a 41)"},{"b":"B3 · 50 min","s":"info","t":"LGPD no Poder Público (arts. 23 a 32) e Res. CNJ 363/2021"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Proc. Civil, Administrativo, Informática e LGPD + caderno de erros + flashcards de ontem"}]},{"data":"2026-12-11","itens":[{"b":"B1 · 60 min","s":"const","t":"Nacionalidade (arts. 12 e 13)"},{"b":"B2 · 60 min","s":"pp","t":"Tribunal do Júri"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses do STF e do STJ sobre os temas de hoje de Constitucional e Proc. Penal"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Constitucional, Proc. Penal + caderno de erros + flashcards de ontem"}]},{"data":"2026-12-12","itens":[{"b":"B1 · 60 min","s":"civ","t":"Família (1): casamento, união estável e regime de bens"},{"b":"B2 · 60 min","s":"pen","t":"Crimes contra o patrimônio (2): estelionato, apropriação indébita, receptação e imunidades"},{"b":"B3 · 50 min","s":"dh","t":"Grupos vulneráveis: ECA, Estatuto do Idoso, povos tradicionais e meio ambiente (Lei 6.938/1981)"},{"b":"B4 · 70 min","s":"disc","t":"Estudo de caso: contratação direta e sanções na Lei 14.133/2021. Escreva à mão em 60 min e corrija em 10"}]},{"data":"2026-12-13","itens":[{"b":"2h","s":"rev","t":"Revisão semanal: caderno de erros, flashcards, lei seca grifada da semana e 20 min de informativos"},{"b":"2h","s":"q","t":"Bateria cronometrada: 40 questões FGV mistas da semana, 3 min por questão"}]}]},{"n":7,"dias":[{"data":"2026-12-14","itens":[{"b":"B1 · 60 min","s":"pc","t":"Tutela coletiva: ACP (Lei 7.347/1985), CDC arts. 81 a 104 e ação popular (Lei 4.717/1965)"},{"b":"B2 · 60 min","s":"adm","t":"Responsabilidade do servidor e processo administrativo disciplinar"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses do STF e do STJ sobre os temas de hoje de Proc. Civil e Administrativo"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Proc. Civil, Administrativo + caderno de erros + flashcards de ontem"}]},{"data":"2026-12-15","itens":[{"b":"B1 · 60 min","s":"const","t":"Direitos políticos e partidos (arts. 14 a 17)"},{"b":"B2 · 60 min","s":"pp","t":"Juizados Especiais Criminais (Lei 9.099/1995): composição, transação e suspensão condicional"},{"b":"B3 · 50 min","s":"etica","t":"Deveres, vedações e responsabilidades do servidor; PAD e sanções"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Constitucional, Proc. Penal, Ética e Gestão + caderno de erros + flashcards de ontem"}]},{"data":"2026-12-16","itens":[{"b":"B1 · 60 min","s":"civ","t":"Família (2): alimentos, poder familiar, tutela, curatela e tomada de decisão apoiada"},{"b":"B2 · 60 min","s":"pen","t":"Lei de Drogas, Lei dos Crimes Hediondos e Lei de Tortura"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses do STF e do STJ sobre os temas de hoje de Civil e CDC e Penal"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Civil e CDC, Penal + caderno de erros + flashcards de ontem"}]},{"data":"2026-12-17","itens":[{"b":"B1 · 60 min","s":"pc","t":"Mandado de segurança individual e coletivo (Lei 12.016/2009) e processo estrutural"},{"b":"B2 · 60 min","s":"adm","t":"Organização: Administração direta e indireta, estatais e terceiro setor"},{"b":"B3 · 50 min","s":"info","t":"Redes, internet, navegadores, e-mail e computação em nuvem"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Proc. Civil, Administrativo, Informática e LGPD + caderno de erros + flashcards de ontem"}]},{"data":"2026-12-18","itens":[{"b":"B1 · 60 min","s":"const","t":"Funções essenciais à Justiça: MP, Advocacia Pública, Advocacia e Defensoria"},{"b":"B2 · 60 min","s":"pp","t":"Nulidades"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses do STF e do STJ sobre os temas de hoje de Constitucional e Proc. Penal"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Constitucional, Proc. Penal + caderno de erros + flashcards de ontem"}]},{"data":"2026-12-19","itens":[{"b":"B1 · 60 min","s":"civ","t":"Sucessões: vocação hereditária (art. 1.829), cônjuge, aceitação, renúncia e testamento"},{"b":"B2 · 60 min","s":"pen","t":"Maria da Penha, ECA, Estatuto do Idoso e Lei Henry Borel (aspectos penais)"},{"b":"B3 · 50 min","s":"dh","t":"Tutela coletiva de direitos fundamentais: ACP, políticas públicas e mínimo existencial"},{"b":"B4 · 70 min","s":"disc","t":"Estudo de caso: vício x fato do produto e inversão do ônus da prova. Escreva à mão em 60 min e corrija em 10"}]},{"data":"2026-12-20","itens":[{"b":"13h – 17h","s":"sim","t":"Simulado 2: 60 questões + discursiva, cronometrado em 4h (a prova real tem 5h)"},{"b":"Depois","s":"rev","t":"Só confira o gabarito. A correção detalhada fica para o B4 de segunda"}]}]},{"n":8,"dias":[{"data":"2026-12-21","itens":[{"b":"B1 · 60 min","s":"pc","t":"Partes, capacidade, deveres, litigância de má-fé e gratuidade da justiça"},{"b":"B2 · 60 min","s":"adm","t":"Controle da Administração: interno, externo, Tribunais de Contas, judicial e social"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses do STF e do STJ sobre os temas de hoje de Proc. Civil e Administrativo"},{"b":"B4 · 70 min","s":"rev","t":"Correção do simulado 2: refaça os erros e registre no caderno de erros"}]},{"data":"2026-12-22","itens":[{"b":"B1 · 60 min","s":"const","t":"Direitos sociais (arts. 6º a 11)"},{"b":"B2 · 60 min","s":"pp","t":"Recursos em espécie, habeas corpus e revisão criminal"},{"b":"B3 · 50 min","s":"etica","t":"Lei 12.846/2013: atos lesivos, leniência e programa de integridade"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Constitucional, Proc. Penal, Ética e Gestão + caderno de erros + flashcards de ontem"}]},{"data":"2026-12-23","itens":[{"b":"B1 · 60 min","s":"civ","t":"Posse, propriedade, usucapião e direito de laje"},{"b":"B2 · 60 min","s":"pen","t":"Abuso de autoridade, organizações criminosas e lavagem de dinheiro"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses do STF e do STJ sobre os temas de hoje de Civil e CDC e Penal"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Civil e CDC, Penal + caderno de erros + flashcards de ontem"}]},{"data":"2026-12-24","itens":[{"b":"B1 · 60 min","s":"pc","t":"Atos processuais, citação e intimação (inclusive eletrônicas), nulidades e negócio processual (art. 190)"},{"b":"B2 · 60 min","s":"adm","t":"Lei 12.846/2013: responsabilização de pessoas jurídicas e acordo de leniência"},{"b":"B3 · 50 min","s":"info","t":"Hardware, software e sistemas operacionais"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Proc. Civil, Administrativo, Informática e LGPD + caderno de erros + flashcards de ontem"}]},{"data":"2026-12-25","itens":[{"b":"B1 · 60 min","s":"const","t":"Poder Legislativo: estrutura, imunidades e CPI"},{"b":"B2 · 60 min","s":"pp","t":"Execução penal (progressão, remição, faltas, RDD) e medidas protetivas da Maria da Penha"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses do STF e do STJ sobre os temas de hoje de Constitucional e Proc. Penal"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Constitucional, Proc. Penal + caderno de erros + flashcards de ontem"},{"b":"Natal","s":"meta","t":"Se folgar hoje, leve os blocos de teoria para domingo"}]},{"data":"2026-12-26","itens":[{"b":"B1 · 60 min","s":"civ","t":"Obrigações: modalidades, transmissão e adimplemento"},{"b":"B2 · 60 min","s":"pen","t":"Sursis, livramento condicional, efeitos da condenação, reabilitação e medida de segurança"},{"b":"B3 · 50 min","s":"dh","t":"Sistema prisional e controle judicial (LEP, ADPF 347); vítimas e testemunhas (Lei 9.807/1999)"},{"b":"B4 · 70 min","s":"disc","t":"Estudo de caso: cumprimento de sentença ou agravo de instrumento. Escreva à mão em 60 min e corrija em 10"}]},{"data":"2026-12-27","itens":[{"b":"2h","s":"rev","t":"Revisão semanal: caderno de erros, flashcards, lei seca grifada da semana e 20 min de informativos"},{"b":"2h","s":"q","t":"Bateria cronometrada: 40 questões FGV mistas da semana, 3 min por questão"}]}]},{"n":9,"dias":[{"data":"2026-12-28","itens":[{"b":"B1 · 60 min","s":"pc","t":"Execução de título extrajudicial, embargos, penhora e medidas atípicas (art. 139, IV)"},{"b":"B2 · 60 min","s":"adm","t":"Serviços públicos, concessões, permissões, PPPs e agências reguladoras"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses do STF e do STJ sobre os temas de hoje de Proc. Civil e Administrativo"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Proc. Civil, Administrativo + caderno de erros + flashcards de ontem"}]},{"data":"2026-12-29","itens":[{"b":"B1 · 60 min","s":"const","t":"Estados, Municípios, DF e intervenção (arts. 25 a 36)"},{"b":"B2 · 60 min","s":"pp","t":"Citação, intimação, revelia (art. 366), emendatio e mutatio libelli"},{"b":"B3 · 50 min","s":"etica","t":"Equipes, comunicação, cultura x clima organizacional e gestão de conflitos"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Constitucional, Proc. Penal, Ética e Gestão + caderno de erros + flashcards de ontem"}]},{"data":"2026-12-30","itens":[{"b":"B1 · 60 min","s":"civ","t":"Inadimplemento, mora, perdas e danos; compra e venda, doação e Lei do Inquilinato"},{"b":"B2 · 60 min","s":"pen","t":"Crimes contra a dignidade sexual e contra a fé pública"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses do STF e do STJ sobre os temas de hoje de Civil e CDC e Penal"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Civil e CDC, Penal + caderno de erros + flashcards de ontem"}]},{"data":"2026-12-31","itens":[{"b":"B1 · 60 min","s":"pc","t":"Juizados Especiais Cíveis, ações de família, jurisdição voluntária, mediação e arbitragem"},{"b":"B2 · 60 min","s":"adm","t":"Intervenção na propriedade, bens públicos e instrumentos de política urbana"},{"b":"B3 · 50 min","s":"info","t":"LGPD: segurança, incidentes e governança (arts. 46 a 51) e revisão geral"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Proc. Civil, Administrativo, Informática e LGPD + caderno de erros + flashcards de ontem"}]},{"data":"2027-01-01","itens":[{"b":"B1 · 60 min","s":"const","t":"Poder Executivo: atribuições e crimes de responsabilidade (arts. 76 a 86)"},{"b":"B2 · 60 min","s":"pp","t":"Questões e processos incidentes, sujeitos processuais e depoimento especial (Lei 13.431/2017)"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses do STF e do STJ sobre os temas de hoje de Constitucional e Proc. Penal"},{"b":"B4 · 70 min","s":"q","t":"25 a 30 questões FGV de Constitucional, Proc. Penal + caderno de erros + flashcards de ontem"},{"b":"Ano-novo","s":"meta","t":"Se folgar hoje, leve os blocos de teoria para a manhã de domingo, antes do simulado"}]},{"data":"2027-01-02","itens":[{"b":"B1 · 60 min","s":"civ","t":"Direitos reais em espécie, bem de família (Lei 8.009/1990), Marco Civil e LGPD"},{"b":"B2 · 60 min","s":"pen","t":"Estatuto do Desarmamento, crimes de trânsito, ambientais, informáticos e de racismo"},{"b":"B3 · 50 min","s":"dh","t":"Sistema global (ONU): órgãos e mecanismos de monitoramento"},{"b":"B4 · 70 min","s":"disc","t":"Estudo de caso: ANPP e cadeia de custódia. Escreva à mão em 60 min e corrija em 10"}]},{"data":"2027-01-03","itens":[{"b":"13h – 17h","s":"sim","t":"Simulado 3: 60 questões + discursiva, cronometrado em 4h (a prova real tem 5h)"},{"b":"Depois","s":"rev","t":"Só confira o gabarito. A correção detalhada fica para o B4 de segunda"}]}]},{"n":10,"dias":[{"data":"2027-01-04","itens":[{"b":"B1 · 60 min","s":"pc","t":"Revisão do amarelo: tutela provisória, recursos e cumprimento de sentença"},{"b":"B2 · 60 min","s":"adm","t":"Revisão do amarelo: Lei 14.133, improbidade, responsabilidade do Estado e atos"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses: Proc. Civil e Administrativo"},{"b":"B4 · 70 min","s":"rev","t":"Correção do simulado 3 + caderno de erros"}]},{"data":"2027-01-05","itens":[{"b":"B1 · 60 min","s":"const","t":"Revisão do amarelo: art. 5º, remédios, competências, Poder Judiciário e CNJ"},{"b":"B2 · 60 min","s":"pp","t":"Revisão do amarelo: prisões, provas, inquérito, ANPP e ação penal"},{"b":"B3 · 50 min","s":"etica","t":"Releitura das Res. TJPB 20 e 21/2025 e da Lei 12.846/2013"},{"b":"B4 · 70 min","s":"q","t":"30 questões FGV de Constitucional e Proc. Penal"}]},{"data":"2027-01-06","itens":[{"b":"B1 · 60 min","s":"civ","t":"Revisão do amarelo: negócio jurídico, prescrição, responsabilidade civil, CDC fato x vício"},{"b":"B2 · 60 min","s":"pen","t":"Revisão do amarelo: teoria do crime, iter criminis, crimes contra a Administração, prescrição"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas e teses: Civil, CDC e Penal"},{"b":"B4 · 70 min","s":"disc","t":"Discursiva: direito fundamental violado e remédio constitucional cabível"}]},{"data":"2027-01-07","itens":[{"b":"B1 · 60 min","s":"pc","t":"Revisão do verde: competência, intervenção de terceiros, provas, precedentes, tutela coletiva"},{"b":"B2 · 60 min","s":"adm","t":"Revisão do verde: poderes, Lei 9.784, agentes públicos, PAD e controle"},{"b":"B3 · 50 min","s":"info","t":"Releitura da LGPD (arts. 5º a 23) e segurança da informação"},{"b":"B4 · 70 min","s":"q","t":"30 questões FGV de Proc. Civil e Administrativo"}]},{"data":"2027-01-08","itens":[{"b":"B1 · 60 min","s":"const","t":"Revisão do verde: arts. 37 a 41, processo legislativo, nacionalidade, funções essenciais"},{"b":"B2 · 60 min","s":"pp","t":"Revisão do verde: competência, júri, JECrim, nulidades, recursos e LEP"},{"b":"B3 · 50 min","s":"dh","t":"Revisão do amarelo: tratados, sistema interamericano e controle de convencionalidade"},{"b":"B4 · 70 min","s":"q","t":"30 questões FGV de Constitucional, Proc. Penal e DH"}]},{"data":"2027-01-09","itens":[{"b":"B1 · 60 min","s":"civ","t":"Revisão do verde: LINDB, contratos, família, sucessões e práticas abusivas"},{"b":"B2 · 60 min","s":"pen","t":"Revisão do verde: penas, concursos, crimes contra a pessoa e o patrimônio, leis especiais"},{"b":"B3 · 50 min","s":"etica","t":"Gestão de pessoas e Res. CNJ 351, 230 e 400 (resumo)"},{"b":"B4 · 70 min","s":"disc","t":"Discursiva: ação civil pública para tutela de direito fundamental"}]},{"data":"2027-01-10","itens":[{"b":"13h – 17h","s":"sim","t":"Simulado 4: 60 questões + discursiva, cronometrado em 4h"}]}]},{"n":11,"dias":[{"data":"2027-01-11","itens":[{"b":"B1 · 60 min","s":"rev","t":"Correção do simulado 4 + caderno de erros"},{"b":"B2 · 60 min","s":"pc","t":"Súmulas e teses do STJ: Proc. Civil, Civil e CDC"},{"b":"B3 · 50 min","s":"dh","t":"Bateria de 15 questões de Direitos Humanos e tutela coletiva"},{"b":"B4 · 70 min","s":"q","t":"40 questões FGV de Proc. Civil e Civil"}]},{"data":"2027-01-12","itens":[{"b":"B1 · 60 min","s":"const","t":"Súmulas vinculantes e teses de repercussão geral (Constitucional e Administrativo)"},{"b":"B2 · 60 min","s":"adm","t":"Lei seca: artigos mais cobrados da Lei 14.133 e da Lei 8.429"},{"b":"B3 · 50 min","s":"etica","t":"Bateria de 15 questões de Ética e Gestão"},{"b":"B4 · 70 min","s":"disc","t":"Discursiva: execução penal ou medidas protetivas de urgência"}]},{"data":"2027-01-13","itens":[{"b":"B1 · 60 min","s":"pen","t":"Súmulas e teses do STF e do STJ: Penal e Proc. Penal"},{"b":"B2 · 60 min","s":"pp","t":"Lei seca: CPP (prisões, provas, ANPP) e art. 112 da LEP"},{"b":"B3 · 50 min","s":"rev","t":"Caderno de erros: Constitucional e Administrativo"},{"b":"B4 · 70 min","s":"q","t":"40 questões FGV de Penal e Proc. Penal"}]},{"data":"2027-01-14","itens":[{"b":"B1 · 60 min","s":"rev","t":"Informativos do STF e do STJ dos últimos 12 meses, só temas do edital"},{"b":"B2 · 60 min","s":"const","t":"Lei seca: CF, arts. 5º, 37 e 92 a 103-B"},{"b":"B3 · 50 min","s":"info","t":"Bateria de 15 questões de Informática e LGPD"},{"b":"B4 · 70 min","s":"disc","t":"Discursiva: alimentos ou responsabilidade civil"}]},{"data":"2027-01-15","itens":[{"b":"B1 · 60 min","s":"pc","t":"Lei seca: CPC (tutelas, recursos, cumprimento de sentença)"},{"b":"B2 · 60 min","s":"civ","t":"Lei seca: CDC, arts. 6º, 12 a 27, 39 e 51"},{"b":"B3 · 50 min","s":"dh","t":"Casos do Brasil na Corte IDH e ADPF 347"},{"b":"B4 · 70 min","s":"rev","t":"Caderno de erros: tudo que você errou mais de uma vez"}]},{"data":"2027-01-16","itens":[{"b":"B1 · 60 min","s":"rev","t":"Mapas de revisão: Constitucional, Administrativo e Civil"},{"b":"B2 · 60 min","s":"rev","t":"Mapas de revisão: Proc. Civil, Penal e Proc. Penal"},{"b":"B3 · 50 min","s":"rev","t":"Flashcards: Ética, Informática e Direitos Humanos"},{"b":"B4 · 70 min","s":"meta","t":"Prepare o simulado de domingo: horário real, local silencioso, celular longe"}]},{"data":"2027-01-17","itens":[{"b":"13h – 18h","s":"sim","t":"Simulado 5, o último: 60 questões + discursiva no tempo real de 5h"}]}]},{"n":12,"dias":[{"data":"2027-01-18","itens":[{"b":"B1 · 60 min","s":"rev","t":"Correção do simulado 5 + caderno de erros"},{"b":"B2 · 60 min","s":"pc","t":"Lei seca grifada de CPC e CPP: só o amarelo"},{"b":"B3 · 50 min","s":"const","t":"Lei seca grifada de CF e Lei 8.429: só o amarelo"},{"b":"B4 · 70 min","s":"rev","t":"Flashcards de todas as matérias"}]},{"data":"2027-01-19","itens":[{"b":"B1 · 60 min","s":"const","t":"Resumos: Constitucional e Administrativo"},{"b":"B2 · 60 min","s":"pen","t":"Resumos: Penal e Proc. Penal"},{"b":"B3 · 50 min","s":"etica","t":"Última leitura da Res. TJPB 21/2025"},{"b":"B4 · 70 min","s":"q","t":"20 questões leves + flashcards"}]},{"data":"2027-01-20","itens":[{"b":"B1 · 60 min","s":"civ","t":"Resumos: Civil, CDC e Proc. Civil"},{"b":"B2 · 60 min","s":"dh","t":"Tratados de direitos humanos e sistema interamericano"},{"b":"B3 · 50 min","s":"info","t":"LGPD: arts. 5º, 6º, 7º, 11 e 18"},{"b":"B4 · 70 min","s":"disc","t":"Releia suas discursivas corrigidas e o seu roteiro de 30 linhas"}]},{"data":"2027-01-21","itens":[{"b":"B1 · 60 min","s":"rev","t":"Caderno de erros: específicas"},{"b":"B2 · 60 min","s":"rev","t":"Caderno de erros: gerais"},{"b":"B3 · 50 min","s":"jur","t":"Súmulas mais cobradas: revisão rápida"},{"b":"B4 · 70 min","s":"meta","t":"Confira o local de prova no site da FGV e planeje o trajeto","alerta":true}]},{"data":"2027-01-22","itens":[{"b":"2h","s":"rev","t":"Mapas de todas as específicas, em ritmo leve"},{"b":"Depois","s":"meta","t":"Separe documento original com foto e canetas azuis ou pretas de corpo transparente"}]},{"data":"2027-01-23","itens":[{"b":"1h","s":"rev","t":"Revisão leve só por mapas. Nada de conteúdo novo"},{"b":"Noite","s":"meta","t":"Durma cedo. A prova é amanhã às 13h"}]},{"data":"2027-01-24","itens":[{"b":"11h30","s":"meta","t":"Chegue até 11h30. Os portões fecham às 12h30","alerta":true},{"b":"13h – 18h","s":"sim","t":"Prova: 60 questões objetivas + discursiva"}]}]}]};
+(function(){
+  "use strict";
+  // Página offline do plano: lê TJPB_PLANO (o mesmo dado da aba Tribunal do app) e mostra as semanas só para leitura.
+  var SUBJ = {
+    const:["Constitucional","pub"], adm:["Administrativo","pub"], civ:["Civil e CDC","priv"], pc:["Proc. Civil","priv"],
+    pen:["Penal","crim"], pp:["Proc. Penal","crim"], dh:["Direitos Humanos","dh"], etica:["Ética e Gestão","ger"],
+    info:["Informática e LGPD","ger"], jur:["Súmulas e teses","rev"], disc:["Discursiva","pen"], q:["Questões","rev"],
+    rev:["Revisão","rev"], sim:["Simulado","stamp"], meta:["Agenda","stamp"]
+  };
+  var WD = ["Dom","Seg","Ter","Qua","Qui","Sex","Sáb"];
+  var P = TJPB_PLANO;
+  function data(iso){ var a = iso.split("-").map(Number); return new Date(a[0], a[1] - 1, a[2]); }
+  function ddmm(iso){ return iso.slice(8, 10) + "/" + iso.slice(5, 7); }
+  function iso(d){ return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); }
+
+  var hoje = new Date(); hoje.setHours(0, 0, 0, 0);
+  var hojeIso = iso(hoje);
+  var faltam = Math.round((data(P.prova) - hoje) / 86400000);
+  var cd = document.getElementById("countdown"), cl = document.getElementById("countLabel");
+  if (cd && cl) {
+    if (faltam > 1) cd.textContent = faltam + " dias";
+    else if (faltam === 1) cd.textContent = "1 dia";
+    else { cl.textContent = "Prova"; cd.textContent = faltam === 0 ? "É hoje" : "Realizada"; }
+  }
+
+  function semanaDe(d){
+    for (var i = 0; i < P.semanas.length; i++) if (P.semanas[i].dias.some(function(x){ return x.data === d; })) return P.semanas[i].n;
+    return d < P.semanas[0].dias[0].data ? 0 : P.semanas[P.semanas.length - 1].n;
+  }
+  var atual = semanaDe(hojeIso), escolhida = atual;
+  var fasesEl = document.getElementById("phases"), view = document.getElementById("weekView");
+
+  function chips(){
+    fasesEl.innerHTML = P.fases.map(function(f){
+      return '<div class="phase"><span>' + esc(f.nome) + '</span><div class="chips">' + f.semanas.map(function(n){
+        var w = P.semanas[n];
+        return '<button type="button" class="chip' + (n === atual && faltam >= 0 ? " has-today" : "") + '" data-week="' + n + '" aria-pressed="' + (n === escolhida) + '"><b>S' + n + '</b><small>' + ddmm(w.dias[0].data) + '</small></button>';
+      }).join("") + '</div></div>';
+    }).join("");
+  }
+  function semana(){
+    var W = P.semanas[escolhida], fase = P.fases.filter(function(f){ return f.semanas.indexOf(W.n) > -1; })[0] || P.fases[0];
+    var html = '<div class="week-head"><div style="display:grid;gap:4px;min-width:0"><span class="tag" data-k="pen">' + esc(fase.nome) + '</span>' +
+      '<h3>Semana ' + W.n + ' · ' + ddmm(W.dias[0].data) + ' a ' + ddmm(W.dias[W.dias.length - 1].data) + '</h3><p>' + esc(fase.desc) + '</p></div></div>';
+    html += '<div class="days">' + W.dias.map(function(d){
+      var ehHoje = d.data === hojeIso;
+      return '<article class="day' + (ehHoje ? " is-today" : "") + '"><h4><span>' + WD[data(d.data).getDay()] + ' <span class="mono">' + ddmm(d.data) + '</span></span>' +
+        (ehHoje ? '<span class="today-pill">Hoje</span>' : '') + '</h4><ul>' + d.itens.map(function(it){
+          var sj = SUBJ[it.s] || SUBJ.meta;
+          return '<li class="item ro' + (it.alerta ? " alert" : "") + '"><span class="dot" aria-hidden="true"></span><div style="display:grid;gap:3px;min-width:0"><span class="meta"><span class="blk">' + esc(it.b) + '</span><span class="tag" data-k="' + sj[1] + '">' + esc(sj[0]) + '</span></span><span class="txt">' + esc(it.t) + '</span></div></li>';
+        }).join("") + '</ul></article>';
+    }).join("") + '</div>';
+    view.innerHTML = html;
+  }
+  function seleciona(n){
+    escolhida = n;
+    fasesEl.querySelectorAll(".chip").forEach(function(b){ b.setAttribute("aria-pressed", String(+b.getAttribute("data-week") === n)); });
+    semana();
+  }
+  fasesEl.addEventListener("click", function(e){ var b = e.target.closest(".chip"); if (b) seleciona(+b.getAttribute("data-week")); });
+  document.getElementById("goToday").addEventListener("click", function(){
+    seleciona(atual);
+    var el = view.querySelector(".is-today") || view;
+    el.scrollIntoView({ block: "center" });
+  });
+  chips(); semana();
+
+  // Folha de 30 linhas da discursiva
+  var sheet = document.getElementById("sheet");
+  var parts = [
+    { de: 1, ate: 3, cls: "ctx", rot: "Contexto: o problema jurídico do caso" },
+    { de: 4, ate: 12, cls: "qa", rot: "Quesito A: resposta, fundamento, aplicação" },
+    { de: 13, ate: 21, cls: "qb", rot: "Quesito B: resposta, fundamento, aplicação" },
+    { de: 22, ate: 28, cls: "qc", rot: "Quesito C: resposta, fundamento, aplicação" },
+    { de: 29, ate: 30, cls: "end", rot: "Fechamento: conclusão objetiva" }
+  ];
+  var linhas = "";
+  parts.forEach(function(p){ for (var l = p.de; l <= p.ate; l++) linhas += '<div class="ln ' + p.cls + '"><em>' + l + '</em><i></i><span>' + (l === p.de ? esc(p.rot) : "") + '</span></div>'; });
+  sheet.insertAdjacentHTML("beforeend", linhas);
+})();
+</script>
+</body>
+</html>

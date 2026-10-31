@@ -1633,5 +1633,93 @@ window.DPE_PESOS_EDITAIS = {
       }
     ],
     "nota": "Cargo de servidor (Analista de Apoio à Assistência Judiciária – Direito e Legislação). A prova objetiva tem 70 questões: 21 de Conhecimentos Básicos com peso 1 (21 pontos) e 49 de Conhecimentos Específicos com peso 2 (98 pontos), total de 119 pontos (itens 10.1 e 10.2). Aqui o valor de cada grupo é a pontuação oficial (questões × peso), porque o peso dobrado muda o retorno de uma hora de estudo; ainda assim, os percentuais orientam TEMPO e não são pesos de aprovação. Cada grupo corresponde a uma rubrica do programa com o mesmo nome; o vínculo canônico de LODF/LC 828 e do Regime Jurídico serve só para relacionar conteúdo da Biblioteca e não soma pontos a Normas Institucionais ou Administrativo. Cortes da objetiva (item 10.14.4): 50% do total, 50% nos básicos, 50% nos específicos e Português diferente de zero. A prova discursiva (dissertação de 20 pontos e 3 questões de 10 pontos, item 11.1) e os títulos não foram somados."
+  },
+  "tjpb-2026": {
+    "fonte": "Edital nº 01/2026 – TJPB (retificado em 29/10/2026), Anexo I · Analista Judiciário – Área Judiciária",
+    "tipo": "questoes",
+    "grupos": [
+      {
+        "label": "Língua Portuguesa",
+        "valor": 10,
+        "subjects": [],
+        "evidencia": "Item 10.8.3, quadro de Analista – Judiciário: Língua Portuguesa, 10 questões (Módulo de Conhecimentos Gerais)."
+      },
+      {
+        "label": "Ética e Gestão no Serviço Público",
+        "valor": 5,
+        "subjects": [
+          "direito_administrativo"
+        ],
+        "evidencia": "Item 10.8.3: Ética e Gestão no Serviço Público, 5 questões (Módulo de Conhecimentos Gerais)."
+      },
+      {
+        "label": "Noções de Informática e Proteção de Dados",
+        "valor": 5,
+        "subjects": [],
+        "evidencia": "Item 10.8.3: Noções de Informática e Proteção de Dados, 5 questões (Módulo de Conhecimentos Gerais)."
+      },
+      {
+        "label": "Direito Constitucional",
+        "valor": 5.71,
+        "subjects": [
+          "direito_constitucional"
+        ],
+        "evidencia": "Item 10.8.3: 40 questões de Conhecimentos Específicos sem divisão por disciplina; 5.71 = 40 ÷ 7, divisão igual que só orienta o tempo."
+      },
+      {
+        "label": "Direito Administrativo",
+        "valor": 5.71,
+        "subjects": [
+          "direito_administrativo"
+        ],
+        "evidencia": "Item 10.8.3: 40 questões de Conhecimentos Específicos sem divisão por disciplina; 5.71 = 40 ÷ 7, divisão igual que só orienta o tempo."
+      },
+      {
+        "label": "Direito Civil e Direito do Consumidor",
+        "valor": 5.71,
+        "subjects": [
+          "direito_civil",
+          "direito_do_consumidor"
+        ],
+        "evidencia": "Item 10.8.3: 40 questões de Conhecimentos Específicos sem divisão por disciplina; 5.71 = 40 ÷ 7, divisão igual que só orienta o tempo."
+      },
+      {
+        "label": "Direito Processual Civil",
+        "valor": 5.71,
+        "subjects": [
+          "direito_processual_civil",
+          "direitos_difusos_e_coletivos"
+        ],
+        "evidencia": "Item 10.8.3: 40 questões de Conhecimentos Específicos sem divisão por disciplina; 5.71 = 40 ÷ 7, divisão igual que só orienta o tempo."
+      },
+      {
+        "label": "Direito Penal",
+        "valor": 5.71,
+        "subjects": [
+          "direito_penal",
+          "legislacao_penal_extravagante"
+        ],
+        "evidencia": "Item 10.8.3: 40 questões de Conhecimentos Específicos sem divisão por disciplina; 5.71 = 40 ÷ 7, divisão igual que só orienta o tempo."
+      },
+      {
+        "label": "Direito Processual Penal",
+        "valor": 5.71,
+        "subjects": [
+          "direito_processual_penal",
+          "execucao_penal"
+        ],
+        "evidencia": "Item 10.8.3: 40 questões de Conhecimentos Específicos sem divisão por disciplina; 5.71 = 40 ÷ 7, divisão igual que só orienta o tempo."
+      },
+      {
+        "label": "Direitos Humanos e Tutela Coletiva",
+        "valor": 5.71,
+        "subjects": [
+          "direitos_humanos",
+          "direitos_difusos_e_coletivos"
+        ],
+        "evidencia": "Item 10.8.3: 40 questões de Conhecimentos Específicos sem divisão por disciplina; 5.71 = 40 ÷ 7, divisão igual que só orienta o tempo."
+      }
+    ],
+    "nota": "Cargo de servidor (Analista Judiciário – Área Judiciária). A prova objetiva tem 60 questões de 1 ponto: 20 de Conhecimentos Gerais (Português 10, Ética e Gestão 5, Informática e Proteção de Dados 5) e 40 de Conhecimentos Específicos (item 10.8.3). O edital não divide as 40 específicas entre as sete disciplinas; aqui cada uma recebe 5.71 (divisão igual), o que orienta TEMPO e não é peso de aprovação. Aprovação na objetiva com 60% do total, sem mínimo por módulo (item 10.12); desempate pela maior nota nos Específicos (item 13.1). A discursiva (estudo de caso de 30 linhas, 40 pontos, itens 10.7 e 12.1) não foi somada."
   }
 };

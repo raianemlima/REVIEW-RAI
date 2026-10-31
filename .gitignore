@@ -18,3 +18,7 @@ chave-arquivos*.json
 
 # e-books (conteúdo pago): só entram cifrados no baralho, nunca abertos neste repositório público
 ferramentas/conteudo/dados/ebooks/
+
+# lei seca do curso: só entra cifrada (leiseca-cifrada/*.bin); a chave e a extração em claro nunca vão para o GitHub
+chave-leiseca*.txt
+leiseca-extraida/
