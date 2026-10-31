@@ -21,7 +21,7 @@ const TJ_MATERIAS = {
   meta: ["Agenda", "stamp", [], []]
 };
 const TJ_ASSUNTO = ["const", "adm", "civ", "pc", "pen", "pp", "dh", "etica", "info"];
-const TJ_LEIS_ORDEM = ["cf-dls", "l14133-dls", "lia-dls", "cc-dls", "cpc-dls", "cp-dls", "cpp-dls", "idoso-dls", "desarm-dls", "l8112-dls"];
+const TJ_LEIS_ORDEM = ["cf-dls", "l14133-dls", "lia-dls", "l8112-dls", "cc-dls", "cdc-dls", "cpc-dls", "cp-dls", "lmp-dls", "drogas-dls", "desarm-dls", "cpp-dls", "lep-dls", "idoso-dls", "eca-dls"];
 const TJ_SEMANA = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
 let _tjFontes = null;
 function tjFontes() {
@@ -96,7 +96,7 @@ function tjIr(o) {
 // artigos da lei seca do curso (conjuntos "-dls" do baralho cifrado), ordenados pelo número de questões
 function tjMaisCobrados() {
   const dips = (typeof DECK === "undefined" ? [] : DECK.leiseca || []).filter(d => /-dls$/.test(d.id));
-  dips.sort((a, b) => TJ_LEIS_ORDEM.indexOf(a.id) - TJ_LEIS_ORDEM.indexOf(b.id));
+  dips.sort((a, b) => ((TJ_LEIS_ORDEM.indexOf(a.id) + 1) || 99) - ((TJ_LEIS_ORDEM.indexOf(b.id) + 1) || 99));
   return dips.map(d => {
     const arts = [];
     d.grupos.forEach((g, gi) => { let a = null; for (const x of g.itens) {

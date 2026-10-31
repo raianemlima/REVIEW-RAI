@@ -40,16 +40,22 @@ INICIO_LINHA = re.compile(r"^(?:[IVXLC]+\s*[-–—]|[a-z]\)|\d+\.\s|§|Parágra
 
 # id, nome, curto e disciplina (resolvida no baralho pelo nome canônico na inserção)
 LEIS = [
-    (r"Constituição Federal", "cf-dls", "Constituição Federal · Decodificada", "CF", "@constitucional"),
-    (r"Processo Civil", "cpc-dls", "Código de Processo Civil · Decodificado", "CPC", "@processo civil"),
-    (r"Processo Penal", "cpp-dls", "Código de Processo Penal · Decodificado", "CPP", "@processo penal"),
-    (r"Código Penal", "cp-dls", "Código Penal · Decodificado", "CP", "@penal"),
-    (r"Código Civil", "cc-dls", "Código Civil · Decodificado", "CC", "@civil"),
-    (r"14\.133", "l14133-dls", "Lei 14.133/2021 · Licitações e Contratos · Decodificada", "Lei 14.133", "@administrativo"),
-    (r"8\.429", "lia-dls", "Lei 8.429/1992 · Improbidade Administrativa · Decodificada", "LIA", "@administrativo"),
-    (r"8\.112", "l8112-dls", "Lei 8.112/1990 · Servidores Públicos Federais · Decodificada", "Lei 8.112", "@administrativo"),
-    (r"Idosa|10\.741", "idoso-dls", "Estatuto da Pessoa Idosa · Lei 10.741/2003 · Decodificado", "Idoso", "@direitos humanos"),
-    (r"Desarmamento|10\.826", "desarm-dls", "Estatuto do Desarmamento · Lei 10.826/2003 · Decodificado", "Desarmamento", "@penal"),
+    # leis específicas antes dos códigos: o título e a 1ª página de uma lei podem citar um código
+    (r"Execução Penal|7\.?210", "lep-dls", "Lei de Execução Penal · Lei 7.210/1984 · Decodificada", "LEP (curso)", "@execucao penal"),
+    (r"Criança e do Adolescente|8\.?069", "eca-dls", "Estatuto da Criança e do Adolescente · Lei 8.069/1990 · Decodificado", "ECA (curso)", "@crianca"),
+    (r"Maria da Penha|11\.?340", "lmp-dls", "Lei Maria da Penha · Lei 11.340/2006 · Decodificada", "Maria da Penha (curso)", "@penal"),
+    (r"Lei de Drogas|11\.?343", "drogas-dls", "Lei de Drogas · Lei 11.343/2006 · Decodificada", "Drogas (curso)", "@penal"),
+    (r"Defesa do Consumidor|8\.?078", "cdc-dls", "Código de Defesa do Consumidor · Lei 8.078/1990 · Decodificado", "CDC (curso)", "@consumidor"),
+    (r"14\.?133", "l14133-dls", "Lei 14.133/2021 · Licitações e Contratos · Decodificada", "Lei 14.133 (curso)", "@administrativo"),
+    (r"8\.?429", "lia-dls", "Lei 8.429/1992 · Improbidade Administrativa · Decodificada", "LIA (curso)", "@administrativo"),
+    (r"8\.?112", "l8112-dls", "Lei 8.112/1990 · Servidores Públicos Federais · Decodificada", "Lei 8.112 (curso)", "@administrativo"),
+    (r"Idosa|10\.?741", "idoso-dls", "Estatuto da Pessoa Idosa · Lei 10.741/2003 · Decodificado", "Idoso (curso)", "@direitos humanos"),
+    (r"Desarmamento|10\.?826", "desarm-dls", "Estatuto do Desarmamento · Lei 10.826/2003 · Decodificado", "Desarmamento (curso)", "@penal"),
+    (r"Constituição Federal", "cf-dls", "Constituição Federal · Decodificada", "CF (curso)", "@constitucional"),
+    (r"Processo Civil", "cpc-dls", "Código de Processo Civil · Decodificado", "CPC (curso)", "@processo civil"),
+    (r"Processo Penal", "cpp-dls", "Código de Processo Penal · Decodificado", "CPP (curso)", "@processo penal"),
+    (r"Código Penal", "cp-dls", "Código Penal · Decodificado", "CP (curso)", "@penal"),
+    (r"Código Civil", "cc-dls", "Código Civil · Decodificado", "CC (curso)", "@civil"),
 ]
 
 
@@ -403,10 +409,12 @@ def cartoes_de(curto, grupos, minimo=4, por_artigo=2):
     return out
 
 
-def meta_de(titulo):
-    for pad, *meta in LEIS:
-        if re.search(pad, titulo, re.I):
-            return meta
+def meta_de(titulo, capa=""):
+    """Reconhece a lei pelo título do PDF; só sem acerto no título olha o começo da 1ª página."""
+    for texto in (titulo, capa):
+        for pad, *meta in LEIS:
+            if re.search(pad, texto, re.I):
+                return meta
     raise SystemExit(f"não reconheci a lei pelo título: {titulo!r}")
 
 
@@ -425,7 +433,7 @@ def main():
     for arq in sys.argv[2:]:
         doc = pymupdf.open(arq)
         titulo = (doc.metadata or {}).get("title") or Path(arq).stem
-        dados = Extrator(meta_de(titulo + " " + doc[0].get_text()[:400])).processa(doc)
+        dados = Extrator(meta_de(titulo, doc[0].get_text()[:400])).processa(doc)
         texto = json.dumps(dados, ensure_ascii=False)
         confere_sem_dados_pessoais(texto)
         arts = [i for g in dados["grupos"] for i in g["itens"] if "a" in i]
