@@ -14,12 +14,16 @@ O baralho fica em `deck.enc`, separado do `index.html`, cifrado com AES-256-GCM 
 - **Nunca** coloque o arquivo-fonte (sem criptografia) neste repositório. Guarde-o fora dele.
 - Para gerar uma nova versão ou trocar a senha, o build cria `index.html`, `deck.enc` e `app-src.txt` a partir do arquivo-fonte:
   `SENHA='nova-senha' node build.mjs caminho/fonte.html index.html`
-- Depois de trocar a senha, atualize a senha no Supabase (a que a função `chave_do_app` entrega) e aumente o número da versão em `sw.js` (`CACHE`). Quem tem conta liberada recebe a chave nova sozinho ao abrir o app.
+- Depois de trocar a senha, atualize a senha no Supabase (a que a função `chave_do_app` entrega) e aumente o número da versão em `sw.js` (`CACHE`). Na publicação, o nome do cache também ganha um carimbo do conteúdo (`ferramentas/ci/carimbar_cache.mjs`), para o app instalado sempre receber a versão nova. Quem tem conta liberada recebe a chave nova sozinho ao abrir o app.
 - O acesso ao conteúdo é **só pela conta**: não existe mais "senha de acesso" para digitar. A chave offline fica vinculada ao UID Supabase que a recebeu; outra conta não pode reutilizá-la. O app confirma a assinatura online a cada 7 dias e remove a chave quando o Supabase nega o acesso. Na primeira abertura desta versão, aparelhos com chave antiga podem precisar de internet e de um novo login para vincular a conta; depois disso, o uso offline continua disponível.
 - Configuração de segurança do Supabase: [`supabase/seguranca.sql`](supabase/seguranca.sql).
 - Senha compartilhada do baralho, limites da proteção, detecção de compartilhamento e rotação da senha: [`docs/SEGURANCA-CONTEUDO.md`](docs/SEGURANCA-CONTEUDO.md).
 - Cobrança e liberação automática pelo Asaas: [`docs/ASAAS.md`](docs/ASAAS.md).
 - Divulgação (página de vendas no domínio, material gratuito com captação de e-mail, cupons de parceiro, depoimentos e links com UTM): [`docs/DIVULGACAO.md`](docs/DIVULGACAO.md).
+
+## Por onde começar
+
+A tela **Hoje** é um roteiro de três passos: estudar o assunto do dia no Cronograma, revisar os cartões do que já foi estudado e, se quiser, praticar com questões. O restante fica recolhido em "Mais", e a barra mostra só Hoje, Estudar, Biblioteca, Lei seca e Progresso. Veja [Visão limpa](docs/ORGANIZACAO.md).
 
 ## Carregamento inicial e uso offline
 

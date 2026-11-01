@@ -1145,7 +1145,7 @@ document.body.classList.add("rd-gate");
   const KEY = "revisao-dpe-chave", KEY_UID = "revisao-dpe-chave-uid", CONTA = "revisao-dpe-conta", VERIF = "revisao-dpe-verif", PRAZO = 7 * 86400000;
   const SB_URL = "https://hlenhmgnqqnkjqmntnpz.supabase.co", SB_KEY = "sb_publishable_UbPHvOFSbd-dgyDx6SI7mg_UBx4_o9l";   // chave pública: a proteção é a RLS
   const $ = s => document.querySelector(s);
-  const APP_CACHE = "review-dpe-assuntos-v27";
+  const APP_CACHE = "review-dpe-assuntos-v28";
   async function carregarTexto(url, tipo, motivo) {
     let resposta;
     try { resposta = await fetch(url); } catch (_) { throw new Error(motivo); }
@@ -1475,4 +1475,5 @@ document.body.classList.add("rd-gate");
 <script data-lazy-src="arquivos/cronograma.js"></script>
 <script data-lazy-src="arquivos/interface.js"></script>
 <script data-lazy-src="arquivos/dashboard-editais.js"></script>
+<script data-lazy-src="arquivos/organizacao.js"></script>
 </body></html>
