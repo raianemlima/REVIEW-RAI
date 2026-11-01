@@ -46,6 +46,8 @@ jobs:
         env:
           APP_SENHA: ${{ secrets.APP_SENHA }}
         run: node ferramentas/ci/aplicar_ebooks.mjs _site/index.html
+      - name: Carimbar o cache do app com a versão do conteúdo (o app instalado sempre recebe a versão nova)
+        run: node ferramentas/ci/carimbar_cache.mjs _site
       - name: Validar os arquivos obrigatórios do app e do cache offline
         run: node ferramentas/ci/validar_site.mjs _site
       - uses: actions/upload-pages-artifact@v3
