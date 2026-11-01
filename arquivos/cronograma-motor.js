@@ -145,11 +145,24 @@
   }
   const pontos = (a, discOk) => a.ref * 60 + a.lei * 30 + a.tit * 12 + a.txt * 2 + (discOk ? 6 : 0);
   // consulta: {titulo, texto, leis[], juris[], discIds[], discNomes[]}; devolve grupos tema/lei/juris/questoes já ordenados
-  function relacionarConteudo(fontes, consulta, limite = 4) {
-    const idx = indexar(fontes || {}), c = consulta || {};
+  function montarConsulta(c) {
     const titulo = String(c.titulo || '').replace(/^\s*\d+(?:\.\d+)*\.?\s*/, '').split(/\s\d+\.\d+\.?\s/)[0].split(/[:;]/)[0], textoLeis = arr(c.leis).join(' ') + ' ' + titulo + ' ' + (c.texto || '');
     const q = { tit: raizes(titulo), txt: raizes(c.texto || '').filter(r => !raizes(titulo).includes(r)).slice(0, 14), nums: numerosLei(arr(c.leis).join(' ') + ' ' + titulo), siglas: siglasLei(arr(c.leis).join(' ')), refs: refsJuris(arr(c.juris).join(' ') + ' ' + textoLeis) };
     if (!q.tit.length) q.tit = q.txt.splice(0, 3);
+    return { titulo, q };
+  }
+  // todos os cartões ligados ao assunto (mesmo critério de relacionarConteudo, sem limite): liberam a revisão depois do estudo
+  function cartoesDoAssunto(fontes, consulta) {
+    const idx = indexar(fontes || {}), c = consulta || {}, { q } = montarConsulta(c), discIds = new Set(arr(c.discIds)), out = [];
+    for (const it of idx.cartoes) {
+      const discOk = it.c.disc == null ? null : discIds.has(it.c.disc);
+      if (aceita(avaliar(it.p, q, it.t), q, discOk)) out.push(it.c.id);
+    }
+    return out;
+  }
+  function relacionarConteudo(fontes, consulta, limite = 4) {
+    const idx = indexar(fontes || {}), c = consulta || {};
+    const { titulo, q } = montarConsulta(c);
     const discIds = new Set(arr(c.discIds)), nomes = arr(c.discNomes).map(semDireito).filter(Boolean);
     const top = l => l.sort((a, b) => b.s - a.s || String(a.k).localeCompare(String(b.k)));
     const tema = [], lei = [], juris = [], questoes = [];
@@ -178,5 +191,5 @@
     const gLei = (l) => { const t = top(l), cit = t.filter(x => x.motivo === 'lei citada no edital').slice(0, 12); return { total: l.length, itens: [...cit, ...t.filter(x => !cit.includes(x))].slice(0, Math.max(limite, cit.length)) }; };
     return { tema: g(tema), lei: gLei(lei), juris: g(juris), questoes: g(questoes), termos: q.tit.slice(0, 4), assunto: titulo.trim().replace(/[.;:,]+$/, ''), leisCitadas: q.nums, total: tema.length + lei.length + juris.length + questoes.length };
   }
-  root.DPE_CRONOGRAMA_MOTOR = { gerarAgenda, obterDisciplinas, chaveTopico, materiais, relacionarConteudo };
+  root.DPE_CRONOGRAMA_MOTOR = { gerarAgenda, obterDisciplinas, chaveTopico, materiais, relacionarConteudo, cartoesDoAssunto };
 })(typeof window !== 'undefined' ? window : globalThis);

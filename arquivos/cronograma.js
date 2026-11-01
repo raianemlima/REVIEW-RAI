@@ -149,6 +149,57 @@
     if (r) r.disciplinaId = ids.find(id => f.cartoes.some(c => c.disc === id)) || '';
     if (_relCache.size > 400) _relCache.clear(); _relCache.set(k, r); return r;
   }
+  // ---- revisão depois do estudo: cartão novo só entra na revisão diária quando o assunto foi marcado "Estudei este assunto"
+  // num edital da direção escolhida em Ajustes (Defensoria ou Tribunal). O que já está em revisão segue o FSRS normalmente.
+  const EDITAIS_TRIBUNAL = new Set(['tjpb-2026']);
+  const direcaoDe = conteudoId => EDITAIS_TRIBUNAL.has(conteudoId) ? 'tj' : 'dpe';
+  const direcaoAtual = () => (typeof S === 'object' && S.ajustes?.direcao === 'tj') ? 'tj' : 'dpe';
+  const NOME_DIRECAO = { dpe: 'Defensoria', tj: 'Tribunal (TJPB)' };
+  const _cartoesTopico = new Map();
+  function cartoesDoTopico(k) {
+    const f = fontesApp(), memo = _cartoesTopico.get(k);
+    if (memo && memo.n === f.cartoes.length && memo.ref === f.cartoes) return memo.ids;
+    const [conteudoId, disciplinaId, topicoId] = String(k).split(':'), p = { conteudoId, editalId: conteudoId || 'comum' };
+    const d = disciplina(disciplinaId, p), t = (d.topicos || []).find(x => x.id === topicoId);
+    let ids = [];
+    if (t && motor()?.cartoesDoAssunto) {
+      const discIds = [...disciplinaDeckIds(disciplinaId, p)];
+      const nomes = [d.nome, ...(d.canonicais || []).map(c => DISC_MAP[c]?.nome)].filter(Boolean);
+      ids = motor().cartoesDoAssunto(f, { titulo: t.titulo, texto: t.texto, leis: t.leis, juris: t.juris, discIds, discNomes: nomes });
+    }
+    _cartoesTopico.set(k, { n: f.cartoes.length, ref: f.cartoes, ids });
+    return ids;
+  }
+  let _liberados = null;
+  function cartoesLiberados() {
+    if (typeof DECK === 'undefined' || !motor()?.cartoesDoAssunto) return null;
+    const dir = direcaoAtual(), reg = registros(), f = fontesApp();
+    const chaves = Object.keys(reg).filter(k => reg[k]?.concluido && direcaoDe(k.split(':')[0]) === dir).sort();
+    const assinatura = dir + '|' + f.cartoes.length + '|' + chaves.join(',');
+    if (_liberados && _liberados.assinatura === assinatura && _liberados.ref === f.cartoes) return _liberados.r;
+    const ids = new Set();
+    for (const k of chaves) for (const id of cartoesDoTopico(k)) ids.add(id);
+    _liberados = { assinatura, ref: f.cartoes, r: { ids, assuntos: chaves.length, direcao: dir, nome: NOME_DIRECAO[dir] } };
+    return _liberados.r;
+  }
+  window.DPE_CARTOES_LIBERADOS = cartoesLiberados;
+  window.DPE_CARTOES_DO_ASSUNTO = cartoesDoTopico;
+  function registrarEstudo(k, feito) {
+    S.ajustes.cronogramaProgresso = { ...registros(), [k]: { concluido: feito, em: Math.max(Date.now(), (registros()[k]?.em || 0) + 1) } };
+    queue('ajustes');
+    if (!feito || typeof toast !== 'function') return;
+    const dir = direcaoDe(String(k).split(':')[0]);
+    if (dir !== direcaoAtual()) { toast(`Assunto registrado. Ele libera cartões quando o direcionamento em Ajustes for ${NOME_DIRECAO[dir]}.`); return; }
+    const novos = cartoesDoTopico(k).filter(id => !S.cards[id]).length;
+    toast(novos ? `${novos} ${novos === 1 ? 'cartão deste assunto entrou' : 'cartões deste assunto entraram'} na sua revisão.` : 'Assunto registrado. Não há cartão novo ligado a ele.');
+  }
+  function liberaHtml(p, b) {
+    const k = chave(p, b), dir = direcaoDe(p.conteudoId);
+    if (dir !== direcaoAtual()) return `<small class="cr-libera" data-cr-libera="outra">Libera cartões na direção ${escLocal(NOME_DIRECAO[dir])} (Ajustes).</small>`;
+    const ids = cartoesDoTopico(k), novos = ids.filter(id => !S.cards[id]).length, feito = !!registros()[k]?.concluido;
+    if (!ids.length) return `<small class="cr-libera" data-cr-libera="0">Nenhum cartão ligado a este assunto.</small>`;
+    return `<small class="cr-libera" data-cr-libera="${ids.length}">${feito ? `${ids.length} ${ids.length === 1 ? 'cartão deste assunto está' : 'cartões deste assunto estão'} na sua revisão` : `Ao marcar, ${novos} ${novos === 1 ? 'cartão novo entra' : 'cartões novos entram'} na revisão`}.</small>`;
+  }
   const irAttr = o => `data-cr-ir="${escLocal(JSON.stringify(o))}"`;
   // trechos doutrinários do material pessoal (e-book "Conteúdo específico" do edital, no Aprofundamento)
   function trechosDoAssunto(p, b) {
@@ -218,7 +269,7 @@
     if(!b.disciplinaId)return `<article class="cr-bloco cr-revisao"><b>Revisão complementar · ${b.minutos} min</b><p>Revisar não substitui ler o assunto. A fila e o FSRS continuam independentes.</p></article>`;
     const feito=!!registros()[chave(p,b)]?.concluido;
     const disponiveis=disciplina(b.disciplinaId,p).topicos||[];
-    return `<article class="cr-bloco ${feito?'cr-feito':''}" data-cr-bloco="${b.id}"><small>${escLocal(b.nome)} · ${b.minutos} min${b.tipo==='revisita'?' · revisita após percorrer os assuntos':''}</small><h4>${escLocal(b.topico)}</h4>${trechosHtml(p,b)}${resumoRelacionado(conteudoRelacionado(p,b))}${materialHtml(p,b)}${ativo?`<label class="cr-concluir"><input type="checkbox" data-cr-concluir="${escLocal(chave(p,b))}" ${feito?'checked':''}> Estudei este assunto</label>`:`<label class="field cr-trocar"><span>Escolher outro assunto deste bloco</span><select data-cr-trocar="${b.id}">${disponiveis.filter(t=>t.id===b.topicoId||!registros()[motor().chaveTopico(p.conteudoId,b.disciplinaId,t.id)]?.concluido).map(t=>`<option value="${escLocal(t.id)}" ${t.id===b.topicoId?'selected':''}>${escLocal(t.titulo)}</option>`).join('')}</select></label>`}</article>`;
+    return `<article class="cr-bloco ${feito?'cr-feito':''}" data-cr-bloco="${b.id}"><small>${escLocal(b.nome)} · ${b.minutos} min${b.tipo==='revisita'?' · revisita após percorrer os assuntos':''}</small><h4>${escLocal(b.topico)}</h4>${trechosHtml(p,b)}${resumoRelacionado(conteudoRelacionado(p,b))}${materialHtml(p,b)}<label class="cr-concluir"><input type="checkbox" data-cr-concluir="${escLocal(chave(p,b))}" ${feito?'checked':''}> Estudei este assunto</label>${liberaHtml(p,b)}${ativo?'':`<label class="field cr-trocar"><span>Escolher outro assunto deste bloco</span><select data-cr-trocar="${b.id}">${disponiveis.filter(t=>t.id===b.topicoId||!registros()[motor().chaveTopico(p.conteudoId,b.disciplinaId,t.id)]?.concluido).map(t=>`<option value="${escLocal(t.id)}" ${t.id===b.topicoId?'selected':''}>${escLocal(t.titulo)}</option>`).join('')}</select></label>`}</article>`;
   }
   function semanaPreview(p,w=0) {
     if(!motor()||!unidades(p).length)return dias.map(([id,n])=>`<div class="cr-dia ${p.dias.includes(id)?'':'off'}"><b>${n}</b><small>${p.dias.includes(id)?minutosPorDia(p)+' min disponíveis':'dia livre'}</small>${p.dias.includes(id)?'<p>Escolha o edital de conteúdo para montar os assuntos.</p>':''}</div>`).join('');
@@ -263,10 +314,11 @@
     $('#crSugerir').onclick=()=>preencher(sugerirPesos(draft.editalId,ids()),'edital');$('#crIgual').onclick=()=>preencher(pesosIguais(ids()),'igual');
     $('#crSemanaAnterior').onclick=()=>{w=Math.max(0,w-1);previa();};$('#crSemanaProxima').onclick=()=>{w=Math.min(51,w+1);previa();};
     $('#crBuscaAssunto').oninput=e=>{const q=normLocal(e.target.value);document.querySelectorAll('[data-cr-assunto-linha]').forEach(l=>l.hidden=!normLocal(l.textContent).includes(q));if(q)document.querySelectorAll('.cr-programa').forEach(d=>d.open=!!d.querySelector('[data-cr-assunto-linha]:not([hidden])'));};
-    $('#crForm').addEventListener('input',e=>{if(e.target.id!=='crBuscaAssunto'&&!e.target.matches('[data-cr-trocar]'))previa();});
+    $('#crForm').addEventListener('input',e=>{if(e.target.id!=='crBuscaAssunto'&&!e.target.matches('[data-cr-trocar],[data-cr-concluir]'))previa();});
     $('#crForm').addEventListener('change',e=>{const f=e.target;
       if(f.matches('[data-cr-topico]')){const id=f.dataset.crDisc;draft.topicosSelecionados[id]=[...document.querySelectorAll('[data-cr-topico]')].filter(x=>x.dataset.crDisc===id&&x.checked).map(x=>x.dataset.crTopico);previa();return;}
       if(f.matches('[data-cr-trocar]')){draft.escolhas[f.dataset.crTrocar]=f.value;previa();return;}
+      if(f.matches('[data-cr-concluir]')){registrarEstudo(f.dataset.crConcluir,f.checked);previa();return;}
       if(!f.matches('[data-cr-peso]'))return previa();const l=lerCampos();if(!l.valido)return previa();const fixo=f.dataset.crPeso,cent=Math.round(l.pesos[fixo]*100),outros=ids().filter(id=>id!==fixo);const pesos=normalizarPercentuais(outros,l.pesos,10000-cent);pesos[fixo]=outros.length?cent/100:100;preencher(pesos,'manual');
     });
     $('#crPausar')?.addEventListener('click',()=>{S.ajustes.cronograma={...salvo,ativo:false,atualizadoEm:Date.now()};queue('ajustes');delete S.cronogramaDraft;renderCronograma();});
@@ -287,7 +339,7 @@
     const a=motor().gerarAgenda(p,semanaAtual(p)),dia=a.dias[(dataApp().getDay()||7)-1],bs=[...new Map(dia.blocos.filter(b=>b.disciplinaId).map(b=>[chave(p,b),b])).values()],feitos=bs.filter(b=>registros()[chave(p,b)]?.concluido).length;
     return `<section class="panel cr-today cr-hoje-conteudo" id="cronogramaHoje"><div><span class="cr-eyebrow">Cronograma ativo · assuntos de hoje</span><b>${resumoPlano(p)}</b><p>${dia.minutos?`${feitos}/${bs.length} assuntos registrados · ${dia.conteudoMin} min de conteúdo · ${dia.revisaoMin} min de revisão`:'Dia livre. Seu ciclo continua no próximo dia escolhido, sem dívida de cartões.'}</p><small>Conclusão registrada não é medida de domínio.</small></div><button class="btn small" id="goCronograma">Editar cronograma</button>${p.aplicarMetas!==false?`<div class="cr-hoje-blocos">${dia.blocos.map(b=>blocoHtml(p,b,true)).join('')}</div>`:''}</section>`;
   }
-  function bindHoje() { $('#goCronograma')?.addEventListener('click',()=>go('cronograma'));bindBiblioteca($('#cronogramaHoje')||document);$('#cronogramaHoje')?.addEventListener('change',e=>{if(!e.target.matches('[data-cr-concluir]'))return;const k=e.target.dataset.crConcluir;S.ajustes.cronogramaProgresso={...registros(),[k]:{concluido:e.target.checked,em:Math.max(Date.now(),(registros()[k]?.em||0)+1)}};queue('ajustes');renderHoje();}); }
+  function bindHoje() { $('#goCronograma')?.addEventListener('click',()=>go('cronograma'));bindBiblioteca($('#cronogramaHoje')||document);$('#cronogramaHoje')?.addEventListener('change',e=>{if(!e.target.matches('[data-cr-concluir]'))return;registrarEstudo(e.target.dataset.crConcluir,e.target.checked);renderHoje();}); }
   function instalar() {
     if(window.__cronogramaInstalado)return;window.__cronogramaInstalado=true;window.renderCronograma=renderCronograma;
     if(typeof mesclar==='function'){const anterior=mesclar;mesclar=function(L,R){const out=anterior.apply(this,arguments),l=L.ajustes?.cronogramaProgresso||{},r=R.ajustes?.cronogramaProgresso||{},merged={};for(const k of new Set([...Object.keys(l),...Object.keys(r)])){const a=l[k],b=r[k];merged[k]=!a?b:!b?a:(b.em||0)>(a.em||0)?b:a;}out.ajustes.cronogramaProgresso=merged;return out;};}

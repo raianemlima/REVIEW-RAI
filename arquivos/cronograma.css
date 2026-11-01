@@ -122,3 +122,5 @@ html[data-rd-design="figma"] body.rd-shell .cr-form select { box-sizing:border-b
 .cr-trechos .btn { min-height:36px; white-space:normal; text-align:left; }
 .cr-trechos small { color:var(--muted); font-size:.78rem; overflow-wrap:anywhere; }
 .cr-trechos-vazio { display:block; font-size:.8rem; color:var(--muted); }
+/* revisão depois do estudo: quantos cartões o assunto libera */
+.cr-libera { display:block; margin:-2px 0 8px; color:var(--muted); font-size:.78rem; }

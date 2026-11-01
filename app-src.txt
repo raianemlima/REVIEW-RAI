@@ -16,7 +16,7 @@ const ESTADO_NOME = { DPU: "Defensoria Pública da União", AC: "Acre", AL: "Ala
 const GRADES = { 1: "Errei", 2: "Difícil", 3: "Bom", 4: "Fácil" };
 
 // ---------- estado ----------
-const DEFAULTS = { estado: "RN", prova: "", minutos: 10, novosMax: 10, metaDiaria: 10, retencao: 0.9, disciplinas: null, som: true, vibra: true, onboard: false };
+const DEFAULTS = { estado: "RN", prova: "", minutos: 10, novosMax: 10, metaDiaria: 10, retencao: 0.9, disciplinas: null, som: true, vibra: true, onboard: false, direcao: "dpe" };
 const DISC = Object.fromEntries(DECK.disciplinas.map(d => [d.id, d]));
 function discOn(id) { const l = S.ajustes.disciplinas; return !l || l.includes(id); }
 const S = {
@@ -920,7 +920,7 @@ function modoCards(modo, arg) {
   if (modo === "intercalado") {
     const pool = act.filter(x => x.disc !== "ci" && !x.nov);
     const due = pool.filter(x => S.cards[x.id] && S.cards[x.id].due <= t).sort((a, b) => prio(b, t, c) - prio(a, t, c));
-    const fresh = pool.filter(x => !S.cards[x.id]).sort((a, b) => prio(b, t, c) - prio(a, t, c));
+    const lib = liberadosEstudo(), fresh = pool.filter(x => !S.cards[x.id] && (!lib || x.meu || lib.ids.has(x.id))).sort((a, b) => prio(b, t, c) - prio(a, t, c));
     const pick = [...due.slice(0, 16), ...fresh.slice(0, 4)];
     const grupos = {}; for (const x of pick) (grupos[x.disc + "|" + x.tema] ||= []).push(x.id);
     const gs = shuffle(Object.values(grupos)), out = [];
@@ -2443,15 +2443,19 @@ function podeRepetirSessao(s, id) {
   if (s.limiteTentativas == null) return true;   // modos especializados mantêm seus contratos
   return s.queue.length < s.limiteTentativas && !(s.repeticoes || {})[id];
 }
+// Revisão depois do estudo: com o Cronograma carregado, cartão novo só vem de assunto marcado "Estudei este assunto"
+// na direção escolhida em Ajustes (Defensoria ou Tribunal). Meus cartões sempre entram; o que já está em revisão não muda.
+function liberadosEstudo() { try { const f = globalThis.DPE_CARTOES_LIBERADOS; return typeof f === "function" ? f() : null; } catch (e) { return null; } }
 function plan() {
   desempilharVespera();
   const t = today(), c = ctx(), dte = c.daysToExam;
+  let lib = null; try { const f = globalThis.DPE_CARTOES_LIBERADOS; lib = typeof f === "function" ? f() : null; } catch (e) { lib = null; }
   const fi = dte != null && dte >= 0 ? faseAtual(dte) : -1, comBase = Object.keys(S.cards).length >= 50;   // 2 Revisão intensa · 3 Reta final · 4 Semana da prova
   const incMin = fi === 2 ? 4 : fi >= 3 ? 5 : 0;   // nessas fases, cartão novo só do que mais cai (meus cartões sempre entram)
   const act = activeCards();
   const due = act.filter(x => S.cards[x.id] && S.cards[x.id].due <= t)
     .sort((a, b) => prio(b, t, c) - prio(a, t, c));
-  const novos = act.filter(x => !S.cards[x.id]), fase = incMin ? novos.filter(x => x.meu || (x.inc || x.peso || 0) >= incMin) : novos;
+  const novos = act.filter(x => !S.cards[x.id] && (!lib || x.meu || lib.ids.has(x.id))), fase = incMin ? novos.filter(x => x.meu || (x.inc || x.peso || 0) >= incMin) : novos;
   const fresh = (fase.length || comBase ? fase : novos)   // quem começa agora e não tem nada de alta incidência segue com o resto
     .sort((a, b) => prio(b, t, c) - prio(a, t, c) || (b.prova ? 1 : 0) - (a.prova ? 1 : 0) || a.ord - b.ord);
   const { rev: secsReview, nov: secsNew } = ritmoSeg();
@@ -2460,7 +2464,7 @@ function plan() {
   const teto = !comBase ? S.ajustes.novosMax : fi === 4 ? Math.min(5, S.ajustes.novosMax) : fi === 3 ? Math.ceil(S.ajustes.novosMax / 2) : S.ajustes.novosMax;
   const dia = rotinaDiaria(), espacoMeta = Math.max(0, dia.restantes - due.length);
   const nNew = dia.retomada && due.length ? 0 : Math.max(0, Math.min(room, teto - introducedToday(), fresh.length, espacoMeta));
-  return { due, fresh, newToday: fresh.slice(0, nNew), minutes: Math.ceil((due.length * secsReview + nNew * secsNew) / 60), secsReview, secsNew, incMin };
+  return { due, fresh, newToday: fresh.slice(0, nNew), minutes: Math.ceil((due.length * secsReview + nNew * secsNew) / 60), secsReview, secsNew, incMin, lib };
 }
 
 // ---------- persistência ----------
@@ -3398,7 +3402,7 @@ function renderHoje() {
   const h = new Date().getHours(), oi = h < 12 ? "Bom dia" : h < 18 ? "Boa tarde" : "Boa noite";
   const mood = dia.concluida ? "feliz" : !restante ? "dorme" : "ok";
   const titulo = dia.concluida ? "Sua meta de hoje está feita" : aberta ? "Retome seu bloco de foco" : dia.retomada ? "Vamos retomar com calma?" : restante ? "Um pequeno bloco já conta" : "Tudo em dia por agora";
-  const sub = dia.concluida ? `${dia.feitos} cartões diferentes estudados hoje. Você pode descansar.` : aberta ? "Continue o bloco que você iniciou nesta sessão do app." : restante ? `${bloco.q.length} cartões no próximo bloco · cerca de ${bloco.minutos} min` : "Sem cartões disponíveis agora. Seu progresso continua salvo.";
+  const sub = dia.concluida ? `${dia.feitos} cartões diferentes estudados hoje. Você pode descansar.` : aberta ? "Continue o bloco que você iniciou nesta sessão do app." : restante ? `${bloco.q.length} cartões no próximo bloco · cerca de ${bloco.minutos} min` : p.lib && !p.fresh.length ? "Sem revisões agora. Cartões novos entram depois que você marca “Estudei este assunto” no Cronograma." : "Sem cartões disponíveis agora. Seu progresso continua salvo.";
   const des = desafioHoje(), weak = weakTopics(), fi = faseAtual(dte);
   $("#main").innerHTML = `
     <section class="hero">
@@ -3416,6 +3420,7 @@ function renderHoje() {
     <details class="day-details" id="filaHoje"><summary>Ver fila de revisão e próximos passos</summary>
       <p>Há ${plural(p.due.length, "revisão disponível", "revisões disponíveis")}. Esta é a fila, não a obrigação de terminar tudo hoje. Sua meta é ${dia.meta} cartões diferentes.</p>
       <div class="tiles"><div class="tile"><div class="n">${p.due.length}</div><div class="l">para revisar</div></div><div class="tile"><div class="n">${p.newToday.length}</div><div class="l">novos disponíveis hoje</div></div><div class="tile min"><div class="n">~${bloco.minutos} min</div><div class="l">próximo bloco</div></div></div>
+      ${p.lib ? `<p class="count" id="hojeLiberados">Cartões novos vêm só dos assuntos que você marcou como estudados no Cronograma · direção ${esc(p.lib.nome)}: ${plural(p.lib.assuntos, "assunto estudado", "assuntos estudados")}, ${plural(p.fresh.length, "cartão novo esperando", "cartões novos esperando")}. Troque a direção em Ajustes.</p>` : ""}
       <p class="count">Os cartões não revisados continuam pendentes e o FSRS mantém suas datas. Adiar repetidamente pode reduzir a chance de lembrar; retome aos poucos e ajuste a carga sem esconder a fila.</p>
     </details>
     ${instalarHtml()}
@@ -3952,6 +3957,9 @@ function renderAjustes() {
       <div class="field"><label for="a-estado">Concurso</label>
         <select id="a-estado">${Object.entries(ESTADOS).map(([k, v]) => `<option value="${k}" ${k === a.estado ? "selected" : ""}>${v} · ${k === "RN" ? "III Concurso" : ESTADO_NOME[k]}</option>`).join("")}</select>
         <span class="hint">Define quais cartões do módulo estadual entram. Outros estados chegam com os próximos perfis.</span></div>
+      <div class="field"><label for="a-direcao">Direcionamento do estudo</label>
+        <select id="a-direcao"><option value="dpe" ${a.direcao !== "tj" ? "selected" : ""}>Defensoria (DPE)</option><option value="tj" ${a.direcao === "tj" ? "selected" : ""}>Tribunal (TJPB)</option></select>
+        <span class="hint">Os cartões são de revisão: um cartão novo só entra depois que você marca “Estudei este assunto” no Cronograma, num edital desta direção. O que já está em revisão continua nas datas marcadas.</span></div>
       <fieldset class="field" style="border:0;padding:0;margin:0"><legend style="font-weight:600;font-size:.9rem;padding:0">Disciplinas em estudo</legend>
         ${DECK.disciplinas.map(d => `<label class="row" style="gap:8px;font-weight:400"><input type="checkbox" id="a-d-${d.id}" ${discOn(d.id) ? "checked" : ""}> ${esc(d.nome)} <span class="count">${esc(d.status || "")}</span></label>`).join("")}
         <span class="hint">Desmarcar tira a disciplina das sessões sem apagar o progresso. Na DPE/RN, cada disciplina pesa o mesmo até o edital dividir os grupos.</span></fieldset>
@@ -3988,7 +3996,7 @@ function renderAjustes() {
   $("#aj").onsubmit = e => {
     e.preventDefault();
     const dsel = DECK.disciplinas.filter(d => $("#a-d-" + d.id).checked).map(d => d.id);
-    S.ajustes = { ...S.ajustes, som: $("#a-som").checked, vibra: $("#a-vib").checked, disciplinas: dsel.length === DECK.disciplinas.length ? null : dsel, estado: $("#a-estado").value, prova: $("#a-prova").value, metaDiaria: normalizarMetaDiaria($("#a-meta").value), minutos: Math.min(240, Math.max(5, +$("#a-min").value || 10)), novosMax: Math.max(0, +$("#a-novos").value || 0), retencao: +$("#a-ret").value };
+    S.ajustes = { ...S.ajustes, som: $("#a-som").checked, vibra: $("#a-vib").checked, disciplinas: dsel.length === DECK.disciplinas.length ? null : dsel, estado: $("#a-estado").value, direcao: $("#a-direcao").value === "tj" ? "tj" : "dpe", prova: $("#a-prova").value, metaDiaria: normalizarMetaDiaria($("#a-meta").value), minutos: Math.min(240, Math.max(5, +$("#a-min").value || 10)), novosMax: Math.max(0, +$("#a-novos").value || 0), retencao: +$("#a-ret").value };
     delete S.ajustes.metaHoje;
     queue("ajustes"); $("#aj-ok").textContent = "Ajustes salvos.";
   };
