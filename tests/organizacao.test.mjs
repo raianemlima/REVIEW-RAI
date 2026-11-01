@@ -18,11 +18,11 @@ const modulos = ["cronograma-pesos.js", "cronograma-taxonomia.js", "cronograma-c
 const navHtml = (html.match(/<nav class="tabs" role="tablist" id="tabs">[\s\S]*?<\/nav>/) || [])[0];
 const tick = () => new Promise(r => setTimeout(r, 20));
 
-function ambiente(cartoes = []) {
+function ambiente(cartoes = [], leiseca = []) {
   const dom = new JSDOM(`<!doctype html><html><head></head><body><header><button id="goBusca"></button><button id="goAjustes"></button><span id="save"></span></header>${navHtml}<main id="main"></main></body></html>`, { url: "https://fixture.invalid/", runScripts: "outside-only" });
   dom.window.scrollTo = () => {}; dom.window.fetch = () => { throw Error("Rede bloqueada"); };
   const run = s => vm.runInContext(s, dom.getInternalVMContext());
-  run(`const DECK={versao:"fixture",disciplinas:[{id:"direito_constitucional",nome:"Direito Constitucional",curto:"Constitucional",peso:1}],cartoes:${JSON.stringify(cartoes)},leiseca:[]};`);
+  run(`const DECK={versao:"fixture",disciplinas:[{id:"direito_constitucional",nome:"Direito Constitucional",curto:"Constitucional",peso:1}],cartoes:${JSON.stringify(cartoes)},leiseca:${JSON.stringify(leiseca)}};`);
   run(fsrs); run(app);
   run('S.mode="local";S.ajustes.metaOn=false;S.ajustes.onboard=true;S.ajustes.minutos=60;S.ajustes.metaDiaria=20;ensureAj();globalThis.__toasts=[];toast=m=>__toasts.push(m);');
   modulos.forEach(run);
@@ -35,11 +35,92 @@ test("a barra fica com o essencial; Tribunal aparece na direção Tribunal", asy
   try {
     a.run('go("hoje")'); await tick();
     const visiveis = () => [...a.d.querySelectorAll("#tabs button[role=tab]")].filter(b => !b.hidden).map(b => b.dataset.tab);
-    assert.deepEqual(visiveis(), ["hoje", "sessao", "biblioteca", "leiseca", "estatisticas"]);
+    assert.deepEqual(visiveis(), ["hoje", "cronograma", "sessao", "biblioteca", "leiseca", "estatisticas"], "Plano (Cronograma) fixo ao lado de Hoje");
+    assert.equal(a.d.querySelector("#tab-cronograma").textContent, "Plano");
     a.run('S.ajustes.direcao="tj";go("hoje")'); await tick();
     assert.ok(visiveis().includes("tribunal"));
     a.run('S.ajustes.direcao="dpe";go("informativos")'); await tick();
     assert.equal(a.d.querySelector("#tab-sessao").getAttribute("aria-selected"), "true", "aba aberta por Estudar marca Estudar");
+    a.run('go("cronograma")'); await tick();
+    assert.equal(a.d.querySelector("#tab-cronograma").getAttribute("aria-selected"), "true", "Plano marcado no Cronograma");
+    assert.equal(a.d.querySelector("#tab-sessao").getAttribute("aria-selected"), "false");
+    a.d.querySelector("#tab-hoje").click(); await tick();
+    assert.equal(a.run("S.tab"), "hoje");
+    assert.equal(a.d.querySelector("#tab-cronograma").getAttribute("aria-selected"), "false");
+    a.d.querySelector("#tab-cronograma").click(); await tick();
+    assert.equal(a.run("S.tab"), "cronograma", "a aba Plano abre o Cronograma");
+  } finally { a.close(); }
+});
+
+// monta um cronograma do DPE/RN com todos os dias da semana, como a pessoa faria na tela do Cronograma
+function comPlano(a) {
+  a.run('go("cronograma")');
+  const sel = a.d.querySelector("#crEdital"); sel.value = "rn-2025"; sel.dispatchEvent(new a.dom.window.Event("change", { bubbles: true }));
+  a.d.querySelector("#crForm").dispatchEvent(new a.dom.window.Event("submit", { bubbles: true, cancelable: true }));
+  a.run('S.ajustes.cronograma.dias=[1,2,3,4,5,6,7];go("hoje")');
+}
+
+test("Hoje: o Próximo passo leva direto ao assunto pendente e Já estudei marca e avança", async () => {
+  const a = ambiente();
+  try {
+    a.run('go("hoje")'); await tick();
+    assert.equal(a.d.querySelector(".hg-proximo").hidden, true, "sem plano, o passo 1 já é o próximo passo (sem repetir)");
+    assert.equal(a.d.querySelector(".hg-progresso").hidden, true);
+    comPlano(a); await tick();
+    const box = a.d.querySelector(".hoje-guia .hg-proximo");
+    assert.equal(box.hidden, false);
+    const blocos = [...a.d.querySelectorAll("#cronogramaHoje .cr-bloco.cr-tarefa")];
+    assert.ok(blocos.length >= 1, "assuntos de hoje como tarefas");
+    for (const b of blocos) {
+      const acoes = [...b.querySelectorAll(".cr-acoes .btn")];
+      assert.ok(acoes.length >= 1, "cada assunto tem ao menos um botão direto: " + b.querySelector("h4").textContent);
+      assert.ok(acoes[0].classList.contains("primary"), "o primeiro é a ação principal");
+      assert.ok(acoes.every(x => x.dataset.crIr), "todo botão leva a um lugar do app");
+      assert.ok(b.querySelector("[data-cr-concluir]"), "e o Marcar como estudado");
+    }
+    assert.equal(box.querySelector("b").textContent, blocos[0].querySelector("h4").textContent, "próximo passo = primeiro assunto pendente");
+    assert.equal(box.querySelector("[data-hg-proximo]").textContent, blocos[0].querySelector(".cr-acoes .btn").textContent.trim());
+    assert.match(a.d.querySelector(".hg-progresso").textContent, new RegExp(`^Hoje: 0 de ${blocos.length} assuntos? estudados?`));
+    assert.match(a.d.querySelector('.hg-passo[data-passo="1"] h3').textContent, blocos.length > 1 ? new RegExp(`Estude os ${blocos.length} assuntos de hoje`) : /Estude o assunto de hoje/);
+    const k = blocos[0].querySelector("[data-cr-concluir]").dataset.crConcluir, antes = box.querySelector("b").textContent;
+    box.querySelector("[data-hg-marcar]").click(); await tick();
+    assert.equal(a.run(`S.ajustes.cronogramaProgresso[${JSON.stringify(k)}].concluido`), true, "Já estudei marca o assunto");
+    const depois = a.d.querySelector(".hoje-guia .hg-proximo b").textContent;
+    assert.notEqual(depois, antes, "o próximo passo avança");
+    assert.match(a.d.querySelector(".hg-progresso").textContent, new RegExp(`^Hoje: 1 de ${blocos.length}`));
+    assert.equal(a.d.querySelectorAll(".hoje-guia").length, 1);
+  } finally { a.close(); }
+});
+
+test("assunto: o atalho de Lei seca é a lei da disciplina ou a citada no edital, não uma coincidência de palavras", () => {
+  const lei = (id, nome, curto, x) => ({ id, nome, curto, grupos: [{ t: "G", itens: [{ a: 1, x }] }] });
+  const a = ambiente([], [
+    lei("epcd", "Estatuto da Pessoa com Deficiência · Lei 13.146/2015", "PcD", "Direito à convivência familiar e comunitária da pessoa com deficiência."),
+    lei("cf", "Constituição Federal · artigos essenciais", "CF", "O Estado promoverá, na forma da lei, a defesa do consumidor; direito do consumidor."),
+    lei("cdc", "CDC · Código de Defesa do Consumidor", "CDC", "Direito do consumidor: política nacional das relações de consumo."),
+  ]);
+  try {
+    const acoes = k => a.run(`JSON.stringify(window.DPE_ACOES_DO_ASSUNTO(${JSON.stringify(k)}))`);
+    const eca = JSON.parse(acoes("df-2026:direito_da_crianca_e_adolescente:d014_t007"));
+    const titEca = a.run('window.DPE_CONTEUDOS_EDITAIS["df-2026"].disciplinas.find(d=>d.id==="direito_da_crianca_e_adolescente").topicos.find(t=>t.id==="d014_t007").titulo');
+    assert.match(titEca, /conviv[eê]ncia familiar/i, "fixture: assunto do ECA sobre convivência familiar");
+    assert.ok(!eca.some(x => x.tipo === "lei"), "o Estatuto da PcD não vira atalho de um assunto do ECA: " + JSON.stringify(eca));
+    assert.ok(eca.length >= 1, "sempre há um caminho (buscar no app)");
+    const cons = JSON.parse(acoes("df-2026:direito_do_consumidor:d015_t001"));
+    const L = cons.find(x => x.tipo === "lei");
+    assert.ok(L, "consumidor ganha atalho de Lei seca");
+    assert.equal(L.ir.dip, "cdc");
+    assert.equal(L.txt, "Lei seca: CDC");
+  } finally { a.close(); }
+});
+
+test("Hoje: contadores do topo dizem o que contam", async () => {
+  const a = ambiente();
+  try {
+    a.run('S.ajustes.prova="2099-01-10";go("hoje")'); await tick();
+    const pills = [...a.d.querySelectorAll(".hoje-guia .hg-pills .pill")].map(p => p.textContent);
+    assert.ok(pills.some(t => /^🎯 \d+ dias? para a prova$/.test(t)), "dias para a prova: " + pills);
+    assert.ok(pills.some(t => /^🔥 \d+ dias? seguidos?$/.test(t)), "sequência: " + pills);
   } finally { a.close(); }
 });
 

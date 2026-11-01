@@ -118,8 +118,9 @@ test("Cronograma: cada assunto com trechos ganha o botão que abre o e-book no p
     a.change("#crEdital", "tjpb-2026"); a.submit(); a.run("S.ajustes.cronograma.dias=[1,2,3,4,5,6,7];");
     a.run("renderHoje()");
     const btn = [...a.d.querySelectorAll("#cronogramaHoje [data-cr-ir]")].find(x => JSON.parse(x.dataset.crIr).v === "eb");
-    assert.ok(btn, "botão Estudar os trechos doutrinários no bloco do dia");
-    assert.match(btn.textContent, /Estudar os trechos doutrinários/);
+    assert.ok(btn, "botão Ler os trechos no bloco do dia");
+    assert.match(btn.textContent, /Ler os trechos \(2\)/);
+    assert.ok(btn.classList.contains("primary"), "é a ação principal do assunto");
     const o = JSON.parse(btn.dataset.crIr);
     const b = a.run('(()=>{const p=S.ajustes.cronograma,ag=window.DPE_CRONOGRAMA_MOTOR.gerarAgenda(p,0);const d=ag.dias[(dayToDate(today()).getDay()||7)-1];return d.blocos.find(b=>b.disciplinaId);})()');
     assert.deepEqual([o.id, o.ci, o.a], ["ce-tjpb", eb.mapa[b.topicoId][0], `eb${eb.mapa[b.topicoId][0]}-${eb.mapa[b.topicoId][1]}`]);
