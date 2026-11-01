@@ -1,0 +1,919 @@
+{
+ "id": "tjmt-2024-tecnico-judiciario-nivel-medio",
+ "nome": "TJMT 2024 · Técnico Judiciário - Nível Médio",
+ "cargo": "Concurso de servidores · prova tipo 1",
+ "banca": "FGV",
+ "gabarito": "definitivo",
+ "questoes": [
+  {
+   "n": 1,
+   "materia": "Língua Portuguesa",
+   "enunciado": "Assinale a frase abaixo que mostra a sabedoria como algo socialmente útil.",
+   "alternativas": {
+    "A": "Quanto menos inteligente um homem é, menos misteriosa a existência lhe parece.",
+    "B": "Sabedoria escondida e tesouro invisível, para que servem ambos?",
+    "C": "O aumento da sabedoria pode ser medido com exatidão pela diminuição do mau humor.",
+    "D": "Nada induz tanto o homem a duvidar muito como o saber pouco.",
+    "E": "Não sei mais o que aprendi. O pouco que ainda sei, adivinhei."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 2,
+   "materia": "Língua Portuguesa",
+   "enunciado": "Assinale a frase que se mostra incoerente em relação ao mundo real.",
+   "alternativas": {
+    "A": "Não se pode pisar duas vezes no mesmo rio.",
+    "B": "Um falso problema sempre é melhor do que problema nenhum.",
+    "C": "De duas coisas, uma é certa: sempre existe uma terceira.",
+    "D": "Todos, eles nem ao menos sabem o quanto a metade é maior do que o todo.",
+    "E": "Um doido pode ensinar algo a um sábio."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 3,
+   "materia": "Língua Portuguesa",
+   "enunciado": "Assinale a frase em que houve troca indevida entre MAU e MAL.",
+   "alternativas": {
+    "A": "Um mau começo leva a um mau final.",
+    "B": "Quando um mau caráter prospera, a abundância gera a insolência.",
+    "C": "Há diminuição do mau humor com o aumento da sabedoria.",
+    "D": "Um pedante é um homem que dirige mal intelectualmente.",
+    "E": "A imaginação sempre aumenta o mau que em nós está oculto."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 4,
+   "materia": "Língua Portuguesa",
+   "enunciado": "Assinale a frase em que a preposição COM tem valor semântico de “companhia”.",
+   "alternativas": {
+    "A": "Recompense a injúria com justiça e a gentileza com gentileza.",
+    "B": "Só os tolos brigam com os demais.",
+    "C": "Desconfio de todo idealista que lucra com seu ideal.",
+    "D": "Aprendizagem é a arte de saber usar o senso comum com vantagem.",
+    "E": "A sabedoria com a capacidade são capazes de mudar o mundo."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 5,
+   "materia": "Língua Portuguesa",
+   "enunciado": "Observe a seguinte frase: Saber que não se sabe constitui talvez o mais difícil e delicado saber. A única modificação de termos nessa frase que altera o seu significado original é:",
+   "alternativas": {
+    "A": "“Saber que não se sabe” equivale a “Não saber que se sabe”.",
+    "B": "“Saber que não se sabe” equivale a “Ter consciência da ignorância”.",
+    "C": "“constitui talvez” equivale a “talvez constitua”.",
+    "D": "“o mais difícil e delicado saber” equivale a “o saber mais difícil e delicado”.",
+    "E": "“o mais difícil e delicado saber” equivale a “o mais delicado e difícil saber”."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 6,
+   "materia": "Língua Portuguesa",
+   "enunciado": "As frases abaixo estão divididas em dois segmentos. Assinale a frase em que a relação entre esses dois segmentos é, respectivamente, de causa e consequência.",
+   "alternativas": {
+    "A": "Todo mundo precisa crer em algo. / Creio que vou tomar uma cerveja.",
+    "B": "Nem tudo o que se enfrenta pode ser modificado, / mas nada pode ser modificado até que seja enfrentado.",
+    "C": "O sábio busca a sabedoria; / o tolo a encontrou.",
+    "D": "Mestre não é quem sempre ensina, / mas quem de repente aprende.",
+    "E": "Sabedoria é saber o que fazer; / virtude é saber fazê-lo."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 7,
+   "materia": "Língua Portuguesa",
+   "enunciado": "Leia com atenção a seguinte frase: Observo o universo e não posso imaginar que exista esse relógio e não haja um relojoeiro. Essa frase defende a ideia de que",
+   "alternativas": {
+    "A": "o mundo está uma confusão insolúvel.",
+    "B": "o universo foi criado por um criador.",
+    "C": "os relógios atuais não precisam de relojoeiros.",
+    "D": "nada mais é como era antes.",
+    "E": "a observação é a base do conhecimento."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 8,
+   "materia": "Língua Portuguesa",
+   "enunciado": "Assinale a frase em que a substituição de um substantivo pelo infinitivo correspondente foi feita de forma a tornar a frase incoerente.",
+   "alternativas": {
+    "A": "O começo é a parte mais importante do trabalho / Começar é a parte mais importante do trabalho.",
+    "B": "Às vezes, a maior sabedoria consiste em simular a loucura / Às vezes, a maior sabedoria consiste em simular o enlouquecer.",
+    "C": "Para a sobrevivência você precisa fazer concessões / Para sobreviver, você precisa fazer concessões.",
+    "D": "A paciência é o melhor remédio para problemas / A paciência é o melhor remédio para problematizar.",
+    "E": "Ensine-me a arte do esquecimento / Ensine-me a arte de esquecer."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 9,
+   "materia": "Língua Portuguesa",
+   "enunciado": "Assinale a frase em que os termos sublinhados são antônimos.",
+   "alternativas": {
+    "A": "Por excesso de sabedoria, o sábio torna-se tolo.",
+    "B": "Tudo acontece por causa do conflito e da necessidade.",
+    "C": "Quem tem senso não depende de incenso.",
+    "D": "Não espereis moralidade de quem não tem pontualidade.",
+    "E": "Quem olha para trás não olha para a frente."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 10,
+   "materia": "Língua Portuguesa",
+   "enunciado": "Observe a frase: Muita gente há que imagina ser o domingo uma espécie de esponja que limpa todos os pecados da semana. Assinale a opção em que a modificação proposta para os termos da frase se mostra inadequada.",
+   "alternativas": {
+    "A": "Muita gente = Muitos há que imaginam.",
+    "B": "uma espécie = um tipo de.",
+    "C": "que limpa todos os pecados = limpante de todos os pecados.",
+    "D": "que imagina ser o domingo = imaginativa de ser o domingo.",
+    "E": "da semana = semanais."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 11,
+   "materia": "Legislação Institucional",
+   "enunciado": "Joana, servidora ocupante de cargo de provimento efetivo no âmbito do Estado de Mato Grosso, passou a integrar determinada carreira no âmbito da Administração Pública direta, o que significa dizer que, no âmbito dessa carreira, na sistemática da Lei Complementar estadual nº 4/1990,",
+   "alternativas": {
+    "A": "os padrões são subdivididos em classes.",
+    "B": "a carreira é subdividida em quadro e em comissão.",
+    "C": "a classe abrange carreiras de cargos do mesmo grupo funcional.",
+    "D": "cada classe é subdividida em cargos de provimento efetivo e em cargos em comissão.",
+    "E": "a classe agrupa cargos, sendo desdobrada em padrões, que correspondem à remuneração dos cargos."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 12,
+   "materia": "Legislação Institucional",
+   "enunciado": "João, servidor do Tribunal de Justiça do Estado de Mato Grosso, foi incumbido por seu superior hierárquico de encaminhar determinado expediente ao órgão jurisdicional com competência para julgar o incidente de assunção de competência disciplinado no Art. 947 do Código de Processo Civil. Após analisar o Regimento Interno do Tribunal de Justiça do Estado de Mato Grosso, João concluiu corretamente que esse órgão é",
+   "alternativas": {
+    "A": "uma Seção.",
+    "B": "o Órgão Especial.",
+    "C": "um Grupo de Câmaras.",
+    "D": "a Câmara de Direito Privado.",
+    "E": "uma Turma de Câmaras Cíveis Reunidas."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 13,
+   "materia": "Legislação Institucional",
+   "enunciado": "Em razão da declaração de desnecessidade do cargo público de provimento efetivo que ocupava, Maria, servidora pública estável, foi posta em disponibilidade. Poucos meses depois, retornou ao serviço público, passando a ocupar cargo de atribuição e remuneração compatíveis com o anteriormente ocupado. Nesse caso, à luz da Lei Complementar do Estado do Mato Grosso nº 4/1990, é correto afirmar, em relação a Maria, que ocorreu",
+   "alternativas": {
+    "A": "o seu aproveitamento.",
+    "B": "a sua readaptação.",
+    "C": "a sua reintegração.",
+    "D": "a sua recondução.",
+    "E": "a sua reversão."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 14,
+   "materia": "Legislação Institucional",
+   "enunciado": "Em determinado processo em tramitação no primeiro grau de jurisdição do Poder Judiciário do Estado de Mato Grosso, a parte interessada solicitou ao magistrado responsável pela unidade judiciária a restauração de alguns documentos excluídos do sistema PJe. À luz da sistemática estabelecida no Código de Normas da Corregedoria-Geral de Justiça, é correto afirmar que o ato de restauração deve ser promovido",
+   "alternativas": {
+    "A": "pelo magistrado.",
+    "B": "pelo Chefe da Secretaria.",
+    "C": "pela Coordenadoria de Gestão de Documentos.",
+    "D": "pela Coordenadoria de Tecnologia da Informação.",
+    "E": "pela parte interessada, com homologação do magistrado."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 15,
+   "materia": "Legislação Institucional",
+   "enunciado": "Ana, servidora do Poder Judiciário do Estado de Mato Grosso, requereu, ao Presidente do Tribunal de Justiça, o deferimento de sua aposentadoria voluntária, o que foi indeferido em razão do não preenchimento dos requisitos exigidos pela ordem jurídica. Irresignada com o teor da referida decisão, Ana realizou pesquisas com o objetivo de verificar a possibilidade, ou não, de interpor recurso, tendo concluído corretamente, à luz do Regimento Interno do Tribunal de Justiça do Estado de Mato Grosso, que a decisão é",
+   "alternativas": {
+    "A": "irrecorrível.",
+    "B": "passível de reexame pelo Órgão Especial.",
+    "C": "passível de reexame pelo Tribunal Pleno.",
+    "D": "passível de reexame pela Corregedoria-Geral.",
+    "E": "passível de reexame pelo Conselho da Magistratura."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 16,
+   "materia": "Legislação Institucional",
+   "enunciado": "Antônio, servidor do Poder Judiciário do Estado de Mato Grosso, tinha o hábito de deixar de comparecer ao serviço, sem que houvesse causa que pudesse justificar suas ausências ao amparo da lei. João, seu superior hierárquico, constatou que, no período de março do ano X a março do ano X1, Antônio teve um total de sessenta dias de faltas em dias alternados. Ao realizar uma análise preliminar do regime disciplinar ao qual Antônio está sujeito, João concluiu corretamente que",
+   "alternativas": {
+    "A": "essa conduta equivale ao abandono de emprego.",
+    "B": "as faltas devem ser analisadas em conjunto, sendo cominada a sanção de demissão.",
+    "C": "as faltas ao serviço não configuram infração disciplinar, mas exigem o desconto dos dias não trabalhados, de modo a não caracterizar o enriquecimento ilícito.",
+    "D": "como as faltas não ocorreram no mesmo exercício, não é possível analisá-las em conjunto para fins de caracterização de infração disciplinar que enseje a demissão.",
+    "E": "como as faltas não ocorreram em dias contínuos, cada uma delas configura infração autônoma, com sanção de suspensão, devendo ser reconhecida a continuidade."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 17,
+   "materia": "Legislação Institucional",
+   "enunciado": "Certo demandante em uma relação processual entendeu que o despacho prolatado pelo Juiz de Direito de uma unidade judiciária do Estado de Mato Grosso, para o qual não há recurso previsto na lei processual, teria promovido a inversão tumultuária dos atos e fórmulas legais do processo. Em situações dessa natureza, à luz do Código de Divisão e Organização Judiciárias do Estado de Mato Grosso, é correto afirmar que o referido despacho",
+   "alternativas": {
+    "A": "é irrecorrível.",
+    "B": "é suscetível de agravo.",
+    "C": "é suscetível de correição parcial.",
+    "D": "é suscetível de reclamação disciplinar.",
+    "E": "é suscetível de reclamação processual."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 18,
+   "materia": "Legislação Institucional",
+   "enunciado": "Em razão de indícios de que determinado servidor do Poder Judiciário do Estado de Mato Grosso vinha constantemente praticando infrações disciplinares, a autoridade competente instaurou processo disciplinar para promover a sua apuração imediata. Na ocasião, consultou o regime disciplinar aplicável ao servidor quanto à possibilidade, ou não, de ser determinado o seu afastamento preventivo. Ao fim de sua análise, concluiu corretamente que o referido afastamento",
+   "alternativas": {
+    "A": "pode ser determinado pela autoridade instauradora, pelo prazo de até sessenta dias, prorrogável por igual prazo, sem prejuízo da remuneração.",
+    "B": "não pode ser determinado, considerando a presunção de inocência que ampara o servidor até a decisão condenatória definitiva.",
+    "C": "pode ser determinado pela autoridade instauradora, enquanto perdurar o processo disciplinar, sem prejuízo da remuneração.",
+    "D": "somente pode ser determinado por decisão judicial, a partir de requerimento da Procuradoria-Geral do Estado, sendo assegurado o contraditório e a ampla defesa.",
+    "E": "pode ser determinado pela autoridade instauradora, pelo prazo de até noventa dias, prorrogável por igual prazo, mas apenas se for cominada a pena de demissão às infrações praticadas."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 19,
+   "materia": "Legislação Institucional",
+   "enunciado": "Em um processo judicial em tramitação na primeira instância do Poder Judiciário do Estado de Mato Grosso, a parte demandante requereu a citação da parte demandada, sendo que esta última reside no Estado de São Paulo. Como o mandado deve ser cumprido com o uso de recursos tecnológicos, sendo expedido pelo Núcleo de Justiça 4.0, é correto afirmar, com base no Código de Normas da Corregedoria-Geral da Justiça, que ele deve ser encaminhado",
+   "alternativas": {
+    "A": "à Central de Mandados da comarca onde reside a parte demandada.",
+    "B": "à Central de Mandados da comarca onde reside a parte demandante.",
+    "C": "à Central Única de Mandados do Conselho Nacional de Justiça.",
+    "D": "ao Órgão Central de Precatórios do Estado de Mato Grosso.",
+    "E": "à Corregedoria-Geral da Justiça do Estado de São Paulo."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 20,
+   "materia": "Legislação Institucional",
+   "enunciado": "No ano X, com a proximidade do período de recesso forense, Maria, servidora ocupante de cargo de provimento efetivo no âmbito do Poder Judiciário do Estado de Mato Grosso, lotada em segunda instância, foi informada de que atuaria no referido período em um órgão com competência jurisdicional. Considerando os balizamentos estabelecidos pelo Código de Divisão e Organização Judiciárias do Estado de Mato Grosso, é correto afirmar que Maria deve atuar junto",
+   "alternativas": {
+    "A": "a uma Câmara Especial.",
+    "B": "à Presidência do Tribunal.",
+    "C": "à Câmara Cível ou Criminal que seja sorteada.",
+    "D": "ao Desembargador designado para responder pelo expediente forense no período.",
+    "E": "a uma das Câmaras Cíveis ou Criminais, que funcionam em caráter contínuo e ininterrupto. MATEMÁTICA, RACIOCÍNIO LÓGICO E"
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 21,
+   "materia": "Estatística",
+   "enunciado": "O gráfico a seguir apresenta a quantidade total de pontos marcados por um mesmo jogador de basquete em cada uma das 5 partidas que disputou. A média aritmética de pontos por partida desse jogador é atualizada ao fim de cada partida. Por exemplo, ao final da 3ª partida, essa média passou a ser igual a 20. É correto afirmar que, após a realização da 5ª partida, a média aritmética de pontos por partida do jogador\n[Esta questão usa figura ou quadro que não foi extraído do caderno: confira o enunciado completo na prova original.]",
+   "alternativas": {
+    "A": "foi reduzida em 10 pontos.",
+    "B": "foi reduzida em 2 pontos.",
+    "C": "permaneceu a mesma.",
+    "D": "foi aumentada em 2,5 pontos.",
+    "E": "foi aumentada em 10 pontos."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 22,
+   "materia": "Estatística",
+   "enunciado": "Uma olaria fabrica tijolos maciços e homogêneos com 25 cm de comprimento, 14 cm de largura e 6 cm de altura. Cada tijolo tem 2,8 kg. A fim de economizar matéria-prima, ela passará a fabricá-los com 8 furos idênticos e, com isso, fará com que cada tijolo passe a ter 1 g/cm3. A massa de matéria-prima economizada por cada furo é de",
+   "alternativas": {
+    "A": "82,5 g.",
+    "B": "85,0 g.",
+    "C": "87,5 g.",
+    "D": "90,0 g.",
+    "E": "92,5 g."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 23,
+   "materia": "Estatística",
+   "enunciado": "Um dia, Mateus levou certa quantidade de balas para casa e as distribuiu entre seus 3 filhos, Marcos, Lucas e João, de forma proporcional, respectivamente, a 5, 7 e 8. É correto afirmar que, se as balas tivessem sido repartidas entre os 3 filhos de forma proporcional, respectivamente, a 3, 3 e 4,",
+   "alternativas": {
+    "A": "todos receberiam uma quantidade menor de balas.",
+    "B": "Marcos receberia menos balas, enquanto Lucas receberia mais balas.",
+    "C": "João receberia mais balas, mas a quantidade de Marcos permaneceria inalterada.",
+    "D": "Lucas receberia menos balas, mas a quantidade de João permaneceria inalterada.",
+    "E": "todos receberiam a mesma quantidade de balas."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 24,
+   "materia": "Estatística",
+   "enunciado": "Sejam p, q e r proposições simples. Se a proposição composta p ∨ q → r tem valor lógico falso, é correto concluir que",
+   "alternativas": {
+    "A": "r é falso e que p e q não são simultaneamente falsos.",
+    "B": "q é verdadeiro e que p e r são simultaneamente falsos.",
+    "C": "p é verdadeiro e que q e r são simultaneamente falsos.",
+    "D": "r é falso e que p e q são simultaneamente verdadeiros.",
+    "E": "q é verdadeiro e que p e r não são simultaneamente verdadeiros."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 25,
+   "materia": "Estatística",
+   "enunciado": "Marialva joga um jogo no qual, a cada rodada, só é possível vencer ou perder. Nesse jogo, a cada vitória, ganha-se 1 ponto e, a cada derrota, perde-se 1 ponto. O gráfico a seguir ilustra a pontuação acumulada por Marialva (eixo das ordenadas) após cada uma das 12 rodadas que disputou (eixo das abscissas). Com base no gráfico, é correto afirmar que, nessas 12 rodadas, Marialva\n[Esta questão usa figura ou quadro que não foi extraído do caderno: confira o enunciado completo na prova original.]",
+   "alternativas": {
+    "A": "venceu a 4ª rodada.",
+    "B": "perdeu a última rodada.",
+    "C": "perdeu mais do que venceu.",
+    "D": "perdeu 4 vezes seguidas.",
+    "E": "venceu 3 vezes seguidas."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 26,
+   "materia": "Estatística",
+   "enunciado": "Em uma urna, há 4 bolas brancas e 6 bolas pretas. Três dessas bolas serão retiradas da urna simultaneamente e ao acaso. A probabilidade de que as bolas sorteadas não sejam todas de uma mesma cor é igual a",
+   "alternativas": {
+    "A": "18/90.",
+    "B": "24/90.",
+    "C": "48/90.",
+    "D": "60/90.",
+    "E": "72/90."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 27,
+   "materia": "Estatística",
+   "enunciado": "Um número inteiro e positivo foi elevado ao quadrado. Em seguida, o valor obtido foi multiplicado por 4 e o resultado final foi 576. Se a ordem dessas operações fosse trocada, o resultado obtido seria",
+   "alternativas": {
+    "A": "144.",
+    "B": "576.",
+    "C": "765.",
+    "D": "1.704.",
+    "E": "2.304."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 28,
+   "materia": "Estatística",
+   "enunciado": "Se a área de um triângulo equilátero é 100√3 cm2, então, seu perímetro é",
+   "alternativas": {
+    "A": "60 cm.",
+    "B": "50 cm.",
+    "C": "40 cm.",
+    "D": "30 cm.",
+    "E": "20 cm."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 29,
+   "materia": "Estatística",
+   "enunciado": "Considere dois conjuntos A e B cujos elementos são números naturais tais que: A ∪ B tem apenas 9 elementos; A ∩ B tem apenas 4 elementos; A – B tem apenas 3 elementos. É correto concluir que B – A",
+   "alternativas": {
+    "A": "é um conjunto vazio.",
+    "B": "é um conjunto unitário.",
+    "C": "tem 2 elementos, apenas.",
+    "D": "tem 3 elementos, apenas.",
+    "E": "tem 4 elementos, apenas."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 30,
+   "materia": "Estatística",
+   "enunciado": "Dada uma palavra, qualquer ordenação de suas letras é considerada um anagrama, inclusive a própria palavra. Por exemplo, são anagramas da palavra ANO: ANO – AON – NOA – NAO – OAN – ONA Considere os anagramas que podem ser feitos com as letras da palavra TRIBUNA de modo que esses anagramas comecem com T, terminem com A e que as letras R e B nunca estejam em posições adjacentes. A quantidade total desses anagramas é",
+   "alternativas": {
+    "A": "144.",
+    "B": "72.",
+    "C": "54.",
+    "D": "36.",
+    "E": "24."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 31,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Ao fim de um processo revolucionário e com amplo apoio popular, foi promulgada a Constituição do País Alfa. Apesar de se tratar de texto extremamente avançado, ele se mostrou incompatível com os contornos da sociedade em que deveria projetar a sua força normativa e as exigências do processo político, passando a ser visto, pouco a pouco, como um verdadeiro corpo estranho na ordem jurídica de Alfa. A referida Constituição deve ser classificada como",
+   "alternativas": {
+    "A": "nominal.",
+    "B": "cesarista.",
+    "C": "normativa.",
+    "D": "outorgada.",
+    "E": "dogmática."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 32,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Maria, filha da Governadora do Estado Alfa, pretendia iniciar sua vida pública concorrendo a um cargo eletivo, mas tinha dúvidas se o parentesco com sua mãe configuraria óbice à realização desse objetivo. Após analisar a sistemática constitucional, Maria concluiu corretamente que ela",
+   "alternativas": {
+    "A": "somente pode concorrer, a nível estadual, a cargos do Poder Legislativo.",
+    "B": "pode concorrer a cargos eletivos a nível municipal e federal, não estadual.",
+    "C": "está inelegível para concorrer a qualquer eletivo no curso do mandato de sua mãe.",
+    "D": "está inelegível para concorrer a qualquer eletivo no âmbito de jurisdição de sua mãe.",
+    "E": "pode concorrer a qualquer cargo eletivo, pois o parentesco não importa em restrição aos direitos políticos."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 33,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Anne, de nacionalidade originária russa, se naturalizou brasileira. Em momento posterior, casou-se com Pedro, de nacionalidade espanhola. Para facilitar sua integração à família do marido, decidiu se naturalizar espanhola. Anos depois, ao retornar ao Brasil, teve dúvidas se mantinha a nacionalidade brasileira. Após consultar a sistemática constitucional, Anne concluiu corretamente que",
+   "alternativas": {
+    "A": "perdeu a nacionalidade brasileira ao se naturalizar espanhola, sem que isto fosse uma condição para o exercício de direitos civis.",
+    "B": "mantém a nacionalidade brasileira, a qual, uma vez adquirida pela naturalização, é suscetível de renúncia, mas não de perda.",
+    "C": "somente perderá a nacionalidade brasileira ao final do processo judicial instaurado para esse fim pelo Ministério da Justiça.",
+    "D": "mantém a nacionalidade brasileira, a qual, uma vez adquirida pela naturalização, é permanente, sendo insuscetível de perda ou renúncia.",
+    "E": "mantém a nacionalidade brasileira, embora possa vir a perdê- la em razão de sentença judicial, presente uma causa que a justifique, ou de renúncia."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 34,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em razão da escalada da violência no Estado Alfa, um grupo de amigos iniciou discussões com o objetivo de criar uma associação civil, com organização e táticas inspiradas na atuação militar, formada por pessoas que tenham direito ao porte regular de arma de fogo. O objetivo seria desenvolver uma forma de autodefesa dos membros da associação, com estrita observância dos direitos humanos. Ao analisarem a sistemática constitucional em relação à viabilidade de realizar o objetivo almejado, concluíram corretamente que",
+   "alternativas": {
+    "A": "é vedada a formação de uma associação com essas características.",
+    "B": "associação dessa natureza envolve interesses tipicamente locais, o que pressupõe autorização municipal.",
+    "C": "como os membros que constituirão a associação têm direito ao porte regular de arma de fogo, ela seria lícita.",
+    "D": "é livre o direito de associação, logo, independente de os seus membros portarem, ou não, armas de fogo, é lícita a constituição da associação.",
+    "E": "considerando que os fins da futura associação estão relacionados às competências da União, cabe a esse ente federativo autorizar a sua constituição."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 35,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "O grupo político dominante na área territorial do Estado Alfa iniciou uma grande mobilização da população com o objetivo de se desmembrar a sua região norte, de modo a formar o Estado Sigma. Os líderes do movimento, paralelamente à divulgação de suas ideias, iniciaram estudos com o objetivo de verificar a forma como a ordem constitucional disciplinava essa temática, permitindo, ou não, a realização do objetivo almejado. Ao fim dos seus estudos, concluíram corretamente que",
+   "alternativas": {
+    "A": "a forma federativa obsta o direito de secessão dos Estados- membros, logo, o referido desmembramento é vedado.",
+    "B": "é necessária a realização de estudo de viabilidade estadual, a aprovação da população diretamente interessada e a edição de lei estadual.",
+    "C": "o desmembramento exige a edição de lei complementar do Congresso Nacional, após aprovação da população diretamente interessada.",
+    "D": "é de competência exclusiva do Congresso Nacional a decisão sobre o desmembramento, sendo ainda exigida a prévia aprovação pela Assembleia Legislativa de Alfa.",
+    "E": "a decisão a respeito do desmembramento está situada na esfera de autonomia política de Alfa, tendo como única condicionante a exigência de ouvir a população interessada."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 36,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Pedro, Deputado Estadual da Assembleia Legislativa do Estado Sigma, solicitou que sua assessoria analisasse a possibilidade de ser apresentada proposta de emenda à Constituição Estadual, tendo por objeto a uniformização do teto remuneratório a ser adotado no âmbito do referido ente federativo, não se aplicando, apenas, aos membros do Poder Legislativo. A assessoria respondeu corretamente que o teto remuneratório",
+   "alternativas": {
+    "A": "deve observar a separação dos poderes, que seria infringida com a pretendida uniformização.",
+    "B": "pode ser uniformizado, tomando-se por base o subsídio de Desembargador do Tribunal de Justiça de Sigma.",
+    "C": "é o subsídio de Ministro do Supremo Tribunal Federal, o que não pode ser desconsiderado pela Constituição Estadual.",
+    "D": "já é fixado pela Constituição da República, o que afasta a possibilidade de a Constituição Estadual incursionar na temática.",
+    "E": "deve ser definido em lei de iniciativa conjunta dos Poderes Executivo, Legislativo e Judiciário, não sendo matéria própria para a Constituição Estadual."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 37,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "O Pleno do Tribunal de Justiça do Estado Alfa aprovou a proposta orçamentária do Poder Judiciário estadual para o exercício financeiro do ano seguinte. Considerando a sistemática estabelecida pela ordem constitucional, é correto afirmar que essa proposta",
+   "alternativas": {
+    "A": "deve ser encaminhada ao Poder Executivo.",
+    "B": "deve ser submetida ao Conselho Nacional de Justiça.",
+    "C": "deve ser encaminhada ao Presidente da Assembleia Legislativa do Estado Alfa.",
+    "D": "deve ser encaminhada à Comissão de Orçamento e Finanças da Assembleia Legislativa do Estado Alfa.",
+    "E": "balizará a execução orçamentária do próximo exercício, desde que observe a lei de diretrizes orçamentárias."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 38,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Determinado magistrado respondeu a processo administrativo disciplinar (PAD) perante o Tribunal de Justiça ao qual estava vinculado por ter alegadamente praticado uma infração disciplinar. Como o magistrado foi absolvido em razão da falta de provas, a pretensa vítima consultou o seu advogado em relação à possibilidade de a matéria ser reapreciada pelo Conselho Nacional de Justiça (CNJ). Foi corretamente esclarecido à vítima que o CNJ",
+   "alternativas": {
+    "A": "pode reapreciar o PAD a qualquer tempo.",
+    "B": "pode reapreciar o PAD até um ano após o seu julgamento.",
+    "C": "pode reapreciar o PAD enquanto a infração disciplinar não estiver prescrita.",
+    "D": "somente pode reapreciar as decisões absolutórias proferidas em caráter não unânime.",
+    "E": "somente pode reapreciar as decisões disciplinares de caráter condenatório, não as absolutórias."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 39,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Tertuliano foi aprovado em concurso público e acabou de ser investido no cargo de técnico do Tribunal de Justiça do Estado de Mato Grosso. Em razão disso, ele foi questionado por seus familiares acerca da espécie de agente público que corresponde ao mencionado cargo, bem como sobre qual a garantia prevista na Constituição em tal situação. Diante dessa situação hipotética, Tertuliano respondeu corretamente que, em razão do cargo que ocupa, ele é considerado",
+   "alternativas": {
+    "A": "contratado temporariamente, sujeito ao regime estatutário, sem qualquer garantia prevista na Constituição.",
+    "B": "empregado público, submetido ao regime trabalhista, que apenas tem as garantias previstas na consolidação das leis do trabalho.",
+    "C": "servidor público ocupante de cargo efetivo, para o qual a Constituição assegura a garantia da estabilidade, mediante o preenchimento dos respectivos requisitos.",
+    "D": "agente público vitalício, que apenas poderá perder o cargo em razão de sentença transitada em julgado após o preenchimento dos respectivos requisitos.",
+    "E": "servidor público ocupante de cargo exclusivamente em comissão, que não possui qualquer garantia, por ser hipótese de livre nomeação e exoneração."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 40,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Após analisar as disposições da Lei nº 14.133/2021, Graziela observou que a mencionada norma expressamente indica situações em que seus ditames são aplicáveis, bem como aponta outras que a ela não se subordinam. Nesse contexto, Graziela verificou que, das hipóteses elencadas abaixo, a que não se subordina ao regime da lei em questão é o contrato",
+   "alternativas": {
+    "A": "de locação.",
+    "B": "de compra, inclusive, por encomenda.",
+    "C": "de concessão de uso de bem público.",
+    "D": "que tenha por objeto operação de crédito.",
+    "E": "de prestação de serviços, inclusive os técnico-profissionais especializados."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 41,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Ao estudar o conteúdo programático de determinado edital de concurso público, Elizabeth verificou corretamente que os órgãos públicos",
+   "alternativas": {
+    "A": "excepcionalmente podem ter capacidade processual.",
+    "B": "prioritariamente têm personalidade jurídica de direito público própria.",
+    "C": "aprioristicamente são criados e extintos por Decreto do Poder Executivo.",
+    "D": "originariamente não podem ser considerados fruto da desconcentração.",
+    "E": "primariamente têm legitimidade passiva para as demandas objetivando a responsabilidade civil do Estado."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 42,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Marília, servidora pública do Estado de Mato Grosso, no exercício de suas atribuições, praticou conduta elencada no rol dos atos de improbidade administrativa que atentam contra os princípios da Administração Pública, inexistindo dúvida de que ela agiu com culpa, pois foi negligente ao realizar a sua função. Diante dessa situação hipotética, considerando o disposto na Lei nº 8.429/92, com a redação conferida pela Lei nº 14.230/2021, é correto afirmar que",
+   "alternativas": {
+    "A": "Marília responde pelo ato de improbidade em questão tanto na modalidade culposa, quanto na dolosa, diante do dever de pautar a sua conduta pelos princípios da Administração Pública.",
+    "B": "o elemento subjetivo não é aferido para fins de responsabilização de Marília pelo ato de improbidade em comento, na medida em que a responsabilidade é objetiva.",
+    "C": "o mero exercício da função ou desempenho de competências públicas não é suficiente para caracterizar o aludido ato de improbidade administrativa, sendo necessária a comprovação de ato doloso com fim ilícito.",
+    "D": "a conduta culposa de Marília apenas poderia ser responsabilizada com base na norma em questão se o ato de improbidade fosse tipificado como aquele que causa prejuízo ao erário.",
+    "E": "os atos de improbidade que atentam contra os princípios da Administração são a única hipótese em que não se admite a responsabilização por culpa no âmbito da norma em análise."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 43,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Os instrumentos consensuais têm ganhado relevo no direito administrativo moderno, diante da compreensão de que são mecanismos que têm a aptidão para melhor promover o interesse público. Tal entendimento decorre da releitura de certo princípio da Administração Pública considerado implícito na Constituição. O mencionado princípio é o da",
+   "alternativas": {
+    "A": "moralidade.",
+    "B": "eficiência.",
+    "C": "publicidade.",
+    "D": "legalidade.",
+    "E": "indisponibilidade do interesse público."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 44,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Diante de uma situação em que foi necessário delimitar as peculiaridades do poder disciplinar, Sofia verificou corretamente que o poder disciplinar é",
+   "alternativas": {
+    "A": "privilégio conferido aos agentes públicos superiores em detrimento dos subalternos, independentemente do exercício da função administrativa.",
+    "B": "instrumento conferido à Administração Pública que respalda a aplicação de penalidades aos servidores públicos.",
+    "C": "prerrogativa exigida para fins de delegação de competência, que apenas pode ser realizada para órgãos e agentes hierarquicamente inferiores.",
+    "D": "fundamento para viabilizar a edição de Decretos autônomos, que criam direitos e obrigações para os cidadãos.",
+    "E": "substrato para a aplicação de sanções pela Administração Pública em situações que não estão submetidas à relação de sujeição especial."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 45,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Lucíola, servidora pública do Estado de Mato Grosso, com vistas a responder a um questionamento realizado por autoridade superior, teve que indicar uma situação que se caracteriza como controle interno da Administração Pública. Nesse cenário, uma resposta correta a ser dada por Lucíola é:",
+   "alternativas": {
+    "A": "a revogação de ato administrativo que não mais atenda ao interesse público, no âmbito da autotutela.",
+    "B": "a invalidação de ato administrativo eivado de vício insanável reconhecida pelo Judiciário em decorrência de demanda ajuizada pelo interessado.",
+    "C": "o controle contábil, orçamentário, financeiro, patrimonial e operacional realizado com o auxílio dos Tribunais de Contas.",
+    "D": "a concessão da ordem judicial em mandado de segurança impetrado por quem teve violado direito líquido e certo.",
+    "E": "o ato de sustação dos contratos da Administração adotado diretamente pela Casa Legislativa após o pronunciamento da respectiva Corte de Contas."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 46,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Imagine que, no âmbito de sua organização administrativa, o Estado Ômega esteja realizando estudos para criar uma pessoa jurídica de direito privado, na forma de sociedade anônima, cujas ações com direito a voto pertençam em sua maioria ao mencionado ente federativo, para a realização de atividade econômica de relevante interesse público. Considerando as entidades integrantes da Administração Direta e da Administração Indireta, é correto afirmar que aquela delimitada na situação descrita corresponde a",
+   "alternativas": {
+    "A": "uma autarquia, integrante da Administração Indireta.",
+    "B": "uma empresa pública, integrante da Administração Direta.",
+    "C": "uma entidade do terceiro setor, integrante da Administração Indireta.",
+    "D": "uma fundação de direito privado, integrante da Administração Direta.",
+    "E": "uma sociedade de economia mista, integrante da Administração Indireta."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 47,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Marina, 16 anos, celebrou um contrato de compra e venda de um bem móvel de alto valor, sem a assistência de seus pais ou representantes legais. Após alguns dias, sua mãe, ao tomar conhecimento do contrato, deseja anulá-lo, alegando que Marina não possuía capacidade para realizar tal negócio jurídico sozinha. Considerando as disposições do Código Civil sobre capacidade, é correto afirmar que",
+   "alternativas": {
+    "A": "Marina tem capacidade plena para realizar negócios jurídicos, pois, com 16 anos, já é considerada relativamente capaz e pode contratar sozinha.",
+    "B": "Marina, por ser menor de idade, é absolutamente incapaz e todos os seus atos são considerados nulos, sem qualquer possibilidade de serem confirmados por representante legal.",
+    "C": "Marina é relativamente incapaz para os atos da vida civil, portanto o contrato pode ser anulado, pois ela celebrou o negócio jurídico sem assistência dos pais ou de representante legal.",
+    "D": "o contrato celebrado por Marina é automaticamente válido, pois o Código Civil permite que menores de idade celebrem contratos de compra e venda de bens móveis.",
+    "E": "o contrato de compra e venda realizado por Marina é considerado inexistente, pois ela não possui capacidade civil para praticar atos da vida civil, independentemente do valor do bem."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 48,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A empresa Beta Ltda., com sede declarada na cidade de São Paulo, possui diversas filiais em outras cidades e estados, incluindo uma filial no Rio de Janeiro e outra em Belo Horizonte. Em um processo judicial movido por um cliente insatisfeito com determinado serviço prestado exclusivamente pela filial do Rio de Janeiro, surge a questão de onde deve ser fixado o domicílio para efeitos do processo, considerando os artigos do Código Civil sobre o domicílio das pessoas jurídicas. Com base nas disposições do Código Civil sobre o domicílio da pessoa jurídica, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "O domicílio da empresa Beta Ltda., para todos os fins legais, é sempre a sua sede, localizada na cidade de São Paulo, independentemente de onde o serviço foi prestado.",
+    "B": "A pessoa jurídica de direito privado, como a empresa Beta Ltda., pode ter como domicílio tanto a sede quanto a localização de qualquer uma de suas filiais, dependendo do local onde se desenvolvem suas atividades e obrigações específicas.",
+    "C": "O domicílio, para efeitos de processos judiciais contra a empresa Beta Ltda., é exclusivamente o local da prestação de serviço, independentemente da existência de sede ou outras filiais.",
+    "D": "Como a filial no Rio de Janeiro está localizada em um estado diferente da sede, o domicílio, para fins judiciais, será automaticamente a sede, pois somente esta pode ser considerada o domicílio principal da pessoa jurídica.",
+    "E": "A empresa Beta Ltda. pode escolher, discricionariamente, qualquer local onde tenha uma filial para ser considerada como domicílio, independentemente da relação do local com o serviço questionado no processo."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 49,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "João, proprietário de um terreno em área urbana, obteve em dezembro de 2022 a licença municipal para iniciar a construção de um prédio residencial em seu terreno e iniciou imediatamente as obras. Em 15 de janeiro de 2023, foi publicada a Lei X, que dispõe sobre novas regras de urbanização, prevendo: i) mudanças nos critérios para aprovação de projetos de construção em áreas residenciais; ii) que ela entrará em vigor após 90 dias da sua publicação; e iii) ampliação do recuo mínimo em relação à via pública para todas as obras, sem especificar a incidência para obras em andamento. No momento da publicação da Lei X, a obra de João já se encontrava em estágio avançado, com a fundação e o primeiro pavimento concluídos, mas não atendia ao novo recuo mínimo determinado. Para cumprir a nova exigência, João teria que fazer alterações estruturais em seu projeto, o que acarretaria grande prejuízo financeiro. Diante disso, ele pretende questionar a aplicação da nova norma ao seu projeto, argumentando que a Lei X não deve incidir em sua obra, já que ela estava em andamento antes da vigência das novas regras. Com base na Lei de Introdução às Normas do Direito Brasileiro (LINDB), assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "A Lei X entrará em vigor imediatamente após sua publicação, e João deverá adequar sua obra ao novo recuo mínimo exigido, independentemente do prazo de 90 dias para vigência estabelecido no texto legal.",
+    "B": "Para decidir se a Lei X deve ser aplicada ao caso de João, é necessário considerar os efeitos concretos de sua aplicação ao projeto já em andamento, respeitando direitos adquiridos e ponderando os impactos financeiros e estruturais.",
+    "C": "A Lei X não pode ser aplicada ao caso de João, pois a LINDB impede a aplicação de novas leis a todas as situações em andamento, preservando a segurança jurídica e os direitos adquiridos.",
+    "D": "A ambiguidade no texto da Lei X não permite questionar sua aplicação ao caso de João, uma vez que eventuais lacunas interpretativas não afetam a obrigatoriedade da norma.",
+    "E": "Caso a Lei X não tivesse previsto prazo de vacância, ela entraria em vigor em 45 dias, e João teria que ajustar sua obra ao recuo mínimo exigido, conforme o prazo supletivo previsto na LINDB."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 50,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Carlos, proprietário de uma fazenda, decide transferir uma parte do terreno para seu sobrinho João. Essa parte inclui árvores frutíferas, uma casa de madeira e um lago artificial que foi construído para irrigação. Além disso, no terreno há uma colheitadeira que Carlos usa ocasionalmente e um sistema de irrigação fixo ligado ao solo. Durante a transferência, surgem dúvidas sobre a classificação desses bens de acordo com o Código Civil. Com base nas disposições do Código Civil sobre a classificação dos bens, é correto afirmar que",
+   "alternativas": {
+    "A": "as árvores frutíferas plantadas no terreno são classificadas como bens móveis, pois podem ser separadas do solo e transportadas.",
+    "B": "a colheitadeira é classificada como bem imóvel, pois é utilizada diretamente nas atividades do terreno agrícola.",
+    "C": "o sistema de irrigação fixo, ligado ao solo, é considerado um bem imóvel, pois integra-se de maneira permanente ao solo e atende à finalidade da propriedade.",
+    "D": "o lago artificial, por ser uma estrutura criada artificialmente, é classificado como um bem móvel.",
+    "E": "a casa de madeira é um bem móvel, pois, apesar de estar no terreno, não faz parte da propriedade rural em si e pode ser removida."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 51,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A Associação Cultural Horizonte, uma associação civil sem fins lucrativos, foi constituída com o objetivo de promover atividades culturais e artísticas. O estatuto da associação estabelece que qualquer alteração nas finalidades ou nos objetivos da entidade exige a aprovação de, no mínimo, dois terços dos associados. No entanto, alguns membros da associação desejam alterar o estatuto para transformar a entidade em uma organização voltada à defesa e promoção de interesses econômicos dos associados, com o propósito de desenvolver atividades que proporcionem retorno financeiro direto aos membros. Considerando as normas do Código Civil sobre associações civis, assinale a afirmativa correta quanto à possibilidade de alteração da finalidade da Associação Cultural Horizonte.",
+   "alternativas": {
+    "A": "A transformação da Associação Cultural Horizonte em uma organização de defesa e promoção de interesses econômicos é permitida desde que todos os associados aprovem a alteração do estatuto.",
+    "B": "A associação pode alterar livremente suas finalidades e objetivos, mesmo sem a aprovação dos associados, pois a vontade da maioria dos membros prevalece.",
+    "C": "A Associação Cultural Horizonte, como qualquer associação civil, não pode ser transformada em uma organização voltada à defesa e promoção de interesses econômicos, pois o Código Civil não permite que associações civis tenham finalidades lucrativas.",
+    "D": "A transformação da associação em uma organização de interesses econômicos é válida, desde que a alteração estatutária seja homologada pelo poder judiciário.",
+    "E": "A transformação em uma associação de interesses econômicos é possível desde que a maioria simples dos associados presentes em assembleia aprove a alteração do estatuto."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 52,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Júlio, de 17 anos, reside permanentemente com seus pais em Belo Horizonte. No entanto, em razão da necessidade de gerir uma pequena sociedade empresária herdada de sua avó, foi recentemente emancipado e passa grande parte do tempo em São Paulo, onde aluga um apartamento para se hospedar durante os compromissos profissionais. Júlio recebe parte de sua correspondência comercial em São Paulo e também mantém documentos da empresa em seu escritório na cidade. Recentemente, ele foi citado em uma ação judicial em São Paulo, mas pretende questionar a validade da citação, argumentando que, por ser menor de idade e residir com os pais, seu domicílio é Belo Horizonte. Com base no Código Civil Brasileiro, e nas disposições sobre domicílio e capacidade civil, é correto afirmar que",
+   "alternativas": {
+    "A": "assiste razão a Júlio, pois é menor de idade e seu domicílio deve ser obrigatoriamente o local onde reside com os pais, em Belo Horizonte.",
+    "B": "não assiste razão a Júlio, pois mesmo sendo menor, tem capacidade plena por ser emancipado e pode ter São Paulo como domicílio para efeitos legais.",
+    "C": "assiste razão a Júlio, pois independentemente da emancipação, possui domicílio único em Belo Horizonte, onde reside com os pais.",
+    "D": "não assiste razão a Júlio, pois o domicílio de uma pessoa menor de idade é modificado por atividade empresarial.",
+    "E": "assiste razão a Júlio, pois em razão da sua idade, não possui capacidade plena para responder em processos judiciais sem a presença dos pais."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 53,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "João ajuizou ação indenizatória contra Pedro, pleiteando a condenação deste último ao pagamento de indenização por danos morais. Finda a fase instrutória, o juiz proferiu sentença fundamentada em documentos apresentados por João em relação aos quais não foi dada a oportunidade a Pedro para se manifestar. Em razão disso, Pedro interpôs recurso de apelação, sustentando ter havido a violação a uma norma fundamental do processo civil. Com base no caso acima, a seguinte norma fundamental foi violada pela sentença:",
+   "alternativas": {
+    "A": "Princípio da eficiência.",
+    "B": "Princípio do contraditório.",
+    "C": "Princípio da proteção à coisa julgada material.",
+    "D": "Princípio da irrecorribilidade das decisões interlocutórias em separado.",
+    "E": "Princípio da imparcialidade."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 54,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Regina foi citada em ação movida por Maria, requerendo indenização a título de danos materiais, fundada na ocorrência de acidente de trânsito. Em sede de contestação, Regina alegou que o juízo era relativamente incompetente para a causa, argumentando que, por tal razão, um pressuposto processual de validade estava ausente. Entre os pressupostos processuais abaixo, assinale o que pode ser considerado como inexistente no caso relatado.",
+   "alternativas": {
+    "A": "A ausência de litispendência.",
+    "B": "A capacidade de ser parte.",
+    "C": "A inexistência de coisa julgada.",
+    "D": "A legitimidade passiva de Regina.",
+    "E": "O juízo regularmente competente."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 55,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "De acordo com o Código de Processo Civil, a carta rogatória será concedida para a prática de atos processuais fora do território nacional ou para a execução de atos processuais em território nacional a pedido do Poder Judiciário de outro país em nosso território. Nesse contexto, a competência para conceder o exequatur a uma carta rogatória no Brasil é do",
+   "alternativas": {
+    "A": "Tribunal de Justiça.",
+    "B": "Supremo Tribunal Federal.",
+    "C": "Superior Tribunal de Justiça.",
+    "D": "Ministério das Relações Exteriores.",
+    "E": "Juízo federal de primeira instância."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 56,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Setembrino ajuizou ação contra Marcos, nada indicando sobre o porquê do ajuizamento e tampouco qual providência jurisdicional pleiteava. Ao analisar a inicial, o juiz identificou que faltavam dois dos elementos essenciais da ação. No contexto do Código de Processo Civil, os elementos da ação que estão ausentes no caso concreto são",
+   "alternativas": {
+    "A": "partes e causa de pedir.",
+    "B": "causa de pedir e pedido.",
+    "C": "partes, pedido e causa de pedir.",
+    "D": "valor da causa, pedido e competência do juízo.",
+    "E": "valor da causa, instrumento de mandato e partes."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 57,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Bom Transporte Ltda, pessoa jurídica com sede em Belo Horizonte (MG), ajuizou ação de cobrança em face da Pneus Bons Ltda, que possui sede em São Paulo (SP), em razão do inadimplemento de obrigação de pagar. O contrato entre as partes previa a realização de serviço de transporte de cargas entre Belo Horizonte (MG) e Rio de Janeiro (RJ), o qual foi realizado pela Bom Transporte Ltda em prol da Pneus Bons Ltda, a qual não pagou a contraprestação devida. A ação proposta pela Bom Transporte Ltda foi distribuída à 1ª Vara Cível da Comarca de Belo Horizonte. Em sede de contestação, a Pneus Bons Ltda argumentou que a competência seria do foro de São Paulo, requerendo a remessa dos autos àquela comarca. Tomando o caso concreto como premissa, à luz das disposições do Código de Processo Civil, é correto afirmar que",
+   "alternativas": {
+    "A": "o foro competente é o do domicílio do autor, por se tratar de demanda fundada em direito obrigacional, sendo legítima a escolha da comarca de Belo Horizonte pela Bom Transporte Ltda, prestigiando-se o direito de acesso à justiça.",
+    "B": "o local de destino da carga é o foro competente, nos termos do Código de Processo Civil, por se tratar do local aonde a Bom Transporte Ltda sofreu o dano.",
+    "C": "a competência territorial no caso acima é atribuída ao foro do domicílio do réu, ou seja, a comarca de São Paulo, por ser a sede da Pneus Bons Ltda.",
+    "D": "o foro competente será aquele contratualmente fixado e, na hipótese de disposição expressa acerca do tema, atribuir-se-á a competência ao Distrito Federal.",
+    "E": "diante da ausência de previsão de foro específico no contrato, a competência territorial é conferida ao foro do domicílio do autor, no caso, a comarca de Belo Horizonte."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 58,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Maria ajuizou ação de indenização por danos materiais e morais em razão de um acidente de trânsito ocorrido em Curitiba (PR). O acidente envolveu veículo de propriedade de João, domiciliado em São Paulo (SP), e dirigido por um terceiro, Rafael, domiciliado em Curitiba (PR). O contrato de seguro do veículo, no entanto, foi firmado com uma seguradora sediada no Rio de Janeiro/RJ. Maria, domiciliada em Curitiba, ajuizou a ação no foro de Curitiba (PR). A seguradora, em sede de contestação, formulou preliminar de incompetência relativa, alegando que a competência é exclusiva do foro do seu domicílio, no caso, o Rio de Janeiro. Considerando-se as disposições do Código de Processo Civil sobre o tema, é correto afirmar que",
+   "alternativas": {
+    "A": "a competência territorial é atribuída privativamente ao foro do domicílio de João, proprietário do veículo, qual seja, São Paulo (SP).",
+    "B": "a ação pode ser proposta em Curitiba (PR), foro do local do fato danoso, conforme previsto no Código de Processo Civil.",
+    "C": "a competência territorial para as ações em face de seguradoras é exclusiva do foro de sua sede, no caso, o Rio de Janeiro (RJ).",
+    "D": "a ação deve ser proposta no foro do domicílio do condutor do veículo, que é a comarca de Curitiba (PR), pois ele é quem conduzia o veículo no momento do acidente.",
+    "E": "a competência é do foro do domicílio do autor, ou seja, Curitiba (PR), pois ações indenizatórias em todo e qualquer caso são de competência do foro de domicílio do demandante."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 59,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A norma penal que incrimina determinada conduta ou agrava a situação do investigado, acusado ou condenado não pode ser aplicada a fatos anteriores à sua vigência. A norma penal incriminadora não deve conter expressões dúbias e imprecisas. Diante de tais afirmações, é correto afirmar que tais postulados retratam, respectivamente,",
+   "alternativas": {
+    "A": "os princípios da alteridade e da objetividade, que decorrem do princípio da singularidade.",
+    "B": "os princípios do in dubio pro reo e da significância, que decorrem do princípio da retroatividade.",
+    "C": "os princípios da singularidade e da superveniência, que decorrem do princípio da culpabilidade.",
+    "D": "os princípios da subsidiariedade e da proporcionalidade, que decorrem do princípio da fragmentariedade.",
+    "E": "os princípios da irretroatividade e da taxatividade, que decorrem do princípio da legalidade."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 60,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Acerca da aplicação da lei penal no tempo, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "É aplicável a teoria da ubiquidade, haja vista que se considera praticado o crime no momento da ação e do resultado.",
+    "B": "É aplicável a teoria da consequência, haja vista que se considera praticado o crime no momento do resultado.",
+    "C": "É aplicável a teoria da conduta ou da atividade, haja vista que se considera praticado o crime no momento da ação ou omissão.",
+    "D": "É aplicável a teoria da alternatividade, haja vista que se considera praticado o crime no momento da ação ou do resultado.",
+    "E": "É aplicável a teoria da paridade, haja vista que, a depender do delito, considera-se praticado o crime desde o momento da ação até a produção do resultado."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 61,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Após ser aprovado em concurso público, João, cidadão brasileiro, viajou ao Paraguai para comemorar e, após discutir com um vendedor ambulante, foi baleado. João conseguiu retornar ao Brasil, mas faleceu no hospital. Diante de tal situação hipotética, acerca da aplicação da lei penal no espaço é correto afirmar que é aplicável a teoria",
+   "alternativas": {
+    "A": "da atividade, haja vista que se considera praticado o crime estritamente no lugar da prática da conduta criminosa, independentemente de se tratar de ação ou omissão.",
+    "B": "da ambulatoriedade, haja vista que se considera praticado o crime no lugar onde o agente for encontrado.",
+    "C": "da ubiquidade, haja vista que se considera praticado o crime no lugar em que ocorreu a ação ou omissão, bem como onde se produziu ou deveria produzir-se o resultado.",
+    "D": "da paridade, haja vista que, a depender das circunstâncias e do tipo penal, considera-se praticado o crime no lugar em que, segundo o dolo do agente, deveria ter sido produzido o resultado.",
+    "E": "consequencialista, haja vista que se considera praticado o crime estritamente no lugar onde se produziu ou deveriam ter sido produzidos os efeitos da conduta criminosa."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 62,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Após animada pescaria e farto consumo de bebida alcoólica, os amigos Jacó e Isaque iniciaram uma discussão sobre futebol. Irritado, Jacó resolveu atear fogo no barco em que estavam, embora ambos não soubessem nadar. Havia somente um colete inflável disponível e Jacó apressou-se em pegá-lo. Jacó ainda tentou salvar seu amigo, mas Isaque acabou morrendo afogado no naufrágio. Diante de tal situação hipotética, é correto afirmar que",
+   "alternativas": {
+    "A": "Jacó agiu em legítima defesa, pois não é obrigado a sacrificar sua vida para salvar a vida de outra pessoa.",
+    "B": "Jacó agiu em estado de necessidade, pois o risco de morte para ambos exclui a ilicitude de seu comportamento.",
+    "C": "Jacó não teve intenção de matar e, portanto, agiu no exercício regular do direito de salvar sua própria vida.",
+    "D": "Jacó e Isaque assumiram livremente o risco de se lançarem ao mar sem saberem nadar, logo, não há conduta ilícita.",
+    "E": "Jacó praticou o crime de homicídio."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 63,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Adão praticou cinco furtos contra mulheres na mesma cidade no intervalo de um mês. Após a terceira infração penal, entrou em vigor uma lei que aumentou a pena aplicável ao crime de furto. Diante de tal situação hipotética, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "Por força do princípio da irretroatividade, a lei referida não se aplica a nenhum dos furtos.",
+    "B": "Por força do princípio da irretroatividade, a lei referida somente se aplica aos furtos posteriores à sua vigência.",
+    "C": "A lei referida se aplica a todos os furtos cometidos em continuidade.",
+    "D": "A lei anterior mais benéfica é aplicável a todos os furtos cometidos em continuidade delitiva.",
+    "E": "Ante os furtos continuadamente cometidos, Adão deverá ser apenado com a média aritmética das sanções previstas."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 64,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Miguel, funcionário público, combina com Mário, desempregado, a subtração de bens do Município, valendo-se o primeiro, sem a ciência de Mário, das oportunidades proporcionadas pelo cargo que ocupa. Acerca dessa situação hipotética, é correto afirmar que",
+   "alternativas": {
+    "A": "Miguel cometeu o crime de apropriação indébita.",
+    "B": "Miguel praticou o crime de peculato.",
+    "C": "Miguel praticou o crime de descaminho.",
+    "D": "Mário praticou o crime de concussão.",
+    "E": "Mário cometeu o crime de associação criminosa."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 65,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Acerca do inquérito policial, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "O inquérito policial não pode ser encerrado antes de esgotado o prazo legal de sua duração, salvo por solicitação de arquivamento pelo Ministério Público.",
+    "B": "Nos crimes de ação penal privada, o inquérito policial pode ser instaurado mediante requisição da vítima, do Poder Judiciário e do Ministério Público.",
+    "C": "O requerimento de instauração do inquérito policial deve obrigatoriamente conter a individualização do indiciado e as razões de convicção sobre a autoria delitiva.",
+    "D": "Qualquer pessoa pode comunicar a ocorrência de infração penal à autoridade policial, que deverá obrigatoriamente instaurar inquérito policial.",
+    "E": "Nos crimes em que a ação penal depender de representação, o inquérito policial não poderá ser iniciado sem essa providência."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 66,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em relação ao tema ação penal, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "Nos casos em que a ação penal for privativa do ofendido, a queixa não poderá ser aditada pelo Ministério Público, que, no entanto, poderá intervir nos atos subsequentes do processo.",
+    "B": "A queixa contra um dos autores do crime não obriga o processamento de todos, devendo o Ministério Público manifestar-se sobre a sua divisibilidade.",
+    "C": "A renúncia ao exercício do direito de queixa em relação a um dos autores do crime se estende obrigatoriamente a todos os demais.",
+    "D": "O perdão concedido a um dos querelados se estende a todos os demais, descabendo manifestação de recusa.",
+    "E": "A renúncia ao exercício do direito de queixa deverá constar de declaração expressa assinada exclusivamente pelo ofendido."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 67,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Sobre os intervenientes e atos do processo penal, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "A suspeição deve ser declarada de ofício pelo juiz quando este for injuriado pela parte.",
+    "B": "O ofendido ou seu representante legal poderão intervir como assistentes do Ministério Público na ação penal privada.",
+    "C": "O assistente do Ministério Público pode ser admitido no curso do processo apenas até o recebimento da denúncia ou queixa.",
+    "D": "Se o acusado citado por edital não comparecer ou constituir advogado, o processo e o prazo prescricional ficam suspensos.",
+    "E": "As citações a serem realizadas em legações estrangeiras serão efetuadas mediante carta precatória."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 68,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Acerca da sentença penal, avalie as afirmações a seguir: I. Sob pena de nulidade, a sentença deve obrigatoriamente conter os nomes e a identificação integral das partes, bem como a exposição detalhada da acusação e da defesa. II. Na sentença, o juiz não pode atribuir ao fato contido na denúncia ou queixa definição jurídica diversa, sob pena de violação ao dever de imparcialidade. III. Nos crimes de ação pública, o juiz pode proferir sentença condenatória, ainda que o Ministério Público tenha opinado pela absolvição do acusado. Está correto o que se afirma em",
+   "alternativas": {
+    "A": "I, II e III.",
+    "B": "I, apenas.",
+    "C": "II e III, apenas.",
+    "D": "III, apenas.",
+    "E": "I e II, apenas."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 69,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Quanto ao habeas corpus, avalie as afirmações a seguir: I. A coação à liberdade de locomoção será ilegal quando quem a ordenar não tiver competência para fazê-lo. II. O juiz não pode, de ofício, expedir ordem de habeas corpus, sob pena de nulidade por violação ao dever de imparcialidade. III. O habeas corpus poderá ser impetrado por qualquer pessoa, exceto em seu próprio favor. Está correto o que se afirma em",
+   "alternativas": {
+    "A": "I, apenas.",
+    "B": "I e II, apenas.",
+    "C": "I e III, apenas.",
+    "D": "II e III, apenas.",
+    "E": "I, II e III."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 70,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em tema de prisão, assinale a afirmativa correta diante da legislação vigente.",
+   "alternativas": {
+    "A": "Considera-se em flagrante delito quem é encontrado, logo depois do fato, com objetos que façam presumir a autoria delitiva.",
+    "B": "A falta de testemunhas presenciais do delito obsta a lavratura imediata do auto de prisão em flagrante, sob pena de nulidade.",
+    "C": "Nos crimes cuja consumação se protrai no tempo, o agente segue em flagrante delito ainda que cessada a permanência.",
+    "D": "Quando o acusado se recusar a assinar, o auto de prisão em flagrante será assinado apenas pela autoridade policial.",
+    "E": "Na audiência de custódia, o juiz decidirá exclusivamente entre o relaxamento da prisão ou a decretação da prisão preventiva. REDAÇÃO A economia doméstica refere-se à gestão e à organização das finanças e despesas em um lar. Envolve o planejamento e a alocação de recursos financeiros para atender às necessidades básicas de uma família, como alimentação, moradia, saúde, educação, além de trazer o equilíbrio para os gastos supérfluos. O que fazer para atingir-se uma estabilidade financeira doméstica? Quais são os benefícios dessa medida? Diga o que pensa a respeito do tema num texto dissertativo-argumentativo, com extensão entre 20 e 30 linhas, em linguagem culta, dando especial atenção à estruturação lógica do texto. 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 Realização"
+   },
+   "gabarito": "A"
+  }
+ ]
+}

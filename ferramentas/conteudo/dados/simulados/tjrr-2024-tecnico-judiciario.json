@@ -1,0 +1,919 @@
+{
+ "id": "tjrr-2024-tecnico-judiciario",
+ "nome": "TJRR 2024 · Técnico Judiciário",
+ "cargo": "Concurso de servidores · prova tipo 1",
+ "banca": "FGV",
+ "gabarito": "definitivo",
+ "questoes": [
+  {
+   "n": 1,
+   "materia": "Língua Portuguesa",
+   "enunciado": "Há uma série de frases do cotidiano que carecem de lógica. Assinale a única frase abaixo que está integralmente coerente.",
+   "alternativas": {
+    "A": "Pediu ao garçom que lhe trouxesse uma salada de legumes, mas que não pusesse batata.",
+    "B": "Decidiu que pagaria a televisão que o filho comprara, numa parcela única.",
+    "C": "A atriz suicidou-se e foi tirada da banheira desacordada.",
+    "D": "O menino fez a ponta do lápis para que pudesse escrever melhor.",
+    "E": "O secretário só explicou no meio do ano o porquê de ter saído do cargo no ano passado."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 2,
+   "materia": "Língua Portuguesa",
+   "enunciado": "Observe o seguinte trecho: De repente surgiu uma gatinha branca, de olhos verdes, esgueirando-se pelas paredes da sala, que ainda estava desarrumada. Deu alguns passos e estirou-se, como bom felino, sobre o tapete felpudo da sala. O trecho é devidamente classificado, quanto à sua organização discursiva, como",
+   "alternativas": {
+    "A": "descritivo.",
+    "B": "narrativo.",
+    "C": "dissertativo-expositivo.",
+    "D": "dissertativo-argumentativo.",
+    "E": "injuntivo."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 3,
+   "materia": "Língua Portuguesa",
+   "enunciado": "Assinale a opção que mostra uma sequência de acontecimentos e não de ações.",
+   "alternativas": {
+    "A": "O temporal caiu por toda a noite e encheu as ruas.",
+    "B": "O carro derrapou na curva e chocou-se contra a poste.",
+    "C": "O menino abriu o livro e começou a ler.",
+    "D": "O garçom serviu a comida e afastou-se.",
+    "E": "O atendente escreveu o endereço e pôs a caneta na mesa."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 4,
+   "materia": "Língua Portuguesa",
+   "enunciado": "Observe o seguinte texto descritivo: O pássaro esquisito era negro e esculpido em madeira, com os dois pés perfeitamente retos e bem apoiados num pequeno pedaço de um tronco. Em relação ao texto, é correto afirmar que",
+   "alternativas": {
+    "A": "os adjetivos do texto atribuem qualidades ao pássaro.",
+    "B": "o adjetivo “esquisito” mostra o desconhecimento do observador sobre a espécie do pássaro.",
+    "C": "o observador está imóvel em sua observação, enquanto o pássaro está em movimento.",
+    "D": "o fragmento de texto mistura narração e descrição.",
+    "E": "o observador descreve o pássaro num movimento de longe para perto."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 5,
+   "materia": "Língua Portuguesa",
+   "enunciado": "As frases abaixo indicam observações sobre um novo modelo de automóvel. Assinale a observação que apela para a vaidade do futuro comprador.",
+   "alternativas": {
+    "A": "Tenha cuidado com o MX-28: ele atinge 200Km em 10 seg.",
+    "B": "Não tenha vergonha de ser rico: compre o MX-28.",
+    "C": "O MX-28 é o carro mais econômico do mercado.",
+    "D": "Todos estão comprando o MX-28; e você?",
+    "E": "As pessoas vão pedir carona a você, no MX-28."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 6,
+   "materia": "Língua Portuguesa",
+   "enunciado": "O texto abaixo mostra uma função na interação comunicativa com o leitor. Quando ouvir falar bem de um amigo, conte isso a ele. Essa função é a de",
+   "alternativas": {
+    "A": "ensinar.",
+    "B": "informar.",
+    "C": "criticar.",
+    "D": "convencer.",
+    "E": "aconselhar."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 7,
+   "materia": "Língua Portuguesa",
+   "enunciado": "Em um texto publicitário de um pequeno automóvel, há uma foto do carro encimada pelas seguintes palavras: Nem todos os pequenos vêm ao mundo pelados. Sobre esse anúncio, assinale a afirmativa incorreta.",
+   "alternativas": {
+    "A": "A frase mostra a tendência da linguagem publicitária de elaborar ideias de forma criativa.",
+    "B": "No contexto, “pelados” pode significar “sem acessórios”.",
+    "C": "A chegada de um novo automóvel no mercado é comparada ao nascimento de uma criança.",
+    "D": "A frase é construída com base na linguagem lógica.",
+    "E": "As palavras “pequenos” e “pelados” se referem ao carro anunciado."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 8,
+   "materia": "Língua Portuguesa",
+   "enunciado": "O texto argumentativo é aquele que apresenta razões para defender ou atacar uma opinião ou tese, com a finalidade de convencer alguém sobre algo. Assinale o segmento que pode ser classificado como argumentativo, pois mostra uma tese e argumentos.",
+   "alternativas": {
+    "A": "Uma boa mãe é a garantia de uma boa educação, como já dizia Sócrates.",
+    "B": "A macarronada italiana é uma orgia de sabores invulgares.",
+    "C": "Quantas pessoas têm bom ouvido para a música, mas que, ao falar, desentoam.",
+    "D": "Nem sempre os grandes escultores são bons escultores.",
+    "E": "A guerra não é uma diversão, mas sim um caminho para a paz."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 9,
+   "materia": "Língua Portuguesa",
+   "enunciado": "Assinale a frase publicitária que se apoia na sedução para o convencimento de leitor.",
+   "alternativas": {
+    "A": "As roupas de confecção caseira produzem melhor aparência aos usuários",
+    "B": "O Chevrolet já é hoje o carro do futuro em tecnologia!",
+    "C": "O gato é um animal doméstico delicado. Crie um!",
+    "D": "Creia na Bíblia. Leia-a!",
+    "E": "Proteja o meio ambiente: invista na agricultura"
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 10,
+   "materia": "Língua Portuguesa",
+   "enunciado": "Os textos abaixo mostram argumentos em defesa de uma tese. Assinale a opção em que o argumento utilizado está corretamente identificado.",
+   "alternativas": {
+    "A": "Como já sabe a grande maioria da população, as escolas não estão sendo capazes de fornecer uma boa educação ao povo / argumento de autoridade.",
+    "B": "As empresas privadas distribuíram lixeiras pela cidade para que melhore a limpeza urbana / argumento estatístico.",
+    "C": "Todos os funcionários da prefeitura receberão assistência de saúde para que tenham melhor rendimento, diz o atual diretor / argumento apoiado em opinião pessoal.",
+    "D": "Alguns empresários estão evitando investimentos na Argentina em função da inflação alta / argumento apoiado em um estereótipo.",
+    "E": "Os prefeitos de pequenas cidades devem imitar os das grandes cidades, pois os problemas são os mesmos / argumento apoiado numa relação defeituosa de causa/efeito."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 11,
+   "materia": "Língua Portuguesa",
+   "enunciado": "Os argumentos são os pensamentos que demonstram a tese. Eles se apoiam em valores universais, valores de uma maioria, exemplos concretos, dados estatísticos, etimologias, analogias, relações de causa e consequência, fatos etc. Assinale a opção em que o argumento utilizado está corretamente identificado.",
+   "alternativas": {
+    "A": "Faz parte de uma sociedade democrática e justa a igualdade de oportunidades, tanto na educação como no emprego. / argumento apoiado numa generalização.",
+    "B": "Cerca de 80% dos estudantes brasileiros mostram deficiência na compreensão de textos. / argumento apoiado em dados estatísticos.",
+    "C": "A poluição é tão grave como a pobreza. / argumento apoiado em dedução falsa.",
+    "D": "A televisão é incentivadora de violência, bastando ver-se o aumento de homicídios entre jovens. / argumento apoiado em uma atitude da maioria.",
+    "E": "O ano de 2024 mostra alguns problemas novos, que serão superados pela inteligência dos ministros."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 12,
+   "materia": "Língua Portuguesa",
+   "enunciado": "Todo texto bem estruturado mostra um tema e progressão. Assinale a opção em que o progresso do texto é feito por frases que mostram o mesmo tema.",
+   "alternativas": {
+    "A": "As livrarias estão desaparecendo, pois a leitura não está sendo incentivada nas escolas e os donos de lojas comerciais não querem sofrer prejuízos.",
+    "B": "Os turistas trazem benefícios econômicos a um local, mas nem sempre são bem-vindos, pois o país que os recebe pode não estar preparado para um fluxo intenso, necessitando mais investimentos na infraestrutura.",
+    "C": "Automedicar-se é um problema, pois a automedicação, bem passível de erros, pode causar prejuízos à saúde, além de gerar despesas inúteis em alguns casos.",
+    "D": "Os dicionários são livros bastante úteis, assim como os romances históricos, que simultaneamente nos educam e nos trazem conhecimentos.",
+    "E": "Os carros importados são melhores que os nacionais; a importação de carros melhorou a nossa indústria automobilística."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 13,
+   "materia": "Língua Portuguesa",
+   "enunciado": "Minha mãe não deixou de fumar durante a gravidez, por isso tenho um organismo fraco e pouco peso. A argumentação, no caso deste texto, é raciocínio por",
+   "alternativas": {
+    "A": "comparação.",
+    "B": "causa e efeito.",
+    "C": "generalização.",
+    "D": "testemunho de autoridade.",
+    "E": "simplificação exagerada."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 14,
+   "materia": "Língua Portuguesa",
+   "enunciado": "Observe a estruturação da seguinte frase: Os alunos, nessas escolas, são considerados como soldados, fazendo da hierarquia e da disciplina os valores mais importantes do currículo; além disso, a carga horária é bem mais alta do que nas escolas estaduais. Assinale a observação correta sobre ela.",
+   "alternativas": {
+    "A": "O texto mostra progressão por meio da abordagem de um tema único.",
+    "B": "Este fragmento textual deve estar incluído entre os textos argumentativos, pois mostra uma tese e argumentos.",
+    "C": "A analogia entre alunos e soldados não é adequada, pois as finalidades das escolas e dos quartéis são diferentes.",
+    "D": "A comparação entre escolas estaduais e um novo modelo de escola favorece as primeiras.",
+    "E": "A indicação de uma carga horária mais alta funciona como aspecto negativo das escolas citadas."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 15,
+   "materia": "Língua Portuguesa",
+   "enunciado": "Observe o seguinte fragmento textual argumentativo: Cerca de 40% dos caminhões nas estradas mostram problemas mecânicos. O caminhão multado ontem estava com problemas nos freios. O envelhecimento da frota é um grave problema nos transportes. Assinale a observação correta sobre a estruturação desse texto argumentativo.",
+   "alternativas": {
+    "A": "Estruturação sequencial: o acúmulo de argumentos a favor de uma tese.",
+    "B": "Estruturação sequencial dedutiva: apresentação do tema seguido de comprovações que a justificam.",
+    "C": "Estruturação sequencial indutiva: apresentação do tema e dos argumentos que apoiam a tese mostrada ao final do texto.",
+    "D": "Estruturação lógica causa/efeito: indicação das causas de algo identificado a seguir.",
+    "E": "Estruturação dialética em que se apresentam simultaneamente uma tese e sua oposição."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 16,
+   "materia": "Língua Portuguesa",
+   "enunciado": "As frases abaixo são recomendações de como fazer abreviaturas comuns de um vocábulo qualquer. Assinale a opção em que o exemplo de abreviatura dado não corresponde ao da recomendação.",
+   "alternativas": {
+    "A": "Uma abreviatura pode ser formada pela parte inicial do vocábulo: tenente / ten.",
+    "B": "Uma abreviatura pode ser formada pela parte inicial e a letra final na parte superior: artigo / arto.",
+    "C": "As abreviaturas mantêm os acentos das palavras originais: página / pág.",
+    "D": "Por motivo de clareza, devem-se incluir nas abreviaturas todas as consoantes finais da parte abreviada: superfície / super.",
+    "E": "Numa abreviatura, a ordem das letras do vocábulo original deve ser mantida: coronel / cor."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 17,
+   "materia": "Língua Portuguesa",
+   "enunciado": "Assinale a frase abaixo que exemplifica corretamente um adjetivo no grau superlativo absoluto.",
+   "alternativas": {
+    "A": "A situação dos habitantes de algumas cidades gaúchas ficou extremamente grave.",
+    "B": "A questão do uso das câmeras pelos policiais é um dos problemas mais discutidos do momento.",
+    "C": "O problema da educação no Brasil talvez seja mais grave que o problema da saúde.",
+    "D": "O problema dos altos salários em algumas funções públicas é visto como menos grave do que outros desequilíbrios pelos políticos.",
+    "E": "O célebre piloto Ayrton Senna era tão corajoso quanto prudente em suas corridas."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 18,
+   "materia": "Língua Portuguesa",
+   "enunciado": "Verbos abundantes são aqueles que possuem duas ou mais formas equivalentes, o que ocorre predominantemente nos particípios. Assinale a opção em que o verbo indicado não possui as duas formas apresentadas.",
+   "alternativas": {
+    "A": "aceitar: aceitado e aceito.",
+    "B": "matar: matado e morto.",
+    "C": "morrer: morrido e morto.",
+    "D": "pegar: pegado e pego.",
+    "E": "chegar: chegado e chego."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 19,
+   "materia": "Língua Portuguesa",
+   "enunciado": "As frases abaixo são divididas em dois segmentos. Assinale a frase em que a relação lógica entre as duas frases é a da adição.",
+   "alternativas": {
+    "A": "Quando os moderados não fazem o seu trabalho, / os extremistas aparecem.",
+    "B": "Um tirano não melhora / se a vítima oferece a ele concessão sobre concessão.",
+    "C": "Se eu fosse um dos homens da Al Qaeda / não sairia para comprar uma pizza.",
+    "D": "Recebi ordens de só atirar se atirarem contra mim. / Não quero matar ninguém.",
+    "E": "Na periferia, os pais batem nas crianças / e ainda falam que, no futuro, quem vai bater é a polícia."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 20,
+   "materia": "Língua Portuguesa",
+   "enunciado": "Observe a seguinte frase: “Enquanto os socialistas gostam de falar das imperfeições (1) do mercado, os liberais têm medo das imperfeições (2) do governo.” Ocorre nela cinco vezes a preposição DE; os dois exemplos em que essa preposição tem a mesma função, são:",
+   "alternativas": {
+    "A": "de falar / das imperfeições (1).",
+    "B": "das imperfeições (1) / do mercado.",
+    "C": "do mercado / das imperfeições (2).",
+    "D": "do mercado / do governo.",
+    "E": "das imperfeições (2) / do governo."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 21,
+   "materia": "Língua Portuguesa",
+   "enunciado": "Observe a seguinte frase: A situação tá tão feia, minha grana tão escassa, que o vizinho churrasqueia e eu passo o pão na fumaça. Essa frase está expressa em linguagem",
+   "alternativas": {
+    "A": "literária.",
+    "B": "erudita.",
+    "C": "formal.",
+    "D": "popular.",
+    "E": "cuidada."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 22,
+   "materia": "Língua Portuguesa",
+   "enunciado": "Assinale a frase abaixo – retirada do romance Dom Casmurro - em que a palavra ou expressão sublinhada está mal-empregada.",
+   "alternativas": {
+    "A": "“Calou-se outra vez. Quando tornou a falar, tinha mudado; não era ainda a Capitu do costume, mas quase. Estava séria, sem aflição, falava baixo.”",
+    "B": "“É certo que, após algum tempo, modificou os elogios a Capitu, e até lhe fez algumas críticas, disse-me que era um pouco trêfega e olhava por baixo; mas ainda assim, não creio que fossem ciúmes.”",
+    "C": "“Capitu derreou a cabeça, a tal ponto que me foi preciso acudir com as mãos e ampará-la; o espaldar da cadeira era baixo.”",
+    "D": "“E tornava a mim, e via a cama, as paredes, os livros, o chão, ouvia algum som de fora, vago, próximo ou remoto, e logo perdia tudo para sentir somente os beiços de Capitu Sentia-os estirados, embaixo dos meus, igualmente esticados para os dela, e unindo-se uns aos outros.”",
+    "E": "“A sua mão esquerda se pôs já abaixo da minha cabeça, e a sua mão direita me abraçará depois.”"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 23,
+   "materia": "Legislação",
+   "enunciado": "Em decorrência de sua aprovação no concurso público para o cargo de Técnico do Tribunal de Justiça do Estado de Roraima, Denise decidiu verificar as condutas que são proibidas para os respectivos servidores, nos termos da Lei Complementar nº 53/2001 (Regime Jurídico dos Servidores Públicos Civis do Estado de Roraima. Diante dessa hipotética, Denise verificou corretamente que está elencada entre as mencionadas proibições a conduta de",
+   "alternativas": {
+    "A": "dar fé a documentos públicos.",
+    "B": "promover manifestação de apreço ou desapreço no recinto da repartição.",
+    "C": "requerer autorização do chefe imediato, caso necessite ausentar-se do serviço durante o expediente.",
+    "D": "ser acionista de sociedade empresária, ainda que não exerça gerência ou administração.",
+    "E": "cometer a outro servidor atribuições estranhas ao cargo que ocupa, inclusive em situações de emergência e transitórias."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 24,
+   "materia": "Legislação",
+   "enunciado": "Ao ser questionada acerca dos requisitos para a criação de novas Comarcas previstos na Lei Complementar Estadual nº 221/2014 (Novo Código de Organização Judiciária do Estado de Roraima - COJERR), Aline indicou corretamente os seguintes:",
+   "alternativas": {
+    "A": "População mínima de dez mil habitantes e mínimo de cinco mil eleitores inscritos.",
+    "B": "Existência de edificação destinada ao Fórum e população mínima de quinze mil habitantes.",
+    "C": "Residência oficial para magistrado e movimento forense anual não inferior a oitocentos feitos judiciais contenciosos.",
+    "D": "Existência de edificação destinada ao Fórum e população mínima de oito mil habitantes.",
+    "E": "Mínimo de oito mil eleitores inscritos e movimento forense anual não inferior a quinhentos feitos judiciais contenciosos."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 25,
+   "materia": "Legislação",
+   "enunciado": "Entre as competências elencadas para a Justiça Itinerante, nos termos do Regimento Interno do Tribunal de Justiça do Estado de Roraima (Resolução TJRR/TP nº 27/2023), é correto indicar a seguinte:",
+   "alternativas": {
+    "A": "Conciliar e homologar acordos nas causas cíveis, desde que não envolvam matéria de competência dos Juizados Especiais.",
+    "B": "Celebrar convênios com entidades públicas ou privadas para melhor desempenho das atividades de proteção, assistência e vigilância de menores.",
+    "C": "Processar e julgar, de forma especializada, os processos criminais e a execução cível dos feitos relacionados à Violência Doméstica, à luz da Lei Federal nº 11.340, de 7 de agosto de 2006.",
+    "D": "Processar e julgar os feitos relativos à designação de apoiador para os casos de tomada de decisão apoiada, nos termos da Lei Brasileira de Inclusão de Pessoa com Deficiência (Lei Federal nº 13.146/2015).",
+    "E": "Processar e julgar as causas cíveis que estejam entre as suas atribuições, em especial para as pessoas que não preencham os requisitos para a gratuidade de justiça, nos termos da Lei Federal nº 1.060/50, para o exercício do direito de ação."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 26,
+   "materia": "Legislação",
+   "enunciado": "A Resolução TJRR/TP nº 28/2023, que versa sobre a Política de Gestão de Desempenho por Competências, enuncia que a Gestão de Desempenho por Competências é realizada em ciclos, no mínimo, anuais, conforme procedimentos nela previstos, devendo observar fases delimitadas na mencionada norma. Nesse contexto, é correto afirmar que a fase que “consiste em compromisso firmado entre servidor e chefia imediata quanto aos resultados e comportamentos esperados no período a ser avaliado”, é designada",
+   "alternativas": {
+    "A": "plano estratégico.",
+    "B": "avaliação de desempenho.",
+    "C": "feedback pós-avaliação.",
+    "D": "plano de desenvolvimento.",
+    "E": "acordo de desempenho."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 27,
+   "materia": "Legislação",
+   "enunciado": "À luz das disposições preliminares constantes da Lei Complementar nº 53/2001 (Regime Jurídico Único dos Servidores do Estado de Roraima), é correto afirmar que",
+   "alternativas": {
+    "A": "aos servidores submetidos ao regime jurídico em questão é autorizada a prestação de serviços públicos gratuitos, ainda que não exista previsão legal em tal sentido.",
+    "B": "função pública é o conjunto de atribuições e responsabilidades previstas na estrutura organizacional que devem ser cometidas a um servidor, não podendo assim ser confundida com o cargo público.",
+    "C": "a norma em questão é aplicável a todos os servidores e empregados públicos do respectivo Estado, inclusive as categorias que, por disposição constitucional, submetem-se a regime próprio.",
+    "D": "para os efeitos da norma em questão, servidor é todo aquele que exerce, ainda que transitoriamente ou sem remuneração, por eleição, nomeação, designação, contratação ou qualquer outra forma de investidura ou vínculo, mandato, cargo, emprego ou função no âmbito da Administração Pública.",
+    "E": "os cargos e funções públicas são acessíveis a todos os brasileiros e aos estrangeiros, na forma da lei, que preencham os requisitos estabelecidos na legislação pertinente, são criados por lei, com denominação própria e vencimento pago pelos cofres públicos, para provimento efetivo ou em comissão."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 28,
+   "materia": "Legislação",
+   "enunciado": "Afonso, servidor estável no cargo de Técnico Judiciário do Tribunal de Justiça do Estado de Roraima, no exercício de suas atribuições, em serviço, praticou ofensa física a outro servidor, Roberto, tendo desferido inúmeros socos e pontapés que ocasionaram lesões leves ao colega de trabalho, sendo certo que Afonso não atuou em legítima defesa própria ou de outrem. Diante dessa situação hipotética, à luz das disposições acerca do Regime Disciplinar consagrado na Lei Complementar nº 53/2001, é correto afirmar que a conduta de Afonso está prevista entre aquelas que ensejam a penalidade de",
+   "alternativas": {
+    "A": "advertência.",
+    "B": "demissão.",
+    "C": "suspensão de até sessenta dias.",
+    "D": "suspensão de até cento e oitenta dias.",
+    "E": "advertência ou suspensão, a depender da gravidade das lesões do outro servidor."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 29,
+   "materia": "Legislação",
+   "enunciado": "Aos servidores do Tribunal de Justiça do Estado de Roraima é vedado praticar qualquer ato que atente contra os compromissos éticos assumidos no respectivo Código de Ética e os princípios e valores institucionais previstos na Resolução TJRR/TP nº 73/2022. Assinale a opção que enuncia vedação especialmente indicada na mencionada norma.",
+   "alternativas": {
+    "A": "Estabelecer livre interlocução com colegas e superiores hierárquicos, podendo expor ideias, pensamentos e opiniões, respeitando a disponibilidade de cada um.",
+    "B": "Participar ativamente dos movimentos, estudos, encontros, oficinas que se relacionem com treinamentos e melhoria do exercício de suas funções.",
+    "C": "Zelar pela imagem institucional, agindo com cautela em suas manifestações públicas, ressalvado o exercício da livre manifestação do pensamento.",
+    "D": "Utilizar bens do patrimônio institucional para atendimento de atividades de interesse particular, tais como impressora, veículo, equipamentos eletrônicos em geral, material de consumo, telefone e outros.",
+    "E": "Repudiar atitudes discriminatórias ou preconceituosas de qualquer natureza relativamente à etnia, sexo, religião, estado civil, orientação sexual, faixa etária ou condição física especial, ou quaisquer outras formas de discriminação."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 30,
+   "materia": "Legislação",
+   "enunciado": "Considerando o disposto na Lei Complementar Estadual nº 221/2014 (Novo Código de Organização Judiciária do Estado de Roraima - COJERR), é correto afirmar que o órgão maior de inspeção e disciplina, que é composto do Presidente do Tribunal de Justiça, do Vice-Presidente do Tribunal de Justiça e do Corregedor de Justiça é",
+   "alternativas": {
+    "A": "o Conselho da Magistratura.",
+    "B": "o Tribunal Pleno.",
+    "C": "as Câmaras Reunidas.",
+    "D": "a Presidência do Tribunal.",
+    "E": "a Corregedoria-Geral de Justiça."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 31,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A ação direta de inconstitucionalidade ajuizada originariamente perante o Supremo Tribunal Federal é cabível para controle de norma",
+   "alternativas": {
+    "A": "estadual posterior à Constituição Federal de 1988.",
+    "B": "federal anterior à Constituição Federal de 1988.",
+    "C": "municipal anterior à Constituição Federal de 1988.",
+    "D": "municipal posterior à Constituição Federal de 1988.",
+    "E": "distrital posterior anterior à Constituição Federal de 1988."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 32,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Compete ao Supremo Tribunal Federal, precipuamente, a guarda da Constituição, cabendo-lhe as seguintes ações, à exceção de uma. Assinale-a.",
+   "alternativas": {
+    "A": "Processar e julgar, originariamente o mandado de segurança e o habeas data contra atos do Presidente da República, das Mesas da Câmara dos Deputados e do Senado Federal, do Tribunal de Contas da União, do Procurador-Geral da República e do próprio Supremo Tribunal Federal.",
+    "B": "Processar e julgar, originariamente a ação em que todos os membros da magistratura sejam direta ou indiretamente interessados, e aquela em que mais da metade dos membros do indiretamente interessados.",
+    "C": "Homologar sentenças estrangeiras e conceder exequatur às cartas rogatórias.",
+    "D": "Processar e julgar, originariamente o litígio entre Estado estrangeiro ou organismo internacional e a União, o Estado, o Distrito Federal ou o Território.",
+    "E": "Processar e julgar, originariamente nas infrações penais comuns, o Presidente da República, o Vice-Presidente, os membros do Congresso Nacional, seus próprios Ministros e o Procurador- Geral da República."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 33,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "São órgãos da Justiça Federal os Tribunais Regionais Federais. Sobre os referidos tribunais é incorreto afirmar que",
+   "alternativas": {
+    "A": "compõem-se de, no mínimo, sete juízes, recrutados.",
+    "B": "são compostos por um quinto dentre advogados com mais de dez anos de efetiva atividade profissional e membros do Ministério Público Federal com mais de dez anos de carreira.",
+    "C": "são compostos por quatro quintos, mediante promoção de juízes federais com mais de cinco anos de exercício, por antiguidade e merecimento, alternadamente.",
+    "D": "são compostos por brasileiros com mais de trinta e menos de setenta anos de idade.",
+    "E": "são nomeados pelo Presidente do Supremo Tribunal Federal."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 34,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Assinale o ente a seguir que não compõe o Ministério Público da União.",
+   "alternativas": {
+    "A": "Ministério Público Federal.",
+    "B": "Ministério Público do Distrito Federal e Territórios.",
+    "C": "Ministério Público Militar.",
+    "D": "Ministério Público Eleitoral.",
+    "E": "Ministério Público do Trabalho."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 35,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "São privativos de brasileiro nato os seguintes cargos, à exceção de um. Assinale-o.",
+   "alternativas": {
+    "A": "Presidente e Vice-Presidente da República.",
+    "B": "Presidente da Câmara dos Deputados.",
+    "C": "Presidente do Senado Federal.",
+    "D": "Ministro do Supremo Tribunal Federal.",
+    "E": "Governador de Estado."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 36,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Avalie se os direitos sociais, na forma da Constituição, incluem I. o transporte; II. o lazer; III. a segurança; IV. a proteção à infância; V. a proteção ao meio ambiente. Estão corretos os itens",
+   "alternativas": {
+    "A": "I, II e III, apenas.",
+    "B": "III, IV e V, apenas.",
+    "C": "I, II, III e IV, apenas.",
+    "D": "I, II, III e V, apenas.",
+    "E": "I, II, III, IV e V."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 37,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Avalie se são condições de elegibilidade, na forma da lei: I. Filiação partidária. II. Idade mínima de vinte e um anos para Vereador. III. Pleno exercício dos direitos políticos. IV. Alistamento eleitoral. Estão corretos os itens:",
+   "alternativas": {
+    "A": "II e III, apenas.",
+    "B": "I, III e IV, apenas.",
+    "C": "I, II e III, apenas.",
+    "D": "II, III e IV, apenas.",
+    "E": "I, II, III e IV."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 38,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Avalie se a perda ou suspensão de direitos políticos dar-se-á nos casos de I. recusa de cumprir obrigação a todos imposta ou prestação alternativa. II. cancelamento da naturalização por sentença transitada em julgado. III. incapacidade civil provisória. IV. improbidade administrativa. Estão corretos os itens",
+   "alternativas": {
+    "A": "I e II, apenas.",
+    "B": "III e IV, apenas.",
+    "C": "I, II e IV.",
+    "D": "I, II e III.",
+    "E": "II, III e IV."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 39,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "É livre a criação, fusão, incorporação e extinção de partidos políticos, resguardados a soberania nacional, o regime democrático, o pluripartidarismo, os direitos fundamentais da pessoa humana. Em relação ao tema, é correto afirmar que",
+   "alternativas": {
+    "A": "os Deputados Federais, os Deputados Estaduais, os Deputados Distritais e os Vereadores que se desligarem do partido pelo qual tenham sido eleitos não perderão o mandato.",
+    "B": "os partidos políticos, após adquirirem personalidade jurídica, na forma da lei civil, registrarão seus estatutos no Supremo Tribunal Federal.",
+    "C": "somente terão direito a recursos do fundo partidário e acesso gratuito ao rádio e à televisão, na forma da lei, os partidos políticos que obtiverem, nas eleições para a Câmara dos Deputados, no mínimo, 10% (dez por cento) dos votos válidos.",
+    "D": "dos recursos oriundos do Fundo Especial de Financiamento de Campanha e do fundo partidário destinados às campanhas eleitorais, os partidos políticos devem, obrigatoriamente, aplicar 30% (trinta por cento) em candidaturas de pessoas pretas e pardas, nas circunscrições que melhor atendam aos interesses e às estratégias partidárias.",
+    "E": "os partidos políticos devem aplicar no mínimo 1% (um por cento) dos recursos do fundo partidário na criação e na manutenção de programas de promoção e difusão da participação política das mulheres, de acordo com os interesses intrapartidários."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 40,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "As opções a seguir apresentam bens da União, à exceção de uma. Assinale-a.",
+   "alternativas": {
+    "A": "Terras tradicionalmente ocupadas pelos povos originários.",
+    "B": "Recursos naturais da plataforma continental e da zona econômica exclusiva.",
+    "C": "Terras de Mata Atlântica.",
+    "D": "Cavidades naturais subterrâneas e os sítios arqueológicos e pré- histórico.",
+    "E": "Lagos, rios e quaisquer correntes de água em terrenos de seu domínio, ou que banhem mais de um Estado, sirvam de limites com outros países."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 41,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Sobre a competência privativa da União para legislar é incorreto afirmar que é competência privativa da União legislar sobre",
+   "alternativas": {
+    "A": "sobre organização judiciária, do Ministério Público do Distrito Federal e dos Territórios e da Defensoria Pública dos Territórios, bem como organização administrativa destes.",
+    "B": "procedimentos em matéria processual.",
+    "C": "desapropriação.",
+    "D": "regime dos portos, navegação lacustre, fluvial, marítima, aérea e aeroespacial.",
+    "E": "sistema estatístico, sistema cartográfico e de geologia nacionais."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 42,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "O Município reger-se-á por lei orgânica, votada em dois turnos, com o interstício mínimo de dez dias, e aprovada por dois terços dos membros da Câmara Municipal. Sobre os municípios é correto afirmar que",
+   "alternativas": {
+    "A": "o número de Vereadores proporcional à população do Município deverá ser no mínimo de quarenta e dois e máximo de cinquenta e cinco nos Municípios de mais de cinco milhões de habitantes.",
+    "B": "o total da despesa com a remuneração dos Vereadores não poderá ultrapassar o montante de cinco por cento da receita do Município.",
+    "C": "a iniciativa popular de projetos de lei de interesse específico do Município, da cidade ou de bairros, através de manifestação de, pelo menos, um por cento do eleitorado.",
+    "D": "em Municípios de mais de quinhentos mil habitantes, o subsídio máximo dos Vereadores corresponderá a trinta por cento do subsídio dos Deputados Estaduais.",
+    "E": "a Câmara Municipal não gastará mais de trinta setenta por cento de sua receita com folha de pagamento, incluído o gasto com o subsídio de seus Vereadores."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 43,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Rafael, no exercício de suas atribuições como servidor público no cargo de Técnico Judiciário do Tribunal de Justiça do Estado de Roraima, foi questionado sobre quais elementos do ato administrativo podem ser discricionários. Nesse contexto, ele indicou corretamente os seguintes elementos:",
+   "alternativas": {
+    "A": "competência e objeto.",
+    "B": "motivo e finalidade.",
+    "C": "forma e competência.",
+    "D": "motivo e objeto.",
+    "E": "finalidade e forma."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 44,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "José e João estavam estudando juntos para o concurso público para o cargo de Técnico Judiciário do Tribunal de Justiça do Estado de Roraima, quando adentraram o tema relativo a princípios expressos e implícitos da Administração Pública, à luz da Constituição Federal de 1988, contexto em que concluíram corretamente que",
+   "alternativas": {
+    "A": "o princípio da supremacia do interesse público está expresso na Constituição e deve prevalecer sobre os demais princípios consagrados no texto da Lei Maior.",
+    "B": "o princípio da segurança jurídica está expresso na Constituição, de modo que não pode ser aplicado nas hipóteses que envolvem o exercício da autotutela.",
+    "C": "o princípio da consensualidade está implícito na Constituição, resultando da cláusula do Estado Democrático de Direito, buscando mecanismos que envolvam a participação do administrado para melhor atender ao interesse público.",
+    "D": "o princípio da publicidade está implícito na Constituição, revelando-se uma importante ferramenta para fins de viabilizar o controle social da atividade administrativa.",
+    "E": "o princípio da juridicidade está expresso na Constituição e resulta na conclusão de que a Administração é mera executora da lei, inexistindo qualquer papel criativo para o aplicador do direito."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 45,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No âmbito das noções acerca da organização administrativa, merece especial destaque a análise da descentralização, notadamente as peculiaridades atinentes às entidades administrativas que compõem a Administração Indireta, em relação às quais é correto afirmar que apresentam, como característica comum,",
+   "alternativas": {
+    "A": "serem órgãos que não são dotados de personalidade jurídica.",
+    "B": "não haver necessidade de lei para a sua cria criação.",
+    "C": "adotarem a personalidade jurídica de direito privado.",
+    "D": "a ausência de hierarquia em relação ao ente federativo que as criou.",
+    "E": "a inexistência de controle por parte do ente federativo que as criou."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 46,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Suponha que o órgão competente de certo Tribunal de Justiça almeje realizar a aquisição de material de escritório e papelaria, que são considerados bens comuns, para o regular funcionamento de suas atividades, bem como visa a escolher um trabalho técnico de arquitetura para a construção de uma nova sede. Nesse contexto, à luz do disposto na Lei nº 14.133/2021, é correto afirmar que, para as mencionadas contratações, deverão ser utilizadas, respectivamente, as seguintes modalidades de licitação:",
+   "alternativas": {
+    "A": "concorrência e pregão.",
+    "B": "pregão e leilão.",
+    "C": "leilão e diálogo competitivo.",
+    "D": "pregão e concurso.",
+    "E": "leilão e concurso."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 47,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Ao aprofundar os seus conhecimentos acerca dos agentes públicos na Constituição de 1988, à luz da orientação consolidada pelo Supremo Tribunal Federal, Bruna observou corretamente que",
+   "alternativas": {
+    "A": "os cargos e empregos públicos, em regra, podem ser acumulados, independentemente das respectivas atribuições.",
+    "B": "a garantia da estabilidade servidores deve ser assegurada aos empregados públicos, após três anos de efetivo exercício.",
+    "C": "o regime jurídico único dos servidores não pode ser aplicado às entidades autárquicas.",
+    "D": "é vedada a vinculação ou equiparação de quaisquer espécies remuneratórias para o efeito de remuneração de pessoal do serviço público.",
+    "E": "a investidura em cargo público depende de prévia aprovação em concurso público, diferentemente dos empregos públicos, que são de livre nomeação e exoneração."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 48,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Diante de uma indagação acerca da possibilidade de a Administração Pública levar a efeito a aplicação de uma multa sem a intervenção do judiciário, Marialva respondeu corretamente que tal sanção",
+   "alternativas": {
+    "A": "é dotada de imperatividade, mas não de autoexecutoriedade.",
+    "B": "é dotada de autoexecutoriedade, mas não de heteroexecutoriedade.",
+    "C": "não é dotada exigibilidade, mas apenas de heteroexecutoriedade.",
+    "D": "não é dotada de imperatividade nem de autoexecutoriedade.",
+    "E": "não é dotada de exigibilidade nem de heteroexecutoriedade."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 49,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Ao se deparar com um vício em um contrato administrativo, o agente público competente passou a analisar as normas constantes da Lei nº 14.133/2021 acerca da viabilidade/obrigatoriedade da declaração de nulidade, vindo a concluir corretamente que",
+   "alternativas": {
+    "A": "qualquer irregularidade na execução do contrato deve importar necessariamente no reconhecimento de sua nulidade, independentemente do interesse público envolvido ou da possibilidade de saneamento.",
+    "B": "os defeitos no procedimento licitatório consideram-se automaticamente sanados com a formalização do contrato, não podendo ser reconhecidos durante a sua execução, em nenhuma hipótese.",
+    "C": "para a declaração de nulidade basta que o vício no procedimento licitatório ou na execução do contrato sejam insanáveis, sendo vedada a análise do interesse público no âmbito da anulação.",
+    "D": "constatado um vício insanável e, após a análise do interesse público envolvido para fins de anulação, a declaração de nulidade não pode operar efeitos retroativos.",
+    "E": "a anulação de um contrato administrativo exige não só que a irregularidade constatada seja insanável, mas também que se verifique o interesse público envolvido para o seu reconhecimento."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 50,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Imagine que Constância foi instada a analisar dois Decretos: um que inova no ordenamento jurídico, sem a prévia edição de lei, e outro editado para a fiel execução de lei anteriormente editada. Nesse contexto, considerando a classificação de tais normas na seara do poder regulamentar, é correto afirmar que",
+   "alternativas": {
+    "A": "o primeiro é considerado um Decreto executivo, sendo a regra consagrada em nossa Constituição.",
+    "B": "ambos são considerados Decretos executivos, considerando a vedação constitucional para a edição de Decretos autônomos.",
+    "C": "nenhum deles pode ser considerado um Decreto autônomo, que não é mais admitido pela ordem constitucional.",
+    "D": "ambos são considerados Decretos autônomos, pois têm a sua viabilidade consagrada na Constituição.",
+    "E": "o primeiro é considerado um Decreto autônomo, que deve buscar o seu fundamento de validade diretamente na Constituição."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 51,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Acerca da criação e extinção de órgãos públicos colegiados, à luz do disposto na Constituição da República, é correto afirmar que",
+   "alternativas": {
+    "A": "tanto a criação quanto a extinção de tais órgãos pode ser dar por lei ou por Decreto.",
+    "B": "apenas a criação de tais órgãos deve ser realizada por lei, pois a sua extinção pode ser por Decreto.",
+    "C": "somente a extinção de tais órgãos deve ser realizada por lei, na medida em que a sua criação pode ser por Decreto.",
+    "D": "a criação e a extinção de tais órgãos devem ser realizada por lei, não se admitindo a edição de Decretos para tal finalidade.",
+    "E": "não é cabível a edição de lei, seja para a criação, seja para a edição de tais órgãos, considerando que a matéria deve ser objeto de Decreto."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 52,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Considere as seguintes manifestações da Administração Pública. I. Aplicação de multa em decorrência de um contrato administrativo regularmente firmado, após o devido processo administrativo. II. Concessão de uma licença mediante o preenchimento dos respectivos requisitos. III. Avocação temporária de competência nos termos da lei. Assinale a opção que indica a correta correlação com os respectivos poderes:",
+   "alternativas": {
+    "A": "I. poder regulamentar; II. poder disciplinar; III. poder de polícia.",
+    "B": "I. poder disciplinar; II. poder de polícia; III. poder hierárquico.",
+    "C": "I. poder de polícia; II. poder hierárquico; III. poder disciplinar.",
+    "D": "I. poder hierárquico; II. poder regulamentar; III. poder disciplinar.",
+    "E": "I. poder de polícia; II. poder hierárquico; III. poder regulamentar."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 53,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Luigi e Leopoldo são primos que vêm estudando para concursos públicos há algum tempo. Recentemente, Luigi foi aprovado no concurso de Analista Judiciário do Tribunal de Justiça de Roraima, e Leopoldo, no concurso de Juiz do Tribunal Regional Federal da 1ª Região, sendo certo que ambos estão em vias de serem investidos nos respectivos cargos. Diante dessa situação hipotética, à luz dos ditames constitucionais, é correto afirmar que os cargos que serão ocupados pelos futuros agentes públicos correspondem respectivamente a",
+   "alternativas": {
+    "A": "cargo em comissão e cargo efetivo.",
+    "B": "cargo efetivo e cargo comissão.",
+    "C": "cargo efetivo e cargo vitalício.",
+    "D": "cargo vitalício e cargo efetivo.",
+    "E": "cargo vitalício e cargo em comissão."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 54,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Entre os princípios que regem a atividade administrativa, existe aquele que objetiva a minimização dos gastos públicos, sem comprometimento dos padrões de qualidade, o qual não está expresso no Art. 37, caput, da CRFB/88, mas que consta do texto constitucional, notadamente em relação à atividade de controle interno. Tal princípio é o da",
+   "alternativas": {
+    "A": "impessoalidade.",
+    "B": "impositividade.",
+    "C": "economicidade.",
+    "D": "eficiência.",
+    "E": "finalidade."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 55,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Considerando as espécies de atos administrativos, é correto afirmar que a edição, por certo Tribunal de Justiça, de um Regimento Interno que verse sobre o funcionamento de suas atividades corresponde a um ato",
+   "alternativas": {
+    "A": "normativo.",
+    "B": "sancionatório.",
+    "C": "negocial.",
+    "D": "preparatório.",
+    "E": "confirmatório."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 56,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "O Art. 37, XXI, da CRFB/88 estabelece que, ressalvadas as hipóteses previstas em lei, as contratações públicas serão precedidas de procedimento licitatório. Considerando as disposições acerca da mencionada ressalva, que dá ensejo à chamada contratação direta, à luz do disposto na Lei nº 14.133/2021, é correto afirmar que",
+   "alternativas": {
+    "A": "apenas pode ser admitida a contratação direta nas hipóteses em que haja a inviabilidade de competição, ou seja, quando a licitação for dispensável, cujo rol previsto na norma em comento é taxativo.",
+    "B": "nos casos em que há viabilidade de competição, que ensejam a designada inexigibilidade de licitação, o rol previsto na norma em comento é meramente exemplificativo.",
+    "C": "envolvendo ou não a viabilidade de competição, é taxativo o rol atinente às situações que envolvem a contratação direta, ensejando, respectivamente, a licitação inexigível e a dispensável.",
+    "D": "não se pode considerar taxativo o rol que envolve as situações de inviabilidade de competição, considerando que outras situações podem envolver tal pressuposto lógico, para fins de se admitir a contratação direta por inexigibilidade.",
+    "E": "tendo em vista que lei prevê a contratação direta nas hipóteses em que a licitação é dispensável ou inexigível, independentemente a viabilidade ou não de competição, o rol das situações elencadas não pode ser considerado taxativo em nenhuma das duas hipóteses."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 57,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Ao alcançar o ponto do conteúdo programático do concurso público para o cargo de Técnico Judiciário do Tribunal de Justiça do Estado de Roraima referente aos órgãos públicos, Filomena verificou a existência de classificação que leva em consideração a sua posição estatal, passando a investigar, por conseguinte, qual seria a classificação dos Tribunais de Justiça. Nesse contexto, Filomena concluiu corretamente que os Tribunais de Justiça são",
+   "alternativas": {
+    "A": "órgãos personalizados.",
+    "B": "órgãos independentes.",
+    "C": "órgãos superiores.",
+    "D": "órgãos subalternos.",
+    "E": "entidades autárquicas autônomas."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 58,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "João, agindo com dolo, sequestrou Maria, sabendo que a vítima dispunha de sessenta e dois anos de idade, com o fim de obter, para si, vantagem econômica, como condição do resgate. Contudo, após doze horas privada da liberdade, Maria foi encontrada e liberada, em Boa Vista, pela Polícia Militar do Estado de Roraima. Nesse cenário, considerando as disposições do Código Penal, é correto afirmar que João responderá pelo crime de",
+   "alternativas": {
+    "A": "extorsão indireta, com a incidência de uma causa de aumento de pena, pois o sequestro durou mais de doze horas.",
+    "B": "extorsão, com a incidência de uma causa de aumento de pena, pois a vítima era maior de sessenta anos.",
+    "C": "extorsão mediante sequestro, na modalidade qualificada, pois o sequestro durou mais de doze horas.",
+    "D": "extorsão mediante sequestro, na modalidade qualificada, pois a vítima era maior de sessenta anos.",
+    "E": "extorsão, na modalidade qualificada, pois o sequestro durou mais de doze horas."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 59,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Luiz foi preso em flagrante pela suposta prática do crime de latrocínio. Nesse contexto, durante o trajeto à unidade policial, Luiz ofereceu a um policial militar a quantia de dez mil reais para que esse o liberasse, proposta imediatamente recusada. Nesse cenário, considerando as disposições do Código Penal, é correto afirmar que, além do latrocínio, Luiz responderá pelo crime de",
+   "alternativas": {
+    "A": "exploração de prestígio.",
+    "B": "tráfico de influência.",
+    "C": "corrupção passiva.",
+    "D": "corrupção ativa.",
+    "E": "concussão."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 60,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "João permaneceu preso, em cumprimento de pena, durante três anos, em razão de captura flagrancial efetuada pelo policial Matheus. Após ser colocado em liberdade, João descobriu o endereço de Matheus e matou-o em razão das funções por ele exercidas na Polícia Militar. Durante as investigações, concluiu-se que houve, para o sucesso do crime, emprego de uma pistola calibre nove milímetros (arma de fogo de uso restrito) e de recurso que tornou impossível a defesa do ofendido. Nesse cenário, considerando as disposições do Código Penal, é correto afirmar que João responderá pelo crime de homicídio",
+   "alternativas": {
+    "A": "qualificado, em razão do recurso que dificultou a defesa do ofendido, com a incidência de duas causas de aumento de pena, por força do emprego de arma de fogo de uso restrito e por ter sido praticado contra policial militar, em decorrência das funções.",
+    "B": "duplamente qualificado, em razão do recurso que dificultou a defesa do ofendido e do emprego de arma de fogo de uso restrito, e com a incidência de uma causa de aumento de pena, por ter sido praticado contra policial militar, em decorrência das funções.",
+    "C": "simples, com a incidência de três causas de aumento de pena, em razão do recurso que dificultou a defesa do ofendido, do emprego de arma de fogo de uso restrito e por ter sido praticado contra policial militar, em decorrência das funções.",
+    "D": "triplamente qualificado, em razão do recurso que dificultou a defesa do ofendido, do emprego de arma de fogo de uso restrito e por ter sido praticado contra policial militar, em decorrência das funções.",
+    "E": "simples, com a incidência de duas causas de aumento de pena, em razão do recurso que dificultou a defesa do ofendido e por ter sido praticado contra policial militar, em decorrência das funções."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 61,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "João, advogado, atua, entre outros, em processos que versam sobre os seguintes delitos. I. Furto qualificado pelo emprego de explosivo ou de artefato análogo que cause perigo comum. II. Roubo circunstanciado pela restrição da liberdade da vítima. III. Porte ou posse ilegal de arma de fogo de uso permitido. IV. Estupro simples. Nesse cenário, considerando as disposições da Lei nº 8.072/1990, é correto afirmar que são hediondos os crimes",
+   "alternativas": {
+    "A": "I, II, III e IV.",
+    "B": "I, II e III, apenas.",
+    "C": "I, II e IV, apenas.",
+    "D": "II, III e IV, apenas.",
+    "E": "III e IV, apenas."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 62,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Matheus intimidou, sistematicamente, mediante violência psicológica, Lucas, de modo intencional e repetitivo, sem motivação evidente, por meio de atos de humilhação, praticados por intermédio de redes sociais. Nesse cenário, considerando as disposições do Código Penal, é correto afirmar que Matheus responderá pelo crime de",
+   "alternativas": {
+    "A": "intimidação sistemática, com a incidência de uma causa de aumento de pena, porquanto a conduta foi praticada por meio de rede social.",
+    "B": "constrangimento ilegal, com a incidência de uma causa de aumento de pena, porquanto a conduta foi praticada por meio de rede social.",
+    "C": "perseguição, com a incidência de uma causa de aumento de pena, porquanto a conduta foi praticada por meio de rede social.",
+    "D": "intimidação sistemática qualificada, porquanto a conduta foi praticada por meio de rede social.",
+    "E": "perseguição qualificada, porquanto a conduta foi praticada por meio de rede social."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 63,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Caio, agente público no Estado Alfa, apropriou-se, dolosamente e em proveito próprio, de um automóvel público de que tinha a posse em razão do cargo ocupado. O referido servidor assim agiu com o objetivo de vender o bem móvel no mercado paralelo, angariando fundos para deixar o país. Nesse cenário, considerando as disposições do Código Penal, é correto afirmar que Caio responderá pelo crime de",
+   "alternativas": {
+    "A": "exercício arbitrário das próprias razões.",
+    "B": "condescendência criminosa.",
+    "C": "advocacia administrativa.",
+    "D": "excesso de exação.",
+    "E": "peculato."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 64,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Nino, tenente do Exército Brasileiro, caminhava pelo centro de Boa Vista, Roraima, ocasião em que João, na posse de uma arma de fogo, exigiu a entrega de seus pertences. Imediatamente, o militar desferiu dois socos no rosto do criminoso, desarmando-o. Para tanto, Nino usou, moderadamente, dos meios necessários para repelir a injusta e atual agressão em seu detrimento. Nesse cenário, considerando as disposições do Código Penal, é correto afirmar que Nino agiu sob o manto",
+   "alternativas": {
+    "A": "do estrito cumprimento do dever legal, causa de exclusão da culpabilidade.",
+    "B": "do exercício regular do direito, causa de exclusão da culpabilidade.",
+    "C": "da inexigibilidade de conduta diversa, causa de exclusão da ilicitude.",
+    "D": "do estado de necessidade, causa de exclusão da ilicitude.",
+    "E": "da legítima defesa, causa de exclusão da ilicitude."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 65,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Maria, estudante de Direito, resolveu apresentar seu trabalho de conclusão de curso sobre as disposições constitucionais aplicáveis ao Direito Penal, motivo pelo qual passou a estudar, detalhadamente, a temática. De acordo com a narrativa e considerando as disposições da Constituição Federal, analise as afirmativas a seguir. I. Nenhuma pena passará da pessoa do condenado, podendo a multa, a obrigação de reparar o dano e a decretação do perdimento de bens ser, nos termos da lei, estendidas aos sucessores e contra eles executadas, até o limite do prejuízo causado. II. Não haverá penas de morte, salvo em caso de guerra declarada; de caráter perpétuo, salvo em caso de condenação pela prática de crime doloso contra a vida; de trabalhos forçados; de banimento; e cruéis. III. A prática do racismo constitui crime inafiançável e imprescritível, sujeito à pena de reclusão, nos termos da lei. IV. A lei penal não retroagirá, salvo para beneficiar o réu. Nesse cenário, considerando as disposições da Constituição Federal, está correto apenas o que se afirma em",
+   "alternativas": {
+    "A": "III.",
+    "B": "II e IV.",
+    "C": "III e IV.",
+    "D": "I e III.",
+    "E": "I, II e IV."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 66,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "João, jovem de 20 anos, por causa transitória, não pode exprimir sua vontade. De acordo com o Código Civil, João é considerado",
+   "alternativas": {
+    "A": "absolutamente incapaz de exercer pessoalmente os atos da vida civil.",
+    "B": "plenamente capaz para exercer pessoalmente todos os atos da vida civil, pois maior de dezoito anos.",
+    "C": "incapaz, relativamente a certos atos ou à maneira de os exercer.",
+    "D": "incapaz, absolutamente de exercer pessoalmente os atos da vida civil, desde que seja considerado pródigo.",
+    "E": "relativamente incapaz de exercer pessoalmente os atos da vida civil onerosos, desde que envolvam valor acima de um salário mínimo."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 67,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em relação ao tema domicílio, avalie as assertivas a seguir. I. O domicílio da pessoa natural é o lugar onde ela estabelece a sua residência com ânimo definitivo. II. Ter-se-á por domicílio da pessoa natural, que não tenha residência habitual, o lugar onde nasceu, independentemente do lugar onde for encontrada. III. Muda-se o domicílio, transferindo a residência, com a intenção manifesta de o mudar. Segundo o Código Civil, está correto o que se afirma em",
+   "alternativas": {
+    "A": "I, apenas.",
+    "B": "II, apenas.",
+    "C": "II e III, apenas.",
+    "D": "I e III, apenas.",
+    "E": "I, II e III."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 68,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Os negócios jurídicos devem ser interpretados conforme a boa-fé e os usos do lugar de sua celebração. De acordo com o Código Civil, a interpretação do negócio jurídico deve lhe atribuir, entre outros, o sentido que",
+   "alternativas": {
+    "A": "for confirmado pelo comportamento das partes posterior à celebração do negócio.",
+    "B": "for mais benéfico à parte que redigiu o dispositivo, se identificável.",
+    "C": "corresponder a menor onerosidade, independentemente dos costumes e práticas do mercado relativas ao tipo de negócio.",
+    "D": "proteger a parte mais vulnerável do ponto de vista socioeconômico, pelo princípio da primazia da hipossuficiência.",
+    "E": "corresponder a qual seria a razoável negociação das partes sobre a questão discutida, inferida das demais disposições do negócio e da racionalidade econômica das partes, independentemente das informações disponíveis no momento de sua celebração."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 69,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em relação aos atos ilícitos, analise as assertivas a seguir. I. Comete ato ilícito o titular de um direito que, ao exercê-lo, excede manifestamente os limites impostos pelo seu fim econômico ou social, pela boa-fé ou pelos bons costumes. II. Não constituem atos ilícitos os praticados em legítima defesa ou no exercício regular de um direito reconhecido. III. Constituem atos ilícitos a deterioração ou destruição da coisa alheia, ou a lesão a pessoa, a fim de remover perigo iminente. Nesse caso, o ato será ilegítimo, do ponto de cista do Direito Civil, mesmo quando as circunstâncias o tornarem absolutamente necessário, não excedendo os limites do indispensável para a remoção do perigo. No entanto, tais circunstâncias poderão influenciar na esfera penal. De acordo com o Código Civil, está correto o que se afirma em",
+   "alternativas": {
+    "A": "I, apenas.",
+    "B": "I e II, apenas.",
+    "C": "II e III, apenas.",
+    "D": "I e III, apenas.",
+    "E": "I, II e III."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 70,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em tema de interpretação das leis, de acordo com a Lei de introdução às normas do Direito brasileiro, na interpretação de normas sobre gestão pública,",
+   "alternativas": {
+    "A": "deverá ser observado que, em decisão sobre regularidade de conduta ou validade de ato, contrato, ajuste, processo ou norma administrativa, serão desconsideradas as circunstâncias práticas que houverem imposto, limitado ou condicionado a ação do agente.",
+    "B": "será considerado que as sanções aplicadas ao agente não serão levadas em conta na dosimetria das demais sanções de mesma natureza e relativas ao mesmo fato, pela interdependência das instâncias.",
+    "C": "deverá ser observado que, na aplicação de sanções, serão desconsiderados os danos que da infração provierem para a administração pública, pelo princípio da tipicidade da norma sancionadora.",
+    "D": "será considerado que a revisão, nas esferas administrativa, controladora ou judicial, quanto à validade de ato, contrato, ajuste, processo ou norma administrativa cuja produção já se houver completado não levará em conta as orientações gerais da época, devendo prevalecer o atual entendimento sobre o tema.",
+    "E": "serão considerados os obstáculos e as dificuldades reais do gestor e as exigências das políticas públicas a seu cargo, sem prejuízo dos direitos dos administrados. REDAÇÃO A grande maioria da população brasileira vive nos grandes centros urbanos, que mostram inúmeros problemas, decorrentes de razões variadas, afetando tanto o meio ambiente quanto a qualidade de vida dos moradores. Entre os problemas mais visíveis estão a falta de limpeza urbana eficiente, a carência de serviços básicos de qualidade, a falta de segurança, as deficiências no transporte público, a impermeabilização do solo, facilitando enchentes etc. Escolha um desses problemas, que seja grave na cidade em que vive, indique suas causas e meios de combatê-lo, num texto dissertativo- argumentativo, de extensão entre 20 e 30 linhas, redigido em linguagem culta. 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 Realização"
+   },
+   "gabarito": "E"
+  }
+ ]
+}
