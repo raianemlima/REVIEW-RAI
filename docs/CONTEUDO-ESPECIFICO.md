@@ -31,7 +31,7 @@ Alguns materiais (OUSE, Themas) trazem nome e CPF da compradora no rodapé de ca
 
 Em cada bloco de assunto (na tela do Cronograma e no card "assuntos de hoje" em Hoje), quando o edital escolhido tem e-book de conteúdo específico:
 
-- assunto com trechos: botão **📖 Estudar os trechos doutrinários**, com o número de trechos. Ele abre o Aprofundamento no capítulo da disciplina, rola até o assunto e o destaca;
+- assunto com trechos: botão **📖 Ler os trechos (N)** nos assuntos de hoje (em Hoje é a ação principal do assunto) e **📖 Estudar os trechos doutrinários** na semana do Cronograma. Ele abre o Aprofundamento no capítulo da disciplina, rola até o assunto e o destaca;
 - assunto sem trecho: aviso para estudar pela lei seca, pelos cartões e pelas fontes oficiais.
 
 A ligação usa o id do assunto no programa (`mapa` do e-book: id do assunto → capítulo, posição do título, quantidade de trechos). Os outros editais não mudam.

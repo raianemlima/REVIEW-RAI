@@ -1,12 +1,14 @@
 // Review DPE · organização das telas: um caminho claro para começar e o resto recolhido.
 //
-// Hoje vira um roteiro de três passos, na ordem em que o app funciona:
-//   1. Estude o assunto de hoje (Cronograma: trechos, lei seca, "Estudei este assunto");
+// Hoje abre com o "Próximo passo": um botão para o que fazer agora (ler os trechos do assunto pendente, revisar,
+// retomar). Abaixo, um roteiro de três passos, na ordem em que o app funciona:
+//   1. Estude o assunto de hoje (cada assunto com botões diretos: trechos, lei seca, questões; e "Marcar como estudado");
 //   2. Revise os cartões (só entram cartões de assunto já estudado, na direção escolhida);
 //   3. Pratique com questões (opcional).
 // O que é acompanhamento (semana, fila, reflexão, recursos, instalar) fica em "Mais", recolhido.
 // Estudar mostra primeiro o que está disponível; modos ainda sem conteúdo e leituras extras ficam recolhidos.
-// A barra de baixo fica com o essencial; Informativos, Defensoria e Teses continuam em Estudar.
+// A barra de baixo fica com o essencial, com o Plano (Cronograma) fixo ao lado de Hoje; Informativos, Defensoria e
+// Teses continuam em Estudar. Os contadores do topo dizem o que contam ("dias para a prova", "dias seguidos").
 // Só reorganiza o que as outras partes do app já desenharam (os mesmos elementos e ações): nada de estudo muda aqui.
 (function () {
   "use strict";
@@ -31,6 +33,14 @@
 .hg-dir button { border: 0; background: none; color: var(--muted); font: 600 .82rem var(--f-ui); padding: 6px 12px; border-radius: 999px; cursor: pointer; min-height: 32px; }
 .hg-dir button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
 .hg-dir-txt { color: var(--muted); font-size: .8rem; margin: 0 0 6px; }
+.hg-progresso { color: var(--muted); font-size: .85rem; margin: 2px 0 10px; }
+.hg-proximo { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 16px; padding: 14px 16px; margin: 4px 0 6px; }
+.hg-proximo-tx { display: grid; gap: 2px; min-width: 0; flex: 1 1 260px; }
+.hg-proximo-tx small { color: var(--accent); font: 700 .7rem var(--f-ui); letter-spacing: .08em; text-transform: uppercase; }
+.hg-proximo-tx b { font: 700 1.1rem/1.3 var(--f-ui); color: var(--ink); }
+.hg-proximo-tx span { color: var(--muted); font-size: .85rem; }
+.hg-proximo-bt { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.hg-proximo-bt .btn.primary { min-height: 44px; padding: 10px 18px; font-size: 1rem; }
 .hg-passos { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 12px; }
 .hg-passo { display: grid; grid-template-columns: 34px 1fr; gap: 10px; border: 1px solid var(--line); border-radius: 16px; padding: 12px; background: var(--bg); }
 .hg-passo[data-estado="agora"] { border: 2px solid var(--accent); background: var(--surface); }
@@ -45,7 +55,10 @@
 .hoje-guia .hg-corpo > .cr-today:not(.cr-hoje-conteudo) > div { display: none; }
 .hoje-guia .cr-today { margin: 6px 0 0 !important; border: 0 !important; padding: 0 !important; background: none !important; box-shadow: none !important; }
 .hoje-guia .cr-hoje-conteudo > div:first-child > b, .hoje-guia .cr-hoje-conteudo > div:first-child > p, .hoje-guia .cr-hoje-conteudo > div:first-child > small, .hoje-guia .cr-app-resumo { display: none; }
-.hoje-guia .cr-hoje-conteudo #goCronograma { min-height: 32px; padding: 4px 10px; font-size: .8rem; }
+.hoje-guia .cr-hoje-conteudo { display: flex !important; flex-direction: column; gap: 0; }
+.hoje-guia .cr-hoje-conteudo > div:first-child { display: none; }
+.hoje-guia .cr-hoje-conteudo > .cr-hoje-blocos { margin-top: 0; }
+.hoje-guia .cr-hoje-conteudo #goCronograma { order: 2; align-self: flex-start; margin-top: 10px; min-height: 32px; padding: 4px 10px; font-size: .8rem; }
 .hg-feito-det > summary { cursor: pointer; color: var(--accent); font: 600 .86rem var(--f-ui); padding: 4px 0; }
 .hg-linha { margin: 2px 0 8px; font-size: .9rem; color: var(--ink); }
 .hg-acoes { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
@@ -64,6 +77,18 @@
 .es-recolhido { margin: 10px 0 4px; border: 1px dashed var(--line); border-radius: 14px; padding: 4px 12px; }
 .es-recolhido > summary { cursor: pointer; padding: 10px 0; font: 600 .9rem var(--f-ui); color: var(--muted); }
 .es-recolhido .es-grid { margin-bottom: 10px; }
+@media (max-width: 560px) {
+  .hoje-guia { padding: 12px; border-radius: 16px; }
+  .hg-passo { display: block; padding: 12px 10px; }
+  .hg-passo .hg-num { float: left; width: 26px; height: 26px; margin: 0 8px 0 0; font-size: .85rem; }
+  .hg-corpo > h3 { line-height: 26px; margin: 0; }
+  .hg-corpo > p.hg-dica { clear: left; margin-top: 6px; }
+  .hg-corpo > *:not(h3) { clear: left; }
+  .hoje-guia .cr-bloco { padding: 12px 10px; }
+  .hg-proximo { padding: 12px; }
+  .hg-proximo-bt { width: 100%; }
+  .hg-proximo-bt .btn.primary { flex: 1 1 auto; }
+}
 `;
     document.head.appendChild(st);
   }
@@ -73,6 +98,15 @@
     const tabs = $o("#tabs"); if (!tabs) return;
     for (const aba of ABAS_RECOLHIDAS) { const b = $o(`#tab-${aba}`); if (b) b.hidden = true; }
     const trib = $o("#tab-tribunal"); if (trib) trib.hidden = direcao() !== "tj";
+    if (!$o("#tab-cronograma")) {   // o plano (Cronograma) com lugar fixo na barra, logo depois de Hoje
+      const b = document.createElement("button");
+      b.setAttribute("role", "tab"); b.dataset.tab = "cronograma"; b.id = "tab-cronograma"; b.setAttribute("aria-selected", String(typeof S === "object" && S.tab === "cronograma"));
+      b.innerHTML = '<svg class="ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4M7.5 13.5h3M13.5 13.5h3M7.5 17h3"/></svg><span>Plano</span>';
+      const hoje = $o("#tab-hoje"); if (hoje) hoje.after(b); else tabs.prepend(b);
+    }
+    // só grava quando muda: a barra é observada (aria-selected) e regravar o mesmo valor redesenharia sem fim
+    const cr = $o("#tab-cronograma"), sel = String(typeof S === "object" && S.tab === "cronograma");
+    if (cr && cr.getAttribute("aria-selected") !== sel) cr.setAttribute("aria-selected", sel);
     // aba aberta que não está na barra: marca Estudar, de onde ela se abre
     const visiveis = [...tabs.querySelectorAll("button[role=tab]")].filter(b => !b.hidden);
     if (typeof S === "object" && S.tab && !visiveis.some(b => b.getAttribute("aria-selected") === "true")) {
@@ -85,6 +119,28 @@
     const li = document.createElement("li"); li.className = "hg-passo"; li.dataset.estado = estado; li.dataset.passo = String(n);
     li.innerHTML = `<span class="hg-num" aria-hidden="true">${estado === "feito" ? "✓" : n}</span><div class="hg-corpo"><h3>${escO(titulo)}</h3>${dica ? `<p class="hg-dica">${escO(dica)}</p>` : ""}</div>`;
     return li;
+  }
+  // um único "próximo passo": o app decide a ação seguinte do dia
+  function proximoPasso(guia, { cr, temPlano, R }) {
+    const box = guia.querySelector(".hg-proximo"); if (!box) return;
+    const pendente = cr ? [...cr.querySelectorAll(".cr-bloco")].find(b => { const c = b.querySelector("[data-cr-concluir]"); return c && !c.checked; }) : null;
+    let titulo = "", contexto = "", botao = "", acao = null, extra = "";
+    if (pendente) {
+      const prim = pendente.querySelector(".cr-acoes .btn.primary") || pendente.querySelector(".cr-acoes .btn");
+      titulo = pendente.querySelector("h4")?.textContent.trim() || "Assunto de hoje";
+      contexto = pendente.querySelector("small")?.textContent.trim() || "";
+      botao = prim ? prim.textContent.trim() : "Abrir o assunto";
+      acao = () => prim ? prim.click() : go("cronograma");
+      extra = `<button type="button" class="btn small" data-hg-marcar>✓ Já estudei: marcar</button>`;
+      box._marcar = () => { const c = pendente.querySelector("[data-cr-concluir]"); if (c) { c.checked = true; c.dispatchEvent(new Event("change", { bubbles: true })); } };
+    } else if (R.aberta) { titulo = "Bloco de revisão em andamento"; botao = "Retomar a revisão"; acao = () => $o("#start")?.click(); }
+    else if (R.restante && !R.concluida) { titulo = `Revisar ${R.n} ${R.n === 1 ? "cartão" : "cartões"}`; contexto = `cerca de ${R.min} min · revisão espaçada do que você já estudou`; botao = "Começar revisão"; acao = () => $o("#start")?.click(); }
+    else if (!temPlano) { box.hidden = true; return; }   // sem plano, o passo 1 (Monte seu cronograma) já é o próximo passo
+    else { titulo = "Tudo feito por hoje 🎉"; contexto = "Se quiser, pratique com questões."; botao = "Praticar questões"; acao = () => { S.session = null; go("sessao"); }; }
+    box.innerHTML = `<div class="hg-proximo-tx"><small>Próximo passo</small><b>${escO(titulo)}</b>${contexto ? `<span>${escO(contexto)}</span>` : ""}</div><div class="hg-proximo-bt"><button type="button" class="btn primary" data-hg-proximo>${escO(botao)}</button>${extra}</div>`;
+    box.hidden = false;
+    box.querySelector("[data-hg-proximo]").addEventListener("click", acao);
+    box.querySelector("[data-hg-marcar]")?.addEventListener("click", () => box._marcar && box._marcar());
   }
   function organizarHoje(main) {
     const hero = main.querySelector(".hero");
@@ -107,12 +163,25 @@
       guia = document.createElement("section"); guia.className = "hoje-guia"; guia.setAttribute("aria-label", "Seu estudo de hoje");
       guia.innerHTML = `<div class="hg-topo"><div><small>${oi}</small><h2>Seu estudo de hoje</h2></div><span class="hg-pills"></span></div>
         <div class="hg-dir" role="group" aria-label="Direcionamento do estudo"><button type="button" data-hg-dir="dpe" aria-pressed="${dir === "dpe"}">Defensoria</button><button type="button" data-hg-dir="tj" aria-pressed="${dir === "tj"}">Tribunal · TJPB</button></div>
-        <p class="hg-dir-txt">Siga os passos na ordem. Os cartões revisam o que você já estudou.</p><ol class="hg-passos"></ol>`;
-      const pills = hero.querySelector(".pills"); if (pills) guia.querySelector(".hg-pills").appendChild(pills);
+        <p class="hg-progresso"></p><div class="hg-proximo" hidden></div><ol class="hg-passos"></ol>`;
+      const pills = hero.querySelector(".pills");
+      if (pills) {   // contadores com legenda
+        for (const pl of pills.querySelectorAll(".pill")) {
+          const n = +((pl.textContent.match(/\d+/) || [0])[0]), tt = pl.getAttribute("title") || "";
+          if (/prova/.test(tt)) pl.textContent = `🎯 ${n} ${n === 1 ? "dia" : "dias"} para a prova`;
+          else if (/seguidos/.test(tt)) pl.textContent = `🔥 ${n} ${n === 1 ? "dia seguido" : "dias seguidos"}`;
+        }
+        guia.querySelector(".hg-pills").appendChild(pills);
+      }
+      const nAss = caixas.length, nFeitos = caixas.filter(c => c.checked).length;
+      guia.querySelector(".hg-progresso").textContent = temPlano
+        ? (nAss ? `Hoje: ${nFeitos} de ${nAss} ${nAss === 1 ? "assunto estudado" : "assuntos estudados"} · ${R.feitos} de ${R.meta} cartões revisados` : `Hoje é dia livre no seu cronograma · ${R.feitos} de ${R.meta} cartões revisados`)
+        : "";
+      guia.querySelector(".hg-progresso").hidden = !temPlano;
       const ol = guia.querySelector(".hg-passos");
       // passo 1: estudar o conteúdo
       const p1 = temPlano
-        ? passo(1, diaLivre ? "Dia livre no seu cronograma" : estudou ? "Assunto de hoje estudado" : "Estude o assunto de hoje", diaLivre ? "Seu ciclo continua no próximo dia de estudo." : estudou ? "Os cartões dele já estão na sua revisão." : "Leia os trechos e a lei seca do assunto. Ao terminar, marque “Estudei este assunto”: os cartões dele entram na revisão.", estudou || diaLivre ? "feito" : "agora")
+        ? passo(1, diaLivre ? "Dia livre no seu cronograma" : estudou ? (nAss > 1 ? "Assuntos de hoje estudados" : "Assunto de hoje estudado") : (nAss > 1 ? `Estude os ${nAss} assuntos de hoje` : "Estude o assunto de hoje"), diaLivre ? "Seu ciclo continua no próximo dia de estudo." : estudou ? "Os cartões deles já estão na sua revisão." : "Use os botões de cada assunto. Ao terminar, marque como estudado: os cartões dele entram na revisão.", estudou || diaLivre ? "feito" : "agora")
         : passo(1, "Monte seu cronograma", dir === "tj" ? "Escolha o edital do TJPB, as horas e os dias. O app indica o assunto de cada dia." : "Escolha o edital da sua Defensoria, as horas e os dias. O app indica o assunto de cada dia.", "agora");
       if (cr && temPlano && (estudou || diaLivre)) {   // passo feito: o conteúdo fica recolhido para o passo 2 aparecer
         const det = document.createElement("details"); det.className = "hg-feito-det";
@@ -137,6 +206,7 @@
       p3.querySelector(".hg-corpo").insertAdjacentHTML("beforeend", `<button type="button" class="btn small" data-hg-ir="sessao">Abrir questões e modos de estudo</button>`);
       ol.appendChild(p3);
       main.prepend(guia);
+      proximoPasso(guia, { cr, temPlano, R });
       guia.querySelectorAll("[data-hg-dir]").forEach(b => b.addEventListener("click", () => {
         if (!S.ajustes || S.ajustes.direcao === b.dataset.hgDir) return;
         S.ajustes.direcao = b.dataset.hgDir; salvar();
