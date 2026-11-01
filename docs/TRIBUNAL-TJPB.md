@@ -21,7 +21,13 @@ Normas oficiais que o edital cita e que o baralho não tinha entram como lei sec
 
 - Resoluções do CNJ 351/2020 (assédio e discriminação), 401/2021 (acessibilidade e inclusão de pessoas com deficiência), 400/2021 (sustentabilidade) e 363/2021 (LGPD nos tribunais), convertidas do texto compilado de atos.cnj.jus.br por `ferramentas/conteudo/tjpb/cnj_resolucoes.py`. O trecho tachado (revogado ou alterado) é descartado.
 - A Res. CNJ 230/2016, citada no edital como "230/2021", está revogada pela Res. 401/2021; por isso a lei seca traz a 401.
-- Leis federais do texto compilado vigente da Câmara, publicado no normas.leg.br: LGPD (Lei 13.709/2018), LINDB (DL 4.657/1942), Lei 9.784/1999 e Lei 12.846/2013. Gere ou atualize com `python ferramentas/conteudo/tjpb/normas_leg.py ferramentas/conteudo/dados/leiseca-publica [lgpd lindb l9784 l12846]`. Para outra lei, acrescente a URN dela em `LEIS`. O site do Planalto não é usado, porque fica fora da rede da sessão. Dispositivo revogado não entra; o artigo revogado aparece só como "Art. N. (Revogado.)".
+- Leis federais do texto compilado vigente da Câmara, publicado no normas.leg.br:
+  - LGPD, LINDB, Lei 9.784/1999 e Lei 12.846/2013;
+  - legislação especial do edital do TJPB: 12.850/2013 (Orcrim), 9.807/1999, 13.431/2017, 14.344/2022 (Henry Borel), 9.613/1998, 8.072/1990, 9.455/1997, 13.869/2019, 9.296/1996, 7.716/1989, 9.605/1998, 9.099/1995, 10.259/2001, 8.009/1990, 8.245/1991, 12.965/2014, 4.717/1965, 7.347/1985 e 13.146/2015.
+- A Lei 14.344/2022 não tem compilação na fonte. Entra o texto original do DOU, e a fonte da lei avisa para conferir alterações posteriores.
+- As versões completas da Lei 9.099 e do Estatuto da Pessoa com Deficiência tomam o lugar das seleções antigas (`jec` e `epcd`).
+- Gere ou atualize com `python ferramentas/conteudo/tjpb/normas_leg.py ferramentas/conteudo/dados/leiseca-publica [ids]`. Para outra lei, acrescente a URN dela em `LEIS`. O site do Planalto não é usado, porque fica fora da rede da sessão. Dispositivo revogado não entra; o artigo revogado aparece só como "Art. N. (Revogado.)".
+- No leitor, a lei completa fica no lugar da seleção que substitui, e as leis novas entram em ordem alfabética depois das que já existiam.
 - Pendentes: Res. TJPB 20/2025 e 21/2025. O site do TJPB recusa acesso automatizado, então elas precisam vir em PDF.
 
 ## Marcação colorida automática

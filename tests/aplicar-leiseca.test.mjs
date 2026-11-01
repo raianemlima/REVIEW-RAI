@@ -37,6 +37,9 @@ async function cifrarLei(pasta, chave, lei) {
   await writeFile(join(pasta, lei.id + ".bin"), Buffer.concat([iv, ct]));
 }
 
+// lei seca pública no repositório (texto oficial): resoluções do CNJ e leis federais do normas.leg.br
+const PUBLICAS = ["l10259", "l12846", "l12850", "l12965", "l13146", "l13431", "l13869", "l14344", "l4717", "l7347", "l7716", "l8009", "l8072", "l8245", "l9099", "l9296", "l9455", "l9605", "l9613", "l9784", "l9807", "lgpd", "lindb", "res-cnj-351", "res-cnj-363", "res-cnj-400", "res-cnj-401"];
+
 const leiFicticia = {
   id: "cp-dls", nome: "Código Penal · Decodificado", curto: "CP", disc: "@penal", completa: true, fonte: "Fixture",
   grupos: [{ nome: "PARTE GERAL", itens: [{ a: "1", x: "Art. 1º Texto fictício.", n: 7 }, { q: "Assertiva fictícia.", b: "FGV 2025 - Cargo fictício" }] }],
@@ -99,7 +102,7 @@ test("a lei seca pública (resoluções do CNJ) entra só com APP_SENHA, sem a c
   const { stdout } = await run("node", [script, join(pasta, "index.html")], { env });
   assert.match(stdout, /LEISECA_CHAVE não configurado/);
   const { deck } = await lerDeck(pasta, senha);
-  assert.deepEqual(deck.leiseca.map(l => l.id).sort(), ["l12846", "l9784", "lgpd", "lindb", "res-cnj-351", "res-cnj-363", "res-cnj-400", "res-cnj-401"]);
+  assert.deepEqual(deck.leiseca.map(l => l.id).sort(), PUBLICAS);
   const r351 = deck.leiseca.find(l => l.id === "res-cnj-351");
   assert.equal(r351.completa, true);
   assert.equal(r351.disc, "", "sem disciplina de Administrativo no baralho de teste, a lei entra sem disciplina");
@@ -109,7 +112,7 @@ test("a lei seca pública (resoluções do CNJ) entra só com APP_SENHA, sem a c
 test("a lei seca pública usa o texto vigente: nada tachado, revogado só como (Revogado.), a Res. 230/2016 fica de fora", async () => {
   const pasta = join(raiz, "ferramentas/conteudo/dados/leiseca-publica");
   const ids = (await import("node:fs")).readdirSync(pasta).map(f => f.replace(".json", "")).sort();
-  assert.deepEqual(ids, ["l12846", "l9784", "lgpd", "lindb", "res-cnj-351", "res-cnj-363", "res-cnj-400", "res-cnj-401"]);
+  assert.deepEqual(ids, PUBLICAS);
   for (const id of ids) {
     const lei = JSON.parse(await readFile(join(pasta, id + ".json"), "utf8"));
     const arts = lei.grupos.flatMap(g => g.itens).filter(i => i.a !== undefined);
@@ -221,11 +224,26 @@ test("na publicação: a lei do curso tira a seleção antiga do leitor e as lei
   const { stdout } = await run("node", [script, join(pasta, "index.html")], { env });
   assert.match(stdout, /marcação automática em 1 lei\(s\)/);
   const { deck } = await lerDeck(pasta, senha);
-  assert.deepEqual(deck.leiseca.map(l => l.id), ["cf", "cdc-dls"], "a seleção antiga do CDC sai do leitor");
+  assert.deepEqual(deck.leiseca.map(l => l.id), ["cdc-dls", "cf"], "a lei do curso entra no lugar da seleção antiga do CDC");
   assert.ok(deck.cartoes.some(c => c.id === "ls-cdc1-001"), "os cartões da seleção antiga ficam");
   const cf = deck.leiseca.find(l => l.id === "cf"), cdc = deck.leiseca.find(l => l.id === "cdc-dls");
   assert.equal(cf.grifos, "auto");
   assert.ok(cf.grupos[0].itens[0].g.some(s => s[1] === "a" && s[0] === "salvo"));
   assert.equal(cdc.grifos, undefined, "a lei do curso mantém os grifos do professor");
   assert.deepEqual(cdc.grupos[0].itens[0].g, curso.grupos[0].itens[0].g);
+});
+
+test("lote de leis do edital do TJPB: completas até o último artigo, e as completas tiram as seleções antigas (JEC e PcD)", async () => {
+  const pasta = join(raiz, "ferramentas/conteudo/dados/leiseca-publica"), ler = id => JSON.parse(readFileSync(join(pasta, id + ".json"), "utf8"));
+  const ultimo = { l12850: "27", l9807: "21", l13431: "29", l14344: "34", l9613: "18", l8072: "13", l9455: "4", l13869: "45", l9296: "12", l7716: "22",
+    l9605: "82", l9099: "97", l10259: "27", l8009: "8", l8245: "90", l12965: "32", l4717: "22", l7347: "23", l13146: "127" };
+  for (const [id, n] of Object.entries(ultimo)) {
+    const lei = ler(id), arts = lei.grupos[0].itens.filter(i => i.a !== undefined);
+    assert.equal(arts.at(-1).a, n, `${id}: último artigo`);
+    assert.match(lei.nome, /^Lei nº [\d.]+\/\d{4} · /, id);
+    assert.doesNotMatch(JSON.stringify(lei), /Independência e \d+º da República|Brasília, \d/, `${id}: sem a linha da sanção`);
+  }
+  assert.deepEqual(ler("l9099").substitui, ["jec"]);
+  assert.deepEqual(ler("l13146").substitui, ["epcd"]);
+  assert.match(ler("l14344").fonte, /Texto original publicado no DOU.*confira se houve alteração/, "sem compilação na fonte, o aviso aparece");
 });
