@@ -35,6 +35,8 @@ def toks_num(s):  # mantém números de leis (8.069, 12.594) como termo
     for m in re.finditer(r"\b(\d{1,2}\.\d{3})(?:/\d{2,4})?", str(s)):
         n = m.group(1).replace(".", "")
         if n not in CODIGOS: out.append("n" + n)
+    for m in re.finditer(r"Resolu[çc][ãa]o\s*(?:\(?CNJ\)?\s*)?(?:n[º°o.]?\s*)?(\d{2,4})(?![.\d])", str(s), re.I):
+        out.append("r" + m.group(1))   # resolução pelo número (ex.: Resolução CNJ 425/2021)
     return out
 
 QUESTAO = re.compile(r"QUEST(Õ|O)ES|COMENT(Á|A)RIOS|Assinale|alternativa|GABARITO|EXERC|REFER(Ê|E)NCIA|BIBLIOGRAF|SOBRE O AUTOR|APRESENTA(Ç|C)(Ã|A)O|SUM(Á|A)RIO", re.I)
@@ -55,6 +57,7 @@ for p in P:
     for k, g in enumerate(grupos):
         txt = "\n\n".join(g)
         if len(txt.split()) < 20 and len(grupos) > 1: continue
+        if re.search(r"O que vai estudar neste material|neste material Ponto|^\s*SUM[ÁA]RIO", txt[:200], re.I): continue   # abertura que só repete o edital
         t = toks_num(txt)
         u = {"id": f'{p["id"]}.{k}', "pid": p["id"], "k": k, "n": len(grupos), "fonte": p["fonte"], "arq": p["arq"], "disc": p["disc"],
              "sec": p["sec"], "p": p["p"], "texto": txt, "prox": textos_g[k + 1] if k + 1 < len(textos_g) else "", "ant": textos_g[k - 1] if k else ""}
@@ -178,8 +181,10 @@ def por_subconsulta(cands, sq, peso, k=2, pedaco=False, titulo=False, ctx=""):
     seqq = toks_q(sq)
     pares = list(dict.fromkeys(zip(seqq, seqq[1:])))
     q = {w: 1 for w in termos}
+    numeros = [w for w in termos if re.fullmatch(r"[nr]\d{2,5}", w)]
     res = []
     for p in cands:
+        if numeros and not any(w in p["_tf"] for w in numeros): continue   # o assunto cita a norma pelo número: o trecho também
         cob = cobertura(p, termos)
         if cob < .6: continue
         hc = cob_h(p, termos)

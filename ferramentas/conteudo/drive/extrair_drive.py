@@ -4,7 +4,7 @@
 import sys, os, re, json, zipfile, html, collections
 import pymupdf
 src, out = sys.argv[1], sys.argv[2]
-PII = re.compile(r"[\w.+-]+@[\w-]+\.[\w.]+|\b\d{3}\.\d{3}\.\d{3}-\d{2}\b|\buid:|cpfCnpj|Licenciad[oa] para|Baixado por|\(\d{2}\)\s?9?\d{4}-?\d{4}", re.I)
+PII = re.compile(r"[\w.+-]+@[\w-]+[.·][\w.·]+|\b\d{3}[.·]?\d{3}[.·]?\d{3}-?\d{2}\b|\bCPF\s*:|\buid:|cpfCnpj|Licenciad[oa] para|Baixado por|\(\d{2}\)\s?9?\d{4}-?\d{4}", re.I)
 docs = []
 for nome in sorted(os.listdir(src)):
     p = os.path.join(src, nome); paginas = []

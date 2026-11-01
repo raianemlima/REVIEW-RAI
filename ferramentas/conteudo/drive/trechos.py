@@ -17,6 +17,9 @@ FONTES = [  # (prefixo do nome do arquivo depois do id, rótulo, chaves)
     ("Legislação_Penal_Especial_-_E-book_2026", "CP Iuris · Legislação Penal Especial (e-book 2026)", ["lpe"]),
     ("Direito_da_Criança_e_do_Adolescente_-_E-book_2026", "CP Iuris · Direito da Criança e do Adolescente (e-book 2026)", ["eca"]),
     ("Direito_Penal_-_Parte_Especial_-_E-book_2026", "CP Iuris · Direito Penal – Parte Especial (e-book 2026)", ["penal"]),
+    ("Direito_Civil_-_E-book_2026", "CP Iuris · Direito Civil (e-book 2026)", ["civil"]),
+    ("Direito_Administrativo_-_E-book_2026", "CP Iuris · Direito Administrativo (e-book 2026)", ["adm"]),
+    ("Direito_do_Consumidor_-_E-book_2026", "CP Iuris · Direito do Consumidor (e-book 2026)", ["consumidor"]),
     ("Informativos_10x_-_2026", "CP Iuris · Informativos 10x – 2026 (1º semestre)", "geral"),
     ("Roteiro_de_Leitura_-_Informativos", None, None),
     ("Atualizações_-_Julho_2026", "Atualizações – julho/2026", "geral"),
@@ -30,6 +33,24 @@ FONTES = [  # (prefixo do nome do arquivo depois do id, rótulo, chaves)
     ("EBOOK_-_Reta_Final_-_DPE-SP_-_Direito_Administrativo_e_Tributário", "Reta Final DPE/SP · Direito Administrativo e Tributário", ["adm", "trib"]),
     ("EBOOK_-_Reta_Final_-_DPE-SP_-_Princípios_e_Atriuições_Institucionais", "Reta Final DPE/SP · Princípios e Atribuições Institucionais", ["inst"]),
     ("EBOOK_-_Reta_Final_-_DPE-SP_-_Direto_Penal", "Reta Final DPE/SP · Direito Penal", ["penal", "lpe"]),
+    ("EBOOK_-_Reta_Final_-_DPE-SP_-_Civil_ok", "Reta Final DPE/SP · Direito Civil", ["civil"]),
+    ("EBOOK_-_Reta_Final_-_DPE-SP_-_Direto_Processual_Penal", "Reta Final DPE/SP · Direito Processual Penal", ["pp"]),
+    ("EBOOK_-_Reta_Final_-_DPE-SP_-_Direito_Processual_Civil", "Reta Final DPE/SP · Direito Processual Civil", ["pc"]),
+    ("EBOOK_-_Reta_Final_-_DPE-SP_-_Direitos_Difusos_e_Coletivos", "Reta Final DPE/SP · Direitos Difusos e Coletivos", ["difusos", "amb", "urb"]),
+    ("EBOOK_-_Reta_Final_-_DPE-SP_-_Direito_da_Criança_e_do_Adolescente", "Reta Final DPE/SP · Direito da Criança e do Adolescente", ["eca"]),
+    ("EBOOK_-_Reta_Final_-_DPE-SP_-_Teses_Institucionais_DPE-SP", "Reta Final DPE/SP · Teses Institucionais", ["inst"]),
+    ("Defensoria_Pública_-_LC_80_1994", "Pro Leges · Defensoria Pública – LC 80/1994 e CF/88", ["inst"]),
+    ("Difusos_e_coletivos_-_em_1_coluna", "Pro Leges · Direitos Difusos e Coletivos", ["difusos"]),
+    ("Direito_da_Pessoa_com_Deficiência", "Pro Leges · Direito da Pessoa com Deficiência", ["difusos", "dh"]),
+    ("Direito_da_pessoa_idosa", "Pro Leges · Direito da Pessoa Idosa", ["difusos", "dh"]),
+    ("Direito_do_Consumidor.pdf", "Pro Leges · Direito do Consumidor", ["consumidor"]),
+    ("Direito_da_Criança_e_do_Adolescente.pdf", "Pro Leges · Direito da Criança e do Adolescente", ["eca"]),
+    ("Direito_Urbanístico", "Pro Leges · Direito Urbanístico", ["urb", "difusos"]),
+    ("Direito_à_saúde", "Pro Leges · Direito à Saúde", ["const", "difusos", "dh"]),
+    ("Criminologia.pdf", "Pro Leges · Criminologia", ["crimino"]),
+    ("Direito_Agrário", "Pro Leges · Direito Agrário", ["const", "civil", "difusos"]),
+    ("Direito_Digital", "Pro Leges · Direito Digital", ["civil", "const"]),
+    ("Direito_Desportivo", "Pro Leges · Direito Desportivo", ["const"]),
     ("_Execução_penal", "Pro Leges · Execução Penal", ["exec"]),
     ("2026.08._Criminologia", "Pro Leges · Criminologia (revisão DPE/RJ)", ["crimino"]),
     ("NPL._02._Traumatologia", "NPL · Medicina Legal – Traumatologia", ["medleg"]),
@@ -81,8 +102,63 @@ EXTRA_RDP = {"grupos-vulneraveis-pessoas-em-situacao-de-rua": ["difusos"], "grup
              "sis-regional-controle-de-conven-status-dos-trat-bloco-de-const": ["const"], "o-defensor-publico-interamericano": ["inst"],
              "as-100-regras-de-brasilia": ["inst"]}
 
+PONTO_DISC = [  # (início do nome, já sem acentos, depois de "Copia_de_"/"EBOOK_1_-_") -> rótulo da disciplina, chaves
+    ("Direito_Processual_Civil", "Direito Processual Civil", ["pc"]),
+    ("Direito_Processual_Penal", "Direito Processual Penal", ["pp"]),
+    ("Direito_da_Execucao_Penal", "Direito da Execução Penal", ["exec"]),
+    ("Direito_Civil", "Direito Civil", ["civil"]),
+    ("Direito_Penal", "Direito Penal", ["penal"]),
+    ("Direito_Constitucional", "Direito Constitucional", ["const"]),
+    ("Principios_Institucionais", "Princípios Institucionais", ["inst"]),
+]
+def ponto_de(nome):
+    """Apostila "Ponto N" do Cursos DUO: (rótulo, chaves) ou (None, None)."""
+    nome = unicodedata.normalize("NFC", nome)
+    base = "".join(ch for ch in unicodedata.normalize("NFD", nome) if unicodedata.category(ch) != "Mn")
+    base = re.sub(r"^(Copia_de_|EBOOK_\d+_-_)", "", base)
+    m = re.search(r"Ponto_?(\d+(?:\.\d+)?)", nome)
+    if not m: return None, None
+    for pref, rot, ch in PONTO_DISC:
+        if base.startswith(pref):
+            tema = re.split(r"_-?_?(?:\[|at_\d|atualiza|Atualiza|retifica)|\.(?:pdf|docx)$", nome[m.end():], maxsplit=1)[0]
+            tema = re.sub(r"_+", " ", tema).strip(" -")
+            return f"Cursos DUO · {rot} – Ponto {m.group(1)}" + (f" ({tema})" if tema else ""), ch
+    return None, None
+
+AULAS_PP = [("teoriageraldasprovas", "Teoria geral das provas"), ("das-provas-em-especie", "Provas em espécie"),
+            ("prisao-medidas-cautelares", "Prisão, medidas cautelares e liberdade provisória"),
+            ("procedimento-do-juri", "Instrução criminal e procedimento do júri"), ("aula05brunobaghim", "Aula 5"),
+            ("aula060708", "Aulas 6 a 8"), ("recursossalim", "Recursos")]
+def outros_de(nome):
+    """Materiais de cursos anteriores (2021/2022): o ano vai no rótulo para o aluno saber que são mais antigos."""
+    m = re.search(r"R\d-Resumo_\d_-_(.+?)_-_Prof", nome)
+    if m:
+        tema = m.group(1).replace("_", " ")
+        for a, b in (("Constituicao", "Constituição"), ("Modificacao", "Modificação"), ("Historia", "História")): tema = tema.replace(a, b)
+        return f"OUSE · Teoria da Constituição – {tema} (2022)", ["const"]
+    m = re.search(r"(?:carjuridicasdirprocpenal|cjprocessopenal)cap(?:itulo)?(\d+)", nome)
+    if m: return f"CERS · Carreiras Jurídicas · Direito Processual Penal – cap. {m.group(1)} (2021)", ["pp"]
+    m = re.search(r"cjconstitucionalcap(\d+)", nome)
+    if m: return f"CERS · Carreiras Jurídicas · Direito Constitucional – cap. {m.group(1)} (2021)", ["const"]
+    m = re.search(r"direito-(constitucional|processual-penal)-(.+?)-(?:dpe-)?full", nome)
+    if m:
+        tema = m.group(2).replace("-", " ")
+        for a, b in (("prisao", "prisão"), ("nocoes introdutorias", "noções introdutórias"), ("especies", "espécies"),
+                     ("custodia", "custódia"), ("obtencao", "obtenção"), ("inquerito", "inquérito"), ("acao", "ação"),
+                     ("sentenca", "sentença"), ("meios extraordinarios", "meios extraordinários"), ("temporaria", "temporária"), ("policial juiz", "policial e juiz"), ("especies", "espécie")):
+            tema = tema.replace(a, b)
+        disc = "Direito Constitucional" if m.group(1) == "constitucional" else "Direito Processual Penal"
+        return f"Themas · DPE Full · {disc} – {tema[:1].upper() + tema[1:]} (2022)", ["const" if m.group(1) == "constitucional" else "pp"]
+    for k, t in AULAS_PP:
+        if k in nome: return f"Curso Carreiras Jurídicas (2021) · Processo Penal – {t}", ["pp"]
+    return None, None
+
 def fonte_de(arq):
-    nome = arq.split("_", 1)[1] if "_" in arq else arq
+    nome = arq[7:] if re.match(r"^.{6}_", arq) else arq   # o nome salvo começa pelos 6 primeiros caracteres do id do Drive
+    rot, ch = ponto_de(nome)
+    if rot: return rot, ch
+    rot, ch = outros_de(nome)
+    if rot: return rot, ch
     for pref, rot, ch in FONTES:
         if nome.startswith(pref) or pref in arq: return rot, ch
     base = re.sub(r"\.(pdf|md|docx)$", "", nome).strip("_")
