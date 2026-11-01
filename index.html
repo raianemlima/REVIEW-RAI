@@ -385,6 +385,8 @@ nav.tabs button[data-n]:not([data-n=""])::after { content: attr(data-n); positio
 .libnav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; } .libnav .btn { flex: 1 1 auto; }
 .eb-entrar { width: 100%; margin: 0 0 8px; }
 .eb-lista { display: grid; gap: 12px; } .eb-card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 16px; }
+.eb-grupo { background: var(--ok-soft); color: var(--ok); font-weight: 600; }
+.eb-texto [id] { scroll-margin-top: 112px; } .eb-texto .eb-alvo { background: var(--ok-soft); border-radius: 8px; padding: 2px 6px; margin-left: -6px; }
 .eb-card h3.eb-ct { text-transform: none; letter-spacing: 0; font: 600 1.15rem/1.25 var(--f-read); color: var(--ink); margin: 8px 0 4px; } .eb-cs { color: var(--muted); margin: 0 0 8px; font-size: .9rem; }
 .eb-fonte { display: flex; gap: 6px; } .eb-toc { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 10px 14px; margin: 0 0 12px; }
 .eb-toc summary { cursor: pointer; font-weight: 600; } .eb-toc ul { list-style: none; padding: 0; margin: 8px 0 0; } .eb-toc li { margin: 4px 0; } .eb-toc li.n4 { padding-left: 14px; font-size: .92em; }
@@ -1076,7 +1078,7 @@ document.body.classList.add("rd-gate");
   const KEY = "revisao-dpe-chave", KEY_UID = "revisao-dpe-chave-uid", CONTA = "revisao-dpe-conta", VERIF = "revisao-dpe-verif", PRAZO = 7 * 86400000;
   const SB_URL = "https://hlenhmgnqqnkjqmntnpz.supabase.co", SB_KEY = "sb_publishable_UbPHvOFSbd-dgyDx6SI7mg_UBx4_o9l";   // chave pública: a proteção é a RLS
   const $ = s => document.querySelector(s);
-  const APP_CACHE = "review-dpe-assuntos-v23";
+  const APP_CACHE = "review-dpe-assuntos-v24";
   async function carregarTexto(url, tipo, motivo) {
     let resposta;
     try { resposta = await fetch(url); } catch (_) { throw new Error(motivo); }

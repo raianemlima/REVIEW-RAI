@@ -117,3 +117,8 @@ html[data-rd-design="figma"] body.rd-shell .cr-form select { box-sizing:border-b
 .cr-rel-grupo p { margin:4px 0 6px; }
 .cr-platform-list li .btn { justify-self:start; margin-top:4px; min-height:36px; overflow-wrap:anywhere; white-space:normal; text-align:left; }
 .cr-platform-list li span { overflow-wrap:anywhere; }
+/* trechos doutrinários do material pessoal (e-book "Conteúdo específico" no Aprofundamento) */
+.cr-trechos { display:flex; flex-wrap:wrap; align-items:center; gap:6px 10px; margin:6px 0 8px; }
+.cr-trechos .btn { min-height:36px; white-space:normal; text-align:left; }
+.cr-trechos small { color:var(--muted); font-size:.78rem; overflow-wrap:anywhere; }
+.cr-trechos-vazio { display:block; font-size:.8rem; color:var(--muted); }

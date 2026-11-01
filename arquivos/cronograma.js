@@ -150,6 +150,20 @@
     if (_relCache.size > 400) _relCache.clear(); _relCache.set(k, r); return r;
   }
   const irAttr = o => `data-cr-ir="${escLocal(JSON.stringify(o))}"`;
+  // trechos doutrinários do material pessoal (e-book "Conteúdo específico" do edital, no Aprofundamento)
+  function trechosDoAssunto(p, b) {
+    const ebs = globalOu(() => DECK.ebooks, []) || [];
+    const e = ebs.find(x => x && x.edital === p.conteudoId && x.mapa && Object.hasOwn(x.mapa, b.topicoId));
+    if (!e) return null;
+    const [ci, k, n] = e.mapa[b.topicoId] || [];
+    return Number.isInteger(ci) && Number.isInteger(k) ? { id: e.id, titulo: e.titulo, ci, k, n: Number(n) || 0 } : null;
+  }
+  function trechosHtml(p, b) {
+    const t = trechosDoAssunto(p, b);
+    if (!t) return '';
+    if (!t.n) return `<p class="cr-trechos cr-trechos-vazio" data-cr-trechos="0">Sem trecho doutrinário deste assunto no seu material: estude pela lei seca, pelos cartões e pelas fontes oficiais.</p>`;
+    return `<p class="cr-trechos" data-cr-trechos="${t.n}"><button type="button" class="btn small primary" ${irAttr({ v: 'eb', id: t.id, ci: t.ci, a: `eb${t.ci}-${t.k}` })}>📖 Estudar os trechos doutrinários</button><small>${t.n} ${t.n === 1 ? 'trecho' : 'trechos'} do seu material · ${escLocal(t.titulo)}</small></p>`;
+  }
   const resumir = (s, n = 160) => { const x = String(s || '').replace(/\s+/g, ' ').trim(); return x.length > n ? x.slice(0, n) + '…' : x; };
   const frenteCartao = c => c.tipo === 'multipla_escolha' && typeof parseMC === 'function' ? globalOu(() => parseMC(c.frente).stem, c.frente) : c.frente;
   function itemRelHtml(x) {
@@ -184,6 +198,7 @@
     else if (o.v === 'sum') { S.defTri = o.tri || ''; S.defRamo = o.ramo || ''; go('defensoria'); }
     else if (o.v === 'prova') { S.pvId = o.id; S.pvMat = o.mat || ''; const P = globalOu(() => provasDados(), []).find(x => x.id === o.id), lista = P ? P.questoes.filter(q => !S.pvMat || q.materia === S.pvMat) : []; S.pvI = Math.max(0, lista.findIndex(q => q.n === o.n)); go('prova'); }
     else if (o.v === 'busca') { S.buscaQ = o.q || ''; go('busca'); }
+    else if (o.v === 'eb') { S.libView = 'ebooks'; S.ebId = o.id; S.ebCap = Number(o.ci) || 0; S.ebAncora = o.a || null; go('biblioteca'); }
   }
   function bindBiblioteca(root=document) {
     root.querySelectorAll('[data-cr-ir]').forEach(b => b.onclick = e => { e.preventDefault(); let o = null; try { o = JSON.parse(b.dataset.crIr); } catch (_) {} irPara(o); });
@@ -203,7 +218,7 @@
     if(!b.disciplinaId)return `<article class="cr-bloco cr-revisao"><b>Revisão complementar · ${b.minutos} min</b><p>Revisar não substitui ler o assunto. A fila e o FSRS continuam independentes.</p></article>`;
     const feito=!!registros()[chave(p,b)]?.concluido;
     const disponiveis=disciplina(b.disciplinaId,p).topicos||[];
-    return `<article class="cr-bloco ${feito?'cr-feito':''}" data-cr-bloco="${b.id}"><small>${escLocal(b.nome)} · ${b.minutos} min${b.tipo==='revisita'?' · revisita após percorrer os assuntos':''}</small><h4>${escLocal(b.topico)}</h4>${resumoRelacionado(conteudoRelacionado(p,b))}${materialHtml(p,b)}${ativo?`<label class="cr-concluir"><input type="checkbox" data-cr-concluir="${escLocal(chave(p,b))}" ${feito?'checked':''}> Estudei este assunto</label>`:`<label class="field cr-trocar"><span>Escolher outro assunto deste bloco</span><select data-cr-trocar="${b.id}">${disponiveis.filter(t=>t.id===b.topicoId||!registros()[motor().chaveTopico(p.conteudoId,b.disciplinaId,t.id)]?.concluido).map(t=>`<option value="${escLocal(t.id)}" ${t.id===b.topicoId?'selected':''}>${escLocal(t.titulo)}</option>`).join('')}</select></label>`}</article>`;
+    return `<article class="cr-bloco ${feito?'cr-feito':''}" data-cr-bloco="${b.id}"><small>${escLocal(b.nome)} · ${b.minutos} min${b.tipo==='revisita'?' · revisita após percorrer os assuntos':''}</small><h4>${escLocal(b.topico)}</h4>${trechosHtml(p,b)}${resumoRelacionado(conteudoRelacionado(p,b))}${materialHtml(p,b)}${ativo?`<label class="cr-concluir"><input type="checkbox" data-cr-concluir="${escLocal(chave(p,b))}" ${feito?'checked':''}> Estudei este assunto</label>`:`<label class="field cr-trocar"><span>Escolher outro assunto deste bloco</span><select data-cr-trocar="${b.id}">${disponiveis.filter(t=>t.id===b.topicoId||!registros()[motor().chaveTopico(p.conteudoId,b.disciplinaId,t.id)]?.concluido).map(t=>`<option value="${escLocal(t.id)}" ${t.id===b.topicoId?'selected':''}>${escLocal(t.titulo)}</option>`).join('')}</select></label>`}</article>`;
   }
   function semanaPreview(p,w=0) {
     if(!motor()||!unidades(p).length)return dias.map(([id,n])=>`<div class="cr-dia ${p.dias.includes(id)?'':'off'}"><b>${n}</b><small>${p.dias.includes(id)?minutosPorDia(p)+' min disponíveis':'dia livre'}</small>${p.dias.includes(id)?'<p>Escolha o edital de conteúdo para montar os assuntos.</p>':''}</div>`).join('');
