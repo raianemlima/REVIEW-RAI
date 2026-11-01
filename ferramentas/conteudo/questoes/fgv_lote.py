@@ -95,10 +95,15 @@ def main():
             esp = toks(nome) - GENERICAS
             ok_extra = {"nivel", "medio", "superior"} | ({"direito"} if "oficial" in toks(nome) else set())
 
+            compacto = re.sub(r"[^a-z]", "", "".join(c for c in unicodedata.normalize("NFD", nome.lower()) if unicodedata.category(c) != "Mn"))
+
             def pontos(h):
                 th = toks(h)
                 if esp:
-                    return len(esp & (th - GENERICAS))
+                    # todas as palavras que distinguem o cargo no gabarito precisam estar no nome do arquivo
+                    # ("Engenheiro Eletricista" não casa com "engenheiro-civil" só por causa de "engenheiro")
+                    sp = th - GENERICAS
+                    return len(sp) if sp and all(x in compacto for x in sp) else 0
                 # cargo sem especialidade (Técnico, Oficial de Justiça): o título do gabarito não pode trazer outra especialidade
                 return 1 if (th - toks(nome)) <= ok_extra and len(th & toks(nome)) >= 1 else 0
 

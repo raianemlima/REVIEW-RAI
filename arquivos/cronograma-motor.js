@@ -164,6 +164,8 @@
     const idx = indexar(fontes || {}), c = consulta || {};
     const { titulo, q } = montarConsulta(c);
     const discIds = new Set(arr(c.discIds)), nomes = arr(c.discNomes).map(semDireito).filter(Boolean);
+    // poucas matérias distintas para milhares de questões: o ramo é comparado uma vez por consulta
+    const memoRamo = new Map(), ramoOk = ramo => { if (!memoRamo.has(ramo)) memoRamo.set(ramo, ramoCompativel(ramo, nomes)); return memoRamo.get(ramo); };
     const top = l => l.sort((a, b) => b.s - a.s || String(a.k).localeCompare(String(b.k)));
     const tema = [], lei = [], juris = [], questoes = [];
     for (const it of idx.cartoes) {
@@ -179,11 +181,11 @@
       if (porLei || arts.length) lei.push({ fonte: 'leiseca', k: L.d.id, s: (porLei ? 50 : 0) + (arts[0]?.s || 0), item: L.d, artigos: arts.slice(0, 3).map(x => ({ a: x.art.a, r: x.art.r, gi: x.art.gi })), motivo: porLei ? 'lei citada no edital' : 'artigos sobre o assunto' });
     }
     for (const [lista, fonte] of [[idx.teses, 'tese'], [idx.sumulas, 'sumula']]) for (const it of lista) {
-      const discOk = ramoCompativel(it.ramo, nomes), a = avaliar(it.p, q);
+      const discOk = ramoOk(it.ramo), a = avaliar(it.p, q);
       if (aceita(a, q, discOk === null ? null : discOk)) juris.push({ fonte, k: fonte + (it.x.num || it.x.tipo || ''), s: pontos(a, discOk), item: it.x, motivo: a.ref ? 'precedente citado' : a.lei ? 'mesma lei' : 'mesmo assunto' });
     }
     for (const it of idx.questoes) {
-      const discOk = ramoCompativel(it.ramo, nomes), a = avaliar(it.p, q, it.t), b = avaliar({ n: it.p.n, r: it.t, refs: it.p.refs }, q);
+      const discOk = ramoOk(it.ramo), a = avaliar(it.p, q, it.t), b = avaliar({ n: it.p.n, r: it.t, refs: it.p.refs }, q);
       if (aceita({ ...a, tit: b.tit }, q, discOk)) questoes.push({ fonte: 'prova', k: it.P.id + ':' + it.q.n, s: pontos(a, discOk) + (it.q.gabarito === 'X' ? -20 : 0), item: it.q, prova: it.P, motivo: a.ref ? 'referência citada' : a.lei ? 'mesma lei' : 'mesmo assunto' });
     }
     const g = (l) => ({ total: l.length, itens: top(l).slice(0, limite) });

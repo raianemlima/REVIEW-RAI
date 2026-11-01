@@ -1,21 +1,32 @@
-# Questões de concursos (TJ e MP)
+# Questões de concursos (TJ e MP) — só área jurídica
 
-As provas entram no banco que já existe no app, **Provas de concurso** (`PROVAS_PUBLICO` em `app-src.txt`), com correção na hora, placar por matéria e envio das erradas para a revisão. Esta rotina só **acrescenta** provas: as que já estavam (FCC, DPE-MG, DPE-PE, DPE-PR, DPE-RN, DPE-RO, DPE-SP) saem idênticas, e o teste `tests/questoes-tj.test.mjs` protege isso.
+As provas entram no banco que já existe no app, **Provas de concurso** (`PROVAS_PUBLICO` em `app-src.txt`), com correção na hora, placar por matéria e envio das erradas para a revisão. Esta rotina só **acrescenta** provas: as que já estavam (FCC, DPE-MG, DPE-PE, DPE-PR, DPE-RN, DPE-RO, DPE-SP) saem idênticas, e `tests/questoes-tj.test.mjs` protege isso.
 
-## Fontes e o que entra
+## O que entra
 
-- Só cadernos e gabaritos **definitivos** publicados pela banca (FGV: `conhecimento.fgv.br/concursos/<slug>`), prova Tipo 1. Sem comentários. Anuladas ficam com gabarito `X`.
-- Quando a banca republica o gabarito (v2, v3...), vale a versão mais nova. Ex.: no TJMT a retificação mudou Direito de 2 para 3 anuladas.
-- Figuras e quadros não são extraídos: a questão leva um aviso no enunciado.
-- Cargo sem seção correspondente no gabarito **não entra** (em vez de arriscar gabarito trocado). Ficaram de fora: TJRR Analista (Advogado) e TJMT Analista de TI.
+- **Fontes:** cadernos e gabaritos **definitivos** publicados pelas bancas: FGV (`conhecimento.fgv.br/concursos/<slug>`, prova Tipo 1) e Cebraspe (API pública `apis.cebraspe.org.br/cebraspe/eventos/<id>` e CDN `cdn.cebraspe.org.br`). Sem comentários. Anuladas ficam com gabarito `X`.
+- **Só área jurídica** (`juridica.py`), em dois níveis:
+  - *cargo:* entram juiz, promotor, oficial de justiça, analista/técnico judiciário da área judiciária ou de direito, analista jurídico. Ficam de fora engenharia, psicologia, contabilidade, TI, administração, saúde etc.
+  - *disciplina:* dentro de um cargo jurídico saem Português, Informática, Estatística, Raciocínio Lógico, Matemática, Atualidades e os "Conhecimentos Gerais".
+  As questões mantêm o número original do caderno (podem existir "buracos" na numeração).
+- Quando a banca republica o gabarito (v2, v3...), vale a mais nova (no TJMT a retificação mudou Direito de 2 para 3 anuladas).
+- Texto-base (Cebraspe: "Texto CG1A1-I") é anexado à questão. Figuras, quadros e gráficos não são extraídos: a questão leva um aviso no enunciado.
+- Itens Certo/Errado do Cebraspe entram só em blocos de "Conhecimentos Específicos" (sem rótulo de matéria não dá para separar o que é jurídico).
+- Cargo sem seção equivalente no gabarito **não entra** (em vez de arriscar gabarito trocado).
 - Não coletamos do Qconcursos (termos de uso) nem do PCI Concursos (captcha).
 
 ## Como acrescentar
 
 ```bash
 pip install pymupdf
-python ferramentas/conteudo/questoes/fgv_lote.py cache/ saida/ tjrr24:TJRR:2024 tjmtservidor:TJMT:2024   # slug:SIGLA:ANO
-python ferramentas/conteudo/questoes/para_banco.py saida/ app-src.txt
+python ferramentas/conteudo/questoes/fgv_lote.py cache/ saida_fgv/ tjrr24:TJRR:2024 tjmtservidor:TJMT:2024   # slug:SIGLA:ANO
+python ferramentas/conteudo/questoes/cebraspe.py cache/ saida_ceb/ TJ_CE_23_SERVIDOR:TJCE:2023 MP_BA_23_PROMOTOR:MPBA:2023
+python ferramentas/conteudo/questoes/para_banco.py app-src.txt saida_fgv/ saida_ceb/
 ```
 
-`fgv_lote.py` imprime um relatório dos cargos que não casaram. `para_banco.py` grava `ferramentas/conteudo/dados/simulados/<id>.json` e reembute `PROVAS_PUBLICO`. Depois suba `CACHE`/`APP_CACHE` (sw.js, gate.js e gate do index.html).
+Os dois primeiros imprimem um relatório do que não casou. `para_banco.py` apaga e refaz os arquivos `ferramentas/conteudo/dados/simulados/(tj|mp)*.json` a cada execução (os das provas antigas nunca casam) e reembute `PROVAS_PUBLICO`. O cache do app é carimbado na publicação.
+
+## Ainda não coberto
+
+- Gabaritos da FGV em outro layout (pares "número / letra" por turno, como MPES 2025 e TJTO 2025 de juiz) e concursos cuja página não lista os cadernos (TJRN 2023, TJAM, TJMG, TJRJ).
+- Concursos de MP organizados por outras bancas (por exemplo, MPSP, MPMG, MPRJ próprios) e de juiz fora da FGV/Cebraspe (por exemplo, TJSP e TJMG, em outras bancas).

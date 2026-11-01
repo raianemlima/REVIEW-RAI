@@ -55,9 +55,34 @@ def gabarito(pdf, cargo, tipo):
     return res
 
 
+TITULO = "\x01"   # marca de linha de título de bloco (disciplina) no texto de uma página
+
+
+def texto_marcado(pagina):
+    """Texto da página, uma linha por linha do PDF; títulos de bloco (fonte grande em negrito) levam a marca TITULO."""
+    out = []
+    for b in pagina.get_text("dict")["blocks"]:
+        for l in b.get("lines", []):
+            sp = [s for s in l["spans"] if s["text"].strip()]
+            if not sp:
+                continue
+            txt = "".join(s["text"] for s in l["spans"]).strip()
+            grande = max(s["size"] for s in sp) >= 11.5 and all("Bold" in s["font"] or s["flags"] & 16 for s in sp)
+            out.append((TITULO if grande else "") + txt)
+    return "\n".join(out)
+
+
+def nome_disciplina(t):
+    t = re.sub(r"\s+", " ", t).strip()
+    t = re.sub(r"(?i)^bloco [IVXLC]+\s*[:\-–]?\s*", "", t)
+    if t.isupper():
+        t = t.title().replace(" E ", " e ").replace(" Do ", " do ").replace(" De ", " de ").replace(" Da ", " da ")
+    return t
+
+
 def caderno(pdf, cargo=""):
     doc = pymupdf.open(pdf)
-    pags = [p.get_text() for p in doc]
+    pags = [texto_marcado(p) for p in doc]
     # o enunciado começa na primeira página que já traz alternativas; antes vêm capa e instruções
     ini = next((k for k, t in enumerate(pags) if re.search(r"^\(A\)", t, re.M)), 0)
     corpo = pags[ini:]
@@ -70,9 +95,14 @@ def caderno(pdf, cargo=""):
     cab = {s for s, n in freq.items() if n >= limite and not ALT.match(s) and not re.fullmatch(r"\d{1,3}", s)}
     L = [l for t in corpo for l in t.splitlines()]
     L = [l for l in L if l.strip() and l.strip() not in cab and not re.match(r"^(TRIBUNAL|FGV CONHECIMENTO|.*P[ÁA]GINA \d+\s*$|-{5,})", l.strip(), re.I)]
-    qs, atual, esperado, disc = [], None, 1, ""
+    qs, atual, esperado, disc, titulo = [], None, 1, "", []
     L = [l.strip() for l in L]
     for k, s in enumerate(L):
+        if s.startswith(TITULO):   # título de bloco (fonte grande em negrito): vale para as questões seguintes
+            titulo.append(s[len(TITULO):].strip())
+            continue
+        if titulo:
+            disc = nome_disciplina(" ".join(titulo)); titulo = []
         if re.fullmatch(r"\d{1,3}", s) and int(s) == esperado:
             if atual:
                 qs.append(atual)

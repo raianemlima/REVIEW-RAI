@@ -1,0 +1,1309 @@
+{
+ "id": "mppa-2022-promotor-de-justica-de-primeira-entrancia-e-promotor-de-justica-substituto-de-primeira-entrancia",
+ "nome": "MPPA 2022 · Promotor de Justiça de Primeira Entrância e Promotor de Justiça Substituto de Primeira Entrância",
+ "cargo": "Carreira jurídica",
+ "banca": "Cebraspe",
+ "gabarito": "definitivo",
+ "questoes": [
+  {
+   "n": 1,
+   "materia": "Prova Objetiva",
+   "enunciado": "Em conformidade com a jurisprudência do Supremo Tribunal Federal (STF) e do Superior Tribunal de Justiça (STJ), assinale a opção correta, acerca do direito fundamental ao sigilo.",
+   "alternativas": {
+    "A": "Não é legítimo que a Receita Federal do Brasil (RFB), sem prévia autorização judicial, compartilhe com os órgãos de persecução penal procedimento fiscalizatório por ela realizado para apuração de débito tributário com o Ministério Público, para fins criminais.",
+    "B": "O Ministério Público pode fazer a requisição direta à RFB de dados fiscais, para fins criminais.",
+    "C": "É legal a utilização, pelo Ministério Público, de prova sigilosa obtida em procedimento em curso no STF para abertura de procedimento investigatório criminal autônomo com o objetivo de apurar os mesmos fatos já investigados naquela corte.",
+    "D": "É lícita a requisição, pelo Ministério Público, de informações bancárias de contas de titulares de órgãos e entidades públicas, com o fim de proteger o patrimônio público.",
+    "E": "São ilícitas, por violação ao sigilo de dados bancários, as provas resultantes do compartilhamento com o Ministério Público de dados de movimentações financeiras da própria instituição bancária realizadas por funcionário acusado de gestão fraudulenta."
+   },
+   "gabarito": "X"
+  },
+  {
+   "n": 2,
+   "materia": "Prova Objetiva",
+   "enunciado": "A respeito do Conselho Nacional do Ministério Público (CNMP),",
+   "alternativas": {
+    "A": "Por não consistirem em ato de caráter geral e abstrato, as resoluções do CNMP não se sujeitam ao controle de constitucionalidade por ação direta.",
+    "B": "O CNMP será composto, entre outros, por quatro membros oriundos dos ministérios públicos dos estados.",
+    "C": "O CNMP escolherá um corregedor nacional, entre os membros de ministério público que o integram, permitida uma recondução.",
+    "D": "Cabe ao CNMP rever, desde que provocado, processos disciplinares de membros dos ministérios públicos dos estados julgados há menos de um ano.",
+    "E": "Compete ao CNMP, e não ao STF, conhecer e dirimir conflito de atribuições entre membros de ramos diversos do Ministério Público."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 3,
+   "materia": "Prova Objetiva",
+   "enunciado": "À luz da Constituição Federal de 1988 (CF) e da jurisprudência do Supremo Tribunal Federal (STF), assinale a opção correta acerca da intervenção estadual.",
+   "alternativas": {
+    "A": "Na hipótese de o tribunal de justiça deferir pedido de intervenção em representação a ele dirigida, desde que a medida se limite a suspender o ato impugnado, a apreciação pela assembleia legislativa poderá ser dispensada.",
+    "B": "Caberá recurso extraordinário contra acórdão de tribunal de justiça que deferir pedido de intervenção estadual em município.",
+    "C": "Se, decretada a intervenção, a assembleia legislativa não estiver funcionando, será realizada a sua convocação extraordinária, no prazo de quarenta e oito horas.",
+    "D": "Constituição estadual poderá conferir ao tribunal de contas atribuição de requerer ao governador medida interventiva na hipótese de irregularidade na prestação de contas do prefeito.",
+    "E": "O decreto de intervenção deverá, necessariamente, especificar a amplitude, o prazo e as condições de execução, bem como nomear o interventor."
+   },
+   "gabarito": "X"
+  },
+  {
+   "n": 4,
+   "materia": "Prova Objetiva",
+   "enunciado": "Considerando as disposições da CF e o entendimento do STF, assinale a opção que apresenta medida que pode ser determinada diretamente por Comissão Parlamentar de Inquérito (CPI).",
+   "alternativas": {
+    "A": "expedição de ordem de prisão",
+    "B": "interceptação telefônica",
+    "C": "busca domiciliar",
+    "D": "quebra de sigilo fiscal",
+    "E": "quebra de segredo de justiça"
+   },
+   "gabarito": "X"
+  },
+  {
+   "n": 5,
+   "materia": "Prova Objetiva",
+   "enunciado": "Conforme a jurisprudência do STF, restará prejudicado o julgamento da ADI quando houver",
+   "alternativas": {
+    "A": "revogação do ato normativo antes do julgamento, ainda que seja demonstrado que seu conteúdo foi repetido em outro diploma normativo.",
+    "B": "revogação do ato normativo que estava sendo impugnado e não for demonstrada a ocorrência de fraude processual, com o objetivo de evitar que o STF declare o ato inconstitucional.",
+    "C": "alteração, antes do julgamento, da lei impugnada, ainda que o autor adite a petição inicial demonstrando que a nova redação apresenta o mesmo vício.",
+    "D": "conversão em lei da medida provisória impugnada, antes que a ADI seja julgada, ainda que o autor adite a petição inicial demonstrando que o texto normativo original se mantém.",
+    "E": "alteração no parâmetro constitucional, desde que o processo ainda esteja em curso."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 6,
+   "materia": "Prova Objetiva",
+   "enunciado": "No que concerne aos direitos e às garantias fundamentais, assinale a opção correta, à luz da jurisprudência dos tribunais superiores.",
+   "alternativas": {
+    "A": "É inconstitucional lei estadual que responsabilize estado-membro por danos causados a pessoas presas na ditadura.",
+    "B": "A incitação ao ódio público feita por líder religioso contra outras religiões pode configurar o crime de racismo.",
+    "C": "A fixação de piso salarial em múltiplos do salário mínimo é constitucional, desde que previstos reajustes automáticos.",
+    "D": "O STJ entende que, em ação contra empresa jornalística, é cabível pedido do autor para que seja publicada, no veículo de imprensa, a decisão condenatória proferida em seu desfavor, ainda que não tenha sido pleiteado, administrativamente, o direito de resposta ou de retificação da matéria divulgada.",
+    "E": "Caso um hospital particular atenda um paciente do Sistema Único de Saúde (SUS) por força de decisão judicial, o hospital deverá ser ressarcido com base nos valores de mercado."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 7,
+   "materia": "Prova Objetiva",
+   "enunciado": "Com base na jurisprudência do STF e do STJ, assinale a opção correta, a respeito do Ministério Público.",
+   "alternativas": {
+    "A": "A ação civil de perda de cargo de promotor de justiça cuja causa de pedir não tenha como fundamento ato de improbidade administrativa deverá ser julgada pelo tribunal de justiça.",
+    "B": "É constitucional emenda à Constituição estadual que verse sobre normas gerais para a organização do ministério público do estado.",
+    "C": "A participação de membro do Ministério Público na fase investigatória criminal acarretará o seu impedimento para o oferecimento de denúncia.",
+    "D": "É constitucional dispositivo de lei estadual que institua gratificação aos membros do Ministério Público pela prestação de serviço à justiça eleitoral, a ser paga pelo Poder Judiciário.",
+    "E": "É constitucional lei estadual que exija que o membro do Ministério Público comunique à corregedoria quando for se ausentar da comarca onde está lotado."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 8,
+   "materia": "Prova Objetiva",
+   "enunciado": "No que se refere a finanças públicas, assinale a opção correta, com base na Constituição Federal de 1988 (CF).",
+   "alternativas": {
+    "A": "Os recursos transferidos aos estados oriundos de emendas individuais impositivas não integrarão a receita do estado para fins de cálculo de limites da despesa com pessoal ativo e inativo.",
+    "B": "As disponibilidades de caixa dos estados serão depositadas no Banco Central do Brasil.",
+    "C": "O Poder Executivo publicará, até quarenta e cinco dias após o encerramento de cada bimestre, relatório resumido da execução orçamentária.",
+    "D": "É permitida a transferência a fundos de recursos financeiros oriundos de repasses de duodécimos.",
+    "E": "Se for apurado que, no período de doze meses, a relação entre despesas correntes e receitas correntes superou noventa por cento no âmbito dos estados, será facultada a adoção de mecanismos de ajuste fiscal, por exemplo, mediante a vedação de criação de despesa obrigatória."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 9,
+   "materia": "Prova Objetiva",
+   "enunciado": "No que diz respeito à ordem econômica e financeira, assinale a opção correta.",
+   "alternativas": {
+    "A": "A pesquisa e a lavra de recursos minerais podem ser concedidas pela União a empresa brasileira sediada no exterior, desde que esta esteja constituída sob as leis brasileiras.",
+    "B": "Os beneficiários da distribuição de imóveis rurais pela reforma agrária receberão títulos de domínio ou de concessão de uso, inegociáveis pelo prazo de dez anos.",
+    "C": "A União não poderá contratar empresas privadas para fazer o refinamento do petróleo estrangeiro.",
+    "D": "É facultado ao poder público municipal, mediante lei específica para área incluída no plano diretor, exigir do proprietário do solo urbano não edificado, subutilizado ou não utilizado que promova seu adequado aproveitamento, nos termos da lei municipal.",
+    "E": "A alienação ou a concessão, a qualquer título, de terras públicas com área superior a mil e quinhentos hectares a pessoa física ou jurídica dependerá de prévia aprovação do Congresso Nacional."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 10,
+   "materia": "Prova Objetiva",
+   "enunciado": "Considerando o disposto na Constituição Federal de 1988 (CF) e a jurisprudência do Supremo Tribunal Federal (STF), julgue os itens a seguir, a respeito da responsabilidade civil do Estado. No tocante às atividades perigosas, é possível, por meio de lei específica, ampliar a responsabilidade civil do Estado para adotar a teoria do risco integral. II O Estado responde objetivamente por acidentes ocasionados em decorrência do comércio de fogos de artifício exercido clandestinamente, dada a omissão estatal relativa ao dever de fiscalização e vigilância. III É possível a responsabilização civil do Estado por danos ocasionados aos particulares em decorrência da implementação de política diretiva de fixação de preços para determinado setor, desde que haja comprovação de efetivo prejuízo econômico, mediante perícia técnica.",
+   "alternativas": {
+    "A": "Apenas o item I está certo.",
+    "B": "Apenas o item III está certo.",
+    "C": "Apenas os itens I e III estão certos.",
+    "D": "Apenas os itens II e III estão certos.",
+    "E": "Todos os itens estão certos."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 11,
+   "materia": "Prova Objetiva",
+   "enunciado": "Esses agentes atuam com plena liberdade funcional, desempenhando suas atribuições com prerrogativas e responsabilidades próprias, estabelecidas na Constituição Federal de 1988 e em leis especiais. Têm normas específicas para sua escolha, sua investidura, sua conduta e seu processo por crimes funcionais e de responsabilidades, que lhe são privativos. Hely Lopes Meirelles. Direito Administrativo Brasileiro. 27.ª ed. São Paulo: Editora Malheiros (com adaptações). Assinale a opção que indica corretamente a espécie de agente público a que o trecho precedente se refere.",
+   "alternativas": {
+    "A": "agentes administrativos",
+    "B": "agentes honoríficos",
+    "C": "agentes credenciados",
+    "D": "agentes políticos",
+    "E": "agentes delegados Espaço livre"
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 12,
+   "materia": "Prova Objetiva",
+   "enunciado": "À luz da CF, da Lei n.º 9.784/1999 e da jurisprudência do STF, assinale a opção correta, acerca dos poderes administrativos.",
+   "alternativas": {
+    "A": "A administração pública pode, no exercício do seu poder discricionário, anular atos que estejam em desacordo com o ordenamento jurídico, dos quais decorram efeitos benéficos aos destinatários, observado o prazo decadencial de cinco anos, ainda que praticados em dissonância com a CF, exceto se houver má-fé por parte do beneficiário.",
+    "B": "A administração pública pode, no exercício de seu poder hierárquico, anular atos que estejam em desacordo com o ordenamento jurídico, dos quais decorram efeitos benéficos aos destinatários, observado o prazo decadencial de cinco anos, sendo este último inaplicável quando o ato for praticado em dissonância com a CF, ou quando houver má-fé por parte do beneficiário.",
+    "C": "A administração pública pode, no exercício do seu poder de autotutela, anular atos que estejam em desacordo com o ordenamento jurídico, dos quais decorram efeitos benéficos aos destinatários, observado o prazo decadencial de cinco anos, ainda que praticados em dissonância com a CF, exceto se houver má-fé por parte do beneficiário.",
+    "D": "A administração pública pode, no exercício de seu poder discricionário, anular atos que estejam em desacordo com o ordenamento jurídico, dos quais decorram efeitos benéficos aos destinatários, observado o prazo decadencial de cinco anos, sendo este último inaplicável quando o ato for praticado em dissonância com a CF, ou quando houver má-fé por parte do beneficiário.",
+    "E": "A administração pública pode, no exercício de seu poder de autotutela, anular atos que estejam em desacordo com o ordenamento jurídico, dos quais decorram efeitos benéficos aos destinatários, observado o prazo decadencial de cinco anos, sendo este último inaplicável quando o ato for praticado em dissonância com a CF, ou quando houver má-fé por parte do beneficiário."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 13,
+   "materia": "Prova Objetiva",
+   "enunciado": "Após procedimento licitatório, determinado estado formalizou contrato com empresa privada para a prestação de serviço de transporte público intermunicipal de pessoas. Iniciada a execução do contrato, o estado, tendo aderido a convênio firmado no âmbito do Conselho Nacional de Política Fazendária (CONFAZ), elevou, por meio de decreto legislativo, as alíquotas do imposto sobre operações relativas à circulação de mercadorias e sobre prestações de serviços de transporte interestadual e intermunicipal e de comunicação (ICMS), o que culminou em desequilíbrio contratual para o contratado, a ensejar recomposição de preços. Considerando a situação apresentada, assinale a opção que indica corretamente a hipótese da teoria da imprevisão descrita.",
+   "alternativas": {
+    "A": "fato da administração",
+    "B": "caso fortuito",
+    "C": "força maior",
+    "D": "interferência imprevista",
+    "E": "fato do príncipe"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 14,
+   "materia": "Prova Objetiva",
+   "enunciado": "No que se refere aos servidores públicos, observada a CF e a jurisprudência do STF, julgue os itens seguintes. A mudança do regime celetista para o estatutário enseja a extinção do contrato de trabalho, de forma que as horas extras incorporadas no regime da Consolidação das Leis do Trabalho, ainda que decorrentes de decisão judicial transitada em julgado, não subsistem após a conversão do regime de trabalho. II A estabilidade excepcional, prevista para servidores públicos em exercício quando da promulgação da CF, não implica efetividade no cargo público, para a qual se exige a aprovação em concurso público. III As formas de provimento derivado consistentes na ascensão, transferência e aproveitamento no tocante a cargos públicos são compatíveis com a CF.",
+   "alternativas": {
+    "A": "Nenhum item está certo.",
+    "B": "Apenas os itens I e II estão certos.",
+    "C": "Apenas os itens I e III estão certos.",
+    "D": "Apenas os itens II e III estão certos.",
+    "E": "Todos os itens estão certos."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 15,
+   "materia": "Prova Objetiva",
+   "enunciado": "No ano de 2018, João concedeu benefício fiscal sem observar as formalidades legais, tendo sido posteriormente comprovado dano ao patrimônio público e evidenciado não existir qualquer dolo por parte de João. O processo para a apuração da conduta de João está em curso, não tendo havido, ainda, sentença condenatória. Nessa situação hipotética, de acordo com a Lei de Improbidade Administrativa (LIA), a CF e a jurisprudência do STF, é correto afirmar que João deverá ser",
+   "alternativas": {
+    "A": "condenado no processo de apuração da conduta, uma vez que praticou ato de improbidade administrativa que gerou enriquecimento ilícito, passível de punição na modalidade culposa.",
+    "B": "absolvido no processo de apuração da conduta, pois a conduta descrita, embora tenha causado prejuízo ao erário, deixou de ser punível na modalidade culposa após as alterações da LIA.",
+    "C": "absolvido no processo de apuração da conduta, uma vez que a conduta descrita, embora tenha gerado enriquecimento ilícito, deixou de ser punível na modalidade culposa após as alterações da LIA.",
+    "D": "condenado no processo de apuração da conduta, dado que praticou ato de improbidade administrativa que causou prejuízo ao erário, punível sob a modalidade culposa, mesmo depois das alterações na LIA.",
+    "E": "condenado no processo de apuração da conduta, pois a conduta descrita causou prejuízo ao erário e foi praticada na vigência da redação anterior da LIA, sendo, portanto, passível de punição na modalidade culposa."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 16,
+   "materia": "Prova Objetiva",
+   "enunciado": "A respeito da extinção dos contratos administrativos conforme dispõe a Lei n.º 14.133/2021, assinale a opção correta.",
+   "alternativas": {
+    "A": "A extinção do contrato administrativo pode ser determinada unilateralmente pela administração pública, ainda que o descumprimento contratual tenha decorrido de conduta da própria administração.",
+    "B": "A utilização das instalações e dos equipamentos necessários à continuidade do contrato deverá ser imediata, independentemente de autorização do gestor público competente, em caso de extinção do contrato administrativo por ato unilateral da administração pública.",
+    "C": "A extinção do contrato administrativo por ato unilateral da administração pública e a extinção consensual desse instrumento deverão ser precedidas de autorização escrita e fundamentada da autoridade competente.",
+    "D": "A decretação de falência do contratado é motivo inidôneo que enseja a extinção do contrato administrativo.",
+    "E": "A extinção do contrato administrativo decorrente de culpa exclusiva da administração dá ao contratado direito ao ressarcimento dos prejuízos que comprovadamente houver sofrido, não alcançado o pagamento de custos com a desmobilização."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 17,
+   "materia": "Prova Objetiva",
+   "enunciado": "No que diz respeito aos contratos de concessão de serviços públicos, em atenção à Lei n.º 8.987/1995, assinale a opção correta.",
+   "alternativas": {
+    "A": "É vedada a previsão, no âmbito dos contratos de concessão de serviços públicos, de mecanismos privados de resolução de disputas relacionados ao contrato, porquanto é indispensável o crivo judicial.",
+    "B": "A responsabilidade da concessionária em relação aos prejuízos causados a terceiros — usuários ou não — pode ser atenuada em razão da fiscalização exercida pelo órgão responsável do poder concedente.",
+    "C": "A subconcessão somente será possível se autorizada pelo poder concedente, dispensada a realização de concorrência para a outorga.",
+    "D": "A transferência da concessão sem prévia anuência do poder concedente enseja a caducidade da concessão.",
+    "E": "No âmbito dos contratos de financiamento, é vedado às concessionárias oferecer em garantia os direitos emergentes da concessão."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 18,
+   "materia": "Prova Objetiva",
+   "enunciado": "Assinale a opção que apresenta corretamente uma nova modalidade de licitação que foi introduzida pela Lei n.º 14.133/2021.",
+   "alternativas": {
+    "A": "diálogo competitivo",
+    "B": "concorrência",
+    "C": "pregão eletrônico",
+    "D": "leilão",
+    "E": "concurso"
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 19,
+   "materia": "Prova Objetiva",
+   "enunciado": "De acordo com a Lei dos Registros Públicos, o princípio invocado na situação em que, para efetuar a inscrição, se exige que tanto a descrição do imóvel quanto a do sujeito do direito devam guardar perfeita correlação com as do registro anterior é o da",
+   "alternativas": {
+    "A": "continuidade.",
+    "B": "especialidade.",
+    "C": "publicidade.",
+    "D": "disponibilidade.",
+    "E": "legitimação."
+   },
+   "gabarito": "X"
+  },
+  {
+   "n": 20,
+   "materia": "Prova Objetiva",
+   "enunciado": "Conforme o Código Civil, a interrupção da prescrição",
+   "alternativas": {
+    "A": "por um credor não aproveita aos outros.",
+    "B": "produzida contra o principal devedor não prejudica o fiador.",
+    "C": "operada contra o codevedor prejudica os demais coobrigados.",
+    "D": "efetuada contra o devedor solidário exclui seus herdeiros.",
+    "E": "operada contra um dos herdeiros do devedor solidário não prejudica os outros devedores, sem ressalvas."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 21,
+   "materia": "Prova Objetiva",
+   "enunciado": "Carlos, não ligado a Pedro em virtude de qualquer contrato ou relação de dependência, obrigou-se a obter para Pedro um negócio, conforme as instruções dele recebidas. Nessa situação hipotética, configura-se",
+   "alternativas": {
+    "A": "comissão.",
+    "B": "agência.",
+    "C": "corretagem.",
+    "D": "contrato estimatório.",
+    "E": "prestação de serviços."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 22,
+   "materia": "Prova Objetiva",
+   "enunciado": "Em relação aos defeitos do negócio jurídico, assinale a opção correta.",
+   "alternativas": {
+    "A": "Caracteriza-se como coação a situação em que uma pessoa, por inexperiência, se obriga a prestação desproporcional ao valor da prestação oposta.",
+    "B": "A fraude contra credores exige o conhecimento, por parte do terceiro adquirente, do estado de insolvência do devedor.",
+    "C": "O falso motivo viciará a declaração de vontade quando, mesmo que não seja expresso, for a razão determinante para a realização do ato.",
+    "D": "Nos negócios jurídicos unilaterais, o silêncio intencional de uma das partes a respeito de fato que a outra parte tenha ignorado constitui omissão dolosa.",
+    "E": "A alegação de coação não será cabível quando a situação disser respeito a pessoa não pertencente à família do paciente."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 23,
+   "materia": "Prova Objetiva",
+   "enunciado": "De acordo com o Código Civil, são excluídos da sucessão os herdeiros ou legatários que tiverem sido autores, coautores ou partícipes de homicídio doloso, ou tentativa deste, contra a pessoa de cuja sucessão se tratar seu cônjuge, companheiro, ascendente ou descendente. II tiverem acusado caluniosamente em juízo o autor da herança ou incorrerem em crime contra a sua honra, ou de seu cônjuge ou de seu companheiro. III por violência ou meios fraudulentos, inibirem ou obstarem o autor da herança de dispor livremente de seus bens por ato de última vontade.",
+   "alternativas": {
+    "A": "Apenas o item II está certo.",
+    "B": "Apenas o item III está certo.",
+    "C": "Apenas os itens I e II estão certos.",
+    "D": "Apenas os itens I e III estão certos.",
+    "E": "Todos os itens estão certos."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 24,
+   "materia": "Prova Objetiva",
+   "enunciado": "Posse justa é aquela",
+   "alternativas": {
+    "A": "em que o possuidor ignora o vício impeditivo da aquisição.",
+    "B": "na qual o possuidor também é o proprietário.",
+    "C": "que não é violenta, clandestina ou precária.",
+    "D": "cultivada pelo possuidor para a subsistência da família.",
+    "E": "em que o possuidor reside com a sua família."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 25,
+   "materia": "Prova Objetiva",
+   "enunciado": "A imputação do pagamento pressupõe pluralidade de débitos. II identidade das partes. III igual natureza das dívidas. IV contrato com pagamento parcelado. V possibilidade de o pagamento contemplar mais de um débito.",
+   "alternativas": {
+    "A": "Apenas os itens I, II e V estão certos.",
+    "B": "Apenas os itens I, II, III e IV estão certos.",
+    "C": "Apenas os itens II, III, IV e V estão certos.",
+    "D": "Apenas os itens I, II, III, e V estão certos.",
+    "E": "Todos os itens estão certos."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 26,
+   "materia": "Prova Objetiva",
+   "enunciado": "É anulável o casamento de",
+   "alternativas": {
+    "A": "afins em linha reta.",
+    "B": "menor em idade núbil.",
+    "C": "afins em linha colateral.",
+    "D": "adotado com o filho do adotante.",
+    "E": "incapaz de manifestar, sem equívoco, o consentimento."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 27,
+   "materia": "Prova Objetiva",
+   "enunciado": "A respeito da partilha dos bens deixados por pessoa falecida,",
+   "alternativas": {
+    "A": "Por meio de instrumento público, o testador poderá proibir o herdeiro de requerer a partilha.",
+    "B": "É vedado ao testador indicar os bens e os valores que devem compor os quinhões hereditários.",
+    "C": "Sendo capazes os herdeiros, a partilha amigável pode ser efetuada por escrito particular.",
+    "D": "É nula a partilha feita por ascendente por ato de última vontade.",
+    "E": "Se os bens forem insuscetíveis de divisão cômoda, a alienação deverá ser realizada mediante autorização judicial."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 28,
+   "materia": "Prova Objetiva",
+   "enunciado": "Acerca das normas processuais civis, da função jurisdicional e da ação, assinale a opção correta.",
+   "alternativas": {
+    "A": "A teoria da asserção, adotada pelo atual Código de Processo Civil, prevê que as condições da ação, por serem matéria de mérito, apenas devem ser analisadas no momento da sentença.",
+    "B": "A teoria eclética, adotada pelo Código de Processo Civil, reconhece que o direito de ação é autônomo, não dependendo da existência do direito material, mas do preenchimento de alguns requisitos formais, cuja análise não se confunde com a apreciação do mérito.",
+    "C": "Segundo o Código de Processo Civil, os juízes e os tribunais atenderão, preferencialmente, à ordem cronológica de conclusão para proferir sentença ou acórdão, salvo se houver agravo de instrumento pendente de julgamento.",
+    "D": "É admissível a ação meramente declaratória, desde que não tenha ocorrido a violação do direito.",
+    "E": "Compete ao juízo estadual do lugar em que deva ser executada a medida apreciar o pedido de auxílio direto passivo que demandar prestação de atividade jurisdicional."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 29,
+   "materia": "Prova Objetiva",
+   "enunciado": "A respeito dos sujeitos processuais e do litisconsórcio, de acordo com o Código de Processo Civil (CPC) e a jurisprudência dos tribunais superiores, assinale a opção correta.",
+   "alternativas": {
+    "A": "Os honorários advocatícios podem ser fixados com base em equidade nas causas de grande valor concreto.",
+    "B": "Em ação para remoção de conteúdo ofensivo, não há litisconsórcio passivo necessário entre o provedor de aplicação e o autor da mensagem.",
+    "C": "Não é possível, em nenhuma hipótese, reduzir o valor dos honorários advocatícios sucumbenciais fixados dentro do parâmetro legal.",
+    "D": "A curatela especial poderá ser exercida pelo Ministério Público quando a causa envolver incapaz.",
+    "E": "Nas ações possessórias, a participação do cônjuge do autor ou do réu é sempre imprescindível."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 30,
+   "materia": "Prova Objetiva",
+   "enunciado": "Quanto aos atos processuais, assinale a opção correta.",
+   "alternativas": {
+    "A": "Caso o processo tramite sem o conhecimento e a participação do Ministério Público, quando este tiver obrigatoriedade de intervir, o juiz invalidará todos os atos praticados desde o início do processo.",
+    "B": "Os litisconsortes que tiverem diferentes procuradores, os quais sejam de escritórios de advocacia distintos, terão prazos contados em dobro para todas as suas manifestações, em qualquer juízo ou tribunal, desde que haja prévio requerimento.",
+    "C": "O Ministério Público apenas gozará de prazo em dobro para se manifestar nos autos quando atuar como custos legis.",
+    "D": "É necessária a intimação das partes para a prática de ato processual ou para a realização de audiência cujas datas tiverem sido designadas no calendário.",
+    "E": "Na falta de preceito legal e de prazo determinado pelo juiz, os atos processuais deverão ser praticados pelas partes no prazo de cinco dias."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 31,
+   "materia": "Prova Objetiva",
+   "enunciado": "No tocante à tutela provisória, assinale a opção correta.",
+   "alternativas": {
+    "A": "Ainda que não haja abuso do direito de defesa pelo réu, quando presente o perigo na demora, caberá a concessão de tutela de urgência.",
+    "B": "A tutela de urgência, por conta de sua natureza jurídica, somente poderá ser concedida liminarmente.",
+    "C": "O ressarcimento dos prejuízos advindos com o deferimento da tutela provisória posteriormente revogada por sentença que extingue o processo sem resolução de mérito deverá ser liquidado em processo autônomo, para evitar tumulto processual.",
+    "D": "A tutela de urgência será concedida quando o pedido estiver em consonância com súmula do tribunal local.",
+    "E": "A tutela cautelar concedida pode se tornar estável, podendo ser afastada por decisão que a reveja, reforme ou invalide, proferida em ação ajuizada por uma das partes, nos termos da lei."
+   },
+   "gabarito": "X"
+  },
+  {
+   "n": 32,
+   "materia": "Prova Objetiva",
+   "enunciado": "Do casamento entre Almir e Emília, nasceu Luísa. Devido ao divórcio do casal e a pouca ajuda financeira recebida do pai, Luísa, representada por sua genitora, propôs ação de alimentos na comarca de Belém – PA, tendo o juiz fixado, em sentença, pensão alimentícia em certo percentual da remuneração líquida do genitor. Após o início do cumprimento de sentença, a autora solicitou ao juízo sentenciante a remessa dos autos do processo à comarca de Salvador – BA, em razão de sua mudança de domicílio, o que foi prontamente deferido. A esse tempo, o genitor passou a residir em Fortaleza – CE. Considerando a situação hipotética apresentada, assinale a opção correta.",
+   "alternativas": {
+    "A": "Os únicos juízos concorrentemente competentes para efetuar o cumprimento de sentença são o que decidiu a causa em primeiro grau, o do atual domicílio do executado e o do local onde se encontrarem os bens sujeitos à execução.",
+    "B": "O cumprimento de sentença somente pode ser realizado em Belém – PA, uma vez que a mudança de endereço após a sentença não altera critério de caráter absoluto.",
+    "C": "O cumprimento de sentença somente pode ocorrer em Fortaleza – CE, onde o genitor reside.",
+    "D": "O cumprimento de sentença deverá ocorrer em Belém – PA, uma vez que a competência é fixada no momento do registro ou da distribuição da petição inicial, sendo irrelevantes as modificações do estado de fato ou de direito ocorridas posteriormente a esse marco.",
+    "E": "É possível a remessa dos autos ao atual domicílio da parte autora, mesmo após o início do cumprimento de sentença."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 33,
+   "materia": "Prova Objetiva",
+   "enunciado": "No que diz respeito à petição inicial e à improcedência liminar do pedido, assinale a opção correta.",
+   "alternativas": {
+    "A": "O indeferimento da petição inicial pela existência de defeitos e irregularidades capazes de dificultar o julgamento de mérito pode ser feito de plano pelo juiz, sem oportunizar emenda ao autor.",
+    "B": "A improcedência liminar do pedido pode ser aplicada quando o pedido contrariar enunciado de súmula de tribunal de justiça acerca de direito local.",
+    "C": "Até a sentença, o autor poderá aditar ou alterar o pedido e a causa de pedir, independentemente de consentimento do réu, garantido o contraditório mediante a possibilidade de manifestação do réu no prazo mínimo de quinze dias, facultado o requerimento de prova suplementar.",
+    "D": "O pedido alternativo e a cumulação alternativa de pedidos possuem a mesma consequência jurídica.",
+    "E": "A improcedência liminar do pedido somente pode ocorrer após a audiência de conciliação e mediação."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 34,
+   "materia": "Prova Objetiva",
+   "enunciado": "Quanto às disposições referentes à audiência de instrução e julgamento e às provas, assinale a opção correta.",
+   "alternativas": {
+    "A": "A distribuição dinâmica do ônus da prova é permitida no CPC, desde que haja decisão judicial fundamentada na impossibilidade ou excessiva dificuldade de cumprir o ônus probatório previsto em lei, ou na maior facilidade de obtenção de prova do fato contrário.",
+    "B": "Admitem-se meios típicos e atípicos para a prova dos fatos em juízo, mesmo que sejam moralmente ilegítimos.",
+    "C": "É permitido ao advogado solicitar o depoimento pessoal da parte que esteja representando.",
+    "D": "O juiz não poderá dispensar a produção de prova requerida pela parte cujo advogado não tenha comparecido à audiência.",
+    "E": "O CPC adota o sistema presidencialista na inquirição de testemunhas."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 35,
+   "materia": "Prova Objetiva",
+   "enunciado": "No que tange aos atos judiciais e ao sistema de precedentes, assinale a opção correta, com base no CPC e na jurisprudência dos tribunais superiores.",
+   "alternativas": {
+    "A": "Configura-se perempção quando o processo fica parado durante mais de seis meses por negligência da parte autora.",
+    "B": "A fundamentação per relationem é expressamente permitida pelo CPC e no âmbito dos tribunais superiores.",
+    "C": "O magistrado não é obrigado a seguir precedente invocado apenas se demonstrar a existência de distinguishing no caso em julgamento.",
+    "D": "É cabível a decisão parcial de mérito quando houver cumulação de pedidos e um deles se revelar incontroverso.",
+    "E": "Não se considera fundamentada a decisão interlocutória que adotar conceitos jurídicos indeterminados, ainda que explique o motivo concreto de sua incidência no caso."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 36,
+   "materia": "Prova Objetiva",
+   "enunciado": "Acerca da disciplina dos recursos conforme a jurisprudência dos tribunais superiores e as disposições processuais civis aplicáveis,",
+   "alternativas": {
+    "A": "A comprovação do feriado local feita mediante a remissão a link de site do tribunal de origem é suficiente para comprovar a suspensão do prazo processual.",
+    "B": "A técnica de ampliação do colegiado prevista no CPC não se aplica ao julgamento de apelação interposta contra sentença proferida em mandado de segurança, por expressa vedação legal.",
+    "C": "A desistência apresentada a qualquer tempo pela parte deverá ser homologada pelo tribunal, ainda que haja relevante interesse público, por se tratar de direito potestativo.",
+    "D": "O CPC permite o exercício do juízo de retratação no recurso de apelação apenas nos casos de sentença de indeferimento da inicial.",
+    "E": "É cabível agravo de instrumento contra a decisão que rejeita o pedido das partes para homologar acordo, determinando o prosseguimento do feito."
+   },
+   "gabarito": "X"
+  },
+  {
+   "n": 37,
+   "materia": "Prova Objetiva",
+   "enunciado": "A respeito da ação popular, da ação de improbidade administrativa, da ação civil pública e da reclamação constitucional, assinale a opção correta.",
+   "alternativas": {
+    "A": "É punível a prática de ato de improbidade na modalidade culposa, caso haja prejuízos para a administração pública.",
+    "B": "É cabível reclamação da parte interessada para garantir a observância de decisão do Supremo Tribunal Federal em controle concentrado de constitucionalidade, desde que proposta antes do trânsito em julgado da decisão reclamada.",
+    "C": "A ação civil pública pode ser proposta por associação que esteja constituída há pelo menos dois anos, nos termos da lei civil.",
+    "D": "O Ministério Público não tem legitimidade para propor ação civil pública em defesa do patrimônio público.",
+    "E": "O Ministério Público tem legitimidade para ajuizar ação popular que tenha como objeto interesses difusos e coletivos."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 38,
+   "materia": "Prova Objetiva",
+   "enunciado": "Está sujeito à lei brasileira o crime",
+   "alternativas": {
+    "A": "praticado em embarcação estrangeira na zona econômica exclusiva brasileira.",
+    "B": "praticado em embarcação privada brasileira atracada em país estrangeiro, se o agente tiver sido condenado no referido país.",
+    "C": "contra a honra do presidente da República praticado no exterior.",
+    "D": "praticado em embarcação privada de bandeira brasileira em mar territorial de país estrangeiro signatário do MERCOSUL.",
+    "E": "de genocídio, quando o agente for absolvido no país estrangeiro, mesmo sendo domiciliado no Brasil."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 39,
+   "materia": "Prova Objetiva",
+   "enunciado": "Caracteriza-se como crime unissubsistente",
+   "alternativas": {
+    "A": "o homicídio realizado por meio cruel.",
+    "B": "a ameaça feita por carta.",
+    "C": "o núcleo “receber” da conduta de corrupção passiva.",
+    "D": "o crime de infanticídio.",
+    "E": "a injúria verbal."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 40,
+   "materia": "Prova Objetiva",
+   "enunciado": "Na saída de uma festa, após uma discussão, Francisco, motivado por ciúmes, desferiu um único soco em José. Este, surpreendido, não esboçou reação e caiu no chão, bateu a cabeça no meio-fio da calçada e faleceu em seguida. Iniciado e instruído o processo, o laudo do IML apontou que José tinha morrido em decorrência de um aneurisma cerebral, fato desconhecido de ambos. Nessa situação hipotética, a conduta de Francisco é considerada crime de",
+   "alternativas": {
+    "A": "lesão corporal simples.",
+    "B": "lesão corporal seguida de morte.",
+    "C": "lesão corporal na forma qualificada.",
+    "D": "homicídio simples.",
+    "E": "homicídio qualificado."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 41,
+   "materia": "Prova Objetiva",
+   "enunciado": "Se, durante a apuração de um delito, em interceptação telefônica, o suspeito proferir ofensas racistas ao delegado que estiver presidindo o inquérito policial, a referida conduta deverá ser enquadrada no delito de",
+   "alternativas": {
+    "A": "desacato.",
+    "B": "calúnia.",
+    "C": "injúria qualificada em razão de utilização de elemento raça.",
+    "D": "crime específico previsto na Lei n.º 7.716/1989.",
+    "E": "difamação."
+   },
+   "gabarito": "X"
+  },
+  {
+   "n": 42,
+   "materia": "Prova Objetiva",
+   "enunciado": "Renato, munido de uma faca, deu voz de assalto a Carolina, que informou não ter nenhum bem de valor. Ele, como não acreditou em Carolina, exigiu que esta esvaziasse os bolsos, momento em que Renato percebeu que ela realmente só trazia consigo o documento de identificação, o que o levou a sair do local sem levar nada. Nessa situação, a conduta de Renato, conforme o Superior Tribunal de Justiça (STJ), caracteriza-se como",
+   "alternativas": {
+    "A": "roubo simples consumado.",
+    "B": "atípica, já que houve crime impossível.",
+    "C": "roubo simples tentado.",
+    "D": "roubo tentado com causa de aumento de pena.",
+    "E": "roubo com causa de aumento de pena consumado."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 43,
+   "materia": "Prova Objetiva",
+   "enunciado": "Mário tinha 20 anos de idade quando praticou o crime de roubo (pena de 4 a 10 anos) circunstanciado tentado contra duas vítimas diferentes. Devido a esse crime, ele foi condenado a uma pena de 3 anos e 6 meses pela primeira vítima, pena esta que, em razão do concurso formal, passou a ser de 4 anos e 1 mês. Nessa situação hipotética, o menor prazo para a ocorrência da prescrição punitiva será o de",
+   "alternativas": {
+    "A": "4 anos.",
+    "B": "6 anos.",
+    "C": "8 anos.",
+    "D": "12 anos.",
+    "E": "16 anos."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 44,
+   "materia": "Prova Objetiva",
+   "enunciado": "O funcionário público que deixa de praticar ato de ofício, com infração de dever funcional, cedendo a pedido de indivíduo de fora da administração pratica",
+   "alternativas": {
+    "A": "peculato.",
+    "B": "concussão.",
+    "C": "corrupção passiva privilegiada.",
+    "D": "facilitação de descaminho.",
+    "E": "tráfico de influência."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 45,
+   "materia": "Prova Objetiva",
+   "enunciado": "Carlos sabia que Frederico era inabilitado para dirigir veículo automotor. Apesar disso, Carlos entregou a Frederico as chaves de seu carro para que este dirigisse o veículo até um mercado próximo. No caminho, Frederico foi parado em uma blitz, momento em que os policiais constataram que ele não era habilitado. Nessa situação, Carlos responderá",
+   "alternativas": {
+    "A": "pelo crime de tentativa de entrega de direção de veículo automotor a pessoa não habilitada, tendo em vista que tal conduta poderia ter resultado em situação de perigo concreto.",
+    "B": "pelo crime de entrega de direção de veículo automotor a pessoa não habilitada, na forma consumada, haja vista que o crime é de perigo abstrato.",
+    "C": "por nenhuma conduta, respondendo Frederico pela conduta de dirigir veículo automotor sem habilitação.",
+    "D": "por nenhuma conduta, assim como Frederico.",
+    "E": "por nenhuma conduta, respondendo Frederico por perigo para a vida ou a saúde de outrem."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 46,
+   "materia": "Prova Objetiva",
+   "enunciado": "Crime ambiental praticado pela empresa A, a qual, posteriormente, tenha sido incorporada à empresa B, resulta",
+   "alternativas": {
+    "A": "em extinção da punibilidade, independentemente da análise de ter havido ou não fraude na incorporação.",
+    "B": "em nenhuma consequência jurídica, uma vez que se trata de pessoas jurídicas distintas.",
+    "C": "na transferência da responsabilização penal para a empresa B pelo crime ambiental, em razão da transferência de direitos e obrigações.",
+    "D": "em extinção da punibilidade de A, se demonstrada a ausência de fraude na incorporação.",
+    "E": "na impossibilidade legal da incorporação, enquanto não resolvida a questão penal."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 47,
+   "materia": "Prova Objetiva",
+   "enunciado": "Antônio, que é colecionador de armas de fogo e possui registro para a prática desportiva de tiro, foi abordado em um determinado dia por policiais quando se dirigia a um clube de tiro em seu veículo. Na ocasião, os policiais encontraram a arma de uso permitido, carregada, mas sem a guia de tráfego. Conduzido em flagrante delito, Antônio comprovou que possuía a guia, mas não estava portando consigo quando da abordagem policial. Nessa situação hipotética, a conduta praticada por Antônio caracteriza-se como",
+   "alternativas": {
+    "A": "conduta atípica.",
+    "B": "posse ilegal de arma de fogo de uso permitido.",
+    "C": "omissão de cautela.",
+    "D": "porte ilegal de arma de fogo de uso permitido.",
+    "E": "porte ilegal de arma de fogo de uso restrito na forma equiparada."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 48,
+   "materia": "Prova Objetiva",
+   "enunciado": "Assinale a opção que apresenta o princípio norteador do processo penal abordado, precipuamente, pelo brocardo audiatur et altera pars.",
+   "alternativas": {
+    "A": "princípio do contraditório",
+    "B": "princípio da oralidade",
+    "C": "princípio da publicidade",
+    "D": "princípio da não autoincriminação",
+    "E": "princípio da presunção da inocência"
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 49,
+   "materia": "Prova Objetiva",
+   "enunciado": "No que tange às nulidades no processo penal, é correto afirmar que a",
+   "alternativas": {
+    "A": "falta de nomeação de curador ao réu maior de dezoito e menor de vinte e um anos é causa de nulidade relativa.",
+    "B": "falta ou a deficiência de defesa no processo constituem nulidade absoluta, independentemente de comprovação de prejuízo para o réu.",
+    "C": "ilegitimidade do representante da parte pode ser sanada a qualquer tempo, mediante a ratificação dos atos processuais.",
+    "D": "falta da citação do acusado é causa insanável de nulidade absoluta.",
+    "E": "nulidade absoluta pode ser decretada de ofício pelo juiz prolator da sentença, mesmo findo o processo penal."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 50,
+   "materia": "Prova Objetiva",
+   "enunciado": "Excepcionalmente, poderá o Ministério Público recorrer, na ação penal exclusivamente privada, contra a sentença",
+   "alternativas": {
+    "A": "absolutória, caso o querelante não tenha recorrido.",
+    "B": "absolutória, caso tenha aditado a queixa.",
+    "C": "absolutória em que a decisão declarou a extinção da punibilidade do querelado.",
+    "D": "condenatória, em relação ao quantum da pena fixada.",
+    "E": "condenatória, estritamente nos casos em que não houver recurso do querelado."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 51,
+   "materia": "Prova Objetiva",
+   "enunciado": "No que concerne à liberdade provisória, assinale a opção correta.",
+   "alternativas": {
+    "A": "A autoridade policial somente poderá conceder fiança nos crimes punidos com detenção.",
+    "B": "O quebramento da fiança importa na perda total do seu valor.",
+    "C": "A fiança poderá ser prestada após o trânsito em julgado da sentença condenatória.",
+    "D": "Sendo a pena em abstrato superior a quatro anos, somente a autoridade judiciária poderá arbitrar a fiança.",
+    "E": "A fiança será perdida, em sua totalidade, se o condenado não se apresentar para o cumprimento da pena imposta em sentença, mesmo que provisória."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 52,
+   "materia": "Prova Objetiva",
+   "enunciado": "No que se refere ao procedimento sumaríssimo, assinale a opção correta.",
+   "alternativas": {
+    "A": "O acordo homologado entre as partes, no caso de ação penal condicionada, não acarreta renúncia ao direito de representação.",
+    "B": "Adota-se o procedimento sumaríssimo nas infrações com pena privativa de liberdade máxima não superior a 4 anos, cumulada ou não com multa.",
+    "C": "De regra, poderá o juiz, de ofício, propor transação penal.",
+    "D": "É cabível a citação do réu por edital.",
+    "E": "Na ação penal pública incondicionada, a composição de danos entre as partes não extingue a punibilidade."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 53,
+   "materia": "Prova Objetiva",
+   "enunciado": "De regra, faz coisa julgada no cível a",
+   "alternativas": {
+    "A": "sentença que reconhece ter sido o ato praticado em estado de necessidade.",
+    "B": "decisão que determina o arquivamento do inquérito policial.",
+    "C": "decisão que julga extinta a punibilidade do réu.",
+    "D": "sentença absolutória fundada na falta de provas da culpabilidade do réu.",
+    "E": "sentença absolutória que determina que o fato imputado não constitui crime."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 54,
+   "materia": "Prova Objetiva",
+   "enunciado": "Em relação à prisão temporária, assinale a opção correta.",
+   "alternativas": {
+    "A": "O prazo da cautelar, em qualquer caso, é de trinta dias, prorrogável por igual período.",
+    "B": "Não depende de representação da autoridade policial, podendo ser decretada de ofício pelo juiz.",
+    "C": "Pode ser decretada após o oferecimento da denúncia.",
+    "D": "Pode ser decretada nos crimes contra o sistema financeiro.",
+    "E": "Pode ser decretada nas infrações de menor potencial ofensivo."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 55,
+   "materia": "Prova Objetiva",
+   "enunciado": "Considerando o acordo de colaboração premiada previsto na Lei n.º 12.850/2013, assinale a opção correta.",
+   "alternativas": {
+    "A": "O perdão judicial somente poderá ser concedido se o benefício tiver sido previsto em sua proposta inicial.",
+    "B": "Até o cumprimento das medidas propostas na colaboração, o processo judicial deverá ser suspenso pelo período de um ano, prorrogável por igual prazo.",
+    "C": "Afastada a denúncia em face da colaboração do agente, este não mais poderá ser ouvido nos autos que originaram o acordo.",
+    "D": "Para a formulação do acordo de colaboração premiada, é vedada a participação da autoridade judiciária.",
+    "E": "Retratando-se o réu da proposta de acordo, as provas dela decorrentes, ainda que autoincriminatórias, poderão ser utilizadas, exclusivamente, em seu desfavor."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 56,
+   "materia": "Prova Objetiva",
+   "enunciado": "Em relação à citação do acusado no procedimento comum,",
+   "alternativas": {
+    "A": "A citação válida torna prevento o juiz e interrompe o prazo prescricional.",
+    "B": "Estando preso, o réu poderá ser citado por intermédio do diretor do estabelecimento penal em que se encontra recolhido.",
+    "C": "Citado pessoalmente para responder à acusação, se o réu não o fizer, será decretada a sua revelia, acarretando a suspensão do processo e do prazo prescricional correspondente.",
+    "D": "Citado por hora certa, caso o réu não compareça, o processo prosseguirá o seu curso com a nomeação de defensor dativo, não se operando a sua suspensão.",
+    "E": "Citado por edital, caso o réu não compareça e não constitua advogado, o juiz nomeará defensor para prosseguir nos demais atos do processo."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 57,
+   "materia": "Prova Objetiva",
+   "enunciado": "No que se refere à norma processual penal e sua aplicação,",
+   "alternativas": {
+    "A": "Os atos processuais realizados sob a égide da lei anterior precisam ser renovados.",
+    "B": "A lei processual penal admite tanto a aplicação analógica quanto a interpretação extensiva.",
+    "C": "A lei processual penal, quanto à sua eficácia temporal, não terá aplicação imediata, salvo em benefício do réu.",
+    "D": "O princípio da nacionalidade, como regra geral, é utilizado para a aplicação da lei processual penal no espaço.",
+    "E": "A revogação total de uma lei processual penal é chamada de derrogação."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 58,
+   "materia": "Prova Objetiva",
+   "enunciado": "De acordo com a Lei n.º 9.504/1997, o limite de registro de candidatos por partido político para as assembleias legislativas é de até",
+   "alternativas": {
+    "A": "cem por cento do número de vagas a preencher mais um, reservando-se o mínimo de trinta por cento e o máximo de setenta por cento desse percentual para candidaturas de cada sexo.",
+    "B": "cinquenta por cento do número de vagas a preencher mais um, reservando-se o mínimo de quarenta por cento e o máximo de sessenta por cento desse percentual para candidaturas de cada sexo.",
+    "C": "cinquenta por cento do número de vagas a preencher, reservando-se cinquenta por cento desse percentual para as candidaturas de cada sexo.",
+    "D": "setenta e cinco por cento do número de vagas a preencher, reservando-se cinquenta por cento desse percentual para as candidaturas de cada sexo.",
+    "E": "setenta e cinco por cento do número de vagas a preencher mais um, reservando-se o mínimo de quarenta por cento e o máximo de sessenta por cento desse percentual para candidaturas de cada sexo."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 59,
+   "materia": "Prova Objetiva",
+   "enunciado": "Quanto ao requisito temporal, é considerada propaganda eleitoral antecipada aquela realizada, no ano da eleição, antes do dia",
+   "alternativas": {
+    "A": "15 de agosto.",
+    "B": "16 de agosto.",
+    "C": "1.º de setembro.",
+    "D": "15 de setembro.",
+    "E": "16 de setembro."
+   },
+   "gabarito": "X"
+  },
+  {
+   "n": 60,
+   "materia": "Prova Objetiva",
+   "enunciado": "Assinale a opção que indica corretamente uma fonte material do direito eleitoral.",
+   "alternativas": {
+    "A": "lei orgânica dos partidos políticos",
+    "B": "Código Civil",
+    "C": "resoluções do Tribunal Superior Eleitoral (TSE)",
+    "D": "fatos sociais que impactam na produção de normas eleitorais",
+    "E": "respostas do TSE e dos Tribunais Regionais Eleitorais (TREs) a consultas"
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 61,
+   "materia": "Prova Objetiva",
+   "enunciado": "Acerca da ação de investigação judicial eleitoral (AIJE), assinale a opção correta.",
+   "alternativas": {
+    "A": "Trata-se de processo jurisdicional de natureza criminal.",
+    "B": "Qualquer cidadão possui legitimidade para figurar no polo ativo.",
+    "C": "Compete ao TSE processar e julgar originariamente a AIJE em eleições presidenciais e federais.",
+    "D": "A AIJE perderá o objeto se não julgada até a diplomação do candidato.",
+    "E": "A AIJE deverá ser ajuizada a partir do registro da candidatura até a diplomação dos candidatos eleitos."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 62,
+   "materia": "Prova Objetiva",
+   "enunciado": "Considerando as disposições acerca das inelegibilidades, julgue os itens seguintes. São inelegíveis, em qualquer hipótese e para quaisquer cargos, os analfabetos e os militares alistáveis. II Os prazos para a desincompatibilização eleitoral são contados com base no dia da eleição e variam de três a seis meses, dependendo da classe a que o agente público pertence. III Compete ao TRE conhecer e decidir, originariamente, a arguição de inelegibilidade em face de candidatos a prefeito e vice-prefeito.",
+   "alternativas": {
+    "A": "Apenas o item II está certo.",
+    "B": "Apenas o item III está certo.",
+    "C": "Apenas os itens I e II estão certos.",
+    "D": "Apenas os itens I e III estão certos.",
+    "E": "Todos os itens estão certos."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 63,
+   "materia": "Prova Objetiva",
+   "enunciado": "O julgamento de recurso contra decisão relativa a processo administrativo disciplinar em desfavor de membro do Ministério Público do Estado do Pará (MPPA) compete",
+   "alternativas": {
+    "A": "ao Colégio de Procuradores de Justiça.",
+    "B": "ao Conselho Superior do MPPA.",
+    "C": "ao procurador-geral de justiça.",
+    "D": "a instância recursal externa ao MPPA.",
+    "E": "à Corregedoria-Geral do MPPA."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 64,
+   "materia": "Prova Objetiva",
+   "enunciado": "Com relação à licença-prêmio no MPPA, assinale a opção correta.",
+   "alternativas": {
+    "A": "O membro do MPPA tem direito à licença-prêmio depois de quatro anos ininterruptos de efetivo exercício, fazendo jus a noventa dias de afastamento.",
+    "B": "A licença-prêmio foi extinta para membros desse órgão e não foi substituída por outro direito.",
+    "C": "A licença-prêmio foi extinta para membros desse órgão e substituída pela licença-capacitação, nos mesmos moldes.",
+    "D": "O membro do MPPA tem direito à licença-prêmio depois de cinco anos ininterruptos de efetivo exercício, fazendo jus a noventa dias de afastamento.",
+    "E": "O membro do MPPA tem direito à licença-prêmio depois de três anos ininterruptos de efetivo exercício, fazendo jus a sessenta dias de afastamento."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 65,
+   "materia": "Prova Objetiva",
+   "enunciado": "O retorno de membro do MPPA ao cargo que ocupava anteriormente, em decorrência de cassação da remoção, é denominado",
+   "alternativas": {
+    "A": "reabilitação.",
+    "B": "remoção.",
+    "C": "aproveitamento.",
+    "D": "reversão.",
+    "E": "reintegração."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 66,
+   "materia": "Prova Objetiva",
+   "enunciado": "A função de remeter informações técnico-jurídicas aos órgãos de execução ligados às suas áreas de atividade é atribuição",
+   "alternativas": {
+    "A": "dos órgãos de apoio técnico e administrativo.",
+    "B": "dos subprocuradores-gerais de justiça.",
+    "C": "da Câmara de Coordenação e Revisão.",
+    "D": "do Centro de Apoio Operacional.",
+    "E": "do Centro de Estudos e Aperfeiçoamento Funcional."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 67,
+   "materia": "Prova Objetiva",
+   "enunciado": "O corregedor-geral do MPPA é",
+   "alternativas": {
+    "A": "escolhido pelo procurador-geral de justiça.",
+    "B": "indicado pelo procurador-geral de justiça e aprovado pelo Colégio de Procuradores de Justiça.",
+    "C": "eleito pelo Colégio de Procuradores de Justiça.",
+    "D": "eleito pelo Conselho Superior.",
+    "E": "indicado pelo procurador-geral de justiça e aprovado pelo Conselho Superior."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 68,
+   "materia": "Prova Objetiva",
+   "enunciado": "Assinale a opção que apresenta, entre os tipos contratuais a seguir, aquele que pode vir a caracterizar concentração empresarial sujeita ao controle e aprovação do Conselho Administrativo de Defesa Econômica (CADE).",
+   "alternativas": {
+    "A": "joint venture",
+    "B": "alienação fiduciária",
+    "C": "faturização",
+    "D": "arrendamento mercantil",
+    "E": "consórcio destinado às licitações públicas"
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 69,
+   "materia": "Prova Objetiva",
+   "enunciado": "Caso a microempresa vencedora de licitação pública possua restrição na comprovação de regularidade fiscal ou trabalhista, ser-lhe-á concedido, para regularizar a situação, a contar da declaração do vencedor do certame, o prazo de",
+   "alternativas": {
+    "A": "10 dias úteis, vedada a prorrogação.",
+    "B": "15 dias úteis, prorrogável por igual período.",
+    "C": "5 dias úteis, prorrogável por igual período.",
+    "D": "10 dias úteis, prorrogável por igual período.",
+    "E": "15 dias úteis, vedada a prorrogação."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 70,
+   "materia": "Prova Objetiva",
+   "enunciado": "De acordo com a Lei n.º 8.934/1994, o ato pertinente ao registro público de empresas mercantis e atividades afins, executado pelas juntas comerciais, a que está condicionado o exercício da profissão de leiloeiro é o(a)",
+   "alternativas": {
+    "A": "ato constitutivo.",
+    "B": "declaração.",
+    "C": "autenticação.",
+    "D": "matrícula.",
+    "E": "atestado."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 71,
+   "materia": "Prova Objetiva",
+   "enunciado": "Assinale a opção correta de acordo com a Lei n.º 9.279/1996.",
+   "alternativas": {
+    "A": "Uma pessoa ou empresa somente pode requerer patente em nome próprio.",
+    "B": "Os métodos matemáticos se enquadram como modelos de utilidade.",
+    "C": "A vigência máxima da patente de invenção é de quinze anos, a contar da data da publicação do trabalho inventivo.",
+    "D": "A invenção é nova quando compreendida no estado da técnica.",
+    "E": "A ação destinada a reparar dano a direito de propriedade industrial se sujeita ao prazo prescricional de cinco anos."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 72,
+   "materia": "Prova Objetiva",
+   "enunciado": "Considerando as disposições da Lei n.º 6.404/1976, julgue as seguintes afirmações. É defeso à companhia participar de outras sociedades. II Admite-se a fixação do valor do capital social em moeda estrangeira, desde que prevista no estatuto social e condicionada à correção monetária semestral. III É lícita a previsão no estatuto social da companhia que autorize o aumento do capital social independentemente de reforma estatutária.",
+   "alternativas": {
+    "A": "Apenas os itens I e II estão certos.",
+    "B": "Apenas os itens II e III estão certos.",
+    "C": "Apenas os itens I e III estão certos.",
+    "D": "Apenas o item II está certo.",
+    "E": "Apenas o item III está certo."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 73,
+   "materia": "Prova Objetiva",
+   "enunciado": "À luz da Constituição Federal de 1988 (CF) e da jurisprudência do Supremo Tribunal Federal (STF), julgue os itens a seguir, acerca das imunidades tributárias recíprocas. A imunidade tributária recíproca não afasta a responsabilidade tributária por sucessão na hipótese em que o sujeito passivo, diferentemente do sucessor, era contribuinte regular do tributo devido. II A empresa pública delegatária de serviço público essencial fará jus à imunidade tributária recíproca, desde que não distribua lucro a seus acionistas, não atue em regime concorrencial e não promova a cobrança de tarifa como contraprestação pelos serviços prestados. III A imunidade tributária recíproca prevista na CF alcança as contribuições previdenciárias incidentes sobre os vencimentos pagos aos servidores estaduais ocupantes de cargo em comissão.",
+   "alternativas": {
+    "A": "Apenas o item I está certo.",
+    "B": "Apenas o item II está certo.",
+    "C": "Apenas os itens I e III estão certos.",
+    "D": "Apenas os itens II e III estão certos.",
+    "E": "Todos os itens estão certos."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 74,
+   "materia": "Prova Objetiva",
+   "enunciado": "Com base no Código Tributário Nacional (CTN) e na jurisprudência dos tribunais superiores, assinale a opção correta, a respeito do pagamento como forma de extinção do crédito tributário.",
+   "alternativas": {
+    "A": "Julgada improcedente a ação de consignação em pagamento de determinado crédito tributário formalizada pelo contribuinte não será possível acrescer juros de mora à cobrança do crédito tributário.",
+    "B": "Existindo mais de um crédito tributário relativo ao mesmo imposto, o pagamento total de um deles gera presunção de adimplemento em relação aos demais.",
+    "C": "Não havendo o pagamento integral do crédito tributário no vencimento, ser-lhe-ão acrescidos juros de mora, ainda que na pendência de consulta formalizada pelo contribuinte à administração tributária dentro do prazo legal para o pagamento do tributo.",
+    "D": "A concessão de desconto em razão da antecipação do pagamento somente poderá ser concedida por meio de lei em sentido estrito.",
+    "E": "No caso de o sujeito passivo possuir, perante determinado estado da Federação, dois débitos tributários vencidos atinentes ao ICMS, sendo um na condição de responsável tributário e outro por obrigação própria, este último deverá ser considerado em primeiro lugar na ordem de imputação de pagamento a ser implementada pela autoridade tributária."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 75,
+   "materia": "Prova Objetiva",
+   "enunciado": "Considerando-se o CTN e a jurisprudência dos tribunais superiores, é vedado ao Ministério Público requisitar, sem a reserva de jurisdição, informações dos contribuintes relativas a",
+   "alternativas": {
+    "A": "moratória.",
+    "B": "movimentações bancárias.",
+    "C": "parcelamento.",
+    "D": "benefícios fiscais concedidos a pessoas jurídicas.",
+    "E": "inscrição em dívida ativa das fazendas públicas."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 76,
+   "materia": "Prova Objetiva",
+   "enunciado": "À luz da CF e da jurisprudência do STF, julgue os itens a seguir. É possível ao Ministério Público propor ação civil pública para anular acordo realizado entre o contribuinte e o poder público visando ao pagamento de dívida tributária, quando verificado prejuízo ao erário decorrente do comprometimento da arrecadação tributária. II Dada sua missão institucional de defender a moralidade pública, o Ministério Público tem o dever de questionar tributo instituído em desacordo com os parâmetros constitucionais, sendo adequado o manejo de ação civil pública, por estar em discussão direitos difusos dos contribuintes. III O Ministério Público possui legitimidade para questionar, em ação civil pública, a limitação de dedução de gastos com educação em relação ao imposto de renda pessoa física, em decorrência dos direitos individuais homogêneos dos contribuintes em questão.",
+   "alternativas": {
+    "A": "Nenhum item está certo.",
+    "B": "Apenas o item I está certo.",
+    "C": "Apenas o item II está certo.",
+    "D": "Apenas o item III está certo.",
+    "E": "Todos os itens estão certos."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 77,
+   "materia": "Prova Objetiva",
+   "enunciado": "A respeito dos crimes contra a ordem tributária, observado o disposto na Lei n.º 8.137/1990 e na jurisprudência do STF,",
+   "alternativas": {
+    "A": "O comerciante que, ainda que de maneira eventual, não recolher aos cofres públicos valor de ICMS cobrado do adquirente de mercadoria incorrerá em crime de apropriação indébita tributária.",
+    "B": "O crime de apropriação indébita tributária é próprio, de forma que somente pode ser cometido por quem detenha a condição de sujeito passivo da obrigação tributária, seja como contribuinte ou responsável tributário.",
+    "C": "O crime de apropriação indébita tributária não exige o dolo específico de apropriação, motivo por que se mostra suficiente a constatação de reiteração da conduta, ainda que sob a modalidade culposa.",
+    "D": "O crime de apropriação indébita tributária é de natureza material e, portanto, não prescinde da conclusão do processo administrativo fiscal para fins de encaminhamento da representação fiscal ao Ministério Público.",
+    "E": "O crime de apropriação indébita tributária exige a ocorrência de fraude para que haja a caracterização do tipo penal."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 78,
+   "materia": "Prova Objetiva",
+   "enunciado": "Conforme a doutrina, constituem princípios do direito agrário",
+   "alternativas": {
+    "A": "o atendimento à política de reforma agrária e à política de desenvolvimento agrícola e a estatização dos imóveis rurais privados, para fins de reforma agrária.",
+    "B": "a sobreposição da titulação dominial sobre a utilização da terra e a garantia da propriedade da terra.",
+    "C": "o incentivo ao minifúndio e ao latifúndio e a proteção à média e à grande propriedade.",
+    "D": "o fortalecimento do espírito comunitário, por meio de associações empresariais do agronegócio, e a exploração dos recursos naturais disponíveis.",
+    "E": "a primazia do interesse coletivo sobre o interesse individual e a necessária e constante reformulação da estrutura fundiária."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 79,
+   "materia": "Prova Objetiva",
+   "enunciado": "Julgue os itens a seguir quanto ao conceito de direito agrário. Estão presentes no conceito de direito agrário a regulação do direito agrário e a função social da terra. II O progresso social e econômico se faz presente no direito agrário, em vista dos conflitos oriundos do acesso à terra, que ocorrem até os dias atuais. III A natureza jurídica do direito agrário é híbrida, composta por normas públicas e privadas, classificadas como cogentes e supletivas.",
+   "alternativas": {
+    "A": "Apenas o item I está certo.",
+    "B": "Apenas o item III está certo.",
+    "C": "Apenas os itens I e II estão certos.",
+    "D": "Apenas os itens II e III estão certos.",
+    "E": "Todos os itens estão certos."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 80,
+   "materia": "Prova Objetiva",
+   "enunciado": "Configura posse agrária",
+   "alternativas": {
+    "A": "a relação pessoal e a exploração direta, contínua e racional do imóvel rural, por meio das quais a função social da propriedade se expressa.",
+    "B": "a localização do imóvel sob posse fora do perímetro urbano.",
+    "C": "o exercício indireto, ainda que pacífico, de atividades agrárias em gleba de terra rural.",
+    "D": "a mera detenção da coisa por permissão ou tolerância do possuidor ou proprietário.",
+    "E": "o embasamento do domínio da gleba rural em documentos cartoriais."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 81,
+   "materia": "Prova Objetiva",
+   "enunciado": "Considerando o ordenamento jurídico, assinale a opção correta quanto às ações possessórias.",
+   "alternativas": {
+    "A": "O autor da lide poderá cumular ao pedido possessório o de condenação em perdas e danos, a cominação de pena e multa para o caso de nova turbação ou esbulho e o desfazimento de construção ou de plantação em detrimento de sua posse.",
+    "B": "O interdito proibitório é a ação cabível na hipótese de turbação, ou seja, no caso de perda total da posse, quando a coisa sai da esfera de disponibilidade do proprietário.",
+    "C": "O procedimento de manutenção de posse é cabível na hipótese de turbação, em que há esbulho parcial, ou seja, perda de algum dos poderes fáticos sobre a coisa, mas não da totalidade da posse.",
+    "D": "Em caso de ação de reintegração de posse movida entre particulares, se o imóvel rural for constituído de terra federal com justiça federal no local, a competência judiciária para promover o feito é da justiça estadual, ainda que a União figure como parte, e o MP competente é, também, o estadual.",
+    "E": "O Ministério Público Federal é competente para atuar em feitos que envolvam terra federal com justiça estadual no local, cuja competência administrativa caberá ao Instituto de Terras do Pará (ITERPA)."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 82,
+   "materia": "Prova Objetiva",
+   "enunciado": "No que se refere à atuação do Ministério Público (MP) em ações coletivas pela posse da terra rural, julgue os itens que se seguem. É obrigatória a intervenção do MP nos litígios coletivos que versem acerca da terra rural, com fundamento nos mandamentos constitucionais e no Código de Processo Civil vigente. II É defeso ao MP intervir previamente, com vista dos autos, antes de qualquer decisão, sobretudo em atos que ensejem a mudança do status do litígio. III A intervenção do MP nos litígios coletivos pela posse da terra rural deve visar à garantia dos dispositivos constitucionais relativos ao direito à moradia e à função social da propriedade. IV Antes da apreciação de eventual pedido liminar de antecipação de tutela ou da apresentação da contestação, é dispensável a participação do órgão ministerial, haja vista que o deferimento de liminar deve ser feito, de plano, pelo magistrado. Estão certos apenas os itens",
+   "alternativas": {
+    "A": "I e II.",
+    "B": "I e III.",
+    "C": "I e IV.",
+    "D": "II e III.",
+    "E": "II, III e IV."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 83,
+   "materia": "Prova Objetiva",
+   "enunciado": "A realidade político-institucional brasileira vivenciada no último século, com alternância entre regimes autoritários e democráticos, refletiu no campo do direito, influenciando, inclusive, a evolução do conceito de interesse público. Considerando as informações anteriores, é correto afirmar que, atualmente, o interesse público se identifica com o(s)",
+   "alternativas": {
+    "A": "respeito e a promoção dos direitos fundamentais.",
+    "B": "interesse exclusivo do Estado.",
+    "C": "interesse do aparato administrativo.",
+    "D": "interesse do agente público.",
+    "E": "interesses exclusivos da maioria da população."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 84,
+   "materia": "Prova Objetiva",
+   "enunciado": "A Lei n.º 7.347/1985 estabelece que terá legitimidade para a propositura da ação civil pública a associação que estiver constituída há pelo menos um ano, nos termos da lei",
+   "alternativas": {
+    "A": "civil.",
+    "B": "das organizações sociais.",
+    "C": "das organizações da sociedade civil.",
+    "D": "do serviço social autônomo.",
+    "E": "das sociedades anônimas."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 85,
+   "materia": "Prova Objetiva",
+   "enunciado": "Na ausência de regra específica que regule o prazo para a cobrança de multa aplicada por infração administrativa ao meio ambiente, tal prazo será de",
+   "alternativas": {
+    "A": "2 anos.",
+    "B": "5 anos.",
+    "C": "7 anos.",
+    "D": "10 anos.",
+    "E": "15 anos."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 86,
+   "materia": "Prova Objetiva",
+   "enunciado": "O direito a um meio ambiente ecologicamente equilibrado está expressamente previsto na Constituição Federal de 1988 (CF), já tendo sido reconhecido como um direito fundamental pelo Supremo Tribunal Federal (STF). A doutrina, em sua maioria, faz referência à evolução dos direitos fundamentais em ordem cronológica de gerações ou dimensões, sem que ocorra a anulação, pela nova geração/dimensão, das conquistas realizadas pelas gerações/dimensões que a antecederam. Com base no texto precedente, é correto afirmar que o direito a um meio ambiente ecologicamente equilibrado é identificado como integrante da",
+   "alternativas": {
+    "A": "primeira geração.",
+    "B": "segunda geração.",
+    "C": "terceira geração.",
+    "D": "quarta geração.",
+    "E": "quinta geração."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 87,
+   "materia": "Prova Objetiva",
+   "enunciado": "No que concerne à Política Nacional de Recursos Hídricos, a prevenção e a defesa contra eventos hidrológicos críticos de origem natural ou decorrentes do uso inadequado dos recursos se incluem entre",
+   "alternativas": {
+    "A": "seus fundamentos.",
+    "B": "suas diretrizes gerais de ação.",
+    "C": "seus métodos de execução.",
+    "D": "seus princípios.",
+    "E": "seus objetivos."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 88,
+   "materia": "Prova Objetiva",
+   "enunciado": "O Ministério do Meio Ambiente desenvolve um importante papel no Sistema Nacional de Unidades de Conservação da Natureza, exercendo a atribuição de órgão",
+   "alternativas": {
+    "A": "consultivo e executor.",
+    "B": "apenas normatizador.",
+    "C": "deliberativo e normatizador.",
+    "D": "central e de coordenação.",
+    "E": "executor."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 89,
+   "materia": "Prova Objetiva",
+   "enunciado": "Conforme o Estatuto de Roma, o crime de genocídio consiste em",
+   "alternativas": {
+    "A": "perseguição de um grupo ou coletividade que possa ser identificado, por motivos políticos, raciais, nacionais, étnicos, culturais, religiosos ou de gênero, ou em função de outros critérios universalmente reconhecidos como inaceitáveis no direito internacional.",
+    "B": "qualquer ato desumano praticado no contexto de um regime institucionalizado de opressão e domínio sistemático de um grupo racial sobre um ou outros grupos nacionais, com a intenção de manter esse regime (apartheid).",
+    "C": "atos desumanos que causem intencionalmente grande sofrimento, ou afetem gravemente a integridade física ou a saúde física ou mental da vítima.",
+    "D": "agressão sexual, escravatura sexual, prostituição forçada, gravidez forçada, esterilização forçada ou qualquer outra forma de violência no campo sexual de gravidade comparável.",
+    "E": "ofensas graves à integridade física ou mental de membros do grupo, com a intenção de destruir, no todo ou em parte, um grupo nacional, étnico, racial ou religioso."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 90,
+   "materia": "Prova Objetiva",
+   "enunciado": "À luz da Convenção das Nações Unidas Contra a Corrupção,",
+   "alternativas": {
+    "A": "Entre as finalidades dessa convenção, incluem-se a promoção, a facilitação e o apoio à cooperação internacional e à assistência técnica na prevenção e na luta contra a corrupção, incluída a recuperação de ativos.",
+    "B": "Tendo-se em vista a independência dos ministérios públicos nacionais, não podem ser editadas normas que regulem sua conduta, como as que preveem medidas para reforçar a integridade e evitar a corrupção entre seus membros.",
+    "C": "Não são considerados funcionários públicos os detentores de mandato eletivo, em especial os chefes de Estado e de governo, em face do princípio da soberania e autonomia dos Estados-partes.",
+    "D": "Para aplicação da convenção, independentemente de previsão em contrário, é exigido que os delitos enunciados produzam dano ou prejuízo patrimonial ao Estado.",
+    "E": "Medidas de compliance no sistema de contratação pública, concebidas como mecanismos eficazes de exame interno, tais como apelação e garantia de recursos internos e soluções legais, dependem de declaração específica pelos Estados-partes para se tornarem obrigatórias."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 91,
+   "materia": "Prova Objetiva",
+   "enunciado": "Acerca do conceito de violência contra a mulher previsto na Convenção de Belém do Pará, assinale a opção correta.",
+   "alternativas": {
+    "A": "A violência contra a mulher não abrange a violência física, sexual ou psicológica ocorrida no âmbito da família ou da unidade doméstica.",
+    "B": "A violência contra a mulher abrange qualquer relação interpessoal, desde que o agressor compartilhe ou tenha compartilhado a residência com a vítima.",
+    "C": "A violência contra a mulher abrange toda violência perpetrada ou tolerada pelo Estado ou seus agentes, onde quer que ela ocorra.",
+    "D": "A violência contra a mulher não abrange crimes que prevejam violência como elementar, tais como estupro, abuso sexual, tortura, tráfico de mulheres e prostituição forçada, sob pena de bis in idem.",
+    "E": "Desde que ausente a violência física, não configura violência contra a mulher o assédio sexual ocorrido na comunidade, em lugares como o local de trabalho e instituições educacionais ou de saúde."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 92,
+   "materia": "Prova Objetiva",
+   "enunciado": "Integra o Sistema de Monitoramento de Direitos Humanos das Nações Unidas o(a) Comitê de Direitos Humanos. II Comitê contra a Tortura. III Comissão de Direitos Humanos. IV Subcomitê contra a Tortura. V Conselho de Direitos Humanos.",
+   "alternativas": {
+    "A": "Apenas os itens I, III e V estão certos.",
+    "B": "Apenas os itens I, II, III e IV estão certos.",
+    "C": "Apenas os itens I, II, IV e V estão certos.",
+    "D": "Apenas os itens II, III, IV e V estão certos.",
+    "E": "Todos os itens estão certos."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 93,
+   "materia": "Prova Objetiva",
+   "enunciado": "No que concerne à decisão do Superior Tribunal de Justiça (STJ) no caso Irmã Dorothy Stang, assinale a opção correta.",
+   "alternativas": {
+    "A": "Independentemente da condição pessoal da vítima e(ou) da repercussão do fato no cenário nacional ou internacional, nem todo homicídio doloso representa grave violação ao direito à vida.",
+    "B": "O primeiro incidente de deslocamento de competência foi requerido pela Comissão Pastoral da Terra ao STJ e constitui fonte preciosa para a análise do instituto, introduzido no ordenamento jurídico brasileiro pela EC n.º 45/2004.",
+    "C": "As autoridades estaduais não se encontravam empenhadas na apuração dos fatos que resultaram na morte da missionária norte-americana, razão pela qual o pedido foi deferido, com o deslocamento da competência originária para a justiça federal.",
+    "D": "A demonstração concreta de risco de descumprimento de obrigações decorrentes de tratados internacionais firmados pelo Brasil, resultante de inércia, negligência, falta de vontade política ou de condições reais do Estado-membro, por suas instituições, em proceder à devida persecução penal, não pode ser considerada um requisito do deslocamento, diante da ausência de previsão constitucional.",
+    "E": "Dada a amplitude e a magnitude da expressão “direitos humanos”, é verossímil que o constituinte derivado tenha optado por não definir o rol dos crimes que passariam para a competência da justiça federal, sob pena de restringir os casos de incidência do dispositivo."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 94,
+   "materia": "Prova Objetiva",
+   "enunciado": "No que se refere ao caso da usina hidrelétrica (UHE) de Belo Monte, as medidas cautelares que foram concedidas pela Comissão Interamericana de Direitos Humanos e que permaneceram em vigor após a revisão incluem a",
+   "alternativas": {
+    "A": "suspensão imediata do processo de licenciamento do projeto da UHE de Belo Monte e a proibição de realização de qualquer obra material de execução.",
+    "B": "adoção de medidas para proteger a vida e a integridade pessoal dos membros dos povos indígenas em isolamento voluntário da bacia do Xingu.",
+    "C": "garantia prévia da realização dos processos de consulta, para que a consulta seja informativa e que as comunidades indígenas beneficiárias tenham acesso a um estudo de impacto social e ambiental do projeto, em um formato acessível, incluindo-se a tradução para os idiomas indígenas respectivos.",
+    "D": "realização de processos de consulta, em cumprimento das obrigações internacionais impostas ao Brasil.",
+    "E": "garantia de que a consulta seja prévia, livre, informativa, de boa fé e culturalmente adequada, com o objetivo de chegar a um acordo em relação a cada uma das comunidades indígenas afetadas pelas medidas cautelares impostas."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 95,
+   "materia": "Prova Objetiva",
+   "enunciado": "Em relação ao racismo institucional e aos seus reflexos no procedimento de reconhecimento fotográfico em sede policial,",
+   "alternativas": {
+    "A": "O erro de reconhecimento no procedimento de reconhecimento fotográfico em sede policial não é um elemento catalisador da condenação de inocentes no sistema de justiça criminal brasileiro, pois esses dados refletem a sobrerepresentação de pessoas negras no universo de investigados, processados, condenados e encarcerados.",
+    "B": "O erro de reconhecimento de pessoa negra no procedimento de reconhecimento fotográfico é reflexo do racismo que se expressa e se estrutura por meio da seletividade penal em sede policial, o que resulta na condenação e no sofrimento de pessoas negras inocentes.",
+    "C": "Não existe rito de reconhecimento fotográfico previsto no Código de Processo Penal, por isso excepcionalmente podem ocorrer equívocos no reconhecimento facial feito pela vítima ou testemunha.",
+    "D": "O uso de algoritmos, de inteligência artificial, de reconhecimento facial e de outras tecnologias é uma reivindicação das instituições sociais negras, porque esses recursos eliminam a possibilidade de erro de reconhecimento de procedimento fotográfico e diminuem os riscos de aprofundamento do racismo, da discriminação racial, da xenofobia e, consequentemente, das violações de direitos humanos.",
+    "E": "A cor dos acusados não é fator relevante nos procedimentos de reconhecimento facial em sede policial e não existe seletividade racial no funcionamento do sistema de justiça criminal brasileiro, pois essas instituições não são suscetíveis a ideologias ou estereótipos negativos construídos historicamente sobre a população negra."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 96,
+   "materia": "Prova Objetiva",
+   "enunciado": "Acerca dos marcos normativos e das políticas que orientam a atuação do Brasil no combate ao racismo, assinale a opção correta.",
+   "alternativas": {
+    "A": "As ações afirmativas adotadas pelo Estado brasileiro para combater o racismo e promover a igualdade racial encontram-se em consonância com normatizações e convenções internacionais a respeito da eliminação da discriminação racial, de forma a produzir uma real alteração no quadro de iniquidades sociais que assolam o Brasil.",
+    "B": "O Estado democrático de direito ainda não deve propor ações concretas para a solução do problema da discriminação, pois carece de dados estatísticos, pesquisas e estudos mais aprofundados a respeito dos problemas advindos da escravidão e do racismo, impregnados na sociedade brasileira.",
+    "C": "O Estado brasileiro adotou as medidas necessárias para eliminar o racismo e evitou a perpetuação da pobreza e do racismo entre as gerações.",
+    "D": "Não é escopo da atuação do Ministério Público garantir efetividade aos comandos constitucionais e legais no que se refere à promoção da igualdade racial, pois esta é uma atribuição do Poder Executivo, ao instituir políticas de ações afirmativas e mecanismos para combater a fraude às cotas, por exemplo.",
+    "E": "Os grupos de mulheres e de negros são numericamente majoritários em quase todos os estados brasileiros, mas o combate às discriminações racial e de gênero não é uma das principais demandas sociais a serem enfrentadas pelas instituições no país."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 97,
+   "materia": "Prova Objetiva",
+   "enunciado": "No que diz respeito aos crimes resultantes de preconceito de raça e de cor, bem como ao contexto da escravidão no Brasil, assinale a opção correta.",
+   "alternativas": {
+    "A": "Os casos de pessoas negras tratadas com indignidade por seguranças e empregados de estabelecimentos comerciais são excepcionais e refletem a falta de treinamento e capacitação desses profissionais, motivo por que não cabe a atuação do Ministério Público como fiscal da lei nesses casos.",
+    "B": "O avanço da consciência ética e jurídica do povo brasileiro, por meio do arcabouço principiológico consagrado na Constituição Federal de 1988, nos tratados internacionais e nas normas infraconstitucionais, inviabilizou o combate ao racismo.",
+    "C": "Tanto em sede policial quanto na atuação do Ministério Público, é possível observar a apuração sempre rigorosa dos casos de racismo e a aplicação da Lei n.º 7.716/1989.",
+    "D": "A equiparação da injúria racial ao crime de racismo e a punição por meio de penas restritivas de direitos, também chamadas de penas alternativas, como o pagamento de cestas básicas e a prestação de serviços à comunidade, foram suficientes para o avanço da consciência ética e social da sociedade brasileira.",
+    "E": "Apesar do reconhecimento do princípio da igualdade pela Constituição Federal de 1988 e da previsão legal de crimes resultantes de preconceito de raça ou de cor, no Poder Judiciário criou-se uma cultura de separar o racismo da injúria racial, o que culminou, na prática, em um incentivo e atenuante a esse tipo de conduta."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 98,
+   "materia": "Prova Objetiva",
+   "enunciado": "Considerando a Política Nacional de Promoção da Igualdade Racial (Decreto n.º 4.886/2003) e as ações a ele relacionadas,",
+   "alternativas": {
+    "A": "O apoio político, técnico e logístico para que experiências de promoção da igualdade racial sejam empreendidas por municípios, estados ou organizações da sociedade civil é uma imposição legal do governo federal para que os entes federados possam obter resultados exitosos, visando ao planejamento, à execução, à avaliação e à capacitação dos agentes da esfera estadual ou municipal para gerir as políticas de promoção de igualdade racial.",
+    "B": "O núcleo formulador e coordenador de políticas públicas é competência privativa do poder público, ao qual cabe articular os diversos atores sociais públicos para a consecução dos objetivos de reduzir, até sua completa eliminação, as desigualdades econômico-raciais que permeiam a sociedade brasileira.",
+    "C": "Com o advento da Internet e das redes sociais e com o avanço da consciência ética da sociedade brasileira, os agentes sociais e as instituições passaram a deter todos os conhecimentos necessários à mudança de mentalidade para eliminação do preconceito e da discriminação raciais, para que seja incorporada a perspectiva da igualdade racial, motivo por que o Estado deve se pautar pelas demandas sociais que atingem a população mais vulnerável no processo de formulação de políticas públicas.",
+    "D": "O Estado brasileiro instituiu a Política Nacional de Promoção da Igualdade Racial, contendo medidas tangíveis, concretas, articuladas e propostas de ações afirmativas cujo objetivo principal é reduzir as desigualdades raciais no Brasil, com ênfase na população negra.",
+    "E": "A afirmação do caráter pluriétnico da sociedade brasileira, a reavaliação do papel ocupado pela cultura indígena e afro-brasileira como elementos integrantes da nacionalidade e do processo civilizatório nacional e o reconhecimento das religiões de matriz africana como um direito dos afro-brasileiros não fazem parte da Política Nacional de Promoção da Igualdade Racial."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 99,
+   "materia": "Prova Objetiva",
+   "enunciado": "No que tange ao Estatuto da Igualdade Racial e ao racismo estrutural observado nos quadros funcionais de empresas e instituições, assinale a opção correta.",
+   "alternativas": {
+    "A": "A falta de ascensão de pessoas negras na carreira funcional das empresas se deve à falta de estudos e à baixa experiência profissional dessa população, o que mostra não ser possível provar a existência de racismo institucional no âmbito do mercado de trabalho, visto que o grau de instrução e a experiência profissional são determinantes nas condições de acesso e ascensão profissional.",
+    "B": "As ações previstas no Estatuto da Igualdade Racial não se aplicam às empresas do setor privado, pois a norma é expressamente restrita ao poder público.",
+    "C": "As práticas de ações afirmativas adotadas pelas empresas têm comprovado que a questão da diversidade e inclusão de gênero e raça ameaça a imagem, a sustentabilidade institucional, negocial e financeira das empresas, em vez de gerar mais negócios.",
+    "D": "Cabe ao poder público promover ações que assegurem a igualdade de oportunidades no mercado de trabalho para a população negra, inclusive mediante a implementação de medidas para a promoção da igualdade nas contratações e na ascensão profissional.",
+    "E": "As condições estabelecidas pelas empresas que priorizam pessoas brancas na inclusão e ascensão no mercado de trabalho podem ser caracterizadas como racismo institucional, mas não podem ser objeto de atuação do Poder Judiciário para averiguar a existência de práticas de racismo e discriminação racial nas relações de trabalho nas empresas, pois esta seria uma atuação restrita do Ministério Público do Trabalho."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 100,
+   "materia": "Prova Objetiva",
+   "enunciado": "A respeito do Sistema Nacional de Promoção da Igualdade Racial e das ações promovidas em seu âmbito, assinale a opção correta.",
+   "alternativas": {
+    "A": "O Sistema Nacional de Promoção da Igualdade Racial foi instituído pela Lei n.º 12.288/2010, estruturado, equipado, formado e está em pleno funcionamento em todos os estados da Federação, o que possibilita sua total efetividade dentro do previsto na lei mencionada.",
+    "B": "A formação institucional do Sistema Nacional de Promoção da Igualdade Racial, a partir da sua regulamentação, permitiu a implementação desse sistema em todo o país, constituindo um importante passo para a efetivação das políticas de igualdade racial e enfrentamento ao racismo.",
+    "C": "A implementação do Sistema Nacional de Promoção da Igualdade Racial não tem como objetivo a institucionalização da política de igualdade racial nos estados, no Distrito Federal e nos municípios, porque a autonomia dos entes federados deve ser respeitada.",
+    "D": "Atualmente, os órgãos que compõem o Sistema Nacional de Promoção da Igualdade Racial possuem estrutura, orçamento e recursos garantidos pelo Fundo de Promoção da Igualdade Racial para a implementação das políticas de igualdade racial bem como para promover medidas de transparência no que concerne à alocação desses recursos.",
+    "E": "O poder público deve indicar estratégias que assegurem que a política de igualdade racial se estabeleça como prioridade no planejamento e no orçamento dos diversos órgãos públicos de todas as esferas federativas, de modo a assegurar o desenvolvimento de programas que tenham impacto efetivo na superação das desigualdades raciais. Espaço livre"
+   },
+   "gabarito": "E"
+  }
+ ]
+}

@@ -1,0 +1,709 @@
+{
+ "id": "tjes-2023-analista-judiciario-apoio-especializado-especialidade-direito",
+ "nome": "TJES 2023 · ANALISTA JUDICIÁRIO – APOIO ESPECIALIZADO – ESPECIALIDADE – DIREITO",
+ "cargo": "Concurso de servidores",
+ "banca": "Cebraspe",
+ "gabarito": "definitivo",
+ "questoes": [
+  {
+   "n": 51,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Os objetos de interesse do direito administrativo não incluem a atuação de entes de direito privado.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 52,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No processo administrativo disciplinar, o direito à ampla defesa concretiza-se, entre outras formas, pela prerrogativa de o interessado requerer produção de provas, sem, no entanto, dispor do direito de participar da sua produção.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 53,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Embora ambos sejam atributos do ato administrativo, a presunção de veracidade não se confunde com a presunção de legitimidade.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 54,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Convalidação de ato administrativo é uma medida da administração pública que busca sanar defeito do ato, com efeitos ex tunc, isto é, retroativos.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 55,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Provimento por anulação ocorre quando o Poder Judiciário ou a própria administração pública anula demissão administrativa de servidor público.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 56,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em relação aos poderes e aos princípios da administração pública, à responsabilidade civil do Estado e aos serviços públicos, julgue os seguintes itens.\nA aplicabilidade do conceito de poder de polícia previsto no Código Tributário Nacional está restrita à administração tributária.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 57,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em relação aos poderes e aos princípios da administração pública, à responsabilidade civil do Estado e aos serviços públicos, julgue os seguintes itens.\nUm dos princípios da administração pública é o da continuidade do serviço público do qual deriva, entre outras consequências, a impossibilidade, em regra, de um contratado pela administração invocar a exceção de contrato não cumprido — exceptio non adimpleti contractus.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 58,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em relação aos poderes e aos princípios da administração pública, à responsabilidade civil do Estado e aos serviços públicos, julgue os seguintes itens.\nAs únicas formas legalmente admissíveis de delegação de serviço público são a concessão e a permissão.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 59,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em relação aos poderes e aos princípios da administração pública, à responsabilidade civil do Estado e aos serviços públicos, julgue os seguintes itens.\nSe uma pessoa ajuizar ação de indenização com base na responsabilidade objetiva do Estado e demonstrar dolo de agente público, é juridicamente admissível inserir o agente em litisconsórcio passivo com a pessoa jurídica de direito público demandada.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "X"
+  },
+  {
+   "n": 60,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que se refere à organização administrativa, ao controle da administração pública e à Lei n.º 8.429/1992, julgue os itens subsequentes.\nFundação de direito privado instituída pelo poder público pode auferir receita de suas atividades, sem que essa ação descaracterize sua natureza de entidade não lucrativa.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 61,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que se refere à organização administrativa, ao controle da administração pública e à Lei n.º 8.429/1992, julgue os itens subsequentes.\nOs contratos de serviços sociais autônomos, embora executados por pessoas de direito privado, devem, como regra, seguir lógica análoga à das normas sobre licitações.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 62,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que se refere à organização administrativa, ao controle da administração pública e à Lei n.º 8.429/1992, julgue os itens subsequentes.\nPara ser caracterizada como improbidade administrativa, a ofensa ao princípio da legalidade não pode ser genérica, ou seja, precisa corresponder a condutas descritas em dispositivos específicos da lei.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 63,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que se refere à organização administrativa, ao controle da administração pública e à Lei n.º 8.429/1992, julgue os itens subsequentes.\nCaso seja publicada lei inconstitucional em matéria administrativa, o mandado de segurança poderá ser usado como ferramenta para questionar a nova norma legal, de forma geral, até mesmo em momento anterior à prática de qualquer ato pela administração pública, dado o caráter preventivo dessa ação.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 64,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Relativamente a processo administrativo e contratos administrativos, julgue os itens abaixo.\nNo novo regime das licitações, um dos critérios de julgamento de propostas é o do maior desconto.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 65,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Relativamente a processo administrativo e contratos administrativos, julgue os itens abaixo.\nDe acordo com a Lei n.º 9.784/1999, a competência administrativa somente pode ser delegada a órgãos hierarquicamente situados abaixo da autoridade delegante.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 66,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que concerne aos direitos e garantias fundamentais e à aplicabilidade das normas constitucionais, observadas a Constituição Federal de 1988 (CF) e a jurisprudência do Supremo Tribunal Federal (STF), julgue os itens a seguir.\nConstitui crime a retenção dolosa do salário pelo empregador.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 67,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que concerne aos direitos e garantias fundamentais e à aplicabilidade das normas constitucionais, observadas a Constituição Federal de 1988 (CF) e a jurisprudência do Supremo Tribunal Federal (STF), julgue os itens a seguir.\nA ação de impugnação de mandato eletivo deve ser proposta em até quinze dias contados da diplomação, devendo tramitar sob segredo de justiça.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 68,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que concerne aos direitos e garantias fundamentais e à aplicabilidade das normas constitucionais, observadas a Constituição Federal de 1988 (CF) e a jurisprudência do Supremo Tribunal Federal (STF), julgue os itens a seguir.\nPedido de deputado estadual, formulado diretamente ao governador de determinado estado, solicitando informações sobre a gestão estadual, deve passar pelo crivo da Assembleia Legislativa, sob pena de indevida interferência de um Poder no outro, tendo em vista que a fiscalização do Poder Executivo pelo Poder Legislativo não pode ser exercida por ato isolado de um parlamentar.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 69,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que concerne aos direitos e garantias fundamentais e à aplicabilidade das normas constitucionais, observadas a Constituição Federal de 1988 (CF) e a jurisprudência do Supremo Tribunal Federal (STF), julgue os itens a seguir.\nAs normas da CF alusivas aos direitos fundamentais, assim como as normas do preâmbulo do texto constitucional, são preceitos de reprodução obrigatória nas Constituições estaduais.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 70,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que concerne aos direitos e garantias fundamentais e à aplicabilidade das normas constitucionais, observadas a Constituição Federal de 1988 (CF) e a jurisprudência do Supremo Tribunal Federal (STF), julgue os itens a seguir.\nO cargo de ministro do Superior Tribunal de Justiça (STJ) é privativo de brasileiro nato.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 71,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A respeito do Poder Judiciário, consideradas a CF e a jurisprudência do STF, julgue os itens seguintes.\nNo caso de pagamento devido ao particular, pela Fazenda Pública, em decorrência de sentença concessiva de mandado de segurança, os valores deverão ser objeto de restituição administrativa.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 72,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A respeito do Poder Judiciário, consideradas a CF e a jurisprudência do STF, julgue os itens seguintes.\nNo âmbito de ação direta de inconstitucionalidade, formalizada perante tribunal de justiça, é válida a impugnação de ato estatal editado anteriormente à vigência do parâmetro constitucional supostamente violado.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 73,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A respeito do Poder Judiciário, consideradas a CF e a jurisprudência do STF, julgue os itens seguintes.\nOs tribunais de justiça podem exercer controle abstrato de constitucionalidade de leis municipais, utilizando como parâmetro normas da CF, desde que se trate de normas de reprodução obrigatória pelos estados, seja por meio da técnica da transposição, seja por meio de remissão.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 74,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A respeito do Poder Judiciário, consideradas a CF e a jurisprudência do STF, julgue os itens seguintes.\nÉ prescindível a autorização do tribunal para que o juiz titular a ele vinculado resida fora da respectiva comarca.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 75,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A respeito do Poder Judiciário, consideradas a CF e a jurisprudência do STF, julgue os itens seguintes.\nÉ possível ao Órgão Especial do Tribunal de Justiça do Espírito Santo, de ofício, transformar juizados especiais cíveis em juizados especiais criminais, no âmbito da respectiva jurisdição.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "X"
+  },
+  {
+   "n": 76,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A respeito do Poder Judiciário, consideradas a CF e a jurisprudência do STF, julgue os itens seguintes.\nA matéria relativa à organização e ao funcionamento dos órgãos jurisdicionais e administrativos está submetida à disciplina exclusiva da lei.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 77,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A respeito dos Poderes Executivo e Legislativo, em atenção à CF e à jurisprudência do STF, julgue os itens subsequentes.\nO preceito inserido na CF, segundo o qual é vedada, dentro da mesma legislatura, a recondução para os cargos diretivos do Poder Legislativo, não é de reprodução obrigatória pelas Constituições estaduais.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 78,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A respeito dos Poderes Executivo e Legislativo, em atenção à CF e à jurisprudência do STF, julgue os itens subsequentes.\nÉ inconstitucional norma de Constituição estadual que amplia as competências da Assembleia Legislativa para, além das contas do chefe do Executivo, promover o julgamento de contas dos chefes do Legislativo e do Judiciário.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 79,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A respeito dos Poderes Executivo e Legislativo, em atenção à CF e à jurisprudência do STF, julgue os itens subsequentes.\nAté que ocorra a aprovação do projeto de lei de diretrizes orçamentárias, a sessão legislativa não será interrompida.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 80,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A respeito dos Poderes Executivo e Legislativo, em atenção à CF e à jurisprudência do STF, julgue os itens subsequentes.\nO veto, formalizado pelo chefe do Poder Executivo, somente poderá versar sobre texto parcial de artigo do projeto de lei nos casos em que não fique prejudicada a aplicação da norma legal a ser promulgada.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 81,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A respeito do conflito das leis no tempo, das pessoas naturais e das pessoas jurídicas, dos bens e dos contratos, julgue os itens a seguir.\nSe surgir uma nova lei que seja mais favorável ao devedor em determinada relação contratual, impõe-se a sua aplicação.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 82,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A respeito do conflito das leis no tempo, das pessoas naturais e das pessoas jurídicas, dos bens e dos contratos, julgue os itens a seguir.\nNão havendo intenção difamatória, é lícito o emprego do nome de pessoa em publicações.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 83,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A respeito do conflito das leis no tempo, das pessoas naturais e das pessoas jurídicas, dos bens e dos contratos, julgue os itens a seguir.\nObrigações recíprocas e simultâneas são condições para opor a exceção do contrato não cumprido.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 84,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A respeito do conflito das leis no tempo, das pessoas naturais e das pessoas jurídicas, dos bens e dos contratos, julgue os itens a seguir.\nCaso haja transferência de ativos ou de passivos entre os sócios e a pessoa jurídica, ficará caracterizada a confusão patrimonial.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 85,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A respeito do conflito das leis no tempo, das pessoas naturais e das pessoas jurídicas, dos bens e dos contratos, julgue os itens a seguir.\nO fato de os bens constituírem uma universalidade de fato não obsta que eles sejam objeto de relações jurídicas próprias.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 86,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Acerca do fato jurídico, do negócio jurídico, dos atos jurídicos, da prescrição e da prova dos fatos jurídicos, julgue os itens subsequentes.\nOs fatos jurídicos são aptos a modificar direitos, seja de forma subjetiva, seja de forma objetiva.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 87,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Acerca do fato jurídico, do negócio jurídico, dos atos jurídicos, da prescrição e da prova dos fatos jurídicos, julgue os itens subsequentes.\nEmbora a presunção seja admitida como meio de prova, as comuns ficam afastadas em razão da subjetividade que as permeia.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 88,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Acerca do fato jurídico, do negócio jurídico, dos atos jurídicos, da prescrição e da prova dos fatos jurídicos, julgue os itens subsequentes.\nO negócio jurídico simulado subsistirá caso não se constate a intenção de prejudicar terceiros.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 89,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Acerca do fato jurídico, do negócio jurídico, dos atos jurídicos, da prescrição e da prova dos fatos jurídicos, julgue os itens subsequentes.\nA culpa é prescindível para a configuração da responsabilidade civil decorrente do abuso de direito na prática de um ato.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 90,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Acerca do fato jurídico, do negócio jurídico, dos atos jurídicos, da prescrição e da prova dos fatos jurídicos, julgue os itens subsequentes.\nA suspensão da prescrição em favor de um dos credores solidários aproveitará os demais, caso não se trate de obrigação indivisível.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "X"
+  },
+  {
+   "n": 91,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que diz respeito às normas fundamentais do processo civil, julgue os itens seguintes.\nEm regra, os juízes e os tribunais atenderão à ordem cronológica de conclusão para proferir sentença ou acórdão, ressalvadas, entre outras hipóteses, as sentenças proferidas em audiência, homologatórias de acordo ou de improcedência liminar do pedido, o julgamento de embargos de declaração, as preferências legais e as metas estabelecidas pelo Conselho Nacional de Justiça (CNJ).",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 92,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que diz respeito às normas fundamentais do processo civil, julgue os itens seguintes.\nNão se admite que seja proferida decisão em desfavor de uma das partes do processo sem que ela seja previamente ouvida, ressalvadas as situações em que ficar caracterizado o abuso do direito de defesa ou o manifesto propósito protelatório da parte.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 93,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que se refere aos sujeitos no processo civil, julgue os itens subsequentes.\nA representação judicial de municípios por Associação de Representação de Municípios depende da existência de questões de interesse comum e de autorização dos chefes do Poder Executivo dos municípios associados.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 94,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que se refere aos sujeitos no processo civil, julgue os itens subsequentes.\nConsidere que Paul, estrangeiro, tenha proposto reconvenção em face de João e que, durante o processo, Paul tenha regressado ao seu país de origem. Nessa situação, Paul não deverá prestar caução suficiente para o pagamento de custas e de honorários de sucumbência.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 95,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que se refere aos sujeitos no processo civil, julgue os itens subsequentes.\nConsidere que Antônio, inconformado com uma decisão judicial, tenha apresentado recurso ao tribunal competente e, após a apresentação das razões e das contrarrazões, bem como da admissão do recurso, tenha desconstituído o seu único advogado. Considere, ainda, que, instado a regularizar a sua representação processual, ele não tenha atendido à determinação judicial. Nessa situação, o relator não conhecerá do recurso, julgando-o deserto.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 96,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que se refere aos sujeitos no processo civil, julgue os itens subsequentes.\nÉ vedado ao juiz condenar o litigante de má-fé, salvo se houver requerimento nesse sentido.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 97,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que se refere às nulidades processuais, julgue os itens que se seguem.\nA falta de intimação do Ministério Público para acompanhar processo em que deva intervir gera nulidade, devendo o juiz invalidar todos os atos a partir da citação.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 98,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que se refere às nulidades processuais, julgue os itens que se seguem.\nAs nulidades processuais deverão ser arguidas tão logo couber à parte falar nos autos, sob pena de convalidação do ato viciado; a preclusão não prevalecerá se for provado justo impedimento para a alegação ou quando se tratar de nulidade que deva ser decretada de ofício pelo juiz.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 99,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Acerca do cumprimento de sentença, julgue os próximos itens.\nO momento de exercício do direito de retenção de benfeitorias corresponde à fase de cumprimento de sentença.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 100,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Acerca do cumprimento de sentença, julgue os próximos itens.\nNo cumprimento de sentença que reconheça a exigibilidade de obrigação de não fazer, o juiz poderá determinar uma série de providências, inclusive a busca e apreensão e o desfazimento de obra.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 101,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A respeito do princípio da consunção, julgue os itens a seguir.\nCom previsão expressa na parte geral do Código Penal brasileiro, o princípio da consunção pode ser caracterizado como um subprincípio do princípio da intervenção mínima.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 102,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A respeito do princípio da consunção, julgue os itens a seguir.\nO princípio da consunção é um princípio de resolução de conflito de leis penais no tempo, sem previsão expressa na parte geral do Código Penal brasileiro.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 103,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "De acordo com o princípio da bagatela imprópria, julgue os itens que se seguem.\nA aplicação da pena não pode ter finalidade exclusivamente retributiva.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 104,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "De acordo com o princípio da bagatela imprópria, julgue os itens que se seguem.\nMerece reprimenda penal a agressão que afetar os bens jurídicos de forma relevante.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "X"
+  },
+  {
+   "n": 105,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que se refere à aplicação da lei penal no tempo, julgue os itens subsequentes.\nO crime permanente é aquele cujo resultado prolonga-se no tempo, atraindo a aplicação da lei penal vigente ao término do resultado.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 106,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que se refere à aplicação da lei penal no tempo, julgue os itens subsequentes.\nNo caso dos crimes omissivos, considera-se o momento da omissão e aplica-se a lei vigente pressupondo o último momento que poderia ter sido utilizado pelo agente para praticar a ação.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 107,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que se refere à aplicação da lei penal no tempo, julgue os itens subsequentes.\nNo caso dos crimes continuados, aplica-se a lei mais severa, ainda que posterior à cessação da continuidade, haja vista se tratar de ficção jurídica.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 108,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Com relação às penas privativas de liberdade no Código Penal, julgue os próximos itens.\nNo regime fechado, o condenado fica sujeito a isolamento nos períodos diurno e noturno.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 109,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Com relação às penas privativas de liberdade no Código Penal, julgue os próximos itens.\nNo regime aberto, o condenado poderá trabalhar fora do estabelecimento prisional, desde que esteja sob vigilância.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 110,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Com relação às penas privativas de liberdade no Código Penal, julgue os próximos itens.\nO inadimplemento da pena de multa cumulativamente imposta pode gerar a regressão de regime da pena privativa de liberdade.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 111,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Com relação ao momento inicial do processo de execução das penas privativas de liberdade e das medidas de segurança, julgue os itens a seguir.\nNo caso de medida de segurança de internação, é dispensável o trânsito em julgado da sentença absolutória imprópria ou acórdão para a inclusão do paciente em Hospital de Custódia e Tratamento Psiquiátrico.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 112,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Com relação ao momento inicial do processo de execução das penas privativas de liberdade e das medidas de segurança, julgue os itens a seguir.\nEm se tratando de pena de reclusão, o processo inicia-se com o registro da guia de recolhimento do preso.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 113,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Acerca do inquérito policial e da sua tramitação, julgue os itens que se seguem.\nNa ação penal privada, concluído o inquérito policial, o delegado de polícia remeterá os autos ao juízo competente, independentemente de tramitação pelo órgão ministerial.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 114,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Acerca do inquérito policial e da sua tramitação, julgue os itens que se seguem.\nExcetuando-se as situações em que há necessidade de adoção de medidas constritivas ou acautelatórias, o inquérito policial, na ação penal pública, tramitará diretamente entre o órgão policial e o Ministério Público.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 115,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que se refere aos efeitos da sentença penal condenatória e absolutória, julgue os itens subsequentes.\nConforme a regra processual penal, o juiz que exarou a sentença estabelecerá o valor mínimo para a reparação dos danos morais e dos prejuízos materiais sofridos pelo ofendido.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 116,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que se refere aos efeitos da sentença penal condenatória e absolutória, julgue os itens subsequentes.\nA decisão absolutória fundada no reconhecimento da inexistência material do fato exclui a propositura da respectiva ação civil.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 117,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que se refere aos efeitos da sentença penal condenatória e absolutória, julgue os itens subsequentes.\nImpede a propositura de ação civil indenizatória a sentença penal que julgar extinta a punibilidade do réu.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 118,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "À luz da legislação de regência e do entendimento doutrinário dominante, julgue os itens que se seguem, relativos à citação e à intimação no processo penal.\nNa ação penal privada, o querelante será intimado da sentença pessoalmente ou por intermédio do advogado constituído nos autos.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 119,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "À luz da legislação de regência e do entendimento doutrinário dominante, julgue os itens que se seguem, relativos à citação e à intimação no processo penal.\nEm obediência ao princípio do contraditório, ausente o citado por edital, é vedada a produção de provas em juízo, sob pena de nulidade absoluta.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 120,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "À luz da legislação de regência e do entendimento doutrinário dominante, julgue os itens que se seguem, relativos à citação e à intimação no processo penal.\nSe, quando citado por hora certa, o acusado não comparecer, será decretada a sua revelia nos mesmos moldes da citação por edital.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  }
+ ]
+}

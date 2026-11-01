@@ -1,0 +1,724 @@
+{
+ "id": "tjsc-2024-tecnico-judiciario-auxiliar",
+ "nome": "TJSC 2024 · Técnico Judiciário Auxiliar",
+ "cargo": "Concurso de servidores · prova tipo 1",
+ "banca": "FGV",
+ "gabarito": "definitivo",
+ "questoes": [
+  {
+   "n": 26,
+   "materia": "Legislação Interna",
+   "enunciado": "Maria, servidora estável ocupante de cargo de provimento efetivo no âmbito do Poder Judiciário do Estado de Santa Catarina, foi aprovada em outro concurso público, para cargo diverso, no âmbito da mesma estrutura de poder. Por tal razão, tomou posse no novo cargo público e realizou o estágio probatório, sendo, ao final, considerada inabilitada. Na situação descrita na narrativa, Maria deve ser:",
+   "alternativas": {
+    "A": "posta em disponibilidade;",
+    "B": "demitida do serviço público;",
+    "C": "reconduzida ao cargo anterior;",
+    "D": "exonerada do novo cargo público;",
+    "E": "classificada como excedente, até preencher os requisitos para se aposentar."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 27,
+   "materia": "Legislação Interna",
+   "enunciado": "Ivo, servidor do Tribunal de Justiça de Santa Catarina, foi instado, por seu superior hierárquico, a encaminhar determinado expediente ao órgão responsável por uniformizar a jurisprudência em matéria de direito penal, isto na perspectiva do direito material, não processual. Após consultar o Regimento Interno, Ivo concluiu corretamente que o referido órgão é:",
+   "alternativas": {
+    "A": "o Órgão Especial;",
+    "B": "o Tribunal Pleno;",
+    "C": "a Seção Criminal;",
+    "D": "o Conselho da Magistratura;",
+    "E": "o Grupo de Câmaras de Direito Criminal."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 28,
+   "materia": "Legislação Interna",
+   "enunciado": "João, recém-empossado servidor do Poder Judiciário do Estado de Santa Catarina, consultou as normas éticas a que estava sujeito, mais especificamente em relação à influência ideológica no ambiente de trabalho, com o objetivo de pautar a sua conduta. Ao final de suas reflexões, à luz do Código de Conduta do Poder Judiciário do Estado de Santa Catarina, João concluiu corretamente que:",
+   "alternativas": {
+    "A": "tem, em razão das liberdades de pensamento e de expressão, o direito subjetivo de direcionar suas ações profissionais conforme a ideologia que lhe pareça adequada;",
+    "B": "espera-se dos agentes do Poder Judiciário que mantenham neutralidade no exercício profissional, de modo que haja independência em relação a influências ideológicas;",
+    "C": "as manifestações ideológicas são legítimas na medida em que sejam autorizadas em regulamento ou em ato específico, devidamente fundamentado, do superior hierárquico;",
+    "D": "a dignidade da pessoa humana torna indissociáveis o agir individual e a atuação profissional, o que obsta qualquer vedação à sua expressão ideológica no ambiente laboral;",
+    "E": "o Poder Judiciário, enquanto instituição que materializa o referencial de justiça, exige que seus agentes atuem profissionalmente com reverência à ideologia dominante."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 29,
+   "materia": "Legislação Interna",
+   "enunciado": "Maria, servidora ocupante de cargo de provimento efetivo no âmbito do Poder Judiciário do Estado de Santa Catarina, respondia a processo administrativo disciplinar. Finda a instrução processual, tinha a intuição, pelas provas produzidas, de que o Diretor do Foro provavelmente lhe aplicaria uma sanção disciplinar. À luz das regras de competência nessa seara, é correto afirmar que o referido agente pode vir a aplicar a Maria:",
+   "alternativas": {
+    "A": "apenas a pena de suspensão;",
+    "B": "apenas a pena de advertência;",
+    "C": "a pena de advertência ou a de censura;",
+    "D": "a pena de repreensão ou a de suspensão;",
+    "E": "quaisquer das penas cominadas à infração disciplinar."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 30,
+   "materia": "Legislação Interna",
+   "enunciado": "João, servidor público estável no âmbito do Poder Judiciário do Estado de Santa Catarina, é casado com Joana, servidora pública federal que precisou se mudar do referido estado em razão de uma transferência compulsória determinada pelo seu superior hierárquico, com base no respectivo regime jurídico. À luz do Estatuto dos Servidores Públicos Civis do Estado de Santa Catarina, é correto afirmar que João:",
+   "alternativas": {
+    "A": "tem o direito à licença por mudança de domicílio, sem remuneração, por dois anos, renovável por mais dois anos;",
+    "B": "deve permanecer no exercício regular de suas funções ou pedir exoneração, nesse caso com o objetivo de acompanhar Joana;",
+    "C": "tem o direito à licença para acompanhar cônjuge, sem prejuízo da remuneração, que pode se estender pelo prazo de três anos, não prorrogáveis;",
+    "D": "tem o direito à licença para acompanhar cônjuge, sem remuneração, que irá perdurar enquanto Joana não restabelecer o domicílio no estado de Santa Catarina;",
+    "E": "tem o direito à licença por mudança de domicílio, com direito à remuneração pelo biênio inicial, enquanto Joana não restabelecer o domicílio no estado de Santa Catarina."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 31,
+   "materia": "Legislação Interna",
+   "enunciado": "Maria, juíza de direito de primeiro grau no estado de Santa Catarina, comunicou, aos servidores do órgão jurisdicional do qual é titular, que tinha sido convocada para atuar em segundo grau. Ao tomar conhecimento da referida convocação, os servidores concluíram corretamente que Maria, durante o período de convocação:",
+   "alternativas": {
+    "A": "será assessorada pelos servidores do órgão jurisdicional do qual é titular;",
+    "B": "terá, em qualquer caso, o assessoramento dos auxiliares da presidência do Tribunal de Justiça;",
+    "C": "caso responda por vaga que aguarda nomeação de novo titular, terá a assessoria do gabinete do desembargador;",
+    "D": "não terá assessoramento, pois apenas auxiliará desembargador ou órgão julgador do Tribunal de Justiça;",
+    "E": "caso substitua desembargador afastado a qualquer título, contará com assessoramento compartilhado de corpo funcional específico."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 32,
+   "materia": "Legislação Interna",
+   "enunciado": "O juízo único da comarca Alfa, no estado de Santa Catarina, sofreu correição extraordinária com estrita observância das normas de regência, sendo identificadas algumas irregularidades. À luz do Código de Normas da Corregedoria-Geral de Justiça, é correto afirmar, em relação ao arquivamento da referida correição, que:",
+   "alternativas": {
+    "A": "ocorrerá somente após a sua homologação pelo Conselho da Magistratura;",
+    "B": "será promovido ato contínuo à sua conclusão, considerando o seu caráter puramente instrutório;",
+    "C": "ocorrerá juntamente com a ultimação do processo administrativo disciplinar a que deve dar origem;",
+    "D": "deve ser arquivada após a publicação do relatório semestral encaminhado ao presidente do Tribunal de Justiça;",
+    "E": "pode decorrer da regularização das pendências identificadas em termo de ajustamento de compromisso correcional."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 33,
+   "materia": "Legislação Interna",
+   "enunciado": "João, servidor ocupante de cargo de provimento efetivo, de nomenclatura X, no estado de Santa Catarina, foi acometido de atrofia muscular, o que impedia o exercício de suas atribuições regulares. Como não era possível a transferência, era aconselhável o seu aproveitamento em atribuições diferentes, compatíveis com sua condição funcional. Nessa situação, à luz do Estatuto dos Servidores Públicos Civis do Estado de Santa Catarina, é correto afirmar que João deve ser:",
+   "alternativas": {
+    "A": "exonerado, a bem do serviço público;",
+    "B": "posto em disponibilidade remunerada;",
+    "C": "readaptado, o que não implicará mudança de cargo;",
+    "D": "aposentado por incapacidade permanente para o trabalho;",
+    "E": "redistribuído para outra estrutura, ouvido o órgão central de pessoal."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 34,
+   "materia": "Legislação Interna",
+   "enunciado": "Ana, servidora do Tribunal de Justiça de Santa Catarina, foi informada de que o desembargador X estava afastado de suas funções, sendo que havia feitos, sob a relatoria desse magistrado, que exigiam prioridade. Ao analisar os balizamentos regimentais, Ana concluiu corretamente que:",
+   "alternativas": {
+    "A": "em razão da prevenção, deve ser aguardado o retorno de X para apreciar os feitos;",
+    "B": "os feitos devem ser encaminhados ao substituto legal de X, e permanecerão sob a relatoria desse substituto mesmo após o retorno de X;",
+    "C": "os feitos serão redistribuídos entre os desembargadores do até o julgamento;",
+    "D": "as partes serão comunicadas, de modo que possam optar entre aguardar o retorno de X ou encaminhar o respectivo feito ao seu substituto legal;",
+    "E": "os feitos devem ser encaminhados ao substituto legal de X, mas voltarão a ser atribuídos a X após o seu retorno, caso não tenham sido ainda julgados, exceto os pautados para julgamento."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 35,
+   "materia": "Legislação Interna",
+   "enunciado": "Em determinado momento, o corregedor-geral da Justiça de Santa Catarina recebeu a sugestão de que fosse elaborado um novo Regimento Interno da Corregedoria-Geral de Justiça, com o que anuiu, sendo o trabalho concluído pouco tempo depois. Nesse caso, é correto afirmar que o referido Regimento Interno deve ser:",
+   "alternativas": {
+    "A": "aprovado diretamente pelo corregedor-geral;",
+    "B": "submetido ao referendo dos desembargadores;",
+    "C": "submetido à aprovação do presidente do tribunal;",
+    "D": "submetido à aprovação do conselho da magistratura;",
+    "E": "publicado, caso não haja impugnação direcionada ao Tribunal Pleno durante os cinco dias de consulta à classe."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 36,
+   "materia": "Legislação Interna",
+   "enunciado": "Pedro, servidor ocupante de cargo de provimento efetivo no âmbito do Poder Executivo do Estado de Santa Catarina, passou a responder a processo administrativo disciplinar. Ao ter acesso à portaria inaugural, constatou que a infração disciplinar que lhe é imputada poderia redundar na aplicação da sanção de “demissão qualificada”. Ao consultar o Estatuto dos Servidores Públicos Civis do Estado de Santa Catarina, concluiu corretamente que a referida sanção:",
+   "alternativas": {
+    "A": "impede que o ex-servidor volte a exercer, em qualquer tempo, cargo ou emprego público;",
+    "B": "incompatibiliza o ex-servidor com o exercício de cargo ou emprego público pelo período de cinco a dez anos;",
+    "C": "indica que recai sobre o ex-servidor o dever de ressarcir o dano causado, o que não ocorre na “demissão simples”;",
+    "D": "é idêntica à “demissão simples”, recebendo o referido designativo apenas por ser cominada a infrações disciplinares qualificadas;",
+    "E": "apenas indica que a cessação do vínculo funcional ocorreu “a bem do serviço público”, decorrendo da gravidade da infração disciplinar praticada."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 37,
+   "materia": "Legislação Interna",
+   "enunciado": "Determinado advogado, que figurava como patrono em diversas relações processuais em tramitação junto à primeira instância do Poder Judiciário do Estado de Santa Catarina, almejava apresentar uma consulta à Corregedoria-Geral da Justiça, em relação à forma correta de organização de algumas serventias do foro judicial. Após consultar o Código de Normas da Corregedoria-Geral da Justiça, o advogado concluiu corretamente que:",
+   "alternativas": {
+    "A": "a consulta deve suscitar interesse geral e ser formulada por juiz;",
+    "B": "a consulta terá que ser formulada em nome de alguma parte, ainda que seja subscrita por ele, advogado;",
+    "C": "ele próprio pode apresentar a consulta, mas é preciso dissociá-la de uma relação processual concreta;",
+    "D": "a consulta somente pode ser formulada nos autos de uma relação processual, acarretando a sua suspensão;",
+    "E": "não é admitida a formulação de consulta, já que a Corregedoria-Geral somente atua em situações concretas."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 38,
+   "materia": "Legislação Interna",
+   "enunciado": "Em determinada relação processual em trâmite no âmbito de órgão fracionário do Tribunal de Justiça de Santa Catarina, foi arguida a inconstitucionalidade da Lei Federal nº X, arguição esta que foi acolhida pelo referido órgão fracionário. Nesse caso, à luz da sistemática regimental, o incidente de arguição de inconstitucionalidade deve ser:",
+   "alternativas": {
+    "A": "submetido ao Órgão Especial, que é competente para julgá- lo;",
+    "B": "submetido ao Supremo Tribunal Federal, que é competente para julgá-lo;",
+    "C": "distribuído livremente a outro órgão fracionário, sendo o seu julgamento prejudicial ao julgamento do processo principal;",
+    "D": "julgado pelo órgão fracionário que o acolheu, após o trâmite regular, suspendendo-se o processo principal até que isso ocorra;",
+    "E": "julgado pelo órgão fracionário que o acolheu, o que se dará em conjunto com o julgamento do processo principal, caso diga respeito ao mérito deste último."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 39,
+   "materia": "Legislação Interna",
+   "enunciado": "O desembargador X, do Tribunal de Justiça do Estado de Santa Catarina, que jamais ocupara um cargo de direção, pretendia ser alçado ao cargo de 1º vice-presidente do Tribunal. Nesse caso, é correto afirmar, à luz do Regimento Interno desse",
+   "alternativas": {
+    "A": "compete ao presidente do Tribunal de Justiça escolher, ou não, X como seu 1º vice;",
+    "B": "X irá concorrer na eleição para o cargo de 1º vice, para o qual são elegíveis todos os desembargadores do Tribunal de Justiça;",
+    "C": "X irá concorrer na eleição para o cargo de 1º vice, o que pressupõe que esteja no primeiro quinto da lista de antiguidade;",
+    "D": "X irá concorrer na eleição para o cargo de 1º vice, o que pressupõe a sua escolha na eleição primária realizada no âmbito do Tribunal de Justiça;",
+    "E": "X irá concorrer na mesma chapa do candidato à presidência do de Justiça, na eleição destinada ao preenchimento desses cargos."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 40,
+   "materia": "Legislação Interna",
+   "enunciado": "Maria, servidora ocupante de cargo de provimento efetivo no âmbito do estado de Santa Catarina, faltou ao serviço em razão de doença em uma pessoa de sua família. Preocupada com as consequências dessa falta, Maria consultou o Estatuto dos Servidores Públicos Civis do Estado e concluiu corretamente que ela:",
+   "alternativas": {
+    "A": "somente terá a falta abonada se a pessoa da família for parente até o terceiro grau;",
+    "B": "tem o direito subjetivo de ter a falta abonada, desde que a doença seja comprovada por prova documental;",
+    "C": "terá a falta abonada apenas para fins disciplinares e de anotação no assentamento, não para fins de pagamento;",
+    "D": "terá a falta analisada, e esta poderá ser justificada para fins disciplinares, de anotação no assentamento e de pagamento;",
+    "E": "não pode ter a falta abonada, pois isso somente é possível em se tratando de doença pessoal, não em pessoa da família."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 41,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Considerando as peculiaridades da organização administrativa, no âmbito da Administração Indireta, descentralizada, existem pessoas jurídicas de direito público, dentre as quais é correto indicar:",
+   "alternativas": {
+    "A": "os entes federativos e as fundações;",
+    "B": "as sociedades de economia mista e as empresas públicas;",
+    "C": "as organizações sociais e as fundações autárquicas;",
+    "D": "as autarquias e as associações públicas;",
+    "E": "os serviços sociais autônomos e as empresas públicas."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 42,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "O órgão competente do Tribunal de Justiça do Estado de Santa Catarina almeja realizar um credenciamento, definido nos termos da Lei nº 14.133/2021 como processo administrativo de chamamento público em que a Administração Pública convoca interessados em prestar serviços ou fornecer bens para que, preenchidos os requisitos necessários, se credenciem no órgão ou na entidade para executar o objeto quando convocados. Diante dessa situação hipotética, à luz do disposto no mencionado Diploma Legal, tal órgão deverá realizar uma:",
+   "alternativas": {
+    "A": "licitação na modalidade concorrência;",
+    "B": "licitação na modalidade concurso;",
+    "C": "licitação na modalidade diálogo competitivo;",
+    "D": "contratação direta, considerando que a licitação é dispensável;",
+    "E": "contratação direta, considerando que a licitação é inexigível."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 43,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Após o devido processo administrativo, foi regularmente aplicada a penalidade de demissão ao servidor público Euzébio, em decorrência da prática de falta funcional grave, para a qual estava prevista a aludida sanção. Considerando os poderes administrativos, a situação narrada corresponde à manifestação do:",
+   "alternativas": {
+    "A": "poder normativo;",
+    "B": "poder disciplinar;",
+    "C": "poder hierárquico;",
+    "D": "poder regulamentar;",
+    "E": "poder de polícia."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 44,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Com relação às garantias dos agentes públicos consagradas na Constituição da República, é correto afirmar que, aos servidores nomeados para cargos de provimento efetivo em virtude de concurso público, após três anos de efetivo exercício, mediante aprovação em avaliação especial de desempenho, deve ser assegurada:",
+   "alternativas": {
+    "A": "a estabilidade;",
+    "B": "a vitaliciedade;",
+    "C": "a exclusividade;",
+    "D": "a inamovibilidade;",
+    "E": "a irredutibilidade de vencimentos."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 45,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A Lei nº 14.133/2021 consagra uma série de prerrogativas para a Administração Pública, conhecidas como cláusulas exorbitantes, que costumam ser apontadas como o traço distintivo dos contratos administrativos. Nesse contexto, uma das mencionadas prerrogativas expressamente reconhecidas para a Administração pela norma em questão é:",
+   "alternativas": {
+    "A": "a fiscalização da execução dos contratos;",
+    "B": "a extinção do contrato por acordo entre as partes;",
+    "C": "o fato do príncipe;",
+    "D": "o fato da administração;",
+    "E": "a manutenção do equilíbrio econômico-financeiro do contrato."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 46,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Os princípios expressos e implícitos no ordenamento jurídico são de crucial relevância no estudo do Direito Administrativo. Dentre aqueles que resultam implícitos na Constituição da República, amplamente reconhecidos pela jurisprudência dos Tribunais Superiores, estão os seguintes:",
+   "alternativas": {
+    "A": "tutela da confiança e eficiência;",
+    "B": "impessoalidade e transparência;",
+    "C": "supremacia do interesse público e tutela da confiança;",
+    "D": "indisponibilidade do interesse público e publicidade;",
+    "E": "moralidade e supremacia do interesse público."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 47,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Ao estudar as espécies de atos administrativos, Mariana deparou- se com a delimitação dos atos enunciativos, vindo a concluir corretamente que pode ser citado(a) como exemplo de tais atos:",
+   "alternativas": {
+    "A": "o deferimento de uma licença;",
+    "B": "o embargo de uma obra;",
+    "C": "a emissão de uma certidão;",
+    "D": "a publicação de um decreto;",
+    "E": "a edição de uma portaria."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 48,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em determinado país, o ditador que estava à frente do poder há algumas décadas decidiu que já era o momento de adotar uma nova Constituição, que passaria a reger a organização político- administrativa e os administrados. Com esse objetivo, submeteu o texto, por ele próprio elaborado, à apreciação popular, que poderia votar “sim” ou “não”. Ao fim desse processo, a Constituição recebeu a aprovação popular, foi publicada e entrou em vigor. À luz dessa narrativa, estamos perante uma Constituição:",
+   "alternativas": {
+    "A": "kantiana;",
+    "B": "cesarista;",
+    "C": "democrática;",
+    "D": "promulgada;",
+    "E": "compromissória."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 49,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Um grupo de pessoas foi preso, em território brasileiro, acusado da prática de atos de terrorismo, conforme tipificação estabelecida pela lei penal. Em razão da gravidade das condutas e da existência de grande pressão sobre o juiz que julgaria o caso, tanto da opinião pública como do grupo terrorista ao qual pertencem as pessoas presas, iniciou-se um debate, no âmbito do Congresso Nacional, com argumentos contrários e favoráveis, visando à criação de um tribunal com competência específica para julgar os referidos agentes. Maria, deputada federal, ao analisar a Constituição da República, concluiu corretamente que é:",
+   "alternativas": {
+    "A": "prevista, na própria ordem constitucional, a criação do referido tribunal;",
+    "B": "permitida a criação do referido tribunal, o que pressupõe a edição de lei complementar;",
+    "C": "facultada a criação do referido tribunal, o que decorre das opções políticas do legislador;",
+    "D": "vedada a criação do referido tribunal, já que ele teria a natureza de tribunal de exceção;",
+    "E": "obrigatória a criação do referido tribunal, tendo em vista o dever do Estado brasileiro em proteger a dignidade humana."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 50,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "João, com dezoito anos de idade, foi condenado a pena privativa de liberdade em sentença penal transitada em julgado. Como ainda não tinha se alistado como eleitor, consultou um especialista na matéria em relação à possibilidade, ou não, de que viesse a fazê-lo assim que, pela progressão do regime, pudesse se ausentar da unidade prisional durante o cumprimento da pena. Foi corretamente esclarecido a João que ele:",
+   "alternativas": {
+    "A": "perdera os direitos políticos, logo não poderia se alistar como eleitor;",
+    "B": "poderia se alistar como eleitor, estando apenas inelegível para concorrer a um cargo eletivo;",
+    "C": "tivera os direitos políticos cassados, somente podendo se alistar como eleitor após o período de reabilitação;",
+    "D": "estava livre para se alistar como eleitor, considerando a independência entre as instâncias penal e eleitoral;",
+    "E": "estaria com os direitos políticos suspensos enquanto cumprisse a pena; logo, somente poderia promover o seu alistamento eleitoral em momento posterior."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 51,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em determinada temática de competência legislativa concorrente entre a União e os estados, a deputada estadual Maria constatou que aquele ente federativo ainda não editara nenhuma norma em sua esfera de competência. À luz desse quadro, Maria concluiu corretamente que o estado:",
+   "alternativas": {
+    "A": "não pode legislar sobre a temática;",
+    "B": "pode legislar sobre a temática, desde que o Congresso Nacional referende a norma que for editada;",
+    "C": "pode legislar livremente sobre a temática e, caso sobrevenha lei da União, a lei estadual será tida como revogada;",
+    "D": "pode legislar livremente sobre a temática e, caso sobrevenha lei da União, a lei estadual terá sua eficácia suspensa naquilo que colidir com a referida lei;",
+    "E": "somente pode legislar sobre a temática se a União editar lei complementar delegando a competência legislativa aos entes federativos de natureza subnacional."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 52,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "João e Antônio, proprietários de duas importantes fazendas confinantes, localizadas em zona rural, tinham divergências quanto ao limite territorial da propriedade de cada qual. Como as fazendas eram muito produtivas, alterações de limites importariam em grande impacto financeiro, sendo que ambos, apesar de ricos, não aceitavam ter qualquer espécie de redução dos seus ganhos. Já saturado com a situação e entendendo que teria provas que lhe permitiriam descrever, com exatidão, os limites territoriais de sua Fazenda, João decidiu ajuizar uma ação em face de Antônio para definir os referidos limites. À luz da sistemática vigente, é correto afirmar que:",
+   "alternativas": {
+    "A": "a presença de interesses difusos indica que a ação deve ser ajuizada pelo Ministério Público;",
+    "B": "João precisa de um profissional com capacidade postulatória para o ajuizamento da ação, que pode ser tanto um Defensor Público como um advogado;",
+    "C": "por dizer respeito ao direito de propriedade, que tem a natureza de direito fundamental, a ação pode ser ajuizada pelo Ministério Público ou pela Defensoria Pública;",
+    "D": "por se tratar de interesse privado e em razão da situação pessoal de João, ele precisa de um advogado para o ajuizamento da ação, não de um Defensor Público;",
+    "E": "em razão do princípio do livre acesso à justiça, João tem liberdade para escolher se a ação deve ser ajuizada pelo Ministério Público, pela Defensoria Pública ou por advogado."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 53,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Maria, servidora recém-empossada no Tribunal de Justiça do Estado Alfa, tomou conhecimento de um requerimento formulado pela associação dos lojistas do Norte desse estado. Nesse pleito, era postulada a criação de uma Câmara Cível regional, com competência para atuar naquela parte do estado, o que decorria do grande volume de recursos processuais oriundos da respectiva região. Ao consultar a Constituição da República, Maria concluiu corretamente que o referido pleito:",
+   "alternativas": {
+    "A": "afronta o princípio da unidade de jurisdição, não podendo ser acolhido;",
+    "B": "pressupõe a aprovação, por plebiscito, da população diretamente interessada;",
+    "C": "pode ser acolhido pelo Tribunal de Justiça, que avaliará a conveniência do funcionamento descentralizado;",
+    "D": "é contrário ao princípio da isonomia no acesso à justiça, pois as outras regiões não contarão com Câmara similar;",
+    "E": "deve ser obrigatoriamente acolhido, já que o Tribunal de Justiça deveria ter criado a referida Câmara de ofício."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 54,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Na comarca Alfa, de juízo único, em uma ação de cobrança na qual figuravam como partes João e Maria, o juiz de direito proferiu decisão, decidindo um incidente processual, que, ao ver desta última, seria contrária aos balizamentos estabelecidos pela ordem jurídica. Ao consultar o seu patrono em relação à possibilidade de a decisão judicial ser reformada pelo Conselho Nacional de Justiça, foi corretamente informado a Maria que isso:",
+   "alternativas": {
+    "A": "não pode ser feito;",
+    "B": "pode ser feito antes do decurso de um ano;",
+    "C": "pode ser feito por meio de reclamação constitucional;",
+    "D": "pressupõe a interposição de recurso ao Tribunal de Justiça;",
+    "E": "exige que o valor da causa seja superior ao valor de alçada."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 55,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "O juiz Achádego proferiu decisão em um processo com o seguinte conteúdo: “Realmente, não há lei que regule especificamente a matéria. No entanto, existe regra para hipótese semelhante que pode ser aplicada, com as devidas alterações, a esse caso. De mais a mais, a pretensão do autor é conforme o princípio da razoabilidade e, em uma análise econômica, promove o melhor resultado para o mercado de ações”. Nesse caso, exclusivamente à luz da Lei de Introdução às Normas do Direito Brasileiro, notadamente a disciplina das lacunas normativas (art. 4º), o juiz:",
+   "alternativas": {
+    "A": "não poderia decidir sem base legal;",
+    "B": "poderia invocar qualquer um desses fundamentos, sendo a lei omissa;",
+    "C": "só poderia transpor a norma para caso semelhante e aplicar o princípio da razoabilidade, dado que não há lei regendo a matéria;",
+    "D": "sobre o tema, só poderia utilizar a norma existente para caso semelhante, dada a ausência da lei;",
+    "E": "poderia transpor a norma pensada para casos semelhantes e adotar os princípios da economia, dado o silêncio da lei."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 56,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Qualquer que seja o valor da transação, é desnecessária escritura pública para alienar ou ceder:",
+   "alternativas": {
+    "A": "o direito à sucessão aberta pela morte de alguém;",
+    "B": "um prédio de cinco andares ainda não totalmente construído;",
+    "C": "vasta plantação de árvores, durante a transferência de uma fazenda para outra diante de iminente risco de destruição;",
+    "D": "energia solar;",
+    "E": "vitrais e portas desenhados por importante artista, temporariamente retirados de um casarão durante uma reforma para nela se reempregarem posteriormente quando as obras acabarem."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 57,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Álveo integra a Associação dos Funcionários do Poder Judiciário do Estado X. Após uma polêmica votação, liderada pelo diretor Aluvião, aprova-se a venda da sede histórica do clube para construir-se, no lugar, um empreendimento imobiliário. Álveo, então, ajuíza demanda em face de Aluvião em que pede a anulação da assembleia e a indenização pelos danos sofridos pela associação. Fundamenta seu pedido nos deveres que Aluvião, como associado, teria em relação aos demais. Em sua contestação, Aluvião suscita três teses defensivas: I. Álveo não poderia pedir indenização em nome da associação, diante da autonomia de sua personalidade jurídica; II. não há qualquer relação entre associados, nem direitos, nem obrigações recíprocas; e III. a associação não poderia sofrer danos morais porque, como pessoa jurídica, não pode receber proteção a direitos da personalidade, próprios das pessoas naturais. Em relação a essas teses, exclusivamente à luz do direito civil, é correto afirmar que:",
+   "alternativas": {
+    "A": "são todas improcedentes;",
+    "B": "são todas procedentes;",
+    "C": "apenas I e II são procedentes;",
+    "D": "apenas II e III são procedentes;",
+    "E": "apenas I e III são procedentes."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 58,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Confira-se a seguinte figura típica do direito penal: “Art. 135-A. Exigir cheque-caução, nota promissória ou qualquer garantia, bem como o preenchimento prévio de formulários administrativos, como condição para o atendimento médico- hospitalar emergencial: Pena ̶ detenção, de 3 (três) meses a 1 (um) ano, e multa..” Essa situação, no direito civil, corresponde a:\n[Esta questão usa figura, quadro ou texto que não foi extraído do caderno: confira o enunciado completo na prova original.]",
+   "alternativas": {
+    "A": "coação;",
+    "B": "estado de perigo;",
+    "C": "dolo;",
+    "D": "lesão;",
+    "E": "erro essencial."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 59,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "O Superior Tribunal de Justiça, em recente decisão, fez constar de sua ementa a seguinte proposição: “Inovando em relação à ordem jurídica anterior, o art. 189 do Código Civil de 2002 estabelece, expressamente, que o alvo da prescrição é a pretensão, instituto de direito material, compreendido como o poder de exigir um comportamento positivo ou negativo da outra parte da relação jurídica.” (REsp n. 2.088.100/SP, relatora Ministra Nancy Andrighi, Terceira Turma, julgado em 17/10/2023, DJe de 23/10/2023.) Consequência direta de a prescrição incidir sobre a pretensão é:",
+   "alternativas": {
+    "A": "o desaparecimento do direito, que não poderá, por isso mesmo, ser exercitado judicialmente;",
+    "B": "o dever de devolver o valor recebido por dívida prescrita;",
+    "C": "a impossibilidade de renúncia ao prazo prescricional, uma vez consumado;",
+    "D": "a impossibilidade de cobrança de dívida prescrita, seja judicialmente, seja extrajudicialmente;",
+    "E": "a possibilidade de as partes, em comum acordo, alterarem o prazo de prescrição, que não extingue a obrigação em si mesma."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 60,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Pontes de Miranda, dentre suas muitas contribuições ao direito brasileiro, trouxe a chamada Escada Ponteana, que postula a divisão dos negócios jurídicos em três planos: o da existência da validade e o da eficácia. Sob essa premissa, imagine-se um negócio jurídico: I. existente e eficaz, porém inválido; II. válido e eficaz, porém inexistente; III. existente e válido, porém ineficaz. Pela proposição de Pontes de Miranda, seria(m) possível(is):",
+   "alternativas": {
+    "A": "I, II e III;",
+    "B": "apenas I;",
+    "C": "apenas II e III;",
+    "D": "apenas I e III;",
+    "E": "apenas III."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 61,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A alternativa em que se enunciam, apenas, condições para o regular exercício do direito de ação é:",
+   "alternativas": {
+    "A": "legitimidade ad causam e interesse de agir;",
+    "B": "pedido e causa de pedir;",
+    "C": "causa de pedir e legitimidade ad causam;",
+    "D": "partes e interesse de agir;",
+    "E": "partes e pedido."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 62,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A vedação a que o juiz condene o réu a pagar ao autor quantia superior à pleiteada na petição inicial é um corolário lógico do princípio:",
+   "alternativas": {
+    "A": "da primazia da solução do mérito;",
+    "B": "da motivação das decisões judiciais;",
+    "C": "da inafastabilidade do controle jurisdicional;",
+    "D": "da inércia;",
+    "E": "do juiz natural."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 63,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que concerne ao instituto da competência, é correto afirmar que:",
+   "alternativas": {
+    "A": "a ação fundada em direito real sobre bem móvel deverá ser proposta no foro em que se situa a coisa;",
+    "B": "a ação fundada em direito obrigacional deverá ser proposta no foro do domicílio do réu;",
+    "C": "a ação possessória imobiliária deverá ser proposta no foro do domicílio do réu;",
+    "D": "a ação de indenização em razão de acidente de veículo deverá ser proposta no foro do domicílio do réu;",
+    "E": "a ação de inventário deverá ser proposta no foro do domicílio de pelo menos um dos herdeiros."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 64,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Determinado servidor intentou demanda em que pleiteava a condenação do ente público a lhe pagar uma quantia, decorrente de um expurgo inflacionário que não lhe fora concedido administrativamente. Sabendo-se que a questão é exclusivamente de direito e que já há enunciado de Súmula do Supremo Tribunal Federal no sentido contrário à pretensão autoral, o juiz, sem determinar a citação do réu, adentrou ao mérito e julgou improcedente o pedido autoral. Nesse sentido, o juiz agiu de forma:",
+   "alternativas": {
+    "A": "correta, uma vez que a citação não é necessária quando os entes públicos forem réus;",
+    "B": "correta, uma vez que não há violação ao princípio do devido processo legal;",
+    "C": "incorreta, uma vez que há violação ao princípio da ampla defesa;",
+    "D": "incorreta, uma vez que há violação ao princípio do contraditório;",
+    "E": "incorreta, uma vez que deveria ser designada audiência de conciliação."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 65,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Determinada comarca tem duas varas, uma dotada de competência para a matéria criminal e outra dotada de competência cível e para as demais matérias. No curso de um processo relativo à ação de guarda de um menor, foi criada e instalada, na referida comarca, uma terceira vara, com competência exclusiva para a matéria da infância e juventude. Nesse sentido, o referido feito:",
+   "alternativas": {
+    "A": "poderá ser remetido para a nova vara criada, desde que haja concordância das partes;",
+    "B": "poderá ser remetido para a nova vara criada, sem violação ao princípio do juiz natural;",
+    "C": "não poderá ser remetido para a nova vara, uma vez que já foi estabilizada a sua competência;",
+    "D": "não poderá ser remetido para a nova vara, a menos que o julgador seja o mesmo;",
+    "E": "não poderá ser remetido para a nova vara, a menos que seja extinto o processo originário."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 66,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Maria intentou ação de divórcio em face de seu marido Antonio, incapaz, sendo ele representado em juízo por José, seu genitor. Na peça exordial, a autora fundamentou sua pretensão no fato de que tinha sofrido violência doméstica por parte de Antonio e de que o marido ainda mantinha uma relação extraconjugal com outra pessoa, de forma estável e duradoura. Nesse cenário, sobre os elementos identificadores da referida ação de divórcio, é correto afirmar que ela contém:",
+   "alternativas": {
+    "A": "dois pedidos, um juízo competente e uma parte;",
+    "B": "dois pedidos, uma causa de pedir e interesse de agir;",
+    "C": "um pedido, um juízo competente e três partes;",
+    "D": "um pedido, uma causa de pedir e duas partes;",
+    "E": "um pedido, duas causas de pedir e duas partes."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 67,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "João intentou ação em face de uma instituição financeira, tendo pleiteado a condenação da ré ao pagamento da quantia de cem mil reais, por força do descumprimento de uma obrigação que se originou de uma lei. Sustentou o autor que o descumprimento da lei foi o fato constitutivo de seu direito. Por sua vez, a ré, em defesa, alegou apenas que a mencionada lei não se aplicava ao caso concreto. Apreciando a causa, o magistrado julgou improcedente o pedido, por entender que a lei invocada era inconstitucional, sem conceder às partes a oportunidade de manifestação sobre essa questão constitucional. Nesse sentido, a conduta do magistrado é:",
+   "alternativas": {
+    "A": "incorreta, uma vez que violou o princípio do contraditório, proferindo uma decisão-surpresa no processo;",
+    "B": "incorreta, uma vez que ele não pode reconhecer a inconstitucionalidade de uma lei;",
+    "C": "incorreta, uma vez que violou o princípio da inércia, já que lhe é vedado inovar no processo;",
+    "D": "correta, uma vez que não é necessário que as partes se manifestem quanto às questões de direito;",
+    "E": "correta, uma vez que prevalece a celeridade processual e foi respeitado o princípio do contraditório."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 68,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Considerando as disposições da Lei nº 8.069/1990, caracteriza crime previsto no Estatuto da Criança e do Adolescente a conduta de:",
+   "alternativas": {
+    "A": "deixar o médico, enfermeiro ou dirigente de estabelecimento de atenção à saúde de gestante de efetuar imediato encaminhamento à autoridade judiciária de caso de que tenha conhecimento de mãe ou gestante interessada em entregar seu filho para adoção;",
+    "B": "vender, fornecer, ainda que gratuitamente, ou entregar, de qualquer forma, à criança ou adolescente fogos de estampido ou de artifício, exceto aqueles que, pelo seu reduzido potencial, sejam incapazes de provocar qualquer dano físico em caso de utilização indevida;",
+    "C": "hospedar criança ou adolescente desacompanhado dos pais ou responsável, ou sem autorização escrita desses ou da autoridade judiciária, em hotel, pensão, motel ou congênere;",
+    "D": "exibir filme, trailer, peça, amostra ou congênere classificado pelo órgão competente como inadequado às crianças ou adolescentes admitidos ao espetáculo;",
+    "E": "anunciar peças teatrais, filmes ou quaisquer representações ou espetáculos sem indicar os limites de idade a que não se recomendem."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 69,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "João encontrava-se no interior de uma lancha com dois amigos, ocasião em que a embarcação colidiu com um jet-ski que trafegava em inequívoco excesso de velocidade. Em razão do forte abalroamento, João e Caio foram lançados ao mar, juntamente com um único colete salva-vidas. Após uma intensa luta corporal, João conseguiu permanecer com o objeto, salvando-se. Caio, por sua vez, faleceu em virtude de afogamento. Após os eventos, foi deflagrado um inquérito policial, no âmbito do qual se comprovou que o sobrevivente praticou o fato para salvar direito próprio de perigo atual, que não provocou por sua vontade, nem podia de outro modo evitar, cujo sacrifício, nas circunstâncias, não era razoável exigir-se. Nesse cenário, considerando as disposições do Código Penal, é correto afirmar que João não responderá por qualquer crime em razão do (da):",
+   "alternativas": {
+    "A": "estrito cumprimento do dever legal, causa de exclusão da culpabilidade;",
+    "B": "exercício regular de um direito, causa de exclusão da culpabilidade;",
+    "C": "inexigibilidade de conduta diversa, causa de exclusão da ilicitude;",
+    "D": "estado de necessidade, causa de exclusão da ilicitude;",
+    "E": "legítima defesa, causa de exclusão da ilicitude."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 70,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Matheus, cidadão estrangeiro, viajou ao município Alfa durante as suas férias. Nesse município, o indivíduo resolveu pescar utilizando explosivos, o que chamou a atenção da comunidade local. Em assim sendo, Matheus foi abordado e capturado em flagrante pelos agentes públicos competentes, em razão da prática de crime ambiental (Art. 35, I, da Lei nº 9.605/1998). Em sede policial, Matheus, na presença do seu advogado, afirmou desconhecer a legislação brasileira que criminaliza a conduta por ele perpetrada. Nesse cenário, considerando as disposições do Código Penal, é correto afirmar que o erro sobre a ilicitude do fato:",
+   "alternativas": {
+    "A": "se inevitável, isenta de pena, em razão da caracterização de erro de proibição indireto; se evitável, poderá diminuí-la de um sexto a um terço;",
+    "B": "se inevitável, isenta de pena, em razão da caracterização de erro de mandamento; se evitável, poderá diminuí-la de um sexto a um terço;",
+    "C": "se inevitável, isenta de pena, em razão da caracterização de erro de proibição direto; se evitável, poderá diminuí-la de um sexto a um terço;",
+    "D": "se inevitável, isenta de pena, em razão da caracterização de erro de tipo permissivo; se evitável, poderá diminuí-la de um a dois terços;",
+    "E": "se inevitável, isenta de pena, em razão da caracterização de erro de tipo; se evitável, poderá diminuí-la de um a dois terços."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 71,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Caio e Joana, maiores e capazes, estão casados, formalmente, há cinco anos. No aniversário de cinquenta anos de Caio, a sua esposa, que tem sessenta e cinco anos, o presenteou com diversos bens, além de lhe emprestar um veículo automotor clássico, não mais fabricado. A pedido de Joana, Caio assumiu o compromisso público e verdadeiro de devolver o automóvel em três meses. Muito embora pretendesse fazê-lo, o presenteado, na data aprazada, agindo de forma dolosa, desistiu de devolver o bem, passando a atuar como se fosse o real proprietário deste. Nesse cenário, considerando as disposições do Código Penal, é correto afirmar que Caio responderá pelo crime de:",
+   "alternativas": {
+    "A": "furto qualificado pelo abuso de confiança, persequível, na espécie, mediante ação penal pública condicionada à representação, considerando que a vítima é cônjuge do autor do delito;",
+    "B": "apropriação indébita, persequível, na espécie, mediante ação penal pública condicionada à representação, considerando que a vítima é cônjuge do autor do delito;",
+    "C": "estelionato, persequível, na espécie, mediante ação penal de iniciativa privada, considerando que a vítima é cônjuge do autor do delito;",
+    "D": "estelionato, persequível, na espécie, mediante ação penal pública incondicionada;",
+    "E": "apropriação indébita, persequível, na espécie, mediante ação penal pública incondicionada."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 72,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Mário, proprietário de uma pequena loja no município Alfa, adquiriu, com dolo e em proveito próprio, no exercício de atividade comercial, mercadoria de procedência estrangeira desacompanhada de documentação legal. Nesse cenário, considerando as disposições do Código Penal, é correto afirmar que Mário responderá pelo crime de:",
+   "alternativas": {
+    "A": "excesso de exação;",
+    "B": "tergiversação;",
+    "C": "contrabando;",
+    "D": "descaminho;",
+    "E": "peculato."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 73,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Matheus, membro do Ministério Público, foi convidado a palestrar, em uma universidade pública, sobre as disposições constitucionais aplicáveis ao Direito Penal, o que foi feito com maestria. No que se refere às disposições da Constituição Federal aplicáveis ao Direito Penal, é correto afirmar que:",
+   "alternativas": {
+    "A": "nenhuma sanção passará da pessoa do condenado, podendo a obrigação de reparar o dano, a pena de multa e a decretação do perdimento de bens ser, nos termos da lei, estendidas aos sucessores e contra eles executadas, desde que não haja prejuízo ao mínimo existencial destes;",
+    "B": "constitui crime inafiançável e imprescritível o tráfico ilícito de entorpecentes e drogas afins, o terrorismo e os definidos como crimes hediondos, por eles respondendo os mandantes, os executores e os que, podendo evitá-los, se omitirem;",
+    "C": "não haverá penas de morte; de caráter perpétuo; de trabalhos forçados; de banimento, salvo em caso de guerra declarada; e cruéis;",
+    "D": "a pena será cumprida em estabelecimentos distintos, de acordo com a natureza do delito, a idade, a nacionalidade e o sexo do apenado;",
+    "E": "a prática do racismo constitui crime inafiançável e imprescritível, sujeito à pena de reclusão, nos termos da lei."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 74,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "João, juiz de direito, possui, em seu acervo, dois processos sujeitos ao procedimento comum. A primeira relação processual tem, por objeto, um crime cuja sanção máxima cominada é igual a cinco anos de pena privativa de liberdade. Por sua vez, o segundo processo está atrelado a um delito cuja sanção máxima cominada é igual a três anos de pena privativa de liberdade. Nesse cenário, considerando as disposições do Código de Processo Penal sobre o procedimento comum, é correto afirmar que:",
+   "alternativas": {
+    "A": "a primeira relação processual está sujeita ao procedimento comum sumaríssimo. Por sua vez, o segundo processo observará o procedimento comum ordinário;",
+    "B": "a primeira relação processual está sujeita ao procedimento comum sumário. Por sua vez, o segundo processo observará o procedimento comum ordinário;",
+    "C": "a primeira relação processual está sujeita ao procedimento comum ordinário. Por sua vez, o segundo processo observará o procedimento comum sumário;",
+    "D": "os dois processos estão sujeitos ao procedimento comum ordinário;",
+    "E": "os dois processos estão sujeitos ao procedimento comum sumário."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 75,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Lucas, juiz de direito, ao organizar a pauta de julgamento dos processos de competência do Tribunal do Júri, no âmbito da 1ª Vara Criminal da Comarca Alfa, verificou que há diversos acusados presos aguardando a realização da segunda fase do procedimento bifásico. Nesse cenário, considerando as disposições do Código de Processo Penal, é correto afirmar que, salvo motivo relevante que autorize alteração na ordem dos julgamentos, terão preferência os:",
+   "alternativas": {
+    "A": "acusados presos; dentre os acusados presos, os precedentemente pronunciados; em igualdade de condições, aqueles que estiverem há mais tempo na prisão;",
+    "B": "acusados presos; dentre os acusados presos, aqueles que estiverem há mais tempo na prisão; em igualdade de condições, os precedentemente pronunciados;",
+    "C": "acusados presos; dentre os acusados presos, os precedentemente pronunciados; em igualdade de condições, aqueles que ostentarem maior idade;",
+    "D": "precedentemente pronunciados; os acusados presos; em igualdade de condições, aqueles que estiverem há mais tempo na prisão;",
+    "E": "precedentemente pronunciados; os acusados presos; em igualdade de condições, aqueles que ostentarem maior idade."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 76,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Caio, primário e portador de bons antecedentes, foi preso em flagrante pela prática de um crime de natureza afiançável. Em assim sendo, após a observância das formalidades legais, o juízo competente, por ocasião da realização da audiência de custódia e de forma acertada, concedeu ao agente liberdade provisória, com o arbitramento de fiança. Nesse cenário, considerando as disposições do Código de Processo Penal e a natureza afiançável do delito, é correto afirmar que Caio foi preso em flagrante pela prática do crime de:",
+   "alternativas": {
+    "A": "tráfico ilícito de entorpecentes e drogas afins;",
+    "B": "terrorismo;",
+    "C": "peculato;",
+    "D": "racismo;",
+    "E": "tortura."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 77,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Jonas, estagiário da 1ª Vara Criminal da Comarca Alfa, se deparou com determinado processo que fugia à regra das relações processuais rotineiramente analisadas naquela serventia. Ao conversar com o seu chefe, Jonas foi informado de que, naquela situação, seriam aplicáveis as normas da legislação processual que versam sobre o processo e julgamento dos crimes de responsabilidade dos funcionários públicos. Em assim sendo, o estagiário resolveu estudar, detalhadamente, a matéria. Considerando as disposições do Código de Processo Penal sobre o processo e o julgamento dos crimes de responsabilidade dos funcionários públicos, é correto afirmar que:",
+   "alternativas": {
+    "A": "nos crimes de responsabilidade dos funcionários públicos, processados e julgados por juízes de direito vitalícios, a queixa ou a denúncia deverá ser instruída com documentos ou justificação que comprovem, cabalmente, a existência do delito e a autoria imputada ao agente público;",
+    "B": "o juiz rejeitará a queixa ou denúncia, em despacho fundamentado, se convencido, pela resposta do acusado ou do seu defensor, da inexistência do crime ou da improcedência da ação;",
+    "C": "nos crimes afiançáveis, estando a denúncia ou queixa em devida forma, o juiz mandará autuá-la e ordenará a notificação do acusado, para responder por escrito, dentro do prazo de dez dias;",
+    "D": "na instrução criminal e nos demais termos do processo, observar-se-ão, subsidiariamente, as normas aplicáveis aos processos da competência do Tribunal do Júri;",
+    "E": "se não for conhecida a residência do acusado ou caso este se ache fora da jurisdição do juiz, o processo prosseguirá sem a presença do réu e da defesa técnica."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 78,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Matheus, membro do Ministério Público do estado Alfa, foi convidado a palestrar em um evento de recepção aos novos estagiários da instituição, ocasião em que trouxe à baila temas afetos à ação penal. Nesse cenário, considerando as disposições do Código de Processo Penal, é correto afirmar que:",
+   "alternativas": {
+    "A": "no caso de morte do ofendido ou quando declarado ausente por decisão judicial, o direito de representação passará aos parentes em linha reta ou colateral até o quarto grau, inclusive, englobando o cônjuge, os ascendentes, os descendentes, os irmãos, os tios e os primos;",
+    "B": "nos crimes de ação pública, esta será promovida por queixa- crime do Ministério Público, mas dependerá, quando a lei o exigir, de requisição do Ministro da Justiça, ou de representação do ofendido ou de quem tiver qualidade para representá-lo;",
+    "C": "qualquer pessoa do povo poderá provocar a iniciativa do Ministério Público, nos casos em que caiba a ação pública, fornecendo-lhe, por escrito, informações sobre o fato e a autoria e indicando o tempo, o lugar e os elementos de convicção;",
+    "D": "seja qual for o crime, quando praticado em detrimento do patrimônio ou interesse da União, estado e município, a ação penal será pública condicionada à representação do ente federativo;",
+    "E": "a representação será irretratável, depois de formalizada por escrito."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 79,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "João foi denunciado pela suposta prática do crime de estupro de vulnerável. Apesar da adoção de todas as diligências possíveis para localizá-lo, João não foi encontrado, inexistindo outros meios possíveis que possam auxiliar na localização do denunciado. Nesse cenário, considerando as disposições do Código de Processo Penal, João será citado por:",
+   "alternativas": {
+    "A": "carta precatória;",
+    "B": "carta rogatória;",
+    "C": "hora certa;",
+    "D": "mandado;",
+    "E": "edital."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 80,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Mário, titular de uma determinada Vara Criminal, resolveu realizar um mutirão, com o auxílio de seus assessores, para analisar potenciais casos de substituição da prisão preventiva por prisão domiciliar. Nesse cenário, considerando as disposições do Código de Processo Penal, a prisão preventiva poderá ser substituída por prisão domiciliar quando a pessoa for:",
+   "alternativas": {
+    "A": "homem, caso seja o único responsável pelos cuidados do filho de até dezesseis anos de idade incompletos;",
+    "B": "imprescindível aos cuidados especiais de pessoa menor de doze anos de idade ou com deficiência;",
+    "C": "mulher com filho de até dezoito anos de idade incompletos;",
+    "D": "extremamente debilitada por motivo de doença grave;",
+    "E": "maior de sessenta anos. Tipo 1 Branca Tipo 1 Branca Tipo 1 Branca Realização"
+   },
+   "gabarito": "D"
+  }
+ ]
+}

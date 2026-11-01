@@ -1,0 +1,709 @@
+{
+ "id": "tjpa-2025-analista-judiciario-especialidade-direito",
+ "nome": "TJPA 2025 · ANALISTA JUDICIÁRIO – ESPECIALIDADE: DIREITO",
+ "cargo": "Concurso de servidores",
+ "banca": "Cebraspe",
+ "gabarito": "definitivo",
+ "questoes": [
+  {
+   "n": 51,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "O poder da administração pública de rever os próprios atos é absoluto, podendo ser exercido a qualquer tempo.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 52,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Segundo a teoria do ciclo de polícia, o poder de polícia da administração pública divide-se em quatro fases, sendo a primeira fase, denominada ordem de polícia, a única que não pode ser delegada a pessoas jurídicas de direito privado, porquanto representa a função legislativa.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 53,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "O poder disciplinar da administração pública se desenvolve interna corporis, não alcançando particulares.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 54,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "O exercício do poder regulamentar pela administração pública contempla os seguintes expedientes: decretos, instruções normativas, resoluções e portarias.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 55,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Enquanto, para o particular, agir geralmente representa uma faculdade, para o agente público, agir é um dever funcional, a ser desenvolvido a partir de três pilares fundamentais: probidade, prestação de contas e eficiência.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 56,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que concerne à responsabilidade civil, penal e administrativa dos agentes públicos, bem como à improbidade administrativa, julgue os itens subsequentes, observando, no que for cabível, a jurisprudência do STF.\nDenomina-se ilícito administrativo puro a infração de regras de conduta relacionadas ao exercício da função pública, para a qual inexista tipificação penal.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 57,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que concerne à responsabilidade civil, penal e administrativa dos agentes públicos, bem como à improbidade administrativa, julgue os itens subsequentes, observando, no que for cabível, a jurisprudência do STF.\nA responsabilidade civil do Estado em decorrência de atos judiciais é fundamentada na teoria da culpa administrativa, de modo que o administrado somente poderá exercer o direito à reparação dos prejuízos sofridos se comprovar mau funcionamento do serviço.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 58,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que concerne à responsabilidade civil, penal e administrativa dos agentes públicos, bem como à improbidade administrativa, julgue os itens subsequentes, observando, no que for cabível, a jurisprudência do STF.\nA legitimidade para a propositura da ação de improbidade administrativa é concorrente entre a fazenda pública interessada e o Ministério Público, mas apenas o parquet possui competência para a celebração de acordos de não persecução civil.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 59,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que concerne à responsabilidade civil, penal e administrativa dos agentes públicos, bem como à improbidade administrativa, julgue os itens subsequentes, observando, no que for cabível, a jurisprudência do STF.\nSegundo a jurisprudência do STF, a modalidade culposa de ato de improbidade administrativa, conforme prevista originariamente na Lei n.º 8.429/1992, é inconstitucional, porquanto a caracterização do ato de improbidade pressupõe que o agente ímprobo atue com desonestidade, cuja noção está estreitamente relacionada com a de dolo.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 60,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em relação à disciplina jurídica atinente aos atos administrativos, julgue os itens que se seguem.\nQuanto ao critério de formação, os atos administrativos classificam-se em simples, quando necessária apenas uma declaração de vontade autônoma para sua edição, e compostos, quando necessária mais de uma declaração de vontade autônoma para a formalização do ato.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 61,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em relação à disciplina jurídica atinente aos atos administrativos, julgue os itens que se seguem.\nA concessão de licença pela administração pública constitui exemplo de ato discricionário, por meio do qual se confere ao interessado o consentimento para realizar determinada atividade pretendida.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 62,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que diz respeito à intervenção do Estado sobre a propriedade privada e aos bens públicos, julgue os itens seguintes.\nA ocupação temporária é forma de intervenção do Estado na propriedade privada tipicamente relacionada a bens imóveis que, como regra, servem de apoio à execução de obras e serviços públicos.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 63,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que diz respeito à intervenção do Estado sobre a propriedade privada e aos bens públicos, julgue os itens seguintes.\nO tombamento pode recair sobre bens móveis e imóveis, estando sua implementação condicionada à prévia autorização legislativa.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 64,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No que diz respeito à intervenção do Estado sobre a propriedade privada e aos bens públicos, julgue os itens seguintes.\nA desapropriação é forma de intervenção supressiva do Estado na propriedade privada, orientada pela utilidade/necessidade pública ou pelo interesse social, e pode recair sobre bens públicos, desde que observado o sentido vertical entre as esferas federativas.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 65,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Julgue os itens seguintes, relacionados às classificações das Constituições.\nAs Constituições rígidas caracterizam-se pela exigência de procedimento mais complexo para sua alteração em relação às leis ordinárias, sendo essa rigidez incompatível com qualquer forma de flexibilidade constitucional, razão por que, segundo a doutrina, toda Constituição deve ser classificada como rígida ou flexível, não se admitindo categorias intermediárias.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 66,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Julgue os itens seguintes, relacionados às classificações das Constituições.\nAs Constituições outorgadas e cesaristas são espécies do gênero Constituições não democráticas, distinguindo-se pelo fato de que nas primeiras há imposição unilateral sem qualquer participação popular, enquanto nas segundas ocorre submissão formal à aprovação popular, ainda que mediante manipulação da opinião pública pelo detentor despótico do poder, sendo ambas incompatíveis com o exercício legítimo do poder constituinte originário.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 67,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Julgue os itens seguintes, acerca dos princípios fundamentais e das previsões da Constituição Federal de 1988 (CF).\nA dignidade da pessoa humana, embora seja um fundamento do Estado democrático de direito brasileiro, não integra o rol das cláusulas pétreas, razão por que pode ser objeto de supressão textual mediante emenda constitucional, desde que respeitado o procedimento qualificado.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 68,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Julgue os itens seguintes, acerca dos princípios fundamentais e das previsões da Constituição Federal de 1988 (CF).\nOs princípios fundamentais que regem o Brasil nas relações internacionais previstos na CF constituem meras diretrizes programáticas sem eficácia normativa, não vinculando juridicamente os poderes estatais internos em suas respectivas competências funcionais.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 69,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Julgue os itens seguintes, acerca dos princípios fundamentais e das previsões da Constituição Federal de 1988 (CF).\nO princípio republicano, embora tradicionalmente caracterizado pela eletividade, temporariedade dos mandatos e responsabilidade dos governantes, opera como estrutura político-organizatória que garante as liberdades fundamentais e assegura o controle do poder, realizando o equilíbrio entre liberdade e ordem na concretização do bem comum através do governo para o povo, diferentemente do paradigma democrático do governo pelo povo.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 70,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Julgue os seguintes itens, referentes ao Poder Judiciário.\nO Conselho Nacional de Justiça, composto por 15 membros com mandato de 2 anos e possibilidade de uma recondução, possui competência para rever processos disciplinares de juízes e membros de tribunais julgados há menos de um ano, podendo também avocar processos disciplinares em curso e aplicar sanções administrativas, inclusive a remoção ou disponibilidade, sempre assegurada a ampla defesa aos investigados.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 71,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Julgue os seguintes itens, referentes ao Poder Judiciário.\nCompete aos juízes federais processar e julgar as causas em que a União figure como interessada na condição de autora, ré, assistente ou oponente, incluídas as ações de falência quando envolvam empresas públicas federais.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 72,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Julgue os seguintes itens, referentes ao Poder Judiciário.\nNo recurso extraordinário, o recorrente deve demonstrar a repercussão geral das questões constitucionais discutidas no caso, e o STF somente pode recusar o recurso por ausência de repercussão geral mediante manifestação de 2/3 de seus membros, ao passo que, no recurso especial ao STJ, exige-se a demonstração de relevância das questões de direito federal infraconstitucional, podendo o tribunal não conhecer do recurso por esse motivo por meio da manifestação de 2/3 dos membros do órgão competente para julgamento.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 73,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Julgue os itens subsequentes, no que diz respeito à organização do Estado e ao poder constituinte.\nOs princípios sensíveis da CF configuram elementos estruturantes do Estado, e sua violação enseja automaticamente a decretação de intervenção federal.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 74,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Julgue os itens subsequentes, no que diz respeito à organização do Estado e ao poder constituinte.\nO caráter indissolúvel da Federação brasileira, consagrado no artigo 1.º da CF e reforçado pela condição de cláusula pétrea do princípio federativo, impede não apenas a secessão unilateral de qualquer ente federado, mas também a própria transformação consensual do Estado federal em confederação, ainda que tal modificação conte com a aprovação unânime de todos os entes federativos e seja implementada por meio do procedimento de revisão constitucional.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 75,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Julgue os itens subsequentes, no que diz respeito à organização do Estado e ao poder constituinte.\nA repartição de competências constitucionais no federalismo brasileiro, ao estabelecer competências legislativas concorrentes entre União e estados, adota o princípio da subsidiariedade vertical, cabendo à União estabelecer normas gerais e aos estados suplementar a legislação federal; a ausência de lei federal sobre normas gerais confere aos estados competência legislativa plena, que será suspensa pela superveniência de lei federal sobre o tema.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "X"
+  },
+  {
+   "n": 76,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Julgue os itens subsequentes, no que diz respeito à organização do Estado e ao poder constituinte.\nA delegação de competências legislativas privativas da União aos estados pode ser autorizada por decreto federal ou medida provisória que especifique as questões delegadas, dispensando-se a edição de lei complementar quando a delegação versar sobre matérias de menor complexidade técnica ou relevância nacional reduzida, a exemplo da propaganda comercial.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 77,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Julgue os itens a seguir, a respeito dos servidores públicos e das limitações do poder de tributar.\nOs cargos em comissão devem ser exercidos por servidores ocupantes de cargo efetivo e destinam-se apenas às atribuições de direção e chefia.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 78,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Julgue os itens a seguir, a respeito dos servidores públicos e das limitações do poder de tributar.\nA imunidade tributária recíproca abrange todas as modalidades tributárias sobre patrimônio ou serviços, de modo que um município não pode cobrar qualquer espécie de tributo de um estado ou da União, sob pena de violação do pacto federativo.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 79,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Acerca da prescrição, responsabilidade civil, poder familiar e perdas e danos, julgue os itens que se seguem, à luz da jurisprudência do STJ.\nO prazo prescricional para um particular pleitear o ressarcimento das benfeitorias úteis realizadas por ele em imóvel de terceiro, ocupado de forma clandestina, é de três anos.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 80,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Acerca da prescrição, responsabilidade civil, poder familiar e perdas e danos, julgue os itens que se seguem, à luz da jurisprudência do STJ.\nA pessoa que, em razão de erro médico, sofrer sequelas permanentes à sua saúde tem o direito à indenização pelas despesas do tratamento, desde que devidamente comprovadas, não se admitindo a reparação quando o pedido for genérico, mesmo quando a extensão do dano e a continuidade do tratamento não permitirem a imediata quantificação do valor da condenação.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 81,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Acerca da prescrição, responsabilidade civil, poder familiar e perdas e danos, julgue os itens que se seguem, à luz da jurisprudência do STJ.\nOs pais, na condição de administradores e usufrutuários dos bens dos filhos menores, possuem legitimidade para levantar valores depositados em nome destes, salvo se houver justo motivo em sentido contrário.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 82,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Acerca da prescrição, responsabilidade civil, poder familiar e perdas e danos, julgue os itens que se seguem, à luz da jurisprudência do STJ.\nRescindido o contrato de promessa de compra e venda por culpa do promitente comprador, é devido o pagamento de taxa de fruição ao promitente vendedor, correspondente ao período entre a data da rescisão e a efetiva devolução do imóvel.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 83,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Acerca da prescrição, responsabilidade civil, poder familiar e perdas e danos, julgue os itens que se seguem, à luz da jurisprudência do STJ.\nÉ devida pensão mensal aos pais de família de baixa renda pela morte de filho menor vitimado por homicídio culposo, decorrente de ato ilícito, dada a presunção relativa de dependência econômica dos genitores em relação ao filho.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 84,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "À luz do Código Civil e considerando, quando pertinente, a jurisprudência do STJ, julgue os itens que se seguem, relativos a direito de vizinhança, direito real de habitação, decadência, evicção e união estável.\nA pretensão de responsabilização por danos causados ao imóvel vizinho em razão do mau uso da propriedade deve ser dirigida ao ocupante do imóvel limítrofe, na qualidade de vizinho, independentemente de ser ele proprietário ou mero possuidor.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 85,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "À luz do Código Civil e considerando, quando pertinente, a jurisprudência do STJ, julgue os itens que se seguem, relativos a direito de vizinhança, direito real de habitação, decadência, evicção e união estável.\nO direito real de habitação não pode ser reconhecido em favor da viúva quando o imóvel que servia de residência à família, antes da abertura da sucessão, já integrava o regime de copropriedade entre o falecido e seu filho exclusivo.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 86,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "À luz do Código Civil e considerando, quando pertinente, a jurisprudência do STJ, julgue os itens que se seguem, relativos a direito de vizinhança, direito real de habitação, decadência, evicção e união estável.\nA ação de reconhecimento de união estável post mortem está sujeita à decadência, em razão de sua natureza pessoal e dos efeitos patrimoniais decorrentes.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 87,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "À luz do Código Civil e considerando, quando pertinente, a jurisprudência do STJ, julgue os itens que se seguem, relativos a direito de vizinhança, direito real de habitação, decadência, evicção e união estável.\nO evicto, em razão da perda sofrida, tem direito à restituição integral do valor do bem, calculado com base no montante vigente à época em que se evenceu.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 88,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "À luz do Código Civil e considerando, quando pertinente, a jurisprudência do STJ, julgue os itens que se seguem, relativos a direito de vizinhança, direito real de habitação, decadência, evicção e união estável.\nA valorização patrimonial de cotas sociais adquiridas antes do início da união estável integra o patrimônio comum do casal, estando sujeita à partilha.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 89,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em relação à eficácia das leis no espaço, à capacidade civil, à mora e aos direitos da personalidade, julgue os itens a seguir conforme o entendimento do STJ.\nA cobrança de dívida de jogo contraída em país onde a prática é legal não viola a ordem pública nem os bons costumes brasileiros, o que justifica a exigibilidade dessas dívidas no Brasil.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 90,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em relação à eficácia das leis no espaço, à capacidade civil, à mora e aos direitos da personalidade, julgue os itens a seguir conforme o entendimento do STJ.\nNa ação de curatela, havendo conclusão de laudo pericial pela incapacidade total do curatelado, deverá ser decretada a incapacidade absoluta deste para a prática dos atos da vida civil.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 91,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em relação à eficácia das leis no espaço, à capacidade civil, à mora e aos direitos da personalidade, julgue os itens a seguir conforme o entendimento do STJ.\nO depósito judicial realizado para a garantia do juízo afasta a mora do devedor, cessando os encargos moratórios previstos no título executivo.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 92,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em relação à eficácia das leis no espaço, à capacidade civil, à mora e aos direitos da personalidade, julgue os itens a seguir conforme o entendimento do STJ.\nA legitimidade para pleitear a reparação por danos morais é do próprio ofendido, titular do bem jurídico diretamente atingido, não se admitindo como colegitimadas as pessoas que, embora afetivamente muito próximas, apenas se sintam indiretamente atingidas pelo evento danoso.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 93,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A respeito da valoração da prova, julgue os itens a seguir, com base no Código de Processo Civil (CPC).\nO sistema de valoração adotado no sistema processual brasileiro é o da persuasão racional, também denominado livre convencimento motivado, segundo o qual o juiz é livre para formar sua convicção pela apreciação das provas produzidas, conferindo-lhes o peso que entender cabível em cada processo e fundamentando a decisão conforme os elementos constantes dos autos.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 94,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A respeito da valoração da prova, julgue os itens a seguir, com base no Código de Processo Civil (CPC).\nPor sua presunção absoluta de veracidade, a prova documental pública faz prova plena e não admite impugnação, salvo por falsidade devidamente comprovada.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 95,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A respeito da valoração da prova, julgue os itens a seguir, com base no Código de Processo Civil (CPC).\nMesmo após o transcurso do prazo para apresentação do rol de testemunhas, as partes podem apresentar em juízo, no momento da audiência de instrução, outras testemunhas a serem ouvidas, desde que elas compareçam espontaneamente ao ato e sua oitiva seja pertinente para o descobrimento da verdade e para o deslinde da controvérsia, independentemente de aceitação da parte adversa.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 96,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A respeito da valoração da prova, julgue os itens a seguir, com base no Código de Processo Civil (CPC).\nA distribuição dinâmica do ônus da prova permite ao juiz atribuir o ônus probatório de modo diverso do previsto legalmente, mediante decisão fundamentada.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 97,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em relação ao incidente de resolução de demandas repetitivas (IRDR), julgue os itens seguintes.\nO atual CPC institui o sistema de precedentes obrigatórios, que abrange, entre outros precedentes, as decisões proferidas em IRDR.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 98,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em relação ao incidente de resolução de demandas repetitivas (IRDR), julgue os itens seguintes.\nA tese firmada em IRDR possui efeito apenas entre as partes do processo específico que deu origem ao incidente, abrangendo os demais processos similares desde que haja menção expressa sobre sua extensão.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 99,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em relação ao incidente de resolução de demandas repetitivas (IRDR), julgue os itens seguintes.\nA instauração de IRDR é automática sempre que houver demandas repetitivas em curso. Em ação indenizatória ajuizada por Maria, vítima do compartilhamento não autorizado de imagens íntimas suas em um aplicativo de mensagens, o tribunal estadual reconheceu a responsabilidade civil da empresa provedora do serviço, que, embora tenha sido devidamente notificada administrativamente para proceder à remoção do conteúdo, permaneceu inerte sob a alegação de impossibilidade técnica em razão da criptografia de ponta a ponta presente no referido aplicativo. Inconformada, a empresa interpôs recurso especial ao STJ.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 100,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Com base no caso hipotético precedente, julgue os itens que se seguem.\nA desistência do recurso interposto pela empresa pode ser homologada a qualquer tempo, independentemente da concordância da parte contrária, podendo ele ser indeferido quando houver indício de uso de mera estratégia processual para se evitar a formação de jurisprudência contrária aos interesses da empresa recorrente.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 101,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Com base no caso hipotético precedente, julgue os itens que se seguem.\nO recurso especial será admitido ainda que a decisão impugnada tenha sido ancorada em análise do contexto fático do processo, haja vista a relevância da matéria.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 102,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Com base no caso hipotético precedente, julgue os itens que se seguem.\nO tribunal de justiça não poderia realizar a análise de admissibilidade do recurso especial, visto que tal função é exclusiva do STJ.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 103,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Com base no caso hipotético precedente, julgue os itens que se seguem.\nO primeiro juízo de admissibilidade recursal pode ser delegado pelo presidente do tribunal de origem ao órgão colegiado do STJ, desde que assegurado à parte recorrida o direito de apresentar contrarrazões ao recurso especial.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 104,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Acerca do litisconsórcio e intervenção de terceiros no âmbito do sistema jurídico processual civil, julgue os seguintes itens.\nO terceiro juridicamente interessado em que a sentença seja favorável a uma das partes poderá intervir no processo para lhe prestar auxílio, em qualquer procedimento e em todos os graus de jurisdição, e, admitido como tal, exercerá os mesmos poderes e se sujeitará aos mesmos ônus processuais que o assistido.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "X"
+  },
+  {
+   "n": 105,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Acerca do litisconsórcio e intervenção de terceiros no âmbito do sistema jurídico processual civil, julgue os seguintes itens.\nO litisconsórcio necessário ocorre quando a presença de todos os litisconsortes é indispensável para a validade do processo.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "X"
+  },
+  {
+   "n": 106,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Acerca do litisconsórcio e intervenção de terceiros no âmbito do sistema jurídico processual civil, julgue os seguintes itens.\nO amicus curiae atua como auxiliar do juiz, fornecendo subsídios jurídicos relevantes para o deslinde da causa, e sua intervenção não implica alteração de competência nem autoriza a interposição de recursos, ressalvada a oposição de embargos de declaração e nos casos de decisão que julgar incidente de resolução de demandas repetitivas. João, de 19 anos de idade, e Pedro, de 17 anos de idade, assaltaram uma loja de eletrônicos: João empunhou um simulacro de arma de fogo, com aparência fidedigna à de uma arma real, e anunciou o assalto, enquanto Pedro permaneceu do lado de fora da loja, dando cobertura. Durante a ação, o proprietário da loja reagiu, e João, acreditando estar sendo atacado com uma arma, quando na verdade o comerciante apenas segurava uma calculadora, desferiu um soco no rosto da vítima, causando-lhe lesões corporais leves. Posteriormente, descobriu-se que João tem transtorno mental, o que, à época dos fatos, reduziu parcialmente sua capacidade de entendimento do caráter ilícito da sua conduta.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 107,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A partir da situação hipotética apresentada, julgue os itens a seguir.\nNo caso narrado, houve concurso de pessoas, sendo João o autor mediato e Pedro o partícipe, uma vez que ambos contribuíram para a prática do crime de roubo.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 108,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A partir da situação hipotética apresentada, julgue os itens a seguir.\nA conduta de João configura o crime de roubo, pois houve emprego de grave ameaça mediante o uso de arma de fogo, ainda que posteriormente tenha sido constatado tratar-se de simulacro.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "X"
+  },
+  {
+   "n": 109,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A partir da situação hipotética apresentada, julgue os itens a seguir.\nPedro, devido à menoridade, é penalmente inimputável, portanto, em razão da inimputabilidade de um dos agentes da ação criminosa, não incidiria a causa de aumento de pena do concurso de pessoas, caso houvesse condenação criminal.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 110,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A partir da situação hipotética apresentada, julgue os itens a seguir.\nA lesão corporal leve causada pelo soco desferido por João na vítima do roubo caracteriza uma qualificadora específica do crime de roubo que implica aumento da pena em abstrato do crime, em caso de condenação criminal.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 111,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A partir da situação hipotética apresentada, julgue os itens a seguir.\nO transtorno mental de João caracteriza causa de semi-imputabilidade e, se ele for processado criminalmente pela conduta em questão, poderá ensejar a redução da pena, mas não o afastamento total da responsabilidade penal. Durante uma operação policial, Roberto, funcionário público, foi flagrado recebendo R$ 5 mil de um empresário, para acelerar um processo de licenciamento. No momento da abordagem, Roberto tentou fugir e empurrou um policial, causando-lhe lesões leves. Roberto foi preso em flagrante e, durante a revista pessoal, foram encontrados documentos falsos em seu poder. No inquérito policial instaurado, sua esposa, Carla, foi chamada para depor como testemunha.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 112,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Considerando essa situação hipotética, julgue os itens que se seguem.\nRoberto praticou corrupção passiva, que é crime próprio, pois somente funcionário público pode ser sujeito ativo desse delito, sendo o Estado o sujeito passivo da infração penal.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "X"
+  },
+  {
+   "n": 113,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Considerando essa situação hipotética, julgue os itens que se seguem.\nA prisão em flagrante de Roberto foi legítima, uma vez que ele foi surpreendido na prática do crime de corrupção passiva, o que configura flagrante próprio.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 114,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Considerando essa situação hipotética, julgue os itens que se seguem.\nOs documentos falsos encontrados com Roberto durante a revista pessoal constituem prova ilícita, uma vez que a revista foi realizada sem autorização judicial específica para busca e apreensão.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 115,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Considerando essa situação hipotética, julgue os itens que se seguem.\nCarla não é obrigada a depor contra Roberto, podendo recusar-se a responder perguntas que possam incriminá-lo.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 116,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Considerando essa situação hipotética, julgue os itens que se seguem.\nO inquérito policial instaurado tem natureza inquisitiva e pode ser arquivado pela autoridade policial, após autorização do Ministério Público, caso se conclua pela inexistência de crime ou ausência de indícios de autoria. Lucas invadiu a residência de sua ex-namorada, Sandra, durante a madrugada. No local, ameaçou-a com uma faca e a constrangeu a manter relações sexuais. Um vizinho acionou a polícia após ouvir gritos. Lucas foi preso em flagrante e, durante o interrogatório policial, confessou o crime.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 117,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Julgue os seguintes itens, referentes à situação hipotética precedente.\nLucas praticou o delito de estupro, o qual é classificado como comum quanto ao sujeito ativo.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 118,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Julgue os seguintes itens, referentes à situação hipotética precedente.\nA invasão da residência por Lucas configura crime autônomo de violação de domicílio.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 119,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Julgue os seguintes itens, referentes à situação hipotética precedente.\nA confissão de Lucas no interrogatório policial constitui prova válida, devendo ser valorada pelo juiz juntamente com os demais elementos probatórios dos autos.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 120,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Julgue os seguintes itens, referentes à situação hipotética precedente.\nO crime de estupro praticado por Lucas contra Sandra configura delito de ação penal pública condicionada à representação, sendo necessário que a vítima manifeste sua vontade de que o agente seja processado para que o Ministério Público possa oferecer a denúncia.",
+   "alternativas": {
+    "C": "Certo",
+    "E": "Errado"
+   },
+   "gabarito": "E"
+  }
+ ]
+}
