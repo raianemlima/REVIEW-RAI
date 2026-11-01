@@ -3742,6 +3742,8 @@ function ebMd(src, pre) {
   return { html: out.join("\n"), toc };
 }
 function ebLidos() { ensureAj(); S.ajustes.ebLidos ||= []; S.ajustes.ebPos ||= {}; return new Set(S.ajustes.ebLidos); }
+// "Conteúdo específico" (trechos do material pessoal, assunto por assunto do edital) aparece antes dos demais materiais
+const ebOrdem = L => [...L.filter(x => x.grupo), ...L.filter(x => !x.grupo)];
 function renderEbooks() {
   const L = ebLista(), lidos = ebLidos(), e = L.find(x => x.id === S.ebId);
   if (!e) {
@@ -3749,9 +3751,9 @@ function renderEbooks() {
     $("#main").innerHTML = `<button class="btn small ghost" id="ebBack">← Biblioteca</button>
       <h2>Aprofundamento</h2>
       <p class="sub">Material de estudo aprofundado, organizado por matéria. Leia por capítulos, marque o que concluiu e selecione trechos para salvar no caderno.</p>
-      <div class="eb-lista">${L.map(x => {
+      <div class="eb-lista">${ebOrdem(L).map(x => {
         const n = x.caps.filter(c => lidos.has(x.id + ":" + c.id)).length, pos = S.ajustes.ebPos[x.id];
-        return `<article class="eb-card" data-disc="${esc(x.disc)}"><span class="chip" style="background:${discColor(x.disc)}22;color:${discColor(x.disc)}">${discIco(x.disc)} ${esc((DISC[x.disc] || {}).curto || "")}</span>
+        return `<article class="eb-card" data-disc="${esc(x.disc)}">${x.grupo ? `<span class="chip eb-grupo">🎯 ${esc(x.grupo)}</span>` : `<span class="chip" style="background:${discColor(x.disc)}22;color:${discColor(x.disc)}">${discIco(x.disc)} ${esc((DISC[x.disc] || {}).curto || "")}</span>`}
           <h3 class="eb-ct">${esc(x.titulo)}</h3><p class="eb-cs">${esc(x.subtitulo || "")}</p>
           <p class="count">${plural(x.caps.length, "capítulo", "capítulos")} · ${n}/${x.caps.length} concluídos</p>
           <div class="stack"><i class="s2" style="width:${n / x.caps.length * 100}%;background:var(--ok)"></i></div>
@@ -3776,6 +3778,8 @@ function renderEbooks() {
     <div class="row eb-nav">${ci > 0 ? `<button class="btn" data-ebc="${ci - 1}">← Anterior</button>` : "<span></span>"}${ci < e.caps.length - 1 ? `<button class="btn primary" data-ebc="${ci + 1}">Próximo capítulo →</button>` : ""}</div>
     <p class="src" style="margin-top:14px">Material de apoio ao estudo, atualizado em ${fmtISO(e.atualizado)}. Confira sempre a redação vigente da lei e a jurisprudência atual.</p>`;
   $("#ebBack").onclick = () => { S.ebId = null; renderEbooks(); window.scrollTo(0, 0); };
+  // vindo do Cronograma ("Estudar os trechos doutrinários"): rola até o assunto e o destaca
+  if (S.ebAncora) { const alvo = S.ebAncora; S.ebAncora = null; setTimeout(() => { const h = document.getElementById(alvo); if (h) { h.classList.add("eb-alvo"); h.scrollIntoView({ block: "start" }); } }, 40); }
   $("#ebCap").onchange = ev => { S.ebCap = +ev.target.value; renderEbooks(); window.scrollTo(0, 0); };
   document.querySelectorAll("[data-ebc]").forEach(b => b.onclick = () => { S.ebCap = +b.dataset.ebc; renderEbooks(); window.scrollTo(0, 0); });
   document.querySelectorAll("[data-ebgo]").forEach(a => a.onclick = ev => { ev.preventDefault(); document.getElementById(a.dataset.ebgo)?.scrollIntoView({ behavior: "smooth", block: "start" }); });

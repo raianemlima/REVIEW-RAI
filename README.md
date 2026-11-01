@@ -51,6 +51,8 @@ O Cronograma também traz o **III Concurso da DPE/RN** pelo regulamento atual (R
 
 A aba **Tribunal** traz o plano de 12 semanas para o **TJPB 2026 (Analista Judiciário – Área Judiciária, FGV)**, com cada bloco ligado ao conteúdo do app, o edital no Cronograma e o [plano estratégico](plano-tjpb-2026.html). O leitor de Lei seca mostra grifos, questões por artigo e jurisprudência da lei seca do curso quando ela é publicada cifrada. As demais leis ganham marcação colorida automática: prazos e números, exceções e vedações, deveres e competências, e definições legais. Veja [Tribunal de Justiça · TJPB 2026](docs/TRIBUNAL-TJPB.md).
 
+Para a **DPE/RN**, o **TJPB 2026** e a **DPDF 2026**, o Aprofundamento traz o **Conteúdo específico**: um e-book por concurso, assunto por assunto do edital, com os trechos doutrinários do material de estudo pessoal (fonte e página em cada trecho). No Cronograma, cada assunto com trechos ganha o botão **Estudar os trechos doutrinários**, que abre o e-book no ponto certo. O conteúdo vai selado no repositório e só entra no baralho na publicação. Veja [Conteúdo específico](docs/CONTEUDO-ESPECIFICO.md).
+
 O arquivo interativo [Direitos Humanos · DPESP](direitos-humanos-dpesp.html) separa o núcleo recorrente dos programas, as ampliações do X Concurso e a comparação com o III Concurso da DPE-RN. Ele funciona offline, tem busca, filtros, modo escuro, impressão e checklist salvo apenas no navegador.
 
 ## Interface integrada ao design fornecido

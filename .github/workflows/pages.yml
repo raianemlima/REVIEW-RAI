@@ -42,6 +42,10 @@ jobs:
           APP_SENHA: ${{ secrets.APP_SENHA }}
           LEISECA_CHAVE: ${{ secrets.LEISECA_CHAVE }}
         run: node ferramentas/ci/aplicar_leiseca.mjs _site/index.html
+      - name: E-books de conteúdo específico no Aprofundamento (segredo APP_SENHA)
+        env:
+          APP_SENHA: ${{ secrets.APP_SENHA }}
+        run: node ferramentas/ci/aplicar_ebooks.mjs _site/index.html
       - name: Validar os arquivos obrigatórios do app e do cache offline
         run: node ferramentas/ci/validar_site.mjs _site
       - uses: actions/upload-pages-artifact@v3
