@@ -14,6 +14,7 @@ import { webcrypto as crypto, randomBytes } from "node:crypto";
 import { gzipSync, gunzipSync } from "node:zlib";
 import { dirname, join } from "node:path";
 import { parDaSenha, ehSelado, abrir } from "./leiseca_selada.mjs";
+import { marcarLei } from "./grifos_auto.mjs";
 
 const arq = process.argv[2], senha = process.env.APP_SENHA, chave = process.env.LEISECA_CHAVE;
 const pasta = process.env.LEISECA_PASTA || "leiseca-cifrada";
@@ -87,6 +88,8 @@ for (const lei of leis) {
   const disc = disciplina(lei.disc);
   if (!disc) console.log(`::warning::${lei.id}: disciplina ${lei.disc} não existe no baralho; a lei entra sem disciplina e sem cartões.`);
   const item = { id: lei.id, nome: lei.nome, curto: lei.curto, disc, fonte: lei.fonte, completa: !!lei.completa, grupos: lei.grupos };
+  // a versão completa (ex.: a do curso) tira do leitor a seleção antiga da mesma lei; os cartões da seleção ficam
+  for (const velho of lei.substitui || []) deck.leiseca = deck.leiseca.filter(x => x.id !== velho);
   const pos = deck.leiseca.findIndex(x => x.id === lei.id);
   if (pos >= 0) deck.leiseca[pos] = item; else deck.leiseca.push(item);
   nLeis++;
@@ -102,7 +105,10 @@ for (const lei of leis) {
     nCartoes++;
   }
 }
+// marcação colorida automática em toda lei seca do baralho que não tem os grifos do curso
+let nMarcadas = 0;
+for (const lei of deck.leiseca) if (!(lei.grupos || []).some(g => (g.itens || []).some(i => i.g))) nMarcadas += marcarLei(lei) ? 1 : 0;
 const iv = randomBytes(12);
 const ct = new Uint8Array(await crypto.subtle.encrypt({ name: "AES-GCM", iv }, key, gzipSync(Buffer.from(JSON.stringify(deck), "utf8"), { level: 9 })));
 writeFileSync(caminhoDeck, JSON.stringify({ ...enc, z: "gzip", iv: b64(iv), ct: b64(ct) }));
-console.log(`ok: ${nLeis} lei(s) e ${nCartoes} cartão(ões) de lei seca no baralho (${aplicados.join(", ")})`);
+console.log(`ok: ${nLeis} lei(s) e ${nCartoes} cartão(ões) de lei seca no baralho (${aplicados.join(", ")}); marcação automática em ${nMarcadas} lei(s)`);

@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { mkdtemp, mkdir, readFile, writeFile } from "node:fs/promises";
+import { readFileSync } from "node:fs";
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 import { tmpdir } from "node:os";
@@ -98,17 +99,17 @@ test("a lei seca pública (resoluções do CNJ) entra só com APP_SENHA, sem a c
   const { stdout } = await run("node", [script, join(pasta, "index.html")], { env });
   assert.match(stdout, /LEISECA_CHAVE não configurado/);
   const { deck } = await lerDeck(pasta, senha);
-  assert.deepEqual(deck.leiseca.map(l => l.id).sort(), ["res-cnj-351", "res-cnj-363", "res-cnj-400", "res-cnj-401"]);
+  assert.deepEqual(deck.leiseca.map(l => l.id).sort(), ["l12846", "l9784", "lgpd", "lindb", "res-cnj-351", "res-cnj-363", "res-cnj-400", "res-cnj-401"]);
   const r351 = deck.leiseca.find(l => l.id === "res-cnj-351");
   assert.equal(r351.completa, true);
   assert.equal(r351.disc, "", "sem disciplina de Administrativo no baralho de teste, a lei entra sem disciplina");
   assert.ok(r351.grupos[0].itens.some(i => i.a === "1" && /^Art\. 1º Instituir a Política de Prevenção e Enfrentamento do Assédio/.test(i.x)));
 });
 
-test("as resoluções públicas usam o texto vigente: nada tachado, a Res. 230/2016 revogada fica de fora", async () => {
+test("a lei seca pública usa o texto vigente: nada tachado, revogado só como (Revogado.), a Res. 230/2016 fica de fora", async () => {
   const pasta = join(raiz, "ferramentas/conteudo/dados/leiseca-publica");
   const ids = (await import("node:fs")).readdirSync(pasta).map(f => f.replace(".json", "")).sort();
-  assert.deepEqual(ids, ["res-cnj-351", "res-cnj-363", "res-cnj-400", "res-cnj-401"]);
+  assert.deepEqual(ids, ["l12846", "l9784", "lgpd", "lindb", "res-cnj-351", "res-cnj-363", "res-cnj-400", "res-cnj-401"]);
   for (const id of ids) {
     const lei = JSON.parse(await readFile(join(pasta, id + ".json"), "utf8"));
     const arts = lei.grupos.flatMap(g => g.itens).filter(i => i.a !== undefined);
@@ -177,4 +178,54 @@ test("o repositório só guarda a lei seca do curso selada: nada em claro em lei
     assert.equal(bin.subarray(0, 4).toString(), "LSX1", `${f} precisa estar selado com a chave pública`);
     assert.doesNotMatch(bin.toString("latin1"), /Art\. \d|Decodificad|cpfCnpj|uid:/, `${f} tem texto em claro`);
   }
+});
+
+test("leis federais do normas.leg.br: nome com o número da lei, texto compilado e dispositivo revogado fora", async () => {
+  const pasta = join(raiz, "ferramentas/conteudo/dados/leiseca-publica"), ler = id => JSON.parse(readFileSync(join(pasta, id + ".json"), "utf8"));
+  const lgpd = ler("lgpd"), arts = lgpd.grupos[0].itens.filter(i => i.a !== undefined);
+  assert.match(lgpd.nome, /^Lei nº 13\.709\/2018 · /);
+  assert.match(lgpd.fonte, /normas\.leg\.br/);
+  assert.ok(arts.length >= 70);
+  assert.match(arts.find(a => a.a === "55-B").x, /^Art\. 55-B\. \(Revogado\.\)$/);
+  assert.doesNotMatch(arts.find(a => a.a === "55-A").x, /§ 1º \(Parágrafo acrescido/);
+  assert.match(ler("lindb").nome, /^Decreto-Lei nº 4\.657\/1942 · /);
+  assert.equal(ler("lindb").id, "lindb", "o Cronograma liga a LINDB pela sigla");
+  for (const id of ["l9784", "l12846"]) assert.ok(ler(id).grupos[0].itens.filter(i => i.a !== undefined).length >= 25, id);
+});
+
+test("marcação automática: prazo, exceção, dever e definição; nota de alteração fica sem marca", async () => {
+  const { marcar, marcarLei } = await import(join(raiz, "ferramentas/ci/grifos_auto.mjs"));
+  const segs = marcar("Art. 9º O prazo é de 30 (trinta) dias, salvo disposição em contrário, e compete ao juiz decidir de ofício. (Redação dada pela Lei nº 1.234, de 2020)");
+  const marcados = segs.filter(s => s[1]).map(s => s[1] + ":" + s[0]);
+  assert.deepEqual(marcados, ["v:30 (trinta) dias", "a:salvo", "d:compete", "d:de ofício"]);
+  assert.equal(segs.map(s => s[0]).join(""), "Art. 9º O prazo é de 30 (trinta) dias, salvo disposição em contrário, e compete ao juiz decidir de ofício. (Redação dada pela Lei nº 1.234, de 2020)");
+  const def = marcar("Art. 5º Para os fins desta Lei, considera-se:\nI - dado pessoal: informação relacionada a pessoa natural;");
+  assert.ok(def.some(s => s[1] === "m" && s[0] === "dado pessoal"));
+  assert.equal(marcar("Art. 1º Esta Lei entra em vigor na data de sua publicação."), null);
+  const lei = { grupos: [{ itens: [{ h: "CAPÍTULO I" }, { a: "1", x: "Art. 1º É vedado o uso, exceto nos casos legais." }] }] };
+  assert.equal(marcarLei(lei), 1);
+  assert.equal(lei.grifos, "auto");
+});
+
+test("na publicação: a lei do curso tira a seleção antiga do leitor e as leis sem grifo do curso ganham marcação automática", async () => {
+  const pasta = await mkdtemp(join(tmpdir(), "leiseca-")), publicas = join(pasta, "publicas");
+  await mkdir(publicas);
+  const curso = { ...leiFicticia, id: "cdc-dls", disc: "@consumidor", substitui: ["cdc"], cartoes: [],
+    grupos: [{ nome: "Parte", itens: [{ a: "1", x: "Art. 1º Texto do curso, salvo exceção.", g: [["Art. 1º Texto do curso, ", ""], ["salvo exceção", "v"], [".", ""]] }] }] };
+  await writeFile(join(publicas, "cdc-dls.json"), JSON.stringify(curso));
+  const senha = "senha-de-teste";
+  await escreverDeck(pasta, senha, { disciplinas: [{ id: "dc", nome: "Direito do Consumidor" }], cartoes: [{ id: "ls-cdc1-001", disc: "dc", ord: 1 }],
+    leiseca: [{ id: "cdc", nome: "CDC · seleção", curto: "CDC", grupos: [{ itens: [{ a: "6", x: "Art. 6º São direitos básicos, no prazo de 5 (cinco) dias." }] }] },
+              { id: "cf", nome: "CF", curto: "CF", grupos: [{ itens: [{ a: "5", x: "Art. 5º Todos são iguais, sem distinção de qualquer natureza, salvo exceções." }] }] }] });
+  const env = { ...process.env, APP_SENHA: senha, LEISECA_PASTA: join(pasta, "sem-bins"), LEISECA_PUBLICA: publicas };
+  const { stdout } = await run("node", [script, join(pasta, "index.html")], { env });
+  assert.match(stdout, /marcação automática em 1 lei\(s\)/);
+  const { deck } = await lerDeck(pasta, senha);
+  assert.deepEqual(deck.leiseca.map(l => l.id), ["cf", "cdc-dls"], "a seleção antiga do CDC sai do leitor");
+  assert.ok(deck.cartoes.some(c => c.id === "ls-cdc1-001"), "os cartões da seleção antiga ficam");
+  const cf = deck.leiseca.find(l => l.id === "cf"), cdc = deck.leiseca.find(l => l.id === "cdc-dls");
+  assert.equal(cf.grifos, "auto");
+  assert.ok(cf.grupos[0].itens[0].g.some(s => s[1] === "a" && s[0] === "salvo"));
+  assert.equal(cdc.grifos, undefined, "a lei do curso mantém os grifos do professor");
+  assert.deepEqual(cdc.grupos[0].itens[0].g, curso.grupos[0].itens[0].g);
 });
