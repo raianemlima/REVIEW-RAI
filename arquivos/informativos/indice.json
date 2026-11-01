@@ -1,0 +1,56 @@
+[
+ {
+  "tribunal": "STF",
+  "ano": "2024",
+  "edicoes": 42,
+  "itens": 226,
+  "de": 1121,
+  "ate": 1162,
+  "arquivo": "stf-2024.json"
+ },
+ {
+  "tribunal": "STF",
+  "ano": "2025",
+  "edicoes": 40,
+  "itens": 240,
+  "de": 1163,
+  "ate": 1202,
+  "arquivo": "stf-2025.json"
+ },
+ {
+  "tribunal": "STF",
+  "ano": "2026",
+  "edicoes": 32,
+  "itens": 170,
+  "de": 1203,
+  "ate": 1234,
+  "arquivo": "stf-2026.json"
+ },
+ {
+  "tribunal": "STJ",
+  "ano": "2024",
+  "edicoes": 38,
+  "itens": 601,
+  "de": 800,
+  "ate": 837,
+  "arquivo": "stj-2024.json"
+ },
+ {
+  "tribunal": "STJ",
+  "ano": "2025",
+  "edicoes": 37,
+  "itens": 639,
+  "de": 838,
+  "ate": 874,
+  "arquivo": "stj-2025.json"
+ },
+ {
+  "tribunal": "STJ",
+  "ano": "2026",
+  "edicoes": 33,
+  "itens": 534,
+  "de": 875,
+  "ate": 907,
+  "arquivo": "stj-2026.json"
+ }
+]

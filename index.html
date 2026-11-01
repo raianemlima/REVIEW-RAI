@@ -668,6 +668,40 @@ body { overscroll-behavior-y: none; }
 .ls-jx small { color: var(--muted); }
 .ls-ok { color: var(--ok); font-size: .8rem; margin: 4px 0 0; }
 /* ---- fim da aba Tribunal ---- */
+/* ---- aba Informativos (STF e STJ) ---- */
+.inf-hero { border-radius: 20px; padding: 22px 20px 20px; margin: 16px 0 14px; color: #f4f6fb;
+  background: radial-gradient(120% 140% at 100% 0%, #2f7a6b 0%, transparent 55%), linear-gradient(135deg, #12332f 0%, #17463f 60%, #1d5a50 100%); }
+.inf-kicker { font: 600 .7rem var(--f-mono); letter-spacing: .12em; text-transform: uppercase; opacity: .85; margin: 0; }
+.inf-hero h2 { color: #fff; margin: 6px 0; font-size: 1.6rem; }
+.inf-hero p { margin: 0; opacity: .9; max-width: 38em; }
+.inf-stats { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+.inf-stats div { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); border-radius: 14px; padding: 8px 12px; min-width: 96px; }
+.inf-stats b { display: block; font: 600 1.25rem var(--f-ui); color: #fff; font-variant-numeric: tabular-nums; }
+.inf-stats span { font-size: .75rem; opacity: .88; }
+.inf-filtros { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 0 0 8px; }
+.inf-filtros input[type=search] { flex: 1 1 240px; min-width: 0; }
+.inf-filtros select, .inf-filtros input[type=search] { padding: 9px 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--ink); font: inherit; }
+.inf-filtros label { display: inline-flex; gap: 6px; align-items: center; font-size: .88rem; color: var(--muted); }
+.inf-cont { color: var(--muted); font-size: .88rem; margin: 4px 0 10px; }
+.inf-lista { display: grid; gap: 12px; }
+.inf-item { border: 1px solid var(--line); border-radius: 14px; background: var(--surface); padding: 14px 14px 12px; }
+.inf-item.lido { opacity: .62; }
+.inf-item header { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 6px; }
+.inf-trib { font: 700 .7rem var(--f-mono); letter-spacing: .06em; padding: 3px 8px; border-radius: 999px; color: #fff; background: #17463f; }
+.inf-trib[data-t=STJ] { background: #24408a; }
+.inf-meta { font: 500 .78rem var(--f-mono); color: var(--muted); }
+.inf-lido { margin-left: auto; font-size: .82rem; color: var(--muted); display: inline-flex; gap: 5px; align-items: center; }
+.inf-item h4 { margin: 4px 0 6px; font-size: 1rem; line-height: 1.35; }
+.inf-areas { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 8px; }
+.inf-areas span { font-size: .72rem; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+.inf-tese { border-left: 3px solid #c8962b; background: rgba(200,150,43,.1); border-radius: 0 10px 10px 0; padding: 8px 12px; margin: 8px 0; }
+.inf-tese b { display: block; font: 600 .68rem var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
+.inf-tese p, .inf-res p { margin: 4px 0; }
+.inf-item details { margin-top: 6px; }
+.inf-item summary { cursor: pointer; font-weight: 600; font-size: .9rem; }
+.inf-res { font-size: .92rem; line-height: 1.55; padding: 4px 0 2px; }
+.inf-proc { margin: 8px 0 0; font: 400 .78rem var(--f-mono); color: var(--muted); }
+/* ---- fim da aba Informativos ---- */
 </style>
 <style id="extras-doutrina-menu">
 /* aba Doutrina */
@@ -993,6 +1027,7 @@ header.top { background: var(--bg); -webkit-backdrop-filter: none; backdrop-filt
       <button role="tab" data-tab="biblioteca" aria-selected="false" id="tab-biblioteca"><svg class="ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/></svg><span>Biblioteca</span></button>
       <button role="tab" data-tab="leiseca" aria-selected="false" id="tab-leiseca"><svg class="ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 7l-3 7a3 3 0 0 0 6 0z"/><path d="M19 7l-3 7a3 3 0 0 0 6 0z"/><path d="M8 21h8"/></svg><span>Lei seca</span></button>
       <button role="tab" data-tab="tribunal" aria-selected="false" id="tab-tribunal"><svg class="ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21v-9M9.7 21v-9M14.3 21v-9M19 21v-9"/><path d="M2.5 9.5 12 4l9.5 5.5z"/></svg><span>Tribunal</span></button>
+      <button role="tab" data-tab="informativos" aria-selected="false" id="tab-informativos"><svg class="ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h13a2 2 0 0 1 2 2v12H6a2 2 0 0 1-2-2z"/><path d="M19 9h2v8a2 2 0 0 1-2 2"/><path d="M8 9h7M8 13h7M8 16h4"/></svg><span>Informativos</span></button>
       <button role="tab" data-tab="novidades" aria-selected="false" id="tab-novidades" class="tab-oculta" hidden><svg class="ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11v2a1 1 0 0 0 1 1h2l8 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M18 9a4 4 0 0 1 0 6"/></svg><span>Novidades</span></button>
       <button role="tab" data-tab="defensoria" aria-selected="false" id="tab-defensoria" hidden><svg class="ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><span>Defensoria</span></button>
       <button role="tab" data-tab="teses" aria-selected="false" id="tab-teses" hidden><svg class="ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16M5 20h14M7 8h10"/><path d="M7 8l-3 6a3 3 0 0 0 6 0zM17 8l-3 6a3 3 0 0 0 6 0z"/></svg><span>Teses</span></button>
@@ -1076,7 +1111,7 @@ document.body.classList.add("rd-gate");
   const KEY = "revisao-dpe-chave", KEY_UID = "revisao-dpe-chave-uid", CONTA = "revisao-dpe-conta", VERIF = "revisao-dpe-verif", PRAZO = 7 * 86400000;
   const SB_URL = "https://hlenhmgnqqnkjqmntnpz.supabase.co", SB_KEY = "sb_publishable_UbPHvOFSbd-dgyDx6SI7mg_UBx4_o9l";   // chave pública: a proteção é a RLS
   const $ = s => document.querySelector(s);
-  const APP_CACHE = "review-dpe-assuntos-v23";
+  const APP_CACHE = "review-dpe-assuntos-v24";
   async function carregarTexto(url, tipo, motivo) {
     let resposta;
     try { resposta = await fetch(url); } catch (_) { throw new Error(motivo); }
