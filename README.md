@@ -43,6 +43,8 @@ A meta padrão é de 10 cartões diferentes, ajustável, sem confundir toda a fi
 
 Em **Cronograma**, o aluno escolhe um edital de Defensoria, horas por semana, dias, disciplinas e percentuais de distribuição. O plano usa 18 editais de carreira de 16 estados como referência, com sete áreas presentes no corpus e matérias estaduais opcionais. Ao ativar a aplicação às metas, o tempo diário, a meta de cartões e as disciplinas compatíveis entram no mesmo armazenamento sincronizado do app. Leia o [diagnóstico dos editais e do cronograma](docs/EDITAIS-CRONOGRAMA.md) para ver o método e os limites da amostra.
 
+Os cartões são de **revisão**: um cartão novo só entra na revisão diária depois que você marca **Estudei este assunto** no Cronograma, num edital da direção escolhida em Ajustes (**Defensoria** ou **Tribunal · TJPB**). O que já está em revisão continua nas datas marcadas. Veja [Revisão depois do estudo](docs/REVISAO-APOS-ESTUDO.md).
+
 Na aba **Progresso**, o **Relatório dos editais** resume a frequência das matérias e os pesos diretamente observados, com filtro por concurso e atalho para usar o edital no Cronograma. O [relatório de matérias e pesos](docs/RELATORIO-MATERIAS-E-PESOS-DPE.md) explica a amostra, a mediana, as faixas e por que pesos por grupo não são repartidos artificialmente.
 
 O Cronograma também inclui o edital da **DPDF 2026 para Analista de Apoio à Assistência Judiciária – Direito e Legislação** (cargo de servidor, fora do relatório dos editais de Defensor), com o [plano estratégico](plano-dpdf-2026.html) offline vinculado.
