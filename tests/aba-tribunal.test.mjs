@@ -24,7 +24,7 @@ const leiCurso = {
   ] }],
 };
 
-function ambiente() {
+function ambiente(extras = []) {
   const dom = new JSDOM('<!doctype html><html><head></head><body><header><button id="goBusca"></button><button id="goAjustes"></button><span id="save"></span><nav id="tabs"></nav></header><main id="main"></main></body></html>', { url: 'https://fixture.invalid/', runScripts: 'outside-only' });
   dom.window.scrollTo = () => {};
   dom.window.fetch = () => { throw new Error('Rede não permitida nos testes.'); };
@@ -36,7 +36,7 @@ function ambiente() {
   ];
   const disciplinas = [['dc', 'Direito Constitucional', 'Constitucional'], ['pc', 'Direito Processual Civil', 'Proc. Civil'], ['dp', 'Direito Penal', 'Penal'], ['pp', 'Direito Processual Penal', 'Proc. Penal']]
     .map(([id, nome, curto]) => ({ id, nome, curto, peso: 1 }));
-  run(`const DECK = ${JSON.stringify({ versao: 'fixture', disciplinas, cartoes, leiseca: [leiCurso] })};`);
+  run(`const DECK = ${JSON.stringify({ versao: 'fixture', disciplinas, cartoes, leiseca: [leiCurso, ...extras] })};`);
   run(motor);
   run(app);
   run(`S.mode = 'local'; S.ajustes.metaOn = false; S.ajustes.onboard = true; S.ajustes.som = false; S.ajustes.vibra = false; ensureAj();`);
@@ -134,4 +134,21 @@ test('o menu, o estilo e o cache publicam a aba e a página do plano', () => {
   assert.match(html, /\/\* ---- aba Tribunal \(TJPB\) ---- \*\//);
   assert.match(ler('sw.js'), /"plano-tjpb-2026\.html"/);
   assert.match(ler('.github/workflows/pages.yml'), /cp [^\n]*plano-tjpb-2026\.html/);
+});
+
+test('lei sem os grifos do curso mostra a marcação automática com a legenda própria', () => {
+  const auto = { id: 'lgpd', nome: 'Lei nº 13.709/2018 · LGPD', curto: 'LGPD', disc: 'dc', fonte: 'Fixture', completa: true, grifos: 'auto',
+    grupos: [{ nome: 'LGPD', itens: [{ a: '7', x: 'Art. 7º O tratamento somente poderá ser realizado.', g: [['Art. 7º O tratamento ', ''], ['somente', 'a'], [' poderá ser realizado.', '']] }] }] };
+  const a = ambiente([auto]);
+  try {
+    a.run('S.lsDip = "lgpd"; S.lsGrp = 0; S.lsQ = ""; go("leiseca")');
+    const mark = a.doc.querySelector('.ls-x mark.ga');
+    assert.equal(mark.textContent, 'somente');
+    assert.equal(mark.title, 'exceção, vedação ou restrição');
+    assert.match(a.doc.querySelector('.ls-legenda').textContent, /marcação automática do app/);
+    assert.doesNotMatch(a.doc.querySelector('.ls-legenda').textContent, /pegadinha/);
+    a.run('S.lsDip = "cp-dls"; go("leiseca")');
+    assert.match(a.doc.querySelector('.ls-legenda').textContent, /pegadinha/, 'a lei do curso mantém a legenda do curso');
+    assert.equal(a.doc.querySelector('.ls-x mark.gv').title, 'pegadinha');
+  } finally { a.close(); }
 });

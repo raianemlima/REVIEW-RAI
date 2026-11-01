@@ -21,11 +21,24 @@ Normas oficiais que o edital cita e que o baralho não tinha entram como lei sec
 
 - Resoluções do CNJ 351/2020 (assédio e discriminação), 401/2021 (acessibilidade e inclusão de pessoas com deficiência), 400/2021 (sustentabilidade) e 363/2021 (LGPD nos tribunais), convertidas do texto compilado de atos.cnj.jus.br por `ferramentas/conteudo/tjpb/cnj_resolucoes.py`. O trecho tachado (revogado ou alterado) é descartado.
 - A Res. CNJ 230/2016, citada no edital como "230/2021", está revogada pela Res. 401/2021; por isso a lei seca traz a 401.
-- Pendentes: Res. TJPB 20/2025 e 21/2025 (o site do TJPB recusa acesso automatizado; precisam vir em PDF) e as leis federais do Planalto (Lei 12.846, LGPD, Lei 9.784, LINDB), que dependem de liberar `www.planalto.gov.br` na rede da sessão.
+- Leis federais do texto compilado vigente da Câmara, publicado no normas.leg.br: LGPD (Lei 13.709/2018), LINDB (DL 4.657/1942), Lei 9.784/1999 e Lei 12.846/2013. Gere ou atualize com `python ferramentas/conteudo/tjpb/normas_leg.py ferramentas/conteudo/dados/leiseca-publica [lgpd lindb l9784 l12846]`. Para outra lei, acrescente a URN dela em `LEIS`. O site do Planalto não é usado, porque fica fora da rede da sessão. Dispositivo revogado não entra; o artigo revogado aparece só como "Art. N. (Revogado.)".
+- Pendentes: Res. TJPB 20/2025 e 21/2025. O site do TJPB recusa acesso automatizado, então elas precisam vir em PDF.
+
+## Marcação colorida automática
+
+Toda lei seca do app sem os grifos do curso recebe na publicação uma marcação por tipo de termo (`ferramentas/ci/grifos_auto.mjs`, chamado por `aplicar_leiseca.mjs`):
+- **vermelho:** prazo, número, percentual ou quórum;
+- **azul:** exceção, vedação ou restrição;
+- **dourado:** dever, competência, nulidade ou "de ofício";
+- **marinho:** definição legal.
+
+As notas "(Redação dada pela Lei ...)" ficam sem marca. O leitor mostra a legenda própria ("marcação automática do app"), e a lei do curso continua com os grifos e a legenda do professor. A marcação não vem de estatística de questões: ela destaca os tipos de termo que as bancas mais exploram na literalidade.
 
 ## Lei seca do curso (Decorando a Lei Seca)
 
 Os PDFs são material pago e trazem marca d'água com dados pessoais da compradora. Por isso só o **conteúdo extraído e cifrado** entra no repositório, nunca o PDF nem o texto em claro.
+
+No leitor, a lei do curso aparece com o nome da lei ("CDC", "LEP" etc.). Quando ela cobre a mesma lei de uma seleção curta que o app já tinha (CDC, Estatuto da Pessoa Idosa, Maria da Penha e, quando vier, a CF), o campo `substitui` faz a publicação tirar a seleção antiga do leitor. Os cartões dessa seleção continuam no baralho.
 
 1. Extrair (descarta a marca d'água e confere a saída): `python ferramentas/conteudo/leiseca_decodificada.py saida/ arquivo1.pdf arquivo2.pdf ...`
 2. Selar: `node ferramentas/ajustes/cifrar_leiseca.mjs saida/` → `leiseca-cifrada/<id>.bin`. O script usa a chave **pública** de `leiseca-cifrada/chave-publica.txt` e não precisa de segredo nenhum: o `.bin` só abre com a senha do app (segredo `APP_SENHA`, que já existe). A chave pública sai da própria senha (`ferramentas/ci/leiseca_selada.mjs`: PBKDF2-SHA-256 com 600 mil iterações, como o `deck.enc`, e par X25519) e aparece no log de toda publicação, na linha "chave pública da lei seca do curso". Se a senha do app mudar, copie a chave nova do log para `chave-publica.txt` e sele de novo; até lá, a publicação avisa e deixa a lei seca do curso de fora, sem quebrar o resto.

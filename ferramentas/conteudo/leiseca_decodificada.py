@@ -41,21 +41,21 @@ INICIO_LINHA = re.compile(r"^(?:[IVXLC]+\s*[-–—]|[a-z]\)|\d+\.\s|§|Parágra
 # id, nome, curto e disciplina (resolvida no baralho pelo nome canônico na inserção)
 LEIS = [
     # leis específicas antes dos códigos: o título e a 1ª página de uma lei podem citar um código
-    (r"Execução Penal|7\.?210", "lep-dls", "Lei de Execução Penal · Lei 7.210/1984 · Decodificada", "LEP (curso)", "@execucao penal"),
-    (r"Criança e do Adolescente|8\.?069", "eca-dls", "Estatuto da Criança e do Adolescente · Lei 8.069/1990 · Decodificado", "ECA (curso)", "@crianca"),
-    (r"Maria da Penha|11\.?340", "lmp-dls", "Lei Maria da Penha · Lei 11.340/2006 · Decodificada", "Maria da Penha (curso)", "@penal"),
-    (r"Lei de Drogas|11\.?343", "drogas-dls", "Lei de Drogas · Lei 11.343/2006 · Decodificada", "Drogas (curso)", "@penal"),
-    (r"Defesa do Consumidor|8\.?078", "cdc-dls", "Código de Defesa do Consumidor · Lei 8.078/1990 · Decodificado", "CDC (curso)", "@consumidor"),
-    (r"14\.?133", "l14133-dls", "Lei 14.133/2021 · Licitações e Contratos · Decodificada", "Lei 14.133 (curso)", "@administrativo"),
-    (r"8\.?429", "lia-dls", "Lei 8.429/1992 · Improbidade Administrativa · Decodificada", "LIA (curso)", "@administrativo"),
-    (r"8\.?112", "l8112-dls", "Lei 8.112/1990 · Servidores Públicos Federais · Decodificada", "Lei 8.112 (curso)", "@administrativo"),
-    (r"Idosa|10\.?741", "idoso-dls", "Estatuto da Pessoa Idosa · Lei 10.741/2003 · Decodificado", "Idoso (curso)", "@direitos humanos"),
-    (r"Desarmamento|10\.?826", "desarm-dls", "Estatuto do Desarmamento · Lei 10.826/2003 · Decodificado", "Desarmamento (curso)", "@penal"),
-    (r"Constituição Federal", "cf-dls", "Constituição Federal · Decodificada", "CF (curso)", "@constitucional"),
-    (r"Processo Civil", "cpc-dls", "Código de Processo Civil · Decodificado", "CPC (curso)", "@processo civil"),
-    (r"Processo Penal", "cpp-dls", "Código de Processo Penal · Decodificado", "CPP (curso)", "@processo penal"),
-    (r"Código Penal", "cp-dls", "Código Penal · Decodificado", "CP (curso)", "@penal"),
-    (r"Código Civil", "cc-dls", "Código Civil · Decodificado", "CC (curso)", "@civil"),
+    (r"Execução Penal|7\.?210", "lep-dls", "Lei de Execução Penal · Lei 7.210/1984 · Decodificada", "LEP", "@execucao penal"),
+    (r"Criança e do Adolescente|8\.?069", "eca-dls", "Estatuto da Criança e do Adolescente · Lei 8.069/1990 · Decodificado", "ECA", "@crianca"),
+    (r"Maria da Penha|11\.?340", "lmp-dls", "Lei Maria da Penha · Lei 11.340/2006 · Decodificada", "Maria da Penha", "@penal"),
+    (r"Lei de Drogas|11\.?343", "drogas-dls", "Lei de Drogas · Lei 11.343/2006 · Decodificada", "Drogas", "@penal"),
+    (r"Defesa do Consumidor|8\.?078", "cdc-dls", "Código de Defesa do Consumidor · Lei 8.078/1990 · Decodificado", "CDC", "@consumidor"),
+    (r"14\.?133", "l14133-dls", "Lei 14.133/2021 · Licitações e Contratos · Decodificada", "Lei 14.133", "@administrativo"),
+    (r"8\.?429", "lia-dls", "Lei 8.429/1992 · Improbidade Administrativa · Decodificada", "LIA", "@administrativo"),
+    (r"8\.?112", "l8112-dls", "Lei 8.112/1990 · Servidores Públicos Federais · Decodificada", "Lei 8.112", "@administrativo"),
+    (r"Idosa|10\.?741", "idoso-dls", "Estatuto da Pessoa Idosa · Lei 10.741/2003 · Decodificado", "Idoso", "@direitos humanos"),
+    (r"Desarmamento|10\.?826", "desarm-dls", "Estatuto do Desarmamento · Lei 10.826/2003 · Decodificado", "Desarmamento", "@penal"),
+    (r"Constituição Federal", "cf-dls", "Constituição Federal · Decodificada", "CF", "@constitucional"),
+    (r"Processo Civil", "cpc-dls", "Código de Processo Civil · Decodificado", "CPC", "@processo civil"),
+    (r"Processo Penal", "cpp-dls", "Código de Processo Penal · Decodificado", "CPP", "@processo penal"),
+    (r"Código Penal", "cp-dls", "Código Penal · Decodificado", "CP", "@penal"),
+    (r"Código Civil", "cc-dls", "Código Civil · Decodificado", "CC", "@civil"),
 ]
 
 
@@ -368,7 +368,7 @@ class Extrator:
         grupos = [g for g in self.grupos if any("a" in i for i in g["itens"])]
         return {"id": self.id, "nome": self.nome, "curto": self.curto, "disc": self.disc, "completa": True,
                 "fonte": "Decorando a Lei Seca · Legislação Decodificada (material adquirido pela titular do app, uso pessoal)",
-                "grupos": grupos, "cartoes": cartoes_de(self.curto, grupos)}
+                "grupos": grupos, "cartoes": cartoes_de(self.curto, grupos), **({"substitui": SUBSTITUI[self.id]} if self.id in SUBSTITUI else {})}
 
 
 PRIORIDADE = {"V": 0, "d": 1, "v": 2, "A": 3}
@@ -407,6 +407,9 @@ def cartoes_de(curto, grupos, minimo=4, por_artigo=2):
                             "porque": f"{PORQUE[c]} {it['n']} questões sobre o artigo de 2022 a 2026."})
                 usados += 1
     return out
+
+# id da lei do curso -> seleções antigas (dados/leiseca) da mesma lei que ela tira do leitor na publicação
+SUBSTITUI = {"cdc-dls": ["cdc"], "idoso-dls": ["idoso"], "lmp-dls": ["lmp"], "cf-dls": ["cf"]}
 
 
 def meta_de(titulo, capa=""):

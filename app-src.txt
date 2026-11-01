@@ -1079,12 +1079,13 @@ function lsFmt(t) {
 }
 const LS_GRIFO = { v: "pegadinha", V: "pegadinha (a mais cobrada)", a: "ponto cobrado", A: "ponto cobrado (o mais cobrado)", d: "caiu dos dois jeitos", m: "cobrado na literalidade", b: "destaque" };
 // texto com grifos do curso: g = [[trecho, classe], ...], mesmas regras de formatação de lsFmt
-function lsFmtG(segs) {
+const LS_AUTO = { v: "prazo, número ou quórum", a: "exceção, vedação ou restrição", d: "dever, competência ou nulidade", m: "definição legal" };
+function lsFmtG(segs, mapa = LS_GRIFO) {
   const linhas = [[]];
   for (const [t, c] of segs) String(t).split("\n").forEach((parte, i) => { if (i) linhas.push([]); if (parte) linhas[linhas.length - 1].push([parte, c]); });
   return linhas.map((l, i) => {
     const sub = i && !/^\s*(§|Parágrafo)/.test(l.map(x => x[0]).join(""));
-    const h = l.map(([t, c]) => c && LS_GRIFO[c] ? `<mark class="g${c}" title="${LS_GRIFO[c]}">${esc(t)}</mark>` : esc(t)).join("")
+    const h = l.map(([t, c]) => c && mapa[c] ? `<mark class="g${c}" title="${mapa[c]}">${esc(t)}</mark>` : esc(t)).join("")
       .replace(/\((Reda[çc][ãa]o dad|Inclu[íi]d|Vide|Revogad|Vig[êe]ncia|Acrescid|Renumerad)[^)]*\)/g, m => `<span class="ls-red">${m}</span>`)
       .replace(/^(Art\.\s*[\dº°A-Z.\-]+|§\s*[\dº°]+[º°]?(-[A-Z])?\.?|Parágrafo único\.?)/, "<b>$1</b>");
     return `<p class="${sub ? "sub2" : ""}">${h}</p>`;
@@ -1129,7 +1130,7 @@ function renderLeiSeca() {
       const k = key(b), lido = lidos.has(k);
       return `<article class="ls-a ${lido ? "lido" : ""}" id="ls-${esc(b.a)}"><div class="ls-top"><span>${b.a ? `<b>${esc(b.r || "Art. " + b.a)}</b>` : ""} ${b.qs.length ? `<span class="badge caiu2">caiu ${b.qs.length}×</span>` : ""}${b.n ? `<span class="badge ls-nq${b.n >= 6 ? " raio" : ""}" title="questões sobre o artigo, de 2022 a 2026">${b.n >= 6 ? "⚡ " : ""}${plural(b.n, "questão", "questões")}</span>` : ""}</span>
         <label class="ls-lido"><input type="checkbox" data-lido="${esc(k)}" ${lido ? "checked" : ""}> lido</label></div>
-        <div class="ls-x">${b.g ? lsFmtG(b.g) : lsFmt(b.x)}</div>${lsExtras(b)}
+        <div class="ls-x">${b.g ? lsFmtG(b.g, dip.grifos === "auto" ? LS_AUTO : LS_GRIFO) : lsFmt(b.x)}</div>${lsExtras(b)}
         ${b.qs.length ? `<details class="ls-qs"><summary>📝 Como caiu em prova (${b.qs.length})</summary>${b.qs.map(x => `<div class="ls-q"><p>${esc(x.q)}</p><small>${esc(x.b)}</small>
           ${x.g ? `<details><summary>Ver gabarito</summary><p><b>${x.g}.</b> ${esc(x.c || "")}</p></details>` : `<p class="ls-ok">Assertiva considerada correta pela banca.</p>`}</div>`).join("")}</details>` : ""}</article>`;
     }
@@ -1145,7 +1146,7 @@ function renderLeiSeca() {
     <div class="seg" id="lsD">${dips.map(d => `<button data-v="${d.id}" aria-pressed="${d.id === dip.id}">${esc(d.curto)}</button>`).join("")}</div>
     ${dip.grupos.length > 1 ? `<div class="filters" style="margin-top:10px"><select id="lsG">${dip.grupos.map((g, i) => `<option value="${i}" ${i === gi ? "selected" : ""}>${esc(g.nome)}</option>`).join("")}</select></div>` : ""}
     <div class="filters" style="margin-top:10px"><input id="lsQ" type="search" placeholder="Artigo (ex.: 121) ou palavra…" value="${esc(S.lsQ || "")}">
-      <label class="ls-lido" style="font-size:.9rem"><input type="checkbox" id="lsC" ${S.lsCaiu ? "checked" : ""}> só o que já caiu</label>${temN ? `<label class="ls-lido" style="font-size:.9rem"><input type="checkbox" id="lsRaio" ${S.lsRaio ? "checked" : ""}> muito cobrado (6+)</label><label class="ls-lido" style="font-size:.9rem"><input type="checkbox" id="lsFgv" ${S.lsFgv ? "checked" : ""}> caiu na FGV</label>` : ""}</div>${temG ? `<p class="ls-legenda"><mark class="gv">pegadinha</mark><mark class="ga">ponto cobrado</mark><mark class="gd">caiu dos dois jeitos</mark><mark class="gm">literal</mark></p>` : ""}
+      <label class="ls-lido" style="font-size:.9rem"><input type="checkbox" id="lsC" ${S.lsCaiu ? "checked" : ""}> só o que já caiu</label>${temN ? `<label class="ls-lido" style="font-size:.9rem"><input type="checkbox" id="lsRaio" ${S.lsRaio ? "checked" : ""}> muito cobrado (6+)</label><label class="ls-lido" style="font-size:.9rem"><input type="checkbox" id="lsFgv" ${S.lsFgv ? "checked" : ""}> caiu na FGV</label>` : ""}</div>${temG ? (dip.grifos === "auto" ? `<p class="ls-legenda"><mark class="gv">prazo, número, quórum</mark><mark class="ga">exceção, vedação</mark><mark class="gd">dever, competência, nulidade</mark><mark class="gm">definição legal</mark><span>marcação automática do app</span></p>` : `<p class="ls-legenda"><mark class="gv">pegadinha</mark><mark class="ga">ponto cobrado</mark><mark class="gd">caiu dos dois jeitos</mark><mark class="gm">literal</mark></p>`) : ""}
     <p class="count">${esc(dip.grupos[gi].nome)} · ${plural(arts.length, "artigo", "artigos")} · ${plural(nQ, "questão de prova", "questões de prova")} · ${nLidos}/${arts.length} lidos</p>
     <div class="stack" style="margin-bottom:10px"><i class="s2" style="width:${arts.length ? nLidos / arts.length * 100 : 0}%;background:var(--ok)"></i></div>
     <button class="btn primary" id="lsRev" ${ncards ? "" : "disabled"} style="width:100%">Revisar os cartões de ${esc(dip.curto)} (${ncards})</button>

@@ -52,7 +52,7 @@ function lsExtras(b) {
   const j = (b.j || []).length ? `<details class="ls-j"><summary>⚖️ Jurisprudência correlata (${b.j.length})</summary>${b.j.map(x => `<div class="ls-jx"><p>${x.t ? `<span class="badge">${esc(x.t)}</span> ` : ""}<b>${esc(x.tit)}</b> ${esc(x.x)}</p>${x.ref ? `<small>${esc(x.ref)}</small>` : ""}</div>`).join("")}</details>` : "";
   return stf + rec + j;
 }
-function lsCardIds(dip) {''', "function lsFmtG(segs)"),
+function lsCardIds(dip) {''', "function lsFmtG(segs"),
     ('const casa = b => (!S.lsCaiu || b.qs.length) && (',
      'const casa = b => (!S.lsCaiu || b.qs.length) && (!S.lsRaio || (b.n || 0) >= 6) && (!S.lsFgv || lsFgv(b)) && (',
      "!S.lsRaio ||"),
@@ -61,7 +61,7 @@ function lsCardIds(dip) {''', "function lsFmtG(segs)"),
     ('${b.qs.length ? `<span class="badge caiu2">caiu ${b.qs.length}×</span>` : ""}</span>',
      '${b.qs.length ? `<span class="badge caiu2">caiu ${b.qs.length}×</span>` : ""}${b.n ? `<span class="badge ls-nq${b.n >= 6 ? " raio" : ""}" title="questões sobre o artigo, de 2022 a 2026">${b.n >= 6 ? "⚡ " : ""}${plural(b.n, "questão", "questões")}</span>` : ""}</span>',
      'class="badge ls-nq'),
-    ('<div class="ls-x">${lsFmt(b.x)}</div>', '<div class="ls-x">${b.g ? lsFmtG(b.g) : lsFmt(b.x)}</div>${lsExtras(b)}', "lsFmtG(b.g)"),
+    ('<div class="ls-x">${lsFmt(b.x)}</div>', '<div class="ls-x">${b.g ? lsFmtG(b.g) : lsFmt(b.x)}</div>${lsExtras(b)}', "b.g ? lsFmtG(b.g"),
     ('<details><summary>Ver gabarito</summary><p><b>${x.g}.</b> ${esc(x.c || "")}</p></details></div>`).join("")}</details>` : ""}</article>`;',
      '${x.g ? `<details><summary>Ver gabarito</summary><p><b>${x.g}.</b> ${esc(x.c || "")}</p></details>` : `<p class="ls-ok">Assertiva considerada correta pela banca.</p>`}</div>`).join("")}</details>` : ""}</article>`;',
      'class="ls-ok"'),
@@ -74,6 +74,19 @@ function lsCardIds(dip) {''', "function lsFmtG(segs)"),
     ('${esc(dip.fonte)}. Não é a lei completa: confira a redação vigente no Planalto.',
      '${esc(dip.fonte)}. ${dip.completa ? "Confira" : "Não é a lei completa: confira"} a redação vigente no Planalto.',
      'dip.completa ?'),
+    # marcação automática (ferramentas/ci/grifos_auto.mjs) nas leis sem os grifos do curso: legenda e títulos próprios
+    ('function lsFmtG(segs) {',
+     'const LS_AUTO = { v: "prazo, número ou quórum", a: "exceção, vedação ou restrição", d: "dever, competência ou nulidade", m: "definição legal" };\nfunction lsFmtG(segs, mapa = LS_GRIFO) {',
+     'mapa = LS_GRIFO'),
+    ('c && LS_GRIFO[c] ? `<mark class="g${c}" title="${LS_GRIFO[c]}">',
+     'c && mapa[c] ? `<mark class="g${c}" title="${mapa[c]}">',
+     'title="${mapa[c]}"'),
+    ('<div class="ls-x">${b.g ? lsFmtG(b.g) : lsFmt(b.x)}</div>',
+     '<div class="ls-x">${b.g ? lsFmtG(b.g, dip.grifos === "auto" ? LS_AUTO : LS_GRIFO) : lsFmt(b.x)}</div>',
+     'dip.grifos === "auto" ? LS_AUTO'),
+    ('${temG ? `<p class="ls-legenda"><mark class="gv">pegadinha</mark><mark class="ga">ponto cobrado</mark><mark class="gd">caiu dos dois jeitos</mark><mark class="gm">literal</mark></p>` : ""}',
+     '${temG ? (dip.grifos === "auto" ? `<p class="ls-legenda"><mark class="gv">prazo, número, quórum</mark><mark class="ga">exceção, vedação</mark><mark class="gd">dever, competência, nulidade</mark><mark class="gm">definição legal</mark><span>marcação automática do app</span></p>` : `<p class="ls-legenda"><mark class="gv">pegadinha</mark><mark class="ga">ponto cobrado</mark><mark class="gd">caiu dos dois jeitos</mark><mark class="gm">literal</mark></p>`) : ""}',
+     'marcação automática do app'),
 ]
 
 
