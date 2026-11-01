@@ -35,6 +35,8 @@ def toks_num(s):  # mantém números de leis (8.069, 12.594) como termo
     for m in re.finditer(r"\b(\d{1,2}\.\d{3})(?:/\d{2,4})?", str(s)):
         n = m.group(1).replace(".", "")
         if n not in CODIGOS: out.append("n" + n)
+    for m in re.finditer(r"Resolu[çc][ãa]o\s*(?:\(?CNJ\)?\s*)?(?:n[º°o.]?\s*)?(\d{2,4})(?![.\d])", str(s), re.I):
+        out.append("r" + m.group(1))   # resolução pelo número (ex.: Resolução CNJ 425/2021)
     return out
 
 QUESTAO = re.compile(r"QUEST(Õ|O)ES|COMENT(Á|A)RIOS|Assinale|alternativa|GABARITO|EXERC|REFER(Ê|E)NCIA|BIBLIOGRAF|SOBRE O AUTOR|APRESENTA(Ç|C)(Ã|A)O|SUM(Á|A)RIO", re.I)
@@ -179,8 +181,10 @@ def por_subconsulta(cands, sq, peso, k=2, pedaco=False, titulo=False, ctx=""):
     seqq = toks_q(sq)
     pares = list(dict.fromkeys(zip(seqq, seqq[1:])))
     q = {w: 1 for w in termos}
+    numeros = [w for w in termos if re.fullmatch(r"[nr]\d{2,5}", w)]
     res = []
     for p in cands:
+        if numeros and not any(w in p["_tf"] for w in numeros): continue   # o assunto cita a norma pelo número: o trecho também
         cob = cobertura(p, termos)
         if cob < .6: continue
         hc = cob_h(p, termos)

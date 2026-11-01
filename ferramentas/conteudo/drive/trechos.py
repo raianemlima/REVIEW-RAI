@@ -125,9 +125,30 @@ def ponto_de(nome):
             return f"Cursos DUO · {rot} – Ponto {m.group(1)}" + (f" ({tema})" if tema else ""), ch
     return None, None
 
+AULAS_PP = [("teoriageraldasprovas", "Teoria geral das provas"), ("das-provas-em-especie", "Provas em espécie"),
+            ("prisao-medidas-cautelares", "Prisão, medidas cautelares e liberdade provisória"),
+            ("procedimento-do-juri", "Instrução criminal e procedimento do júri"), ("aula05brunobaghim", "Aula 5"),
+            ("aula060708", "Aulas 6 a 8"), ("recursossalim", "Recursos")]
+def outros_de(nome):
+    """Materiais de cursos anteriores (2021/2022): o ano vai no rótulo para o aluno saber que são mais antigos."""
+    m = re.search(r"R\d-Resumo_\d_-_(.+?)_-_Prof", nome)
+    if m:
+        tema = m.group(1).replace("_", " ")
+        for a, b in (("Constituicao", "Constituição"), ("Modificacao", "Modificação"), ("Historia", "História")): tema = tema.replace(a, b)
+        return f"OUSE · Teoria da Constituição – {tema} (2022)", ["const"]
+    m = re.search(r"(?:carjuridicasdirprocpenal|cjprocessopenal)cap(?:itulo)?(\d+)", nome)
+    if m: return f"CERS · Carreiras Jurídicas · Direito Processual Penal – cap. {m.group(1)} (2021)", ["pp"]
+    m = re.search(r"cjconstitucionalcap(\d+)", nome)
+    if m: return f"CERS · Carreiras Jurídicas · Direito Constitucional – cap. {m.group(1)} (2021)", ["const"]
+    for k, t in AULAS_PP:
+        if k in nome: return f"Curso Carreiras Jurídicas (2021) · Processo Penal – {t}", ["pp"]
+    return None, None
+
 def fonte_de(arq):
     nome = arq[7:] if re.match(r"^.{6}_", arq) else arq   # o nome salvo começa pelos 6 primeiros caracteres do id do Drive
     rot, ch = ponto_de(nome)
+    if rot: return rot, ch
+    rot, ch = outros_de(nome)
     if rot: return rot, ch
     for pref, rot, ch in FONTES:
         if nome.startswith(pref) or pref in arq: return rot, ch
