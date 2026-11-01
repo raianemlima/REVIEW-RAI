@@ -34,11 +34,12 @@ async function pronta(a) {
   assert.equal(a.run('window.__cronogramaInstalado'), true);
 }
 
-test('catálogo tem 18 editais de Defensor, os editais de servidor (DPDF e TJPB) e sete matérias comuns documentadas', () => {
+test('catálogo tem 18 editais de Defensor, o regulamento da DPE/RN, os editais de servidor (DPDF e TJPB) e sete matérias comuns documentadas', () => {
   const a = ambiente();
   try {
-    assert.equal(a.run('window.__cronogramaCatalogo.EDITAIS_DPE.length'), 20);
-    assert.equal(a.run('window.__cronogramaCatalogo.EDITAIS_DPE.filter(x => window.DPE_CONTEUDOS_EDITAIS[x.id]?.cargo !== "servidor").length'), 18);
+    assert.equal(a.run('window.__cronogramaCatalogo.EDITAIS_DPE.length'), 21);
+    assert.equal(a.run('window.__cronogramaCatalogo.EDITAIS_DPE.filter(x => window.DPE_CONTEUDOS_EDITAIS[x.id]?.cargo !== "servidor" && window.DPE_CONTEUDOS_EDITAIS[x.id]?.relatorio !== false).length'), 18);
+    assert.equal(a.run('window.__cronogramaCatalogo.EDITAIS_DPE.find(x => x.id === "rn-2025").subjects.filter(x => window.__cronogramaCatalogo.CORE.includes(x)).length'), 7);
     assert.equal(a.run('window.__cronogramaCatalogo.CORE.length'), 7);
     assert.equal(a.run('window.__cronogramaCatalogo.EDITAIS_DPE.find(x => x.id === "ma-2026").subjects.filter(x => window.__cronogramaCatalogo.CORE.includes(x)).length'), 7);
   } finally { a.close(); }

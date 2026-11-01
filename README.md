@@ -47,6 +47,8 @@ Na aba **Progresso**, o **Relatório dos editais** resume a frequência das mat�
 
 O Cronograma também inclui o edital da **DPDF 2026 para Analista de Apoio à Assistência Judiciária – Direito e Legislação** (cargo de servidor, fora do relatório dos editais de Defensor), com o [plano estratégico](plano-dpdf-2026.html) offline vinculado.
 
+O Cronograma também traz o **III Concurso da DPE/RN** pelo regulamento atual (Res. nº 344/2025), com o quadro da prova objetiva (4 grupos de 25 questões) e o programa do Anexo I. O PDF do Diário Oficial perde texto em cada virada de página, e os trechos ausentes ficam marcados. Em **Provas**, a prova da DPE/RN 2015 (Cespe) pode ser resolvida no app com o gabarito definitivo, e o regulamento, o edital, a prova e o gabarito abrem em PDF. Veja [DPE/RN · III Concurso](docs/DPE-RN.md).
+
 A aba **Tribunal** traz o plano de 12 semanas para o **TJPB 2026 (Analista Judiciário – Área Judiciária, FGV)**, com cada bloco ligado ao conteúdo do app, o edital no Cronograma e o [plano estratégico](plano-tjpb-2026.html). O leitor de Lei seca mostra grifos, questões por artigo e jurisprudência da lei seca do curso quando ela é publicada cifrada. Veja [Tribunal de Justiça · TJPB 2026](docs/TRIBUNAL-TJPB.md).
 
 O arquivo interativo [Direitos Humanos · DPESP](direitos-humanos-dpesp.html) separa o núcleo recorrente dos programas, as ampliações do X Concurso e a comparação com o III Concurso da DPE-RN. Ele funciona offline, tem busca, filtros, modo escuro, impressão e checklist salvo apenas no navegador.

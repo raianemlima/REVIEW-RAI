@@ -22,7 +22,7 @@ function ambiente(){
 }
 test('programas incluem todas as rubricas e tópicos com localizador; Português e conteúdo local não dependem do baralho',()=>{
  const a=ambiente();try{
-  const dados=a.run('window.DPE_CONTEUDOS_EDITAIS');assert.equal(Object.keys(dados).length,20);
+  const dados=a.run('window.DPE_CONTEUDOS_EDITAIS');assert.equal(Object.keys(dados).length,21);
   const taxonomia=a.run('window.DPE_DISCIPLINAS_CANONICAS');assert.ok(taxonomia.length>25);
   const nucleo=Array.from(taxonomia.filter(d=>d.nucleoComum).map(d=>d.id));assert.equal(nucleo.length,7);assert.deepEqual(Array.from(a.run('window.__cronogramaCatalogo.CORE')),nucleo);
   const metadados=Array.from(a.run('window.__cronogramaCatalogo.EDITAIS_DPE'));
@@ -33,6 +33,7 @@ test('programas incluem todas as rubricas e tópicos com localizador; Português
   }assert.ok(count>5000);assert.ok(dados['rj-2026'].fonteUrl?.includes('fgv.br'));
   a.change('#crEdital','sc-2026');assert.ok([...a.d.querySelectorAll('[data-cr-subject]')].some(f=>f.parentElement.textContent.includes('PORTUGUESA')));assert.equal(a.d.querySelectorAll('[data-cr-subject]').length,dados['sc-2026'].disciplinas.length);
   assert.ok(a.d.querySelectorAll('[data-cr-topico]').length>300);
+  a.change('#crEdital','rn-2025');assert.equal(a.d.querySelectorAll('[data-cr-subject]').length,12);assert.ok(a.d.querySelectorAll('[data-cr-topico]').length>150);
  }finally{a.close();}
 });
 test('agenda semanal gira disciplinas e assuntos e conserva horas, sem repetir a lista inteira todo dia',()=>{

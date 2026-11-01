@@ -150,12 +150,12 @@ test('salvar e reabrir plano personalizado conserva pesos 60/40 sem regenerá-lo
   } finally { a.close(); }
 });
 
-test('os 20 perfis usam IDs existentes e as sugestões de todos os editais fecham 100%', () => {
+test('os 21 perfis usam IDs existentes e as sugestões de todos os editais fecham 100%', () => {
   const a = ambiente();
   try {
     const catalogo = a.run('window.__cronogramaCatalogo');
     const perfis = a.run('window.DPE_PESOS_EDITAIS');
-    assert.equal(Object.keys(perfis).length, 20);
+    assert.equal(Object.keys(perfis).length, 21);
     for (const [id, perfil] of Object.entries(perfis)) {
       const edital = catalogo.EDITAIS_DPE.find(e => e.id === id);
       assert.ok(edital);

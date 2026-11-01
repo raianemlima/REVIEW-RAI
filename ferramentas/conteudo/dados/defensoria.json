@@ -140,6 +140,38 @@
  ],
  "provas": [
   {
+   "orgao": "DPE-RN",
+   "banca": "CSDPE/RN",
+   "ano": 2025,
+   "cargo": "III Concurso · regulamento atual (Res. nº 344/2025, DOE nº 15.871). O PDF do DOE perde texto em cada virada de página.",
+   "links": [
+    {
+     "rotulo": "Regulamento (PDF)",
+     "url": "documentos/dpe-rn/res-344-2025-regulamento-iii-concurso.pdf"
+    }
+   ]
+  },
+  {
+   "orgao": "DPE-RN",
+   "banca": "CESPE/Cebraspe",
+   "ano": 2015,
+   "cargo": "Defensor(a) Público(a) Substituto(a) · II Concurso (também em Resolver no app)",
+   "links": [
+    {
+     "rotulo": "Edital de abertura",
+     "url": "documentos/dpe-rn/dpe-rn-2015-edital-abertura.pdf"
+    },
+    {
+     "rotulo": "Prova objetiva",
+     "url": "documentos/dpe-rn/dpe-rn-2015-prova-objetiva.pdf"
+    },
+    {
+     "rotulo": "Gabarito definitivo",
+     "url": "documentos/dpe-rn/dpe-rn-2015-gabarito-definitivo.pdf"
+    }
+   ]
+  },
+  {
    "orgao": "DPE-PB",
    "banca": "FGV",
    "ano": 2025,
