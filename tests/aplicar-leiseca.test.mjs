@@ -165,3 +165,16 @@ test("a disciplina prefere o nome sem 'processo' (Execução Penal antes de Proc
   await run("node", [script, join(pasta, "index.html")], { env });
   assert.equal((await lerDeck(pasta, senha)).deck.leiseca[0].disc, "ppe", "sem outra opção, aceita a disciplina com 'processo'");
 });
+
+test("o repositório só guarda a lei seca do curso selada: nada em claro em leiseca-cifrada/", async () => {
+  const fs = await import("node:fs"), pasta = join(raiz, "leiseca-cifrada");
+  if (!fs.existsSync(pasta)) return;
+  const arquivos = fs.readdirSync(pasta).sort();
+  for (const f of arquivos) {
+    assert.match(f, /^([a-z0-9-]+-dls\.bin|chave-publica\.txt)$/, `${f} não deveria estar em leiseca-cifrada/`);
+    if (f === "chave-publica.txt") { assert.equal(Buffer.from(fs.readFileSync(join(pasta, f), "utf8").trim(), "base64").length, 32); continue; }
+    const bin = fs.readFileSync(join(pasta, f));
+    assert.equal(bin.subarray(0, 4).toString(), "LSX1", `${f} precisa estar selado com a chave pública`);
+    assert.doesNotMatch(bin.toString("latin1"), /Art\. \d|Decodificad|cpfCnpj|uid:/, `${f} tem texto em claro`);
+  }
+});
