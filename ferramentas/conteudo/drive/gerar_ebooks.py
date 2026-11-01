@@ -12,6 +12,8 @@ META = {
     "tjpb-2026": ("ce-tjpb", "Conteúdo específico · TJPB 2026", "Analista Judiciário – Área Judiciária · assunto por assunto do Edital nº 01/2026, com os trechos do seu material"),
     "df-2026": ("ce-dpdf", "Conteúdo específico · DPDF 2026", "Analista de Apoio à Assistência Judiciária – Direito · assunto por assunto do Edital nº 1/2026, com os trechos do seu material"),
 }
+# disciplinas que não entram no conteúdo específico (Língua Portuguesa: fora por escolha da titular do app)
+FORA = {"lingua_portuguesa"}
 PII = re.compile(r"[\w.+-]+@[\w-]+\.[\w.]+|\b\d{3}\.\d{3}\.\d{3}-\d{2}\b|\buid:|cpfCnpj|Licenciad[oa] para|Baixado por|\(\d{2}\)\s?9?\d{4}-?\d{4}" + "".join("|" + re.escape(n) for n in os.environ.get("OCULTAR", "").split(",") if n.strip()), re.I)   # OCULTAR=nome1,nome2
 
 def norm(s):
@@ -90,7 +92,9 @@ for ed_id, topicos in LIG.items():
     ed = ED[ed_id]
     caps, mapa = [], {}
     por_disc = collections.OrderedDict()
-    for t in topicos: por_disc.setdefault((t["disc"], t["nome"]), []).append(t)
+    for t in topicos:
+        if t["disc"] in FORA: continue
+        por_disc.setdefault((t["disc"], t["nome"]), []).append(t)
     for ci, ((did, nome), ts) in enumerate(por_disc.items()):
         k = 0
         com = sum(1 for t in ts if escolher(t["cands"]))
@@ -121,7 +125,7 @@ for ed_id, topicos in LIG.items():
                 md.append("")
                 md.append(trecho_md(c))
                 md.append("")
-        caps.append({"id": f"c{ci + 1}", "t": titulo_cap(nome), "md": "\n".join(md).strip() + "\n"})
+        caps.append({"id": did, "t": titulo_cap(nome), "md": "\n".join(md).strip() + "\n"})
     ebook = {"id": eid, "titulo": titulo, "subtitulo": sub, "disc": "", "grupo": "Conteúdo específico", "edital": ed_id,
              "atualizado": datetime.date.today().isoformat(), "caps": caps, "mapa": mapa}
     json.dump(ebook, open(os.path.join(pasta, eid + ".json"), "w", encoding="utf-8"), ensure_ascii=False)
