@@ -84,3 +84,11 @@ test('com o conteúdo real de teses e provas, a ligação semanal é rápida e n
   if(prova){a.run(`(${'()=>{}'})`);const el=[...a.d.querySelectorAll('#crSemana [data-cr-ir]')].find(x=>JSON.parse(x.dataset.crIr).v==='prova');el.click();assert.equal(a.run('S.tab'),'prova');assert.equal(a.run('S.pvId'),prova.id);}
  }finally{a.close();}
 });
+test('lei citada no edital sempre aparece, mesmo quando o assunto cita muitas leis (até 12)',()=>{
+ const src=readFileSync(new URL('../arquivos/cronograma-motor.js',import.meta.url),'utf8'),window={};vm.runInNewContext(src,{window});const m=window.DPE_CRONOGRAMA_MOTOR;
+ const nums=['12850','9807','13431','14344','9613','8072','9455','13869','9296','7716'];
+ const leiseca=nums.map(n=>({id:'l'+n,nome:`Lei nº ${n.slice(0,-3)}.${n.slice(-3)}/2000 · Lei ${n}`,curto:'Lei '+n,grupos:[{itens:[{a:'1',x:'Art. 1º Texto.'}]}]}));
+ const r=m.relacionarConteudo({cartoes:[],leiseca},{titulo:'Legislação penal especial.',texto:'',leis:nums.map(n=>`Lei nº ${n.slice(0,-3)}.${n.slice(-3)}/2000`),juris:[],discIds:[],discNomes:[]},4);
+ assert.equal(r.lei.total,10);assert.equal(r.lei.itens.length,10,'as 10 leis citadas aparecem, não só as 4 primeiras');
+ assert.ok(r.lei.itens.every(x=>x.motivo==='lei citada no edital'));
+});

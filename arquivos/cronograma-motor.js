@@ -174,7 +174,9 @@
       if (aceita({ ...a, tit: b.tit }, q, discOk)) questoes.push({ fonte: 'prova', k: it.P.id + ':' + it.q.n, s: pontos(a, discOk) + (it.q.gabarito === 'X' ? -20 : 0), item: it.q, prova: it.P, motivo: a.ref ? 'referência citada' : a.lei ? 'mesma lei' : 'mesmo assunto' });
     }
     const g = (l) => ({ total: l.length, itens: top(l).slice(0, limite) });
-    return { tema: g(tema), lei: g(lei), juris: g(juris), questoes: g(questoes), termos: q.tit.slice(0, 4), assunto: titulo.trim().replace(/[.;:,]+$/, ''), leisCitadas: q.nums, total: tema.length + lei.length + juris.length + questoes.length };
+    // lei que o próprio edital cita sempre aparece (até 12), antes das sugestões por assunto; o limite vale para o resto
+    const gLei = (l) => { const t = top(l), cit = t.filter(x => x.motivo === 'lei citada no edital').slice(0, 12); return { total: l.length, itens: [...cit, ...t.filter(x => !cit.includes(x))].slice(0, Math.max(limite, cit.length)) }; };
+    return { tema: g(tema), lei: gLei(lei), juris: g(juris), questoes: g(questoes), termos: q.tit.slice(0, 4), assunto: titulo.trim().replace(/[.;:,]+$/, ''), leisCitadas: q.nums, total: tema.length + lei.length + juris.length + questoes.length };
   }
   root.DPE_CRONOGRAMA_MOTOR = { gerarAgenda, obterDisciplinas, chaveTopico, materiais, relacionarConteudo };
 })(typeof window !== 'undefined' ? window : globalThis);
