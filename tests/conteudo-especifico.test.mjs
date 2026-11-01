@@ -73,12 +73,12 @@ test("aplicar_ebooks sem senha, sem e-books ou com .bin de outra chave não mexe
 
 test("os e-books de conteúdo específico do repositório estão selados (sem texto legível do material)", () => {
   const pasta = join(raiz, "conteudo-cifrado"), bins = readdirSync(pasta).filter(f => f.endsWith(".bin")).sort();
-  assert.deepEqual(bins, ["ce-dpdf.bin", "ce-dpe-rn.bin", "ce-tjpb.bin"]);
+  assert.deepEqual(bins, ["ce-dpdf.bin", "ce-dpe-rn.bin", "ce-tjpb.bin", "cp-iuris-direito-constitucional.bin", "cp-iuris-direito-processual-penal.bin"]);
   for (const f of bins) {
     const buf = readFileSync(join(pasta, f));
     assert.ok(ehSelado(buf), `${f} selado (LSX1)`);
     const txt = buf.toString("latin1");
-    for (const w of ["Trecho", "Edital", "CP Iuris", "Reta Final", "Direito"]) assert.ok(!txt.includes(w), `${f} não pode ter "${w}" legível`);
+    for (const w of ["Trecho", "Edital", "CP Iuris", "Reta Final", "Direito", "Constitu", "Processo", "Capítulo"]) assert.ok(!txt.includes(w), `${f} não pode ter "${w}" legível`);
   }
   assert.match(readFileSync(join(raiz, ".github/workflows/pages.yml"), "utf8"), /aplicar_ebooks\.mjs _site\/index\.html/);
 });
