@@ -32,8 +32,14 @@ Dois layouts, lidos por `fgv.secoes()`: tabela em colunas (números e depois let
 
 O número de cada questão é reconhecido pelo negrito: um "2" solto no meio do texto, quebrado em linha própria, não abre uma questão nova.
 
+## Gabarito definitivo: como é decidido
+
+O lote da FGV aceita qualquer arquivo de gabarito da página do concurso e decide por nome e capa: vale o que diz "definitivo" ou "oficial" (no nome ou na capa) e **nunca** o que a capa chama de "preliminar". Arquivos `gabaritos-para-publicacao` sem marcação na capa não entram (podem ser preliminares). Quando um caderno e outro casam com a mesma seção do gabarito (ex.: MPMT "Promotor" e "Promotor - Grupo 1"), fica o que não tem especialização a mais. A sigla do órgão no cabeçalho ("do MPMT") é ignorada no casamento.
+
 ## Ainda não coberto
 
-- Gabaritos em outro layout (MPRJ, MPU) e concursos cuja página não lista os cadernos (TJRN 2023, TJAM, TJMG, TJRJ).
-- MPSC 2023 e MPGO (Cebraspe): itens Certo/Errado sem separação por disciplina.
-- Concursos de MP organizados por outras bancas (MPSP, MPMG e outros) e de juiz fora da FGV/Cebraspe (TJSP e TJMG, por exemplo).
+- **Só tem gabarito preliminar publicado** (não entram até sair o definitivo): TJMS XI 2025, MPGO 2025, MPRJ promotor 2026, TJSC servidor 2026, TJPE juiz 2026 (capa sem marcação), TJMS juiz 2023.
+- **Gabarito em tabela diferente:** TJPR 2021 (edital assinado com quadro por tipo), MPRJ e MPU.
+- **Página sem os cadernos:** TJRN 2023, TJAM, TJMG 2021, TJRJ, TJPB 2026 (gabarito ainda não saiu).
+- **Bancas que bloqueiam acesso automatizado ou não publicam o PDF em link direto:** Vunesp (TJSP, MPSP; 403), Consulplan/EJEF (TJMG 2026) e as páginas dos próprios tribunais. Para esses, baixe os PDFs manualmente e use o extrator da FGV/Cebraspe como base.
+- **MPSC 2023 e MPGO (Cebraspe):** itens Certo/Errado sem separação por disciplina.
