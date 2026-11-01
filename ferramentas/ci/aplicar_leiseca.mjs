@@ -84,14 +84,17 @@ function disciplina(ref) {
 const FONTE_CARTAO = "secundária: elaborado a partir do texto legal e dos grifos do curso; confira a redação vigente";
 deck.leiseca ||= []; deck.cartoes ||= [];
 let nLeis = 0, nCartoes = 0;
+const novas = [];
 for (const lei of leis) {
   const disc = disciplina(lei.disc);
   if (!disc) console.log(`::warning::${lei.id}: disciplina ${lei.disc} não existe no baralho; a lei entra sem disciplina e sem cartões.`);
   const item = { id: lei.id, nome: lei.nome, curto: lei.curto, disc, fonte: lei.fonte, completa: !!lei.completa, grupos: lei.grupos };
-  // a versão completa (ex.: a do curso) tira do leitor a seleção antiga da mesma lei; os cartões da seleção ficam
-  for (const velho of lei.substitui || []) deck.leiseca = deck.leiseca.filter(x => x.id !== velho);
-  const pos = deck.leiseca.findIndex(x => x.id === lei.id);
-  if (pos >= 0) deck.leiseca[pos] = item; else deck.leiseca.push(item);
+  // a versão completa (ex.: a do curso) entra no lugar da seleção antiga da mesma lei; os cartões da seleção ficam.
+  // Lei que já estava no baralho fica onde estava; lei nova vai para o fim, em ordem alfabética (abaixo).
+  let pos = deck.leiseca.findIndex(x => x.id === lei.id || (lei.substitui || []).includes(x.id));
+  deck.leiseca = deck.leiseca.filter((x, i) => i === pos || !(x.id === lei.id || (lei.substitui || []).includes(x.id)));
+  if (pos >= 0) { pos = deck.leiseca.findIndex(x => x.id === lei.id || (lei.substitui || []).includes(x.id)); deck.leiseca[pos] = item; }
+  else novas.push(item);
   nLeis++;
   const prefixo = `ls-${lei.id}`;
   deck.cartoes = deck.cartoes.filter(c => !String(c.id).startsWith(prefixo));
@@ -105,6 +108,7 @@ for (const lei of leis) {
     nCartoes++;
   }
 }
+deck.leiseca.push(...novas.sort((a, b) => String(a.curto).localeCompare(String(b.curto), "pt", { numeric: true })));
 // marcação colorida automática em toda lei seca do baralho que não tem os grifos do curso
 let nMarcadas = 0;
 for (const lei of deck.leiseca) if (!(lei.grupos || []).some(g => (g.itens || []).some(i => i.g))) nMarcadas += marcarLei(lei) ? 1 : 0;
