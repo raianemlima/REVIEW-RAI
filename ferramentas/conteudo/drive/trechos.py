@@ -140,6 +140,15 @@ def outros_de(nome):
     if m: return f"CERS · Carreiras Jurídicas · Direito Processual Penal – cap. {m.group(1)} (2021)", ["pp"]
     m = re.search(r"cjconstitucionalcap(\d+)", nome)
     if m: return f"CERS · Carreiras Jurídicas · Direito Constitucional – cap. {m.group(1)} (2021)", ["const"]
+    m = re.search(r"direito-(constitucional|processual-penal)-(.+?)-(?:dpe-)?full", nome)
+    if m:
+        tema = m.group(2).replace("-", " ")
+        for a, b in (("prisao", "prisão"), ("nocoes introdutorias", "noções introdutórias"), ("especies", "espécies"),
+                     ("custodia", "custódia"), ("obtencao", "obtenção"), ("inquerito", "inquérito"), ("acao", "ação"),
+                     ("sentenca", "sentença"), ("meios extraordinarios", "meios extraordinários"), ("temporaria", "temporária"), ("policial juiz", "policial e juiz"), ("especies", "espécie")):
+            tema = tema.replace(a, b)
+        disc = "Direito Constitucional" if m.group(1) == "constitucional" else "Direito Processual Penal"
+        return f"Themas · DPE Full · {disc} – {tema[:1].upper() + tema[1:]} (2022)", ["const" if m.group(1) == "constitucional" else "pp"]
     for k, t in AULAS_PP:
         if k in nome: return f"Curso Carreiras Jurídicas (2021) · Processo Penal – {t}", ["pp"]
     return None, None
