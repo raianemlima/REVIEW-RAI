@@ -57,7 +57,7 @@ test("o perfil de pontos soma 119, respeita os blocos e casa cada grupo com uma 
 
 test("o validador aceita cargo e plano somente nos formatos previstos", () => {
   const base = catalogos();
-  assert.equal(validarCatalogoConteudo(base).editais, 20);
+  assert.equal(validarCatalogoConteudo(base).editais, 21);
   const copia = () => JSON.parse(JSON.stringify(base));
   for (const [campo, valor] of [["cargo", "estagiario"], ["plano", "https://exemplo.invalid/x.html"], ["plano", "../plano.html"], ["plano", "plano.js"]]) {
     const c = copia();

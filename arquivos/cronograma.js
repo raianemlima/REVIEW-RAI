@@ -12,6 +12,8 @@
   // e o Edital nº 1 – DPDF/2026 (servidor: Analista de Apoio à Assistência Judiciária – Direito e Legislação),
   // identificado como cargo de servidor e excluído do relatório de frequência dos editais de Defensor.
   // O Edital nº 01/2026 – TJPB (Analista Judiciário – Área Judiciária) segue a mesma regra de servidor.
+  // O III Concurso da DPE/RN entra pelo regulamento (Res. nº 344/2025), ainda sem edital: fica no Cronograma e fora do
+  // relatório de frequência (relatorio: false) enquanto o programa recebido estiver incompleto.
   // Provas discursivas isoladas, caderno de prova, outros concursos de servidores e edital de 2014 ficaram fora.
   const EDITAIS_DPE = [
     ["ac-2024","AC",2024,"DPE/AC · VI Concurso"],
@@ -25,6 +27,7 @@
     ["mt-2025","MT",2025,"DPE/MT · VII Concurso"],
     ["pe-2025","PE",2025,"DPE/PE · IV Concurso"],
     ["rj-2026","RJ",2026,"DPE/RJ · XXIX Concurso"],
+    ["rn-2025","RN",2025,"DPE/RN · III Concurso · Regulamento (Res. 344/2025)"],
     ["ro-2022","RO",2022,"DPE/RO · Edital 01/2022"],
     ["rs-2025","RS",2025,"DPE/RS · VII Concurso"],
     ["sc-2024","SC",2024,"DPE/SC · Concurso 01/2024"],

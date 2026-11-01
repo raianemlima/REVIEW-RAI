@@ -1721,5 +1721,53 @@ window.DPE_PESOS_EDITAIS = {
       }
     ],
     "nota": "Cargo de servidor (Analista Judiciário – Área Judiciária). A prova objetiva tem 60 questões de 1 ponto: 20 de Conhecimentos Gerais (Português 10, Ética e Gestão 5, Informática e Proteção de Dados 5) e 40 de Conhecimentos Específicos (item 10.8.3). O edital não divide as 40 específicas entre as sete disciplinas; aqui cada uma recebe 5.71 (divisão igual), o que orienta TEMPO e não é peso de aprovação. Aprovação na objetiva com 60% do total, sem mínimo por módulo (item 10.12); desempate pela maior nota nos Específicos (item 13.1). A discursiva (estudo de caso de 30 linhas, 40 pontos, itens 10.7 e 12.1) não foi somada."
+  },
+  "rn-2025": {
+    "fonte": "Resolução nº 344/2025 do CSDPE/RN (DOE nº 15.871, 15/03/2025), Anexo I · III Concurso de Defensor Público do RN",
+    "tipo": "grupos",
+    "grupos": [
+      {
+        "label": "Grupo I: Direito Constitucional, Direito Administrativo e Princípios Institucionais da Defensoria Pública",
+        "valor": 25,
+        "subjects": [
+          "direito_constitucional",
+          "direito_administrativo",
+          "direito_institucional_defensoria_publica"
+        ],
+        "evidencia": "Res. nº 344/2025, quadro da prova objetiva (p. 5 do DOE nº 15.871, antes do art. 43): Grupo I, 25 questões."
+      },
+      {
+        "label": "Grupo II: Direito Penal, Direito Processual Penal e Execução Penal",
+        "valor": 25,
+        "subjects": [
+          "direito_penal",
+          "legislacao_penal_extravagante",
+          "direito_processual_penal",
+          "execucao_penal"
+        ],
+        "evidencia": "Res. nº 344/2025, quadro da prova objetiva (p. 5 do DOE nº 15.871, antes do art. 43): Grupo II, 25 questões."
+      },
+      {
+        "label": "Grupo III: Direito Civil, Direito Processual Civil e Direito do Consumidor",
+        "valor": 25,
+        "subjects": [
+          "direito_civil",
+          "direito_processual_civil",
+          "direito_do_consumidor"
+        ],
+        "evidencia": "Res. nº 344/2025, quadro da prova objetiva (p. 5 do DOE nº 15.871, antes do art. 43): Grupo III, 25 questões."
+      },
+      {
+        "label": "Grupo IV: Direitos Humanos, Direitos Difusos e Coletivos e Direito da Criança e do Adolescente",
+        "valor": 25,
+        "subjects": [
+          "direitos_humanos",
+          "direitos_difusos_e_coletivos",
+          "direito_da_crianca_e_adolescente"
+        ],
+        "evidencia": "Res. nº 344/2025, quadro da prova objetiva (p. 5 do DOE nº 15.871, antes do art. 43): Grupo IV, 25 questões."
+      }
+    ],
+    "nota": "Distribuição da prova objetiva do III Concurso (Res. nº 344/2025): 100 questões em 4 grupos de 25, sem divisão por disciplina dentro do grupo. Reservar 25% do tempo a cada grupo e repartir entre as disciplinas listadas é hipótese de tempo, não peso oficial individual. Habilitação para a discursiva com 60% da nota global e até a 400ª posição (art. 43). Discursivas, peças, prova oral e títulos não foram somados. O edital do Cebraspe pode ajustar o quadro."
   }
 };

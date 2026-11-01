@@ -1,0 +1,1309 @@
+{
+ "id": "dpe-rn-2015",
+ "nome": "DPE-RN 2015",
+ "cargo": "Defensor(a) Público(a) Substituto(a) · II Concurso",
+ "banca": "CESPE/Cebraspe",
+ "gabarito": "definitivo",
+ "questoes": [
+  {
+   "n": 1,
+   "materia": "Direito Constitucional",
+   "enunciado": "A respeito da classificação e das concepções de Constituição, do conteúdo do direito constitucional e das normas constitucionais, assinale a opção correta.",
+   "alternativas": {
+    "A": "Consoante Hans Kelsen, a concepção jurídica de Constituição a concebe como a norma por meio da qual é regulada a produção das normas jurídicas gerais, podendo ser produzida, inclusive, pelo direito consuetudinário.",
+    "B": "No que tange ao conteúdo do direito constitucional e a seus aspectos multifacetários, denomina-se direito constitucional comunitário o conjunto de normas e princípios que disciplinam as relações entre os preceitos de Estados estrangeiros e as normas constitucionais de determinado país.",
+    "C": "As Constituições rígidas, também denominadas Constituições fixas, são aquelas que só podem ser modificadas por um poder de competência idêntico àquele que as criou.",
+    "D": "O preâmbulo da CF possui caráter dispositivo.",
+    "E": "De acordo com a concepção de Constituição trazida por Konrad Hesse, a força condicionante da realidade e a normatividade da Constituição são independentes. Nesse sentido, a Constituição real e a Constituição jurídica devem apresentar-se de forma autônoma."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 2,
+   "materia": "Direito Constitucional",
+   "enunciado": "Com relação ao poder constituinte, assinale a opção correta.",
+   "alternativas": {
+    "A": "Tendo em vista os limites autônomos ao poder constituinte derivado decorrente, devem as Constituições estaduais observar os princípios constitucionais extensíveis, tais como aqueles relativos ao processo legislativo.",
+    "B": "A mutação constitucional é fruto do poder constituinte derivado reformador.",
+    "C": "De acordo com a CF, em razão das limitações procedimentais impostas ao poder constituinte derivado reformador, é de iniciativa privativa do presidente da República proposta de emenda à CF que disponha sobre o regime jurídico dos servidores públicos do Poder Executivo federal.",
+    "D": "Ao poder constituinte originário esgota-se quando se edita uma nova Constituição.",
+    "E": "Para a legitimidade formal de uma nova Constituição, exige-se que o poder constituinte siga um procedimento padrão, com disposições predeterminadas."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 3,
+   "materia": "Direito Constitucional",
+   "enunciado": "Acerca da distinção entre princípios e regras, do princípio da proibição do retrocesso social, da reserva do possível e da eficácia dos direitos fundamentais, assinale a opção correta.",
+   "alternativas": {
+    "A": "De acordo com entendimento do STF, não é cabível à administração pública invocar o argumento da reserva do possível frente à imposição de obrigação de fazer consistente na promoção de medidas em estabelecimentos prisionais para assegurar aos detentos o respeito à sua integridade física e moral.",
+    "B": "Os direitos fundamentais são também oponíveis às relações privadas, em razão de sua eficácia vertical.",
+    "C": "As colisões entre regras devem ser solucionadas mediante a atribuição de pesos, indicando-se qual regra tem prevalência em face da outra, em determinadas condições.",
+    "D": "Tanto regras quanto princípios são normas, contudo, tão somente as regras podem ser formuladas por meio das expressões deontológicas básicas do dever, da permissão e da proibição.",
+    "E": "O princípio da proibição do retrocesso social constitui mecanismo de controle para coibir ou corrigir medidas restritivas ou supressivas de direitos fundamentais, tais como as liberdades constitucionais."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 4,
+   "materia": "Direito Constitucional",
+   "enunciado": "Em relação a controle de constitucionalidade, assinale a opção correta.",
+   "alternativas": {
+    "A": "Segundo o entendimento do STF, o Conselho Nacional do Ministério Público pode, excepcionalmente, no exercício de suas atribuições de controle da legitimidade dos atos administrativos praticados por membros do MP, afastar a aplicação de norma identificada como inconstitucional.",
+    "B": "Consoante entendimento do STF, em ADI, após a deliberação a respeito do mérito da declaração de inconstitucionalidade e, mesmo já proclamado o resultado final do julgamento, é possível a reabertura do julgamento para fins de deliberação a respeito da modulação dos efeitos da decisão.",
+    "C": "De acordo com alteração constitucional promovida por emenda constitucional, o defensor público-geral federal passou a ser um dos legitimados a propor ADI e a ação declaratória de constitucionalidade.",
+    "D": "A decisão que julgar procedente o pedido em ADPF é irrecorrível, não podendo ser objeto de ação rescisória ou de reclamação contra o seu descumprimento.",
+    "E": "De acordo com entendimento do STF, para admitir-se a revisão ou o cancelamento de súmula vinculante, faz-se necessário demonstrar: a evidente superação da jurisprudência do STF no trato da matéria; a alteração legislativa quanto ao tema; ou, ainda, a modificação substantiva de contexto político, econômico ou social."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 5,
+   "materia": "Direito Constitucional",
+   "enunciado": "A respeito de constitucionalização simbólica, de hermenêutica e de interpretação constitucional, assinale a opção correta.",
+   "alternativas": {
+    "A": "Os conceitos jurídicos indeterminados são expressões de sentido fluido, que podem ser encontradas na Constituição, destinadas a lidar com situações nas quais o constituinte não pôde ou não quis, no relato abstrato do enunciado normativo, especificar de forma detalhada suas hipóteses de incidência. Assim, a atribuição de sentido a essas cláusulas abertas deve dar-se mediante valoração concreta dos elementos da realidade, a partir de um juízo discricionário.",
+    "B": "Da relação entre texto constitucional e realidade constitucional, tem-se, como reflexo da constitucionalização simbólica em sentido negativo, uma ausência generalizada de orientação das expectativas normativas conforme as determinações dos dispositivos da Constituição.",
+    "C": "Como forma básica de manifestação da constitucionalização simbólica, tem-se a constitucionalização-álibi, caracterizada pela presença de dispositivos constitucionais que, sem relevância normativo-jurídica, confirmam as crenças e o modus vivendi de determinados grupos.",
+    "D": "A hermenêutica filosófica de matriz gadameriana assemelha-se à hermenêutica clássica, na medida em que trabalha com a atribuição de sentido às normas.",
+    "E": "Casos difíceis são aqueles que não têm uma solução abstratamente prevista e pronta na Constituição, devendo o intérprete, para tanto, valer-se da subsunção."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 6,
+   "materia": "Direito Constitucional",
+   "enunciado": "No tocante à jurisdição constitucional dos TJs estaduais, assinale a opção correta de acordo com a jurisprudência do STF.",
+   "alternativas": {
+    "A": "Pela técnica da remissão normativa, a Constituição estadual pode incorporar o conteúdo de normas da CF, podendo os preceitos constitucionais estaduais de remissão servir de parâmetro no controle abstrato de normas de âmbito estadual.",
+    "B": "Não será exigido o requisito da pertinência temática para qualquer dos legitimados ao controle abstrato de constitucionalidade estadual, salvo se a Constituição estadual contemplar expressamente essa exigência.",
+    "C": "Se o autor de representação de inconstitucionalidade estadual invocar como parâmetro de controle norma da Constituição estadual incompatível com a CF, o TJ deverá, mesmo assim, julgar a ação, ainda que em face desse parâmetro local, não lhe sendo admitido controlar incidentalmente a constitucionalidade dessa norma constitucional estadual em face da CF.",
+    "D": "A decisão de TJ que, em ação direta, declarar inconstitucional lei estadual somente terá eficácia contra todos após a assembleia legislativa do respectivo estado suspender a execução do referido ato normativo.",
+    "E": "Cabe aos estados instituir a representação de inconstitucionalidade de leis ou de atos normativos estaduais ou municipais em face da Constituição estadual, vedada a instituição de ADI por omissão."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 7,
+   "materia": "Direito Constitucional",
+   "enunciado": "Com relação ao regime constitucional das imunidades parlamentares, assinale a opção correta.",
+   "alternativas": {
+    "A": "Para que incida a inviolabilidade do vereador, é necessário que suas opiniões, palavras e votos sejam expressos na circunscrição do município em que ele exerça seu mandato, não se exigindo a demonstração de conexão com o efetivo exercício da vereança.",
+    "B": "Deputados distritais desfrutam de imunidade formal apenas quanto aos fatos de competência da justiça local.",
+    "C": "Não perderá o foro por prerrogativa de função o parlamentar federal que estiver licenciado para exercer cargo de ministro de Estado.",
+    "D": "Vereadores não poderão ser presos desde a expedição do diploma, salvo em caso de flagrante de crime inafiançável cometido fora da circunscrição do município em que forem eleitos.",
+    "E": "Enquanto deputados federais e senadores compartilham de um regime de imunidades abrangente tanto da chamada inviolabilidade como da imunidade formal, deputados estaduais e vereadores são detentores tão somente da inviolabilidade."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 8,
+   "materia": "Direito Constitucional",
+   "enunciado": "Assinale a opção correta acerca do perfil constitucional do Estado federal brasileiro.",
+   "alternativas": {
+    "A": "Os territórios federais, quando criados, elegerão um senador para integrar o Congresso Nacional.",
+    "B": "No tocante às competências legislativas concorrentes, a superveniência de norma suplementar específica proveniente de ente federativo local suspenderá de pronto a eficácia de lei federal sobre normas gerais, no que esta lhe for contrária.",
+    "C": "A CF não poderá ser emendada na vigência de intervenção federal, salvo por iniciativa de mais da metade das assembleias legislativas das unidades da Federação, manifestando-se, cada uma delas, pela maioria relativa de seus membros.",
+    "D": "Por não integrarem a Federação, municípios podem ter sua autonomia político-constitucional suprimida por emenda à CF.",
+    "E": "A despeito de a CF fixar os números mínimo e máximo de deputados federais por unidade da Federação, é ao Congresso Nacional que cabe, dentro dessa margem, fixar o efetivo número desses parlamentares por estado e pelo DF, mediante a edição de lei complementar, sem possibilidade de delegação de tal tarefa a outro órgão estatal."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 9,
+   "materia": "Direito Constitucional",
+   "enunciado": "A respeito do estatuto constitucional das leis orgânicas dos municípios, assinale a opção correta.",
+   "alternativas": {
+    "A": "A lei orgânica municipal será aprovada por dois terços dos membros da câmara municipal, após dois turnos de discussão e votação, podendo ser declarada constitucional ou inconstitucional, em abstrato, tanto pelo TJ do respectivo estado quanto pelo STF.",
+    "B": "A lei orgânica municipal definirá as situações em que a autoridade local gozará de foro por prerrogativa de função no TJ do respectivo estado-membro.",
+    "C": "Lei orgânica municipal, por seu caráter hierárquico-normativo superior no âmbito local, pode servir de parâmetro no controle abstrato de constitucionalidade estadual.",
+    "D": "Como consequência do seu caráter subordinante em relação às leis orgânicas dos municípios localizados no respectivo estado-membro, podem as Constituições estaduais estabelecer limites à auto-organização municipal não previstos na CF.",
+    "E": "Na condição de lei fundamental do ente municipal, a lei orgânica pode inovar em matéria de direitos básicos do funcionalismo público local, devendo tais direitos ser necessariamente observados pelas leis ordinárias municipais regulamentadoras."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 10,
+   "materia": "Direito Constitucional",
+   "enunciado": "No que diz respeito à disciplina constitucional da autonomia financeira, aos poderes e aos órgãos públicos, assinale a opção correta.",
+   "alternativas": {
+    "A": "Lei de iniciativa exclusiva do Poder Executivo poderá restringir a execução orçamentária do Poder Judiciário, mesmo no tocante às despesas amparadas na LDO e na LOA.",
+    "B": "Ao elaborar sua proposta orçamentária, deve o MP ater-se aos limites estabelecidos na LDO, não sendo dado ao chefe do Poder Executivo estadual interferir nessa proposta, ressalvada a possibilidade de pleitear a sua redução ao respectivo parlamento.",
+    "C": "Por exercer função constitucional autônoma e contar com fisionomia institucional própria, o MP junto aos TCs tem assegurada a garantia institucional da autonomia financeira nos mesmos moldes consagrados ao MP comum.",
+    "D": "Em razão do seu caráter de auxiliar do respectivo Poder Legislativo, os TCs estaduais não gozam de autonomia financeira, ficando a sua proposta orçamentária condicionada à proposição daquele poder.",
+    "E": "A despeito da autonomia financeira das DPs, sua proposta orçamentária deve estar atrelada à proposta do respectivo Poder Executivo, como uma subdivisão desta, tendo em vista especialmente a circunstância de as DPs, não constituindo um poder autônomo e independente, atuarem no exercício de função executiva."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 11,
+   "materia": "Direito Constitucional",
+   "enunciado": "Assinale a opção correta acerca do regime constitucional dos gastos públicos.",
+   "alternativas": {
+    "A": "A existência de prévia autorização legislativa é requisito suficiente para a abertura de crédito suplementar ou especial.",
+    "B": "A transposição, o remanejamento ou a transferência de recursos de uma categoria de programação para outra ou de um órgão para outro não depende de prévia autorização legislativa.",
+    "C": "A instituição de fundos de qualquer natureza pode ser autorizada por decreto do Poder Executivo, circunstância em que tal ato terá a natureza de decreto autônomo.",
+    "D": "Para se iniciar investimento cuja execução ultrapasse um exercício financeiro, basta que esse investimento esteja previsto na LOA do primeiro exercício financeiro de sua execução.",
+    "E": "O início de programas e projetos governamentais não será possível sem a inclusão deles na LOA."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 12,
+   "materia": "Direito Constitucional",
+   "enunciado": "Assinale a opção correta em relação aos direitos fundamentais e aos conflitos que podem ocorrer entre eles.",
+   "alternativas": {
+    "A": "A proibição do excesso e da proteção insuficiente são institutos jurídicos ligados ao princípio da proporcionalidade utilizados pelo STF como instrumentos jurídicos controladores da atividade legislativa.",
+    "B": "Sob pena de colisão com o direito à liberdade de pensamento e consciência, o STF entende que a autorização estatutária genérica conferida à associação é suficiente para legitimar a sua atuação em juízo na defesa de direitos de seus filiados.",
+    "C": "Como tentativa de evitar a ocorrência de conflito, a legislação brasileira tem imposto regras que impedem o exercício cumulado de diferentes direitos fundamentais.",
+    "D": "Os direitos fundamentais poderão ser limitados quando conflitarem com outros direitos ou interesses, não havendo restrição a tais limitações.",
+    "E": "A garantia de proteção do núcleo essencial dos direitos fundamentais está ligada à própria validade do direito, mas não guarda relação com a sua eficácia no caso concreto."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 13,
+   "materia": "Direito Constitucional",
+   "enunciado": "Com referência aos direitos fundamentais em espécie, assinale a opção correta com base no entendimento do STF acerca desse tópico.",
+   "alternativas": {
+    "A": "A inviolabilidade domiciliar refere-se à residência que o indivíduo ocupa com intenção de moradia definitiva, mas não alcança seu escritório profissional ou outro local de trabalho.",
+    "B": "A determinação de foro justificada por prerrogativa de função, ainda que instituída exclusivamente por Constituição estadual, prevalece sobre a competência do tribunal de júri.",
+    "C": "Por ferir o direito à privacidade, é ilegítima a publicação, em qualquer tipo de veículo, dos nomes de servidores da administração pública e do valor dos vencimentos e vantagens pecuniárias por eles recebidos.",
+    "D": "O Estado brasileiro reconhece que a família tem como base a união entre o homem e a mulher, fato que exclui a união de pessoas do mesmo sexo do âmbito da proteção estatal.",
+    "E": "Salvo quando envolver criança e(ou) adolescente, os direitos à reunião e à livre manifestação do pensamento podem ser exercidos mesmo quando praticados para defender a legalização de drogas."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 14,
+   "materia": "Direito Constitucional",
+   "enunciado": "Assinale a opção correta quanto à proteção judicial e não judicial dos direitos fundamentais.",
+   "alternativas": {
+    "A": "O STF concluiu não ser o habeas corpus instrumento adequado para impugnar ato emitidos por um de seus ministros.",
+    "B": "O habeas data assegura o conhecimento de informações relativas à pessoa do impetrante, constantes de registros ou bancos de dados de entidades governamentais ou de caráter público. Para o STF, a expressão “entidades de caráter público” refere-se a organismos públicos, integrantes da administração pública.",
+    "C": "A objeção de consciência ao serviço militar e a greve política são exemplos do direito de resistência explícito, que é abrigado pela CF.",
+    "D": "Mesmo se esgotado o prazo para oferecimento de denúncia pelo MP nos casos de ação pública, é vedado ao particular utilizar o direito de petição de forma a oferecer, em substituição ao parquet, acusação formal a juízo criminal.",
+    "E": "A turma recursal dos juizados especiais é competente para processar e julgar habeas corpus contra atos de magistrados dos juizados especiais criminais."
+   },
+   "gabarito": "X"
+  },
+  {
+   "n": 15,
+   "materia": "Direito Constitucional",
+   "enunciado": "No que diz respeito aos direitos sociais, à intervenção judicial na implementação de políticas públicas e ao mínimo existencial, assinale a opção correta.",
+   "alternativas": {
+    "A": "Ocorre o fenômeno conhecido como judicialização da política quando o Poder Judiciário, ao interpretar uma norma, ampliar o seu sentido para abarcar situações aparentemente por ela não previstas.",
+    "B": "O transporte e a felicidade são direitos fundamentais sociais assegurados pelo Estado a todo cidadão brasileiro como garantia individual.",
+    "C": "Para o STF, a tese da reserva do mínimo possível é aplicável apenas se restar comprovada a real falta de recursos orçamentários pelo poder público, pois não é admissível como justificativa genérica para eventual omissão estatal na efetivação dos direitos fundamentais.",
+    "D": "Uma decisão judicial que ordenasse à administração pública a execução de obras emergenciais em um estabelecimento prisional, necessárias para a garantia da integridade física dos detentos, seria uma afronta ao princípio da separação dos poderes, segundo entendimento do STF.",
+    "E": "O direito ao mínimo existencial, no tocante aos direitos fundamentais, está vinculado às condições estritamente necessárias para a manutenção da vida dos indivíduos."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 16,
+   "materia": "Direito Constitucional",
+   "enunciado": "Acerca dos tratados internacionais de direitos humanos, do ADCT e dos direitos de nacionalidade e de cidadania, assinale a opção correta.",
+   "alternativas": {
+    "A": "A nacionalidade de brasileiros naturalizados perdida por sentença judicial devido ao exercício de atividade nociva ao interesse nacional pode ser readquirida mediante novo procedimento de naturalização.",
+    "B": "Os pagamentos devidos pela fazenda pública em virtude de sentença judicial far-se-ão mediante precatório, salvo quando forem pertinentes a obrigações definidas em lei como de pequeno valor. Caso não haja lei específica do ente da Federação, considerar-se-ão como de pequeno valor os débitos ou obrigações da fazenda pública estadual que tenham valor igual ou inferior a quarenta salários mínimos.",
+    "C": "O número de DPs estaduais na unidade jurisdicional deve ser proporcional ao número de processos judiciais em trâmite na comarca em questão.",
+    "D": "Segundo o STF, os tratados internacionais referentes aos direitos humanos têm status de norma constitucional, independentemente do seu eventual quorum de aprovação.",
+    "E": "Embora possa filiar-se a partido político, o militar em serviço na ativa não é elegível."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 17,
+   "materia": "Direito Administrativo",
+   "enunciado": "Com relação aos poderes da administração pública e aos poderes e deveres dos administradores públicos, assinale a opção correta.",
+   "alternativas": {
+    "A": "A cobrança de multa constitui exemplo de exceção à autoexecutoriedade do poder de polícia, razão por que o pagamento da multa cobrada não pode se configurar como condição legal para que a administração pública pratique outro ato em favor do interessado.",
+    "B": "A autorização administrativa consiste em ato administrativo vinculado e definitivo segundo o qual a administração pública, no exercício do poder de polícia, confere ao interessado consentimento para o desempenho de certa atividade.",
+    "C": "O desvio de finalidade é a modalidade de abuso de poder em que o agente público atua fora dos limites de sua competência, invadindo atribuições cometidas a outro agente.",
+    "D": "No exercício do poder regulamentar, é conferida à administração pública a prerrogativa de editar atos gerais para complementar a lei, em conformidade com seu conteúdo e limites, não podendo ela, portanto, criar direitos e impor obrigações, salvo as excepcionais hipóteses autorizativas de edição de decreto autônomo.",
+    "E": "Decorre do sistema hierárquico existente na administração pública o poder de delegação, segundo o qual pode o superior hierárquico, de forma irrestrita, transferir atribuições de um órgão a outro no aparelho administrativo."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 18,
+   "materia": "Direito Administrativo",
+   "enunciado": "Com referência à administração pública direta e indireta e à sua organização, assinale a opção correta.",
+   "alternativas": {
+    "A": "As empresas públicas e a sociedade de economia mista, entidades da administração indireta com natureza jurídica de direito privado, devem constituir-se sob a forma jurídica de sociedade anônima.",
+    "B": "Por meio da descentralização, o Estado transfere a titularidade de certas atividades que lhe são próprias a particulares ou a pessoas jurídicas que institui para tal fim.",
+    "C": "Segundo a doutrina, pertinente à posição dos órgãos estatais, os órgãos superiores seriam aqueles situados na cúpula da administração, diretamente subordinados à chefia dos órgãos independentes, gozando de autonomia administrativa, técnica e financeira.",
+    "D": "Mediante contrato a ser firmado entre administradores e o poder público, tendo por objeto a fixação de metas de desempenho para órgão ou entidade, a autonomia gerencial, orçamentária e financeira dos órgãos e entidades da administração direta e indireta poderá ser ampliada.",
+    "E": "Como pessoas jurídicas de direito público instituídas por lei, às quais são transferidas atividades próprias da administração pública, as autarquias se submetem ao controle hierárquico da administração direta."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 19,
+   "materia": "Direito Administrativo",
+   "enunciado": "Acerca dos serviços sociais autônomos, assinale a opção correta.",
+   "alternativas": {
+    "A": "Segundo entendimento jurisprudencial consolidado no âmbito do STF, os serviços sociais autônomos integrantes do denominado Sistema S estão submetidos à exigência de concurso público para a contratação de pessoal, nos moldes do que prevê a CF para a investidura em cargo ou emprego público.",
+    "B": "Por serem destinatários de dinheiro público arrecadado mediante contribuições sociais de interesse corporativo, os serviços sociais autônomos estão sujeitos aos estritos procedimentos e termos estabelecidos na Lei n.º 8.666/1993.",
+    "C": "Assim como outras entidades privadas que atuam em parceria com o poder público, como as OSs e as OSCIPs, os serviços sociais autônomos necessitam da celebração de contrato de gestão com o poder público para o recebimento de subvenções públicas.",
+    "D": "Serviços sociais autônomos são pessoas jurídicas de direito privado integrantes do elenco das pessoas jurídicas da administração pública indireta e têm como finalidade uma atividade social que representa a prestação de um serviço de utilidade pública em benefício de certos agrupamentos sociais ou profissionais.",
+    "E": "Referidos entes de cooperação governamental, destinatários de contribuições parafiscais, estão sujeitos à fiscalização do Estado nos termos e condições estabelecidos na legislação pertinente a cada um."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 20,
+   "materia": "Direito Administrativo",
+   "enunciado": "Acerca da disciplina dos atos administrativos, assinale a opção correta.",
+   "alternativas": {
+    "A": "Em nome do princípio da inafastabilidade da jurisdição, deve o Poder Judiciário apreciar o mérito do ato administrativo, ainda que sob os aspectos da conveniência e da oportunidade.",
+    "B": "Os atos administrativos são dotados dos atributos da veracidade e da legitimidade, havendo presunção absoluta de que foram editados de acordo com a lei e com a verdade dos fatos.",
+    "C": "O parecer administrativo é típico ato de conteúdo decisório, razão pela qual, segundo entendimento do STF, há possibilidade de responsabilização do parecerista por eventual prejuízo causado ao erário.",
+    "D": "São passíveis de convalidação os atos administrativos que ostentem vícios relativos ao motivo, ao objeto e à finalidade, desde que não haja impugnação do interessado.",
+    "E": "Segundo a teoria dos motivos determinantes, mesmo que um ato administrativo seja discricionário, não exigindo, portanto, expressa motivação, se tal motivação for declinada pelo agente público, passa a vinculá-la aos termos em que foi mencionada."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 21,
+   "materia": "Direito Administrativo",
+   "enunciado": "No que concerne às licitações e aos contratos administrativos, assinale a opção correta com base na legislação e na doutrina.",
+   "alternativas": {
+    "A": "Em nome do princípio pacta sunt servanda, é vedado à administração modificar, sem prévia concordância do contratado, o contrato administrativo de concessão de serviço público.",
+    "B": "Segundo o instituto da encampação, ao término do contrato de concessão de serviços públicos, dá-se a incorporação dos bens da concessionária ao patrimônio do concedente, independentemente de indenização.",
+    "C": "Configura hipótese de licitação dispensável a contratação de profissionais do setor artístico consagrados pela crítica especializada.",
+    "D": "O pregão é a modalidade de licitação restrita ao âmbito da União Federal e destinada à aquisição de bens e à contratação de serviços comuns.",
+    "E": "A homologação da licitação não obsta a que a administração pública possa anulá-la, por ilegalidade, ou revogá-la, por motivos de interesse público superveniente."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 22,
+   "materia": "Direito Administrativo",
+   "enunciado": "A respeito da prestação de serviço público por concessionárias ou permissionárias, assinale a opção correta.",
+   "alternativas": {
+    "A": "Ainda que motivada por situação de emergência, ou após aviso prévio, por motivos de ordem técnica ou de segurança das instalações, a interrupção no fornecimento de serviços públicos fere o princípio da continuidade dos serviços públicos.",
+    "B": "Tratando-se de obrigação propter rem, conforme entendimento do STJ, o corte no fornecimento de serviços públicos essenciais por débitos de usuário anterior é legítimo.",
+    "C": "Em nome do princípio da isonomia na prestação dos serviços públicos, é legítimo o corte no fornecimento de serviços públicos essenciais, quando se tratar de unidade prestadora de serviços de interesse público da coletividade.",
+    "D": "De acordo com entendimento do STF, é objetiva a responsabilidade das pessoas jurídicas de direito privado prestadoras de serviço público, em se tratando de danos causados a terceiros não usuários desse serviço.",
+    "E": "Segundo entendimento jurisprudencial do STJ, é legítimo o corte no fornecimento de serviços públicos essenciais quando o usuário for inadimplente quanto a débitos vencidos pretéritos, desde que precedido de prévia notificação do usuário."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 23,
+   "materia": "Direito Administrativo",
+   "enunciado": "Acerca da intervenção do Estado na propriedade, assinale a opção correta.",
+   "alternativas": {
+    "A": "Limitações administrativas são determinações de caráter individual por meio das quais o poder público impõe aos proprietários determinadas obrigações, positivas, negativas ou permissivas, com o fim de condicionar as propriedades ao atendimento da função social.",
+    "B": "Compete à União e aos estados desapropriar por interesse social, para fins de reforma agrária, mediante prévia e justa indenização em títulos da dívida agrária, o imóvel rural que não estiver cumprindo a sua função social.",
+    "C": "Segundo entendimento do STF, a desapropriação-confisco, prevista no art. 243 da CF, incide sobre a totalidade da propriedade em que forem cultivadas plantas psicotrópicas, e não apenas sobre a área efetivamente plantada.",
+    "D": "A servidão administrativa instituída por acordo com o proprietário do imóvel, ao contrário daquela instituída por sentença judicial, prescinde da declaração de utilidade pública do poder público.",
+    "E": "A instituição de requisição administrativa, quando recair sobre bens imóveis, não dispensa o prévio e necessário registro na matrícula do imóvel."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 24,
+   "materia": "Direito Administrativo",
+   "enunciado": "Considerando os termos da responsabilidade administrativa, civil e criminal dos agentes públicos e a disciplina da improbidade administrativa, assinale a opção correta.",
+   "alternativas": {
+    "A": "O sistema punitivo na esfera administrativa se assemelha ao da esfera criminal, na medida em que as condutas são tipificadas com precisão, sendo cominadas sanções específicas para cada conduta infracional prevista.",
+    "B": "Se estiver em tramitação ação de improbidade contra servidor público pela prática de ato de improbidade administrativa, haverá que se aguardar o trânsito em julgado de referida ação para que seja editado ato de demissão oriundo de procedimento administrativo disciplinar.",
+    "C": "Segundo entendimento jurisprudencial já pacificado no âmbito do STJ, eventual prescrição das sanções decorrentes dos atos de improbidade administrativa não impede o prosseguimento de ação judicial visando ao ressarcimento dos danos causados ao erário, tendo em vista a imprescritibilidade de referida ação.",
+    "D": "É inadmissível, na aplicação da Lei n.º 8.429/1992, a responsabilização objetiva do agente público por ato de improbidade administrativa, exceto em relação aos atos de improbidade que causem lesão ao erário.",
+    "E": "À luz da jurisprudência do STJ, em nome do princípio constitucional da vedação do anonimato, será nulo o processo administrativo disciplinar instaurado com fundamento em denúncia anônima."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 25,
+   "materia": "Direito Administrativo",
+   "enunciado": "Tendo em vista que, relativamente aos mecanismos de controle da administração pública, a própria CF dispõe que os Poderes Legislativo, Executivo e Judiciário manterão, integradamente, sistemas de controle interno em suas respectivas esferas, assinale a opção que apresenta exemplo de meio de controle interno da administração pública.",
+   "alternativas": {
+    "A": "Fiscalização realizada por órgão de controladoria da União sobre a execução de determinado programa de governo no âmbito da administração pública federal.",
+    "B": "Controle do Poder Judiciário sobre os atos do Poder Executivo em ações judiciais.",
+    "C": "Sustação, pelo Congresso Nacional, de atos do Poder Executivo que exorbitem do poder regulamentar.",
+    "D": "Julgamento das contas dos administradores e dos demais responsáveis por dinheiro, bens e valores públicos da administração direta e indireta realizado pelos TCs.",
+    "E": "Ação popular proposta por cidadão visando à anulação de determinado ato praticado pelo Poder Executivo municipal, considerado lesivo ao patrimônio público."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 26,
+   "materia": "Direito Civil",
+   "enunciado": "A respeito da Lei de Introdução às Normas do Direito Brasileiro e de institutos relacionados às pessoas naturais e jurídicas, assinale a opção correta à luz da jurisprudência do STJ.",
+   "alternativas": {
+    "A": "A internação psiquiátrica involuntária é também chamada de internação compulsória, pois decorre de determinação judicial e independe do consentimento do paciente ou de pedido de terceiro.",
+    "B": "São válidos os negócios jurídicos praticados pelo incapaz antes da sentença de interdição, ainda que se comprove que o estado de incapacidade tenha sido contemporâneo ao negócio.",
+    "C": "Não configura direito subjetivo da pessoa retificar seu patronímico no registro de nascimento de seus filhos após o divórcio, quando ela deixar de usar o nome de casada.",
+    "D": "A filial é uma espécie de estabelecimento empresarial que possui personalidade jurídica própria, distinta da sociedade empresária.",
+    "E": "Não se tratando de contrato de trato sucessivo, descabe a aplicação retroativa da lei nova para alcançar efeitos presentes de contratos celebrados anteriormente à sua vigência."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 27,
+   "materia": "Direito Civil",
+   "enunciado": "A respeito dos atos ilícitos e da responsabilidade civil, assinale a opção correta segundo a jurisprudência do STJ.",
+   "alternativas": {
+    "A": "O acordo extrajudicial firmado pelos pais em nome de filho menor, para fins de recebimento de indenização por ato ilícito, dispensa a intervenção do MP.",
+    "B": "Para a aplicação da teoria da perda de uma chance, não se exige a comprovação da existência do dano final, mas a prova da certeza da chance perdida, que é o objeto de reparação.",
+    "C": "Na hipótese de indenização por dano moral decorrente da prática de ato ilícito, os juros moratórios devem fluir a partir da data do ajuizamento da ação respectiva.",
+    "D": "Segundo dispõe o Código Civil, caso repare o dano que seu filho relativamente incapaz causar a terceiro, o pai poderá reaver do filho o que pagar a título de indenização.",
+    "E": "De acordo com o entendimento do STJ, se determinado preposto, valendo-se de circunstâncias proporcionadas pelo seu labor, praticar ato culposo fora do exercício do trabalho que lhe for confiado, causando prejuízo a terceiro, não será possível a responsabilização do empregador."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 28,
+   "materia": "Direito Civil",
+   "enunciado": "No que se refere aos bens jurídicos e a aspectos inerentes à posse e à propriedade, assinale a opção correta.",
+   "alternativas": {
+    "A": "A aquisição da posse pode ocorrer pela apreensão, a qual, segundo a doutrina, pode ser concretizada não apenas pela apropriação unilateral da coisa sem dono, como também pela retirada da coisa de outrem sem sua permissão.",
+    "B": "A tradição constitui uma das hipóteses de perda da posse que pode ser vislumbrada, por exemplo, na entrega da coisa a um representante para que este a administre.",
+    "C": "Os bens naturalmente divisíveis não se podem tornar indivisíveis por vontade das partes.",
+    "D": "Segundo o STJ, o usufrutuário pode valer-se de ações possessórias contra o nu-proprietário, mas não de ações de natureza petitória.",
+    "E": "O perecimento da coisa é hipótese de perda da propriedade que não pode resultar de ato voluntário do proprietário, já que demanda, para a sua concretização, a ocorrência de fenômenos naturais, como terremotos ou inundações."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 29,
+   "materia": "Direito Civil",
+   "enunciado": "No que se refere às disposições acerca de condomínio, aos direitos sobre coisa alheia e à propriedade fiduciária, assinale a opção correta.",
+   "alternativas": {
+    "A": "A alienação da nua propriedade em hasta pública é, segundo o Código Civil, causa de extinção do direito real de usufruto.",
+    "B": "Para o STJ, afronta o direito de propriedade e sua função social a decisão da assembleia geral de condôminos que determina a suspensão de serviços essenciais em decorrência da inadimplência de taxa condominial, já que o débito deve ser cobrado pelos meios legais.",
+    "C": "O Código Civil não veda ao condômino dar posse, uso ou gozo da propriedade a estranhos sem a prévia aquiescência dos demais condôminos.",
+    "D": "De acordo com a legislação civil, o direito de superfície pode ser transferido a terceiro mediante prévio pagamento do valor estipulado pelo concedente para a respectiva transferência.",
+    "E": "O contrato celebrado pelas partes que tenha por objeto a constituição da propriedade fiduciária poderá conter cláusula que autorize o proprietário fiduciário a ficar com a coisa alienada em garantia, caso a dívida não seja paga no vencimento."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 30,
+   "materia": "Direito Civil",
+   "enunciado": "Com relação ao direito das obrigações, assinale a opção correta.",
+   "alternativas": {
+    "A": "É permitido transformar os bens naturalmente divisíveis em indivisíveis se a alteração se der para preservar a natureza da obrigação, por motivo de força maior ou caso fortuito, mas não por vontade das partes.",
+    "B": "As obrigações ambulatórias são as que incidem sobre uma pessoa em decorrência de sua vinculação a um direito pessoal, haja vista que da própria titularidade lhe advém a obrigação.",
+    "C": "As obrigações conjuntivas possuem múltiplas prestações ou objetos, de tal modo que seu cumprimento será dado como efetivado quando todas as obrigações forem realizadas.",
+    "D": "As obrigações disjuntivas são aquelas em que a prestação ou objeto material são indeterminados, isto é, há apenas referência quanto a gênero e quantidade.",
+    "E": "A desconcentração é característica das obrigações de dar coisa incerta. É configurada pela escolha, ato pelo qual o objeto ou prestação se tornam certos e determinados, sendo necessário, para que possa produzir efeitos, que o credor seja disso cientificado."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 31,
+   "materia": "Direito Civil",
+   "enunciado": "Em relação aos contratos, assinale a opção correta.",
+   "alternativas": {
+    "A": "Caso um indivíduo firme contrato de seguro com determinada instituição financeira, e não haja dia previamente ajustado pelas partes para o pagamento de prestação do prêmio, o contrato não será desfeito automaticamente com o descumprimento da prestação pelo segurado no termo pactuado. Para o desfazimento do contrato, será necessária a prévia constituição em mora do contratante pela seguradora, mediante interpelação.",
+    "B": "O Código Civil adotou o critério subjetivo da premeditação para determinar a cobertura relativa ao suicídio do segurado. Desse modo, a seguradora não será obrigada a indenizar se houver prova cabal da premeditação do suicídio, mesmo após o decurso do período de carência de dois anos.",
+    "C": "No contrato do seguro de acidentes pessoais, como garantia por morte acidental, a seguradora se obriga, em virtude de expressa disposição legal, a indenizar também o beneficiário no caso de morte do segurado por causa natural.",
+    "D": "No contrato de seguro de automóvel, o reconhecimento da responsabilidade, a confissão da ação ou a transação retiram do segurado de boa-fé o direito à indenização e ao reembolso, pois são prejudiciais à seguradora, a menos que haja prévio e expresso consentimento desta.",
+    "E": "Se, em caso de risco, o comodatário privilegiar a segurança de seus próprios bens, abandonando os bens do comodante, responderá pelo dano que venha a ser sofrido pelo comodante, exceto nas hipóteses de caso fortuito ou força maior."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 32,
+   "materia": "Direito Civil",
+   "enunciado": "No tocante à extinção dos contratos, assinale a opção correta.",
+   "alternativas": {
+    "A": "Nos contratos bilaterais, o credor pode exigir a realização da obrigação pela outra parte, ainda que não cumpra a integralidade da prestação que lhe caiba.",
+    "B": "A extinção do contrato decorrente de cláusula resolutiva expressa configura exercício do direito potestativo de uma das partes do contrato de impor à outra sua extinção e depende de interpelação judicial.",
+    "C": "Situação hipotética: Joaquim, mediante contrato firmado, prestava serviços de contabilidade à empresa de Joana. Joaquim e Joana decidiram encerrar, consensualmente, o pactuado e dar fim à relação contratual.\nAssertiva: Nessa situação, configurou-se a resilição do contrato por meio de denúncia de uma das partes.",
+    "D": "A cláusula resolutiva tácita é causa de extinção contemporânea à celebração ou formação do contrato, e a presença do vício torna o contrato nulo.",
+    "E": "A resolução do contrato por onerosidade excessiva não se aplica aos contratos de execução instantânea, pois ocorre quando, no momento da efetivação da prestação, esta se torna demasiadamente onerosa para uma das partes, em virtude de acontecimentos extraordinários e imprevisíveis."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 33,
+   "materia": "Direito Civil",
+   "enunciado": "De acordo com as regras que disciplinam o casamento, assinale a opção correta.",
+   "alternativas": {
+    "A": "Os impedimentos impedientes para o casamento constituem mera irregularidade e geram apenas efeitos colaterais sancionadores, mas não a nulidade do matrimônio.",
+    "B": "Será nulo o casamento do divorciado, enquanto não for homologada ou decidida a partilha dos bens do casal, ainda que seja demonstrada a inexistência de prejuízo para o ex-cônjuge.",
+    "C": "O casamento pode ser realizado mediante procuração, por instrumento público ou particular com poderes especiais.",
+    "D": "A revogação do mandato precisa chegar ao conhecimento do mandatário, pois, celebrado o casamento sem que o mandatário ou o outro contraente tomem ciência da revogação, o casamento será válido, sem que possa o mandante ser compelido a indenizar por perdas e danos.",
+    "E": "Os impedimentos absolutamente dirimentes para o casamento são proibições legais que, se forem desrespeitadas, geram a nulidade do matrimônio, mas podem ser supridas ou sanadas."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 34,
+   "materia": "Direito Civil",
+   "enunciado": "No tocante ao regime de bens do casamento, assinale a opção correta.",
+   "alternativas": {
+    "A": "No casamento sob o regime de participação final nos aquestos, o bem imóvel que for adquirido exclusivamente por um dos cônjuges será de livre administração e alienação, por esse cônjuge.",
+    "B": "Sob o regime da comunhão parcial de bens, não entram na comunhão os bens adquiridos na constância da sociedade conjugal, por fato eventual, com ou sem o concurso de trabalho ou despesa anterior.",
+    "C": "No regime da comunhão universal de bens, participam da comunhão todos os bens presentes e futuros do casal, inclusive as dívidas anteriores ao casamento.",
+    "D": "No regime de comunhão parcial, participam da comunhão as verbas indenizatórias decorrentes do ajuizamento de ação reclamatória trabalhista durante a vigência do vínculo conjugal, ainda que tais verbas venham a ser percebidas por um dos cônjuges após o fim do casamento.",
+    "E": "O pacto antenupcial é indispensável na celebração do casamento pelo regime da separação obrigatória de bens."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 35,
+   "materia": "Direito Civil",
+   "enunciado": "Acerca do direito a alimentos, assinale a opção correta.",
+   "alternativas": {
+    "A": "Os alimentos provisionais são cabíveis quando existem provas pré-constituídas da filiação, sendo fixados liminarmente na ação de alimentos sujeita a rito especial.",
+    "B": "O direito a alimentos pode ser reconhecido retroativamente com base no princípio da solidariedade familiar.",
+    "C": "Os alimentos gravídicos, uma vez deferidos pelo juiz, serão devidos a partir da data da concepção; no entanto, se, após o nascimento, não ficar comprovada a paternidade, tais alimentos poderão ser restituídos.",
+    "D": "O dever dos netos de prestar alimentos aos avós é solidário, podendo estes escolher, entre os devedores solidários, qual será o obrigado a prestar a obrigação alimentar.",
+    "E": "A legislação civil proíbe expressamente a transmissão da obrigação alimentar aos herdeiros do alimentante."
+   },
+   "gabarito": "X"
+  },
+  {
+   "n": 36,
+   "materia": "Direito Civil",
+   "enunciado": "Em relação ao direito de empresa, assinale a opção correta à luz do Código Civil de 2002.",
+   "alternativas": {
+    "A": "Na sociedade em comum, os sócios, nas relações entre si, podem comprovar a existência da sociedade por qualquer meio.",
+    "B": "Na sociedade simples, o cedente responde solidariamente com o cessionário, perante terceiros, pelas obrigações que tinha como sócio, até dois anos depois de averbada a modificação do contrato social.",
+    "C": "Na sociedade limitada, permite-se a contribuição em serviços para o contrato social.",
+    "D": "Os cônjuges podem contratar sociedade entre si, seja qual for o regime de bens do casamento.",
+    "E": "A cooperativa poderá ser sociedade simples ou empresária, a depender do seu objeto."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 37,
+   "materia": "Direito Civil",
+   "enunciado": "Acerca do direito das sucessões, assinale a opção correta.",
+   "alternativas": {
+    "A": "A declaração de indignidade do herdeiro faz que ele seja excluído da sucessão, de modo que, se o herdeiro excluído possui descendentes, estes não podem sucedê-lo em seu lugar, mesmo sendo possível, no caso concreto, o direito de representação.",
+    "B": "O princípio da saisine, que regula a abertura da sucessão, também se aplica integralmente aos legatários.",
+    "C": "A cessão, pelo co-herdeiro, de seu direito sobre um bem imóvel integrante do acervo hereditário, considerado individualmente, antes da partilha, é hipótese de nulidade de pleno direito.",
+    "D": "Situação hipotética: João faleceu sem deixar descendentes, ascendentes ou cônjuge, mas deixou quatro irmãos, sendo três deles bilaterais e um unilateral.\nAssertiva: Nesse caso, a herança será partilhada em razão do número de vínculos sanguíneos existentes entre os herdeiros e o de cujus; dessa forma, cada irmão bilateral receberá dois sétimos da herança; e o irmão bilateral, um sétimo.",
+    "E": "A capacidade sucessória testamentária passiva, consistente na nomeação de legatário sob condição suspensiva, deverá ser observada no momento da realização do testamento."
+   },
+   "gabarito": "X"
+  },
+  {
+   "n": 38,
+   "materia": "Direito Civil",
+   "enunciado": "A respeito de títulos de crédito e de contratos bancários, assinale a opção correta.",
+   "alternativas": {
+    "A": "Atualmente, ainda é válida a pactuação das tarifas de abertura de crédito e de emissão de carnê na cobrança por serviços bancários, segundo o entendimento do STJ.",
+    "B": "Conforme entendimento do STJ, o ajuizamento isolado de ação revisional de contrato bancário é capaz de descaracterizar a mora do devedor.",
+    "C": "A omissão de qualquer requisito legal que retire a validade do título de crédito implica também a invalidade do negócio jurídico que lhe deu origem.",
+    "D": "O pagamento do título de crédito pode ser garantido por aval dado de forma parcial.",
+    "E": "De acordo com o STJ, a estipulação de juros remuneratórios superiores a 12% ao ano, por si só, não indica abusividade. -"
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 39,
+   "materia": "Direito Processual Civil",
+   "enunciado": "A respeito de litisconsórcio e de assistência e intervenção de terceiros, assinale a opção correta segundo entendimento do STJ.",
+   "alternativas": {
+    "A": "Não é possível a denunciação da lide fundada no direito de regresso, quando o denunciante introduzir fundamento novo à causa, estranho ao processo principal, apto a exigir ampla dilação probatória.",
+    "B": "Procedida a denunciação da lide pelo autor, o denunciado, comparecendo aos autos, assumirá a condição de litisconsorte do denunciante, mas não poderá aditar a petição inicial.",
+    "C": "Configura nulidade o ato do juiz que decide, em sentenças distintas, a ação principal antes da oposição.",
+    "D": "A solidariedade da obrigação implica, necessariamente, a unitariedade do litisconsórcio.",
+    "E": "O recurso interposto pelo assistente simples pode ser conhecido na hipótese em que o assistido não tenha recorrido."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 40,
+   "materia": "Direito Processual Civil",
+   "enunciado": "No tocante a competência, atos processuais, petição inicial, revelia e resposta do réu, assinale a opção correta conforme o entendimento do STJ.",
+   "alternativas": {
+    "A": "A contagem dos prazos para a interposição de recursos pela DP começa a fluir da data da ciência do defensor no processo.",
+    "B": "O prazo destinado para o autor emendar ou completar a petição inicial é peremptório, não podendo ser reduzido ou ampliado por convenção das partes ou por determinação do juiz.",
+    "C": "O prazo remanescente para contestar, suspenso com o recebimento da exceção de incompetência, volta a fluir a partir da decisão que acolhe a exceção.",
+    "D": "No rito sumário, a não apresentação de contestação na audiência de conciliação, quando presidida por conciliador auxiliar, implica revelia do réu.",
+    "E": "O foro competente para processar e julgar ação declaratória de nulidade de escritura pública de cessão e transferência de direitos possessórios é o do domicílio do réu."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 41,
+   "materia": "Direito Processual Civil",
+   "enunciado": "Com relação a processo cautelar, mandado de segurança, sentença e coisa julgada, assinale a opção correta segundo o entendimento do STJ.",
+   "alternativas": {
+    "A": "O direito líquido e certo postulado no mandado de segurança tem caráter personalíssimo e intransferível, não sendo possível a sucessão de partes.",
+    "B": "O arresto é medida destinada à apreensão de bens determinados com o objetivo de assegurar a futura efetivação de provimento judicial que os tenha como objeto.",
+    "C": "A sentença é ultra petita quando aprecia matéria estranha ao pedido formulado pelo autor.",
+    "D": "No caso de improcedência do pedido formulado na ação principal, será exigível a multa cominatória fixada em ação cautelar destinada a resguardar o objeto da ação principal.",
+    "E": "A alteração de juros de mora na fase de execução ofende a coisa julgada, mesmo quando realizada para adequar o percentual aplicado à legislação civil."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 42,
+   "materia": "Direito Processual Civil",
+   "enunciado": "Assinale a opção correta relativamente ao direito probatório e à audiência no processo civil.",
+   "alternativas": {
+    "A": "O documento lavrado por servidor público incompetente, mas subscrito pelas partes, não perde a fé pública.",
+    "B": "O menor de dezesseis anos pode depor como testemunha no processo civil.",
+    "C": "A confissão espontânea pode ser feita por mandatário com poderes especiais.",
+    "D": "Com fundamento no princípio da verdade material, o juiz não poderá dispensar a produção de prova requerida pela parte cujo advogado não compareceu à audiência.",
+    "E": "O juiz poderá, de ofício, determinar o comparecimento pessoal das partes com o propósito de interrogá-las sobre os pontos controversos da demanda; todavia, se a parte intimada não comparecer, não lhe poderá aplicar a pena de confissão."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 43,
+   "materia": "Direito Processual Civil",
+   "enunciado": "Assinale a opção correta no que diz respeito a recursos.",
+   "alternativas": {
+    "A": "Admite-se o cabimento dos embargos infringentes para impugnar acórdão não unânime que anule sentença em razão de vício na citação.",
+    "B": "Conforme entendimento do STJ, a pena de deserção deve ser aplicada a recurso interposto contra julgado que indeferir o pedido de justiça gratuita.",
+    "C": "De acordo com o entendimento do STF, são intempestivos os embargos declaratórios interpostos antes da publicação do acórdão embargado.",
+    "D": "Segundo o entendimento do STJ, na apelação, admite-se a juntada de documentos indispensáveis ou não à propositura da ação, desde que garantidos o contraditório e a ampla defesa.",
+    "E": "Concedida a antecipação dos efeitos da tutela em recurso adesivo, não se admite a desistência do recurso principal de apelação, ainda que a petição de desistência seja apresentada antes do julgamento dos recursos."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 44,
+   "materia": "Direito Processual Civil",
+   "enunciado": "A respeito de execução, assinale a opção correta.",
+   "alternativas": {
+    "A": "Nos casos de fraude à execução, inexistindo registro da penhora na matrícula do imóvel, cabe ao credor o ônus de provar que o terceiro adquirente tinha conhecimento de demanda capaz de levar o alienante à insolvência.",
+    "B": "Segundo entendimento do STJ, permite-se o arbitramento de honorários advocatícios em benefício do exequente no âmbito da execução provisória.",
+    "C": "É possível ao juiz conhecer de suposto excesso de execução alegado pelo executado após o momento próprio para a oposição dos embargos à execução, por se tratar de matéria de ordem pública.",
+    "D": "A quantia depositada em caderneta de poupança é impenhorável, independentemente do seu valor.",
+    "E": "O bloqueio de ativos financeiros do executado por meio do sistema Bacen Jud independe de requerimento expresso do exequente."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 45,
+   "materia": "Direitos Difusos e Coletivos",
+   "enunciado": "A respeito de competência, continência, suspensão do processo, prescrição e execução em ações coletivas, assinale a opção correta à luz da jurisprudência do STJ.",
+   "alternativas": {
+    "A": "Caso seja ajuizada ação coletiva atinente à macrolide geradora de processos multitudinários, não será possível determinar a suspensão do andamento de processos individuais até o julgamento, no âmbito da ação coletiva, da questão jurídica de fundo neles discutida, sob pena de violação ao direito constitucional de acesso à justiça.",
+    "B": "No âmbito do direito privado, é de cinco anos o prazo prescricional para o ajuizamento de execução individual em pedido de cumprimento de sentença proferida em ACP, salvo se, na ação de conhecimento, já transitada em julgado, tiver sido reconhecida a aplicabilidade do prazo de prescrição vintenário.",
+    "C": "Após o julgamento procedente de pedido em ACP destinada a reparar lesão a direitos individuais homogêneos, os juros de mora devidos serão calculados a partir da citação inicial na ação coletiva.",
+    "D": "Compete ao juiz estadual, nas comarcas que não sejam sede de vara federal, processar e julgar ACP, ainda que a União figure no processo.",
+    "E": "Se duas ações coletivas forem propostas perante juízos de competência territorial distinta, contra o mesmo réu e com a mesma causa de pedir, e o objeto de uma ação for mais abrangente do que o da outra, competirá ao juízo da ação de objeto mais amplo o processamento e julgamento das duas demandas, ainda que ambas sejam propostas por entidades associativas distintas."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 46,
+   "materia": "Direitos Difusos e Coletivos",
+   "enunciado": "No que se refere ao termo de ajustamento de conduta, à medida liminar e à sentença em ações coletivas, assinale a opção correta à luz da jurisprudência do STJ.",
+   "alternativas": {
+    "A": "Mesmo com a previsão de multa diária no termo de ajustamento de conduta para o caso de descumprimento de ajuste, o juiz estará autorizado a aumentar o valor pactuado, quando, no caso concreto, esse valor mostrar-se insuficiente para surtir o efeito esperado.",
+    "B": "O termo de ajustamento de conduta é título executivo extrajudicial, mas somente poderá embasar a execução quando for assinado por duas testemunhas.",
+    "C": "A superveniência de acórdão que julgue improcedente pedido veiculado em ACP implica a revogação da medida antecipatória conferida pelo juiz de primeiro grau, desde que haja manifestação judicial expressa a esse respeito.",
+    "D": "A realização de termo de ajustamento de conduta na esfera extrajudicial impede a propositura de demanda coletiva a respeito do objeto transigido.",
+    "E": "Em ACP, a ausência de publicação do edital destinado a possibilitar a intervenção de interessados como litisconsortes não impede, por si só, a produção de efeitos erga omnes de sentença de procedência relativa a direitos individuais homogêneos."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 47,
+   "materia": "Direitos Difusos e Coletivos",
+   "enunciado": "No tocante à ACP, assinale a opção correta.",
+   "alternativas": {
+    "A": "A prescrição para a pretensão reparatória de caráter coletivo em matéria ambiental é de cinco anos, conforme entendimento do STJ.",
+    "B": "É possível o manejo de ACP com o propósito de exercer o controle concentrado de constitucionalidade de leis e atos normativos do poder público.",
+    "C": "É vedado propor ACP quando houver ação popular ajuizada sobre o mesmo fato controverso.",
+    "D": "De acordo com o STJ, a inversão do ônus da prova é regra de julgamento, devendo, portanto, ser aplicada no momento da prolação da sentença.",
+    "E": "O dano moral coletivo prescinde da comprovação de dor, de sofrimento e de abalo psicológico, suscetíveis de apreciação na esfera do indivíduo, mas inaplicável aos interesses difusos e coletivos."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 48,
+   "materia": "Direito Processual Civil",
+   "enunciado": "A respeito do mandado de segurança coletivo e individual, assinale a opção correta.",
+   "alternativas": {
+    "A": "Para impetrarem mandado de segurança coletivo, as entidades de classe e os sindicatos devem estar em funcionamento há pelo menos um ano.",
+    "B": "O termo inicial para impetração de mandado de segurança para impugnar critérios de aprovação e classificação de concurso público conta-se da publicação do edital de abertura do certame, segundo entendimento recente do STF.",
+    "C": "No mandado de segurança coletivo, a liminar só poderá ser concedida após a audiência do representante judicial da pessoa jurídica de direito público, que deverá se pronunciar no prazo de setenta e duas horas.",
+    "D": "O Poder Judiciário não pode controlar a legalidade dos atos administrativos discricionários por meio de mandado de segurança.",
+    "E": "Não é cabível a impetração de mandado de segurança contra lei em tese, mesmo quando esta for de efeitos concretos."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 49,
+   "materia": "Direito Processual Civil",
+   "enunciado": "Com relação ao mandado de injunção, ao habeas data e à ADPF, assinale a opção correta.",
+   "alternativas": {
+    "A": "O STF é competente para processar e julgar originariamente o habeas data impetrado contra ato de ministro de Estado.",
+    "B": "Não se admite a impetração de mandado de injunção coletivo, por ausência de previsão constitucional expressa para tal.",
+    "C": "Ato normativo já revogado é passível de impugnação por ADPF.",
+    "D": "É cabível a impetração de mandado de injunção coletivo para proceder à revisão geral anual dos vencimentos dos servidores públicos, conforme entendimento do STF.",
+    "E": "Quando a sentença conceder o habeas data, o recurso interposto em face dessa decisão terá efeito suspensivo e devolutivo."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 50,
+   "materia": "Direitos Difusos e Coletivos",
+   "enunciado": "Assinale a opção correta no que diz respeito à ação popular.",
+   "alternativas": {
+    "A": "A competência para processar e julgar ação popular proposta contra o presidente da República é do STF.",
+    "B": "O menor de dezesseis anos pode propor ação popular, mas, para fazê-lo, tem de ser assistido em juízo.",
+    "C": "De acordo com o entendimento do STJ, o cidadão autor de ação popular tem de residir no domicílio eleitoral do local onde for proposta a ação, sob pena de indeferimento da inicial.",
+    "D": "A execução de multa diária por descumprimento de obrigação fixada em medida liminar concedida em ação popular independe do trânsito em julgado desta ação, conforme posição do STJ.",
+    "E": "A jurisprudência do STJ vem admitindo o emprego da ação popular para a defesa de interesses difusos dos consumidores."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 51,
+   "materia": "Direitos Difusos e Coletivos",
+   "enunciado": "Acerca da tutela coletiva do direito do consumidor e do direito à cidade e à moradia, assinale a opção correta.",
+   "alternativas": {
+    "A": "O consumidor tem direito à inversão do ônus da prova em ação consumerista por ele movida, prerrogativa que, conforme entendimento do STJ, não se aplica ao MP quando este figura como autor de ação dessa espécie.",
+    "B": "A prestação de serviços públicos de saneamento básico por entidade não integrante da administração pública pode ser disciplinada por convênio, termo de parceria ou outro instrumento de natureza precária.",
+    "C": "De acordo com a legislação de regência, os recursos do Fundo Nacional de Habitação de Interesse Social e dos fundos estaduais, do DF e dos municípios não podem ser associados a recursos onerosos, inclusive os do FGTS, bem como a linhas de crédito de outras fontes.",
+    "D": "Para o STJ, o direito à moradia está inserido no âmbito dos interesses individuais indisponíveis, razão pela qual não pode ser tutelado pelo MP.",
+    "E": "Segundo entendimento do STJ, deve ser considerada abusiva previsão feita em contrato de plano de saúde que exclua das responsabilidades da empresa o custeio de meios e materiais necessários a procedimento cirúrgico voltado à cura de uma doença coberta pelo plano."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 52,
+   "materia": "Direito do Consumidor",
+   "enunciado": "Com base no Estatuto do Idoso, no CDC e no entendimento do STJ acerca dos tópicos abarcados por esses dois diplomas legais, assinale a opção correta.",
+   "alternativas": {
+    "A": "Uma operadora de plano de saúde não responde perante o consumidor por falha na prestação dos serviços médicos e hospitalares por ela credenciados.",
+    "B": "De acordo com o Estatuto do Idoso, na ação de execução de sentença individual e nas ações referentes a interesses individuais indisponíveis, o pagamento das custas processuais pelo idoso deve ocorrer somente ao final do processo.",
+    "C": "Na ação de indenização movida pelo DP em defesa de consumidor hipossuficiente cujo nome tenha sido inscrito indevidamente em cadastro de inadimplentes, é imprescindível a comprovação do efetivo prejuízo por ele sofrido em decorrência do ato.",
+    "D": "A comprovação da postagem de correspondência notificando o consumidor da inscrição de seu nome em cadastro de inadimplência é bastante para atender ao disposto no CDC no tocante ao direito de acesso a informação que lhe diga respeito, sendo desnecessário, nesses casos, o aviso de recebimento.",
+    "E": "O vício de qualidade do produto não confere ao consumidor o direito de substituição do bem, mas sim o de abatimento proporcional do preço, na forma prevista na legislação em vigor."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 53,
+   "materia": "Direito da Criança e do Adolescente",
+   "enunciado": "Quanto ao tratamento dispensado a crianças e adolescentes no âmbito das normas internacionais, assinale a opção correta.",
+   "alternativas": {
+    "A": "A Convenção sobre os Aspectos Civis do Sequestro Internacional de Crianças aplica-se à criança que tenha residência habitual em um Estado contratante até que ela complete dezoito anos de idade.",
+    "B": "Embora a Convenção dos Direitos da Criança contemple direitos relativos à proteção da saúde da criança, tais como assistência médica e cuidados sanitários, ela é silente quanto aos direitos inerentes à previdência social, que são objeto de convenção internacional específica.",
+    "C": "As normas da Convenção Relativa à Proteção das Crianças e à Cooperação em Matéria de Adoção Internacional incorporadas pelo ECA permitem a adoção de criança brasileira por estrangeiros residentes no exterior, ainda que não se tenham esgotado as possibilidades de colocação dessa criança em família substituta brasileira.",
+    "D": "Segundo o STJ, a Convenção sobre os Aspectos Civis do Sequestro Internacional de Crianças não objetiva discutir o direito de guarda de criança, mas sim as questões vinculadas à retirada ilegal de criança de seu país e(ou) a retenção indevida de criança em local que não o de sua residência habitual.",
+    "E": "Segundo as Regras de Beijing, a sanção aplicável ao jovem que cometer ato infracional deverá ser específica e única, princípio que torna inadmissível a aplicação simultânea de uma medida de liberdade assistida e uma de prestação de serviços à comunidade."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 54,
+   "materia": "Direito da Criança e do Adolescente",
+   "enunciado": "No que se refere aos princípios do direito da criança e do adolescente, e aos direitos fundamentais da criança e do adolescente, assinale a opção correta considerando o disposto no ECA.",
+   "alternativas": {
+    "A": "O ECA tutela o direito à vida, à saúde, à alimentação, à educação, à liberdade e à convivência familiar de crianças e adolescentes a partir do nascimento com vida.",
+    "B": "O princípio da prioridade absoluta não tem previsão na CF, mas está refletido em disposições do ECA e consiste na primazia das crianças e dos adolescentes nos âmbitos judicial, extrajudicial, administrativo, social e familiar.",
+    "C": "A incidência do princípio do interesse superior da criança e do adolescente está limitada a litígios judiciais ou extrajudiciais que envolvam crianças e adolescentes em situação irregular.",
+    "D": "O princípio da municipalização é um dos princípios orientadores do direito da criança e do adolescente, o que não elide a atuação — solidária à do município — de estados e da União na tutela dos direitos infantojuvenis.",
+    "E": "É vedada a aplicação das regras previstas no ECA a pessoas entre dezoito e vinte e um anos de idade."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 55,
+   "materia": "Direito da Criança e do Adolescente",
+   "enunciado": "No que concerne à prevenção de ameaça ou violação dos direitos da criança e do adolescente e à política de atendimento desses direitos, assinale a opção correta.",
+   "alternativas": {
+    "A": "As ações previstas no ECA como parte da política especializada de promoção dos direitos humanos de crianças e adolescentes têm natureza de recomendação dirigida ao poder público e não de comando normativo de execução obrigatória.",
+    "B": "A DP deve participar da integração operacional voltada à agilização do atendimento inicial do adolescente a quem se atribua autoria de ato infracional, mas, segundo a doutrina, sua atuação não se estende ao processo de execução de medida socioeducativa eventualmente aplicada.",
+    "C": "As entidades de atendimento devem inscrever seus programas socioeducativos e de proteção destinados a crianças e adolescentes nos conselhos tutelares, que são os órgãos controladores das ações que integram a política brasileira de atendimento infantojuvenil.",
+    "D": "No caso de publicações, cabe ao editor responsável verificar se revistas que contenham material impróprio para crianças e adolescentes estão embaladas com lacre opaco e com advertência quanto a seu conteúdo, sob pena de pagamento de multa, sem prejuízo da apreensão da revista.",
+    "E": "De acordo com o ECA, é dispensável a autorização judicial para viagem ao exterior nos casos em que o responsável tiver a guarda ou a tutela provisória da criança ou adolescente em cuja companhia pretenda deixar o país."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 56,
+   "materia": "Direito da Criança e do Adolescente",
+   "enunciado": "Assinale a opção correta com referência a família substituta e adoção.",
+   "alternativas": {
+    "A": "De acordo com o ECA, a condenação do pai ou da mãe por crime constitui causa ensejadora da perda do poder familiar.",
+    "B": "Segundo o STJ, no tocante ao ambiente em que se deve desenvolver o convívio familiar, em regra, não há primazia da família natural estendida em relação à família substituta.",
+    "C": "O STJ, com base no princípio do interesse superior da criança e do adolescente, entende ser necessária a idade de doze anos para que o menor possa ser adotado por pessoa homoafetiva, pois é preciso que esse menor se manifeste previamente a respeito da pretensa adoção.",
+    "D": "Como a adoção rompe o vínculo de parentesco com a família biológica da criança e do adolescente, é imprescindível que os pais biológicos concordem com a adoção, o que torna necessária a propositura de ação de destituição do poder familiar caso os pais biológicos do adotante sejam desconhecidos.",
+    "E": "Apesar de a lei exigir o cadastro e a habilitação para a adoção, é possível que pessoas não cadastradas tenham preferência para a adoção de determinada criança ou adolescente, a exemplo do que ocorre no caso de adoção intuitu personae."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 57,
+   "materia": "Direito da Criança e do Adolescente",
+   "enunciado": "Em relação a conselho tutelar, assinale a opção correta.",
+   "alternativas": {
+    "A": "Se constatar que um professor de pré-escola teve ciência de maus-tratos contra criança e não comunicou o fato à autoridade competente, o conselho tutelar poderá iniciar procedimento destinado a impor penalidade administrativa.",
+    "B": "O conselho tutelar não tem competência para aplicar medida de advertência a pais que, a pretexto de corrigir ou educar uma criança, utilizarem castigo físico.",
+    "C": "Segundo o ECA, cabe ao conselho tutelar encaminhar ao MP informação a respeito do descumprimento injustificado de suas deliberações para que este faça uma representação à autoridade judiciária competente, para fins de execução das decisões do colegiado.",
+    "D": "Sob o ponto de vista administrativo, o conselho tutelar é subordinado hierarquicamente a uma das secretarias integrantes do Poder Executivo local.",
+    "E": "De acordo com o ECA, a escolha dos conselheiros tutelares deve ocorrer por eleição mediante voto indireto."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 58,
+   "materia": "Direito da Criança e do Adolescente",
+   "enunciado": "A respeito do acesso à justiça relacionado a interesses da criança e do adolescente, assinale a opção correta.",
+   "alternativas": {
+    "A": "Segundo o STJ, para que a criança possa participar, na condição de espectador, de evento público desacompanhada dos pais e(ou) responsáveis, é necessária autorização judicial, como também ocorre caso a criança figure, na condição de participante de espetáculo público, ainda que acompanhada dos pais ou responsáveis.",
+    "B": "Para o STJ, a regra do ECA que isenta de custas e emolumentos as ações judiciais de competência da justiça da infância e da juventude alcança tanto crianças e adolescentes que sejam partes em ações, quanto outras pessoas que possam participar dessas demandas.",
+    "C": "Segundo o STJ, em caso de abandono de menor seguido de ajuizamento de ação de destituição de poder familiar pelo MP, é obrigatória a nomeação de defensor público para atuar como curador especial na referida demanda.",
+    "D": "Atuará em conformidade com o disposto no ECA um órgão de comunicação social que divulgar a ocorrência de ato infracional atribuído a adolescente sem, no entanto, mencionar o nome desse jovem nem mostrar sua imagem, limitando-se a inserir as iniciais de seu nome e sobrenome.",
+    "E": "Segundo estabelece o ECA, é vedado a lei estadual atribuir a qualquer outro juízo que não seja o da vara da infância e da juventude a competência para o julgamento de crimes sexuais contra crianças e adolescentes."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 59,
+   "materia": "Direito da Criança e do Adolescente",
+   "enunciado": "No que se refere aos crimes e às infrações administrativas previstos no ECA, assinale a opção correta.",
+   "alternativas": {
+    "A": "De acordo com o STJ, o crime de corrupção de menores é de natureza formal, bastando a participação do menor de dezoito anos de idade na prática de infração penal para que haja a subsunção da conduta do agente imputável ao correspondente tipo descrito no ECA.",
+    "B": "O ECA prevê, na modalidade culposa, o crime de omissão na liberação de criança ou adolescente ilegalmente apreendido.",
+    "C": "Praticará crime material o agente que embaraçar a ação de autoridade judiciária, de membro de conselho tutelar ou de representante do MP no exercício de função prevista no ECA.",
+    "D": "O crime de descumprimento injustificado de prazo fixado no ECA em benefício de adolescente privado de liberdade é crime culposo e plurissubsistente.",
+    "E": "O crime de submissão da criança ou adolescente a vexame ou constrangimento, por ser unissubsistente, não admite a modalidade tentada."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 60,
+   "materia": "Direito da Criança e do Adolescente",
+   "enunciado": "Em consonância com o entendimento do STJ, assinale a opção correta no que concerne à LOAS.",
+   "alternativas": {
+    "A": "A aposentadoria no valor de um salário mínimo percebida por idoso integrante do grupo familiar deve ser incluída no cálculo da renda familiar per capita, para fins de apuração da condição de miserabilidade, a qual constitui requisito para a concessão do benefício assistencial previsto na LOAS.",
+    "B": "O direito à concessão do benefício assistencial da LOAS pode ser exercido a qualquer tempo, não havendo prescrição do fundo de direito quando a autarquia previdenciária nega a concessão do benefício na via administrativa.",
+    "C": "Caso questione em juízo o cancelamento unilateral de benefício previdenciário de pessoa hipossuficiente, a DP não agirá em consonância com a jurisprudência sobre o tema, pois, constatada a irregularidade na concessão do benefício, a autarquia previdenciária não estará obrigada a conceder a oportunidade para o exercício do contraditório e da ampla defesa.",
+    "D": "A DP, ao questionar judicialmente o indeferimento da concessão do benefício de prestação continuada a pessoa com deficiência hipossuficiente, deve comprovar, por outros meios, que essa pessoa não tem condições de prover a própria manutenção, já que a comprovação da renda per capita inferior a um quarto do salário mínimo não é suficiente para presumir a miserabilidade.",
+    "E": "Caso o salário de contribuição de um segurado supere o valor legalmente fixado como critério de baixa renda, eventual ação judicial movida pela DP para a obtenção do auxílio-reclusão não terá êxito, pois a jurisprudência não admite, para a concessão do referido benefício, que o julgador flexibilize o critério econômico para o deferimento do benefício."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 61,
+   "materia": "Direito da Criança e do Adolescente",
+   "enunciado": "De acordo com a jurisprudência do STJ, assinale a opção correta quanto aos comandos previstos na LDB.",
+   "alternativas": {
+    "A": "O procedimento de revalidação dos diplomas estrangeiros foi regulado pela LDB, que atribui ao Ministério da Educação a competência para verificar a equivalência entre os estudos realizados no exterior e os correspondentes nacionais.",
+    "B": "A forma de implementação de ações afirmativas no âmbito das universidades e o estabelecimento de normas objetivas de acesso a vagas destinadas à política pública de cotas não integram a autonomia universitária estabelecida pela LDB, pois são políticas de escopo nacional.",
+    "C": "Segundo a LDB, os denominados cursos sequenciais por campo de saber não integram a educação superior.",
+    "D": "É vedada a extinção antecipada de curso superior objeto de contrato de prestação de serviços educacionais firmado com instituição privada de ensino, já que a possibilidade de extinção não se insere no âmbito da autonomia universitária prevista na LDB.",
+    "E": "Os estados dispõem de atribuição para realizar programas de capacitação para professores em exercício custeados com recursos da educação a distância, porém não podem, para tanto, credenciar instituições privadas para promoverem cursos nessa modalidade."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 62,
+   "materia": "Direito da Criança e do Adolescente",
+   "enunciado": "Com base no disposto nas resoluções do CONANDA, assinale a opção correta.",
+   "alternativas": {
+    "A": "Os conselhos tutelares não são competentes para a apuração de atos infracionais praticados por crianças.",
+    "B": "Os sistemas nacionais de proteção de direitos humanos e de socioeducação têm liberdade de organização e funcionamento, mas não legitimidade normativa complementar.",
+    "C": "A atuação da DP no tocante às regras de acesso da criança e do adolescente à justiça não abrange a assessoria jurídica, limitando-se à assistência judiciária gratuita a todas as crianças ou adolescentes e suas famílias que dela necessitarem, na forma da LC de organização da DP.",
+    "D": "As atribuições dos conselhos tutelares previstas no ECA não podem ser ampliadas em regimento interno ou ato administrativo semelhante de quaisquer outras autoridades.",
+    "E": "Não integram o Sistema Nacional Socioeducativo os denominados programas de internação provisória."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 63,
+   "materia": "Direito da Criança e do Adolescente",
+   "enunciado": "À luz da Lei n.º 10.216/2001, que dispõe sobre a proteção e os direitos das crianças e adolescentes portadores de transtornos mentais, assinale a opção correta.",
+   "alternativas": {
+    "A": "Para a realização de pesquisas científicas para fins diagnósticos ou terapêuticos com a participação de criança portadora de distúrbio psiquiátrico, exige-se o consentimento expresso do representante legal da criança, o qual torna dispensável a comunicação aos conselhos profissionais competentes.",
+    "B": "Para a internação compulsória de adolescente, basta a autorização por médico devidamente registrado no CRM competente.",
+    "C": "A exigência legal de que sejam esgotados os recursos extra-hospitalares antes da internação não se aplica quando se trata de internação na modalidade voluntária.",
+    "D": "O adolescente que apresenta distúrbio psiquiátrico não pode, segundo o STJ, ser submetido a medida socioeducativa, uma vez que é inapto para cumpri-la.",
+    "E": "Caso uma criança seja internada involuntariamente em estabelecimento de saúde mental em razão de distúrbio psiquiátrico, o responsável técnico pelo estabelecimento deve comunicar o MP estadual do ocorrido, comunicação esta que é dispensada no momento da alta da criança."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 64,
+   "materia": "Direito da Criança e do Adolescente",
+   "enunciado": "Assinale a opção correta a respeito do papel da DP no contexto do sistema de garantia e proteção dos direitos individuais e coletivos da criança e do adolescente.",
+   "alternativas": {
+    "A": "A presença da DP entre os órgãos que compõem a integração operacional prevista no ECA justifica-se quando se tratar de atendimento inicial a adolescente a quem se atribua a autoria de ato infracional, mas não no atendimento de adolescentes inseridos em programa de acolhimento familiar.",
+    "B": "É exclusiva da DP a legitimidade para ajuizar ação de alimentos em proveito de criança ou adolescente nas situações de risco descritas no ECA.",
+    "C": "Segundo o STJ, não é cabível a nomeação de curador especial em processo de acolhimento institucional no âmbito do qual a criança figure como mera destinatária da decisão judicial e não como parte.",
+    "D": "Conforme entendimento do STJ, o prazo para interposição de recurso pela DP começa a fluir na data da audiência em que for proferida a sentença, caso presente o DP, e não da remessa dos autos com vista ou com a entrada destes na instituição.",
+    "E": "De acordo com o STJ, é da competência da vara da fazenda pública o julgamento de ação ajuizada pela DP visando à obtenção de medicamentos a menor, quando este estiver devidamente representado pelos pais."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 65,
+   "materia": "Direito da Criança e do Adolescente",
+   "enunciado": "No que se refere às medidas específicas de proteção da criança e do adolescente, assinale a opção correta.",
+   "alternativas": {
+    "A": "É improrrogável o prazo estabelecido pela legislação em vigor para a permanência da criança ou do adolescente em programa de acolhimento institucional.",
+    "B": "Em regra, é da competência exclusiva da autoridade judiciária a colocação de criança ou adolescente em programa de acolhimento familiar ou em família substituta mediante a concessão de guarda, tutela ou adoção.",
+    "C": "A medida de acolhimento institucional pode ser utilizada como punição aplicada a adolescente em conflito com a lei, hipótese em que se assemelha à medida socioeducativa de internação.",
+    "D": "Na hipótese de ameaça ou violação de direitos, o ECA estabeleceu, em rol taxativo, as medidas específicas de proteção que podem ser aplicadas pela autoridade competente.",
+    "E": "Ao contrário do acolhimento institucional, a provisoriedade não configura critério a ser observado no tocante à medida de acolhimento familiar."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 66,
+   "materia": "Direito da Criança e do Adolescente",
+   "enunciado": "Com referência à execução de medidas socioeducativas impostas a crianças e adolescentes, assinale a opção correta.",
+   "alternativas": {
+    "A": "É vedada a aplicação do sistema recursal previsto no CPC nos procedimentos relativos à execução de medidas socioeducativas.",
+    "B": "Na fase de execução é vedada, segundo o entendimento do STJ, a substituição de medida socioeducativa aplicada ao adolescente.",
+    "C": "O encaminhamento a tratamento psiquiátrico não figura entre as medidas às quais se sujeitam os agentes públicos executores de medidas socioeducativas que utilizarem, como forma de disciplina, tratamento degradante à criança ou ao adolescente.",
+    "D": "O denominado plano individual de atendimento pode ser objeto de impugnação pelo DP ou pelo MP, porém sua execução não será suspensa, salvo determinação judicial em contrário.",
+    "E": "A execução de programas socioeducativos destinados às crianças e adolescentes em regime de orientação e apoio sociofamiliar não se insere entre as responsabilidades das entidades de atendimento."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 67,
+   "materia": "Princípios Institucionais da Defensoria Pública",
+   "enunciado": "Com relação ao tratamento dispensado à assistência judiciária, à assistência jurídica e à DP nas Constituições brasileiras, assinale a opção correta.",
+   "alternativas": {
+    "A": "A Constituição de 1946 foi a primeira a determinar aos estados e à União a criação de órgãos especiais para a concessão de assistência judiciária aos necessitados.",
+    "B": "O conceito de assistência jurídica, evolução do conceito de assistência judiciária, surgiu pela primeira vez com a promulgação da Constituição Federal de 1967, antes de sua alteração pela EC n.º 1/1969.",
+    "C": "A instituição da DP foi prevista pela primeira vez com a promulgação da EC n.º 1/1969, que alterou a Constituição Federal de 1967, todavia, sua criação não era obrigatória pelos estados da Federação.",
+    "D": "A Constituição Imperial de 1824, apesar de não tratar expressamente da assistência judiciária, concedia isenção de emolumentos, custas, taxas e selos nas causas cíveis às pessoas que provassem não ter condições de pagá-los.",
+    "E": "A determinação dirigida à União e aos estados para a concessão de assistência judiciária aos necessitados surgiu pela primeira vez na Constituição de 1934."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 68,
+   "materia": "Princípios Institucionais da Defensoria Pública",
+   "enunciado": "Acerca do estatuto constitucional da DP, assinale a opção correta.",
+   "alternativas": {
+    "A": "Ao DP aplica-se a garantia constitucional da inamovibilidade, que proíbe sua remoção contra sua vontade, a não ser quando determinada por sentença judicial transitada em julgado.",
+    "B": "A alteração do art. 134 da CF pela EC n.º 80/2014 concedeu aos DPs a garantia da vitaliciedade, que é adquirida após três anos de exercício, ficando a perda do cargo, após esse período, dependente de sentença judicial transitada em julgado.",
+    "C": "A CF assegura aos DPs e aos procuradores dos estados aprovados em concurso público de provas e títulos estabilidade após dois anos de efetivo exercício, mediante avaliação de desempenho e relatório circunstanciado das corregedorias.",
+    "D": "À DP aplicam-se os mesmos princípios institucionais atribuídos ao MP pela CF: a unidade, a indivisibilidade e a independência funcional.",
+    "E": "A autonomia administrativa prevista na CF permite às DPs estaduais o livre gerenciamento do seu orçamento obtido por meio de aprovação de proposta orçamentária de iniciativa privativa dos governadores dos estados."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 69,
+   "materia": "Princípios Institucionais da Defensoria Pública",
+   "enunciado": "Marina, DP estável do estado do Rio Grande do Norte, deixou de prestar informações solicitadas pelo Conselho Superior da DPE/RN sobre determinados processos judiciais sob sua responsabilidade no prazo estabelecido, sem justificativa. Por esse motivo, um dos conselheiros recomendou a instauração de processo administrativo disciplinar contra Marina na Corregedoria-Geral da DPE/RN. Nessa situação hipotética, conforme o disposto na LCE n.º 251/03-RN, Marina",
+   "alternativas": {
+    "A": "está desobrigada de prestar as informações solicitadas pelo conselho por ser DP estável.",
+    "B": "não praticou infração disciplinar, pois a independência funcional dos DPs a desobriga de prestar as informações solicitadas.",
+    "C": "violou dever funcional ao não atender à solicitação do conselho e pode ser punida com uma pena de advertência por escrito.",
+    "D": "deve passar por um inquérito administrativo, que é obrigatório para a imposição de qualquer das sanções previstas na mencionada LCE.",
+    "E": "pode vir a receber advertência, suspensão, remoção compulsória, demissão ou cassação de aposentadoria, sanções aplicáveis pelo Conselho Superior da DPE/RN."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 70,
+   "materia": "Princípios Institucionais da Defensoria Pública",
+   "enunciado": "No tocante à ouvidoria-geral da DP dos estados, conforme o disposto na LC n.º 80/1994 e alterações trazidas pela LC n.º 132/2009, assinale a opção correta.",
+   "alternativas": {
+    "A": "O ouvidor-geral deve ser nomeado pelo governador do estado com base em lista tríplice elaborada pelo conselho superior e encaminhada pelo defensor público-geral do estado.",
+    "B": "A lista tríplice elaborada para subsidiar a escolha do ouvidor-geral deve ser composta preferencialmente por integrantes da carreira da DP.",
+    "C": "O ouvidor-geral participa do conselho superior da DP do estado com direito a voz e voto.",
+    "D": "A ouvidoria-geral tem a atribuição de contribuir para a disseminação das formas de participação popular no acompanhamento e na fiscalização da prestação dos serviços realizados pela DP.",
+    "E": "A ouvidoria-geral é órgão de promoção da qualidade dos serviços prestados pela DP do estado e de fiscalização da atividade funcional e da conduta dos membros da instituição."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 71,
+   "materia": "Princípios Institucionais da Defensoria Pública",
+   "enunciado": "De acordo com a Constituição do Estado do Rio Grande do Norte, assinale a opção correta.",
+   "alternativas": {
+    "A": "Nos projetos de lei sobre organização de serviços administrativos da DPE/RN, é admitido o aumento da despesa prevista, devido à autonomia administrativa dessa instituição.",
+    "B": "A competência para legislar sobre assistência judiciária é concorrente entre o estado do Rio Grande do Norte e seus municípios em razão da adoção do princípio da simetria com a CF.",
+    "C": "A Assembleia Legislativa, por maioria absoluta de seus membros, pode delegar ao governador do estado a competência para elaborar legislação referente à organização da DPE/RN.",
+    "D": "Por ter iniciativa legislativa própria para sua proposta orçamentária, a DPE/RN não se sujeita aos limites estabelecidos na LDO aprovada pela Assembleia Legislativa.",
+    "E": "Os recursos destinados à DPE/RN correspondentes às dotações orçamentárias, inclusive os créditos suplementares e os especiais, são entregues em duodécimos."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 72,
+   "materia": "Princípios Institucionais da Defensoria Pública",
+   "enunciado": "Com base na LC n.º 80/1994 e na LCE n.º 251/2003–RN, assinale a opção correta no que se refere aos assistidos pela DP.",
+   "alternativas": {
+    "A": "Se houver interesses antagônicos entre assistidos envolvidos em uma mesma causa, caberá ao defensor público-geral avaliar se há a necessidade de indicação de DPs distintos para cada um deles.",
+    "B": "O assistido tem o direito de ser patrocinado pelo defensor natural e a ser atendido com qualidade e eficiência.",
+    "C": "Em razão do caráter individual da assistência prestada pela DP, pessoa jurídica não pode ser assistida por um DP.",
+    "D": "A assistência pela DPE/RN é determinada com base na renda do interessado, e deve ser recusada de plano para pessoas com renda mensal superior a dois salários mínimos.",
+    "E": "Durante o atendimento inicial, o assistido deve outorgar mandato judicial ao DP responsável, para viabilizar o exercício da sua representação em juízo."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 73,
+   "materia": "Princípios Institucionais da Defensoria Pública",
+   "enunciado": "Assinale a opção correta no que tange às funções da DP na solução de conflitos.",
+   "alternativas": {
+    "A": "A validade, como título executivo extrajudicial, de um instrumento de transação referendado por um DP e celebrado com pessoa jurídica de direito público depende de homologação de um juiz.",
+    "B": "A atuação da DP na solução de conflitos que envolvam direitos difusos ocorre de modo subsidiário à atuação do MP.",
+    "C": "A promoção, pela DP, da solução de conflitos envolvendo direitos individuais homogêneos pode englobar grupo de pessoas não hipossuficientes em razão da natureza desses interesses.",
+    "D": "A DP tem como função institucional, prioritariamente, promover a solução judicial dos conflitos mediante a proposição da ação cabível no caso em concreto.",
+    "E": "O DP, na promoção da solução extrajudicial dos litígios, pode ser indicado pelas partes como árbitro, em compromisso arbitral."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 74,
+   "materia": "Princípios Institucionais da Defensoria Pública",
+   "enunciado": "No processo histórico que caracterizou a passagem da prestação de assistência judiciária para a prestação de assistência jurídica, a discussão em torno do acesso à justiça nos países do mundo ocidental levou ao desenvolvimento de três posições básicas, que surgiram uma após a outra e foram denominadas ondas. Considerando essas informações, assinale a opção correta.",
+   "alternativas": {
+    "A": "Um dos objetivos principais do método empregado pela terceira onda é a prestação de assistência jurídica de forma a prevenir disputas sociais, com foco na solução extrajudicial de conflitos.",
+    "B": "A primeira onda tinha entre seus modelos o sistema judicare, que consistia na indicação, pelo Estado, de advogados particulares que atuavam sem receber remuneração para representar judicialmente as pessoas mais pobres.",
+    "C": "O sistema judicare incentivava e permitia que o advogado particular auxiliasse os pobres a compreender seus direitos e a identificar áreas em que podiam valer-se de remédios jurídicos.",
+    "D": "A segunda onda estava fundamentada em uma visão individualista, que buscava promover um aumento da qualidade da representação dos interesses individuais dos mais pobres.",
+    "E": "Na terceira onda, buscou-se um novo paradigma de assistência jurídica, com base em um modelo misto de assistência que abandonava as técnicas utilizadas nas duas primeiras ondas de reformas, agora consideradas obsoletas."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 75,
+   "materia": "Princípios Institucionais da Defensoria Pública",
+   "enunciado": "No que diz respeito à atuação da DP perante o STJ, assinale a opção correta.",
+   "alternativas": {
+    "A": "A atuação das DPs estaduais perante o STJ é admitida exclusivamente em processos de habeas corpus, em razão da amplitude e da natureza desse remédio constitucional.",
+    "B": "A LC n.º 80/1994 veda expressamente a atuação das DPs estaduais perante os tribunais superiores.",
+    "C": "A atuação perante o STJ é de competência exclusiva da DPU.",
+    "D": "É admitida a atuação de uma DP estadual perante o STJ, desde que haja previsão expressa dessa atuação na lei orgânica do estado em questão.",
+    "E": "A DPU, a seu critério, pode atuar perante o STJ em substituição às DPs estaduais."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 76,
+   "materia": "Direito Penal",
+   "enunciado": "A respeito de arrependimento posterior, crime impossível, circunstâncias judiciais, agravantes e atenuantes, assinale a opção correta à luz da legislação e da jurisprudência do STJ.",
+   "alternativas": {
+    "A": "Existindo duas qualificadoras ou causas de aumento de pena, uma delas implica o tipo qualificado ou a majorante na terceira fase da dosimetria, enquanto a outra pode ensejar, validamente, a valoração negativa de circunstância judicial e a exasperação da pena-base.",
+    "B": "O arrependimento posterior, por ser uma circunstância subjetiva, não se estende aos demais corréus, uma vez reparado o dano integralmente por um dos autores do delito até o recebimento da denúncia.",
+    "C": "A existência de sistema de segurança ou de vigilância eletrônica torna impossível, por si só, o crime de furto cometido no interior de estabelecimento comercial.",
+    "D": "Condenações anteriores transitadas em julgado alcançadas pelo prazo depurador de cinco anos previsto no art. 64, I, do CP, além de afastarem os efeitos da reincidência, também impedem a configuração de maus antecedentes.",
+    "E": "Na hipótese de o autor confessar a autoria do crime, mas alegar causa excludente de ilicitude ou culpabilidade, não se admite a incidência da atenuante da confissão espontânea, descrita no art. 65, III, d, CP."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 77,
+   "materia": "Direito Penal",
+   "enunciado": "Em cada uma das seguintes opções, é apresentada uma situação hipotética relativa ao concurso de crimes, seguida de uma assertiva a ser julgada. Assinale a opção que apresenta assertiva correta de acordo com a legislação penal e a jurisprudência do STJ.",
+   "alternativas": {
+    "A": "No interior de um ônibus coletivo, Sérgio subtraiu, com o emprego de grave ameaça, os aparelhos celulares de cinco passageiros, além do dinheiro que o cobrador portava. Nessa situação, como houve a violação de patrimônios distintos, Sérgio praticou o crime de roubo simples em concurso material.",
+    "B": "Plínio praticou um crime de latrocínio (previsto no art. 157, § 3.º, parte final, do CP) no qual houve uma única subtração patrimonial, com desígnios autônomos e com dois resultados mortes (vítimas). Nessa situação, Plínio praticou o crime de latrocínio em concurso formal impróprio, disposto no art. 70, caput, parte final, do CP, no qual se aplica a regra do concurso material, de forma que as penas devem ser aplicadas cumulativamente.",
+    "C": "Túlio, em um mesmo contexto fático, praticou, com uma menor impúbere de treze anos de idade, sexo oral (felação), além de cópula anal e conjunção carnal. Nessa situação, Túlio perpetrou o crime de estupro de vulnerável em concurso material.",
+    "D": "Zélio foi condenado pela prática de crimes de roubo e corrupção de menores em concurso formal, cometidos em continuidade delitiva. Nessa situação, na dosimetria da pena aplicar-se-ão cumulativamente as regras do concurso formal (art. 70 do CP) e da continuidade delitiva (art. 71 do CP).",
+    "E": "Múcio, mediante grave ameaça exercida com o emprego de arma de fogo, subtraiu bens pertencentes a Bruna e, ainda, exigiu dela a entrega de cartão bancário e senha para a realização de saques. Nessa situação, Múcio praticou, em concurso formal, os crimes de roubo circunstanciado e extorsão majorada."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 78,
+   "materia": "Direito Penal",
+   "enunciado": "No que se refere à extinção da punibilidade, assinale a opção correta.",
+   "alternativas": {
+    "A": "Nos crimes contra a ordem tributária, o pagamento integral do débito tributário após o trânsito em julgado da condenação é causa de extinção da punibilidade.",
+    "B": "Na compreensão do STF, a decisão que, com base em certidão de óbito falsa, julga extinta a punibilidade do réu não pode ser revogada, dado que gera coisa julgada material.",
+    "C": "O indulto, ato privativo do presidente da República, tem por escopo extinguir os efeitos primários da condenação, isto é, a pena, de forma plena ou parcial. Todavia, persistem os efeitos secundários, tais como a reincidência.",
+    "D": "O recebimento de queixa-crime pelo juiz não é condição para o reconhecimento da perempção.",
+    "E": "O ajuizamento da queixa-crime perante juízo incompetente ratione loci, no prazo fixado para o seu exercício, não obsta o decurso do prazo decadencial."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 79,
+   "materia": "Direito Penal",
+   "enunciado": "Acerca do concurso de agentes, assinale a opção correta conforme a legislação de regência e a jurisprudência do STJ.",
+   "alternativas": {
+    "A": "A ciência da prática do fato delituoso caracteriza conivência e, consequentemente, participação, mesmo que inexistente o dever jurídico de impedir o resultado.",
+    "B": "Em um crime de roubo praticado com o emprego de arma de fogo, mesmo que todos os agentes tenham conhecimento da utilização do artefato bélico, somente o autor do disparo deve responder pelo resultado morte, visto que não se encontrava dentro do desdobramento causal normal da ação delitiva. Nesse caso, não há que se falar em coautoria no crime mais gravoso (latrocínio).",
+    "C": "Não se admite o concurso de agentes no crime de porte ilegal de arma de fogo, haja vista que somente o agente que efetivamente porta a arma de fogo incorre nas penas do delito.",
+    "D": "É admissível, segundo o entendimento doutrinário e jurisprudencial, a possibilidade de concurso de agentes em crime culposo, que ocorre quando há um vínculo psicológico na cooperação consciente de alguém na conduta culposa de outrem. O que não se admite nos tipos culposos é a participação.",
+    "E": "O falso testemunho, por ser crime de mão própria, não admite a coautoria ou a participação do advogado que induz o depoente a proclamar falsa afirmação."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 80,
+   "materia": "Direito Penal",
+   "enunciado": "No que tange a nexo de causalidade, iter criminis, espécies e aplicação da pena, assinale a opção correta à luz da legislação e jurisprudência do STJ.",
+   "alternativas": {
+    "A": "Situação hipotética: Lino e Vítor, mediante complexa logística, escavaram por dois meses um túnel de setenta metros entre um imóvel que adquiriram e o cofre de uma instituição bancária que pretendiam furtar, cessando a empreitada em decorrência de prisão em flagrante, quando estavam a doze metros do ponto externo do banco.\nAssertiva: Nesse contexto, Lino e Vítor colocaram em risco o bem jurídico tutelado e praticaram atos executórios do crime de furto qualificado.",
+    "B": "Na aplicação da pena, na primeira fase do processo dosimétrico, o julgador encontra-se vinculado a critério objetivo, sendo que, na hipótese de aferir negativamente circunstância judicial, não pode exasperar a pena-base do réu em fração superior a um sexto.",
+    "C": "Situação hipotética: A vítima Lúcia foi alvejada e ferida por disparo de arma de fogo desfechado por Aldo, que agiu com animus laedandi. Internada em um hospital, Lúcia faleceu não em decorrência dos ferimentos sofridos, mas em razão de queimaduras causadas por um incêndio que destruiu toda a área de internação dos enfermos.\nAssertiva: Nessa situação, e considerando a teoria da equivalência dos antecedentes ou da conditio sine qua non, Aldo será responsabilizado criminalmente pelo resultado naturalístico (morte).",
+    "D": "O agente condenado a pena privativa de liberdade inferior a quatro anos de reclusão, reincidente e com circunstância judicial desfavorável somente pode iniciar o cumprimento da sanção corporal em regime semiaberto.",
+    "E": "O aumento da pena de multa no concurso formal de crimes, dentro do intervalo de um sexto a um meio previsto no art. 70 do CP, deve adotar o critério da quantidade de infrações praticadas. Assim, aplica-se o aumento de um sexto pela prática de duas infrações; um quinto, para três infrações; um quarto, para quatro infrações; um terço, para cinco infrações; um meio, para seis infrações ou mais infrações."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 81,
+   "materia": "Direito Penal",
+   "enunciado": "José, com trinta anos de idade, manteve, entre 2013 e 2015, relacionamento amoroso com uma menor que atualmente tem treze anos de idade. Nesse período, constantemente, José, praticava com ela conjunção carnal e outros atos libidinosos diversos. A mãe da menor descobriu o caso e denunciou José à polícia. A menor, em seu depoimento, afirmou que sempre consentiu com o namoro e com os atos sexuais praticados e que, da mesma forma, já havia namorado outros rapazes antes de José. Acerca dessa situação hipotética, assinale a opção correta à luz da jurisprudência dominante, atualmente, no STF e no STJ.",
+   "alternativas": {
+    "A": "A prévia existência de relacionamento amoroso e duradouro entre a menor e José extingue a punibilidade do agente por crime de estupro de vulnerável.",
+    "B": "José praticou crime de estupro de vulnerável e atentado violento ao pudor em continuidade delitiva.",
+    "C": "José praticou crime de estupro de vulnerável, ainda que a adolescente tenha consentido em manter com ele relações sexuais.",
+    "D": "A ausência de representação formulada pela menor ou por sua mãe impede que José seja processado pelos fatos ocorridos.",
+    "E": "A anterior experiência sexual da vítima afasta sua vulnerabilidade, de forma que José deve responder apenas por corrupção de menor."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 82,
+   "materia": "Direito Penal",
+   "enunciado": "Dalva, em período gestacional, foi informada de que seu bebê sofria de anencefalia, diagnóstico confirmado por laudos médicos. Após ter certeza da irreversibilidade da situação, Dalva, mesmo sem estar correndo risco de morte, pediu aos médicos que interrompessem sua gravidez, o que foi feito logo em seguida. Nessa situação hipotética, de acordo com a jurisprudência do STF, a interrupção da gravidez",
+   "alternativas": {
+    "A": "deve ser interpretada como conduta atípica e, portanto, não criminosa.",
+    "B": "deveria ter sido autorizada pela justiça para não configurar crime.",
+    "C": "é isenta de punição por ter ocorrido em situação de aborto necessário.",
+    "D": "configurou crime de aborto praticado por Dalva.",
+    "E": "configurou crime de aborto praticado pelos médicos com consentimento da gestante."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 83,
+   "materia": "Direito Penal",
+   "enunciado": "João, imputável, foi preso em flagrante no momento em que subtraía para si, com a ajuda de um adolescente de dezesseis anos de idade, cabos de telefonia avaliados em cem reais. Ao ser interrogado na delegacia, João, apesar de ser primário, disse ser Pedro, seu irmão, para tentar ocultar seus maus antecedentes criminais. Por sua vez, o adolescente foi ouvido na delegacia especializada, continuou sua participação nos fatos e afirmou que já havia sido internado anteriormente pela prática de ato infracional análogo ao furto. Nessa situação hipotética, conforme a jurisprudência dominante dos tribunais superiores, em tese, João praticou os crimes de",
+   "alternativas": {
+    "A": "furto qualificado privilegiado, corrupção de menores e falsa identidade.",
+    "B": "corrupção de menores e falsidade ideológica.",
+    "C": "furto simples, falsa identidade e corrupção de menores.",
+    "D": "furto qualificado e falsidade ideológica.",
+    "E": "furto simples e corrupção de menores."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 84,
+   "materia": "Direito Penal",
+   "enunciado": "Maria alegou ser vítima de violência doméstica praticada pelo seu ex-companheiro Lucas, com quem conviveu por cinco anos, até dele se separar. Após a separação, Lucas passou a fazer frequentes ligações telefônicas para o aparelho celular da ex-mulher durante o dia, no período em que ela está trabalhando, à noite e de madrugada. Embora Maria já tenha trocado de número telefônico algumas vezes, Lucas consegue os novos números com conhecidos e continua a fazer as ligações. Apavorada e em sofrimento psicológico, Maria procurou auxílio e obteve do juiz competente medida protetiva urgente que obriga Lucas a não manter mais contato com ela por qualquer meio de comunicação, ordem que ele, porém, não obedeceu, pois continua a fazer as ligações. A respeito dessa situação hipotética, assinale a opção correta com base na Lei n.º 11.340/2006 e na jurisprudência dos tribunais superiores.",
+   "alternativas": {
+    "A": "A medida protetiva de urgência concedida pelo juiz deverá ser considerada inválida, se Lucas não tiver sido previamente intimado nem ouvido, pois isso caracterizaria flagrante desrespeito ao princípio do contraditório.",
+    "B": "Para garantir que Lucas cumpra a medida protetiva de urgência, o juiz pode requisitar auxílio da força policial.",
+    "C": "Ao descumprir a medida protetiva imposta pelo juiz, Lucas pratica o crime de desobediência.",
+    "D": "Como não houve violência física, não ficou caracterizada violência doméstica que justificasse a aplicação da medida protetiva de urgência imposta a Lucas, que deve ser revogada.",
+    "E": "Para a aplicação e validade da medida protetiva de urgência, eram imprescindíveis a coabitação e a prática da violência no âmbito da unidade doméstica."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 85,
+   "materia": "Direito Penal",
+   "enunciado": "Vanessa foi presa em flagrante enquanto vendia e expunha à venda cerca de duzentos DVDs piratas, falsificados, de filmes e séries de televisão. Realizada a devida perícia, foi confirmada a falsidade dos objetos. Incapaz de apresentar autorização para a comercialização dos produtos, Vanessa alegou em sua defesa que desconhecia a ilicitude de sua conduta. Com relação a essa situação hipotética, assinale a opção correta à luz da jurisprudência dominante dos tribunais superiores.",
+   "alternativas": {
+    "A": "Vanessa é isenta de culpabilidade, pois incidiu em erro de proibição.",
+    "B": "O MP deve comprovar que os detentores dos direitos autorais das obras falsificadas sofreram real prejuízo para que a conduta de Vanessa seja criminosa.",
+    "C": "A conduta de Vanessa ofende o direito constitucional que protege a autoria de obras intelectuais e configura crime de violação de direito autoral.",
+    "D": "A conduta de vender e expor à venda DVDs falsificados é atípica em razão da incidência do princípio da adequação social.",
+    "E": "A conduta de vender e expor à venda DVDs falsificados é atípica em razão da incidência do princípio da insignificância."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 86,
+   "materia": "Direito Processual Penal",
+   "enunciado": "Assinale a opção correta acerca do processo penal segundo o CPP e o entendimento do STF e do STJ.",
+   "alternativas": {
+    "A": "A prevenção no processo penal, em diversas situações, constitui critério de fixação de competência, como na hipótese em que for possível a dois ou mais juízes conhecerem do mesmo crime — seja por dividirem a mesma competência de juízo, seja pela incerteza da competência territorial — ou, ainda, nos crimes continuados ou permanentes.",
+    "B": "De acordo com a jurisprudência do STF, é imprescindível a transcrição integral dos diálogos colhidos por meio de interceptação telefônica ou escuta ambiental.",
+    "C": "Segundo a jurisprudência do STJ, são impossíveis sucessivas prorrogações de interceptações telefônicas, ainda que o pedido de quebra de sigilo telefônico seja devidamente fundamentado, em razão da previsão legal de prazo máximo de quinze dias para tal medida, renovável por igual período.",
+    "D": "A notícia anônima sobre eventual prática criminosa, por si só, é idônea para a instauração de inquérito policial ou a deflagração de ação penal.",
+    "E": "A competência, na hipótese de crime continuado ou permanente praticado em território de duas ou mais jurisdições, é fixada pelo lugar onde se praticar o maior número de infrações."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 87,
+   "materia": "Direito Processual Penal",
+   "enunciado": "Assinale a opção correta a respeito da denúncia e da queixa-crime conforme o entendimento do STJ.",
+   "alternativas": {
+    "A": "Nos crimes de ação penal privada, na procuração pela qual o ofendido outorga poderes especiais para o oferecimento da queixa-crime, observados os demais requisitos previstos no CPP, não é necessária a descrição pormenorizada do delito, desde que haja, pelo menos, a menção do fato criminoso ou o nomen juris.",
+    "B": "Em habeas corpus, pode-se discutir a ausência de justa causa para a propositura da ação penal, mesmo nas hipóteses em que seja necessário um exame minucioso do conjunto fático-probatório em que ocorreu a infração.",
+    "C": "O prazo de cinco dias para oferecimento da denúncia, nas hipóteses de réu preso, a fim de evitar a restrição prolongada à liberdade sem acusação formada, configura prazo próprio.",
+    "D": "A queixa-crime apresentada perante juízo incompetente não obsta a decadência, se tiver sido observado o prazo de seis meses previsto no CPP.",
+    "E": "O ato de recebimento da denúncia veicula manifestação decisória do Poder Judiciário, e não apenas simples despacho de caráter ordinatório."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 88,
+   "materia": "Direito Processual Penal",
+   "enunciado": "Assinale a opção correta com relação ao interrogatório do acusado segundo o entendimento do STJ e do STF.",
+   "alternativas": {
+    "A": "Situação hipotética: Gérson, denunciado por roubo, não obstante a falta de citação prévia, compareceu espontaneamente à audiência designada, ao início da qual foi cientificado da acusação e entrevistou-se, reservadamente, com o DP nomeado para defendê-lo. Ato contínuo, informado do seu direito de permanecer em silêncio, Gérson foi interrogado e negou a imputação.\nAssertiva: Nessa situação, a falta de citação torna nulo o interrogatório de Gérson.",
+    "B": "É direito do corréu ser representado por defensor constituído ou dativo no interrogatório dos outros acusados como forma de oportunizar a produção de prova que entender pertinente.",
+    "C": "O direito de presença e de participação ativa nos atos de interrogatório judicial dos litisconsortes penais passivos encontra suporte legitimador em convenções internacionais, embora não seja previsto na CF.",
+    "D": "O interrogatório do acusado de tráfico de drogas deve ocorrer no fim da instrução processual, após a oitiva das testemunhas.",
+    "E": "É nulo o interrogatório do acusado realizado antes da oitiva de testemunhas de acusação inquiridas por meio de carta precatória."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 89,
+   "materia": "Direito Processual Penal",
+   "enunciado": "Acerca das provas no processo penal, assinale a opção correta de acordo com o entendimento do STF e do STJ.",
+   "alternativas": {
+    "A": "As provas testemunhais obtidas por meio de delação premiada, ainda que em consonância com as demais provas produzidas na fase judicial da persecução penal, são elementos inidôneos para subsidiarem a condenação do agente.",
+    "B": "Conforme o princípio constitucional da razoável duração do processo, não cabem dilações indevidas no processo, sendo que a demora na tramitação do feito deve ser proporcional à complexidade do delito nele veiculado, bem como às diligências e aos meios de prova indispensáveis a seu deslinde.",
+    "C": "Uma vez que a busca da verdade real se subordina a formas rígidas, a afirmação da reincidência depende de certidão na qual fique atestado cabalmente o trânsito em julgado de anterior condenação.",
+    "D": "Conforme o entendimento do STF, a valoração da prova diz respeito a mera questão de fato, que não se confunde com o critério de reexame da prova, que é questão de direito.",
+    "E": "Conforme súmula vinculante do STF, o defensor tem direito, no interesse do representado, de ter acesso amplo aos elementos de prova, os quais, já documentados em procedimento investigatório realizado por órgão com competência de polícia judiciária, refiram-se ao exercício do direito de defesa, inclusive com obtenção de cópia dos autos do inquérito policial, ainda que este tramite sob sigilo."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 90,
+   "materia": "Direito Processual Penal",
+   "enunciado": "Assinale a opção correta a respeito dos sistemas de processo penal e da interpretação da lei processual penal segundo o CPP e o entendimento do STJ.",
+   "alternativas": {
+    "A": "De acordo com o CPP, a analogia equivale à norma penal incriminadora, protegida pela reserva legal, razão pela qual não pode ser usada contra o réu.",
+    "B": "No sistema inquisitivo, a confissão é considerada a rainha das provas e predominam nele procedimentos exclusivamente escritos.",
+    "C": "A lei processual penal veda a interpretação extensiva para prejudicar o réu.",
+    "D": "A interpretação extensiva é um processo de integração por meio do qual se aplica a uma determinada situação para a qual inexiste hipótese normativa própria um preceito que regula hipótese semelhante.",
+    "E": "Para o uso da analogia, é importante considerar a natureza do diploma de onde se deve extrair a norma reguladora."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 91,
+   "materia": "Direito Processual Penal",
+   "enunciado": "A respeito da prova indiciária em processo penal, da prisão em flagrante delito, das medidas assecuratórias, das citações e intimações e da suspensão condicional do processo, assinale a opção correta.",
+   "alternativas": {
+    "A": "O CPP não admite a realização de citação por hora certa.",
+    "B": "De acordo com a jurisprudência do STJ, a suspensão condicional do processo é aplicável aos crimes praticados em contexto de violência doméstica e familiar contra a mulher.",
+    "C": "O CPP veda ao juiz a utilização de indícios para fundamentar uma condenação criminal.",
+    "D": "Admite-se a prisão em flagrante na modalidade de flagrante presumido de alguém perseguido pela autoridade policial logo após o cometimento de um crime e encontrado em situação que faça presumir ser ele o autor da infração.",
+    "E": "O sequestro consiste na medida assecuratória proposta com o fim de promover a retenção de bens imóveis e móveis do indiciado ou acusado, ainda que em poder de terceiros, quando adquiridos com o proveito da infração penal."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 92,
+   "materia": "Direito Processual Penal",
+   "enunciado": "Com relação aos institutos da emendatio e da mutatio libelli, da sentença e da coisa julgada, bem como aos procedimentos comum e ordinário, aos juizados especiais cíveis e aos crimes dolosos contra a vida, assinale a opção correta.",
+   "alternativas": {
+    "A": "Situação hipotética: Mauro foi definitivamente condenado pela prática do crime de roubo simples por sentença proferida por juízo estadual absolutamente incompetente. Posteriormente, ele foi novamente condenado pelo mesmo fato, desta feita pelo juízo federal constitucionalmente competente, mas agora a uma pena inferior à anteriormente imposta.\nAssertiva: Nesse caso, segundo o entendimento do STJ, diante da existência de coisa julgada material, deverá prevalecer a primeira condenação.",
+    "B": "Situação hipotética: A DP, representando Jonas, ajuizou queixa-crime imputando ao querelado Antônio a prática do delito de injúria. Todavia, o juiz rejeitou a exordial acusatória.\nAssertiva: Nesse caso, para impugnar essa decisão, é cabível a interposição de recurso em sentido estrito.",
+    "C": "Segundo a jurisprudência do STJ, não é possível a anulação parcial de sentença proferida pelo júri a fim de determinar submissão do réu a novo julgamento somente em relação às qualificadoras, ainda que a decisão dos jurados seja manifestamente contrária à prova dos autos apenas nesse particular.",
+    "D": "A figura processual da mutatio libelli se presta à correção da equivocada capitulação jurídica dada ao fato criminoso narrado na denúncia, incorretamente classificado pelo MP. Essa providência, ademais, pode ser conduzida pelo próprio magistrado, sem que haja necessidade de aditamento ministerial ou oitiva prévia da defesa, exceto no caso de a modificação ocasionar agravamento na pena do acusado.",
+    "E": "Situação hipotética: Paulo foi denunciado pelo crime de furto simples. Devidamente citado, ele ofertou resposta à acusação, alegando não ter sido autor do crime e apresentando documentos.\nAssertiva: Nessa hipótese, após a oitiva do MP e convencendo-se da procedência dos argumentos lançados pelo acusado, poderá o juiz absolvê-lo sumariamente."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 93,
+   "materia": "Direito Processual Penal",
+   "enunciado": "Assinale a opção correta no que se refere a revisão criminal, crime de tortura, nulidades, execução penal, prerrogativas e garantias dos DPs relacionadas com o processo penal.",
+   "alternativas": {
+    "A": "A condenação de policial civil pelo crime de tortura acarreta, como efeito automático, independentemente de fundamentação específica, a perda do cargo público e a interdição para seu exercício pelo dobro do prazo da pena aplicada.",
+    "B": "A ausência de intimação da expedição de carta precatória para a inquirição de testemunhas gera, segundo entendimento sumulado do STF, nulidade absoluta, por cerceamento de defesa e violação do devido processo legal.",
+    "C": "Para impugnar decisão do juiz da execução penal que unifique as penas impostas ao sentenciado, é cabível a interposição de recurso em sentido estrito.",
+    "D": "A ação de revisão criminal deve ser ajuizada no prazo decadencial de dois anos, contados do trânsito em julgado da sentença condenatória.",
+    "E": "Segundo o entendimento do STJ, à DP, quando ela atua na qualidade de assistente de acusação, representando a vítima de determinado crime em uma ação penal, não se aplica a prerrogativa institucional da concessão de prazo em dobro para a realização de atos processuais."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 94,
+   "materia": "Direito Processual Penal",
+   "enunciado": "Daniel foi submetido a julgamento pelo tribunal do júri pelo crime de homicídio qualificado e foi, finalmente, absolvido pelo conselho de sentença, que acolheu a tese de legítima defesa. Interposto recurso pelo MP, o TJ competente deu provimento à impugnação ministerial para submeter o acusado a novo julgamento, por reputar a decisão dos jurados manifestamente contrária à prova dos autos. No segundo julgamento, Daniel foi condenado por homicídio simples a pena de seis anos de reclusão. A defesa interpôs recurso, que foi provido, e Daniel foi submetido a terceiro julgamento perante o tribunal do júri, que o condenou por homicídio qualificado a pena de doze anos de reclusão. Acerca dessa situação hipotética, assinale a opção correta, com base no entendimento do STF.",
+   "alternativas": {
+    "A": "Diante do resultado do segundo julgamento, ao conselho de sentença era vedado condenar Daniel por homicídio qualificado.",
+    "B": "Embora o conselho de sentença estivesse legalmente autorizado a condenar Daniel pelo crime de homicídio qualificado, não poderia o juiz presidente dosar a pena em patamar superior a seis anos de reclusão.",
+    "C": "Em função do princípio constitucional da soberania dos veredictos, não houve ilegalidade na imposição de pena a Daniel, no terceiro julgamento, em quantidade superior à fixada no segundo julgamento.",
+    "D": "O recurso interposto pelo MP para impugnar a sentença absolutória do primeiro julgamento é denominado de protesto por novo júri.",
+    "E": "O recurso interposto pelo MP não poderia ter sido conhecido, uma vez que a impugnação de decisão manifestamente contrária à prova dos autos somente pode ser veiculada em recurso da defesa."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 95,
+   "materia": "Direito Processual Penal",
+   "enunciado": "No que se refere à classificação dos atos jurisdicionais, assinale a opção correta.",
+   "alternativas": {
+    "A": "O ato processual pelo qual o juiz recebe a denúncia tem natureza jurídica de despacho de mero expediente.",
+    "B": "O ato jurisdicional que, apreciando o mérito da ação penal, aplica medida de segurança ao acusado é qualificado como sentença absolutória própria.",
+    "C": "Sentença subjetivamente plúrima é aquela que provém de um órgão colegiado homogêneo, como é o caso dos tribunais de segundo grau de jurisdição.",
+    "D": "Sentenças simples são as proferidas por um órgão monocrático ou singular, como no caso das sentenças proferidas pelo juiz presidente do tribunal do júri.",
+    "E": "A decisão que põe termo à primeira fase do rito do tribunal do júri tem natureza de decisão definitiva stricto sensu."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 96,
+   "materia": "Direito da Execução Penal",
+   "enunciado": "Acerca do trabalho do condenado e da remição, assinale a opção correta segundo a LEP e o entendimento do STJ.",
+   "alternativas": {
+    "A": "O STJ sedimentou o entendimento de que é vedado o trabalho extramuros ao condenado em regime fechado, mesmo mediante escolta.",
+    "B": "Aquele que estiver cumprindo pena privativa de liberdade ou que estiver preso provisoriamente será obrigado a trabalhar na medida de suas aptidões e capacidade.",
+    "C": "A decisão que concede a remição na execução penal tem caráter meramente declarativo. Assim, o abatimento dos dias trabalhados do restante da pena a cumprir fica subordinado a ausência de posterior punição pela prática de falta grave.",
+    "D": "A remição, cuja aplicação restringe-se exclusivamente ao trabalho interno, é uma recompensa àqueles que procedem corretamente e uma forma de abreviar o tempo de condenação, estimulando o próprio apenado a buscar atividades laborativas lícitas e educacionais durante o seu período de encarceramento.",
+    "E": "O condenado que executar tarefas como prestação de serviço à comunidade deverá ser remunerado mediante prévia tabela, não podendo sua remuneração ser inferior a um salário mínimo."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 97,
+   "materia": "Direito da Execução Penal",
+   "enunciado": "Com referência à remição, assinale a opção correta segundo a LEP e o entendimento do STJ.",
+   "alternativas": {
+    "A": "A LEP autoriza a remição do remanescente da pena aos reeducandos em regime aberto.",
+    "B": "A remição da pena pelo trabalho é realizada à razão de um dia de pena a cada três dias de trabalho, cuja jornada diária não seja inferior a seis nem superior a oito horas, o que impõe, para fins de cálculo, a soma das horas e não a consideração dos dias efetivamente trabalhados.",
+    "C": "O tempo remido será computado para a concessão do livramento condicional e do indulto.",
+    "D": "A LEP autoriza a remição do remanescente da pena aos reeducandos em regime fechado, não sendo facultada a concessão do benefício nos casos em que a pena estiver sendo cumprida em regime semiaberto.",
+    "E": "Ao condenado que cumpre pena em regime fechado é vedado remir parte da reprimenda pela frequência a curso de ensino regular ou de educação profissional."
+   },
+   "gabarito": "X"
+  },
+  {
+   "n": 98,
+   "materia": "Direito da Execução Penal",
+   "enunciado": "Assinale a opção correta acerca da unificação e do cumprimento simultâneo de penas, segundo a LEP e o entendimento do STJ.",
+   "alternativas": {
+    "A": "Sobrevindo nova condenação, incumbirá ao juízo que proferiu a sentença condenatória proceder à unificação das penas, adequando o regime prisional ao resultado da soma ou unificação das penas, observando-se, quando for o caso, a detração ou remição.",
+    "B": "Segundo jurisprudência do STJ, sobrevindo nova condenação a pena privativa de liberdade a condenado que se encontre cumprindo pena restritiva de direitos, a suspensão do cumprimento desta ou o cumprimento simultâneo das penas mostra-se compatível quando fixado na nova condenação o regime inicial semiaberto ou fechado.",
+    "C": "A pena alternativa de prestação pecuniária não pode ser executada concomitantemente com o cumprimento da pena privativa de liberdade.",
+    "D": "A pena alternativa de perda de bens não pode ser executada concomitantemente com o cumprimento da pena privativa de liberdade.",
+    "E": "Se houver condenação por mais de um crime, no mesmo processo ou em processos distintos, o regime de cumprimento de pena será determinado pelo resultado da soma ou unificação das penas, considerando-se, quando for o caso, a detração ou remição."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 99,
+   "materia": "Direito da Execução Penal",
+   "enunciado": "Assinale a opção correta relativamente às Regras Mínimas para o Tratamento do Preso, da ONU.",
+   "alternativas": {
+    "A": "As conferências entre o preso não julgado e o seu advogado podem ser vigiadas visualmente por um policial ou por um funcionário do estabelecimento prisional, mas a conversação entre eles não poderá ser ouvida.",
+    "B": "O preso pode ser submetido à realização de serviços que lhe sejam atribuídos em consequência de medidas disciplinares.",
+    "C": "Relativamente aos instrumentos de coação, o uso de algemas e correntes é vedado, inclusive como medida de precaução contra fuga durante uma transferência.",
+    "D": "As celas ou quartos destinados ao isolamento noturno podem, em regra, ser ocupados por até quatro presos.",
+    "E": "Nos estabelecimentos prisionais para mulheres devem existir instalações especiais para o tratamento de presas grávidas e das que tenham acabado de dar à luz, devendo constar do registro da criança que o seu nascimento ocorreu no estabelecimento prisional."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 100,
+   "materia": "Direito da Execução Penal",
+   "enunciado": "Conforme previsto na LEP, constitui incumbência da DP",
+   "alternativas": {
+    "A": "diligenciar a obtenção de recursos materiais e humanos para melhor assistência ao preso ou internado, em harmonia com a direção do estabelecimento.",
+    "B": "requerer a emissão anual do atestado de pena a cumprir.",
+    "C": "colaborar na fiscalização do cumprimento das condições da suspensão e do livramento condicional.",
+    "D": "fiscalizar a regularidade formal das guias de recolhimento e de internamento.",
+    "E": "contribuir na elaboração de planos nacionais de desenvolvimento, sugerindo as metas e prioridades da política criminal e penitenciária."
+   },
+   "gabarito": "B"
+  }
+ ]
+}
