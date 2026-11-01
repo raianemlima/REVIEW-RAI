@@ -118,3 +118,50 @@ test("as resoluções públicas usam o texto vigente: nada tachado, a Res. 230/2
   }
   assert.match(JSON.parse(await readFile(join(pasta, "res-cnj-401.json"), "utf8")).nome, /substituiu a Res\. 230\/2016/);
 });
+
+test("lei seca selada com a chave pública: cifra sem segredo e abre só com a senha do app", async () => {
+  const { parDaSenha } = await import(join(raiz, "ferramentas/ci/leiseca_selada.mjs"));
+  const pasta = await mkdtemp(join(tmpdir(), "leiseca-")), bins = join(pasta, "bins"), saida = join(pasta, "saida");
+  await mkdir(bins); await mkdir(saida);
+  const senha = "senha-de-teste", publica = parDaSenha(senha).publica.toString("base64");
+  await writeFile(join(bins, "chave-publica.txt"), publica + "\n");
+  await writeFile(join(saida, "cp-dls.json"), JSON.stringify(leiFicticia));
+  const semSegredo = { ...process.env, LEISECA_PASTA: bins }; delete semSegredo.LEISECA_CHAVE; delete semSegredo.APP_SENHA;
+  const cifra = await run("node", [join(raiz, "ferramentas/ajustes/cifrar_leiseca.mjs"), saida, "--chave", join(pasta, "nao-cria.txt")], { env: semSegredo, cwd: pasta });
+  assert.match(cifra.stdout, /cp-dls\.bin \(selado\)/);
+  assert.equal((await import("node:fs")).existsSync(join(pasta, "nao-cria.txt")), false, "o modo selado não cria chave simétrica");
+  const bin = await readFile(join(bins, "cp-dls.bin"));
+  assert.equal(bin.subarray(0, 4).toString(), "LSX1");
+  assert.doesNotMatch(bin.toString("latin1"), /fictício|Decodificado/);
+
+  await escreverDeck(pasta, senha, { disciplinas: [{ id: "pp", nome: "Direito Processual Penal" }, { id: "dp", nome: "Direito Penal" }], cartoes: [], leiseca: [] });
+  const env = { ...semSegredo, APP_SENHA: senha, LEISECA_PUBLICA: join(pasta, "sem-publicas") };
+  const { stdout } = await run("node", [script, join(pasta, "index.html")], { env });
+  assert.ok(stdout.includes(`chave pública da lei seca do curso (pode ir para ${bins}/chave-publica.txt): ${publica}`));
+  assert.match(stdout, /ok: 1 lei\(s\) e 1 cartão\(ões\) de lei seca no baralho \(cp-dls\.bin\)/);
+  const { deck } = await lerDeck(pasta, senha);
+  assert.equal(deck.leiseca[0].id, "cp-dls");
+  assert.equal(deck.leiseca[0].disc, "dp");
+
+  // outra senha: a lei fica de fora com aviso, o baralho continua abrindo e a publicação não quebra
+  const outra = await mkdtemp(join(tmpdir(), "leiseca-"));
+  await escreverDeck(outra, "outra-senha", { disciplinas: [], cartoes: [], leiseca: [] });
+  const r = await run("node", [script, join(outra, "index.html")], { env: { ...env, APP_SENHA: "outra-senha" } });
+  assert.match(r.stdout, /chave-publica\.txt não corresponde à senha atual/);
+  assert.match(r.stdout, /cp-dls\.bin não abre com a senha atual do app/);
+  assert.deepEqual((await lerDeck(outra, "outra-senha")).deck.leiseca, []);
+});
+
+test("a disciplina prefere o nome sem 'processo' (Execução Penal antes de Processo Penal e Execução Penal)", async () => {
+  const pasta = await mkdtemp(join(tmpdir(), "leiseca-")), publicas = join(pasta, "publicas");
+  await mkdir(publicas);
+  await writeFile(join(publicas, "lep.json"), JSON.stringify({ ...leiFicticia, id: "lep-dls", disc: "@execucao penal", cartoes: [] }));
+  const senha = "senha-de-teste";
+  await escreverDeck(pasta, senha, { disciplinas: [{ id: "ppe", nome: "Direito Processual Penal e Execução Penal" }, { id: "ep", nome: "Execução Penal" }], cartoes: [], leiseca: [] });
+  const env = { ...process.env, APP_SENHA: senha, LEISECA_PASTA: join(pasta, "sem-bins"), LEISECA_PUBLICA: publicas };
+  await run("node", [script, join(pasta, "index.html")], { env });
+  assert.equal((await lerDeck(pasta, senha)).deck.leiseca[0].disc, "ep");
+  await escreverDeck(pasta, senha, { disciplinas: [{ id: "ppe", nome: "Direito Processual Penal e Execução Penal" }], cartoes: [], leiseca: [] });
+  await run("node", [script, join(pasta, "index.html")], { env });
+  assert.equal((await lerDeck(pasta, senha)).deck.leiseca[0].disc, "ppe", "sem outra opção, aceita a disciplina com 'processo'");
+});

@@ -2,15 +2,18 @@
 // Uso: APP_SENHA=... [LEISECA_CHAVE=...] node ferramentas/ci/aplicar_leiseca.mjs _site/index.html
 //
 // Duas origens, trocadas pelo id em DECK.leiseca (com os cartões de lacuna da lei, se houver):
-// - texto oficial público em ferramentas/conteudo/dados/leiseca-publica/*.json (ex.: resoluções do CNJ): só precisa de APP_SENHA;
-// - lei seca do curso em leiseca-cifrada/*.bin, extraída por ferramentas/conteudo/leiseca_decodificada.py e cifrada com a
-//   chave do segredo LEISECA_CHAVE (ferramentas/ajustes/cifrar_leiseca.mjs): sem esse segredo, os .bin ficam de fora.
+// - texto oficial público em ferramentas/conteudo/dados/leiseca-publica/*.json (ex.: resoluções do CNJ);
+// - lei seca do curso em leiseca-cifrada/*.bin, extraída por ferramentas/conteudo/leiseca_decodificada.py e cifrada por
+//   ferramentas/ajustes/cifrar_leiseca.mjs. O .bin "selado" (LSX1) abre só com a senha do app (APP_SENHA), veja
+//   ferramentas/ci/leiseca_selada.mjs; o .bin antigo, de chave simétrica, precisa do segredo LEISECA_CHAVE.
+// Toda execução com APP_SENHA mostra no log a chave pública que sela a lei seca do curso para esta senha.
 // O baralho é decifrado com APP_SENHA e cifrado de novo com o MESMO sal, como o aplicar_revisoes.mjs: quem já entrou
 // continua abrindo o app offline. Sem APP_SENHA, não faz nada.
 import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
 import { webcrypto as crypto, randomBytes } from "node:crypto";
 import { gzipSync, gunzipSync } from "node:zlib";
 import { dirname, join } from "node:path";
+import { parDaSenha, ehSelado, abrir } from "./leiseca_selada.mjs";
 
 const arq = process.argv[2], senha = process.env.APP_SENHA, chave = process.env.LEISECA_CHAVE;
 const pasta = process.env.LEISECA_PASTA || "leiseca-cifrada";
@@ -20,20 +23,33 @@ const bins = existsSync(pasta) ? readdirSync(pasta).filter(f => f.endsWith(".bin
 const publicas = existsSync(pastaPublica) ? readdirSync(pastaPublica).filter(f => f.endsWith(".json")).sort() : [];
 if (!bins.length && !publicas.length) { console.log(`Nenhuma lei em ${pasta}/ nem em ${pastaPublica}/.`); process.exit(0); }
 if (!senha) { console.log("::notice::Segredo APP_SENHA não configurado: lei seca extra não aplicada."); process.exit(0); }
+const par = parDaSenha(senha), publicaB64 = par.publica.toString("base64");
+console.log(`chave pública da lei seca do curso (pode ir para ${pasta}/chave-publica.txt): ${publicaB64}`);
+const arqPublica = join(pasta, "chave-publica.txt");
+if (existsSync(arqPublica) && readFileSync(arqPublica, "utf8").trim() !== publicaB64)
+  console.log(`::warning::${arqPublica} não corresponde à senha atual do app: sele a lei seca do curso de novo com a chave pública acima.`);
 
 const unb64 = s => Buffer.from(s, "base64"), b64 = u => Buffer.from(u).toString("base64");
 const norm = s => String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
 const leis = publicas.map(f => JSON.parse(readFileSync(join(pastaPublica, f), "utf8")));
-if (bins.length && !chave) console.log("::notice::Segredo LEISECA_CHAVE não configurado: lei seca do curso (leiseca-cifrada) não aplicada.");
-if (bins.length && chave) {
+const binsSelados = [], binsSimetricos = [];
+for (const f of bins) (ehSelado(readFileSync(join(pasta, f))) ? binsSelados : binsSimetricos).push(f);
+const aplicados = [...publicas];
+for (const f of binsSelados) {
+  try { leis.push(JSON.parse(gunzipSync(abrir(par, readFileSync(join(pasta, f)))).toString("utf8"))); aplicados.push(f); }
+  catch { console.log(`::warning::${f} não abre com a senha atual do app (APP_SENHA): sele de novo com a chave pública acima. A lei ficou de fora.`); }
+}
+if (binsSimetricos.length && !chave) console.log(`::notice::Segredo LEISECA_CHAVE não configurado: ${binsSimetricos.join(", ")} não aplicado(s).`);
+if (binsSimetricos.length && chave) {
   const kLei = await crypto.subtle.importKey("raw", unb64(chave.trim()), "AES-GCM", false, ["decrypt"])
     .catch(() => { console.error("::error::O segredo LEISECA_CHAVE não é uma chave válida (copie o arquivo chave-leiseca.txt inteiro)."); process.exit(1); });
-  for (const f of bins) {
+  for (const f of binsSimetricos) {
     const buf = readFileSync(join(pasta, f));
     let pt;
     try { pt = Buffer.from(await crypto.subtle.decrypt({ name: "AES-GCM", iv: buf.subarray(0, 12) }, kLei, buf.subarray(12))); }
     catch { console.error(`::error::O segredo LEISECA_CHAVE não abre ${f}. Confira o segredo.`); process.exit(1); }
     leis.push(JSON.parse(gunzipSync(pt).toString("utf8")));
+    aplicados.push(f);
   }
 }
 if (!leis.length) process.exit(0);
@@ -49,16 +65,19 @@ try { pt = Buffer.from(await crypto.subtle.decrypt({ name: "AES-GCM", iv: unb64(
 catch { console.error("::error::A senha do segredo APP_SENHA não abre o baralho deste index.html."); process.exit(1); }
 const deck = JSON.parse((enc.z === "gzip" ? gunzipSync(pt) : pt).toString("utf8"));
 
-// "@processo civil" -> id da disciplina do baralho cujo nome contém o termo (Civil e Penal não pegam as processuais)
+// "@processo civil" -> id da disciplina do baralho cujo nome contém o termo. Civil e Penal nunca pegam as processuais
+// nem a execução penal; os demais termos preferem a disciplina sem "processo" no nome e só caem nela se não houver outra.
 function disciplina(ref) {
   if (!String(ref).startsWith("@")) return (deck.disciplinas || []).some(d => d.id === ref) ? ref : "";
   const termo = norm(ref.slice(1)), alternativas = { "processo civil": ["processo civil", "processual civil"], "processo penal": ["processo penal", "processual penal"] }[termo] || [termo];
-  const achada = (deck.disciplinas || []).find(d => {
-    const n = norm(`${d.nome || ""} ${d.curto || ""}`);
+  const nomes = (deck.disciplinas || []).map(d => [d, norm(`${d.nome || ""} ${d.curto || ""}`)]);
+  const acha = evitaProcesso => nomes.find(([, n]) => {
     if ((termo === "civil" || termo === "penal") && /process|execu/.test(n)) return false;
+    if (evitaProcesso && /process/.test(n)) return false;
     return alternativas.some(t => n.includes(t));
   });
-  return achada ? achada.id : "";
+  const achada = (/process/.test(termo) ? null : acha(true)) || acha(false);
+  return achada ? achada[0].id : "";
 }
 
 const FONTE_CARTAO = "secundária: elaborado a partir do texto legal e dos grifos do curso; confira a redação vigente";
@@ -86,4 +105,4 @@ for (const lei of leis) {
 const iv = randomBytes(12);
 const ct = new Uint8Array(await crypto.subtle.encrypt({ name: "AES-GCM", iv }, key, gzipSync(Buffer.from(JSON.stringify(deck), "utf8"), { level: 9 })));
 writeFileSync(caminhoDeck, JSON.stringify({ ...enc, z: "gzip", iv: b64(iv), ct: b64(ct) }));
-console.log(`ok: ${nLeis} lei(s) e ${nCartoes} cartão(ões) de lei seca no baralho (${[...publicas, ...(chave ? bins : [])].join(", ")})`);
+console.log(`ok: ${nLeis} lei(s) e ${nCartoes} cartão(ões) de lei seca no baralho (${aplicados.join(", ")})`);
