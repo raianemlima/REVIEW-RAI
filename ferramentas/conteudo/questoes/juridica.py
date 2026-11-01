@@ -34,7 +34,8 @@ EXCECAO_ADMIN = re.compile(r"administrativo\s+judiciaria|direito|juridic|oficial
 FORA_DISC = re.compile(
     r"portugu|redacao|interpretacao de texto|compreensao|informatica|estatistic|raciocinio|logica|matematic|"
     r"atualidades|conhecimentos gerais|conhecimentos basicos|ingles|espanhol|geografia|historia (do|de)|realidade|"
-    r"administracao (geral|publica e|de)|nocoes de administracao|contabil|arquivolog|etica no servico|gestao de pessoas")
+    r"administracao (geral|publica e|de)|nocoes de administracao|contabil|arquivolog|etica no servico|gestao de pessoas|"
+    r"analise de dados|inteligencia artificial|\bia\b")
 
 
 def cargo_juridico(cargo):

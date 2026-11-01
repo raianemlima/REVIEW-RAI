@@ -1,0 +1,594 @@
+{
+ "id": "tjms-2022-analista-judiciario-area-fim",
+ "nome": "TJMS 2022 · Analista Judiciário - Área Fim",
+ "cargo": "Concurso de servidores · prova tipo 1",
+ "banca": "FGV",
+ "gabarito": "definitivo",
+ "questoes": [
+  {
+   "n": 16,
+   "materia": "Noções de Legislação",
+   "enunciado": "João, analista judiciário do Poder Judiciário do Estado de Mato Grosso do Sul, está lotado na Vara Criminal da Comarca Alfa e deseja se remover, por permuta, em comum acordo, com José, igualmente ocupante do cargo de analista judiciário, lotado na Vara Cível da Comarca Beta. De acordo com o Estatuto dos Servidores Públicos do Poder Judiciário do Estado de Mato Grosso do Sul, no caso em tela, a remoção por permuta dar-se-á a requerimento de ambos os interessados da mesma categoria funcional:",
+   "alternativas": {
+    "A": "mediante a anuência dos respectivos juízes diretores do foro, condicionado o seu deferimento ao interesse da Administração;",
+    "B": "com prévia concordância dos respectivos juízes titulares das Varas, condicionada à comprovação de saúde satisfatória dos servidores por junta médica oficial e independentemente da existência de claro de lotação;",
+    "C": "mediante a anuência dos respectivos juízes titulares das Varas, independentemente de serem os servidores estáveis, não havendo que se condicionar o seu deferimento ao interesse da Administração;",
+    "D": "com prévia concordância dos respectivos juízes diretores do foro, condicionada à comprovação de saúde satisfatória dos servidores por junta médica oficial e à existência de claro de lotação;",
+    "E": "mediante a anuência dos respectivos juízes titulares das Varas, desde que ambos os servidores sejam estáveis, e os servidores farão jus a dez dias de trânsito, bem como à ajuda de custo respectiva."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 17,
+   "materia": "Noções de Legislação",
+   "enunciado": "De acordo com a Portaria nº 2.100/2021, que dispõe sobre o Regimento Interno e o Manual de Atribuições da Secretaria do de Alienação de Bens Apreendidos em Procedimentos Penais fica subordinada ao gabinete do(a):",
+   "alternativas": {
+    "A": "Conselho Superior da Magistratura;",
+    "B": "Corregedoria-Geral de Justiça;",
+    "C": "Vice-Presidência do Tribunal de Justiça;",
+    "D": "Coordenadoria das Varas de Execução Penal;",
+    "E": "Coordenadoria-Geral de Segurança Institucional."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 18,
+   "materia": "Noções de Legislação",
+   "enunciado": "Mário, analista judiciário do Poder Judiciário do Estado de Mato Grosso do Sul, exerce função de confiança e está lotado no Departamento de Precatórios, que faz parte da estrutura da Vice- Presidência do Tribunal de Justiça. No exercício de suas funções, Mário não observou seu compromisso específico de priorizar a orientação construtiva ao corrigir eventuais falhas dos subordinados. Agindo dessa forma, após processo administrativo para apuração de infração ética em que foi garantido a Mário o contraditório e a ampla defesa, de acordo com o Código de Ética dos Servidores do Poder Judiciário do Estado de Mato Grosso do Sul, lhe foi aplicada a penalidade de:",
+   "alternativas": {
+    "A": "advertência, pelo diretor-geral da Secretaria, cabendo recurso ao Presidente, no prazo de 15 dias;",
+    "B": "censura, pelo corregedor-geral de Justiça, cabendo recurso ao Presidente, no prazo de 5 dias;",
+    "C": "censura, pelo diretor-geral da Secretaria, cabendo recurso ao Presidente, no prazo de 5 dias;",
+    "D": "censura, pelo presidente do Tribunal, cabendo recurso ao Conselho Superior da Magistratura, no prazo de 15 dias;",
+    "E": "advertência, pelo presidente do Tribunal, cabendo recurso ao Conselho Superior da Magistratura, no prazo de 15 dias."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 19,
+   "materia": "Noções de Legislação",
+   "enunciado": "Maria, analista judiciário do Poder Judiciário do Estado de Mato Grosso do Sul, exerce função de confiança de chefia na Vara Cível de determinada comarca e, ao retornar do almoço, encontrou em sua mesa uma cesta com queijos e vinhos importados caríssimos, que lhe foi mandada de presente, visando ao cumprimento de sua missão funcional, pela sociedade empresária Alfa, que é ré em diversas ações que tramitam naquela Vara. De acordo com a Portaria nº 2.121/2021 daquele Tribunal de Justiça, diante das circunstâncias do caso concreto, em que não foi possível que o presente fosse recusado ou devolvido sem ônus por Maria, tendo em vista que a devolução da cesta não ocasionaria constrangimento perante a empresa concedente, a servidora deve comunicar o fato ao:",
+   "alternativas": {
+    "A": "Comitê de Accountability, que efetuará os trâmites necessários para promover a sua devolução à sociedade empresária Alfa, às suas expensas;",
+    "B": "juiz titular da Vara, que efetuará os trâmites necessários para promover a remessa do presente à Corregedoria-Geral de Justiça, para sua devolução à sociedade empresária Alfa;",
+    "C": "Comitê de Integridade, que efetuará os trâmites necessários para promover a remessa do presente ao Controle Interno do",
+    "D": "juiz diretor do Fórum, que efetuará os trâmites necessários para promover a remessa do presente ao Controle Interno do",
+    "E": "gestor da unidade ou Comitê de Compliance, que efetuará os trâmites necessários para promover a sua devolução à sociedade empresária Alfa."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 20,
+   "materia": "Noções de Legislação",
+   "enunciado": "De acordo com a Portaria nº 2.209/2021, que dispõe sobre a comunicação, recebimento e tratamento das comunicações de irregularidades no âmbito do Poder Judiciário do Estado de Mato Grosso do Sul, a gestão das comunicações de irregularidades, pela Presidência do Tribunal de Justiça de Mato Grosso do Sul, será regida por alguns princípios, como:",
+   "alternativas": {
+    "A": "tratamento e correção das falhas sistêmicas identificadas;",
+    "B": "acolhimento e apreciação de todas as comunicações de irregularidades, inclusive as realizadas de má-fé;",
+    "C": "retaliação àqueles que se utilizarem do canal de comunicação com manifesta má-fé;",
+    "D": "substituição dos demais canais de comunicação postos à disposição da população, como a Ouvidoria Judiciária;",
+    "E": "vedação ao sigilo das informações e documentos obtidos por meio do canal de comunicação."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 21,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Com o objetivo de coibir os elevados níveis de corrupção detectados no âmbito da Administração Pública do Estado Alfa, a Assembleia Legislativa, por iniciativa da totalidade dos seus membros, aprovou projeto de lei, que veio a ser sancionado pelo governador do Estado, alterando o Regime Jurídico dos Servidores Públicos. De acordo com a alteração, era vedado o reingresso, no serviço público estadual, dos servidores demitidos ou exonerados em razão de condenação administrativa pela prática de desvio, malbaratamento ou apropriação de recursos públicos. Irresignado com o teor das alterações, o sindicato da categoria solicitou um pronunciamento de sua assessoria jurídica, a qual concluiu, corretamente, que a referida lei é:",
+   "alternativas": {
+    "A": "constitucional, pois não houve vício no processo legislativo, além de materializar o direito fundamental à probidade;",
+    "B": "constitucional, pois não houve vício no processo legislativo, além de apenas reproduzir vedação constitucional expressa;",
+    "C": "inconstitucional, pois houve vício de iniciativa no processo legislativo e o caráter ilimitado da pena cominada afronta direito fundamental;",
+    "D": "inconstitucional, pois, embora não tenha ocorrido vício no processo legislativo, o ilícito a que se refere a alteração deve ser objeto de condenação em processo judicial;",
+    "E": "constitucional, pois o vício existente no processo legislativo foi superado com a promulgação e as vedações constitucionais à cominação de certas penas são restritas ao âmbito penal."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 22,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "O Tribunal de Contas do Estado Alfa, ao apreciar as contas de governo apresentadas pelo prefeito do Município Beta nos três últimos exercícios financeiros, detectou a não aplicação do mínimo exigido da receita municipal em ações e serviços públicos de saúde. Em razão desse estado de coisas, o prefeito foi informado sobre a existência de um forte movimento popular para que seja decretada a intervenção do Estado Alfa no Município Beta. Essa intervenção, considerando a narrativa apresentada, é da modalidade:",
+   "alternativas": {
+    "A": "provocada e pressupõe o acolhimento de representação, de iniciativa do Ministério Público, pelo Tribunal de Justiça, com edição de decreto pelo governador e posterior apreciação da Assembleia Legislativa;",
+    "B": "provocada e pressupõe o acolhimento de representação, de iniciativa do Tribunal de Contas, pelo Tribunal de Justiça, com edição de decreto pelo governador e posterior apreciação da Assembleia Legislativa;",
+    "C": "espontânea, devendo ser objeto de deliberação da Assembleia Legislativa, a partir de provocação de grupos populares, com posterior edição de decreto pelo governador;",
+    "D": "provocada e pressupõe representação do Tribunal de Contas, com apreciação da Assembleia Legislativa e posterior edição de decreto pelo governador;",
+    "E": "espontânea, devendo ser objeto de decreto do governador do Estado, com posterior apreciação da Assembleia Legislativa."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 23,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "João, Pedro e Miguel, agentes públicos vinculados a três Municípios distintos, entendiam que os direitos que as leis de regência lhes asseguravam não estavam sendo corretamente observados pelos respectivos entes federativos. João, nomeado de maneira irregular, pois não fora previamente aprovado em concurso público, ocupa cargo público de provimento efetivo no Município Alfa, sendo estabelecida relação jurídico- administrativa com esse ente. Pedro foi regularmente admitido em sociedade de economia mista do Município Beta, sendo a respectiva relação jurídica regida pelo regime celetista de contratação de pessoal. Por fim, Miguel fora contratado por prazo determinado, para suprir necessidade temporária da Administração Pública direta do Município Delta, conforme autorizado em lei específica. Ao procurarem um advogado, foi-lhes corretamente informado que a Justiça competente para apreciar as respectivas demandas é a:",
+   "alternativas": {
+    "A": "Justiça Comum em relação a João e a Miguel, e a Justiça do Trabalho para a demanda de Pedro;",
+    "B": "Justiça Comum em relação a Miguel, e a Justiça do Trabalho para as demandas de João e Pedro;",
+    "C": "Justiça do Trabalho em relação a João e a Pedro, e a Justiça Comum para a demanda de Miguel;",
+    "D": "Justiça do Trabalho em relação a João, Pedro e Miguel;",
+    "E": "Justiça Comum em relação a João, Pedro e Miguel."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 24,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "João e Pedro, estudiosos do Direito Constitucional, travaram intenso debate a respeito da possibilidade de atos normativos municipais serem diretamente cotejados, em caráter originário, com normas da Constituição da República de 1988, de modo que fosse reconhecida a eventual incompatibilidade, pela via própria, pelo Supremo Tribunal Federal (STF) ou pelo Tribunal de Justiça (TJ). Ao final, concluíram, corretamente, que atos normativos dessa natureza:",
+   "alternativas": {
+    "A": "não podem ser cotejados diretamente com norma da Constituição da República de 1988, apenas com a Constituição Estadual, o que será feito pelo TJ;",
+    "B": "somente podem ser cotejados diretamente com norma da Constituição da República de 1988 pelo STF, quer sejam posteriores, quer anteriores, à promulgação desta última;",
+    "C": "somente podem ser cotejados diretamente com norma da Constituição da República de 1988 pelo TJ, isto se a norma tiver sido objeto de reprodução obrigatória pela Constituição Estadual;",
+    "D": "somente podem ser cotejados diretamente com norma da Constituição da República de 1988 pelo TJ, isto se a norma for de reprodução obrigatória pela Constituição Estadual, ainda que não tenha sido reproduzida;",
+    "E": "podem ser cotejados diretamente com norma da Constituição da República de 1988 pelo STF ou pelo TJ, neste último caso se a norma for de reprodução obrigatória pela Constituição Estadual, ainda que não tenha sido reproduzida."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 25,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Um grupo de entidades com atuação na área de saúde, algumas de natureza empresarial, com fins lucrativos, outras de natureza filantrópica, portanto, sem fins lucrativos, consultaram um advogado a respeito da possibilidade de participarem do Sistema Único de Saúde (SUS). O advogado respondeu-lhes, corretamente, que:",
+   "alternativas": {
+    "A": "tenham, ou não, fins lucrativos, as entidades poderão atuar no SUS, o que exige a celebração de contrato de direito público ou de convênio, tendo preferência as entidades filantrópicas e sem fins lucrativos;",
+    "B": "tenham, ou não, fins lucrativos, as entidades poderão atuar no SUS em igualdade de condições, o que não exige ajuste prévio com o poder público, sendo remuneradas pela sistemática de reembolso;",
+    "C": "tenham, ou não, fins lucrativos, as entidades poderão atuar no SUS em igualdade de condições, o que exige a celebração de contrato de direito público ou de convênio;",
+    "D": "tenham, ou não, fins lucrativos, as entidades poderão atuar no SUS em igualdade de condições, o que exige a celebração de contrato de direito público;",
+    "E": "apenas as entidades sem fins lucrativos poderão atuar no SUS, o que exige a celebração de contrato de direito público ou de convênio."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 26,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Alfa, Associação de Defesa das Pessoas com Deficiência, em atuação na esfera territorial do Estado Beta e que há uma década defende os interesses das pessoas com deficiência, constatou que determinado direito social consagrado na Constituição da República de 1988 não fora objeto de regulamentação pela legislação infraconstitucional. Esse estado de coisas impedia a sua fruição pelos destinatários em potencial, incluindo os seus associados. Por tal razão, decidiu impetrar mandado de injunção coletivo para que a omissão fosse suprida. De acordo com essa narrativa, é correto afirmar que Alfa:",
+   "alternativas": {
+    "A": "não tem legitimidade para impetrar o mandado de injunção coletivo, pois sua atuação não é nacional;",
+    "B": "não tem legitimidade para impetrar o mandado de injunção coletivo, já que o direito social a ser regulamentado abrange outros destinatários;",
+    "C": "tem legitimidade para impetrar o mandado de injunção coletivo, embora o direito social também pertença a outros destinatários e não tenha autorização especial;",
+    "D": "não tem legitimidade para impetrar o mandado de injunção coletivo, cabível apenas se o direito a ser regulamentado pertencer a uma coletividade indeterminada de pessoas;",
+    "E": "tem legitimidade para impetrar o mandado de injunção coletivo, apesar de o direito social alcançar outros destinatários, sendo ainda exigida uma autorização especial."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 27,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Joana, pessoa de grande popularidade, tem o desejo de ingressar no ambiente político e de se candidatar a um cargo eletivo, já que o seu pai é governador do Estado Beta. À luz da sistemática constitucional, Joana:",
+   "alternativas": {
+    "A": "não pode se candidatar a nenhum cargo eletivo no território nacional;",
+    "B": "não pode se candidatar a nenhum cargo eletivo de nível estadual no território do Estado Beta;",
+    "C": "não pode se candidatar a nenhum cargo eletivo, quer de nível estadual, quer de nível municipal, no território do Estado Beta;",
+    "D": "pode se candidatar livremente a qualquer cargo eletivo, desde que não seja o de governador do Estado Beta, em sucessão ao seu pai;",
+    "E": "somente não pode se candidatar a cargo eletivo do Poder Executivo, quer a nível estadual, quer a nível municipal, no território do Estado Beta."
+   },
+   "gabarito": "X"
+  },
+  {
+   "n": 28,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "O Estado Alfa firmou parceria público-privada com determinada sociedade empresária, mediante a celebração de contrato administrativo de concessão, na modalidade patrocinada, para a prestação de serviços públicos, envolvendo, adicionalmente à tarifa cobrada dos usuários, contraprestação pecuniária do parceiro público ao parceiro privado. De acordo com os ditames da Lei Federal nº 11.079/2004, na contratação da parceria público-privada em tela devem ser observadas algumas diretrizes, como a:",
+   "alternativas": {
+    "A": "delegabilidade das funções de regulação e do exercício do poder de polícia;",
+    "B": "sustentabilidade financeira e as vantagens socioeconômicas dos projetos de parceria;",
+    "C": "modicidade da tarifa, vedados mecanismos para a preservação da atualidade da prestação dos serviços;",
+    "D": "repartição subjetiva de riscos entre as partes e a realização de vistoria dos bens irreversíveis, não podendo o parceiro público reter os pagamentos ao parceiro privado, no valor necessário para reparar as irregularidades detectadas;",
+    "E": "garantia de margem de lucro ao parceiro privado, vedado o compartilhamento com o parceiro público de ganhos econômicos efetivos do parceiro privado decorrentes da redução do risco de crédito dos financiamentos utilizados pelo parceiro privado."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 29,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "José, prefeito do Município Beta, faleceu no meio de seu mandato, no ano de 2022. Sabe-se que a Lei Orgânica municipal prevê que, se o prefeito vier a falecer no exercício do mandato, os seus dependentes terão direito à pensão mensal vitalícia, paga pelos cofres municipais. De acordo com a jurisprudência do Supremo Tribunal Federal, os dependentes de José:",
+   "alternativas": {
+    "A": "terão direito à percepção da pensão após a apreciação pelo de concessão inicial da pensão, e a norma da Lei Orgânica que prevê o direito à pensão é constitucional;",
+    "B": "terão direito à percepção da pensão após a homologação do ato de concessão inicial da pensão pela Câmara Municipal, e a norma da Lei Orgânica que prevê o direito à pensão é constitucional;",
+    "C": "terão direito à percepção da pensão após o deferimento do ato de concessão inicial da pensão pelo atual prefeito, e a norma da Lei Orgânica que prevê o direito à pensão é constitucional;",
+    "D": "não terão direito à percepção da pensão, pois a norma da Lei Orgânica que prevê tal direito é inconstitucional por violar os princípios republicano e da igualdade, por desvelar tratamento diferenciado e privilegiado sem fundamento jurídico razoável, com ônus aos cofres públicos;",
+    "E": "não terão direito à percepção da pensão, pois a norma da Lei Orgânica que prevê tal direito é inconstitucional por violar os princípios da moralidade e impessoalidade, exceto se a concessão inicial da pensão deferida pelo atual prefeito for ratificada pelo Tribunal de Contas, ao registrá-la em definitivo."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 30,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A Lei nº 13.146/2015 institui a Lei Brasileira de Inclusão da Pessoa com Deficiência (Estatuto da Pessoa com Deficiência), destinada a assegurar e a promover, em condições de igualdade, o exercício dos direitos e das liberdades fundamentais por pessoa com deficiência, visando à sua inclusão social e cidadania. De acordo com o citado diploma legal, a pessoa com deficiência tem direito a receber atendimento prioritário, sobretudo com a finalidade de:",
+   "alternativas": {
+    "A": "atendimento em todas as instituições e serviços de atendimento ao público;",
+    "B": "recebimento de restituição de imposto de renda, e tal direito é extensivo ao acompanhante da pessoa com deficiência ou ao seu atendente pessoal;",
+    "C": "tramitação processual e procedimentos judiciais e administrativos em que for parte ou interessada, apenas no que se refere aos atos decisórios;",
+    "D": "prestação de serviços de emergência públicos e privados, e tal prioridade não pode ser condicionada aos protocolos de atendimento médico;",
+    "E": "tramitação de quaisquer processos judiciais, em todos os atos e diligências, e tal direito é extensivo ao acompanhante da pessoa com deficiência."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 31,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em abril de 2022, João, prefeito do Município Alfa, no exercício da função, de forma dolosa, realizou operação financeira sem observância das normas legais e regulamentares. De acordo com a Lei nº 8.429/1992, com redação dada pela Lei nº 14.230/2021, em tese, João:",
+   "alternativas": {
+    "A": "praticou ato de improbidade administrativa, entre cujas sanções está a suspensão dos direitos políticos até 12 anos;",
+    "B": "não praticou ato de improbidade administrativa, pois houve revogação do tipo que anteriormente enquadrava o ato praticado como ato ímprobo;",
+    "C": "praticou ato de improbidade administrativa, entre cujas sanções está o pagamento de multa civil de até 36 vezes o valor da última remuneração de João;",
+    "D": "não praticou ato de improbidade administrativa, pois, desde a redação originária da Lei de Improbidade Administrativa, o ato praticado já não era tipificado como ato ímprobo;",
+    "E": "praticou ato de improbidade administrativa, entre cujas sanções está a perda da função pública de quaisquer vínculos que João detenha à época do trânsito em julgado da sentença."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 32,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "O Estado Alfa, por meio de determinada secretaria, realizará contratação para escolha de melhor monografia em determinada área do conhecimento de interesse do órgão público, para subsidiar futuras escolhas de políticas públicas a serem desenvolvidas pela pasta. Sabe-se que a contratação observará as regras e condições previstas em edital, que indicará a qualificação exigida dos participantes, as diretrizes e formas de apresentação do trabalho e as condições de realização e o prêmio ou remuneração a ser concedida ao vencedor. Diante das informações fornecidas e do teor da nova Lei de Licitações (Lei nº 14.133/2021), a contratação em tela deverá ser feita mediante:",
+   "alternativas": {
+    "A": "dispensa de licitação, por expressa previsão legal;",
+    "B": "inexigibilidade de licitação, por expressa previsão legal;",
+    "C": "prévia licitação, na modalidade concurso;",
+    "D": "prévia licitação, na modalidade concorrência;",
+    "E": "prévia licitação, na modalidade diálogo competitivo."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 33,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Sabe-se que, na desapropriação, o ente público determina a retirada do bem de seu proprietário, a fim de que passe a fazer parte de seu patrimônio público, na forma e mediante as condições e procedimento previstos no ordenamento jurídico, com base nas necessidades coletivas, mediante o pagamento de indenização, de forma justa ao proprietário. Nesse contexto, de acordo com a doutrina de Direito Administrativo e a legislação de regência, é regra que a desapropriação pode incidir sobre:",
+   "alternativas": {
+    "A": "a moeda corrente do Brasil;",
+    "B": "as margens dos rios navegáveis;",
+    "C": "as pessoas físicas, especificamente em relação aos direitos personalíssimos;",
+    "D": "os bens públicos, desde que feita do ente mais abrangente para o menos abrangente;",
+    "E": "as pessoas jurídicas, desde que precedida de desconsideração da personalidade jurídica."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 34,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Pedro, com o objetivo de vender a cobertura de sua propriedade, ao ser perguntado por Fábio, possível comprador, se a fiação elétrica havia sido trocada nos últimos cinco anos, disse que sim, embora soubesse que esse fato não era verdadeiro, agindo com intuito malicioso para que Fábio adquirisse o imóvel. Celebrado o negócio, com o passar dos meses da data da compra, Fábio percebe o problema quando alguns eletrodomésticos começam a dar defeito sem explicação. Um especialista lhe revela que a fiação data de quatro décadas atrás. Fábio gosta do imóvel, por ser bem localizado, bonito e confortável e quer mantê-lo, mas se sente injustiçado, pois, se conhecesse a verdade, não teria pagado o valor que desembolsou pelo imóvel. Nesse caso, pode Fábio alegar:",
+   "alternativas": {
+    "A": "erro substancial e anular o negócio;",
+    "B": "dolo acidental e receber perdas e danos;",
+    "C": "lesão e anular o negócio;",
+    "D": "erro acidental e receber perdas e danos;",
+    "E": "dolo principal, anular o negócio e receber perdas e danos."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 35,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Após ser salvo de uma situação grave de perigo, Roberto, 40 anos, decidiu mudar de vida. Em primeiro lugar, elaborou um testamento para estipular um percentual de sua herança em benefício do seu salvador. Além disso, perfilhou seu filho, Antônio. Na sequência, doou sua casa em Cuiabá ao seu amigo de infância, Josias, e mudou de endereço, fixando domicílio em uma cidade do interior. Tais atos podem ser classificados, respectivamente, como:",
+   "alternativas": {
+    "A": "ato jurídico não negocial, ato jurídico não negocial, negócio jurídico bilateral e negócio jurídico unilateral;",
+    "B": "negócio jurídico bilateral, negócio jurídico unilateral, ato jurídico não negocial e ato jurídico não negocial;",
+    "C": "ato jurídico não negocial, negócio jurídico unilateral, ato jurídico não negocial e negócio jurídico unilateral;",
+    "D": "negócio jurídico unilateral, ato jurídico não negocial, negócio jurídico bilateral e ato jurídico não negocial;",
+    "E": "negócio jurídico unilateral, negócio jurídico bilateral, negócio jurídico unilateral e negócio jurídico bilateral."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 36,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Amanda e Bruna firmaram contrato de empréstimo, em virtude do qual se tornaram devedoras solidárias de Jussara e Guilherme, pelo montante de cinco mil reais, com o compromisso de pagar o valor dali a seis meses. Sobre o caso, é correto afirmar que:",
+   "alternativas": {
+    "A": "o montante devido pode ser pago integralmente a Jussara, pois a solidariedade estabelecida entre as devedoras abrange também os credores;",
+    "B": "em caso de atraso no pagamento por culpa exclusiva de Amanda, Bruna poderá ser cobrada pelos cinco mil reais, mas somente Amanda será responsável pelos juros da mora;",
+    "C": "se Jussara e Guilherme perdoarem Amanda, Bruna fica igualmente liberada, pois a solidariedade faz com que a remissão extinga a dívida como um todo;",
+    "D": "exonerando Bruna da solidariedade, Jussara e Guilherme ainda poderão cobrá-la pela sua parte na dívida, que se presume ser de dois mil e quinhentos reais;",
+    "E": "Amanda pode ser cobrada pelos cinco mil reais, em virtude da solidariedade, ainda que Jussara e Guilherme já tenham recebido pagamento parcial de Bruna."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 37,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A Papelaria P Ltda. celebrou contrato de fornecimento com Suplex S/A pelo qual esta forneceria determinada quantidade de resmas de papel por mês, em troca do pagamento de quinhentos reais, valor a ser reajustado anualmente com base em índice oficial. As partes optaram, apenas por segurança, por formalizar o contrato por escritura pública e ele restou avençado por prazo indeterminado. As partes investiram significativamente na sua execução, mas depois de alguns meses de execução, a P pretende extinguir o contrato. Sobre essa pretensão, é correto afirmar que:",
+   "alternativas": {
+    "A": "eventual distrato por acordo entre as partes deverá ser celebrado por escritura pública, pela regra de atração de forma;",
+    "B": "em razão do prazo indeterminado, a P pode resilir o contrato unilateralmente mediante denúncia, a qual produzirá efeito assim que comunicada à Suplex;",
+    "C": "o descumprimento de obrigação prevista em cláusula resolutiva expressa extinguirá o contrato de pleno direito, independentemente de manifestação de vontade do credor;",
+    "D": "se não houver cláusula resolutiva expressa, a extinção do contrato fundada em inadimplemento do fornecimento das resmas dependerá de interpelação judicial;",
+    "E": "a resolução do contrato por superveniente acontecimento imprevisível que acarrete onerosidade excessiva retroagirá à data de celebração do negócio."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 38,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Raquel, filha de Vera e César, casou-se civilmente com Ricardo. Raquel é irmã de Gustavo. Gustavo e Laura são casados. Ricardo tem dois irmãos, Bernardo e Daniel. Bernardo tem um filho, Adonis. Diante disso, no que concerne ao parentesco civilmente relevante, é correto afirmar que:",
+   "alternativas": {
+    "A": "Ricardo é parente por afinidade de Gustavo na linha colateral;",
+    "B": "Adonis é parente em linha reta por afinidade de Vera e César;",
+    "C": "Raquel é parente por afinidade de Ricardo;",
+    "D": "Laura é parente colateral em segundo grau de Ricardo;",
+    "E": "Daniel é parente em linha reta de Adonis."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 39,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Horácio e Estela, casados sob o regime da comunhão parcial de bens, adquiriram onerosamente, na constância do casamento, um automóvel e uma casa. Antes do casamento, Estela era proprietária de um apartamento. De acordo com as regras do citado regime, é correto afirmar que:",
+   "alternativas": {
+    "A": "a anuência de ambos os cônjuges não é necessária para os atos, a título gratuito, que impliquem cessão do uso ou gozo dos bens comuns;",
+    "B": "não entram na comunhão eventuais frutos do apartamento percebidos na constância do casamento;",
+    "C": "em caso de malversação dos bens, o juiz pode entregar a administração a apenas um dos cônjuges;",
+    "D": "se a casa estiver registrada somente em nome de Horácio, este bem não será considerado comum para fim de partilha;",
+    "E": "as dívidas que Estela contrair na administração do seu apartamento e em benefício deste obriga os bens comuns."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 40,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Ao elaborar seu testamento, Genésio pode incluir como legatário:",
+   "alternativas": {
+    "A": "o tabelião perante quem fizer o testamento;",
+    "B": "uma das testemunhas do testamento;",
+    "C": "o irmão da pessoa que escreveu o testamento a seu rogo;",
+    "D": "o primeiro filho que sua filha, nascida e ainda viva, vier a ter;",
+    "E": "sua concubina, embora não esteja separado de sua esposa."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 41,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Caio ajuizou demanda em cuja petição inicial requereu a concessão do benefício da gratuidade de justiça. Embora reconhecendo que Caio, de fato, havia demonstrado satisfatoriamente a absoluta ausência de condições financeiras para fazer face às despesas do processo, o juiz indeferiu o seu pleito de gratuidade sob o argumento de que o autor tinha a causa patrocinada por advogado particular e não pela Defensoria Pública. Inconformado com tal ato decisório, caberá a Caio:",
+   "alternativas": {
+    "A": "interpor recurso de apelação, ao qual o órgão ad quem deverá dar provimento;",
+    "B": "interpor recurso de apelação, ao qual o órgão ad quem deverá negar provimento;",
+    "C": "interpor recurso de agravo de instrumento, ao qual o órgão ad quem deverá dar provimento;",
+    "D": "interpor recurso de agravo de instrumento, ao qual o órgão ad quem deverá negar provimento;",
+    "E": "impetrar mandado de segurança, devendo o órgão ad quem denegar a ordem vindicada."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 42,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Constatando que determinado condômino havia deixado de pagar cotas mensais referentes à sua unidade, o condomínio edilício, embora ciente de que já dispunha da documentação tipificada no vigente Código de Processo Civil como título executivo, intentou ação de conhecimento para pleitear a condenação do condômino inadimplente ao pagamento do débito em atraso. Ao tomar contato com a petição inicial, deverá o juiz da causa:",
+   "alternativas": {
+    "A": "proceder ao juízo positivo de admissibilidade da demanda, ordenando a integração do réu ao processo;",
+    "B": "indeferi-la, por ausência de interesse de agir, haja vista a desnecessidade da tutela jurisdicional pleiteada;",
+    "C": "indeferi-la, por ausência de pressuposto de validade da relação processual;",
+    "D": "determinar que o autor a emende, adequando a sua pretensão a uma ação de execução fundada em título extrajudicial;",
+    "E": "determinar que o autor a adite, para incluir o requerimento de arresto cautelar da unidade imobiliária em débito."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 43,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "José propôs em face de Pedro demanda em que pleiteou a condenação deste ao pagamento de verbas indenizatórias de danos materiais e morais, em virtude de ato ilícito cuja autoria atribuiu a Pedro. Finda a instrução probatória, o juiz da causa proferiu sentença em que julgava procedente o pedido de José, condenando Pedro a lhe pagar verba reparatória de danos morais, no valor de cinco mil reais, e bem assim a lhe pagar verba ressarcitória de danos materiais, em quantia ainda ilíquida. À míngua de interposição de recurso, a sentença transitou em julgado. No que concerne à liquidação da referida sentença, é correto afirmar que:",
+   "alternativas": {
+    "A": "José terá que aguardar a satisfação do crédito referente à verba indenizatória dos danos morais, para depois pleitear a liquidação da verba indenizatória dos danos materiais;",
+    "B": "tanto José quanto Pedro podem deflagrar a fase procedimental da liquidação da sentença, no tocante à verba indenizatória dos danos materiais;",
+    "C": "Pedro, percebendo que o direito indenizatório de José já estava prescrito, sem que a matéria tivesse sido arguida e debatida anteriormente, poderá suscitá-la na fase liquidatória;",
+    "D": "instaurada a liquidação pelo procedimento comum, a intimação de Pedro para apresentar contestação não poderá ser efetivada na pessoa de seu advogado;",
+    "E": "se a apuração do valor da verba reparatória dos danos morais dependesse apenas de cálculo aritmético, a respectiva liquidação deveria observar o procedimento sumário."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 44,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Antonio ajuizou ação em face de Carlos, pleiteando a condenação deste a lhe pagar determinada obrigação contratual. Antes mesmo da efetivação da citação, Antonio, tendo observado que Carlos anunciava a terceiros que a referida dívida inexistia, optou por intentar nova demanda em seu desfavor, já agora para postular a declaração judicial da existência da obrigação contratual. Nesse cenário, é correto afirmar que:",
+   "alternativas": {
+    "A": "é imperiosa a reunião de ambos os feitos para julgamento simultâneo, em razão da conexão;",
+    "B": "é imperiosa a reunião de ambos os feitos para julgamento simultâneo, em razão da continência;",
+    "C": "é imperiosa a extinção do segundo feito, sem resolução do mérito, em razão da litispendência;",
+    "D": "é imperiosa a extinção do segundo feito, sem resolução do mérito, em razão da ausência de interesse de agir;",
+    "E": "é descabida a reunião dos feitos, devendo cada qual prosseguir perante o juízo a que a respectiva inicial foi distribuída, até o julgamento dos respectivos méritos."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 45,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Proposta demanda de alimentos, no juízo com competência para a matéria de família, sob a alegação de ser o réu o suposto pai do autor. A contestação sustenta a inexistência dessa relação jurídica de paternidade, bem como a impossibilidade financeira do réu de prestar tal obrigação. Após a produção de prova pericial, atestando a veracidade da questão prejudicial afirmada, o juiz decide, de forma expressa e incidentalmente no processo, que a paternidade é positiva e condena o réu ao pagamento dos alimentos pretendidos. Nesse cenário é correto afirmar que:",
+   "alternativas": {
+    "A": "não fará coisa julgada a questão da paternidade, uma vez que a demanda tem por pedido a prestação alimentícia;",
+    "B": "fará coisa julgada a questão da paternidade, impedindo que essa relação venha a ser discutida em processo posterior;",
+    "C": "a sentença é extra petita, pois julgou uma relação jurídica que não foi objeto do pedido;",
+    "D": "a sentença é ultra petita, uma vez que reconheceu a paternidade em uma ação de alimentos;",
+    "E": "não fará coisa julgada a questão da paternidade, uma vez que é estabelecida como fundamento da sentença."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 46,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Após sofrer um acidente decorrente de um ato ilícito praticado pelo réu, o autor demandou em face deste pedindo um ressarcimento pelo dano material sofrido, sem indicar um valor determinado na petição inicial, pois entendia que não era possível mensurá-lo no momento da distribuição da ação, sem o conhecimento de todas as consequências do referido ato. Nesse sentido, é correto afirmar que:",
+   "alternativas": {
+    "A": "o juiz deve intimar o autor para emendar a petição inicial, sob pena de indeferimento, por lhe faltar o pedido determinado;",
+    "B": "considerar-se-á inepta a petição inicial e deverá o juiz julgar de imediato extinto o processo, sem resolução do mérito;",
+    "C": "é lícito formular o referido pedido genérico, pois a dúvida se refere apenas à extensão do dano, que ainda é desconhecida;",
+    "D": "a petição inicial será indeferida, uma vez que se tornará excessivamente oneroso ao réu o seu direito de defesa;",
+    "E": "o processo deve prosseguir, uma vez que a regra processual não exige que o pedido seja determinado na inicial."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 47,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Opostos embargos de declaração, no prazo legal, contra decisão unipessoal do relator em uma demanda de competência originária do Tribunal, percebeu o órgão julgador que não havia qualquer obscuridade, contradição ou omissão no pronunciamento judicial. Nesse sentido, o órgão julgador:",
+   "alternativas": {
+    "A": "não conhecerá dos embargos de declaração e deverá automaticamente entender que se trata de agravo interno, sem a necessidade de complementação de razões recursais;",
+    "B": "deverá apresentar os embargos de declaração em mesa na sessão subsequente, não podendo exercer qualquer fungibilidade recursal;",
+    "C": "conhecerá dos embargos de declaração como agravo em Recurso Especial, se entender ser este o recurso cabível e abrirá prazo para o recorrente completar as razões recursais;",
+    "D": "não conhecerá dos embargos de declaração, devendo julgá- los improvidos, uma vez que não estão presentes os seus requisitos de admissibilidade;",
+    "E": "conhecerá dos embargos de declaração como agravo interno, se entender ser este o recurso cabível, e abrirá prazo para o recorrente completar as razões recursais."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 48,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Magno, policial civil em dia de folga, e Joaquim caminhavam juntos pela rua, quando avistaram Luciana. Sem qualquer aviso ou combinação, Joaquim abordou Luciana, a quem dirigiu incisivas palavras de ordem para que lhe fosse entregue o aparelho celular que se achava em sua bolsa, o que foi prontamente atendido pela vítima. Diante da situação acima descrita, é correto afirmar que:",
+   "alternativas": {
+    "A": "Joaquim e Magno respondem pelo crime de roubo simples;",
+    "B": "Joaquim e Magno respondem pelo crime de roubo majorado;",
+    "C": "apenas Joaquim responde pelo crime de roubo simples;",
+    "D": "apenas Joaquim responde por crime de furto;",
+    "E": "Joaquim responde pelo crime de roubo simples e Magno por prevaricação."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 49,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Do ponto de vista jurídico-penal, é correto afirmar que:",
+   "alternativas": {
+    "A": "cometido o crime contra a honra, inicia-se a contagem dos prazos prescricional e decadencial;",
+    "B": "no caso de evadir-se o condenado ou de revogar-se o livramento condicional, a prescrição é regulada pelo total da pena;",
+    "C": "ocorrendo a citação por edital, o juiz deve determinar a suspensão do prazo prescricional até o dia em que o réu for encontrado;",
+    "D": "nos casos de condenação com substituição por pena restritiva de direitos na modalidade prestação de serviços à comunidade, a prescrição deve ser calculada em razão da pena restritiva de direitos substituída;",
+    "E": "a prescrição intercorrente corre desde a data da sentença condenatória, com trânsito em julgado para a acusação ou improvido o seu recurso, até que ocorra o trânsito em julgado para a defesa nos recursos ordinários."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 50,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em um evento festivo, Caio e Diego se aproximaram de Ana e Vera, desenvolvendo com elas uma conversa próxima e com galanteios. Após horas de cortejos, conseguiram acompanhar as mulheres, ambas maiores de idade, até a casa onde moravam, ocasião em que as convidaram para um último drinque. De posse de escopolamina e previamente ajustado com Diego, Caio ministrou a droga nos copos de bebida de Ana e Vera, sem que elas percebessem. Em seguida, quando o álcool e a droga já iniciavam o seu efeito, Caio e Ana e Diego e Vera se dirigiram para quartos isolados. Tão logo Ana caiu em sono profundo, Caio subtraiu dinheiro, joias e eletrônicos a ela pertencentes, dirigindo-se à sala, para aguardar a saída de Diego, que permaneceu no quarto por tempo maior, mas também saiu com dinheiro, joias e eletrônicos pertencentes a Vera. Ao despertarem no dia seguinte, Ana e Vera perceberam que foram vítimas do golpe denominado “Boa noite, Cinderela”, mas, por sentir dores corporais, Vera dirigiu-se ao hospital, onde descobriu que fora estuprada por Diego, enquanto desacordada. O fato foi registrado na unidade policial e, a partir das provas disponíveis, a polícia conseguiu descobrir a localização de Caio, mas Diego, que nada revelou sobre o estupro, apanhou sua parte no roubo e desapareceu em seguida. Diante desse cenário, Caio, que não sabia do estupro de Vera, mas que conhecia os antecedentes de Diego quanto à prática de crimes sexuais, deverá responder por:",
+   "alternativas": {
+    "A": "roubo próprio majorado pelo concurso de pessoas, excluída qualquer consequência pela prática do estupro pelo coautor, tendo em vista que Caio desconhecia o propósito de Diego quanto à prática do crime contra a liberdade sexual;",
+    "B": "roubo impróprio majorado pelo concurso de pessoas, excluída qualquer consequência pela prática do estupro pelo coautor, tendo em vista que Caio desconhecia o propósito de Diego quanto à prática do crime contra a liberdade sexual;",
+    "C": "roubo com violência imprópria majorado pelo concurso de pessoas e pela previsibilidade do crime contra a liberdade sexual;",
+    "D": "roubo próprio majorado pelo concurso de pessoas e estupro, pela previsibilidade do crime contra a liberdade sexual;",
+    "E": "roubo impróprio majorado pelo concurso de pessoas e estupro, pela previsibilidade do crime contra a liberdade sexual."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 51,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Durante um churrasco entre amigos, Julia, jovem de 19 anos, acaba consumindo em excesso bebidas alcoólicas e passa a reclamar de tontura e sono. Preocupada, sua amiga Paula resolve levá-la para sua residência, onde a coloca deitada em um sofá. De volta à confraternização, Paula informa aos amigos que deixou a porta da casa de Julia destrancada, para que pudesse prestar auxílio em caso de necessidade, pois tinha certeza de que ela estava desacordada. Flavio, que se achava no evento, ouviu a informação e decidiu ir à casa de Julia. Ao ingressar no imóvel, verificando que ela estava realmente desacordada e não reagia aos seus chamados, subtraiu dinheiro, joias e produtos de valor que lá se encontravam, evadindo-se em seguida. A vítima só descobriu o acontecido no dia seguinte, quando foi acordada, ainda no sofá, com a chegada dos seus pais, que estranharam a casa revirada e deram falta de diversos objetos. Diante desse cenário, é correto afirmar que Flavio praticou o delito de:",
+   "alternativas": {
+    "A": "roubo próprio;",
+    "B": "roubo impróprio;",
+    "C": "furto simples;",
+    "D": "furto qualificado pela destreza;",
+    "E": "furto qualificado mediante fraude."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 52,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Logo após alugar um imóvel residencial, Cosme, valendo-se de seus conhecimentos na área de engenharia elétrica, resolveu adulterar o medidor de consumo de energia do imóvel, fazendo com que o aparelho não registrasse o consumo em determinados momentos, alternados com períodos em que o consumo era menor do que o efetivamente realizado. Do ponto de vista jurídico-penal, a conduta de Cosme pode ser classificada como:",
+   "alternativas": {
+    "A": "furto simples;",
+    "B": "furto de energia;",
+    "C": "estelionato;",
+    "D": "furto qualificado pela fraude;",
+    "E": "furto de energia qualificado pela fraude."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 53,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em relação aos delitos patrimoniais praticados por sobrinho contra tio, é correto afirmar que:",
+   "alternativas": {
+    "A": "são alcançados pelas imunidades absolutas previstas no Código Penal;",
+    "B": "se praticados sem violência ou grave ameaça, o agente é isento de pena;",
+    "C": "se praticados contra pessoa com idade inferior a 60 anos, o agente é isento de pena;",
+    "D": "se houver coabitação entre agente e vítima, o agente é isento de pena;",
+    "E": "se o sobrinho é acolhido como hóspede pelo tio, não incide a imunidade relativa."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 54,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Com relação ao arquivamento do inquérito policial, é correto afirmar, de acordo com as leis atualmente aplicáveis à matéria, que:",
+   "alternativas": {
+    "A": "entendendo pela existência de causa excludente de ilicitude, pode o órgão judiciário, de ofício, determinar o arquivamento do inquérito policial;",
+    "B": "não vislumbrando elementos suficientes para apontar a autoria do delito, pode a autoridade policial determinar o arquivamento do inquérito;",
+    "C": "entendendo improcedentes as razões invocadas pelo Ministério Público para o arquivamento do inquérito policial, o juiz determinará a remessa dos autos ao procurador-geral, que deverá oferecer denúncia ou designar outro órgão da instituição para fazê-lo;",
+    "D": "certificada a litispendência, pode o Ministério Público promover o arquivamento, sendo desnecessária a homologação pelo órgão judiciário diante da manifesta ausência de pressuposto de validade;",
+    "E": "cabe ao Ministério Público promover o arquivamento, sempre que identificar a impossibilidade jurídica ou a insuficiência informativa para o exercício da ação penal, dirigindo sua manifestação ao órgão judiciário para homologação."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 55,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Alberto, cumprindo pena por delito equiparado a hediondo, em unidade prisional de regime fechado, foi instado a trabalhar externamente, pela diretoria do estabelecimento, em entidade privada. Após a recusa não justificada do apenado, é correto afirmar que:",
+   "alternativas": {
+    "A": "ao preso em regime fechado, é vedado o trabalho externo;",
+    "B": "aos condenados por crimes hediondos ou equiparados, é vedado o trabalho externo;",
+    "C": "o condenado à pena privativa de liberdade é obrigado a trabalhar, sob pena de cometimento de falta grave;",
+    "D": "o preso, cumprindo pena em regime fechado, poderá prestar serviço em entidade privada, desde que haja sua expressa manifestação de concordância;",
+    "E": "para autorização de trabalho externo é indispensável a autorização do diretor da unidade prisional, bem como observância de requisitos subjetivos de aptidão, disciplina e responsabilidade e requisito objetivo consistente em cumprimento mínimo de 1/8 da pena."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 56,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em relação à teoria da prova e a licitude do acesso a aplicativos de mensagens do investigado ou réu, é correto afirmar que:",
+   "alternativas": {
+    "A": "além da ordem judicial, a autorização do proprietário do celular torna lícita a colheita de provas do aparelho celular, desde que seja gravada ou documentada;",
+    "B": "a colheita de provas do aparelho celular, recolhido em razão de mandado de busca e apreensão, não precisa ser precedida de autorização para acesso aos dados;",
+    "C": "decisão judicial posterior ao acesso ao conteúdo do aparelho celular não tem o condão de tornar lícita as provas colhidas;",
+    "D": "o primeiro acesso desautorizado ao conteúdo do aparelho celular torna inviável a sua renovação por ordem judicial devidamente provocada e fundamentada;",
+    "E": "atender ligação e demandar que o capturado atenda ligação dirigida ao terminal telefônico não gera ilicitude na dinâmica processual."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 57,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Sobre a fiança, analise as afirmativas a seguir: I. Sendo o réu condenado, mas extinta a sua punibilidade em razão da prescrição, não será devolvido o valor pago a título de fiança. II. A fiança poderá ser imposta em qualquer fase da investigação ou até o trânsito em julgado do processo. III. No caso de quebra injustificada da fiança, haverá perda da metade do valor pago, bem como resultará na decretação da prisão preventiva. Está correto o que se afirma em:",
+   "alternativas": {
+    "A": "somente I;",
+    "B": "somente II;",
+    "C": "somente I e II;",
+    "D": "somente I e III;",
+    "E": "I, II e III."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 58,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Carlos foi preso em flagrante dirigindo uma motocicleta, objeto de roubo em data anterior a sua prisão. Denunciado pelo delito descrito no artigo 180 do Código Penal, foi processado, sendo condenado, com sentença ainda não transitada em julgado. Posteriormente, veio a ser reconhecido como autor do roubo da referida motocicleta. Sobre a situação processual narrada, é correto afirmar que:",
+   "alternativas": {
+    "A": "há coisa julgada;",
+    "B": "há litispendência;",
+    "C": "são causas de pedir distintas, podendo Carlos ser processado por roubo;",
+    "D": "Carlos pode ser processado por roubo, com base no Art. 395, inciso II do Código de Processo Penal;",
+    "E": "a condenação por crime de roubo anulará a condenação por receptação."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 59,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Sobre o procedimento especial dos crimes de propriedade imaterial, considere as afirmativas a seguir: I. Há dois procedimentos especiais para os crimes contra a propriedade imaterial previstos no Código de Processo Penal: procedimento especial dos crimes de ação penal privada e procedimento especial dos crimes de ação penal pública. II. Nos crimes de ação penal de iniciativa privada, há previsão legal de medida prévia, consistente em busca e apreensão e elaboração de laudo pericial, que deverá ser homologado pelo órgão julgador. III. Havendo indeferimento, pelo juiz, do pedido de busca e apreensão, nas ações penais de iniciativa privada, caberá recurso de apelação. Está correto o que se afirma em:",
+   "alternativas": {
+    "A": "somente I;",
+    "B": "somente II;",
+    "C": "somente III;",
+    "D": "somente I e II;",
+    "E": "I, II e III."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 60,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Sobre prisão, é correto afirmar que:",
+   "alternativas": {
+    "A": "a prisão preventiva só pode ser decretada no curso da ação penal;",
+    "B": "a prisão temporária pode ser deferida para averiguações ou quando o representado não possuir residência fixa;",
+    "C": "a prisão preventiva pode ser requerida pelos Ministério Público, pelo querelante, pelo assistente de acusação e pela autoridade policial;",
+    "D": "a contemporaneidade para decretação da prisão preventiva não é atrelada ao suposto cometimento da prática delitiva, mas aos motivos ensejadores da prisão;",
+    "E": "a prisão domiciliar é uma modalidade autônoma de medida cautelar pessoal, cujas hipóteses de cabimento, inspiradas em razões humanitárias, estão no rol taxativo do artigo 318 do Código de Processo Penal. Realização"
+   },
+   "gabarito": "D"
+  }
+ ]
+}

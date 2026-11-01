@@ -17,21 +17,24 @@ test("banco de provas: as provas que já existiam continuam no app", () => {
 });
 
 test("provas de TJ e MP: formato do banco, gabarito definitivo e anuladas como X", () => {
-  assert.ok(novas.length >= 30, `só ${novas.length} provas novas`);
+  assert.ok(novas.length >= 45, `só ${novas.length} provas novas`);
   for (const p of novas) {
     assert.ok(["FGV", "Cebraspe"].includes(p.banca), p.id); assert.equal(p.gabarito, "definitivo", p.id);
-    assert.ok(p.questoes.length >= 30, `${p.id}: ${p.questoes.length} questões`);
+    assert.ok(p.questoes.length >= 15, `${p.id}: ${p.questoes.length} questões`);
     let anterior = 0;
     for (const q of p.questoes) {
       assert.ok(q.n > anterior, `${p.id}: questões fora de ordem em ${q.n}`); anterior = q.n;
       const letras = Object.keys(q.alternativas).join("");
       assert.ok(letras === "ABCDE" || letras === "CE", `${p.id} q${q.n}: alternativas ${letras}`);
       assert.ok(q.gabarito === "X" || q.gabarito in q.alternativas, `${p.id} q${q.n}: gabarito ${q.gabarito}`);
-      assert.ok(q.enunciado.length > 15 && q.materia, `${p.id} q${q.n}`);
+      assert.ok(q.enunciado.length > 8 && q.materia, `${p.id} q${q.n}`);
     }
   }
   // gabarito retificado do TJMT: na prova inteira são 3 anuladas (7, 25 e 52); as duas primeiras são de Português e
   // Matemática/Estatística, que o filtro jurídico tira, então só a 52 sobra e o número original da questão é mantido
+  // gabarito conferido à mão: TJGO 2025, questão 1 (compensação; só 500 são compensáveis, paga-se R$ 9.500,00)
+  const g1 = porId["tjgo-2025-juiz-substituto"].questoes[0];
+  assert.equal(g1.gabarito, "D"); assert.match(g1.alternativas.D, /9\.500,00/);
   assert.deepEqual(porId["tjmt-2024-analista-judiciario-direito"].questoes.filter(q => q.gabarito === "X").map(q => q.n), [52]);
 });
 

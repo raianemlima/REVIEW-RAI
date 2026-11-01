@@ -253,6 +253,7 @@ def processar(ident, sigla, ano, cache, saida, rel):
         ruim = [q["n"] for q in qs if not q["gabarito"] or len(q["alternativas"]) not in (2, 5)]
         if len(qs) < 5 or len(ruim) > len(qs) * 0.1:
             rel.append((ident, f"{rot or 'prova objetiva'}: {len(qs)} questões, {len(ruim)} problemáticas {ruim[:8]}")); continue
+        qs = [q for q in qs if q["n"] not in ruim]   # questão sem alternativas completas ou sem gabarito não é enviada
         cargo = (re.search(r"(?i)cargo\s*(\d+)", rot) or [None, ""])[1]
         titulo = nome.get(cargo) or (next(iter(nome.values())) if len(nome) == 1 else "") or ev.get("eventoNomeCompleto") or ev.get("eventoNomeAbreviado")
         dest = saida / f"{ident.lower()}-{re.sub(r'[^a-z0-9]+', '-', sem_acento(titulo)).strip('-')[:60] or 'prova'}-{cargo or chave(rot).replace(' ', '-') or feitos}.json"

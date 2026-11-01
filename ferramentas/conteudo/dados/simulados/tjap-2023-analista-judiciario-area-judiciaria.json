@@ -1,0 +1,789 @@
+{
+ "id": "tjap-2023-analista-judiciario-area-judiciaria",
+ "nome": "TJAP 2023 · Analista Judiciário - Área Judiciária",
+ "cargo": "Concurso de servidores · prova tipo 1",
+ "banca": "FGV",
+ "gabarito": "definitivo",
+ "questoes": [
+  {
+   "n": 21,
+   "materia": "Legislação Específica",
+   "enunciado": "Eliane, servidora ocupante de cargo de provimento efetivo, em atuação em determinado órgão do Poder Executivo do Estado do Amapá, consultou o Departamento de Recursos Humanos em relação à possibilidade de requerer a sua “movimentação”, a pedido, para outro órgão do Poder Executivo. Na situação descrita na narrativa, a “movimentação” almejada por Eliane é:",
+   "alternativas": {
+    "A": "admitida, sendo denominada remoção;",
+    "B": "admitida, sendo denominada realocação;",
+    "C": "admitida, sendo denominada transferência;",
+    "D": "denominada relotação e tem sempre caráter temporário;",
+    "E": "expressamente vedada, por importar em burla à exigência de prévia aprovação em concurso público."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 22,
+   "materia": "Legislação Específica",
+   "enunciado": "Olga ocupa o cargo de juíza de direito auxiliar no âmbito do Poder Judiciário do Estado do Amapá, enquanto Renata ocupa o cargo de juíza de direito substituta no âmbito da mesma estrutura de poder. A partir da análise da Lei de Organização e Divisão Judiciárias do Estado do Amapá, é correto concluir que:",
+   "alternativas": {
+    "A": "ambas podem assistir o corregedor-geral;",
+    "B": "Olga pode servir em qualquer comarca do Estado do Amapá;",
+    "C": "Renata pode ter domicílio e residência em qualquer cidade do Estado do Amapá;",
+    "D": "ambas podem ser designadas, pelo presidente do tribunal, para dirimir conflitos agrários;",
+    "E": "ambas, no momento oportuno, serão promovidas para varas das comarcas de primeira entrância."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 23,
+   "materia": "Legislação Específica",
+   "enunciado": "Hélio, líder comunitário no Estado do Amapá, tinha interesse em mobilizar a população visando à apresentação, à Assembleia Legislativa, de um projeto de lei de iniciativa popular. Ao analisar a Constituição do Estado do Amapá, Hélio concluiu, corretamente, que:",
+   "alternativas": {
+    "A": "o projeto de lei deve ser assinado por, no mínimo, 1% dos eleitores do Estado;",
+    "B": "a iniciativa popular se dá por meio dos deputados estaduais, representantes eleitos pela população;",
+    "C": "o projeto de lei deve ser assinado por, no mínimo, 3% dos eleitores do Estado, distribuídos pelo menos por cinco municípios;",
+    "D": "a apresentação de projeto de lei não é possível, embora se possa submeter proposta de emenda constitucional por iniciativa parlamentar;",
+    "E": "o projeto alvitrado não só pode ser apresentado como ainda é garantida a sua defesa em plenário por um dos cidadãos subscritores, na forma do Regimento Interno da Assembleia."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 24,
+   "materia": "Legislação Específica",
+   "enunciado": "João, servidor ocupante de cargo de provimento efetivo no âmbito do Poder Judiciário do Estado do Amapá, possuía diversos elogios em seus assentamentos funcionais, todos destacando o elevado nível de eficiência no exercício de suas funções, alcançando níveis de produtividade bem superiores aos dos demais servidores. Por tal razão, decidiu verificar a possibilidade de vir a receber a denominada gratificação prêmio de produtividade. Ao analisar o Regime Jurídico dos Servidores Públicos Civis do Estado do Amapá, João concluiu, corretamente, que a referida gratificação:",
+   "alternativas": {
+    "A": "é devida aos servidores cujas funções tenham indicadores de produtividade;",
+    "B": "é devida aos ocupantes dos cargos de fiscal de tributos e auxiliar de fiscal;",
+    "C": "é paga apenas aos servidores vinculados ao Poder Executivo, não aos servidores do poder Judiciário;",
+    "D": "pode ser recebida pelos servidores de todas as estruturas de poder do Estado do Amapá, atendidos os requisitos regulamentares;",
+    "E": "é devida aos ocupantes dos cargos de agente administrativo de arrecadação e fiscalização, somente nos segmentos operacional, tributário e financeiro."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 25,
+   "materia": "Legislação Específica",
+   "enunciado": "João e Maria, respectivamente juiz de direito e juíza de direito auxiliar do Poder Judiciário do Estado do Amapá, almejavam, em determinado momento da carreira, ser promovidos, pelo critério de antiguidade, ao cargo de desembargador, passando a atuar junto ao Tribunal de Justiça. Ao analisarem a Lei de Organização e Divisão Judiciárias do Estado do Amapá, concluíram corretamente que:",
+   "alternativas": {
+    "A": "ambos podem concorrer ao cargo de desembargador, independentemente da entrância em que se encontrem;",
+    "B": "ambos, caso sejam integrantes da terceira entrância, terão a antiguidade computada em igualdade de condições;",
+    "C": "somente Maria pode concorrer ao cargo de desembargador, não João, já que este último se encontra em classe inferior da carreira;",
+    "D": "somente João pode concorrer ao cargo de desembargador, não Maria, já que esta última se encontra em classe inferior da carreira;",
+    "E": "ambos podem concorrer ao cargo de desembargador, desde que se encontrem na entrância final da carreira e ocupem o terço final da lista de antiguidade."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 26,
+   "materia": "Legislação Específica",
+   "enunciado": "Lúcia, servidora do Poder Judiciário do Estado do Amapá, atua no gabinete do desembargador Felipe, tendo tomado conhecimento de que esse magistrado fora designado para atuar em uma comissão do Tribunal. Ao analisar o Regimento Interno do Tribunal de Justiça do Amapá, Lúcia concluiu, corretamente, que:",
+   "alternativas": {
+    "A": "a designação admite recusa, se for apresentado motivo justificado;",
+    "B": "a comissão, se temporária, deve funcionar de modo ininterrupto pelo período mínimo de doze meses;",
+    "C": "a comissão será presidida pelo desembargador indicado pelo presidente do Tribunal, responsável pelas designações;",
+    "D": "a atuação em tela pode ocorrer junto a uma das quatro comissões permanentes ou mesmo junto a uma comissão temporária;",
+    "E": "a designação ocorreu por ato do Plenário do Tribunal, sendo que a atuação ocorrerá perante uma comissão temporária, considerando a extinção das comissões permanentes."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 27,
+   "materia": "Legislação Específica",
+   "enunciado": "O órgão competente do Poder Executivo do Estado do Amapá concluiu o cálculo das cotas do imposto sobre operações relativas à circulação de mercadorias e sobre serviços de transporte interestadual e intermunicipal e de comunicação (ICMS), que são devidas aos Municípios. Na sistemática estabelecida pela Constituição do Estado do Amapá, é correto afirmar que os referidos cálculos devem:",
+   "alternativas": {
+    "A": "ser submetidos à homologação do Tribunal de Contas do Estado;",
+    "B": "ser usados para subsidiar a imediata transferência dos valores ao Fundo de Participação dos Municípios;",
+    "C": "ser informados à Assembleia Legislativa do Estado, de modo que a Comissão de Finanças Públicas seja cientificada do seu teor;",
+    "D": "ser utilizados para a imediata realização da transferência obrigatória, dos respectivos valores, aos Municípios beneficiados;",
+    "E": "ser submetidos à apreciação do Comitê Federativo e, em caso de não impugnação, direcionar a transferência dos respectivos valores aos Municípios beneficiados."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 28,
+   "materia": "Legislação Específica",
+   "enunciado": "Joana, servidora ocupante de cargo de provimento efetivo no âmbito do Poder Judiciário do Estado do Amapá, tinha herdado diversas propriedades e participações acionárias em razão do falecimento de um ascendente. Por tal razão, almejava fruir a licença para tratar de interesses particulares. Ao analisar o Regime Jurídico dos Servidores Públicos Civis do Estado do Amapá, Joana concluiu, corretamente, que:",
+   "alternativas": {
+    "A": "a concessão de licenças dessa natureza é expressamente vedada, já que o interesse público pretere o individual;",
+    "B": "o(a) servidor(a)tem o direito subjetivo à fruição da referida licença, pelo período indicado em lei, a cada decênio de atuação funcional ininterrupta;",
+    "C": "a licença não pode perdurar por tempo superior a um ano, só podendo ser renovada depois de decorrido um ano do término da licença anterior;",
+    "D": "a concessão da licença está sujeita ao juízo da administração, sendo admitido que, em caso de interesse público comprovado, seja interrompida;",
+    "E": "Joana não terá a possibilidade de desistir da licença durante o período de fruição, tal qual fora estabelecido pela administração, uma vez concedida licença."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 29,
+   "materia": "Legislação Específica",
+   "enunciado": "Lurdes, servidora do Poder Judiciário do Estado do Amapá, foi instruída a se apresentar ao coordenador da Central de Conciliação da Comarca ZW. Ao analisar a Lei de Organização e Divisão Judiciárias do Estado do Amapá, Lurdes concluiu, corretamente, que o referido coordenador é:",
+   "alternativas": {
+    "A": "o juiz de direito diretor do Fórum;",
+    "B": "o juiz de direito mais antigo da Comarca;",
+    "C": "o servidor designado pelo corregedor-geral da Justiça;",
+    "D": "o juiz auxiliar designado pelo Pleno do Tribunal, observados os termos do respectivo edital;",
+    "E": "o juiz de direito designado pela Presidência do Tribunal, que atuará sem prejuízo de suas atribuições normais."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 30,
+   "materia": "Legislação Específica",
+   "enunciado": "Francisco, servidor ocupante exclusivamente de cargo em comissão no âmbito do Poder Judiciário do Estado do Amapá, sofreu representação, perante o órgão competente, no qual era noticiada a prática de uma infração disciplinar. Após analisar o Regime Jurídico dos Servidores Públicos Civis do Estado do Amapá, a autoridade máxima do referido órgão concluiu, corretamente, que Francisco:",
+   "alternativas": {
+    "A": "pode responder a processo disciplinar nos mesmos termos do servidor ocupante de cargo de provimento efetivo, estando suscetível, ainda, às mesmas sanções;",
+    "B": "pode sofrer a sanção de destituição do cargo em comissão, caso pratique infração sujeita à penalidade de suspensão ou de demissão;",
+    "C": "caso seja condenado em processo disciplinar, somente pode sofrer a medida de exoneração do cargo em comissão;",
+    "D": "não pode responder a processo disciplinar, já que é ocupante de cargo em comissão, logo, demissível ad nutum;",
+    "E": "pode sofrer a sanção de demissão na hipótese de prática de crime ou de abandono do cargo."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 31,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Ao interpretar determinado preceito da Constituição da República à luz de um caso concreto submetido à sua apreciação, Maria, juíza de direito, entendeu que poderiam ser atribuídos três significados distintos ao significante interpretado, que eram influenciados pela polissemia da linguagem, pelos valores subjacentes ao ambiente sociopolítico e pelos fins a serem alcançados pela futura norma. Após decidir as conflitualidades intrínsecas subjacentes ao processo de interpretação constitucional, que decorriam da oposição entre esses três fatores e dos correlatos significados que amparavam, Maria decidiu o significado a ser atribuído ao significante interpretado, individualizando, com isso, a norma constitucional. Em relação à atividade desenvolvida por Maria, é correto afirmar que:",
+   "alternativas": {
+    "A": "avança na atividade de criação do direito, o que é incompatível com a natureza da interpretação constitucional;",
+    "B": "pode ser empregada na realização da denominada declaração parcial de inconstitucionalidade sem redução de texto;",
+    "C": "se mostra insuscetível de ser aplicada no delineamento da denominada mutação constitucional;",
+    "D": "está plenamente adequada à teoria originalista de interpretação constitucional;",
+    "E": "se ajusta, em sua integralidade, à denominada metódica concretista."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 32,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "João, professor de direito constitucional, descreveu aos seus alunos a situação de uma pessoa, presa em flagrante delito, que compareceu perante a autoridade competente e atribuiu a si próprio uma identidade que não era a sua. Ato contínuo, questionou seus alunos a respeito da juridicidade, ou não, dessa conduta na perspectiva constitucional. Os alunos responderam, corretamente, que:",
+   "alternativas": {
+    "A": "o direito fundamental à autodefesa não confere juridicidade à conduta da pessoa presa em flagrante delito;",
+    "B": "a conduta da pessoa presa em flagrante delito somente será considerada lícita caso seja demonstrada, em momento posterior, a ilicitude da prisão;",
+    "C": "os direitos fundamentais sempre preponderam, in abstrato, sobre o interesse punitivo do Estado, logo, a conduta de João está amparada pela juridicidade;",
+    "D": "o direito fundamental à autodefesa expressamente contempla o direito de faltar com a verdade, qualquer que seja o objetivo almejado pelo preso;",
+    "E": "o privilégio da não autoincriminação permite que a pessoa presa em flagrante delito adote todas as medidas necessárias à salvaguarda de sua liberdade, o que aponta para a licitude de sua conduta."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 33,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Maria, deputada federal, por entender que o isolamento de Brasília, capital federal, caminhava em norte contrário à sedimentação da ideologia participativa, apresentou projeto de lei visando à mudança temporária da sede do Poder Legislativo para determinada região do país, durante os meses previstos na proposição. A mudança, ao ver de Maria, era essencial ao desenvolvimento dessa região. A Comissão de Constituição e Justiça e de Cidadania da Câmara dos Deputados, ao apreciar a compatibilidade do referido projeto com a Constituição da República, observou corretamente que a mudança da sede do Poder Legislativo:",
+   "alternativas": {
+    "A": "exige emenda constitucional;",
+    "B": "deve ser antecedida de plebiscito;",
+    "C": "pode ser realizada da forma alvitrada por Maria;",
+    "D": "pode ser estabelecida pelo Congresso Nacional, sem o concurso do Poder Executivo;",
+    "E": "é vedada, considerando que há norma constitucional definindo Brasília como a capital federal."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 34,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Maria, estudiosa do direito, realizou alentada análise a respeito da concepção de anterioridade na Constituição da República. Ao fim de suas reflexões, concluiu que: (1) a vedação à cobrança de tributos em relação aos fatos geradores anteriores ao início da vigência da lei não afasta a possibilidade de a contribuição de melhoria alcançar as obras iniciadas em momento anterior, mas no decorrer do mesmo exercício financeiro; (2) não há exceções à vedação de cobrança de tributos no mesmo exercício financeiro em que haja sido publicada a lei que os instituiu; e (3) a anterioridade nonagesimal não se aplica ao imposto sobre operações de crédito, câmbio e seguro, relativas a títulos ou valores mobiliários. Ao analisar a compatibilidade das conclusões de Maria com a Constituição da República, Joana depreendeu, corretamente, que:",
+   "alternativas": {
+    "A": "apenas as conclusões 1 e 2 estão certas;",
+    "B": "apenas as conclusões 1 e 3 estão certas;",
+    "C": "apenas a conclusão 2 está certa;",
+    "D": "apenas a conclusão 3 está certa;",
+    "E": "todas estão certas."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 35,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "João teve conhecimento de que havia uma informação em determinado banco de dados de caráter público, relacionada à sua pessoa, que considerava negativa. Apesar de a informação ser verdadeira, João almejava que passasse a constar do banco de dados uma anotação que veiculasse sua versão sobre os fatos, já que a matéria estava sendo discutida judicialmente. No entanto, o requerimento administrativo que formulou com esse objetivo foi indeferido. Por tal razão, cogitou impetrar um habeas data. À luz da sistemática estabelecida pela ordem jurídica, é correto afirmar que:",
+   "alternativas": {
+    "A": "o habeas data pode ser utilizado na finalidade almejada por João;",
+    "B": "como o acesso à informação foi assegurado a João, não é cabível o habeas data;",
+    "C": "a utilização do habeas data, na forma cogitada por João, somente é possível se o banco de dados estiver vinculado a uma instituição pública;",
+    "D": "como a informação divulgada ao público influi sobre a esfera jurídica de João, ele possui o direito subjetivo de ter o seu pleito atendido, sendo cabível o mandado de segurança;",
+    "E": "o cabimento do habeas data está condicionado à existência de prova documental que permita a retificação da informação, não sendo possível o objetivo almejado por João."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 36,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Maria nasceu em território brasileiro quando seus pais, Andrea e Patrícia, cidadãos italianos, aqui se encontravam a serviço de uma multinacional italiana. Logo após o nascimento, Maria dirigiu-se com a família para o exterior, vindo a renunciar à cidadania brasileira. Após esses acontecimentos, Maria foi acusada da prática de crime em determinado país europeu, tendo fugido para o Brasil, o que levou o referido país a requerer a sua extradição. Considerando os balizamentos dessa narrativa, é correto afirmar, na perspectiva exclusivamente da Constituição da República, que:",
+   "alternativas": {
+    "A": "Maria somente pode ser extraditada caso seja acusada de atos de terrorismo ou de tráfico ilícito de entorpecentes;",
+    "B": "como o crime foi praticado no exterior, a extradição é possível independentemente da nacionalidade de Maria;",
+    "C": "como Maria jamais foi brasileira, não poderia renunciar a essa nacionalidade, sendo possível a sua extradição;",
+    "D": "a reaquisição da nacionalidade brasileira é possível, desde que sejam observados os termos da lei;",
+    "E": "a cidadania brasileira é irrenunciável, logo, Maria não pode ser extraditada em nenhuma hipótese."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 37,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Após ampla mobilização popular, o Estado Alfa editou a Lei nº X, disciplinando os requisitos de acesso a certo direito social. Apesar de os critérios se mostrarem justos, foram proferidas diversas decisões judiciais, em sede de ações individuais e coletivas, que reconheciam incidentalmente a inconstitucionalidade da Lei nº X e permitiam que outros beneficiários fruíssem o direito social. Ao tomar ciência desse quadro, o governador do Estado solicitou que o procurador-geral do Estado analisasse a possibilidade de ajuizar uma ação declaratória de constitucionalidade perante o Supremo Tribunal Federal, tendo por objeto essa lei. Dias depois, o Tribunal de Justiça de Alfa, em sede de controle concentrado de constitucionalidade, suspendeu a eficácia da Lei em tela, sob o argumento de que seria inconstitucional. Em razão desse quadro, o procurador-geral do Estado concluiu, corretamente, que a ação alvitrada pelo governador:",
+   "alternativas": {
+    "A": "não pode ser ajuizada pelo governador do estado à mingua de permissivo constitucional;",
+    "B": "poderia ter sido ajuizada em momento anterior à prolação da decisão do Tribunal de Justiça de Alfa;",
+    "C": "pode ser ajuizada, considerando a existência de diversas decisões judiciais que afastavam a aplicação da Lei nº X;",
+    "D": "só pode ser ajuizada se o quantitativo de beneficiários das decisões judiciais impactar a política pública, caracterizando uma situação de relevância social;",
+    "E": "só pode ser ajuizada se a norma da Constituição Estadual usada como paradigma pelo Tribunal de Justiça for reprodução de norma da Constituição da República."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 38,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Determinada escola privada de caráter confessional, assim definida em lei, diretamente vinculada aos dogmas da religião XX, que não tinha fins lucrativos e aplicava os seus excedentes financeiros em educação, o que lhe propiciou um crescimento exponencial nos últimos anos, tinha grande prestígio no âmbito do Município Alfa. Por tal razão, diversos políticos passaram a defender a destinação de recursos públicos a essa escola. Outros políticos, por sua vez, eram contrários à ideia, por considerá-la incompatível com a Constituição da República. À luz da sistemática constitucional, é correto afirmar que a destinação de recursos públicos à referida escola:",
+   "alternativas": {
+    "A": "não é possível, já que é dissonante do caráter laico do Estado brasileiro;",
+    "B": "pode ser realizada somente sob a forma de bolsas de estudo, como meio para remediar a falta de vagas na rede pública;",
+    "C": "exige o seu enquadramento como escola filantrópica, observados os requisitos estabelecidos pela Constituição da República;",
+    "D": "pode ser realizada, desde que, no caso de encerramento de atividades, a escola assegure a destinação do seu patrimônio da forma estabelecida pela Constituição da República;",
+    "E": "pressupõe a demonstração de aplicação da receita mínima em educação no exercício anterior, de modo que os recursos destinados à escola confessional ultrapassem essa receita."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 39,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Recentemente, após aprovação em concurso público, Laerte foi investido no cargo de analista do Tribunal de Justiça do Estado do Amapá, de modo que decidiu rever, com atenção, as normas atinentes ao estágio probatório, previstas na redação atual da Lei Estadual nº 66/1993 (Estatuto dos Servidores Públicos do Estado do Amapá), vindo a concluir, corretamente, que:",
+   "alternativas": {
+    "A": "ao entrar em exercício, ele ficará sujeito a estágio probatório pelo período de vinte e quatro meses, durante o qual a sua aptidão e capacidade serão objeto de avaliação para desempenho do cargo, observados os fatores especificados na mencionada norma;",
+    "B": "enquanto estiver em estágio probatório poderão a ele ser concedidas todas as licenças e afastamentos previstos na referida norma, exceto para participar de curso de formação decorrente de aprovação em concurso público para outro cargo na Administração Pública estadual;",
+    "C": "ele poderá exercer quaisquer cargos de provimento em comissão ou funções de confiança no órgão ou entidade de lotação, e poderá ser cedido a outro órgão ou entidade para ocupar cargo de natureza especial indistintamente;",
+    "D": "caso ele seja nomeado para cargo em comissão ou função de confiança que não tenha relação com a atribuição exercida no cargo em que foi investido, ficará suspensa a contagem do tempo de serviço para fins de estágio probatório, até o término do impedimento;",
+    "E": "um mês antes de findo o período do estágio probatório, a sua avaliação de desempenho será submetida à homologação da autoridade competente realizada por comissão constituída para essa finalidade, de acordo com o normativo vigente."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 40,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A Lei nº 13.655/2018 promoveu relevantes alterações no Decreto-Lei nº 4.657/1942 no tocante às normas de interpretação e aplicação do direito público, notadamente no âmbito da atividade de controle da Administração, dentre as quais está a previsão acerca da necessidade de que as decisões de invalidação indiquem de modo expresso suas consequências jurídicas e administrativas. Nesse contexto, à luz do diploma legal em comento, é correto afirmar, com relação à mencionada previsão específica, que:",
+   "alternativas": {
+    "A": "a sua aplicação se restringe à invalidação dos atos administrativos, não podendo abarcar os contratos administrativos, que se submetem à legislação específica;",
+    "B": "as esferas administrativa e controladora devem considerá-la, mas o controle jurisdicional possui contornos próprios que o excepcionam de tal previsão específica;",
+    "C": "ela não é imperativa caso caracterizado vício insanável, pois, nesse caso, a motivação, mediante a demonstração da necessidade e adequação do reconhecimento da nulidade, passa a ser prescindível;",
+    "D": "a sua observância é imposta para as esferas administrativa, controladora e judicial, com relação aos vícios insanáveis verificados em ato, contrato, ajuste, processo ou norma administrativa;",
+    "E": "é necessário respeitá-la nas decisões de invalidação nas esferas administrativa, controladora e judicial, que não poderão, contudo, indicar as condições para que a respectiva regularização ocorra de modo proporcional e equânime e sem prejuízo aos interesses gerais, submetidas à discricionariedade da Administração."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 41,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Felipa estava estudando para concurso público e, ao enfrentar o tema atinente aos contratos administrativos, deparou-se com a definição de fato do príncipe, que deve impactar no equilíbrio econômico-financeiro do contrato, vindo a concluir, corretamente, que um dos exemplos do aludido conceito é:",
+   "alternativas": {
+    "A": "a alteração unilateral do contrato pela Administração Pública nos limites da lei;",
+    "B": "os prejuízos decorrentes de uma inundação ocasionada por fortes chuvas;",
+    "C": "o atraso do poder público em obter licença ambiental que esteja a seu encargo;",
+    "D": "a diminuição de determinado tributo, ainda que por outro ente da federação;",
+    "E": "atraso superior a dois meses, contados da emissão da nota fiscal, dos pagamentos ou de parcelas de pagamentos devidos pela Administração por despesas de obras, serviços ou fornecimentos."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 42,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "As autoridades administrativas competentes observaram que a sociedade Crisântemo envolveu-se em um esquema de fraude em licitações, de modo que a sua conduta está sujeita às sanções previstas na Lei nº 14.133/2021 (Lei de Licitações e Contratos) e na Lei nº 12.846/2013 (Lei Anticorrupção). Nesse caso, é correto afirmar que:",
+   "alternativas": {
+    "A": "não há possibilidade de ser realizado o julgamento em conjunto de tais infrações, nos mesmos autos, em razão de todas as penalidades previstas na Lei Anticorrupção se submeterem à reserva de jurisdição;",
+    "B": "é cabível a reunião, nos mesmos autos, da apuração e aplicação das penalidades administrativas em ambas as normas, devendo ser aplicado o rito estabelecido na Lei de Licitações e Contratos;",
+    "C": "haverá necessariamente dois processos, em autos separados, na via administrativa, que não podem ser reunidos, em razão da competência para a aplicação das penalidades e da gravidade daquelas previstas em uma e outra norma;",
+    "D": "os atos previstos como infrações administrativas ou em cada uma das normas na Lei de Licitações e Contratos e na Lei Anticorrupção serão apurados e julgados conjuntamente, nos mesmos autos, observados o rito procedimental e a autoridade competente definidos na Lei Anticorrupção;",
+    "E": "apesar de ser viável a reunião da apuração e julgamento para fins de aplicação das penalidades previstas em uma e outra norma, o rito procedimental e a autoridade competente dependem da penalidade mais grave aplicável no caso concreto."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 43,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Ao ler uma notícia que veiculou informações no sentido de que certo bem público foi objeto de penhora, no bojo de determinado processo de execução contra a Fazenda Pública, de que outro bem público foi usucapido por particular, além daquela que mencionava a realização da alienação de um terceiro bem que estava sendo utilizado pela Administração para atender a uma finalidade pública, Dionísio passou a analisar a compatibilidade de tais referências com o regime jurídico dos bens públicos, vindo a concluir, corretamente, que:",
+   "alternativas": {
+    "A": "somente a penhora promovida no processo de execução contra a Fazenda Pública pode ser tida como válida, considerando que não há restrições no ordenamento para tanto;",
+    "B": "as três situações são válidas, pois os bens públicos são penhoráveis, prescritíveis e passíveis de alienação, ainda que estejam afetados;",
+    "C": "somente a alienação do bem que está sendo utilizado pela Administração Pública pode ser considerada válida, em se tratando de bem dominical;",
+    "D": "somente a usucapião do bem público pode ser considerada válida, haja vista em que não há vedação no ordenamento em tal sentido, revelando-se medida que promove a função social do imóvel;",
+    "E": "as três situações violam o ordenamento jurídico, na medida em que os bens públicos são impenhoráveis, imprescritíveis e sujeitos à alienação condicionada quando dominicais, observadas as exigências da lei."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 44,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Luana, recentemente, foi investida no cargo de analista do de vir a ser responsabilizada por ato de improbidade que atente contra os princípios da Administração Pública em decorrência do exercício de suas atribuições, razão pela qual decidiu perquirir quais seriam as condutas passíveis de tal enquadramento, na forma da Lei nº 8.429/1992, com a redação conferida pela Lei nº 14.230/2021, dentre as quais é correto destacar:",
+   "alternativas": {
+    "A": "permitir ou facilitar a aquisição, permuta ou locação de bem ou serviço por preço superior ao de mercado;",
+    "B": "deixar de prestar contas quando esteja obrigado a fazê-lo, desde que disponha das condições para isso, com vistas a ocultar irregularidades;",
+    "C": "celebrar parcerias da administração pública com entidades privadas sem a observância das formalidades legais ou regulamentares aplicáveis à espécie;",
+    "D": "perceber vantagem econômica, direta ou indireta, para facilitar a alienação, permuta ou locação de bem público ou o fornecimento de serviço por ente estatal por preço inferior ao valor de mercado;",
+    "E": "utilizar, em obra ou serviço particular, qualquer bem móvel, de propriedade ou à disposição de quaisquer das entidades referidas na respectiva lei, bem como o trabalho de servidores, de empregados ou de terceiros contratados por essas entidades."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 45,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "O Supremo Tribunal Federal foi instado a decidir se a obrigatoriedade de vacinação, consoante o Plano Nacional de Imunização, com relação a vacinas devidamente testadas e aprovadas pelas autoridades competentes e disponíveis gratuitamente para a coletividade, poderia ensejar a restrição ao exercício de certas atividades ou à frequência a determinados lugares, caso previstas em lei ou dela decorrentes, por parte dos entes federativos. As aludidas medidas foram consideradas constitucionais pela Corte Suprema, que invocou fundamento relacionado ao poder de polícia, sendo correto afirmar que tal argumento corresponde a:",
+   "alternativas": {
+    "A": "utilização de meios diretos de coerção para forçar os indivíduos a cumprirem a determinação legal, em razão da autoexecutoriedade;",
+    "B": "implementação de sanções indiretas, que têm respaldo na proporcionalidade e não podem ser confundidas com vacinação forçada;",
+    "C": "imposição de medidas indiretas de coerção, enquanto coação política decorrente da autoexecutoriedade;",
+    "D": "determinação que melhor se adequa à proporcionalidade, por ser considerada medida direta de coerção, decorrente do princípio da supremacia do interesse público;",
+    "E": "adoção de medida válida de coação política, que se destina a forçar as pessoas a cumprirem a obrigação legal, independentemente de seu consentimento, diante da presunção de legalidade."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 46,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Imagine que determinado Município, após o devido processo legal, promoveu a desapropriação de certo imóvel para a construção de um hospital, mas, em lugar disso, utilizou-se do bem para finalidade que viola o interesse público, de modo a restar caracterizada uma tredestinação ilícita. Tal situação hipotética daria ensejo ao que costuma ser designado de:",
+   "alternativas": {
+    "A": "retrocessão;",
+    "B": "direito de extensão;",
+    "C": "cláusula de retomada;",
+    "D": "desapropriação indireta;",
+    "E": "manutenção do status quo."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 47,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Gervásio contratou um seguro de vida para seus filhos Júnior e Roberta. Faleceu de causas naturais em junho de 2011. Em janeiro de 2012, os beneficiários requereram o pagamento do capital segurado. Em junho de 2012, a seguradora negou o pedido. Assim, em abril de 2013, judicializaram a questão, no que a seguradora apresentou prejudicial de prescrição. Nesse caso, é correto afirmar que a prescrição:",
+   "alternativas": {
+    "A": "não ocorreu, porque o prazo trienal ainda não se implementou;",
+    "B": "não ocorreu, porque o prazo quinquenal ainda não se implementou;",
+    "C": "não ocorreu, porque o prazo decenal ainda não se implementou;",
+    "D": "não ocorreu, porque o prazo anual fora interrompido pelo pedido administrativo e recomeçou a contar em junho de 2012;",
+    "E": "ocorreu, porque o prazo anual foi apenas suspenso pelo pedido administrativo e recomeçou, pelo restante, em junho de 2012."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 48,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Determinada empresa veiculou publicidade abusiva voltada ao público infantil, em que associava o consumo de determinado produto alimentício à capacidade de voar. Joãozinho, que não chegou a comprar o produto, mas assistiu ao comercial:",
+   "alternativas": {
+    "A": "não pode ser considerado consumidor;",
+    "B": "é consumidor equiparado ou bystander;",
+    "C": "é consumidor equiparado em sentido coletivo;",
+    "D": "é consumidor equiparado potencial;",
+    "E": "é consumidor standard ou stricto sensu."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 49,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Comparecem ao cartório da 1ª Vara Cível de Macapá, José, pessoa com deficiência, e sua acompanhante, Maria. O analista que os atendeu logo reconheceu o direito à prioridade legal, como a seguir indicados: (i) atendimento em todas as instituições e serviços de atendimento ao público; (ii) disponibilização de recursos, tanto humanos quanto tecnológicos, que garantam atendimento em igualdade de condições com as demais pessoas; (iii) acesso a informações e disponibilização de recursos de comunicação acessíveis; (iv) tramitação processual e procedimentos judiciais e administrativos em que for parte ou interessado, em todos os atos e diligências. São extensíveis a Maria os direitos indicados no(s) item(ns):",
+   "alternativas": {
+    "A": "I e IV;",
+    "B": "II e III;",
+    "C": "I, II e III;",
+    "D": "II, III e IV;",
+    "E": "I, II, III e IV;"
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 50,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Hermeneu e Exegeta distribuíram a uma das varas cíveis de Macapá demanda de usucapião especial urbana prevista no Estatuto da Cidade. Posteriormente, vem a ser proposta demanda possessória em relação ao mesmo imóvel. Nesse caso, é correto afirmar que o analista deverá:",
+   "alternativas": {
+    "A": "certificar as custas devidas e cobrá-las, a menos que haja pedido de gratuidade de justiça a ser submetido ao juízo;",
+    "B": "anotar a intervenção obrigatória do Ministério Público, ainda que não haja menor ou ente público interessado;",
+    "C": "informar a pendência de disputa possessória, a fim de permitir ao juízo suspender o usucapião;",
+    "D": "após a sentença, digitar título específico para o cartório de imóveis, imprescindível à ultimação do registro;",
+    "E": "certificar quanto ao estado civil dos autores, a fim de permitir ao juízo a análise referente à possibilidade de conferir a ambos o direito pretendido."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 51,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A emancipação daquele com 16 anos completos dependerá de autorização judicial e registro público quando decorrer:",
+   "alternativas": {
+    "A": "da concessão dos pais, ou de um deles na falta do outro, mediante instrumento público;",
+    "B": "da colação de grau em curso de ensino superior;",
+    "C": "do exercício de emprego público efetivo;",
+    "D": "pelo estabelecimento civil ou comercial, ou pela existência de relação de emprego, desde que, em função deles, o menor com 16 anos completos tenha economia própria;",
+    "E": "da concessão pelo tutor."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 52,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Jezebel foi casada com Ignácio por anos. Sempre residiram em uma linda casa em Cutias. Amealharam significativo patrimônio, composto por diversas fazendas e até um avião. Com a morte de Jezebel, todo esse patrimônio foi partilhado entre os herdeiros, inclusive os filhos do casal. Anos depois, Ignácio acabou se casando de novo, pelo regime da separação total de bens, com seu amor de adolescência, Serafina. Mudaram-se para a casa em Cutias, onde foram felizes por dez anos. Morreu, então, Ignácio e, imediatamente, Serafina se casou com outro homem. Nesse caso, quanto ao direito de habitação, postulado por Serafina sobre a casa em Cutias, é correto afirmar que:",
+   "alternativas": {
+    "A": "deverá ser reconhecido;",
+    "B": "não poderá ser reconhecido, porque Serafina se casou com outro homem;",
+    "C": "não poderá ser reconhecido, por força do regime de bens escolhido pelo casal;",
+    "D": "não poderá ser reconhecido, diante da copropriedade da casa com os herdeiros de Jezebel;",
+    "E": "não poderá ser reconhecido, porque há outros bens imóveis no acervo patrimonial deixado por Ignácio."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 53,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A concessionária G é contratada para, mediante remuneração previamente pactuada e a conta da montadora X, promover as vendas de um veículo lançado no último verão, no âmbito da cidade de Macapá, com exclusividade. As vendas seriam conduzidas inteiramente pela concessionária, com quem ficariam os automóveis e, também, a quem se permitiria representar a montadora na conclusão dos negócios. Nesse caso, à luz do Código Civil, tem-se um contrato:",
+   "alternativas": {
+    "A": "de corretagem;",
+    "B": "de mandato;",
+    "C": "de distribuição;",
+    "D": "de agência;",
+    "E": "de venda consignada ou estimatório."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 54,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Roberval distribui cartazes em toda a vizinhança, a fim de localizar seu cachorrinho, Totó, que sumira naquela semana. Promete recompensar quem o achar com R$ 10.000,00, tamanho o amor pelo animal. Nesse caso, a obrigação de pagar a recompensa a Geremilda, que levou Totó são e salvo a Roberval, decorre de:",
+   "alternativas": {
+    "A": "lei;",
+    "B": "contrato;",
+    "C": "ato unilateral;",
+    "D": "responsabilidade civil por ato ilícito;",
+    "E": "responsabilidade civil por abuso de direito."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 55,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Godofredo tomou R$ 5.000,00 emprestados do Banco Dinheiro Já!. Em garantia, subscreveu uma nota promissória, mas se esqueceu de completar as informações referentes aos valores. Havia, ainda, dois avais superpostos e em branco, um de sua esposa, Linda, e outro de seu irmão, Godofrido, os quais constavam do contrato como devedores solidários. Vencido o prazo para pagamento, verifica-se o inadimplemento. Para viabilizar o protesto, então, o banco inseriu o valor devido na cártula, em estrita observância ao contrato. Nesse caso, é correto afirmar que:",
+   "alternativas": {
+    "A": "a nota promissória vinculada a contrato de mútuo não goza de autonomia em relação ao título que a originou;",
+    "B": "a existência de avais superpostos e em branco, como os de Linda e Godofrido, faz presumi-los simultâneos;",
+    "C": "a cambial até poderia ser preenchida pelo credor de boa-fé à luz do contrato, no entanto, necessariamente, antes do vencimento;",
+    "D": "Linda e Godofrido, na qualidade de avalistas, responderão no limite do valor expresso na cártula, de modo que não poderão ser cobrados pelos acessórios ou pelos encargos da mora;",
+    "E": "a falta das informações essenciais do título de crédito (como, por exemplo, o valor devido) o torna inexigível, de modo que não poderia o credor ter suprido tais informações considerados os princípios da literalidade e da cartularidade."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 56,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Antônio ajuizou ação de mandado de segurança para impugnar ato administrativo que, segundo alegou, era ilegal e violava o seu direito líquido e certo. Ofertadas as informações pela autoridade impetrada, a peça impugnativa pela pessoa jurídica de direito público e a manifestação conclusiva pelo Ministério Público, o juiz da causa proferiu sentença em que denegava a segurança. Inconformado, o impetrante interpôs recurso de apelação, o qual, depois de distribuído ao órgão da segunda instância, acabou por ser desprovido, com a confirmação da sentença de piso. Transcorridos dez dias a partir de sua intimação do teor do acórdão prolatado, Antônio, para impugná-lo, poderá se valer, em tese, de:",
+   "alternativas": {
+    "A": "recurso ordinário constitucional;",
+    "B": "recurso especial;",
+    "C": "agravo interno;",
+    "D": "embargos de declaração;",
+    "E": "um novo mandado de segurança."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 57,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "André ajuizou ação de cobrança em face de Bruno, fiador de Carlos, tendo por objeto uma obrigação contratual. Regularmente citado, Bruno, no tempo e modo devidos, promoveu o chamamento ao processo de Carlos. Contudo, o juiz da causa, entendendo que tal modalidade de intervenção de terceiros era incabível no caso, inadmitiu-a. Inconformado, Bruno decidiu-se por interpor agravo de instrumento, o que fez doze dias úteis depois de ter sido intimado da decisão de primeiro grau, protocolizando a sua peça recursal diretamente no Tribunal. Nesse cenário, é correto afirmar que o recurso de agravo de instrumento:",
+   "alternativas": {
+    "A": "não pode ser conhecido, por intempestivo;",
+    "B": "não pode ser conhecido, por incabível;",
+    "C": "não pode ser conhecido, por não ter sido protocolizado no juízo de primeiro grau;",
+    "D": "deve ser conhecido, porém desprovido;",
+    "E": "deve ser conhecido e provido."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 58,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Tramitando um determinado processo no Tribunal, o relator, antes de solicitar a sua inclusão em pauta para o julgamento do recurso de apelação ali interposto, tendo verificado que o apelante havia juntado novos documentos, proferiu despacho em que determinava a intimação do apelado para que se pronunciasse a seu respeito no prazo de quinze dias. No tocante ao referido pronunciamento, é correto afirmar que é:",
+   "alternativas": {
+    "A": "irrecorrível;",
+    "B": "impugnável por agravo interno, que deverá ser desprovido;",
+    "C": "impugnável por agravo interno, que deverá ser provido;",
+    "D": "impugnável por agravo de instrumento, que deverá ser desprovido;",
+    "E": "impugnável por agravo de instrumento, que deverá ser provido."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 59,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "José, mesmo dispondo de uma nota promissória representativa de um crédito certo, líquido e exigível, ajuizou ação de conhecimento em que pleiteava a condenação de Maria a lhe pagar a quantia devida. Embora regularmente citada, Maria deixou de oferecer contestação, o que levou o juiz da causa a lhe decretar a revelia e a proferir sentença de procedência do pleito autoral. Sem que tivesse sido interposto recurso de apelação, a sentença transitou em julgado, razão por que José, logo após, requereu a intimação de Maria para satisfazer o crédito. Regularmente intimada, poderá Maria, em tese, lançar mão de:",
+   "alternativas": {
+    "A": "reclamação;",
+    "B": "embargos à execução;",
+    "C": "embargos de terceiro;",
+    "D": "impugnação ao cumprimento de sentença;",
+    "E": "nenhuma via defensiva, à míngua de previsão legal."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 60,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Pedro propôs uma ação em face de João, afirmando ser este o causador de um dano em sua propriedade, uma vez que este derrubou o muro de sua casa ao fazer obras no terreno vizinho. João afirmou, em resposta, que é apenas um empregado de José, e que foi contratado por ele para derrubar o referido muro, já que o contratante afirmara que iria construir um estacionamento no local e que todo o terreno era de sua propriedade. Afirmou o réu, portanto, que é José quem deve figurar no polo passivo da causa. Nesse sentido, Pedro poderá:",
+   "alternativas": {
+    "A": "nomear à autoria José, que, se aceitar a nomeação, será sucedido no processo no lugar de João;",
+    "B": "requerer que João permaneça no processo como substituto processual de José;",
+    "C": "requerer o chamamento ao processo de José, no prazo de trinta dias;",
+    "D": "requerer a extinção do processo, devendo João arcar com as despesas processuais;",
+    "E": "aditar a petição inicial para incluir José como litisconsorte passivo no processo."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 61,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Maria, ao ser citada em uma ação de cobrança proposta por Teresa, não só contestou o pedido formulado, ao argumento de que a dívida já havia sido paga, mas também ofereceu reconvenção para postular um crédito que alegava ter contra a autora. O juiz julgou liminarmente improcedente a reconvenção, uma vez que entendeu tratar-se de cobrança de dívida oriunda de ato ilícito. Outrossim, determinou que a autora se manifestasse em réplica. Nesse cenário, a extinção da reconvenção configura uma:",
+   "alternativas": {
+    "A": "sentença terminativa, impugnável por apelação;",
+    "B": "sentença parcial de mérito, impugnável por apelação;",
+    "C": "decisão interlocutória de mérito, impugnável por agravo de instrumento;",
+    "D": "decisão interlocutória de mérito, impugnável por apelação;",
+    "E": "decisão monocrática, impugnável por agravo interno."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 62,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Foi prolatada, no juízo da 1ª Vara de Família da Comarca X, sentença que condenou o genitor a pagar alimentos ao seu filho impúbere. Assim que o menor foi residir na Comarca Y, deixou o alimentante de pagar os alimentos devidos. Pretendendo o cumprimento dessa sentença, a execução dos alimentos:",
+   "alternativas": {
+    "A": "poderá ser na Comarca Y, seu atual domicílio;",
+    "B": "deverá ser na Comarca X, no juízo da 1ª Vara de Família;",
+    "C": "deverá ser na Comarca X, com livre distribuição;",
+    "D": "deverá vir em processo autônomo na Comarca Y;",
+    "E": "poderá ser diretamente no Tribunal de Justiça."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 63,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Foi protocolizada uma petição inicial no dia 5 de junho de 2023, uma segunda-feira. O juiz, em 12 de junho do mesmo ano, ordenou a citação do réu e determinou ao autor que promovesse a citação, com a juntada de cópia da petição inicial. Todavia, deixou o autor de cumprir tal determinação. Porém, em 26 de junho daquele ano, o réu foi citado na secretaria do juízo pelo escrivão, uma vez que comparecera ali para tratar de outro assunto. Nesse cenário, é correto afirmar que a prescrição:",
+   "alternativas": {
+    "A": "será considerada interrompida na data da propositura da ação, em 5 de junho de 2023;",
+    "B": "será considerada interrompida na data do despacho que ordenou a citação, em 12 de junho de 2023;",
+    "C": "será considerada interrompida na data em que a citação ocorreu, em 26 de junho de 2023;",
+    "D": "não será interrompida, uma vez que a citação se operou de forma inválida;",
+    "E": "não será interrompida, uma vez que a citação foi efetivada após dez dias da propositura da ação."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 64,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Jonas, jovem com 19 anos de idade, comparece ao estabelecimento comercial XYZ, no âmbito do qual, após negociação direta com João, proprietário da loja, adquire um produto essencial. Ato contínuo, ao fornecer o bem ao consumidor, João, dolosamente, deixa de entregar o termo de garantia adequadamente preenchido e com especificação clara de seu conteúdo. Registre-se que, mesmo após tomar ciência dos fatos, Jonas nada fez, quedando-se silente por mais de dez meses. Nesse cenário, considerando as disposições da Lei nº 8.078/1990, é correto afirmar que João:",
+   "alternativas": {
+    "A": "responderá por contravenção penal prevista no Código de Defesa do Consumidor, com a incidência de causa de aumento de pena, por ter sido perpetrada em detrimento de menor de 21 anos;",
+    "B": "responderá por crime previsto no Código de Defesa do Consumidor, com a incidência de causa de aumento de pena, por ter sido perpetrado em detrimento de menor de 21 anos;",
+    "C": "responderá por crime previsto no Código de Defesa do Consumidor, com a incidência de agravante, por ter sido perpetrado em operação que envolveu produto essencial;",
+    "D": "não responderá por qualquer crime, em razão da ausência de representação da vítima no prazo legal;",
+    "E": "não responderá por qualquer crime, em razão da atipicidade formal da conduta."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 65,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Caio, motivado por ciúmes, efetua dois disparos de arma de fogo em detrimento de João, seu desafeto, atingindo-o no braço direito e na perna esquerda. Ato contínuo, ao apontar o aparato bélico para o rosto da vítima, Caio se lembra dos ensinamentos de sua genitora e acaba por fugir do local, sem realizar o último disparo que havia planejado. Em seguida, o ofendido é socorrido, sobrevivendo aos eventos. Durante as investigações deflagradas para apurar o crime perpetrado, verifica-se, à luz do laudo pericial produzido, que, em razão da empreitada delituosa, houve perigo à vida de João. Nesse cenário, considerando as disposições do Código Penal e os entendimentos doutrinário e jurisprudencial dominantes, Caio responderá pelo crime de:",
+   "alternativas": {
+    "A": "lesão corporal de natureza gravíssima, em razão do arrependimento posterior;",
+    "B": "lesão corporal de natureza grave, em razão da desistência voluntária;",
+    "C": "homicídio simples tentado, em razão do arrependimento posterior;",
+    "D": "homicídio qualificado tentado, em razão do arrependimento eficaz;",
+    "E": "lesão corporal de natureza leve, em razão do arrependimento eficaz."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 66,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Jonas, primário, portador de antecedentes, conduzia seu automóvel, imediatamente após ter ingerido vinte e cinco latas de cerveja, ocasião em que veio a ser parado por uma viatura da Polícia Militar, que constatou, sem qualquer dúvida, a capacidade psicomotora alterada do particular, encaminhando-o à Delegacia de Polícia. Em sede policial, durante conversa com seu advogado, Jonas demonstrou grande preocupação com os reflexos que a conduta perpetrada poderia gerar na sua habilitação para dirigir veículo automotor. Nesse cenário, considerando as disposições da Lei nº 9.503/1997, é correto afirmar que:",
+   "alternativas": {
+    "A": "a suspensão para dirigir veículo automotor ou a proibição de se obter a permissão ou a habilitação será sempre comunicada pela autoridade judiciária ao Conselho Nacional de Trânsito (Contran), e ao órgão de trânsito do Estado em que o indiciado ou réu for domiciliado ou residente;",
+    "B": "a penalidade de suspensão ou de proibição de se obter a permissão ou a habilitação para dirigir veículo automotor se inicia com o trânsito em julgado da sentença, ainda que o sentenciado esteja recolhido, por efeito de condenação penal, a estabelecimento prisional;",
+    "C": "transitada em julgado a sentença condenatória, o réu será intimado a entregar à autoridade judiciária, em vinte e quatro horas, a Permissão para Dirigir ou a Carteira de Habilitação;",
+    "D": "a suspensão ou a proibição de se obter a permissão ou a habilitação para dirigir veículo automotor será imposta cumulativamente com outras penalidades;",
+    "E": "a penalidade de suspensão ou de proibição de se obter a permissão ou a habilitação para dirigir veículo automotor terá a duração de um a cinco anos."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 67,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Caio e João, maiores e capazes, transportaram dez quilos de cocaína do Município XYZ para o Município ABC, no âmbito do Estado Alfa. Durante o desembarque do material entorpecente, os agentes foram abordados e capturados em flagrante por policiais militares. Após serem informados de todos os direitos constitucionais e legais a que fazem jus e na presença da defesa técnica, Caio e João confessaram que são membros, há dois anos, de uma associação para o tráfico e que, de fato, estavam transportando as drogas no momento da abordagem pelos agentes da lei. Nesse cenário, considerando as disposições da Lei nº 11.343/2006, Caio e João responderão pela prática dos crimes de:",
+   "alternativas": {
+    "A": "tráfico de drogas privilegiado e associação para o tráfico, ambos com a incidência da causa de aumento de pena atinente à prática de atos de traficância entre Municípios distintos;",
+    "B": "tráfico de drogas privilegiado, com a incidência da causa de aumento de pena atinente à prática de atos de traficância entre Municípios distintos, e associação para o tráfico;",
+    "C": "tráfico de drogas, com a incidência da causa de aumento de pena atinente à prática de atos de traficância entre Municípios distintos, e associação para o tráfico;",
+    "D": "tráfico de drogas privilegiado e associação para o tráfico, sem majorantes;",
+    "E": "tráfico de drogas e associação para o tráfico, sem majorantes."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 68,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Wallace, em cumprimento de pena pela prática do crime de roubo circunstanciado pelo emprego de arma de fogo, é informado, pelo seu advogado, sobre a possibilidade de remir parte da pena, a partir do trabalho ou do estudo. Assim sendo, o condenado, entusiasmado com a notícia que lhe fora passada, resolve analisar, detidamente, o instituto da remição, visando à redução do seu período de encarceramento. Nesse cenário, considerando as disposições da Lei nº 7.210/1984, é correto afirmar que:",
+   "alternativas": {
+    "A": "o tempo a remir em função das horas de estudo será acrescido de um quarto no caso de conclusão do ensino fundamental, médio ou superior durante o cumprimento da pena, desde que certificada pelo órgão competente do sistema de educação;",
+    "B": "o condenado que cumpre a pena em regime fechado ou semiaberto poderá remir, por estudo, parte do tempo de execução da pena, à razão de um dia de pena a cada oito horas de frequência escolar, divididas, no mínimo, em dois dias;",
+    "C": "o preso impossibilitado, por acidente, de prosseguir no trabalho ou nos estudos continuará a beneficiar-se com a remição pelo prazo de seis meses, prorrogável uma vez, por igual período;",
+    "D": "em caso de falta grave, o juiz poderá revogar até um terço do tempo remido, recomeçando a contagem a partir da data da infração disciplinar;",
+    "E": "a remição será declarada pelo diretor do estabelecimento prisional, ouvidos o Ministério Público e a defesa."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 69,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Joana, maior e capaz, após um longo e cansativo dia de trabalho, ingressou em um ônibus para retornar à sua residência, sentando-se ao lado de Tício, que utilizava óculos de sol. Durante o trajeto, Joana percebeu que o homem estava, discretamente, olhando para ela e se masturbando, com o órgão genital escondido sob a blusa. Em razão dos eventos, Tício foi encaminhado à Delegacia de Polícia e, na presença dos seus advogados, confessou os fatos, afirmando que tinha a intenção de satisfazer a própria lascívia. Nesse cenário, considerando as disposições do Código Penal, é correto afirmar que o homem responderá pela prática do crime de:",
+   "alternativas": {
+    "A": "violação sexual mediante fraude;",
+    "B": "atentado violento ao pudor;",
+    "C": "importunação sexual;",
+    "D": "assédio sexual;",
+    "E": "estupro."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 70,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Jonas ingressou em um estabelecimento comercial e, de forma inesperada, desferiu um golpe de arma branca no braço de uma consumidora, causando-lhe lesão corporal leve. Ao desferir o ataque o agressor afirmou que uma voz teria ordenado que ele assim agisse. No curso da persecução penal, demonstrou-se que o agente, em razão de doença mental, era, ao tempo do fato, inteiramente incapaz de entender o caráter ilícito da conduta perpetrada. Nesse contexto, após a observância do contraditório e da ampla defesa, como consectários do devido processo legal, o juiz aplicou, em detrimento de Jonas, uma medida de segurança. O filho do acusado, extremamente preocupado com a situação de seu genitor, consultou diversos advogados, para que pudesse melhor compreender o regramento aplicável às medidas de segurança. Nesse cenário, considerando as disposições do Código Penal, é correto afirmar que:",
+   "alternativas": {
+    "A": "a internação e o tratamento ambulatorial serão por tempo indeterminado, com duração mínima de dois anos, perdurando enquanto não for averiguada, mediante perícia médica, a cessação da periculosidade do agente;",
+    "B": "a desinternação e a liberação serão sempre condicionais, devendo ser restabelecida a situação anterior se o agente, antes do decurso de dois anos, comete fato indicativo de persistência de sua periculosidade;",
+    "C": "extinta a punibilidade, não se impõe nova medida de segurança, mas se mantém o tratamento ambulatorial outrora aplicado, até a cessação da periculosidade do agente;",
+    "D": "a perícia médica será realizada ao termo do prazo mínimo fixado e deverá ser repetida de três em três meses ou a qualquer tempo, se o determinar o juiz da execução;",
+    "E": "em qualquer fase do tratamento ambulatorial, poderá o juiz determinar a internação do agente, se essa providência for necessária para fins curativos."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 71,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Tício foi condenado, em sentença transitada em julgado, a uma pena final de três anos de detenção, por ter agredido fisicamente seu genitor (lesão corporal no contexto doméstico). Registre-se que o agente é reincidente pela prática de idêntico delito. Nesse cenário, considerando as disposições do Código Penal, Tício iniciará o cumprimento de pena em regime:",
+   "alternativas": {
+    "A": "semiaberto, não tendo direito à substituição da pena privativa de liberdade por pena restritiva de direitos, tampouco à suspensão condicional da pena;",
+    "B": "aberto, tendo direito à substituição da pena privativa de liberdade por pena restritiva de direitos, mas não à suspensão condicional da pena;",
+    "C": "fechado, não tendo direito à substituição da pena privativa de liberdade por pena restritiva de direitos, tampouco à suspensão condicional da pena;",
+    "D": "aberto, não tendo direito à substituição da pena privativa de liberdade por pena restritiva de direitos, tampouco à suspensão condicional da pena;",
+    "E": "semiaberto, tendo direito à suspensão condicional da pena, mas não à substituição da pena privativa de liberdade por pena restritiva de direitos."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 72,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Jonas, mediante o emprego de uma faca, subtrai os pertences de uma idosa, evadindo-se na sequência. Durante a fuga, após percorrer mais de dois quilômetros, o agente, por coincidência, se depara com um desafeto de longa data. Jonas resolve matá-lo, desferindo diversos golpes de arma branca em seu peito, logrando êxito no intento criminoso. Nesse cenário, considerando as disposições do Código Penal, Jonas responderá pelos dois crimes praticados em:",
+   "alternativas": {
+    "A": "concurso formal impróprio, aplicando-se a mais grave das penas cabíveis ou, se iguais, somente uma delas, mas aumentada, em qualquer caso, de um sexto até a metade;",
+    "B": "concurso material, aplicando-se a mais grave das penas cabíveis ou, se iguais, somente uma delas, mas aumentada, em qualquer caso, de um sexto até a metade;",
+    "C": "concurso formal próprio, aplicando-se a mais grave das penas cabíveis ou, se iguais, somente uma delas, mas aumentada, em qualquer caso, de um sexto até a metade;",
+    "D": "continuidade delitiva, aplicando-se cumulativamente as penas privativas de liberdade em que haja incorrido;",
+    "E": "concurso material, aplicando-se cumulativamente as penas privativas de liberdade em que haja incorrido."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 73,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "João, advogado, é indicado pelo Conselho Federal da Ordem dos Advogados do Brasil para integrar, por um biênio, o Conselho Nacional de Justiça (CNJ), em observância às normas constitucionais que versam sobre a composição do órgão integrante do Poder Judiciário. Após ser sabatinado pelo Senado Federal, João se torna Conselheiro do CNJ. Nada obstante, durante o exercício de suas funções em Brasília, no âmbito do Conselho Nacional de Justiça, João recebe, indevidamente, R$ 1.000.000,00 para proferir uma decisão favorável a Mévio e assim o faz. Nesse cenário, considerando os entendimentos doutrinário e jurisprudencial dominantes, João será processado e julgado criminalmente, pela prática do crime comum, no(a):",
+   "alternativas": {
+    "A": "Tribunal Regional Federal da 1ª Região (que engloba o Distrito Federal);",
+    "B": "Tribunal de Justiça do Distrito Federal e dos Territórios;",
+    "C": "Superior Tribunal de Justiça;",
+    "D": "Supremo Tribunal Federal;",
+    "E": "Primeira Instância."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 74,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A Câmara dos Deputados instaura uma determinada Comissão Parlamentar de Inquérito (CPI), em observância às formalidades constitucionais e legais, com o objetivo de apurar um fato certo, por prazo determinado. João, deputado federal e integrante da CPI, busca, junto aos seus assessores, informações sobre as medidas que a Comissão poderá adotar, independentemente da intervenção do Poder Judiciário. Nesse cenário, considerando os entendimentos doutrinário e jurisprudencial dominantes, é correto afirmar que a Comissão Parlamentar de Inquérito, por si só, poderá decretar a:",
+   "alternativas": {
+    "A": "busca e apreensão de documentos na residência e em detrimento de um investigado;",
+    "B": "quebra de sigilo de dados bancários em detrimento de um investigado;",
+    "C": "indisponibilidade de bens em detrimento de um investigado;",
+    "D": "interceptação telefônica em detrimento de um investigado;",
+    "E": "prisão preventiva em detrimento de um investigado."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 75,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Moacir responde, em liberdade, pela suposta prática do crime de roubo circunstanciado pelo emprego de arma de fogo. Na data designada para a audiência de instrução e julgamento, verifica-se que o acusado, apesar de intimado, regular e pessoalmente, deixou de comparecer ao ato processual, sem motivo justificado. Assim sendo, o advogado constituído pelo réu requereu o aditamento do ato. O juiz, contudo, indeferiu o pedido e deu andamento à audiência, ouvindo a vítima e as testemunhas, passando, ao final, às alegações finais orais das partes. Nesse cenário, considerando as disposições do Código de Processo Penal e os entendimentos doutrinário e jurisprudencial dominantes, é correto afirmar que o juiz agiu:",
+   "alternativas": {
+    "A": "corretamente, porquanto a ausência injustificada do réu ao ato processual caracteriza um ato atentatório à dignidade da justiça, submetendo-lhe ao pagamento de multa;",
+    "B": "incorretamente, porquanto o princípio constitucional da ampla defesa engloba as acepções da defesa técnica e da autodefesa, as quais são irrenunciáveis em juízo;",
+    "C": "incorretamente, porquanto o direito que o acusado detém de participar da audiência de instrução e julgamento é um consectário do sistema acusatório;",
+    "D": "incorretamente, porquanto a acusação e a defesa apresentaram alegações finais antes do interrogatório do acusado Moacir;",
+    "E": "corretamente, porquanto a ausência injustificada do réu ao ato processual enseja a decretação da revelia."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 76,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "João foi capturado em flagrante pela suposta prática do crime de furto qualificado. Por ocasião da audiência de custódia, o magistrado relaxou a prisão flagrancial do custodiado, ao argumento de que o auto de prisão em flagrante delito não observou as exigências constitucionais e legais. Irresignado, o Ministério Público pretende recorrer da decisão judicial que fora proferida. Nesse cenário, considerando as disposições do Código de Processo Penal, o Ministério Público poderá fazer uso de:",
+   "alternativas": {
+    "A": "embargos infringentes e de nulidade;",
+    "B": "recurso em sentido estrito;",
+    "C": "carta testemunhável;",
+    "D": "recurso de apelação;",
+    "E": "correição parcial."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 77,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "João, membro do Ministério Público, recebe a pauta de audiências da Vara Criminal onde atua, para um determinado dia da semana. Ao ler o documento, o promotor de justiça verifica que o advogado do réu, na primeira audiência, é seu primo (parente colateral de 4º grau). Por sua vez, na segunda audiência, o patrono do acusado é o seu tio (parente colateral de 3º grau), com quem não dispõe de qualquer relação de proximidade. Nesse cenário, considerando as disposições do Código de Processo Penal, é correto afirmar que João:",
+   "alternativas": {
+    "A": "não poderá participar das duas audiências designadas, porquanto as hipóteses de impedimento e de suspeição se estendem, no que couber, aos membros do Ministério Público;",
+    "B": "poderá participar das duas audiências designadas, porquanto as hipóteses de impedimento e de suspeição restringem-se aos integrantes do Poder Judiciário;",
+    "C": "não poderá participar da primeira audiência, em razão do impedimento, tampouco da segunda, por força da suspeição;",
+    "D": "poderá participar da primeira audiência, mas não da segunda, em razão do impedimento;",
+    "E": "poderá participar da primeira audiência, mas não da segunda, em razão da suspeição."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 78,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Após meses de investigação, a Polícia Civil deflagrou operação para combater o tráfico ilícito de entorpecentes, cumprindo diversos mandados de busca e apreensão e de prisão preventiva. No curso das diligências policiais, houve a apreensão de veículos, embarcações, armas de fogo e outros instrumentos utilizados para a prática de atos de traficância. Dessa forma, o delegado de polícia imediatamente comunicou o juízo competente sobre os bens arrecadados. Nesse cenário, considerando as disposições da Lei nº 11.343/2006 sobre a apreensão, avaliação, arrecadação e destinação de bens dos acusados, é correto afirmar que:",
+   "alternativas": {
+    "A": "a alienação será realizada, nos autos do processo principal, dos quais constará a exposição sucinta do nexo de instrumentalidade entre o delito e os bens apreendidos, a descrição e especificação dos objetos, as informações sobre quem os tiver sob custódia e o local em que se encontrem;",
+    "B": "o juiz determinará a avaliação dos bens apreendidos, que será realizada por oficial de justiça, no prazo de cinco dias a contar da autuação, ou, caso sejam necessários conhecimentos especializados, por avaliador nomeado pelo juiz, em prazo não superior a quinze dias;",
+    "C": "feita a avaliação, o juiz intimará o órgão gestor do Fundo Nacional Antidrogas (Funad), o Ministério Público e o interessado para se manifestarem no prazo de dez dias e, dirimidas eventuais divergências, homologará o valor atribuído aos bens;",
+    "D": "o juiz, no prazo de trinta dias, contados da comunicação realizada pela autoridade policial, determinará a alienação dos bens apreendidos, excetuadas as armas, que serão recolhidas na forma da legislação específica;",
+    "E": "eventuais multas, encargos ou tributos pendentes de pagamento devem ser cobrados do arrematante ou do órgão público alienante como condição para regularização dos bens."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 79,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "João, primário, foi condenado, em sentença transitada em julgado, após a observância do contraditório e da ampla defesa, como consectários do devido processo legal, pela prática, em abril de 2023, de crime hediondo, sem resultado morte, com o cumprimento de pena iniciando-se em regime fechado. Nesse cenário, considerando as disposições da Lei nº 7.210/1984, João, observados os demais requisitos legais, poderá progredir para regime menos rigoroso quando tiver cumprido ao menos:",
+   "alternativas": {
+    "A": "30% da pena;",
+    "B": "40% da pena;",
+    "C": "50% da pena;",
+    "D": "60% da pena;",
+    "E": "70% da pena."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 80,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Na data designada para a realização da sessão plenária, relacionada ao processo de Tício, acusado de praticar o crime de homicídio tentado triplamente qualificado, o magistrado indaga aos sete jurados sorteados, que integrarão o Conselho de Sentença, no contexto do Tribunal do Júri, se há dúvidas. Surge então um questionamento sobre a possibilidade de os jurados realizarem perguntas, durante a instrução processual, à vítima, às testemunhas e ao acusado. Nesse cenário, considerando as disposições do Código de Processo Penal, é correto afirmar que os jurados poderão formular perguntas:",
+   "alternativas": {
+    "A": "por intermédio do juiz, à vítima, às testemunhas e, diretamente, ao acusado;",
+    "B": "diretamente à vítima e às testemunhas e, por intermédio do juiz, ao acusado;",
+    "C": "por intermédio do juiz, à vítima e ao acusado e, diretamente, às testemunhas;",
+    "D": "por intermédio do juiz, à vítima, às testemunhas e ao acusado;",
+    "E": "diretamente à vítima, às testemunhas e ao acusado. Realização"
+   },
+   "gabarito": "D"
+  }
+ ]
+}

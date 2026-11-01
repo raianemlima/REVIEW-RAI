@@ -1,0 +1,1309 @@
+{
+ "id": "tjpr-2025-juiz-substituto",
+ "nome": "TJPR 2025 · JUIZ SUBSTITUTO",
+ "cargo": "Carreira jurídica · prova tipo 1",
+ "banca": "FGV",
+ "gabarito": "definitivo",
+ "questoes": [
+  {
+   "n": 1,
+   "materia": "Direito Civil",
+   "enunciado": "Duas sociedades empresárias, dotadas de equivalente capacidade técnica e econômica, celebraram contrato de fornecimento de longo prazo, após negociação individualizada, prevendo cláusula expressa de alocação objetiva de riscos, inclusive quanto às oscilações econômicas relevantes, bem como cláusula de renúncia à revisão contratual em razão de fatos previsíveis. No curso da execução do contrato, sobreveio grave crise setorial decorrente de evento macroeconômico global, previsível, mas cujos efeitos concretos se revelaram mais gravosos do que aqueles ordinariamente considerados pelas partes no momento da contratação. A parte onerada buscou renegociação das condições contratuais, a qual foi recusada pela contraparte, que passou a exigir o cumprimento integral do ajuste. Diante disso, foi ajuizada ação revisional, na qual se sustentou: i) violação à boa-fé objetiva, em razão da recusa à renegociação; ii) afronta à função social do contrato, diante do risco de inviabilização da atividade empresarial; e iii) incidência da teoria do hardship, como fundamento para a revisão judicial. Considerando o regime jurídico vigente, especialmente as disposições do Código Civil interpretadas à luz da lei da liberdade econômica, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "A boa-fé objetiva impõe, às partes, o dever jurídico de renegociar o contrato sempre que fatos supervenientes tornarem a prestação excessivamente onerosa, ainda que exista cláusula expressa de alocação de riscos e renúncia à revisão contratual.",
+    "B": "A função social do contrato autoriza a intervenção judicial revisional quando a manutenção das cláusulas pactuadas comprometer a continuidade da atividade econômica de uma das partes, independentemente da previsibilidade do evento e da distribuição contratual dos riscos.",
+    "C": "A existência de cláusula expressa de alocação de riscos e de renúncia à revisão contratual impede a atuação judicial corretiva, afastando a incidência da boa-fé objetiva, da função social do contrato e da teoria do hardship.",
+    "D": "A recusa à renegociação pode, em hipóteses excepcionais, configurar violação à boa-fé objetiva, mas a revisão judicial exige a demonstração de onerosidade excessiva nos termos legais ou de ruptura da base objetiva do negócio, não sendo suficiente a invocação genérica da função social.",
+    "E": "A teoria do hardship autoriza a revisão judicial do contrato sempre que houver desequilíbrio relevante entre as prestações, ainda que o evento superveniente fosse previsível em abstrato e que os riscos tenham sido previamente assumidos pelas partes."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 2,
+   "materia": "Direito Civil",
+   "enunciado": "João e Carlos mantêm relações jurídicas recíprocas. Em determinado momento, João tornou-se credor de Carlos em razão de contrato de depósito, enquanto Carlos passou a ser credor de João por dívida oriunda de contrato de prestação de serviços, sendo ambas líquidas, vencidas e exigíveis. Após o ajuizamento de ação de cobrança por Carlos, João é notificado da cessão do crédito a terceiro, ocorrida antes de qualquer penhora. Em contestação, João alegou a possibilidade de compensação entre os créditos. Considerando o disposto no Código Civil, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "A compensação é admissível, pois presentes os requisitos da liquidez e da exigibilidade, sendo irrelevante a causa das obrigações e a cessão posterior do crédito.",
+    "B": "A compensação é admissível, desde que deduzidas as despesas necessárias à operação, caso as dívidas não sejam pagáveis no mesmo lugar.",
+    "C": "A compensação é inadmissível, pois uma das obrigações se origina de contrato de depósito, hipótese expressamente excluída pelo Código Civil.",
+    "D": "A compensação somente poderia ser oposta se João tivesse recusado expressamente a cessão do crédito antes de sua notificação.",
+    "E": "A compensação somente seria vedada se houvesse penhora do crédito cedido, em razão da proteção ao direito do terceiro exequente."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 3,
+   "materia": "Direito Civil",
+   "enunciado": "Em contrato de compra e venda de imóvel urbano, o vendedor instituiu cláusula de preempção em favor de Ana, Bruno e Carla, em comum, pelo prazo máximo legal. Posteriormente e dentro do prazo, o comprador recebeu proposta de terceiro e notificou regularmente os três preferentes, informando preço e condições do negócio. No prazo legal, Ana manifestou interesse, Bruno permaneceu inerte, e Carla declarou não possuir recursos financeiros para exercer a preferência. Ainda assim, o comprador alienou o imóvel ao terceiro sem aguardar qualquer outra providência. Diante desses fatos, Ana pretende exercer sozinha o direito de preferência, enquanto Bruno, após a venda, sustenta que também poderia adquiri-lo proporcionalmente. Carla, por sua vez, pleiteia indenização. Sobre a hipótese, à luz do Código Civil, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "Ana pode exercer sozinha o direito de preferência, pois a perda ou o não exercício do direito por Bruno e Carla autoriza os demais preferentes a utilizá-lo em relação à coisa no todo.",
+    "B": "Nenhum dos preferentes pode exercer o direito de preferência, pois o silêncio de Bruno e a declaração de impossibilidade financeira de Carla inviabilizam o exercício do direito em comum.",
+    "C": "Bruno pode, após a alienação, exercer o direito de preferência proporcionalmente à sua quota ideal, desde que pague parte do preço ajustado.",
+    "D": "Carla faz jus à indenização por perdas e danos, pois a declaração de incapacidade financeira não implica renúncia válida ao direito de preempção.",
+    "E": "A alienação do imóvel ao terceiro foi legítima, pois a manifestação isolada de Ana não supre a exigência de exercício conjunto do direito de preempção."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 4,
+   "materia": "Direito Civil",
+   "enunciado": "João, por erro, acreditando ser devedor, realizou pagamento a Pedro, que recebeu o valor como se parte de dívida verdadeira fosse. Posteriormente, apurou-se que a suposta obrigação de João era fundada em título absolutamente nulo, inexistindo, portanto, qualquer dívida válida ou verdadeiro devedor. Após receber o pagamento, Pedro inutilizou o título que fundamentava a cobrança e, meses depois, alienou a terceiro, por título oneroso e de boa-fé, um imóvel que havia recebido de João como parte do pagamento indevido. Diante desses fatos, João pretende reaver o que pagou e, se possível, reivindicar o imóvel. Sobre o caso narrado, à luz do Código Civil, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "João não pode repetir o valor pago, pois o pagamento realizado para solver obrigação judicialmente inexigível é irrepetível, ainda que fundada em título nulo.",
+    "B": "Pedro fica isento de restituir o pagamento indevido, cabendo a João apenas ação regressiva contra eventual verdadeiro devedor, em razão da inutilização do título.",
+    "C": "Pedro deve restituir o valor recebido e responder por perdas e danos, sendo irrelevante sua boa-fé e a alienação onerosa do imóvel a terceiro.",
+    "D": "João pode repetir o valor pago e reivindicar o imóvel alienado, ainda que este tenha sido transferido por título oneroso a terceiro de boa-fé.",
+    "E": "João pode repetir o valor pago, mas não poderá reivindicar o imóvel, limitando-se o dever de restituição de Pedro à quantia recebida, em razão da alienação onerosa do bem a terceiro de boa-fé."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 5,
+   "materia": "Direito Civil",
+   "enunciado": "Em 2018, Lucas adquiriu, de boa-fé, um relógio antigo em tradicional loja especializada em objetos de luxo usados, aberta ao público, recebendo imediatamente a posse do bem. O vendedor aparentava ser legítimo proprietário, embora, posteriormente, se tenha constatado que o relógio havia sido obtido de terceiro sem título válido. Lucas passou a exercer a posse do relógio como sua, de forma contínua e incontestada, exibindo-o publicamente e realizando sua manutenção regular. Em 2021, o verdadeiro proprietário tomou ciência da situação e reivindicou o bem. Paralelamente, em 2023, antes da solução do conflito, o vendedor originário veio a adquirir validamente a propriedade do relógio por meio de sucessão hereditária. Sobre a hipótese, considerando o regime jurídico da aquisição da propriedade móvel no Código Civil, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "Lucas adquiriu a propriedade do relógio desde a tradição, em razão da boa-fé e da aquisição em estabelecimento comercial, sendo irrelevante a posterior aquisição do domínio pelo alienante.",
+    "B": "A transferência da propriedade é considerada realizada desde o momento da tradição, em razão da boa-fé do adquirente e da posterior aquisição do domínio pelo alienante.",
+    "C": "Lucas adquiriu a propriedade do relógio por usucapião ordinária, pois exerceu posse contínua e incontestada por três anos, com justo título e boa-fé.",
+    "D": "Lucas adquiriu a propriedade do relógio por usucapião extraordinária, pois a posse prolongou-se por cinco anos, independentemente de título ou boa-fé.",
+    "E": "A tradição realizada por quem não era proprietário é absolutamente ineficaz, razão pela qual Lucas não poderá adquirir a propriedade do relógio, ainda que permaneça na posse pelo prazo legal."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 6,
+   "materia": "Direito Civil",
+   "enunciado": "Helena, pessoa idosa de 84 anos, portadora de limitações cognitivas leves, reside com um filho adulto que, embora lhe assegure moradia, omite-se reiteradamente quanto aos cuidados médicos, apropria-se de parcela relevante de sua aposentadoria e restringe seu convívio comunitário. A situação foi comunicada ao Ministério Público por profissionais da rede pública de saúde. No procedimento instaurado, constatou-se que Helena manifestou desejo de permanecer no núcleo familiar, apesar de reconhecer prejuízos à sua saúde, autonomia e dignidade. O Ministério Público, então, requereu ao Poder Judiciário a adoção de medidas específicas de proteção, inclusive orientação, apoio e acompanhamento temporários e requisição de tratamento de saúde, com o objetivo de cessar a situação de risco, sem ruptura imediata dos vínculos familiares. Considerando o Estatuto da Pessoa Idosa e a ordem constitucional vigente, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "A autonomia da pessoa idosa, enquanto projeção da dignidade da pessoa humana e do livre desenvolvimento da personalidade, impede a imposição de medidas protetivas pelo Poder Judiciário sem sua concordância expressa, salvo na hipótese de prévia interdição judicial regularmente decretada.",
+    "B": "As medidas de proteção previstas no Estatuto da Pessoa Idosa possuem caráter excepcional e restritivo, sendo cabíveis apenas diante de abandono absoluto ou violência física comprovada, não se justificando sua aplicação em contextos de convivência familiar formalmente preservada.",
+    "C": "A intervenção estatal mediante medidas de proteção deve observar os princípios da proporcionalidade e da intervenção mínima, podendo ser determinada pelo Poder Judiciário, a requerimento do Ministério Público, sempre que houver ameaça ou violação de direitos da pessoa idosa, inclusive por omissão familiar, com vistas à tutela da dignidade, da saúde e da convivência comunitária.",
+    "D": "A atuação jurisdicional em matéria de proteção à pessoa idosa limita-se ao controle formal das providências adotadas pela família ou pelo curador, sendo vedada a imposição judicial de medidas que interfiram diretamente na organização e dinâmica do núcleo familiar.",
+    "E": "A prioridade constitucional assegurada à pessoa idosa autoriza a adoção imediata e preferencial de medidas de acolhimento institucional, independentemente da análise concreta da situação e da existência de alternativas menos gravosas aptas a preservar os vínculos familiares e comunitários."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 7,
+   "materia": "Direito Civil",
+   "enunciado": "Ricardo faleceu em 2024, deixando patrimônio avaliado em R$ 2.000.000,00, composto exclusivamente por bens particulares. Ricardo era casado com Paula sob o regime da comunhão parcial de bens e deixou dois filhos, André e Beatriz. Por testamento público, Ricardo dispôs de todo o seu patrimônio da seguinte forma: i) atribuiu a André um imóvel avaliado em R$ 800.000,00, gravado com cláusulas de inalienabilidade, incomunicabilidade e impenhorabilidade, sem limitação temporal expressa; ii) atribuiu à Beatriz, aplicações financeiras no valor de R$ 600.000,00, sem cláusulas restritivas; iii) destinou os R$ 600.000,00 restantes a uma associação privada, de interesse social. Em vida, Ricardo havia realizado doação de R$ 300.000,00 a André, sem dispensa de colação. Paula não foi contemplada no testamento. Aberta a sucessão, surgiram controvérsias quanto à validade das disposições testamentárias, à eficácia das cláusulas restritivas e à forma correta de realização da partilha. Sobre a hipótese, à luz do Código Civil, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "As cláusulas de inalienabilidade, incomunicabilidade e impenhorabilidade são plenamente válidas, ainda que incidentes sobre bens da legítima e sem limitação temporal, desde que instituídas por testamento.",
+    "B": "As disposições testamentárias devem ser integralmente anuladas, pois a imposição de cláusulas restritivas sobre bens atribuídos a herdeiro necessário viola, por si só, o direito à legítima.",
+    "C": "As cláusulas restritivas são nulas, pois a ausência de limitação temporal expressa impede sua eficácia, devendo os bens ser partilhados livres de quaisquer ônus.",
+    "D": "A doação realizada a André deve ser colacionada, e as disposições testamentárias devem ser reduzidas para preservação da legítima, sendo as cláusulas restritivas eficazes apenas sobre a parte disponível e desde que justificadas.",
+    "E": "A destinação de parte do patrimônio à associação privada afasta a incidência das regras da legítima, permitindo ao testador dispor livremente do restante dos bens entre os descendentes."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 8,
+   "materia": "Direito Civil",
+   "enunciado": "Marina, com 16 anos de idade, e Rafael, com 19, decidiram se casar. Marina obteve autorização apenas de sua mãe, pois seu pai manifestou discordância sem apresentar justificativa concreta. Apesar disso, o casal celebrou casamento religioso, sem prévia habilitação civil, perante autoridade religiosa regularmente constituída. Trinta dias após a celebração religiosa, Marina e Rafael requereram o registro civil do casamento, alegando que a autorização materna seria suficiente e que a discordância paterna seria abusiva. Antes da conclusão do procedimento de registro, na fase de habilitação, Júlia afirmou manter união estável com Rafael, o que foi veementemente negado por ele, embora tenha reconhecido apenas a existência de breve namoro com Júlia no passado, fato desconhecido por Marina, à época da cerimônia religiosa. Diante dessas circunstâncias, à luz do Código Civil, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "O registro civil do casamento religioso deve ser indeferido, pois a simples alegação de união estável por terceiro configura impedimento matrimonial absoluto, ainda que não comprovado.",
+    "B": "O casamento religioso é inválido para fins civis, pois a ausência de autorização expressa de ambos os pais da nubente menor de idade impede sua conversão em casamento civil.",
+    "C": "O casamento religioso poderá ser registrado e produzir efeitos civis, desde que suprida judicialmente a discordância paterna injustificada, não constituindo a alegação não comprovada de união estável impedimento matrimonial.",
+    "D": "A controvérsia acerca da existência de união estável impede o prosseguimento da habilitação e invalida o casamento religioso, devendo os nubentes aguardar decisão judicial definitiva sobre o vínculo anterior.",
+    "E": "O casamento religioso somente poderia produzir efeitos civis se tivesse sido precedido de habilitação civil regular, sendo irrelevante a posterior manifestação de vontade dos nubentes."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 9,
+   "materia": "Direito Civil",
+   "enunciado": "Pedro e Ana faleceram em um mesmo evento, deixando dois filhos menores, Lucas (10 anos) e Marina (14 anos). O pai, quando ainda detinha o poder familiar, havia nomeado, por testamento público, como tutor dos filhos seu irmão Carlos, residente em município diverso do domicílio dos menores. A mãe não realizou qualquer nomeação. Após a abertura da sucessão, Carlos manifestou-se disposto a assumir a tutela, mas comprovou ter sido condenado definitivamente por crime de estelionato, já com pena cumprida. Paralelamente, a avó materna das crianças, residente no mesmo domicílio dos menores, requereu a tutela, alegando possuir melhores condições de cuidado e convivência. Durante o procedimento, verificou-se que os menores possuem patrimônio considerável, composto por aplicações financeiras e um imóvel urbano. Sobre essa situação, à luz do Código Civil, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "Carlos é incapaz de exercer a tutela, cabendo ao Juiz nomear tutor legítimo ou, na ausência de parente idôneo, tutor dativo, devendo a tutela ser atribuída à avó materna se considerada a mais apta ao exercício do encargo.",
+    "B": "A tutela deve ser deferida a Carlos, por força da nomeação testamentária válida, sendo a avó materna apenas tutora subsidiária, caso o nomeado venha a renunciar ou falecer.",
+    "C": "A nomeação testamentária prevalece sobre qualquer outra forma de tutela, devendo Carlos assumir a tutela, pois a condenação criminal não impede o exercício do encargo após o cumprimento da pena.",
+    "D": "A existência de patrimônio relevante dos menores impede a atribuição da tutela a parente consanguíneo, devendo o juiz nomear tutor profissional ou pessoa jurídica especializada.",
+    "E": "A tutela deverá ser atribuída a Carlos, com a nomeação obrigatória de protutor, sendo suficiente essa medida para sanar eventual inidoneidade do tutor testamentário."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 10,
+   "materia": "Direito Civil",
+   "enunciado": "Carlos é aluno de uma universidade pública e possui deficiência auditiva moderada, de caráter permanente, que não o impede de se comunicar oralmente, mas dificulta significativamente a compreensão de aulas expositivas sem apoio visual ou recursos de acessibilidade. Em razão disso, requereu à instituição a disponibilização de material didático previamente legendado e a utilização de recursos tecnológicos de apoio à comunicação em sala de aula. A universidade indeferiu o pedido, sustentando que Carlos não se enquadraria como pessoa com deficiência para fins legais, pois consegue se expressar verbalmente e não utiliza libras, afirmando ainda que a implementação das medidas solicitadas acarretaria ônus excessivo à Administração, sem que houvesse avaliação técnica individualizada. Diante dessa situação, Carlos ajuizou ação judicial visando ao reconhecimento de sua condição jurídica como pessoa com deficiência e à adoção das medidas requeridas. À luz da lei brasileira de inclusão da pessoa com deficiência, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "A deficiência auditiva somente é juridicamente relevante quando impede totalmente a comunicação oral, razão pela qual a negativa administrativa é compatível com o modelo legal adotado pela Lei Brasileira de Inclusão (LBI).",
+    "B": "A universidade pode indeferir o pedido, pois a adaptação razoável depende de demonstração prévia, pelo interessado, de que as medidas requeridas não acarretam qualquer ônus à Administração Pública.",
+    "C": "A condição de Carlos deve ser analisada segundo o modelo biopsicossocial, sendo irrelevante o uso de Libras ou a incapacidade absoluta de comunicação, cabendo à Administração demonstrar, de forma motivada e individualizada, eventual ônus desproporcional para afastar a adaptação razoável.",
+    "D": "A existência de dificuldades no processo de aprendizagem não se relaciona ao conceito legal de deficiência, restringindo-se este aos impedimentos físicos permanentes.",
+    "E": "A adoção de recursos tecnológicos de apoio à comunicação constitui faculdade da instituição de ensino, inexistindo dever jurídico de implementá-los enquanto não houver regulamentação específica."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 11,
+   "materia": "Direito Processual Civil",
+   "enunciado": "João, Juiz de Direito em exercício na 3ª Vara Cível da Comarca de Pato Branco (PR), recebe conclusos para sentença autos de ação indenizatória. Ao analisar o mérito, João verifica que existe tese firmada pelo Superior Tribunal de Justiça em sede de recurso especial repetitivo que, em tese, seria aplicável ao caso e levaria à improcedência do pedido. Contudo, o magistrado identifica particularidade fática no caso concreto que o diferencia do precedente vinculante, tornando esse último inaplicável. Para não aplicar o precedente, o juiz deve",
+   "alternativas": {
+    "A": "suspender o processo e suscitar Incidente de Assunção de Competência ao Tribunal em razão da relevância da matéria exclusivamente de direito.",
+    "B": "julgar o caso conforme o livre convencimento motivado, sendo desnecessário mencionar o julgado do Superior",
+    "C": "aplicar o precedente em razão de sua força obrigatória, deixando para o Superior Tribunal de Justiça, em grau de eventual recurso, a análise da distinção.",
+    "D": "demonstrar fundamentadamente na sentença a distinção fática entre o caso sob julgamento e a questão decidida no precedente, justificando a não aplicação.",
+    "E": "declarar a inconstitucionalidade incidental do precedente do STJ, afastando sua aplicação por violação ao princípio do livre convencimento."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 12,
+   "materia": "Direito Processual Civil",
+   "enunciado": "O Juízo da 1ª Vara Cível da Comarca de Colombo (PR) condenou Mariana ao pagamento de indenização a título de danos materiais em favor de Thiago. A sentença foi mantida em grau de recurso, julgado pela X Câmara Cível, que conheceu e desproveu recurso de apelação interposto por Mariana. Após o trânsito em julgado, Mariana ajuizou ação rescisória fundada em violação manifesta à norma jurídica, visando a obter novo julgamento de mérito, com a improcedência do pedido. A demanda foi distribuída a uma das Seções Cíveis, sendo certo que Mariana formulou apenas pedido de rescisão do julgado. A autora também efetuou o depósito de 5% (cinco por cento) do valor da causa. Diante do vício, o Relator deve",
+   "alternativas": {
+    "A": "indeferir desde logo a petição inicial por impossibilidade jurídica do pedido, determinando a restituição do depósito formulado.",
+    "B": "receber a petição inicial como Recurso Especial adesivo, aplicando o princípio da fungibilidade das ações autônomas de impugnação.",
+    "C": "julgar liminarmente improcedente a ação rescisória, condenando Mariana ao pagamento dos honorários advocatícios, custas e a perda do depósito de 5% (cinco por cento) do valor da causa.",
+    "D": "determinar a remessa dos autos ao Juízo da 1ª Vara Cível da Comarca de Colombo (PR), pois a ação rescisória deve ser proposta perante o órgão prolator da sentença.",
+    "E": "conceder prazo para emenda da inicial, permitindo a adequação do pedido, em prestígio à primazia do julgamento de mérito."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 13,
+   "materia": "Direito Processual Civil",
+   "enunciado": "Em execução fundada em título extrajudicial, movida por Alfa Combustíveis Ltda. contra a empresa Transportes Rápidos Ltda., não foram encontrados bens penhoráveis. Assim, o exequente requereu a instauração de incidente de desconsideração da personalidade jurídica (IDPJ) para alcançar o patrimônio de Jair, sócio administrador da Transportes Rápidos Ltda, alegando confusão patrimonial. O juiz recebeu o incidente e determinou a citação de Jair. Tomando o caso como premissa, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "A instauração do incidente não suspende o processo de execução, sendo lícita a penhora de bens do sócio antes mesmo de sua citação.",
+    "B": "Jair será citado para pagar o débito exequendo no prazo de 3 (três) dias, sob pena de penhora.",
+    "C": "A decisão que julgar o incidente nesta fase poderá ser impugnada mediante recurso de apelação, pois versa sobre o mérito do processo.",
+    "D": "Eventual alienação de bens de Jair após a citação será tida como fraude à execução e nula em relação à Alfa Combustíveis Ltda.",
+    "E": "Com a admissão do incidente, Jair será citado para manifestar-se e requerer a produção das provas cabíveis no prazo de 15 (quinze) dias."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 14,
+   "materia": "Direito Processual Civil",
+   "enunciado": "Elias ajuizou ação de cobrança em face de Mauro, fiador de Antônio em contrato de mútuo celebrado com Elias e que renunciou ao benefício de ordem, cobrando integralmente o valor do débito. Ao ser citado, Mauro pretende incluir Antônio no polo passivo da demanda. Nesse caso, à luz do Código de Processo Civil, a medida adequada é",
+   "alternativas": {
+    "A": "pedir a intervenção de Antônio na qualidade de assistente simples, em sede de contestação.",
+    "B": "promover a denunciação da lide em desfavor de Antônio.",
+    "C": "requerer o chamamento de Antônio ao processo.",
+    "D": "pedir a instauração de incidente de desconsideração da personalidade jurídica.",
+    "E": "oferecer oposição em face de Elias e de Antônio."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 15,
+   "materia": "Direito Processual Civil",
+   "enunciado": "Henrique foi condenado ao pagamento de indenização no valor de R$ 50.000,00 (cinquenta mil reais) em favor de Pedro. Publicada a sentença, Pedro opõe embargos de declaração, alegando haver omissão no julgado. Henrique, por sua vez, prefere aguardar o julgamento dos embargos para interpor recurso de apelação. O juiz, ao analisar os embargos de declaração, decide não os conhecer por intempestividade, certificando que o recurso foi interposto fora do prazo legal de 5 dias. Nesse cenário, em relação ao prazo para o réu interpor sua apelação,",
+   "alternativas": {
+    "A": "o prazo foi interrompido, pois a mera oposição de embargos de declaração, ainda que intempestivos, interrompe o prazo para interposição de outros recursos.",
+    "B": "o prazo foi suspenso, voltando a correr, pelo tempo restante, após a intimação da decisão que não conheceu dos embargos.",
+    "C": "o prazo não foi interrompido nem suspenso, pois embargos de declaração intempestivos não produzem efeito interruptivo.",
+    "D": "o prazo foi interrompido, recomeçando integralmente após a intimação da decisão que não conheceu dos embargos, por aplicação do princípio da primazia do julgamento de mérito.",
+    "E": "o juiz deve relevar a intempestividade se o erro for escusável, aplicando o princípio da fungibilidade para receber os embargos como pedido de reconsideração."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 16,
+   "materia": "Direito Processual Civil",
+   "enunciado": "A sociedade Exportadora Sul Ltda. ajuizou ação de cobrança em face da empresa norte-americana North Traders Inc. perante a 1ª Vara Cível de Curitiba, fundada em contrato de prestação de serviços executado no Brasil. Citada, a ré alegou em preliminar de contestação a existência de litispendência, comprovando que a mesma ação (mesmas partes, causa de pedir e pedido) já tramita há seis meses perante a Corte Distrital de Nova Iorque (EUA). Diante desse cenário, à luz das disposições do Código de Processo Civil e não havendo tratado internacional ou acordo bilateral em vigor a respeito do tema, o juiz da 1ª Vara Cível de Curitiba deve",
+   "alternativas": {
+    "A": "acolher a preliminar de litispendência e extinguir o processo sem resolução de mérito, em homenagem ao princípio da economia processual e da cooperação internacional.",
+    "B": "suspender o processo no Brasil até o trânsito em julgado da ação que tramita nos Estados Unidos, evitando-se decisões conflitantes sobre a mesma relação jurídica.",
+    "C": "intimar a parte autora para que opte por um dos foros, sob pena de extinção do processo sem resolução do mérito por falta de interesse de agir.",
+    "D": "rejeitar a preliminar e determinar o prosseguimento do feito, pois a ação proposta perante tribunal estrangeiro não induz litispendência e não obsta a que a autoridade judiciária brasileira conheça da mesma causa.",
+    "E": "declinar da competência em favor da Justiça Federal, pois a existência de processo no estrangeiro atrai o interesse da União na lide."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 17,
+   "materia": "Direito Processual Civil",
+   "enunciado": "Mauro é autor em ação que move em face de Juliano, submetida ao procedimento comum. Após a fase postulatória, o juiz proferiu decisão de saneamento e organização do processo, delimitando os pontos controvertidos, distribuindo o ônus da prova e determinando a produção de prova oral (depoimento pessoal das partes e prova testemunhal). As partes foram intimadas e permaneceram inertes. Na audiência de instrução e julgamento, o advogado de Juliano alegou que a delimitação das questões de fato controvertidas estava equivocada, razão pela qual requereu ao magistrado a reconsideração da decisão de saneamento. A respeito desse caso hipotético, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "O pedido poderá ser acolhido, independente de prazo, demonstrada nulidade ou injustiça da decisão de saneamento.",
+    "B": "Juliano poderia ter requerido esclarecimentos ou ajustes no prazo legal e, não o fazendo, operou-se preclusão da decisão de saneamento e organização do processo.",
+    "C": "O magistrado deverá indeferir o pedido e, de imediato, colher o depoimento das testemunhas e o depoimento pessoal, obrigatoriamente nesta ordem.",
+    "D": "Uma vez que a delimitação das questões de fato controvertidas ocorre apenas na sentença, o pedido de reconsideração deverá ser indeferido, por ser prematuro.",
+    "E": "Caberá ao juiz cindir a audiência, independente de concordância das partes, para análise do pedido, após manifestação de autor e réu no prazo comum de 5 (cinco) dias."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 18,
+   "materia": "Direito Processual Civil",
+   "enunciado": "Trator Bom Insumos Ltda. ajuíza ação monitória em face de Pedro, produtor rural, visando ao recebimento de R$ 50.000,00 (cinquenta mil reais), referentes a fertilizantes. Para instruir a petição inicial, a autora junta capturas de tela (prints) de conversas de aplicativo de mensagens e trocas de e- mails corporativos, nos quais o réu reconhece a dívida e pede prazo para pagamento, mas sem qualquer contrato formal assinado. Em tal caso, diante da prova que instrui a petição inicial e não havendo vícios de índole processual presentes, o Juiz deve",
+   "alternativas": {
+    "A": "indeferir de plano a petição inicial por inadequação da via eleita, pois a prova escrita exigida para a ação monitória deve ser formalizada em instrumento físico, não se admitindo prova puramente digital.",
+    "B": "determinar a conversão do procedimento monitório em procedimento comum, pois a prova digital exige necessariamente perícia para atestar sua autenticidade antes da expedição do mandado monitório.",
+    "C": "intimar a autora para que elabore ata notarial como requisito específico de admissibilidade da petição inicial, para demonstração da fidelidade e autenticidade das mensagens trocadas entre as partes.",
+    "D": "receber a petição inicial, pois a prova escrita sem eficácia de título executivo pode consistir em prova documental produzida por meios eletrônicos, desde que demonstrem o juízo de probabilidade do direito.",
+    "E": "receber a petição inicial, determinando a expedição de mandado de pagamento concedendo ao réu prazo de 15 (quinze) dias para o cumprimento e o pagamento de honorários advocatícios de dez por cento do valor atribuído à causa."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 19,
+   "materia": "Direito Processual Civil",
+   "enunciado": "Delta Peças Ltda. ajuizou ação de cobrança em face de Beta Peças Ltda., distribuída à 1ª Vara Cível de Curitiba/PR. Citada, a ré arguiu, em preliminar de contestação, incompetência relativa territorial, sustentando a existência de foro de eleição válido em favor do foro da Capital do Estado de São Paulo. O juiz acolheu a preliminar e declinou da competência, determinando a remessa dos autos para uma das Varas Cíveis de São Paulo/SP. Em tal caso, para impugnar a decisão de declínio de competência, o instrumento processual cabível é",
+   "alternativas": {
+    "A": "a interposição de recurso de apelação, pois a decisão que reconhece a incompetência territorial, declinando a competência em favor de outro juízo, extingue o processo sem resolução do mérito.",
+    "B": "a impetração de mandado de segurança, por não haver recurso cabível para atacar decisão de declínio de competência.",
+    "C": "a interposição de agravo de instrumento, em razão da taxatividade mitigada do rol legal e, também, da urgência e utilidade na interposição imediata de recurso em face da decisão.",
+    "D": "a oferta de pedido de reconsideração, tão apenas.",
+    "E": "a oposição de embargos de declaração, como recurso próprio para reforma do declínio de competência."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 20,
+   "materia": "Direito Processual Civil",
+   "enunciado": "Maurício, idoso de 85 (oitenta e cinco) anos de idade, ajuizou ação revisional de contrato bancário em face do Banco Gaste Bem, visando a reduzir o percentual de juros de contrato de mútuo feneratício. O juiz, na decisão de saneamento e organização do processo, não se manifestou a respeito do pedido de inversão do ônus da prova, formulado pelo autor. Encerrada a instrução, ao proferir a sentença, o magistrado julgou procedente o pedido do autor, fundamentando que, diante da presumida hipossuficiência técnica do consumidor, caberia ao banco réu provar a regularidade da taxa de juros, o que não foi feito. Nesse caso, a sentença proferida pelo magistrado",
+   "alternativas": {
+    "A": "uma vez impugnada em recurso de apelação, deve necessariamente ser anulada, por ser vedada a aplicação da teoria da causa madura em ações envolvendo relação de consumo.",
+    "B": "é válida, pois a inversão do ônus da prova em favor do consumidor é regra de julgamento e pode ser aplicada a qualquer tempo, inclusive na sentença.",
+    "C": "não possui vício, pois a omissão do julgador implica na aceitação tácita do pedido de inversão do ônus da prova formulado por Maurício.",
+    "D": "padece de nulidade, pois a distribuição dinâmica do ônus da prova é regra de instrução, não podendo o juiz surpreender a parte na sentença sem antes dar oportunidade de se desincumbir do ônus probatório.",
+    "E": "pode ter o capítulo que versa sobre ônus da prova impugnado mediante agravo de instrumento, como dispõe expressamente o Código de Processo Civil."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 21,
+   "materia": "Direito do Consumidor",
+   "enunciado": "Uma empresa de tecnologia desenvolve e comercializa um software de gestão financeira destinado exclusivamente a microempreendedores individuais (MEIs), mediante contrato de licença onerosa, padronizado e sem possibilidade de negociação individual de cláusulas. Em virtude desses contratos, um MEI ajuizou ação pleiteando a aplicação do Código de Defesa do Consumidor (CDC), alegando vulnerabilidade técnica e informacional, bem como cláusulas contratuais abusivas. A empresa sustentou que o CDC não se aplica, pois o produto é utilizado para fins profissionais e integra a atividade econômica do adquirente. À luz dos fundamentos constitucionais e infraconstitucionais do Direito do Consumidor e do campo de aplicação do Código de Defesa do Consumidor, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "O CDC é inaplicável, pois a utilização do software para fins profissionais afasta, em qualquer hipótese, a caracterização do MEI como consumidor.",
+    "B": "O CDC somente se aplica quando o adquirente do produto ou serviço seja pessoa física, sendo irrelevante a análise da vulnerabilidade ou da destinação econômica do bem.",
+    "C": "O CDC pode ser aplicado, desde que demonstrada a vulnerabilidade do adquirente, ainda que o bem ou o serviço seja utilizado no exercício de atividade profissional.",
+    "D": "O CDC é aplicável automaticamente a todo contrato de adesão, independentemente da natureza da relação jurídica ou da existência de fornecedor e consumidor.",
+    "E": "O CDC não possui fundamento constitucional, sendo sua aplicação restrita às hipóteses expressamente previstas em legislação infraconstitucional."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 22,
+   "materia": "Direito do Consumidor",
+   "enunciado": "Joana, consumidora pessoa natural, aposentada e de boa-fé, celebrou ao longo dos anos diversos contratos de crédito com instituições financeiras distintas (empréstimos pessoais, cartão de crédito e consignado), todos por contratos de adesão. Com o tempo, passou a comprometer mais de 80% de sua renda mensal com o pagamento das parcelas, inviabilizando sua subsistência digna. Diante dessa situação, Joana ajuizou demanda judicial pleiteando a revisão de cláusulas contratuais específicas, alegando abusividade de juros e encargos e, alternativamente, a instauração do procedimento de repactuação das dívidas por superendividamento, com a elaboração de plano de pagamento que preservasse o mínimo existencial. Considerando o regime jurídico da revisão contratual clássica e o microssistema de prevenção e tratamento do superendividamento, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "A revisão contratual clássica e a repactuação do superendividamento possuem idênticos pressupostos e finalidades, diferenciando-se apenas quanto ao número de contratos analisados pelo Juiz.",
+    "B": "A revisão contratual clássica exige a demonstração de abusividade ou de onerosidade excessiva em cláusulas específicas, enquanto a repactuação do superendividamento pressupõe a análise global da situação financeira do consumidor e visa à preservação do mínimo existencial.",
+    "C": "A repactuação do superendividamento somente é cabível após o reconhecimento judicial prévio da nulidade das cláusulas abusivas existentes em todos os contratos do consumidor.",
+    "D": "A revisão contratual clássica autoriza, por si só, a imposição de plano compulsório de pagamento a todos os credores do consumidor, ainda que não caracterizado o superendividamento.",
+    "E": "O procedimento de superendividamento substituiu integralmente a revisão contratual prevista no Art. 6º, inciso V, do CDC, tornando-a inaplicável às relações de consumo envolvendo crédito."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 23,
+   "materia": "Direito do Consumidor",
+   "enunciado": "Uma instituição financeira veiculou nas redes sociais uma mensagem oferecendo empréstimo pessoal “sem juros e sem burocracia”, com liberação imediata do crédito. Após a contratação, o consumidor constatou a incidência de tarifas administrativas e encargos embutidos no valor das parcelas. Em razão do inadimplemento de algumas prestações, o consumidor passou a receber ligações diárias e mensagens em horários noturnos, inclusive enviadas a familiares e colegas de trabalho. Posteriormente, teve seu nome inscrito em cadastro de inadimplentes, sem prévia notificação, embora o débito estivesse sendo discutido judicialmente. Considerando o regime jurídico da oferta e da publicidade, das práticas comerciais abusivas, da cobrança de dívidas e dos cadastros de inadimplentes, à luz do Código de Defesa do Consumidor e da jurisprudência consolidada do STJ, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "A publicidade é lícita, pois o fornecedor pode destacar apenas as vantagens do produto, sendo irrelevante a omissão de encargos secundários, desde que previstos no contrato.",
+    "B": "A cobrança reiterada e em horários inconvenientes é admitida pelo CDC, desde que não haja ameaça explícita ou violência contra o consumidor.",
+    "C": "A inscrição do nome do consumidor em cadastro de inadimplentes é válida, ainda que não haja prévia notificação, bastando a existência do débito.",
+    "D": "A oferta vincula o fornecedor, sendo abusiva a publicidade enganosa por omissão e vedada a cobrança vexatória.",
+    "E": "O CDC não se aplica à publicidade e à cobrança realizadas por instituições financeiras, pois tais matérias são reguladas exclusivamente pela legislação bancária."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 24,
+   "materia": "Direito do Consumidor",
+   "enunciado": "Uma incorporadora imobiliária lançou campanha publicitária de um empreendimento residencial de alto padrão, divulgando que o imóvel estaria localizado em “área nobre, com vista permanente para área verde protegida”, usando imagens digitais que simulavam um parque ambiental contíguo ao condomínio. Constatou-se, posteriormente, que a área verde era terreno particular passível de futura edificação, fato não informado ao consumidor. Em campanha diversa, a mesma sociedade empresária passou a veicular anúncios direcionados a idosos, com frases como “Realize o sonho da casa própria antes que seja tarde” e “Garanta segurança para sua família enquanto ainda pode decidir”, associando a aquisição do imóvel à ideia de abandono, medo e fragilidade decorrentes da idade avançada. Sobre o caso apresentado, à luz do Código de Defesa do Consumidor e da jurisprudência do STJ, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "Ambas as campanhas configuram publicidade enganosa, pois induzem o consumidor a erro quanto às características do produto e utilizam técnicas persuasivas excessivas.",
+    "B": "A primeira campanha configura publicidade enganosa por omissão, enquanto a segunda caracteriza publicidade abusiva, por explorar a vulnerabilidade etária do consumidor, ainda que as informações factuais sejam verdadeiras.",
+    "C": "A primeira campanha é lícita, pois a incorporadora não garantiu juridicamente a preservação da área verde, e a segunda configura apenas estratégia legítima de marketing emocional.",
+    "D": "Ambas as campanhas configuram publicidade abusiva, pois se utilizam de imagens e linguagem emocional para estimular a contratação, sendo irrelevante a veracidade das informações.",
+    "E": "Apenas a segunda campanha é ilícita, pois a publicidade enganosa exige afirmação falsa expressa, não se admitindo a modalidade por omissão no Direito do Consumidor."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 25,
+   "materia": "Direito do Consumidor",
+   "enunciado": "Cláudia adquiriu um produto durável para uso doméstico, acompanhado de garantia contratual de um ano oferecida pelo fabricante. Após cerca de dez meses de utilização, o produto passou a apresentar falhas recorrentes, o que levou a sucessivos encaminhamentos à assistência técnica, sem que o problema fosse definitivamente solucionado. Decorridos aproximadamente dezoito meses da aquisição, Cláudia ajuizou demanda judicial pleiteando a substituição do produto ou a restituição do valor pago. O fornecedor alegou que o direito estaria extinto em razão do decurso do tempo, sustentando que a garantia contratual havia se encerrado e que o prazo legal para reclamação não teria sido observado. Considerando o regime jurídico da responsabilidade por vício, a disciplina dos prazos e a relação entre garantia legal e garantia contratual, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "O direito do consumidor encontra-se extinto, pois o prazo para reclamação do vício deve ser contado da data da aquisição do produto, sendo irrelevante a posterior manifestação do problema durante o período de uso.",
+    "B": "A garantia contratual substitui integralmente a garantia legal, de modo que, encerrado o prazo estipulado pelo fornecedor, não subsiste pretensão fundada em vício do produto.",
+    "C": "A constatação do vício durante o período de garantia, aliada à tentativa reiterada e frustrada de reparo, preserva o direito do consumidor de buscar as providências cabíveis, desde que não haja inércia incompatível com a boa-fé.",
+    "D": "A caracterização do vício exige a inutilização completa do produto, não sendo suficiente a existência de falhas parciais ou intermitentes para autorizar medidas mais gravosas contra o fornecedor.",
+    "E": "A responsabilização do fornecedor por vício pressupõe demonstração de culpa na fabricação ou na prestação da assistência técnica, não se aplicando regime objetivo à hipótese."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 26,
+   "materia": "Direito da Criança e do Adolescente",
+   "enunciado": "Emerson Airton, com 16 (dezesseis) anos e 11 (onze) meses de idade, foi responsabilizado pela prática de ato infracional equiparado ao crime de roubo qualificado pelo resultado morte (latrocínio), tendo-lhe sido aplicada a medida socioeducativa de internação, cuja execução teve início imediato, nos termos da legislação vigente. No curso do cumprimento da medida socioeducativa, Emerson atingiu a maioridade penal. Alguns meses após completar 18 (dezoito) anos, foi preso preventivamente pela suposta prática de lesão corporal dolosa seguida de morte, ocorrida no interior do próprio estabelecimento de internação socioeducativa, fato praticado já na condição de imputável penalmente. Instaurada a persecução penal, sobreveio sentença penal condenatória, pela qual se fixou pena privativa de liberdade a ser cumprida em regime semiaberto, com a manutenção da custódia cautelar, sem que houvesse pronunciamento judicial específico acerca da continuidade, extinção ou compatibilização da execução da medida socioeducativa anteriormente imposta. A defesa interpôs recurso, sustentando a nulidade da sentença, sob o argumento de violação às normas legais e as provas dos autos. Diante desse contexto, com base no ordenamento jurídico brasileiro e, principalmente, à luz da Lei nº 12.594/2012, assinale afirmativa correta.",
+   "alternativas": {
+    "A": "A superveniência da maioridade penal extingue automaticamente a medida socioeducativa de internação de Emerson, sendo juridicamente impossível a coexistência de execução socioeducativa e persecução penal por fato posterior.",
+    "B": "A extinção da medida socioeducativa aplicada a Emerson somente poderá ocorrer após o trânsito em julgado de sentença penal, por força do princípio da inevitabilidade da persecução estatal das medidas de natureza punitiva impostas ao adolescente.",
+    "C": "O período em que permaneceu privado de liberdade, a título de prisão cautelar, deve ser necessariamente computado para fins de abatimento do tempo de cumprimento da medida socioeducativa, caso Emerson venha a ser absolvido.",
+    "D": "A superveniência de condenação penal de Emerson somente ensejaria a extinção da medida socioeducativa anteriormente imposta caso a pena privativa de liberdade viesse a ser fixada em regime inicial fechado.",
+    "E": "A condenação penal de Emerson, por fato praticado após o implemento da maioridade, impõe, de forma automática, a conversão da medida socioeducativa de internação em pena privativa de liberdade, a ser executada no âmbito da execução penal comum."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 27,
+   "materia": "Direito da Criança e do Adolescente",
+   "enunciado": "Fatine, 27 anos, reside com dois filhos menores em área urbana de elevada vulnerabilidade social, situação agravada recentemente por uma catástrofe ambiental. A unidade familiar sobrevive da ajuda esporádica de terceiros e de atividades informais e intermitentes, como a coleta de resíduos sólidos, sem renda fixa ou registro no Cadastro Único (CadÚnico). Por orientação do Conselho Tutelar, Fatine buscou o órgão gestor municipal de Assistência Social para requerer acesso a benefícios e serviços da rede socioassistencial. A Administração Pública indeferiu o pleito, fundamentando o ato em dois pilares: a inexistência de prévia dotação orçamentária específica para novos atendimentos no exercício corrente, e a ausência de inscrição da família no CadÚnico. Avalie a legalidade do indeferimento à luz da Lei nº 8.742/1993 (LOAS), alterada pela Lei nº 12.435/2011, e assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "O indeferimento é lícito, uma vez que a Assistência Social tem natureza discricionária e está condicionada à prévia disponibilidade orçamentária do município, sob pena de violação à Lei de Responsabilidade Fiscal.",
+    "B": "O fundamento de ausência de inscrição no Cadastro Único é legítimo, pois o CadÚnico é requisito indispensável e intransponível para o acesso a qualquer serviço, benefício ou programa socioassistencial.",
+    "C": "Fatine tem direito apenas aos benefícios eventuais em razão da catástrofe ambiental, sendo vedado o acesso aos serviços e programas de proteção social básica enquanto não comprovar residência fixa e vínculo formal de trabalho.",
+    "D": "O indeferimento é ilegítimo, pois a Assistência Social deve ser prestada a quem dela necessitar, sendo a ausência de inscrição no CadÚnico sanada pelo próprio órgão público, baseando-se na busca ativa e no atendimento humanizado.",
+    "E": "A decisão é válida apenas no que tange à inexistência de recursos, visto que o princípio da \"Reserva do Possível\" autoriza o Estado a suspender o atendimento quando houver o esgotamento de recursos orçamentários."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 28,
+   "materia": "Direito da Criança e do Adolescente",
+   "enunciado": "Dois adolescentes, L.G.M., de 16 anos, e R.C.A., de 17 anos, foram apreendidos em flagrante por policiais militares durante operação em local conhecido pelo intenso comércio ilícito de entorpecentes. Ambos portavam quantidade significativa de drogas fracionadas e embaladas para venda, além de dinheiro trocado. Apurou-se que L.G.M. já havia sido submetido, em ocasiões anteriores, a medidas socioeducativas de liberdade assistida e de internação, em razão de atos infracionais análogos ao tráfico de drogas, tendo reiteradamente descumprido as determinações judiciais. R.C.A., por sua vez, embora sem histórico de medidas anteriores, confessou espontaneamente a prática do ato infracional no momento da oitiva informal, colaborando com a autoridade policial. O Ministério Público requereu a aplicação da medida socioeducativa de internação para ambos, sustentando a gravidade concreta da conduta e a necessidade de resposta estatal mais severa. A defesa de L.G.M. alegou ausência de trânsito em julgado das medidas anteriores, enquanto a defesa de R.C.A. sustentou que a confissão espontânea deveria afastar eventual internação. Considerando o Estatuto da Criança e do Adolescente e a jurisprudência consolidada do Superior Tribunal de Justiça, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "A internação de L.G.M. é juridicamente inviável, pois a caracterização da reiteração de atos infracionais exige o trânsito em julgado das decisões anteriores, sob pena de violação ao princípio da presunção de inocência.",
+    "B": "A confissão espontânea de R.C.A. impõe, como consequência necessária, a atenuação da medida socioeducativa, vedando a aplicação da internação, ainda que presentes outros elementos indicativos de gravidade concreta.",
+    "C": "A medida de internação é impositiva para ambos os adolescentes em razão da gravidade abstrata do ato análogo ao tráfico ilícito de entorpecentes, conforme a natureza hedionda do tipo penal correspondente.",
+    "D": "A internação somente poderia ser aplicada se demonstrada violência ou grave ameaça à pessoa, sendo irrelevante, para esse fim, a reiteração de atos infracionais de natureza grave.",
+    "E": "Os atos infracionais praticados por R.C.A. e L.G.M. não autorizam, por si só, a imposição da medida socioeducativa de internação, exigindo fundamentação concreta quanto à sua necessidade."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 29,
+   "materia": "Direito da Criança e do Adolescente",
+   "enunciado": "O Juízo da Infância e Juventude da Comarca Alfa, diante da superlotação crônica da unidade de internação socioeducativa local, decidiu instituir audiências concentradas trimestrais para reavaliação das medidas de internação e semiliberdade. As audiências seriam agendadas para um único dia, no qual analisariam, sucessivamente, diversos casos. Em uma dessas sessões, realizada nas dependências do Fórum local, o Magistrado ouviu, em sequência, dez adolescentes simultaneamente na mesma sala, sem a presença dos pais ou responsáveis, justificando que todos estavam devidamente assistidos por um Defensor Público. Ao final, o Magistrado manteve as medidas de internação, abstendo-se de analisar a adequação dos Planos Individuais de Atendimento (PIA), sob o argumento de que a finalidade exclusiva do ato era o controle da taxa de ocupação da unidade. Sobre a conduta do Magistrado, considerando a Recomendação CNJ nº 98/2021, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "A conduta do Magistrado foi integralmente lícita, pois as audiências concentradas possuem natureza coletiva e visam, prioritariamente, garantir que as unidades de internação operem dentro da capacidade projetada.",
+    "B": "A atuação judicial foi irregular, porque é vedada a realização de audiência de reavaliação com mais de um socioeducando simultaneamente, além de ser obrigatória a promoção da participação dos pais ou responsáveis.",
+    "C": "O Magistrado agiu corretamente, pois basta a realização das audiências no Fórum, para garantir a legitimidade do feito, desde que reservado um espaço amplo para o atendimento simultâneo dos adolescentes.",
+    "D": "A ausência dos pais é suprida pela presença do Defensor Público, não havendo nulidade no ato, especialmente porque a finalidade das audiências concentradas é agilizar o processo de reavaliação técnica.",
+    "E": "A reavaliação do Plano Individual de Atendimento (PIA) é matéria estranha ao objeto das audiências concentradas, que devem se limitar a decidir sobre a manutenção, substituição ou extinção da medida socioeducativa."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 30,
+   "materia": "Direito da Criança e do Adolescente",
+   "enunciado": "B.G.V., órfão de pai, com 11 anos de idade, foi representado por sua genitora em pedido judicial de internação psiquiátrica compulsória. Conforme narrado, o filho pratica, de forma reiterada, automutilações, além de ameaçar e agredir verbalmente membros de seu núcleo familiar, revelando comportamento instável e potencialmente autolesivo e heteroagressivo. Segundo a mãe, B.G.V. afirma que irá praticar o suicídio. O requerimento foi instruído exclusivamente com relato escrito da genitora e relatório médico subscrito por médico particular especialista em ortopedia, no qual se descrevem lesões corporais, inclusive duas fraturas nos braços. À luz do ordenamento jurídico brasileiro, especialmente da Lei nº 10.216/2001, do Estatuto da Criança e do Adolescente e da jurisprudência dominante, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "No exercício do poder geral de cautela e no princípio do melhor interesse, o magistrado deve deferir liminarmente a internação compulsória de B.G.V., uma vez que o risco à integridade física do próprio menor e de terceiros, conforme narrado pela genitora, autoriza a imediata restrição da liberdade.",
+    "B": "Por se tratar de criança, o consentimento da genitora supre a exigência de autorização judicial e transmuda a internação em voluntária, sendo irrelevante a especialidade do médico que subscreve o relatório.",
+    "C": "A internação compulsória é juridicamente inviável em se tratando de criança, uma vez que a Lei nº 10.216/2001 se aplica apenas a pessoas maiores de 18 anos, devendo o tratamento ocorrer exclusivamente no âmbito familiar ou ambulatorial.",
+    "D": "Por se tratar de medida excepcional, a internação compulsória exige a demonstração da insuficiência dos recursos extra-hospitalares e a apresentação de laudo médico circunstanciado, elaborado por médico psiquiatra.",
+    "E": "Considerando o caráter excepcional da internação psiquiátrica, a medida somente pode ser imposta a B.G.V. após comprovada tentativa frustrada de tratamento ambulatorial em regime diurno, fato não demonstrado na exordial."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 31,
+   "materia": "Direito Penal",
+   "enunciado": "O navio mercante de bandeira argentina nominado Mengon, de propriedade de uma sociedade empresária privada, encontra-se atracado no porto de Paranaguá, no Estado do Paraná. Durante o desembarque de mercadorias, após uma discussão acalorada sobre futebol, Juan, marinheiro de nacionalidade paraguaia desfere, ainda no convés do navio, golpes de faca contra Hans, turista alemão, que visitava as instalações portuárias. Hans vem a óbito ainda no cais. Juan é preso em flagrante pelas autoridades brasileiras antes de retornar à embarcação. Diante de tal situação hipotética, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "Aplica-se a lei argentina, pois o crime foi praticado a bordo de embarcação privada de bandeira estrangeira, que goza de extraterritorialidade em virtude do princípio do pavilhão, também chamado de princípio da bandeira.",
+    "B": "Aplica-se a lei brasileira com base no princípio da extraterritorialidade, pois, ao ingressar em porto ou mar territorial brasileiro, a embarcação privada estrangeira é sempre considerada extensão do território nacional para fins penais.",
+    "C": "Aplica-se a lei brasileira com base no princípio da territorialidade, uma vez que o crime ocorreu em território nacional e, sendo de propriedade privada, a embarcação estrangeira não goza de imunidade diplomática ou administrativa quando atracada em solo brasileiro.",
+    "D": "Aplica-se a lei alemã ou a lei paraguaia com base no princípio da personalidade ativa ou passiva, devendo o Brasil proceder à extradição imediata de Juan, pois o Estado brasileiro não possui respaldo legal para processar crimes entre estrangeiros ocorridos a bordo de navios mercantes.",
+    "E": "Aplica-se a lei brasileira com base no princípio da extraterritorialidade condicionada, dependendo a persecução penal da entrada do agente no território nacional e da requisição do Ministro da Justiça, por se tratar de crime praticado por estrangeiro contra estrangeiro."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 32,
+   "materia": "Direito Penal",
+   "enunciado": "Movido por convicções filosóficas contrárias ao direito de propriedade e à restrição da difusão do conhecimento científico, Caio ingressa em uma biblioteca pública municipal e subtrai, sem o uso de violência ou grave ameaça, um exemplar de uma obra jurídica rara, cujo valor de mercado é estimado em dois mil reais, mas que não possui circulação comercial por estar esgotada há décadas. Após a denúncia por furto qualificado praticado mediante fraude (Art. 155, § 4º, II, Código Penal), a defesa requer a absolvição em razão da atipicidade material da conduta, pois o livro foi recuperado intacto poucas horas após a ação. Diante de tal situação hipotética, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "A aplicação do princípio da insignificância é viável, pois a restituição do bem exclui a tipicidade da conduta, atendendo ao requisito da inexpressividade da lesão jurídica provocada.",
+    "B": "O princípio da adequação social atua como causa de exclusão da tipicidade formal, permitindo a absolvição do réu, pois a conduta, embora prevista em lei penal, é aceita por grupo social relevante e específico.",
+    "C": "O princípio da insignificância encontra óbice na natureza do bem jurídico tutelado, pois o livro possui valor superior ao salário-mínimo vigente e integra o patrimônio público.",
+    "D": "O princípio da fragmentariedade é aplicável para justificar a absolvição do réu, pois a proteção do acervo bibliográfico é disciplinada por normas administrativas e cíveis.",
+    "E": "O princípio da ofensividade ou lesividade ampara o pleito defensivo de absolvição, pois inexistiu perigo concreto e duradouro ao bem jurídico, o que exclui a culpabilidade do agente."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 33,
+   "materia": "Direito Penal",
+   "enunciado": "Com a intenção de matar Carlos, Bernardo posiciona-se em local de baixa luminosidade aguardando a passagem da vítima. Ao avistar um vulto, Bernardo desfere disparo de arma de fogo. Contudo, devido à sua má pontaria, o projétil atinge fatalmente Daniel, irmão de Carlos, que caminhava ao lado do alvo pretendido. Ato contínuo, acreditando estar em legítima defesa e supondo que José, que também caminhava ao lado de Carlos, era um assaltante que portava arma de fogo, Bernardo desfere o segundo disparo, que atinge José, também lhe causando a morte. A investigação revelou posteriormente que, na verdade, José segurava apenas um guarda-chuva escuro. Diante de tal situação hipotética, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "No primeiro disparo, houve erro acidental sobre a pessoa, devendo Bernardo responder pela prática de homicídio em face de Daniel com base nas condições da vítima real e não da vítima pretendida.",
+    "B": "O primeiro disparo configura hipótese de aberratio ictus de unidade complexa, também chamado de erro na execução com resultado duplo, e o segundo disparo configura erro de proibição, aplicando-se a regra do concurso formal de crimes entre os homicídios de Daniel e José.",
+    "C": "No segundo disparo, a crença de que agia em legítima defesa configura erro de proibição indireto, também chamado de erro de permissão, que exclui o potencial conhecimento da ilicitude e, consequentemente, a culpabilidade da conduta de Bernardo.",
+    "D": "No primeiro disparo, houve erro na execução e Bernardo responde como se tivesse atingido Carlos ao passo que, no segundo disparo, incide a descriminante putativa sobre situação fática de perigo, que exclui o dolo, mas permite a punição por crime culposo, se previsto em lei.",
+    "E": "No segundo disparo, por se tratar de erro provocado por terceiro, pois José portava o guarda-chuva, a culpabilidade de Bernardo é excluída por inexigibilidade de conduta diversa, sob pena de responsabilização objetiva."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 34,
+   "materia": "Direito Penal",
+   "enunciado": "Em 02 de janeiro de 2024, quando vigorava a Lei “A”, que previa pena de 2 a 6 anos de reclusão para o crime de descaminho, foi promulgada a Lei “B” que vigorou durante o período de Estado de Sítio decretado em razão de grave comoção nacional. A Lei “B” aumentou a pena do referido delito para 4 a 10 anos de reclusão. Em 15 de fevereiro de 2024, ainda sob a égide da Lei “B” e do Estado de Sítio, Mário praticou o crime de descaminho. Em 20 de maio de 2024, cessou o Estado de Sítio, contudo, em 10 de junho de 2024, entrou em vigor a Lei “C”, que alterou a denominação da conduta praticada por Mário. Mário vem a ser processado e julgado criminalmente durante a vigência da Lei “C”. Diante de tal situação hipotética, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "Aplica-se a Mário a pena prevista na Lei “C”, pois deve prevalecer a lei vigente ao tempo do julgamento.",
+    "B": "Mário deverá ser beneficiado pela Lei “C” com a extinção da punibilidade, uma vez que a alteração provocada retroage para beneficiar o réu.",
+    "C": "Mário responderá pela pena prevista na Lei “B”, que, validamente, continua regendo os fatos praticados durante sua vigência.",
+    "D": "Mário responderá com base na Lei “A” por força do princípio da continuidade da lei penal, segundo a qual se considera praticado o crime no momento da conduta.",
+    "E": "Mário não poderá ser processado criminalmente, pois a Lei “B” é considerada uma lei intermitente, o que justifica a extinção da punibilidade dos fatos anteriores."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 35,
+   "materia": "Direito Penal",
+   "enunciado": "Com intenção de matar Mário, Lúcio adquiriu, de forma clandestina, uma arma de fogo e munições. Após monitorar a rotina da vítima, Lúcio aguardou Mário sair do trabalho e, enquanto ele caminhava em direção ao seu veículo, Lúcio sacou a arma e disparou uma única vez, atingindo-o. Mesmo possuindo ainda quatro projéteis intactos na arma, Lúcio sentiu repentino remorso, guardou a arma e ligou para o serviço de emergência. Mário foi socorrido, mas, apesar de todo o esforço médico empregado, veio a falecer dias depois no hospital em decorrência exclusiva dos ferimentos causados pelos disparos. Diante de tal situação hipotética, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "O caso narrado configura desistência voluntária, uma vez que Lúcio interrompeu voluntariamente a execução do homicídio quando ainda dispunha de meios para prosseguir, devendo, portanto, responder apenas pelo delito de lesão corporal.",
+    "B": "O caso narrado configura arrependimento eficaz, pois Lúcio exauriu os meios de execução que seriam suficientes para atingir o resultado almejado, contudo, agiu positivamente para evitá-lo, devendo, portanto, responder apenas pela tentativa de homicídio.",
+    "C": "A intervenção de Lúcio ao chamar o socorro não exclui a tipicidade, uma vez que o resultado morte efetivamente ocorreu por consequência direta de sua conduta, devendo ele responder por homicídio consumado, sem prejuízo da aplicação de atenuante genérica.",
+    "D": "O caso narrado configura arrependimento posterior, pois Lúcio buscou minimizar as consequências do crime praticado logo após a sua consumação ao chamar o socorro médico, o que enseja a redução da pena do homicídio de um a dois terços.",
+    "E": "O caso narrado configura crime impossível por ineficácia relativa do meio empregado, pois a intervenção médica quase evitou o resultado, demonstrando que a conduta do agente não era inequivocamente apta a garantir a consumação inicialmente pretendida."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 36,
+   "materia": "Direito Penal",
+   "enunciado": "Durante disputa societária acirrada, Alberto, Bruno e Caio nutrem, de forma independente, animosidade contra Daniel, administrador da empresa. Com intenção de matar Daniel, Alberto contrata Bruno para executar o homicídio, prometendo-lhe pagar elevada quantia em dinheiro. Bruno aceita a missão, planeja a execução e escolhe o dia do crime. Paralelamente, sem qualquer ciência da contratação ou do plano de Bruno, Caio decide, por conta própria, matar Daniel, munindo-se de arma de fogo. Em determinado dia, sem que um saiba da presença do outro no mesmo local, Bruno e Caio efetuam disparos simultâneos contra Daniel. A perícia conclui que apenas um dos projéteis causou a morte, sendo impossível determinar qual dos disparos foi o letal. Diante de tal situação hipotética, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "Alberto responde como autor mediato do homicídio consumado enquanto Bruno e Caio respondem por homicídio consumado, em concurso de pessoas, aplicando-se a teoria da equivalência dos antecedentes causais.",
+    "B": "Alberto responde por homicídio tentado enquanto Bruno responde por homicídio consumado e Caio responde por homicídio tentado, configurando-se o concurso eventual de agentes.",
+    "C": "Alberto responde por participação moral em homicídio consumado enquanto Bruno responde por homicídio consumado e Caio responde por homicídio tentado, em razão da autoria colateral.",
+    "D": "Alberto responde, como partícipe, por homicídio consumado, enquanto Bruno e Caio respondem, como autores mediatos, também por homicídio consumado, em razão do dolo comum implícito.",
+    "E": "Alberto responde por participação em homicídio tentado enquanto Bruno e Caio respondem, na condição de autores, por tentativa de homicídio, em razão da autoria colateral com resultado incerto."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 37,
+   "materia": "Direito Penal",
+   "enunciado": "Em março de 2021, Fernando praticou crime de apropriação indébita contra Luciano, seu ex-sócio, que tomou ciência inequívoca da autoria no mesmo mês, mas, por acreditar em futura conciliação, não adotou providências imediatas. Em agosto de 2021, Fernando restituiu integralmente o valor apropriado, antes do recebimento de denúncia ou queixa. Em janeiro de 2022, Luciano noticiou às autoridades estatais o crime praticado por Fernando, tendo o Ministério Público oferecido denúncia em março de 2022, a qual foi recebida. No decorrer da ação penal, dias antes da apreciação do recurso de apelação em face da sentença condenatória, sobreveio lei que passou efetivamente a exigir representação da vítima como condição de procedibilidade em relação ao crime de apropriação indébita, sem dispor expressamente sobre sua aplicação a fatos anteriores. Dias após o trânsito em julgado da condenação, Fernando veio a falecer. Diante de tal situação hipotética, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "A restituição integral do valor configura arrependimento posterior, extinguindo a punibilidade de Fernando.",
+    "B": "A representação é intempestiva, operando-se a decadência, que não é afastada pela lei superveniente.",
+    "C": "A superveniência de lei exigindo a representação somente retroage em caso de crime contra a vida.",
+    "D": "A punibilidade é extinta pela morte de Fernando, sendo irrelevante a análise de outras causas excludentes.",
+    "E": "A nova lei é mais benéfica ao acusado e retroage para convalidar a representação originalmente intempestiva."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 38,
+   "materia": "Direito Penal",
+   "enunciado": "Entre os meses de março e abril do ano de 2025, valendo-se da mesma conta bancária e do mesmo modo de agir, Eduardo realizou quatro transferências fraudulentas via Internet Banking, em dias distintos, logrando ludibriar vítimas diferentes contra as quais praticou crimes de estelionato. Dias depois, ao ser abordado numa blitz, imbuído de desígnios autônomos, Eduardo efetuou disparos de arma de fogo contra dois policiais militares, causando-lhes lesões corporais. Diante de tal situação hipotética, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "Os estelionatos foram praticados em concurso material e as lesões corporais foram praticadas em concurso formal impróprio.",
+    "B": "Os estelionatos foram praticados em continuidade delitiva e as lesões corporais foram praticadas em concurso formal próprio.",
+    "C": "Os estelionatos foram praticados em concurso material e as lesões corporais foram praticadas em concurso complexo.",
+    "D": "Os estelionatos foram praticados em concurso material e as lesões corporais caracterizam concurso formal próprio.",
+    "E": "Os estelionatos foram praticados em continuidade delitiva e as lesões corporais foram praticadas em concurso formal impróprio."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 39,
+   "materia": "Direito Processual Penal",
+   "enunciado": "A Polícia Federal, no âmbito da Operação Braseiro, investigava um esquema de desvio de verbas públicas em um município. Após o encerramento do mandato do Prefeito, surgiram indícios de sua participação nos crimes investigados, que teriam sido cometidos durante e em razão do exercício de sua função. A denúncia foi oferecida perante o Juízo de Direito de Primeiro Grau, já que não restou comprovada nenhuma das hipóteses do Art. 108 ou do Art. 109 da Constituição Federal. Considerando o entendimento do Supremo Tribunal Federal (STF) sobre a competência por prerrogativa de função, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "A competência para processar e julgar o ex-prefeito é do Juízo de Primeiro Grau, pois a prerrogativa de foro cessa com o fim do mandato, não se prorrogando.",
+    "B": "A competência será do Tribunal de Justiça respectivo, pois, mesmo após o fim do mandato, a prerrogativa de foro subsiste, caso os crimes tenham sido cometidos no cargo e em razão dele.",
+    "C": "A competência para julgar o ex-prefeito será do Tribunal Regional Federal, uma vez que a investigação foi conduzida pela Polícia Federal e envolve verbas públicas federais.",
+    "D": "A competência para o processo e julgamento é do Juízo de Primeiro Grau, pois o novo entendimento do STF sobre a manutenção do foro aplica-se apenas a parlamentares federais, não se estendendo a prefeitos.",
+    "E": "A competência será definida pela prevenção, cabendo ao Juízo que primeiro conheceu dos fatos, independentemente da prerrogativa de foro, que não pode ser declarada após o oferecimento da denúncia."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 40,
+   "materia": "Direito Processual Penal",
+   "enunciado": "Carlos foi vítima de um crime de roubo e, na Delegacia, reconheceu Túlio como o autor do delito por meio de uma fotografia mostrada em um aparelho celular pelo policial responsável pela investigação. O Ministério Público, com base unicamente nesse reconhecimento fotográfico, representou pela prisão preventiva de Túlio, que foi decretada pelo Juiz competente. Considerando a situação hipotética e o entendimento jurisprudencial dominante no Superior Tribunal de Justiça (STJ), assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "O reconhecimento fotográfico, ainda que realizado sem as formalidades do Art. 226 do Código de Processo Penal, é suficiente, por si só, para fundamentar a decretação da prisão preventiva.",
+    "B": "A decretação da prisão preventiva foi regular, pois o reconhecimento fotográfico, mesmo informal, constitui um indício de autoria válido e suficiente para a medida cautelar.",
+    "C": "O reconhecimento de pessoa, presencialmente ou fotográfico por fotografia, realizado sem em desacordo com as formalidades previstas no do Art. 226 do Código de Processo Pena, não pode ser a única base para a decretação da prisão preventiva.",
+    "D": "A validade do reconhecimento fotográfico como fundamento para a prisão preventiva depende da confirmação posterior em Juízo, não havendo nulidade na fase investigatória.",
+    "E": "O vício no reconhecimento fotográfico gera nulidade absoluta do inquérito policial, mas não impede a decretação da prisão preventiva se houver outros elementos informativos."
+   },
+   "gabarito": "X"
+  },
+  {
+   "n": 41,
+   "materia": "Direito Processual Penal",
+   "enunciado": "Durante uma audiência de instrução e julgamento por videoconferência, o Juiz presidente do ato, ao constatar que a testemunha de acusação demonstrava nervosismo e receio em depor na presença virtual do réu, que fazia expressões ameaçadoras, determinou a retirada do acusado da sala virtual para a oitiva da testemunha, sem consultar previamente a defesa. A respeito da retirada do réu da audiência, de acordo com o Código de Processo Penal e o entendimento jurisprudencial dominante no Superior Tribunal de Justiça (STJ), assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "A retirada do réu da sala de audiência, mesmo que virtual, é um ato discricionário do Juiz, não gerando nulidade.",
+    "B": "A decisão de retirar o réu da audiência deve ser sempre precedida de consulta à defesa, e sua ausência acarreta nulidade absoluta por cerceamento de defesa.",
+    "C": "A retirada do réu da sala de audiência é permitida quando o seu comportamento intimida a testemunha, mas é indispensável que a defesa técnica permaneça no ato e que o réu seja informado do conteúdo do depoimento. A retirada do réu da sala de audiência é permitida quando intimida a testemunha, mas a presença da defesa técnica e a ciência do depoimento são indispensáveis",
+    "D": "A nulidade decorrente da retirada do réu da audiência sem consulta à defesa é relativa, exigindo a demonstração de prejuízo concreto, o qual é presumido.",
+    "E": "O Código de Processo Penal não prevê a possibilidade de retirada do réu da audiência, tratando-se de uma construção jurisprudencial sem amparo legal."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 42,
+   "materia": "Direito Processual Penal",
+   "enunciado": "Em uma investigação sobre crimes contra a honra praticados pela internet, a autoridade policial cumpriu mandado de busca e apreensão e apreendeu um notebook na residência do investigado. O perito criminal, ao invés de espelhar o disco rígido (HD) do aparelho para análise, limitou-se a ligar o computador e a fotografar as telas que continham as supostas conversas ofensivas, juntando as fotografias ao laudo pericial. Sobre a validade da prova produzida, considerando a disciplina da cadeia de custódia no Código de Processo Penal e o entendimento jurisprudencial dominante no Superior Tribunal de Justiça (STJ), assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "A prova é válida, pois as normas sobre cadeia de custódia, previstas no Código de Processo Penal, são direcionadas exclusivamente a vestígios físicos, não se aplicando à prova digital, cuja natureza volátil justifica um tratamento processual diferenciado e menos rigoroso.",
+    "B": "A prova é irregular, mas não ilícita, sendo passível de convalidação em juízo caso a defesa não impugne o laudo pericial no momento oportuno, o que acarreta a preclusão, tornando a evidência plenamente utilizável no processo.",
+    "C": "A quebra da cadeia de custódia da prova digital torna a evidência inadmissível, pois compromete sua integridade e sua autenticidade, não sendo possível assegurar que o material analisado é o mesmo do que foi coletado.",
+    "D": "A falta de espelhamento do disco rígido (HD) é uma simples irregularidade, que pode ser suprida pela oitiva do perito em juízo, cujo depoimento, dotado de fé pública, é suficiente para confirmar a autenticidade das imagens e a correspondência com o material originalmente apreendido.",
+    "E": "A prova é ilícita, mas a nulidade é relativa, exigindo que a defesa demonstre o prejuízo concreto sofrido pelo acusado, como a prova de que as imagens foram adulteradas."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 43,
+   "materia": "Direito Processual Penal",
+   "enunciado": "Mário, primário e sem antecedentes criminais, confessou formal e circunstancialmente a prática de um crime de furto simples (Art. 155, cap ut, do Código Penal), cuja pena mínima é de 1 (um) ano de reclusão. O Ministério Público, contudo, recusou a proposta de acordo de não persecução penal (ANPP) sob o fundamento de que Mário foi beneficiado por transação penal em um processo anterior, há 6 (seis) anos. Diante da situação, e considerando a interpretação do Superior Ministério Público foi",
+   "alternativas": {
+    "A": "correta, pois a existência de transação penal anterior, a qualquer tempo, impede a celebração de novo acordo.",
+    "B": "incorreta, pois a transação penal ocorrida há mais de 5 (cinco) anos, não constitui óbice legal ao oferecimento do ANPP.",
+    "C": "correta, pois o prazo de 5 anos deve ser contado da data do fato, não do cumprimento da medida.",
+    "D": "incorreta, pois o impedimento de 5 anos refere-se apenas a um ANPP anterior, não se aplicando à transação penal.",
+    "E": "correta, pois a decisão de propor ou não o ANPP é ato discricionário do Ministério Público."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 44,
+   "materia": "Direito Processual Penal",
+   "enunciado": "Foi deferida judicialmente a interceptação telefônica do terminal de Semprônio, que está sendo investigado pela prática do crime de tráfico de drogas (punido com reclusão). Durante o monitoramento, foi captada uma conversa na qual Semprônio narrava a um interlocutor, com detalhes, sua participação em um crime de homicídio qualificado, fato até então desconhecido da polícia e sem qualquer conexão com a investigação de tráfico de drogas. O áudio foi transcrito e utilizado para subsidiar o oferecimento de denúncia contra Semprônio pelo crime de homicídio. Considerando a teoria da prova ilícita por derivação e o fenômeno do encontro fortuito de provas (serendipidade), com base na jurisprudência dominante dos Tribunais Superiores, a prova obtida é",
+   "alternativas": {
+    "A": "ilícita, pois a interceptação foi autorizada para investigar crime diverso, e a ausência de conexão entre os delitos viola o princípio do Juiz Natural e da finalidade da medida, tornando a prova nula.",
+    "B": "lícita, mas só poderia ser utilizada como notitia criminis para iniciar uma nova investigação sobre o homicídio, sendo vedado seu uso direto como elemento probatório na denúncia por este crime, sem a produção de outras provas independentes",
+    "C": "ilícita, pois o encontro fortuito só validaria a prova se o crime descoberto fosse conexo ao que originou a medida, o que não ocorreu no caso, aplicando-se a teoria dos frutos da árvore envenenada.",
+    "D": "lícita, tratando-se de encontro fortuito de provas, pois o crime descoberto (homicídio) também é punido com pena de reclusão e foi descoberto casualmente a partir de uma medida validamente autorizada, sendo irrelevante a ausência de conexão entre os crimes.",
+    "E": "ilícita, a menos que a autoridade policial, ao tomar conhecimento do novo crime, tivesse imediatamente solicitado ao juiz competente a ampliação do objeto da interceptação para incluir o crime de homicídio."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 45,
+   "materia": "Direito Processual Penal",
+   "enunciado": "João, réu primário, foi denunciado pela prática de um complexo crime de lavagem de dinheiro. Durante a instrução processual, o Juiz da causa expediu carta precatória para a oitiva de Antônio, testemunha arrolada pela acusação e residente em outra Comarca, cujo depoimento era considerado crucial para a elucidação dos fatos. Antes da devolução da precatória, o Magistrado, invocando o princípio da celeridade processual e o disposto no Art. 222, § 1º, do Código de Processo Penal, realizou a audiência de instrução, ouvindo as demais testemunhas e, ao final do ato, procedeu ao interrogatório de João. A defesa técnica, presente na audiência, não se manifestou sobre a inversão da ordem. Após a juntada da carta precatória com o depoimento incriminador de Antônio, a defesa, em sede de alegações finais, arguiu a nulidade do procedimento desde o interrogatório, sustentando que a inobservância do Art. 400 do CPP cerceou o direito de João de se defender sobre a integralidade da prova acusatória. Considerando a situação hipotética e o entendimento jurisprudencial dominante no Superior Tribunal de Justiça, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "A nulidade é absoluta, pois a realização do interrogatório antes do término da colheita de provas testemunhais ofende diretamente as garantias constitucionais do contraditório e da ampla defesa. Sendo assim, o prejuízo é presumido e o vício pode ser reconhecido de ofício, mesmo que arguido tardiamente.",
+    "B": "A arguição de nulidade deve ser rejeitada de plano, pois a matéria está preclusa. Conforme a tese vinculante, o vício deveria ter sido impugnado na própria audiência em que o ato foi realizado, sendo as alegações finais momento inoportuno para tanto.",
+    "C": "A decisão do magistrado foi correta, pois a expedição de carta precatória não suspende a instrução criminal. A regra do Art. 222, § 1º, do CPP, por ser norma especial, prevalece sobre a ordem geral do Art. 400 do CPP, autorizando a flexibilização dos atos processuais para garantir a razoável duração do processo.",
+    "D": "A preliminar de nulidade não deve ser acolhida, pois, embora o interrogatório do réu seja o último ato da instrução, exige- se, para o reconhecimento do vício, a demonstração de prejuízo concreto pela defesa, requisito que se soma à necessidade de arguição tempestiva, sob pena de preclusão.",
+    "E": "A nulidade deve ser reconhecida, pois foi arguida em momento oportuno. Contudo, seu acolhimento dependerá da demonstração, pela defesa, do prejuízo concreto sofrido por João, ou seja, de que forma o depoimento de Antônio influenciou a sentença e não pôde ser contraditado pelo réu em seu interrogatório."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 46,
+   "materia": "Direito Processual Penal",
+   "enunciado": "No curso de uma operação que investigava uma organização criminosa, um dos integrantes foi preso preventivamente. Após alguns dias em custódia, ele manifestou interesse em celebrar um acordo de colaboração premiada, o que de fato ocorreu, com a assistência de seu advogado. Posteriormente, a defesa de um corréu delatado arguiu a nulidade da colaboração, sustentando que a proposta não foi espontânea, mas sim motivada pela situação de cárcere do colaborador, o que viciaria sua vontade. A respeito da validade do acordo de colaboração premiada, conforme a Lei nº 12.850/2013 e o entendimento dos Tribunais Superiores, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "A colaboração é nula, pois a lei exige que a iniciativa seja espontânea, sendo inválida a proposta feita por réu preso, cuja vontade está presumidamente viciada.",
+    "B": "A validade do acordo pressupõe que o colaborador esteja respondendo ao processo em liberdade, para garantir a espontaneidade da manifestação de vontade.",
+    "C": "O estado de prisão do colaborador não invalida, por si só, o acordo de colaboração premiada, desde que a sua manifestação de vontade seja voluntária, e o acordo seja homologado judicialmente após a verificação de sua regularidade e legalidade.",
+    "D": "A colaboração firmada por réu preso é válida, mas seus efeitos, em razão da condição de preso, são limitados, não podendo servir como único fundamento para a condenação de outros corréus, o que se aplica a qualquer colaboração.",
+    "E": "A nulidade da colaboração deve ser reconhecida, pois a lei diferencia voluntariedade de espontaneidade, exigindo esta última, que é incompatível com o estado de prisão."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 47,
+   "materia": "Direito Constitucional",
+   "enunciado": "Após o decurso de duas décadas desde a edição da Constituição do Estado de Direito Alfa, surgiram movimentos populares defendendo a necessidade de ser convocada uma Assembleia Constituinte. Esses movimentos observaram corretamente que a referida Constituição, aprovada em plebiscito popular e que podia ser alterada por meio do processo legislativo ordinário, retratou e petrificou os valores existentes no ambiente sociopolítico no momento de sua edição, conferindo-lhes força normativa. Além disso, apesar de ser intitulada de democrática, foi moldada com o objetivo de assegurar a perpetuação no poder da aristocracia dominante, considerando a forma como as instituições e o processo de escolha dos seus dirigentes foram estruturados. A Constituição do Estado de Direito Alfa pode ser classificada como",
+   "alternativas": {
+    "A": "flexível e nominal.",
+    "B": "dirigente e ortodoxa.",
+    "C": "cesarista e normativa.",
+    "D": "plebiscitária e analítica.",
+    "E": "dogmática e semântica."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 48,
+   "materia": "Direito Constitucional",
+   "enunciado": "No âmbito do Estado Alfa, foi editada a Lei nº X, que instituiu o programa de refinanciamento de débitos do imposto sobre a propriedade de veículos automotores. De acordo com o Art. Y do referido diploma normativo, os honorários advocatícios decorrentes da cobrança da dívida ativa ficariam limitados a 2% (dois por cento) do montante do crédito tributário, devidamente atualizado, acrescido de juros moratórios e multa, o que importou na redução do percentual inicialmente praticado. A medida, que tinha por objetivo reduzir a onerosidade, de modo a estimular a consensualidade, não contou com a aquiescência dos Procuradores do Estado, que sustentaram a sua inconstitucionalidade, o que levou à judicialização da temática. O Juízo competente, ao analisar a conformidade constitucional do referido Art. Y, observou corretamente que",
+   "alternativas": {
+    "A": "a medida adotada, além de formalmente inconstitucional, afrontou o princípio da irredutibilidade remuneratória.",
+    "B": "o Estado Alfa possui competência legislativa concorrente com a União para legislar sobre normas procedimentais, logo, o Art. Y é formalmente constitucional.",
+    "C": "o Estado Alfa possui competência legislativa residual para legislar sobre regime jurídico dos Procuradores do Estado, logo, o Art. Y é formalmente constitucional.",
+    "D": "os honorários advocatícios devidos devem ser definidos no momento da celebração do acordo de refinanciamento, logo, observado o ato jurídico perfeito, o Art. Y é materialmente constitucional.",
+    "E": "os Procuradores do Estado não fazem jus aos honorários advocatícios, considerando sua condição de agentes políticos, logo, o Art. Y, ao permitir sua percepção de maneira indireta, é materialmente inconstitucional."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 49,
+   "materia": "Direito Constitucional",
+   "enunciado": "A sociedade empresária Alfa foi autuada pela Secretaria de Ordem Pública do Município Beta, por ter descumprido as posturas municipais em temática afeta à ocupação do solo urbano. Ao fim do processo administrativo, foi condenada ao pagamento de multa, fixada em reais, que apresentava equivalência a dois salários mínimos. Ao analisar o preceito secundário do ilícito administrativo que praticara, constante da Lei nº X/2016, Alfa constatou que a sanção administrativa cominada era de dois salários mínimos. Por entender que a sanção que lhe foi aplicada era manifestamente inconstitucional, impetrou mandado de segurança para que essa injuridicidade fosse reconhecida. O magistrado competente observou, corretamente, que",
+   "alternativas": {
+    "A": "o mandado de segurança foi impetrado contra lei em tese, não devendo ser conhecido.",
+    "B": "a vinculação da sanção administrativa ao salário mínimo consubstancia indexação econômica constitucionalmente vedada.",
+    "C": "a sanção aplicada a Alfa deveria ter sido fixada com base no salário mínimo vigente por ocasião da edição da lei que tipificou o ilícito administrativo e cominou a respectiva sanção.",
+    "D": "a cominação e a aplicação da sanção não têm o potencial de gerar efeito de indexação econômica, não apresentando, portanto, qualquer incompatibilidade com a sistemática constitucional.",
+    "E": "a ordem constitucional não veda a indexação de atos e fatos ao salário mínimo, exigindo apenas a sua conversão em moeda corrente no momento em que se projetem na realidade, o que foi feito."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 50,
+   "materia": "Direito Constitucional",
+   "enunciado": "A organização não governamental Alfa, constituída sob a forma de associação e em regular funcionamento há uma década, tendo como objeto social a defesa das pessoas com deficiência, ingressou com ação civil pública em face do Município Delta, sob o argumento de que este ente federativo, em sua esfera de competência, não vinha oferecendo tecnologias assistivas à referida camada da população, em situações previstas na Convenção Internacional sobre Direitos das Pessoas com Deficiência (CIDPD). Após analisar a CIDPD, o Magistrado competente concluiu que as referidas tecnologias",
+   "alternativas": {
+    "A": "estão previstas na CIDPD, devendo ser priorizadas as de custo acessível.",
+    "B": "estão previstas na CIDPD, de modo circunscrito à efetivação do direito à educação.",
+    "C": "apesar de relevantes, não foram previstas na CIDPD enquanto compromisso dos Estados partes.",
+    "D": "foram concebidas pela CIDPD como instrumentos de efetivação do princípio democrático, não propriamente como viabilizadoras de direitos individuais.",
+    "E": "tem a funcionalidade adscrita à reabilitação das pessoas com deficiência, podendo cada Estado parte, nos termos da CIDPD, decidir pela sua extensão a outros domínios."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 51,
+   "materia": "Direito Constitucional",
+   "enunciado": "O Partido Político Alfa elegeu quinze deputados federais, distribuídos entre sete estados membros da Federação, tendo obtido 2% (dois por cento) dos votos válidos na eleição para a Câmara dos Deputados. Ao fim do primeiro ano da legislatura, Alfa foi incorporado pelo Partido Político Beta. Na situação descrita, é correto afirmar que Alfa",
+   "alternativas": {
+    "A": "não preencheu os requisitos da cláusula de desempenho, e o quantitativo de Deputados Federais eleitos e os respectivos votos não serão somados aos de Beta para esse fim.",
+    "B": "preencheu os requisitos da cláusula de desempenho, e o quantitativo de Deputados Federais eleitos e os respectivos votos não serão somados aos de Beta para esse fim.",
+    "C": "não preencheu os requisitos da cláusula de desempenho, mas o quantitativo de Deputados Federais eleitos e os respectivos votos serão somados aos de Beta para esse fim.",
+    "D": "preencheu os requisitos da cláusula de desempenho, e o quantitativo de Deputados Federais eleitos e os respectivos votos serão somados aos de Beta para esse fim.",
+    "E": "preencheu os requisitos da cláusula de desempenho, e o quantitativo de Deputados Federais eleitos e os respectivos votos serão, ou não, somados aos de Beta para esse fim, conforme dispuser o ato de incorporação."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 52,
+   "materia": "Direito Constitucional",
+   "enunciado": "João ingressou com ação judicial em face do Município Sigma, logrando êxito no pedido formulado, tendo a sentença de procedência transitado em julgado. Para sua surpresa, apesar de o título executivo judicial ter determinado a utilização do índice x para a atualização monetária do débito, foi usado, na execução contra a Fazenda Pública, o índice y, que foi introduzido pela legislação superveniente. Sobre a situação descrita, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "A aplicação do índice y à situação de João, a exemplo de qualquer alteração normativa superveniente, consubstancia afronta à coisa julgada material.",
+    "B": "A aplicação do índice y à situação de João, a exemplo de qualquer alteração normativa subsequente, consubstancia afronta apenas à coisa julgada formal.",
+    "C": "A aplicação do índice y à situação de João somente poderia ocorrer com a declaração de inconstitucionalidade da norma que instituiu o índice x.",
+    "D": "A aplicação do índice y à situação de João não afronta a coisa julgada, estando associada à necessidade de uniformizar os critérios de atualização dos débitos da Fazenda Pública.",
+    "E": "Somente a alteração superveniente do critério de cálculo dos juros pode ser implementada, mas não a alteração do critério de atualização monetária, que se integra ao próprio objeto da lide."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 53,
+   "materia": "Direito Constitucional",
+   "enunciado": "Carlos José, deputado estadual, ocupou a tribuna do plenário da Assembleia Legislativa do Estado Alfa e fez alentado discurso a respeito de determinada proposição legislativa. Após concluir o seu discurso, aproveitando a ampla cobertura do seu pronunciamento pela imprensa, passou a assacar diversas ofensas contra João, seu vizinho, sob o argumento de que sua postura acarretava inúmeros incômodos para os vizinhos, em especial para os confrontantes, como era o caso de Carlos José, sendo que todos ganhariam se ele jamais tivesse existido. Ao tomar conhecimento do ocorrido pela imprensa, João ajuizou ação de reparação de danos morais em face do Estado Alfa e de Carlos José, sob o argumento de que a conduta deste último extrapolou os limites da imunidade parlamentar. O Juízo competente, ao analisar o caso, observou corretamente que",
+   "alternativas": {
+    "A": "a imunidade parlamentar é absoluta; logo, não há que se falar na responsabilização dos demandados.",
+    "B": "a imunidade parlamentar configura excludente à responsabilização objetiva de Alfa, mas não obsta a responsabilização subjetiva de Carlos José.",
+    "C": "a responsabilização de Carlos José é sempre subjetiva e somente pode ocorrer em sede de ação de regresso, o que pressupõe a prévia condenação de Alfa.",
+    "D": "a responsabilização de Alfa é subjetiva, o que exige a análise do excesso praticado por Carlos José, considerando o caráter relativo da imunidade parlamentar.",
+    "E": "a responsabilização de Alfa é objetiva, o que decorre do nexo causal entre a conduta de Carlos José e o dano, enquanto Carlos José não pode ser responsabilizado em razão da imunidade parlamentar."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 54,
+   "materia": "Direito Constitucional",
+   "enunciado": "Em razão de ampla mobilização de diversas organizações da sociedade civil organizada, um grupo de deputados estaduais apresentou proposição legislativa no âmbito da Assembleia Legislativa do Estado Sigma, que culminou com a edição da Lei Estadual nº X (LEX), isto após ser derrubado o veto do Governador do Estado, que considerou a proposição inconstitucional. Esse diploma normativo assegurou às pessoas com deficiência isenção do pagamento de pedágio nas rodovias estaduais, tendo fixado o prazo de 60 (sessenta) para a sua regulamentação pelo Chefe do Poder Executivo estadual. Por entender que a LEX apresentava vício de inconstitucionalidade, o Partido Político Alfa ingressou com representação de inconstitucionalidade perante o Tribunal de Justiça do Estado Sigma (TJES). Na situação descrita, é correto afirmar que a Lei Estadual nº X (LEX)",
+   "alternativas": {
+    "A": "não apresenta vício de inconstitucionalidade.",
+    "B": "somente apresenta vício de inconstitucionalidade em relação à iniciativa legislativa.",
+    "C": "apresenta vício de inconstitucionalidade em relação ao seu objeto, por afrontar a igualdade formal.",
+    "D": "somente apresenta vício de inconstitucionalidade em relação à fixação de prazo para a sua regulamentação.",
+    "E": "apresenta vício de inconstitucionalidade, mas não está sujeita ao controle concentrado pelo TJES, considerando a natureza das normas constitucionais violadas."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 55,
+   "materia": "Direito Constitucional",
+   "enunciado": "Ana nasceu no território turco quando seus pais, brasileiros naturalizados, trabalhavam na embaixada alemã. Foi regularmente registrada perante o registro civil turco, de modo a facilitar a fruição de direitos civis, e, ao completar dezoito anos de idade, passou a residir no território brasileiro, tendo planos de exercer uma atividade laborativa somente permitida aos brasileiros. Considerando as informações fornecidas, é correto afirmar que Ana é",
+   "alternativas": {
+    "A": "brasileira nata.",
+    "B": "brasileira naturalizada.",
+    "C": "estrangeira, mas será considerada brasileira nata caso opte pela nacionalidade brasileira a qualquer tempo.",
+    "D": "estrangeira, mas pode adquirir a nacionalidade brasileira caso resida por um ano ininterrupto no território brasileiro.",
+    "E": "estrangeira, mas pode adquirir a nacionalidade brasileira, pela naturalização, caso preencha os requisitos exigidos na legislação."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 56,
+   "materia": "Direito Constitucional",
+   "enunciado": "Ao receber para prolação de sentença uma ação judicial que tramita com a observância do procedimento comum, o Magistrado constatou que o demandante embasara sua pretensão no Art. X da Constituição da República. De acordo com o demandante, os aspectos semióticos desse preceito não poderiam ser \"impregnados\" por referenciais axiológicos contemporâneos, o que diminuiria a previsibilidade do seu conteúdo normativo e comprometeria a segurança jurídica. Ainda segundo o demandante, pensar o contrário permitiria que cada intérprete moldasse a norma constitucional que melhor se ajustasse aos seus interesses. Ao analisar essa linha argumentativa, o Magistrado concluiu corretamente que ela se mostra",
+   "alternativas": {
+    "A": "harmônica com o referencial de prudência que direciona a lógica do razoável.",
+    "B": "refratária à Escola do Direito Livre, mas compatível com os alicerces do originalismo.",
+    "C": "harmônica com a validade intrínseca das proposições normativas, própria da lógica do razoável.",
+    "D": "refratária à sociedade aberta dos intérpretes da Constituição, mas harmônica com o realismo jurídico.",
+    "E": "compatível com a concepção de mutação constitucional, mas refratária aos métodos de interpretação preconizados por Savigny."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 57,
+   "materia": "Direito Eleitoral",
+   "enunciado": "No ano de 2024, o Diretório Municipal do Partido Alfa postulou judicialmente a revisão do eleitorado do Município Beta, sob a alegação de que estariam preenchidos os requisitos impostos no Art. 92 da Lei nº 9.504/1997 e no Art. 105 da Resolução do TSE nº 23.659/2021, em especial, a transferência de domicílios eleitorais às vésperas do pleito que superaria a proporção de 100%. Sobre a hipótese apresentada, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "O aumento de transferências de domicílio eleitoral, por si só, configura situação excepcional que justifica a revisão em ano eleitoral.",
+    "B": "A revisão de eleitorado não pode ser realizada em ano eleitoral, salvo se iniciada no ano anterior, em razão de situação excepcional, devidamente comprovada.",
+    "C": "A revisão do eleitorado pode ocorrer, mesmo sem autorização do TSE, ainda que em ano eleitoral, se demonstrado o aumento de mais de 50% dos domicílios eleitorais.",
+    "D": "A revisão do eleitorado pode ser autorizada, ainda que abranja apenas parcialmente o território do Município, mesmo que seja dividido em mais de uma zona eleitoral.",
+    "E": "A revisão do eleitorado é presidida pelo Tribunal Regional Eleitoral com competência para o Município, após provocação do juiz eleitoral."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 58,
+   "materia": "Direito Eleitoral",
+   "enunciado": "Caio, Tício, Mévio e Julius, respectivamente, vereador no Município Alfa e seus assessores de gabinete, no ano de 2024, se uniram, de forma coordenada e com organização de tarefas, a fim de inserir, digitalmente, declarações falsas em documentos bancários, com fins eleitorais, especificamente, para a transferência de domicílio eleitoral de eleitores para o Município Alfa. Após regular investigação, o Ministério Público Eleitoral ajuizou ação penal em desfavor dos envolvidos, pugnando pela sua condenação, juntando provas que indicam a inserção de informações inverídicas em documentos para influenciar o processo eleitoral. Considerando a legislação em vigor, a Jurisprudência do Superior Eleitoral do Paraná, é correto afirmar que",
+   "alternativas": {
+    "A": "um dos crimes que deve ser imputado aos réus é o previsto no artigo 349 do Código Eleitoral, visto que houve alteração de documento particular verdadeiro, para fins eleitorais.",
+    "B": "não há que se falar em imputação do crime de organização criminosa, previsto na Lei nº 12.850/2013, já que a associação se deu entre apenas quatro pessoas e essa Lei não se aplica no âmbito eleitoral.",
+    "C": "descabe a imputação de crime previsto no Art. 350 do Código Eleitoral, a saber, inserir em documento, declaração falsa, para fins eleitorais, por ser crime de mão própria, que só pode ser praticado pelo próprio eleitor.",
+    "D": "se comprovado, durante a instrução, que não houve qualquer transferência efetiva de título eleitoral para o Município Alfa, a hipótese será de absolvição pela tese defensiva de crime impossível.",
+    "E": "não merece acolhimento a tese de defesa que aduz nulidade por cerceamento de defesa em razão do indeferimento de prova pericial, se houver sido demonstrado nos autos que a materialidade foi comprovada por outros elementos."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 59,
+   "materia": "Direito Eleitoral",
+   "enunciado": "No ano de 2024, Caio e Mévio, candidatos respectivamente aos cargos de Vereador e Prefeito do Município Beta, antes do período permitido, procederam à adesivação com as suas imagens e de apoiador político, veiculando jingle característico de campanha em gravação amplamente divulgada em redes sociais. Além disso, divulgaram vídeo em rede social com conteúdo contrário a Tício, candidato à reeleição para o cargo de Prefeito e a Julius, um dos candidatos a Vereador. O vídeo tinha conteúdo ofensivo, afirmando que Tício e Julius teriam praticado violências domésticas contra suas esposas. Foram ajuizadas representações, imputando a Caio e Mévio propaganda eleitoral antecipada e propaganda irregular. Sobre as representações ajuizadas, considerando a legislação em vigor e o entendimento do Tribunal Superior Eleitoral, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "A representação aduzindo propaganda eleitoral antecipada não merece prosperar, visto que a adesivagem, amplamente divulgada em redes sociais sem pedido explícito de votos e de palavras mágicas, configura mera manifestação de apoio político protegida pela liberdade de expressão.",
+    "B": "A multa prevista no Art. 57-D da Lei nº 9.504/1997 se restringe aos casos de anonimato, não incidindo sobre casos de disseminação de conteúdo sabidamente falso em propaganda eleitoral veiculada na internet.",
+    "C": "A representação aduzindo propaganda irregular merece improcedência, visto que a liberdade de expressão ampara manifestações de candidatos durante o período de debate político.",
+    "D": "O TSE reconhece a propaganda eleitoral extemporânea quando há referência direta ao pleito vindouro ou ao cargo em disputa, e pedido explícito de voto, de não voto ou o uso de palavras mágicas para esse fim.",
+    "E": "A veiculação de propaganda eleitoral irregular com conteúdo ofensivo e inverídico, ainda que identificada, não enseja a aplicação da multa prevista no Art. 57-D, §2º, da Lei nº 9.504/1997."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 60,
+   "materia": "Direito Eleitoral",
+   "enunciado": "Caio, candidato ao cargo de Vereador no Município Alfa, pelo partido Beta, no ano de 2024, procedeu ao protocolo de pedido de registro de candidatura. Após impugnação formulada pelo Ministério Público Eleitoral, o Juízo Eleitoral julgou improcedente o registro de candidatura de Caio. Foi interposto recurso. Quinze dias antes do pleito, o partido Beta protocolou documentos junto ao pedido de registro de candidatura originário, substituindo Caio por Tício. Considerando a legislação em vigor e o entendimento atualizado do Tribunal Superior Eleitoral, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "O pedido de substituição de candidatura formulada pelo Partido Beta pode ser deferido, caso demonstrada a presença dos documentos obrigatórios, na forma da Lei nº 9.504/1997.",
+    "B": "Somente nas eleições majoritárias é possível o pedido de substituição de candidatura, podendo ocorrer nas proporcionais apenas em caso de falecimento de candidato.",
+    "C": "O pedido de substituição de candidatura, formulada pelo Partido Beta, deve ser indeferido em razão de sua intempestividade, nos termos do Art. 13, § 3º, da Lei nº 9.504/1997.",
+    "D": "O indeferimento do registro de candidatura, ainda que sub judice, não permitirá ao candidato a prática de atos de campanha ou a manutenção do seu nome na urna eletrônica enquanto estiver sob essa condição.",
+    "E": "Consoante a jurisprudência do TSE, o prazo para substituição de candidatura não possui natureza peremptória, podendo ser superado, com substituição a qualquer tempo."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 61,
+   "materia": "Juizados Especiais",
+   "enunciado": "Em tema de competência no âmbito dos Juizados Especiais, avalie as assertivas a seguir. I. Compete ao Presidente do Tribunal de Justiça o juízo de admissibilidade do Recurso Extraordinário, salvo disposição em contrário. II. A incompetência territorial pode ser reconhecida de ofício no sistema de juizados especiais cíveis. III. O conflito de competência entre juízes de Juizados Especiais vinculados à mesma Turma Recursal será decidido por esta. Inexistindo tal vinculação, será decidido pela Turma Recursal para a qual for distribuído. De acordo com os enunciados do FONAJE, está correto o que se afirma em",
+   "alternativas": {
+    "A": "II, apenas.",
+    "B": "I e II, apenas.",
+    "C": "II e III, apenas.",
+    "D": "III, apenas.",
+    "E": "I, II e III."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 62,
+   "materia": "Juizados Especiais",
+   "enunciado": "A Lei nº 9.099/95, em seu Art. 59, dispões que não se admitirá ação rescisória nas causas sujeitas ao procedimento instituído por esta Lei. Nesse contexto, de acordo com a Jurisprudência do Supremo",
+   "alternativas": {
+    "A": "o Art. 59 da Lei nº 9.099/1995 não impede a desconstituição da coisa julgada quando o título executivo judicial estiver em contrariedade à interpretação ou sentido da norma conferida pela Suprema Corte, sendo admissível o manejo de simples petição, a ser apresentada em prazo equivalente ao da ação rescisória.",
+    "B": "o Art. 59 da Lei nº 9.099/1995 impede a arguição de inexigibilidade quando o título executivo judicial estiver em contrariedade à interpretação ou sentido da norma conferida pela Suprema Corte, seja a decisão do Supremo Tribunal Federal anterior ou posterior ao trânsito em julgado da decisão exequenda, salvo preclusão.",
+    "C": "o Supremo Tribunal Federal pode definir os efeitos temporais de seus precedentes vinculantes, mas não a sua repercussão sobre a coisa julgada.",
+    "D": "na ausência de manifestação expressa do STF, os efeitos retroativos de eventual desconstituição da coisa julgada não excederão três anos da data da apresentação simples de petição, a qual deverá ser proposta no prazo decadencial de um ano contado do trânsito em julgado da decisão do STF.",
+    "E": "é vedada a aplicação do artigo 741, parágrafo único, do CPC/1973, atual Art. 535, § 5º, do CPC/2015, aos feitos submetidos ao procedimento sumaríssimo, qualquer que seja a data do trânsito em julgado da fase de conhecimento."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 63,
+   "materia": "Juizados Especiais",
+   "enunciado": "Em tema de valor da causa no âmbito dos Juizados Especiais, avalie as assertivas a seguir. I. A opção pelo procedimento previsto na Lei nº 9.099/95 importa em renúncia ao crédito excedente ao limite estabelecido nesta lei, incluída a hipótese de conciliação, que não pode ultrapassar tal limite. II. A parte, ao escolher demandar junto ao juizado especial, renuncia o crédito excedente, incluindo os pedidos interdependentes (principal e acessório) que decorrem da mesma causa de pedir, e não só o limite quantitativo legal. III. O Juizado Especial Cível não tem competência para conciliação, processo e julgamento das ações possessórias sobre bens imóveis, qualquer que seja o valor. De acordo com a Lei nº 9.099/95 e a jurisprudência do Superior",
+   "alternativas": {
+    "A": "III, apenas.",
+    "B": "II, apenas.",
+    "C": "II e III, apenas.",
+    "D": "I e III, apenas.",
+    "E": "I, II e III."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 64,
+   "materia": "Juizados Especiais",
+   "enunciado": "Em matéria de competência dos Juizados Especiais Criminais, de acordo com a Jurisprudência do Supremo Tribunal Federal,",
+   "alternativas": {
+    "A": "é absoluta a competência dos Juizados Especiais Criminais, razão pela qual não se admite o deslocamento da competência, por regras de conexão ou continência, para o Juízo Comum ou Tribunal do Júri, no concurso de infrações penais de menor potencial ofensivo e comum.",
+    "B": "não se admite a proposta de transação penal se ficar comprovado ter sido o agente beneficiado anteriormente, no prazo de oito anos, pela aplicação de pena restritiva ou multa.",
+    "C": "na ação penal de iniciativa do ofendido no Jecrim não poderá ser oferecida queixa oral, em qualquer hipótese.",
+    "D": "os institutos despenalizadores previstos na Lei nº 9.099/1995 constituem garantia individual do acusado e têm de ser assegurados, quando cabíveis, independente do juízo no qual tramitam os processos.",
+    "E": "o não oferecimento da representação pelo ofendido na audiência preliminar implica decadência do direito."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 65,
+   "materia": "Código de Normas da Corregedoria-Geral da Justiça",
+   "enunciado": "Foi realizada uma inspeção ordinária na secretaria do Juízo Único da Comarca XX, situada no Estado do Paraná, no segundo trimestre do último ano. O período inspecionado foi a integralidade do ano imediatamente anterior à respectiva inspeção, que foi instaurada por Portaria, definindo as datas e demais diligências necessárias para a realização dos trabalhos. Na situação descrita, à luz do Código de Normas da Corregedoria- Geral da Justiça, é correto afirmar que",
+   "alternativas": {
+    "A": "a inspeção foi realizada no trimestre errado.",
+    "B": "o período abrangido pela inspeção está errado.",
+    "C": "o uso de uma Portaria para a instauração da inspeção está errado.",
+    "D": "a indicação das diligências necessárias não deve constar da Portaria.",
+    "E": "a inspeção foi realizada pelo Corregedor-Geral da Justiça ou por um Juiz auxiliar da Corregedoria."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 66,
+   "materia": "Código de Normas da Corregedoria-Geral da Justiça",
+   "enunciado": "Determinado Magistrado, em atuação no primeiro grau de jurisdição, teve sua produtividade e sua eficiência aferidas pelo órgão competente do Tribunal de Justiça do Estado do Paraná, que foi realizada em harmonia com os balizamentos estabelecidos pelo Código de Normas da Corregedoria-Geral da Justiça. Em relação à referida aferição, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "Foi realizada pelo Núcleo de Produtividade e Estatística da Presidência do Tribunal de Justiça.",
+    "B": "É imprescindível para a instrução de pedido de promoção ou remoção do Magistrado.",
+    "C": "Foi realizada no primeiro mês subsequente ao encerramento do ano imediatamente anterior.",
+    "D": "Deve ser realizada para instruir os pedidos de promoção ou de remoção por merecimento, sendo facultativa nos demais casos.",
+    "E": "Pode ser realizada a qualquer tempo, por determinação do Corregedor-Geral da Justiça, sendo-lhe facultado apresentá-la nos pedidos de promoção ou remoção."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 67,
+   "materia": "Código de Normas da Corregedoria-Geral da Justiça",
+   "enunciado": "João reconheceu a paternidade de Pedro diretamente perante o Oficial do Registro Civil das Pessoas Naturais da circunscrição em que este último se encontra registrado, situada no Estado do Paraná. Em razão do referido reconhecimento, faz-se necessária a alteração de informações constantes da Central de Informações do Registro Civil - CRC/PR, indicativo de que, à luz da sistemática estabelecida no Código de Normas da Corregedoria-Geral da Justiça do Estado do Paraná, o Oficial deve",
+   "alternativas": {
+    "A": "promover a alteração, diretamente ou por meio dos seus prepostos.",
+    "B": "solicitar à Corregedoria-Geral da Justiça que autorize a alteração à luz dos documentos apresentados.",
+    "C": "solicitar ao Juízo com competência em matéria registral que autorize a alteração à luz dos documentos apresentados.",
+    "D": "orientar o interessado a solicitar a alteração à autoridade competente, considerando o caráter personalíssimo da informação.",
+    "E": "oficiar ao Comitê Gestor da CRC/PR solicitando a alteração, sendo cabível a suscitação de dúvida ao Juízo com competência em matéria registral."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 68,
+   "materia": "Código de Organização e Divisão Judiciárias do Estado do Paraná",
+   "enunciado": "O Poder Judiciário exerce sua competência por meio de seus órgãos, devidamente estruturados pelas respectivas leis de regência. Nos termos do Código de Organização e Divisão Judiciárias do Estado do Paraná – Lei Estadual nº 14.277/2003, são órgãos do Poder Judiciário do Estado, entre outros:",
+   "alternativas": {
+    "A": "o Tribunal de Justiça, os Tribunais do Júri e o Tribunal de Recursos.",
+    "B": "os Juízes de Direito, os Juízes Substitutos e o Núcleo de Consenso.",
+    "C": "os Juizados Especiais, os Juízes de Paz e o Tribunal de Recursos.",
+    "D": "o Tribunal de Justiça, os Juízes de Direito Substitutos de entrância final e os Juízes de Paz.",
+    "E": "os Tribunais do Júri, o Tribunal de Recursos e o Núcleo de Consenso."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 69,
+   "materia": "Código de Organização e Divisão Judiciárias do Estado do Paraná",
+   "enunciado": "No Tribunal de Justiça do Estado do Paraná, a magistratura de primeiro grau é composta por Juízes Substitutos e Juízes de Direito de diferentes entrâncias. No que tange a referidos cargos, com base na Lei nº 14.277/2003 – Código de Organização e Divisão Judiciárias do Estado do Paraná, é correto afirmar que",
+   "alternativas": {
+    "A": "são Juízes Substitutos os de início de carreira, para substituição nas entrâncias inicial e intermediária com sede na comarca que encabeçar a respectiva seção, nomeados mediante concurso ou designação, a critério do Presidente do",
+    "B": "são Juízes de Direito Substitutos de primeiro grau os de entrância final, quando não titulares de varas, para substituição nas comarcas dessa categoria sediadas fora da região metropolitana, promovidos entre os de entrância inicial e intermediária ou removidos de uma para outra das comarcas de entrância final.",
+    "C": "são Juízes de Direito Substitutos em Segundo Grau os classificados na entrância intermediária, com preenchimento do cargo mediante remoção ou designação, observados, alternadamente, os critérios de antiguidade e de merecimento.",
+    "D": "os Juízes Substitutos em Primeiro Grau, durante a substituição, terão a mesma competência dos titulares, inclusive em matéria administrativa, organizacional e revisional, ficando vinculados aos feitos em que tenham atuado, hipótese em que continuarão na qualidade de juízes naturais, salvo avocação pelos respectivos titulares, nos termos das normas de regência.",
+    "E": "os Juízes de Direito Substitutos em Segundo Grau, durante a substituição, terão a mesma competência dos membros do vinculados aos feitos em que tenham lançado visto como relator ou revisor, e, ainda, se tiverem solicitado vista ou proferido voto, hipótese em que continuarão o julgamento."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 70,
+   "materia": "Código de Organização e Divisão Judiciárias do Estado do Paraná",
+   "enunciado": "A Constituição Federal de 1988 prevê expressamente, em seu Art. 98, a criação dos juizados especiais no âmbito da União, dos Estados e do Distrito federal. No que tange aos Juizados Especiais do Estado do Paraná, com base na Lei nº 14.277/2003, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "Compete à Turma Recursal processar e julgar os recursos interpostos contra decisões dos Juizados Especiais, bem como os embargos de declaração de suas próprias decisões, os habeas corpus e os mandados de injunção.",
+    "B": "Compete ao Tribunal de Justiça processar e julgar os mandados de segurança e os habeas corpus impetrados contra atos dos Juízes de Direito dos Juizados Especiais, observada a cláusula de reserva de plenário.",
+    "C": "Nas comarcas onde não existirem cargos próprios dos Juizados Especiais, o Presidente do Tribunal de Justiça, mediante proposta do Juiz de Direito, poderá designar servidores para cumprirem as funções nas respectivas unidades jurisdicionais.",
+    "D": "O Presidente do Tribunal de Justiça, após parecer da Corregedoria-Geral de Justiça poderá criar tantas Turmas Recursais quantas forem necessárias, que serão compostas por Juízes de Direito de entrância intermediária e final.",
+    "E": "A Turma Recursal será presidida pelo Juiz mais antigo entre os seus componentes, que será automaticamente substituído pelo membro designado pela Presidência do Tribunal de Justiça nos casos de impedimentos e ausências."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 71,
+   "materia": "Direito Empresarial",
+   "enunciado": "A Cooperativa Agrícola Esperança Nova apresentou embargos à execução de título extrajudicial (cédula de produto rural com pagamento in natura) ajuizada por Farol de Guaíra Insumos e Fertilizantes Agrícolas Ltda. A embargante alegou a falta de requisito essencial à validade da CPR como título executivo extrajudicial, diante da ausência de pagamento antecipado por parte do beneficiário, pois ficou convencionado que o pagamento seria por ocasião da entrega do produto rural pelo emitente. Com isso, a CPR não pode ser considerada título executivo por lhe faltar liquidez e certeza. A embargada, a seu turno, requereu a improcedência dos embargos, não havendo óbice que as partes estabeleçam livremente as condições contratuais. Considerando-se a narrativa e as disposições legais sobre a CPR, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "As alegações da embargante são improcedentes, devendo ser rejeitados os embargos, porque o pagamento antecipado do preço não constitui requisito essencial à validade da CPR como título executivo extrajudicial. Ademais, as partes podem estabelecer livremente as condições contratuais da compra e venda do produto rural pelo princípio da autonomia privada.",
+    "B": "As alegações da embargante devem ser acolhidas e os embargos julgados procedentes, pois a CPR é um título de crédito causal e dependente da compra e venda de produto rural a prazo, onde ocorre o pagamento antecipado do preço pelo comprador (à vista) e entrega prometida do produto negociado pelo vendedor (emitente) na data do vencimento.",
+    "C": "As alegações da embargante são improcedentes, devendo ser rejeitados os embargos, pois a necessidade de pagamento antecipado só se aplica se a CPR for na modalidade “com liquidação financeira” e é um requisito essencial para a execução por quantia certa. Tratando-se de CPR in natura, tal providência é desnecessária e devem prevalecer as condições contratuais.",
+    "D": "As alegações da embargante devem ser acolhidas e os embargos julgados procedentes, haja vista que a cláusula postergando o pagamento do preço para a data do vencimento é nula, porque retira da CPR a condição de título executivo por lhe faltar requisito essencial, consistente na exigibilidade do produto rural, e não se terá uma obrigação certa, líquida e exigível.",
+    "E": "Embora a CPR seja sempre vinculada, na emissão, a uma venda de produto rural cujo objetivo é custear a produção agrícola, o pagamento antecipado do preço, em regra exigível para a validade e executividade do título, pode ser afastado por cláusula pactuada em sentido contrário, pelo princípio da autonomia privada, de modo que os embargos devem ser rejeitados."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 72,
+   "materia": "Direito Empresarial",
+   "enunciado": "Credores que titularizam 37,58% (trinta e sete vírgula cinquenta e oito por cento) dos créditos inscritos na classe III do quadro-geral de credores da sociedade empresária S. S. Amoreira & Cia Ltda., em recuperação judicial, requereram ao Juiz a convocação de Assembleia Geral de credores para deliberar sobre a convolação da recuperação judicial em falência. A recuperação se encontra na fase pós-concessão, mas ainda dentro do prazo de supervisão judicial, eis que ainda não está encerrada. O Juiz deferiu o pedido, reconhecendo a legitimidade dos credores, a competência da assembleia para deliberar sobre a matéria e a satisfação do percentual mínimo de créditos dentro da classe. Foram determinados a publicação de edital eletrônico de convocação e a ciência da recuperanda e do administrador judicial. Entretanto, a Assembleia Geral não chegou a ser instalada em razão da apresentação, na antevéspera da data fixada para a sua realização, de termo de adesão firmado por credores titulares de créditos que representam 62,18% (sessenta e dois vírgula dezoito por cento) do valor dos créditos sujeitos à recuperação judicial. Os credores da classe I se recusaram a assinar o termo de adesão. Sobre a hipótese apresentada, considerando as disposições da Lei nº 11.101/2005, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "O termo de adesão não pode ser aceito em razão de não ter sido apresentado nos 10 (dez) dias anteriores à data fixada para a realização da assembleia geral, devendo ser mantida a convocação de assembleia geral.",
+    "B": "Em virtude da previsão legal de que qualquer deliberação de competência da assembleia geral de credores pode ser substituída por termo de adesão, além do atingimento do quórum para a aprovação da proposta, é desnecessário tanto o parecer do administrador judicial sobre a regularidade do termo de adesão quanto posterior homologação judicial.",
+    "C": "Ainda que a apresentação do termo de adesão tenha sido tempestiva, diante de não ter ainda sido instalada a assembleia geral de credores na data de sua entrega, não poderá ser homologado pelo Juiz em razão de não ter sido aprovado por todas as classes de credores e, alternativamente, não ter obtido, pelo menos, mais de 1/3 (um terço) de aprovação na classe I.",
+    "D": "Em virtude da previsão legal de que qualquer deliberação de competência da assembleia geral de credores pode ser substituída por termo de adesão, além do atingimento do quórum para a aprovação da proposta, é desnecessário o parecer do administrador judicial sobre a regularidade do termo de adesão, mas é necessária a homologação judicial.",
+    "E": "A despeito de existir previsão legal de que qualquer deliberação de competência da assembleia geral de credores pode ser substituída por termo de adesão, e do atingimento do quórum para a aprovação da proposta, é necessário o parecer do administrador judicial sobre a regularidade do termo de adesão previamente à sua homologação judicial."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 73,
+   "materia": "Direito Empresarial",
+   "enunciado": "Acionistas da Companhia CRV Classe Especial, da espécie fechada, ajuizaram ação para anular deliberação assemblear sob alegação de utilização ilegal das reservas de capital da Companhia. O pedido foi julgado procedente em relação ao mérito, porque o(a) julgador(a) entendeu que, de fato, a Companhia havia utilizado ilegalmente suas reservas de capital para",
+   "alternativas": {
+    "A": "o resgate de partes beneficiárias.",
+    "B": "a incorporação ao capital social.",
+    "C": "o reembolso de ações a acionistas dissidentes.",
+    "D": "o pagamento de dividendo a ações preferenciais com prioridade na distribuição de dividendo fixo não cumulativo.",
+    "E": "a absorção de prejuízos do exercício social que ultrapassaram os lucros acumulados e as reservas de lucros."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 74,
+   "materia": "Direito Empresarial",
+   "enunciado": "Rondon Ourizona, produtor rural associado à Cooperativa de Crédito do Vale do Ivaí, requereu e teve deferido o processamento de sua recuperação judicial pelo Juízo único da Comarca de Joaquim Távora. Após o encerramento da fase administrativa da verificação de créditos e publicação da segunda relação de credores, a Cooperativa de Crédito do Vale do Ivaí apresenta tempestivamente impugnação à inclusão do seu crédito no quadro-geral de credores pelo devedor. O crédito tem origem em operação de concessão de crédito para capital de giro, com emissão de cédula de crédito bancário subscrita pelo devedor em favor da cooperativa de crédito. No incidente de impugnação de crédito estão em discussão os seguintes aspectos: I. a caracterização da operação de crédito como ato cooperativo; II. a sujeição do crédito aos efeitos da recuperação judicial; e III. o prazo prescricional para cobrança de ato cooperativo. Consoante a legislação aplicável à recuperação judicial e às sociedades cooperativas, bem como o entendimento do STJ sobre os temas, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "Não se trata de ato cooperativo porque a operação está vinculada a uma cédula de crédito bancário, sendo típico contrato bancário sem garantia real ou pessoal, devendo o crédito se submeter aos efeitos da recuperação judicial e o prazo prescricional é de três anos por se tratar de título cambiariforme.",
+    "B": "A operação de crédito deve ser considerada como ato cooperativo e, portanto, não está sujeita aos efeitos da recuperação judicial, sendo de dez anos o prazo prescricional, na ausência de disciplina específica sobre a prescrição da cobrança de ato cooperativo na legislação especial e da regra geral do Código Civil.",
+    "C": "Não se trata de ato cooperativo porque a operação foi praticada por instituição financeira sujeita às normas do Banco Central do Brasil e do Conselho Monetário Nacional, devendo o crédito se submeter aos efeitos da recuperação judicial e o prazo prescricional é de quatro anos por previsão expressa na legislação especial.",
+    "D": "Embora a operação de crédito seja ato cooperativo por envolver cooperativa e associado, o crédito se submete aos efeitos da recuperação judicial por não se tratar de cooperativa médica operadora de plano de assistência à saúde e o prazo prescricional é de cinco anos por previsão expressa na legislação especial.",
+    "E": "A operação de crédito deve ser considerada como ato cooperativo e, portanto, não está sujeita aos efeitos da recuperação judicial, sendo de três anos o prazo prescricional, diante da aplicação supletiva do Código Civil para a pretensão de haver o pagamento de título de crédito, eis que a legislação cooperativa é omissa."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 75,
+   "materia": "Direito Tributário",
+   "enunciado": "Durante a execução fiscal movida pelo Estado X contra uma sociedade empresária, verificou-se que o patrimônio penhorável é insuficiente para satisfazer integralmente os créditos existentes. Concorrem sobre os mesmos bens: i) um crédito tributário estadual regularmente inscrito em dívida ativa; ii) os honorários advocatícios sucumbenciais fixados em favor do advogado do executado em processo diverso; e iii) um crédito tributário municipal referente a fato gerador ocorrido anteriormente à inscrição do crédito estadual. À luz do regime jurídico das garantias e preferências do crédito tributário e da jurisprudência consolidada do Supremo Tribunal Federal, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "O crédito tributário estadual prefere aos honorários advocatícios e ao crédito tributário municipal, pois o crédito fiscal estadual sempre prevalece sobre quaisquer outros, independentemente de sua natureza.",
+    "B": "Os honorários advocatícios sucumbenciais preferem aos créditos tributários, e, entre os entes federados, mantém-se a ordem hierárquica União–Estados–Municípios prevista no Código Tributário Nacional.",
+    "C": "Os honorários advocatícios sucumbenciais possuem preferência em relação ao crédito tributário, e, quanto aos créditos tributários de entes distintos, não subsiste hierarquia entre a União, os Estados e os Municípios.",
+    "D": "O crédito tributário municipal prefere ao estadual por ser mais antigo, enquanto os honorários advocatícios se equiparam aos créditos quirografários.",
+    "E": "O crédito tributário estadual e o municipal devem ser pagos proporcionalmente entre si, mas ambos prevalecem sobre os honorários advocatícios, por não integrarem a legislação do trabalho."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 76,
+   "materia": "Direito Tributário",
+   "enunciado": "Uma sociedade empresária apresentou Guia de Informação e Apuração do Imposto sobre Circulação de Mercadorias e Serviços (ICMS) de determinado exercício e efetuou o pagamento dos valores declarados. Posteriormente, ao revisar sua escrituração contábil, constatou erro na apuração da base de cálculo, que resultou em diferença a maior não declarada nem recolhida. Antes de qualquer procedimento administrativo ou medida de fiscalização, a sociedade empresária retificou a declaração e quitou integralmente a diferença apurada, acrescida apenas de juros de mora. Sobre a hipótese apresentada, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "Nos tributos sujeitos a lançamento por homologação não é cabível denúncia espontânea, ainda que haja retificação da declaração apresentada antes da fiscalização.",
+    "B": "A retificação da declaração acompanhada do pagamento integral da diferença, antes de qualquer procedimento fiscal, exclui a multa moratória.",
+    "C": "A denúncia espontânea somente seria cabível se o tributo não tivesse sido previamente declarado, sendo irrelevante o momento da retificação.",
+    "D": "A denúncia espontânea exclui apenas multas punitivas, não alcançando a multa moratória decorrente de pagamento em atraso.",
+    "E": "A denúncia espontânea não se caracteriza, pois o pagamento ocorreu após o vencimento original do tributo, circunstância que, por si só, afasta o benefício."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 77,
+   "materia": "Direito Tributário",
+   "enunciado": "Um Estado da Federação, por meio de sua legislação do Imposto sobre Circulação de Mercadorias e Serviços (ICMS), adotou a técnica da seletividade e fixou alíquotas diferenciadas conforme a natureza das mercadorias e serviços. Nesse contexto, estabeleceu alíquota superior à geral para operações com energia elétrica e serviços de telecomunicação, ao mesmo tempo em que instituiu benefícios fiscais específicos destinados a consumidores de baixa renda e a faixas reduzidas de consumo desses serviços. Diante desse quadro normativo e à luz do entendimento consolidado do Supremo Tribunal Federal, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "É constitucional, pois a seletividade no ICMS é facultativa e, quando adotada, admite ampla discricionariedade do legislador estadual.",
+    "B": "É constitucional, visto que existem mecanismos compensatórios voltados a consumidores de menor capacidade econômica.",
+    "C": "É inconstitucional, pois, adotada a seletividade, bens e serviços essenciais não podem ser tributados em patamar superior ao das operações em geral.",
+    "D": "É válida apenas para os serviços de telecomunicação, pois a essencialidade da energia elétrica depende do volume consumido.",
+    "E": "É inconstitucional, porque a Constituição Federal impõe a adoção obrigatória da seletividade no ICMS, vedando a tributação diferenciada de bens essenciais."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 78,
+   "materia": "Direito Tributário",
+   "enunciado": "Um Estado da Federação revogou, por lei ordinária publicada em 28 de novembro de 2025, benefício fiscal de Imposto sobre Circulação de Mercadorias e Serviços (ICMS) que reduzia a carga tributária incidente sobre determinado setor econômico. Com base na revogação, a administração tributária lavrou autos de infração exigindo a diferença de ICMS relativa a operações realizadas no início do mês de janeiro de 2026. Sobre essa exigência tributária, à luz do entendimento consolidado do Supremo Tribunal Federal, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "É constitucional, pois a revogação de benefício fiscal somente se submete ao princípio da anterioridade anual e não a nonagesimal, por não configurar criação/majoração de tributo.",
+    "B": "É inconstitucional, pois toda e qualquer revogação de benefício fiscal depende de autorização prévia do CONFAZ, sob pena de ofensa ao pacto federativo.",
+    "C": "É constitucional, pois a anterioridade tributária protege apenas contra aumentos diretos de alíquota, não se aplicando a hipóteses de revogação de incentivos.",
+    "D": "É inconstitucional, pois, para a revogação do benefício, exige- se lei complementar, violando-se o princípio da legalidade.",
+    "E": "É inconstitucional, pois a supressão de benefício fiscal, que resulte em aumento indireto da carga tributária, deve observar a anterioridade geral e a nonagesimal."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 79,
+   "materia": "Direito Ambiental",
+   "enunciado": "O órgão ambiental competente apreendeu o caminhão de Maria, que estava transportando madeira sem a licença ambiental e os demais documentos obrigatórios. Inconformada, Maria ajuizou ação judicial pleiteando a liberação do veículo. No caso em tela, o magistrado deverá decidir, observando a jurisprudência do Superior Tribunal de Justiça no sentido de que Maria",
+   "alternativas": {
+    "A": "não possui direito subjetivo de ser nomeada fiel depositária do bem, e a Administração Pública não pode nomeá-la, ainda que entenda oportuno e conveniente.",
+    "B": "possui direito subjetivo de ser nomeada fiel depositária do bem, desde que apresente caução no valor de mercado do veículo.",
+    "C": "pode de ser nomeada fiel depositária do bem, conforme critério discricionário da Administração Pública, desde que apresente caução no valor do dano ambiental.",
+    "D": "não pode ser nomeada fiel depositária do bem, diante de expressa vedação legal, sendo o bem restituído apenas após o término do processo administrativo e caso não seja decreta a perda do bem.",
+    "E": "não titulariza direito público subjetivo de ser nomeada fiel depositária do bem, mas a Administração Pública pode, discricionariamente, nomeá-la, desde que a posse do bem não traga risco de utilização em novas infrações."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 80,
+   "materia": "Direito Ambiental",
+   "enunciado": "O verbete de Súmula 652 do Superior Tribunal de Justiça dispõe: \"A responsabilidade civil da Administração Pública por danos ao meio ambiente, decorrente de sua omissão no dever de fiscalização, é de caráter solidário, mas de execução subsidiária\". De acordo com o STJ, tal entendimento",
+   "alternativas": {
+    "A": "é aplicável à tutela do patrimônio cultural.",
+    "B": "não é aplicável aos danos climáticos.",
+    "C": "não é aplicável aos danos ambientais decorrentes de uso de agrotóxicos.",
+    "D": "é aplicável ao patrimônio privado, caso haja curso hídrico no imóvel, mesmo sem dano ambiental.",
+    "E": "é aplicável a danos não ambientais relacionados a organismos geneticamente modificados."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 81,
+   "materia": "Direito Ambiental",
+   "enunciado": "A Lei nº 14.119/2021 instituiu a Política Nacional de Pagamento por Serviços Ambientais. Nesse contexto, observe as assertivas a seguir: I. Entre os objetivos da Política Nacional de Pagamento por Serviços Ambientais, está o de incentivar o setor privado a incorporar a medição das perdas ou ganhos dos serviços ecossistêmicos nas cadeias produtivas vinculadas aos seus negócios; II. Entre as modalidades de pagamento por serviços ambientais, destaca-se o pagamento direto, monetário ou não monetário; III. Entre as diretrizes da Política Nacional de Pagamento por Serviços Ambientais, merece destaque a utilização do pagamento por serviços ambientais como instrumento de promoção do desenvolvimento social, ambiental, econômico e cultural das populações em área rural (vedada a incidência em área urbana) e dos produtores rurais, em especial das comunidades tradicionais, dos povos indígenas e dos agricultores familiares. De acordo com o citado diploma legal, está correto o que se afirma em",
+   "alternativas": {
+    "A": "II e III, apenas.",
+    "B": "I e II, apenas.",
+    "C": "I e III, apenas.",
+    "D": "II, apenas.",
+    "E": "I, II e III."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 82,
+   "materia": "Direito Administrativo",
+   "enunciado": "Durante uma rebelião na penitenciária estadual X, o detento João, condenado a 20 anos em regime fechado pelo crime de latrocínio, desarmou um agente penitenciário, surpreendido num momento de distração, e conseguiu fugir. Fora da penitenciária, mas ainda com os agentes de segurança em seu encalço, o detento matou um cidadão, com a arma do agente penitenciário, para dele roubar um aparelho de telefone e um automóvel. Logo em seguida, o detendo foi recapturado e conduzido de volta à penitenciária. O episódio todo durou cerca de 30 minutos. Sobre o caso narrado, considerando os precedentes do STF sobre responsabilidade civil do estado, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "O Estado responde subjetivamente, mas cabe ação de regresso em face do agente penitenciário desarmado, uma vez que é imprescindível a comprovação de dolo ou culpa.",
+    "B": "O Estado responde objetivamente, uma vez que o crime foi praticado por detento foragido, sendo irrelevante o tempo decorrido entre a falha no dever de custódia dos detentos (momento da fuga) e o homicídio praticado por João (resultado).",
+    "C": "O Estado não responde porque o serviço de segurança pública configura dever jurídico genérico cujo descumprimento não gera a responsabilidade estatal. O Estado não pode ser um segurador universal.",
+    "D": "O Estado não responde porque o homicídio praticado por João é fato de terceiro que rompe o nexo causal entre a ação ou omissão estatal e o resultado.",
+    "E": "O Estado responde objetivamente porque a contiguidade temporal dos eventos evidencia o nexo causal direto entre a falha no dever de custódia dos detentos (momento da fuga) e o homicídio praticado por João (resultado)."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 83,
+   "materia": "Direito Administrativo",
+   "enunciado": "O Município Alfa celebrou em janeiro de 2024, com a sociedade empresária X, contrato administrativo de prestação de serviço comum de engenharia para a recuperação de pavimentação asfáltica em via urbana, com fundamento na Lei nº 14.133/2021. Concluído o serviço, os fiscais do contrato vistoriaram o local e detectaram uma possível diferença a menor na espessura de parte do pavimento recuperado frente às especificações da última etapa do cronograma físico-financeiro. Os fiscais estimaram que a diferença seria equivalente ao valor do saldo contratual. Assim, fizeram o recebimento provisório parcial e recomendaram a glosa da diferença como solução para o recebimento do objeto. Após a recomendação de glosa pelos fiscais, a contratada protocolou requerimento administrativo de pagamento do saldo contratual, dando início a processo administrativo próprio de cobrança, no qual apresentou suas razões técnicas. Após a manifestação dos fiscais e da contratada, o processo instaurado a partir desse requerimento permaneceu sem impulso oficial ou decisão final. Em fevereiro de 2029, sem que tivesse sido proferida decisão administrativa, a contratada ajuizou ação de cobrança do saldo contratual não pago. Sobre o caso exposto, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "A pretensão da contratada encontra-se prescrita porque o prazo começou a partir do recebimento parcial do objeto pelos fiscais do contrato.",
+    "B": "A pretensão da contratada encontra-se prescrita porque o Art. 4º do Decreto nº 20.910/1932 somente se aplica às hipóteses em que a Fazenda Pública figure como credora, não sendo extensível às pretensões deduzidas por particulares em face do Poder Público.",
+    "C": "A instauração do procedimento administrativo interrompe o prazo prescricional, que recomeça a fluir integralmente após a última manifestação dos fiscais do contrato, ainda que não tenha havido decisão administrativa final quanto ao recebimento do objeto ou ao pagamento do saldo contratual.",
+    "D": "A pretensão da contratada encontra-se prescrita em razão da ocorrência de prescrição intercorrente, uma vez que a paralisação do procedimento administrativo por período prolongado, sem decisão final quanto ao pagamento do saldo contratual, resulta na perda da pretensão, por aplicação analógica do Art. 1º, §1º, da Lei nº 9.873/1999, em prestígio aos princípios da segurança jurídica e da razoável duração do processo.",
+    "E": "A pretensão da contratada não se encontra prescrita, pois, ausente decisão administrativa final apta a rejeitar o objeto da controvérsia ou liquidar a glosa, o crédito não se tornou exigível, não tendo se iniciado o prazo prescricional quinquenal previsto no Art. 1º do Decreto nº 20.910/1932."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 84,
+   "materia": "Direito Administrativo",
+   "enunciado": "O Estado Sigma instituiu um programa de desenvolvimento regional, prevendo a transferência de renda para pessoas em situação de miséria, subsídios ao setor produtivo, investimentos em infraestrutura, e apoio técnico aos Municípios. A política pública foi instituída por lei e se organiza por meio de um conselho interfederativo envolvendo o Estado Sigma e os municípios contemplados. Os gestores da Secretaria de Desenvolvimento Regional monitoram e avaliam os resultados. Alegando existir grave deficiência na política em relação à determinada região do Estado, o Ministério Público estadual ajuizou Ação Civil Pública com o pedido de condenação do ente público para obrigá-lo a aumentar a dotação orçamentária destinada à transferência de renda, em montante definido por parecer do Grupo de Apoio Técnico do MP, e realizar concurso público para formar equipes técnicas multidisciplinares para atuação exclusiva na região mais afetada pela miséria, tudo sob pena de multa diária. Sobre o caso narrado, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "O controle judicial de políticas públicas se limita aos casos de omissão, não cabendo ao Poder Judiciário imiscuir-se na análise dos resultados, da efetividade prática ou dos impactos sociais decorrentes de sua implementação.",
+    "B": "A atuação judicial é admissível para enfrentar grave deficiência na política pública, mas não pode substituir o administrador na escolha dos meios. No caso, o deferimento dos pedidos formulados pelo MP extrapola os limites do controle jurisdicional, violando a separação de poderes e a discricionariedade administrativa.",
+    "C": "O controle judicial de políticas públicas, que interfere em escolhas orçamentárias ou administrativas, caracteriza ativismo judicial ilegítimo, sendo incompatível com o princípio da separação dos poderes.",
+    "D": "A qualidade da política em termos de estrutura normativa, a organização interfederativa e o monitoramento e a avaliação dos resultados não são fatores relevantes para que o Judiciário tenha deferência para com o agir da Administração Pública, sendo admissível exercer o controle pleno sobre a forma e o conteúdo da política pública.",
+    "E": "Embora seja ilegítima a interferência judicial direta sobre a alocação orçamentária, por envolver juízo político-financeiro reservado ao Executivo e ao Legislativo, é plenamente legítimo que o Judiciário determine a realização de concurso público para formação de equipes técnicas, por se tratar de providência administrativa objetiva voltada à efetivação de direitos fundamentais."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 85,
+   "materia": "Direito Administrativo",
+   "enunciado": "Em procedimento licitatório realizado na modalidade pregão eletrônico, determinado licitante impugnou o edital e, posteriormente, impetrou mandado de segurança, sustentando que a Administração Pública do Município X deveria impedir, desde o início da fase competitiva, a participação de empresas sancionadas com impedimento de licitar e contratar ou declaradas inidôneas. Alegou ainda que a mera participação dessas empresas comprometeria a isonomia e a moralidade administrativa, além de gerar riscos concretos à competitividade do certame, notadamente pela possibilidade de atuação como “licitante coelho” ou “licitante kamikaze”, em conluio com outros licitantes, com o objetivo de reduzir artificialmente os preços ofertados, especialmente em razão do anonimato da disputa no pregão eletrônico. Pede a suspensão do pregão e, ao fim, a anulação do respectivo edital. A autoridade coatora prestou informações e o ente público apresentou impugnação, negando qualquer irregularidade, tendo em vista o próprio regime jurídico do pregão eletrônico (Lei nº 14.133/2021). Diante do exposto, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "A ordem deve ser concedida, porque a Administração tem o dever jurídico de impedir, desde o início da fase competitiva, a participação de empresa sancionada, porque sua presença na disputa viola os princípios da moralidade administrativa, da isonomia e da competitividade, independentemente do momento da habilitação.",
+    "B": "A ordem deve ser denegada, pois inexiste direito subjetivo à exclusão prévia universal de licitantes. A Lei nº 14.133/2021 estabelece que, salvo decisão motivada em contrário, o julgamento das propostas antecede a habilitação e a formalização do contrato, momento no qual se dá a verificação da regularidade das sociedades empresárias junto ao Cadastro Nacional de Empresas Inidôneas e Suspensas (Ceis) e ao Cadastro Nacional de Empresas Punidas (Cnep).",
+    "C": "A ordem deve ser concedida. Ainda que no regime do pregão eletrônico a fase de habilitação ocorra após o julgamento das propostas, o risco de atuação de “licitante coelho” ou “kamikaze”, potencializado pelo anonimato da disputa, impõe à Administração o dever jurídico de excluir previamente sociedades empresárias sancionadas, sob pena de nulidade do certame.",
+    "D": "A ordem deve ser concedida porque o Art. 337-M, §2º, do Código Penal, inserido pelo Art. 178 da Lei nº 14.133/2021, criminaliza a participação em licitação de sociedade empresária declarada inidônea, o que impõe à Administração o dever de impedir que isso ocorra, independentemente de prejuízo comprovado.",
+    "E": "A ordem deve ser concedida porque o controle judicial do procedimento licitatório autoriza a imposição de medidas preventivas mais rigorosas do que as previstas em lei, sempre que identificados riscos à competitividade e à moralidade administrativa."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 86,
+   "materia": "Direito Administrativo",
+   "enunciado": "Após procedimento licitatório, o Município X celebrou, com a sociedade empresária Y, contrato administrativo de prestação de serviços contínuos de limpeza predial. Durante a fase preparatória, os agentes públicos deixaram de indicar os créditos orçamentários destinados ao pagamento das parcelas contratuais vincendas no exercício financeiro correspondente. Contudo, a irregularidade somente foi constatada após o início da execução contratual, não tendo a contratada participado da causa da irregularidade. Diante da situação, a Administração declarou a nulidade do contrato. Sobre a decisão da Administração, com base no que dispõe a Lei nº 14.133/2021, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "A declaração de nulidade do contrato impede qualquer forma de indenização ao contratado, ainda que parte do objeto tenha sido executada, pois a ausência de créditos orçamentários torna o ajuste juridicamente inexistente.",
+    "B": "A nulidade do contrato produz efeitos apenas prospectivos, preservando integralmente os efeitos jurídicos já produzidos até a data da declaração, vedada a responsabilização dos agentes públicos envolvidos.",
+    "C": "A nulidade do contrato exonera a Administração do dever de indenizar o contratado, mas não afasta a necessidade de apuração de responsabilidade dos agentes que deram causa à irregularidade.",
+    "D": "A nulidade do contrato opera retroativamente, desconstituindo os efeitos jurídicos produzidos, mas não afasta o dever da Administração de indenizar o contratado pelo que houver sido executado e por outros prejuízos comprovados, desde que não lhe seja imputável a irregularidade.",
+    "E": "A nulidade do contrato somente poderia ser declarada após a conclusão integral da execução contratual, sendo vedada sua declaração durante a execução do objeto."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 87,
+   "materia": "Direito Administrativo",
+   "enunciado": "Em janeiro de 2020, o Programa de Proteção e Defesa do Consumidor estadual instaurou processo administrativo sancionatório em desfavor da sociedade empresária Alfa, que atua no ramo de mercados de alimentos. Notificada, a pessoa jurídica ofereceu defesa. Após cinco anos, não houve movimentação efetiva do procedimento, que ficou paralisado. Em janeiro de 2026, o PROCON retomou o processo, aplicando multa administrativa. A sociedade empresária Alfa, ajuizou ação postulando o reconhecimento judicial de prescrição intercorrente, com base no Art. 1º do Decreto nº 20.910/1932. Sobre a hipótese, considerando a legislação em vigor e a jurisprudência do Superior Tribunal de Justiça, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "O pedido formulado pela sociedade empresária Alfa merece procedência, uma vez que se aplica, ao caso hipotético, a prescrição da ação punitiva, em cinco anos.",
+    "B": "A prescrição intercorrente se consuma pela paralisação do processo administrativo, no caso hipotético, pelo período de oito anos, não assistindo razão à empresária.",
+    "C": "Assiste razão à sociedade empresária Alfa, já que se aplica ao caso hipotético a prescrição intercorrente ao processo paralisado por mais de três anos.",
+    "D": "Em se tratando de sanção imposta por ente estadual, não é possível invocar a prescrição intercorrente, instituída em lei federal, para afastar a pretensão punitiva.",
+    "E": "A prescrição da pretensão punitiva se consuma pela paralisação dos autos administrativos, por longo período, sem a prática de qualquer ato."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 88,
+   "materia": "Direito Administrativo",
+   "enunciado": "Tício prestou concurso público para o cargo de professor no Município Beta. Inicialmente, o edital previa provas objetivas e discursivas, não prevendo prova de títulos. Após a realização das provas, o edital foi alterado para incluir a prova de títulos, devido à celebração de acordo judicial, firmado pelo Município, em ação própria, no qual se reconheceu a necessidade de adequação à lei local que exigia concurso de provas e títulos para o cargo de professor. Com a alteração, a classificação de Tício caiu vertiginosamente. Inconformado, impetrou mandado de segurança. Considerando a legislação em vigor e o entendimento do Superior Tribunal de Justiça, é correto afirmar que",
+   "alternativas": {
+    "A": "assiste razão a Tício, vez que o edital é a lei do concurso e vincula a Administração aos candidatos, não se admitindo alteração posterior à realização das provas.",
+    "B": "a jurisprudência admite alteração do edital apenas se constatado erro material em sua elaboração, não sendo a hipótese versada.",
+    "C": "o mandado de segurança não pode ser concedido, uma vez que, na hipótese, era possível a alteração do edital para a sua adequação ao princípio da legalidade.",
+    "D": "a alteração do edital, na hipótese versada no enunciado, violou os princípios da vinculação ao instrumento convocatório e à boa-fé.",
+    "E": "a alteração de lei local, após a realização das provas, passando a prever necessidade de prova de títulos para o cargo de professor, não permite alteração do edital."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 89,
+   "materia": "Direito Administrativo",
+   "enunciado": "Em janeiro de 2022, Caio foi aprovado em sexto lugar, em concurso público para o cargo de motorista junto à Prefeitura de Delta, tendo o edital previsto a existência de dez vagas e a validade de dois anos, viabilizando a prorrogação por igual período. O concurso foi homologado em maio de 2022. Em janeiro de 2023, foi sancionada uma Lei Municipal que extinguia os cargos de motorista oferecidos no edital, aduzindo necessidade de obediência ao limite prudencial de gastos com pessoal. Não houve prorrogação do concurso. Em junho de 2024, Caio ajuizou demanda contra o Município, postulando sua nomeação como candidato aprovado. Sobre a demanda de Caio, considerando a legislação em vigor e a jurisprudência do Supremo Tribunal Federal, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "Assiste razão a Caio, que deve ser nomeado para o cargo de motorista, para o qual foi aprovado, uma vez que possui direito subjetivo para tanto, pouco importando se o cargo foi extinto, devendo se aplicar o instituto da adaptação.",
+    "B": "O direito subjetivo à nomeação de candidato aprovado dentro do número de vagas pode ser mitigado, quando há superveniente extinção dos cargos em obediência ao limite prudencial de gastos com pessoal, desde que anterior ao término do prazo de validade do concurso.",
+    "C": "O candidato aprovado dentro do número de vagas possui expectativa de direito à nomeação, não cabendo ao Judiciário impor à Administração Pública a sua nomeação, sob pena de violação ao princípio da separação dos poderes.",
+    "D": "A extinção dos cargos oferecidos, mesmo que posterior ao término do prazo de validade do concurso, justifica a mitigação do direito subjetivo à nomeação de candidato aprovado dentro do número de vagas.",
+    "E": "O direito subjetivo à nomeação de candidato aprovado dentro do número de vagas não pode ser afastado, ainda que haja posterior extinção dos cargos ofertados, por qualquer justificativa da Administração Pública."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 90,
+   "materia": "Direito Administrativo",
+   "enunciado": "No Município Alfa, até o mês de julho de 2024, vigorava a Legislação Municipal que previa que determinados servidores tinham direito aos adicionais de insalubridade, caso trabalhassem habitualmente expostos a agentes nocivos e de periculosidade, se trabalhassem em condições de risco acentuado à sua integridade física. Os adicionais eram calculados em percentual de 30% (trinta por cento) sobre o vencimento básico do servidor. Em agosto de 2024, foi editada Lei Municipal que modificava os critérios de cálculo dos adicionais, que passaram a valer o montante fixo de R$ 500,00 (quinhentos reais), pouco importando o rendimento do servidor. O sindicato dos servidores impetrou mandado de segurança coletivo, aduzindo violação de direito líquido e certo. Sobre o caso narrado, considerando a legislação em vigor e a jurisprudência do Superior Tribunal de Justiça, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "O mandado de segurança coletivo, no caso hipotético, não deve ser concedido, pois visa a realizar controle abstrato de constitucionalidade, o que é vedado pela Súmula 266 do Supremo Tribunal Federal.",
+    "B": "A alteração dos critérios de cálculo dos adicionais citados, com redução da remuneração, persistindo as mesmas condições de trabalho, viola o princípio da irredutibilidade de vencimentos.",
+    "C": "A mudança da base de cálculo do adicional de insalubridade, ainda que implique em redução de vencimentos, não representa ofensa a direito adquirido.",
+    "D": "Quando há extinção da causa que justifica a percepção da verba propter laborem, sua supressão é ilegítima porque desaparece o próprio fundamento para sua existência.",
+    "E": "O STJ interpreta vencimentos em sentido amplo, equivalente à remuneração total nominal, sendo possível afirmar que existe direito adquirido a regime jurídico de cálculo."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 91,
+   "materia": "Direito Administrativo",
+   "enunciado": "A sociedade empresária Alfa, atuante no ramo de extração de argila, provocou um dano ambiental no Município Beta. Após acurada investigação, restou demonstrado que a pessoa jurídica inseriu informações falsas e incompletas no sistema de monitoramento de suas atividades que era apresentado para a fiscalização do Município. Em razão disso, o Município aplicou severa multa à sociedade empresária Alfa, com base no Art. 5º, inciso V, da Lei nº 12.846/2013 (Lei Anticorrupção). Considerando a legislação em vigor e a jurisprudência do Superior",
+   "alternativas": {
+    "A": "a multa não pode ser aplicada administrativamente pelo Município, sendo necessário o ajuizamento de demanda judicial para imposição de condenação à pessoa jurídica.",
+    "B": "a sanção não pode ser aplicada no caso, visto que não houve corrupção de servidores públicos, não sendo viável a fundamentação na legislação invocada.",
+    "C": "a aplicação da multa com base na Lei Anticorrupção depende da comprovação do dolo na conduta da pessoa jurídica, uma vez que a responsabilidade é subjetiva.",
+    "D": "para a caracterização do ilícito, descrito no Art. 5º, inciso V, da Lei Anticorrupção, é indispensável a demonstração de criação de óbices ligados a investigações de ilícitos.",
+    "E": "a multa pode ser aplicada com base na Lei Anticorrupção que tem escopo mais amplo e visa a proteger a Administração contra qualquer conduta lesiva."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 92,
+   "materia": "Direito Previdenciário",
+   "enunciado": "Regina é servidora pública estadual no Paraná, atuando como assistente administrativa. Depois de longos anos no serviço público do Estado, começou a planejar o que fará após a sua aposentadoria voluntária, que requererá ainda em 2026. Assinale a opção que apresenta, corretamente, os requisitos legais previstos na Constituição do Paraná para a desejada jubilação.",
+   "alternativas": {
+    "A": "62 anos de idade e 25 anos de tempo de contribuição, cumprido o tempo mínimo de 10 anos de efetivo exercício no serviço público, e 5 anos no cargo efetivo em que se dará a aposentadoria.",
+    "B": "58 anos de idade e 30 anos de tempo de contribuição, cumprido o tempo mínimo de 20 anos de efetivo exercício no serviço público.",
+    "C": "65 anos de idade e 25 anos de tempo de contribuição, cumprido o tempo mínimo de 15 anos de efetivo exercício no serviço público e 10 anos no cargo efetivo em que se dará a aposentadoria.",
+    "D": "60 anos de idade e 20 anos de tempo de contribuição, cumprido o tempo mínimo de 10 anos de efetivo exercício no serviço público, e no cargo efetivo em que se dará a aposentadoria.",
+    "E": "65 anos de idade e 30 anos de tempo de contribuição, cumprido o tempo mínimo de 5 anos de efetivo exercício no serviço público."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 93,
+   "materia": "Direito Previdenciário",
+   "enunciado": "Clodoaldo trabalhava há 22 anos em uma sociedade empresária localizada em Londrina, PR. Em outubro de 2025, ele foi vítima de um acidente do trabalho típico. Em razão da gravidade do sinistro, Clodoaldo ficou incapacitado para o exercício de qualquer atividade que lhe garantisse a sobrevivência, conforme atestado em perícia, daí obtendo a aposentadoria por incapacidade permanente junto ao INSS. De acordo com a norma de regência, assinale a opção que indica o percentual que incidirá sobre a base de cálculo (média do período contributivo parametrizado na lei) e que gerará o valor do benefício previdenciário devido a Clodoaldo.",
+   "alternativas": {
+    "A": "80% do período básico de cálculo.",
+    "B": "60% do período básico de cálculo, acrescido de 2% por cada ano que ultrapassar 20 anos.",
+    "C": "100% do período básico de cálculo.",
+    "D": "91% do período básico de cálculo.",
+    "E": "60% do período básico de cálculo, acrescido de 2% por cada ano que ultrapassar 15 anos."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 94,
+   "materia": "Direito Previdenciário",
+   "enunciado": "O casal de empresários, João e Maria, contribuintes individuais do INSS, morreu em um acidente de automóvel, ocorrido em uma estrada de Maringá, PR. O casal deixou 2 filhos naturais (de 19 e 16 anos, respectivamente) e 1 filho adotivo (de 12 anos). Os pais de João, ambos idosos, viviam com o casal e dependiam economicamente do filho. Além disso, Maria tinha uma irmã de 27 anos que também morava com o casal e dela dependia financeiramente. Por fim, um sobrinho de João, com deficiência mental grave, igualmente residia com o casal e dependia do tio para a sua sobrevivência. Diante desse quadro e da norma de regência, assinale a opção que indica quem receberá a pensão por morte deixada pelo casal.",
+   "alternativas": {
+    "A": "Os 2 filhos naturais, o filho adotivo, os pais de João, a irmã de Maria e o sobrinho de João.",
+    "B": "O filho de 16 anos, o filho adotivo e o sobrinho de João.",
+    "C": "Os 2 filhos naturais e os pais de João.",
+    "D": "O filho adotivo e a irmã de Maria.",
+    "E": "Os 2 filhos naturais e o filho adotivo."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 95,
+   "materia": "Noções gerais de Direito e Formação Humanística",
+   "enunciado": "Renato ajuizou ação de reconhecimento de união estável post mortem com Pedro, com quem viveu por mais de vinte anos em uma cidade do interior. Embora tivessem vida em comum e partilhassem afetos, patrimônio e cotidiano, sempre se apresentaram como “amigos”, por viverem em ambiente social conservador e marcado por preconceito contra pessoas LGBTQIA+. Após o falecimento de Pedro, sem ascendentes ou descendentes vivos, Renato pleiteou o reconhecimento da união para fins sucessórios, mas o pedido foi julgado improcedente por ausência de publicidade da relação, nos termos do Art. 1.723 do Código Civil. Sobre o caso narrado, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "A publicidade da relação é requisito absoluto e sua ausência impede o reconhecimento da união estável, mesmo diante da convivência duradoura, contínua e com finalidade familiar.",
+    "B": "A união estável não é um ato-fato jurídico e sua constituição depende de declaração de vontade formal ou contrato escrito.",
+    "C": "A equiparação alcançada pelas uniões homoafetivas a partir do julgamento do STF possibilitou seu reconhecimento nos mesmos moldes das uniões heteroafetivas, de modo que é preciso tratar igualmente uniões hetero e homoafetivas, exigindo o mesmo grau de publicidade.",
+    "D": "O reconhecimento de união estável homoafetiva post mortem é possível, pois a publicidade pode ser relativizada diante de contextos de vulnerabilidade e preconceito estrutural, desde que presentes os demais elementos da união.",
+    "E": "É possível a relativização do requisito da publicidade para a configuração de união estável homoafetiva, ainda que ausentes os demais requisitos caracterizadores da união estável."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 96,
+   "materia": "Noções gerais de Direito e Formação Humanística",
+   "enunciado": "Um indivíduo propõe repetidas demandas judiciais com baixa probabilidade de êxito, de valor esperado negativo e de elevado custo para o Estado, objetivando apenas criar entraves administrativos ou desgastar economicamente a parte contrária. Sobre o caso apresentado, considerando os objetivos da análise econômica do Direito, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "O Juiz deve indeferir, liminarmente, a petição inicial de qualquer demanda que envolva valores econômicos irrelevantes, sem necessidade de fundamentação, promovendo a eficiência do Judiciário.",
+    "B": "A conduta não configura litigância de má-fé, uma vez que o direito de ação é assegurado constitucionalmente e pode ser exercido de forma ilimitada, independentemente da intenção do jurisdicionado ou dos impactos econômicos gerados à parte contrária ou ao Estado.",
+    "C": "A ação pode ser considerada de valor esperado negativo, já que carece de base jurídica ou mérito legal substancial, ou seja, tem baixíssima probabilidade de ser acolhida pelo",
+    "D": "O Juiz deve priorizar o julgamento de processos com maior repercussão econômica, ainda que isso represente a suspensão de feitos urgentes de menor valor.",
+    "E": "O Juiz pode adotar medidas para desencorajar demandas frívolas ou de valor esperado negativo, usando instrumentos processuais como a litigância de má-fé e a aplicação de honorários sucumbenciais, desde que garantido o contraditório e a ampla defesa."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 97,
+   "materia": "Noções gerais de Direito e Formação Humanística",
+   "enunciado": "Atualmente, as principais leis que abordam o tema do whistleblowing (denunciante) no Brasil são a Lei Anticorrupção, que estimula a criação de programas de integridade nas sociedades empresárias, incluindo canais de denúncia, e a Lei nº 13.608/2018, que foi o primeiro passo para reconhecer oficialmente a figura do whistleblower no país. Considerando as práticas possibilitadas por novos mecanismos de investigação e controle, e com base no conceito de whistleblowing no âmbito da integridade institucional, à luz da doutrina especializada, é correto afirmar que\n[Esta questão usa figura, quadro ou texto que não foi extraído do caderno: confira o enunciado completo na prova original.]",
+   "alternativas": {
+    "A": "assim como na colaboração premiada, o whistleblower não está envolvido no ato denunciado, e tem por objetivo uma ação compelida por sua moral, postura altruísta, inconformismo social ou mesmo busca de recompensas pecuniárias.",
+    "B": "a Lei nº 13.608/2018, ao regulamentar a figura do whistleblower, condiciona o recebimento de recompensa à instauração de processo judicial, sendo vedado o anonimato do denunciante para fins de apuração preliminar.",
+    "C": "o termo whistleblower refere-se a toda pessoa que, espontaneamente, leva a determinada autoridade o conhecimento de informações de cunho relevante sobre um ilícito civil ou criminal, seja na esfera pública ou privada.",
+    "D": "o instituto whistleblowing não permite o oferecimento de recompensas, mas de proteções a denunciantes terceiros de boa-fé.",
+    "E": "o whistleblowing refere-se ao mecanismo jurídico de controle interno exclusivo da Administração Pública, voltado à responsabilização de servidores por condutas impróprias."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 98,
+   "materia": "Direitos Humanos",
+   "enunciado": "A Constituição Federal de 1988 consolidou a centralidade dos Direitos Humanos no ordenamento jurídico brasileiro, redefinindo sua relação com o Direito Internacional e influenciando decisivamente a atuação jurisdicional. Sobre o tema, à luz do texto constitucional e da jurisprudência consolidada do Supremo Tribunal Federal, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "Os tratados internacionais de Direitos Humanos, uma vez ratificados pelo Brasil, integram automaticamente o bloco de constitucionalidade, independentemente do procedimento legislativo adotado e de sua compatibilidade material com a Constituição.",
+    "B": "O Art. 5º, §2º, da Constituição Federal limita-se a permitir a incorporação formal de tratados internacionais de Direitos Humanos, sem repercussão na hierarquia normativa ou na interpretação dos direitos fundamentais.",
+    "C": "Os direitos fundamentais previstos na Constituição de 1988 possuem aplicabilidade imediata, mas não admitem ampliação por meio de tratados internacionais, sob pena de violação ao princípio da supremacia constitucional.",
+    "D": "Os tratados internacionais de Direitos Humanos aprovados segundo o rito qualificado do Art. 5º, §3º, da Constituição Federal possuem status de emenda constitucional, enquanto aqueles aprovados pelo rito ordinário detêm natureza supralegal, prevalecendo sobre a legislação infraconstitucional incompatível.",
+    "E": "A jurisprudência do Supremo Tribunal Federal reconhece que apenas normas internacionais expressamente incorporadas ao texto constitucional podem servir de parâmetro para o controle de constitucionalidade ou de convencionalidade."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 99,
+   "materia": "Direitos Humanos",
+   "enunciado": "Considerando o Sistema Regional Interamericano de Proteção dos Direitos Humanos, o dever estatal de observância da Convenção Americana sobre Direitos Humanos, bem como o disposto na Recomendação nº 123/2022 do Conselho Nacional de Justiça (CNJ), que orienta os magistrados(as) brasileiros(as) quanto à realização do controle de convencionalidade no âmbito do Poder Judiciário, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "O controle de convencionalidade, nos termos da Recomendação CNJ nº 123/2022, deve ser exercido exclusivamente pelos tribunais superiores, em razão de seu caráter concentrado e vinculante.",
+    "B": "A Recomendação CNJ nº 123/2022 limita o controle de convencionalidade à análise da compatibilidade das normas internas com a Constituição Federal, afastando a incidência da jurisprudência da Corte Interamericana de Direitos Humanos.",
+    "C": "O controle de convencionalidade impõe aos órgãos do Poder Judiciário o dever de interpretar e aplicar as normas internas em conformidade com a Convenção Americana sobre Direitos Humanos e com a jurisprudência da Corte Interamericana, podendo ser exercido de ofício.",
+    "D": "O controle de convencionalidade, nos termos da Recomendação CNJ nº 123/2022, restringe-se à análise de normas constitucionais em abstrato, não alcançando leis infraconstitucionais, atos administrativos ou práticas estatais incompatíveis com tratados internacionais de Direitos Humanos.",
+    "E": "As recomendações expedidas pelo Conselho Nacional de Justiça possuem natureza jurisdicional, dotadas de força vinculante equivalente às sentenças proferidas pela Corte Interamericana de Direitos Humanos, impondo cumprimento obrigatório imediato aos órgãos do Poder Judiciário."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 100,
+   "materia": "Direitos Humanos",
+   "enunciado": "O contexto contemporâneo evidencia um momento de ‘crise’ do Direito Internacional, caracterizado pelo enfraquecimento do multilateralismo, por tensões geopolíticas, por discursos soberanistas e por desafios à efetividade das normas internacionais. Acerca do sistema global de proteção dos Direitos Humanos, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "A crise do Direito Internacional contemporâneo implicou a perda da relevância normativa da Declaração Universal dos Direitos Humanos, que passou a possuir apenas valor histórico-simbólico, sem função interpretativa ou influência jurídica na aplicação dos tratados internacionais e das constituições nacionais.",
+    "B": "Apesar das crises que afetam o multilateralismo, o sistema global de proteção dos Direitos Humanos, estruturado no âmbito da Organização das Nações Unidas, permanece fundado em tratados universais ratificados pelo Brasil, como os Pactos Internacionais de 1966, bem como em mecanismos internacionais de monitoramento e supervisão.",
+    "C": "A Agenda 2030 e os Objetivos de Desenvolvimento Sustentável assumiram caráter jurídico vinculante no plano internacional, substituindo os tratados de Direitos Humanos anteriormente ratificados pelos Estados e redefinindo, de forma autônoma, o conteúdo das obrigações internacionais em matéria de direitos fundamentais.",
+    "D": "Diante da crise do Direito Internacional e do fortalecimento da soberania estatal, os Estados encontram-se juridicamente autorizados a afastar unilateralmente o cumprimento de tratados internacionais de Direitos Humanos ratificados, sem necessidade de denúncia formal ou observância das regras internacionais pertinentes.",
+    "E": "O sistema global de proteção dos Direitos Humanos mostra- se incompatível com agendas internacionais de desenvolvimento sustentável, uma vez que se limita à tutela de direitos civis e políticos, não dialogando com políticas públicas voltadas à redução das desigualdades sociais e econômicas. Realização"
+   },
+   "gabarito": "B"
+  }
+ ]
+}

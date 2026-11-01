@@ -64,12 +64,7 @@ def principais(html):
 
 
 def cabecalhos(gab):
-    cab = []
-    for l in fgv.linhas(gab):
-        m = re.match(r"^\s*(.+?)\s*-?\s*TIPO\s+1\s*$", l, re.I)
-        if m:
-            cab.append(re.sub(r"\s+", " ", m.group(1)).strip(" -–"))
-    return list(dict.fromkeys(cab))
+    return list(dict.fromkeys(cargo for (_, tipo), (cargo, _) in fgv.secoes(gab).items() if tipo == 1))
 
 
 def main():
@@ -108,6 +103,8 @@ def main():
                 return 1 if (th - toks(nome)) <= ok_extra and len(th & toks(nome)) >= 1 else 0
 
             cand = sorted(((pontos(h), -len(toks(h) - toks(nome)), g, h) for g, h in heads), reverse=True)
+            if len(provas) == 1 and len({h for _, h in heads}) == 1:   # um caderno e um cargo no gabarito: só pode ser ele
+                cand = [(1, 0, heads[0][0], heads[0][1])]
             if not pdf or not cand or cand[0][0] == 0:
                 rel.append((slug, nome, "sem seção de gabarito correspondente"))
                 continue
@@ -127,10 +124,11 @@ def main():
             if len(qs) < 10 or len(ruim) > len(qs) * 0.1:
                 rel.append((slug, nome, f"{len(qs)} questões, {len(ruim)} problemáticas"))
                 continue
+            qs = [q for q in qs if q["n"] not in ruim]   # questão sem 5 alternativas ou sem gabarito não é enviada
             dest = saida / f"{slug}-{re.sub(r'[^a-z0-9]+', '-', nome.lower()).strip('-')}.json"
             dest.write_text(json.dumps({"concurso": slug, "orgao": sigla, "banca": "FGV", "ano": int(ano), "cargo": h, "tipo": 1,
                                         "fonte": f"{BASE}/concursos/{slug}", "questoes": qs}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-            print(f"  ok {nome} <- {h}: {len(qs)} questões, {sum(q['anulada'] for q in qs)} anuladas, {len(ruim)} problemáticas", flush=True)
+            print(f"  ok {nome} <- {h}: {len(qs)} questões, {sum(q['anulada'] for q in qs)} anuladas, {len(ruim)} descartadas {ruim[:6]}", flush=True)
     print("\nRELATÓRIO (não processados):")
     for r in rel:
         print("  ", *r)

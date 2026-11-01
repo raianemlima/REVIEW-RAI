@@ -26,7 +26,14 @@ python ferramentas/conteudo/questoes/para_banco.py app-src.txt saida_fgv/ saida_
 
 Os dois primeiros imprimem um relatório do que não casou. `para_banco.py` apaga e refaz os arquivos `ferramentas/conteudo/dados/simulados/(tj|mp)*.json` a cada execução (os das provas antigas nunca casam) e reembute `PROVAS_PUBLICO`. O cache do app é carimbado na publicação.
 
+## Gabaritos da FGV
+
+Dois layouts, lidos por `fgv.secoes()`: tabela em colunas (números e depois letras, com zeros de preenchimento nos blocos curtos) e pares "número, letra". Cabeçalhos aceitos: `Cargo - TIPO 1`, `Cargo – Tipo 1`, `Cargo - PROVA TIPO 1`, `Cargo – PROVA 1` e `Cargo - 1 - Turno Tarde` (o número é o tipo). O caderno Tipo 1 casa com a seção do tipo 1. A conferência de uma questão resolvida à mão (TJGO 2025, questão 1) está no teste.
+
+O número de cada questão é reconhecido pelo negrito: um "2" solto no meio do texto, quebrado em linha própria, não abre uma questão nova.
+
 ## Ainda não coberto
 
-- Gabaritos da FGV em outro layout (pares "número / letra" por turno, como MPES 2025 e TJTO 2025 de juiz) e concursos cuja página não lista os cadernos (TJRN 2023, TJAM, TJMG, TJRJ).
-- Concursos de MP organizados por outras bancas (por exemplo, MPSP, MPMG, MPRJ próprios) e de juiz fora da FGV/Cebraspe (por exemplo, TJSP e TJMG, em outras bancas).
+- Gabaritos em outro layout (MPRJ, MPU) e concursos cuja página não lista os cadernos (TJRN 2023, TJAM, TJMG, TJRJ).
+- MPSC 2023 e MPGO (Cebraspe): itens Certo/Errado sem separação por disciplina.
+- Concursos de MP organizados por outras bancas (MPSP, MPMG e outros) e de juiz fora da FGV/Cebraspe (TJSP e TJMG, por exemplo).

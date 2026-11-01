@@ -32,30 +32,83 @@ def linhas(pdf, ini=0):
     return out
 
 
-def gabarito(pdf, cargo, tipo):
-    """{n: letra}; '*' = anulada. Cabeçalho '<cargo> - TIPO n', depois blocos de números e de letras."""
-    alvo = re.compile(rf"^{re.escape(sem_acento(cargo))}\s*-?\s*tipo\s*{tipo}\s*$")
-    L = [l.strip() for l in linhas(pdf)]
-    res, i = {}, 0
-    while i < len(L):
-        if alvo.match(sem_acento(L[i])):
+# cabeçalhos de seção do gabarito: "Cargo - TIPO 1", "Cargo – Tipo 1", "Cargo - PROVA TIPO 1", "Cargo – PROVA 1",
+# "Cargo - 1 - Turno Tarde" (o número é o tipo da prova)
+CAB_GAB = [
+    re.compile(r"^(?P<c>.+?)\s*[-–]\s*(?:prova\s+tipo|prova|tipo)\s*(?P<t>\d)\s*(?:[-–]\s*turno\s+\S+)?\s*$", re.I),
+    re.compile(r"^(?P<c>.+?)\s*[-–]\s*(?P<t>\d)\s*[-–]\s*turno\s+\S+\s*$", re.I),
+]
+RESP = r"[A-E]|\(?\*\)?|X"
+
+
+def cabecalho_gab(linha):
+    if len(linha) > 150:
+        return None
+    for r in CAB_GAB:
+        m = r.match(linha)
+        if m:
+            return re.sub(r"\s+", " ", m.group("c")).strip(" -–"), int(m.group("t"))
+    return None
+
+
+def _letra(t):
+    return "*" if t in ("(*)", "*", "X") else t
+
+
+def _ler_secao(tk):
+    """{n: letra} de uma seção. Dois layouts: pares alternados (n, letra, n, letra...) ou blocos de números seguidos
+    dos blocos de letras (a tabela em colunas, com zeros de preenchimento nos blocos curtos)."""
+    res = {}
+    if len(tk) >= 2 and re.fullmatch(r"\d{1,3}", tk[0]) and re.fullmatch(RESP, tk[1]):
+        i = 0
+        while i + 1 < len(tk):
+            if re.fullmatch(r"\d{1,3}", tk[i]) and re.fullmatch(RESP, tk[i + 1]):
+                res[int(tk[i])] = _letra(tk[i + 1]); i += 2
+            else:
+                i += 1
+        return res
+    i = 0
+    while i < len(tk):
+        nums = []
+        while i < len(tk) and re.fullmatch(r"\d{1,3}", tk[i]) and tk[i] != "0":
+            nums.append(int(tk[i])); i += 1
+        while i < len(tk) and tk[i] == "0" and nums:
             i += 1
-            while i < len(L) and not re.search(r"(?i)\btipo\s*\d\s*$", L[i]) and not L[i].startswith("(*)"):
-                nums = []
-                while i < len(L) and re.fullmatch(r"\d{1,3}", L[i]):
-                    nums.append(int(L[i])); i += 1
-                letras = []
-                while i < len(L) and len(letras) < len(nums) and re.fullmatch(r"[A-E]|\(?\*\)?|X", L[i]):
-                    letras.append("*" if L[i] in ("(*)", "*", "X") else L[i]); i += 1
-                if not nums or len(letras) != len(nums):
-                    break
-                res.update(zip(nums, letras))
-            return res
-        i += 1
+        letras = []
+        while i < len(tk) and len(letras) < len(nums) and re.fullmatch(RESP, tk[i]):
+            letras.append(_letra(tk[i])); i += 1
+        if nums and len(letras) == len(nums):
+            res.update(zip(nums, letras))
+        elif not nums:
+            i += 1
+        else:
+            break
     return res
 
 
+def secoes(pdf):
+    """{(cargo sem acento, tipo): (cargo, {n: letra})} de todas as seções do gabarito."""
+    sec, atual = {}, None
+    for l in (x.strip() for x in linhas(pdf)):
+        if not l:
+            continue
+        h = cabecalho_gab(l)
+        if h:
+            atual = (sem_acento(h[0]), h[1])
+            sec.setdefault(atual, [h[0], []])
+        elif atual:
+            sec[atual][1].append(l)
+    return {k: (v[0], _ler_secao(v[1])) for k, v in sec.items()}
+
+
+def gabarito(pdf, cargo, tipo):
+    """{n: letra}; '*' = anulada."""
+    s = secoes(pdf).get((sem_acento(cargo), tipo))
+    return dict(s[1]) if s else {}
+
+
 TITULO = "\x01"   # marca de linha de título de bloco (disciplina) no texto de uma página
+NUMERO = "\x02"   # marca de linha só com número em negrito (número de questão; um "2" solto no meio do texto não é)
 
 
 def texto_marcado(pagina):
@@ -68,7 +121,8 @@ def texto_marcado(pagina):
                 continue
             txt = "".join(s["text"] for s in l["spans"]).strip()
             grande = max(s["size"] for s in sp) >= 11.5 and all("Bold" in s["font"] or s["flags"] & 16 for s in sp)
-            out.append((TITULO if grande else "") + txt)
+            negrito = all("Bold" in s["font"] or s["flags"] & 16 for s in sp)
+            out.append((TITULO if grande else NUMERO if negrito and re.fullmatch(r"\d{1,3}", txt) else "") + txt)
     return "\n".join(out)
 
 
@@ -97,13 +151,22 @@ def caderno(pdf, cargo=""):
     L = [l for l in L if l.strip() and l.strip() not in cab and not re.match(r"^(TRIBUNAL|FGV CONHECIMENTO|.*P[ÁA]GINA \d+\s*$|-{5,})", l.strip(), re.I)]
     qs, atual, esperado, disc, titulo = [], None, 1, "", []
     L = [l.strip() for l in L]
+    usa_negrito = any(s.startswith(NUMERO) for s in L)
+
+    def numero(s):
+        if s.startswith(NUMERO):
+            s = s[len(NUMERO):]
+        elif usa_negrito:
+            return None
+        return int(s) if re.fullmatch(r"\d{1,3}", s) else None
+
     for k, s in enumerate(L):
         if s.startswith(TITULO):   # título de bloco (fonte grande em negrito): vale para as questões seguintes
             titulo.append(s[len(TITULO):].strip())
             continue
         if titulo:
             disc = nome_disciplina(" ".join(titulo)); titulo = []
-        if re.fullmatch(r"\d{1,3}", s) and int(s) == esperado:
+        if numero(s) == esperado:
             if atual:
                 qs.append(atual)
             atual = {"n": esperado, "disciplina": disc, "linhas": []}
@@ -111,12 +174,12 @@ def caderno(pdf, cargo=""):
             continue
         # título de bloco: linha toda em maiúsculas logo antes do número da próxima questão
         prox = next((x for x in L[k + 1:k + 3] if x), "")
-        if DISC.match(s) and s == s.upper() and not ALT.match(s) and re.fullmatch(r"\d{1,3}", prox) and int(prox) == esperado:
+        if DISC.match(s) and s == s.upper() and not ALT.match(s) and numero(prox) == esperado:
             if True:
                 disc = s.title().replace(" E ", " e ").replace(" Do ", " do ").replace(" De ", " de ").replace(" Da ", " da ")
             continue
         if atual is not None:
-            atual["linhas"].append(s)
+            atual["linhas"].append(s.lstrip(NUMERO))
     if atual:
         qs.append(atual)
     out = []

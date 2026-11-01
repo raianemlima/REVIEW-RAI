@@ -1,0 +1,399 @@
+{
+ "id": "mpgo-2022-analista-juridico",
+ "nome": "MPGO 2022 · Analista Jurídico",
+ "cargo": "Concurso de servidores · prova tipo 1",
+ "banca": "FGV",
+ "gabarito": "definitivo",
+ "questoes": [
+  {
+   "n": 31,
+   "materia": "Conhecimentos Específicos Direito Administrativo",
+   "enunciado": "Promotoria de Justiça de Tutela Coletiva com atribuição ajuizou ação civil pública por ato de improbidade administrativa imputando ao ex-Prefeito do Município Alfa o ato ímprobo consistente em ter permitido a aquisição de veículos para a frota da Prefeitura por preço superior ao de mercado. Terminada a fase de instrução processual, o réu manifestou interesse em tentar a resolução do conflito de forma consensual com o Ministério Público. No caso em tela, de acordo com a Lei nº 8.429/92 – Lei de Improbidade Administrativa (com as alterações introduzidas pela Lei nº 14.230/21), a solução negocial proposta é",
+   "alternativas": {
+    "A": "impossível, porque o ordenamento jurídico veda expressamente a transação, o acordo ou a conciliação nas ações de improbidade, pelo princípio da indisponibilidade.",
+    "B": "impossível, porque na atual fase do processo já houve preclusão para tentativa de transação, acordo ou conciliação na ação de improbidade.",
+    "C": "possível, mediante a celebração de termo de ajustamento de conduta, que deverá ser submetido à homologação pelo Conselho Superior do Ministério Público.",
+    "D": "possível, mediante a celebração de transação penal, que deverá ser submetido à homologação judicial.",
+    "E": "possível, mediante a celebração de acordo de não persecução civil, que deverá ser submetido à homologação judicial."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 32,
+   "materia": "Conhecimentos Específicos Direito Administrativo",
+   "enunciado": "Em janeiro de 2020, José foi condenado a 12 anos de reclusão pela prática do crime de estupro de vulnerável e cumpria pena, em regime fechado, em um presídio do Estado Alfa, quando conseguiu fugir, através de um túnel subterrâneo, em janeiro de 2021. Oito meses depois, José se associou a outros delinquentes em organização criminosa e praticou latrocínio, que causou a morte da cidadã Maria. Familiares de Maria ajuizaram ação indenizatória contra o Estado Alfa, alegando sua responsabilidade civil objetiva, eis que Maria foi morta por José, que ainda deveria estar preso, tendo o Estado Alfa sido omisso por não exercer a contento a vigilância do preso José, que estava originariamente sob a sua custódia. No caso em tela, de acordo com a jurisprudência do Supremo por danos decorrentes do novo crime praticado por José, pessoa foragida do sistema prisional, que vitimou Maria",
+   "alternativas": {
+    "A": "não está caracterizada, pois incidiu a causa de exclusão da responsabilidade civil consistente em caso fortuito ou força maior.",
+    "B": "está caracterizada, não havendo que se provar o elemento subjetivo do dolo ou culpa dos agentes penitenciários, responsáveis pela omissão que ensejou a fuga de José.",
+    "C": "não está caracterizada, pois não restou demonstrado o nexo causal direto entre o momento da fuga de José e o latrocínio que matou Maria.",
+    "D": "está caracterizada, havendo que se provar o elemento subjetivo do dolo ou culpa dos agentes penitenciários responsáveis pela omissão que ensejou a fuga de José.",
+    "E": "está caracterizada, e o Estado Alfa, caso condenado, deve promover ação de regresso em face dos agentes públicos responsáveis pela fuga de José, mediante a demonstração de seu dolo ou culpa."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 33,
+   "materia": "Conhecimentos Específicos Direito Administrativo",
+   "enunciado": "Em matéria de contrato de desempenho, a Constituição da República dispõe que a autonomia gerencial, orçamentária e financeira dos órgãos e entidades da administração direta e indireta",
+   "alternativas": {
+    "A": "não poderá ser ampliada mediante contrato a ser firmado entre seus administradores e o poder público, que tenha por objeto a fixação de metas de desempenho para o órgão ou entidade, por expressa vedação constitucional.",
+    "B": "não poderá ser ampliada mediante contrato a ser firmado entre seus administradores e o poder público, que tenha por objeto a fixação de metas de desempenho para o órgão ou entidade, exceto se houve prévia autorização legislativa, por meio de emenda à constituição.",
+    "C": "poderá ser ampliada mediante contrato a ser firmado entre seus administradores e o poder público, que tenha por objeto a fixação de metas de desempenho para o órgão ou entidade, desde que haja prévia autorização do Ministério Público e do",
+    "D": "poderá ser ampliada mediante contrato a ser firmado entre seus administradores e o poder público, que tenha por objeto a fixação de metas de desempenho para o órgão ou entidade, cabendo à lei dispor sobre o prazo de duração do contrato, vedada inovação legal sobre os controles e critérios de avaliação de desempenho, direitos, obrigações e responsabilidade dos dirigentes, bem como a remuneração do pessoal.",
+    "E": "poderá ser ampliada mediante contrato a ser firmado entre seus administradores e o poder público, que tenha por objeto a fixação de metas de desempenho para o órgão ou entidade, cabendo à lei dispor sobre o prazo de duração do contrato, os controles e critérios de avaliação de desempenho, direitos, obrigações e responsabilidade dos dirigentes, bem como a remuneração do pessoal."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 34,
+   "materia": "Conhecimentos Específicos Direito Administrativo",
+   "enunciado": "O Estado Beta, por meio de emenda a sua Constituição, editou norma que estabelece: “A divulgação feita por autoridade de ato, programa, obra ou serviço públicos de sua iniciativa, incluídos os decorrentes de emendas à lei orçamentária anual, não caracteriza promoção pessoal, quando atenda os critérios previstos em norma interna de cada poder”. Em matéria de princípio da impessoalidade, de acordo com o entendimento do Supremo Tribunal Federal, a norma editada é",
+   "alternativas": {
+    "A": "inconstitucional, por violar a norma da Constituição da República que dispõe que da publicidade de atos programas, obras, serviços e campanhas dos órgãos públicos não podem constar nomes, símbolos ou imagens que caracterizem promoção pessoal de autoridades ou servidores públicos, sendo que tal dispositivo da Carta Magna não admite flexibilização por norma infraconstitucional ou regulamentar.",
+    "B": "inconstitucional, por violar a norma da Constituição da República que dispõe que da publicidade de atos programas, obras, serviços e campanhas dos órgãos públicos não podem constar nomes, símbolos ou imagens que caracterizem promoção pessoal de autoridades ou servidores públicos, sendo que tal dispositivo da Carta Magna admite flexibilização apenas por lei federal.",
+    "C": "constitucional, porque a Constituição da República dispõe que da publicidade de atos programas, obras, serviços e campanhas dos órgãos públicos podem constar nomes, símbolos ou imagens que caracterizem promoção pessoal de autoridades ou servidores públicos, exceto se restar comprovado efetivo benefício direto ao agente público envolvido.",
+    "D": "constitucional, porque a autonomia federativa de cada ente lhe permite regulamentar a norma da Constituição da República que dispõe que da publicidade de atos programas, obras, serviços e campanhas dos órgãos públicos não podem constar quaisquer nomes, símbolos ou imagens de autoridades ou servidores públicos.",
+    "E": "constitucional, porque a Constituição da República dispõe que da publicidade de atos, programas, obras, serviços e campanhas dos órgãos públicos podem constar nomes, símbolos ou imagens que caracterizem promoção pessoal de autoridades ou servidores públicos, exceto se restar comprovado benefício eleitoral ou patrimonial ao agente público envolvido."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 35,
+   "materia": "Direito Constitucional",
+   "enunciado": "Antônio e João travaram intenso debate a respeito da inconstitucionalidade por omissão, em razão da infração ao dever constitucional de legislar, e dos instrumentos passíveis de serem utilizados, pelos legitimados, para obterem um provimento jurisdicional que integre a eficácia da norma constitucional, não se limitando a comunicar a omissão ao Poder Legislativo. Ao final, concluíram que: (I) a ação direta de inconstitucionalidade por omissão não pode ser utilizada com esse objetivo; (II) o mandado de injunção pode ser utilizado com esse objetivo, qualquer que seja a natureza da omissão; e (III) a superveniência de norma regulamentadora, mais favorável, sempre produzirá efeitos ex nunc em relação aos beneficiados por decisão transitada em julgado proferida em sede de mandado de injunção. Nesse caso, é correto afirmar que",
+   "alternativas": {
+    "A": "nenhuma conclusão está certa.",
+    "B": "todas as conclusões estão certas.",
+    "C": "apenas as conclusões I e II estão certas.",
+    "D": "apenas as conclusões I e III estão certas.",
+    "E": "apenas as conclusões II e III estão certas."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 36,
+   "materia": "Direito Constitucional",
+   "enunciado": "João nasceu em território brasileiro quando seus pais, de nacionalidade francesa, aqui trabalhavam a serviço do governo francês, na respectiva embaixada. Poucos meses após o nascimento, foi levado para a França e jamais retornou ao Brasil. Trinta anos depois, casou, no território francês, com Maria, brasileira nata. Dessa União advieram filhos, todos nascidos na França, sendo adquiridos bens imóveis naquele País e no Brasil. Com o falecimento de João, Maria e seus filhos procuraram um advogado e o questionaram a respeito da lei aplicável na sucessão dos bens situados no território brasileiro. O advogado respondeu corretamente que, de acordo com a ordem constitucional,",
+   "alternativas": {
+    "A": "João era brasileiro nato, logo, a sucessão será regulada pela lei brasileira.",
+    "B": "João era estrangeiro, mas a sucessão será regulada pela lei brasileira em benefício de Maria e seus filhos, caso lhes seja mais favorável.",
+    "C": "João era brasileiro nato, logo, a sucessão será regulada pela lei brasileira, desde que seja mais favorável a Maria e aos filhos que a lei francesa.",
+    "D": "João era estrangeiro, mas a sucessão será regulada pela lei brasileira em benefício de Maria, mas não em benefício de seus filhos, que têm nacionalidade francesa.",
+    "E": "João era estrangeiro, mas a sucessão será regulada pela lei brasileira em benefício de Maria e seus filhos, quer lhes seja mais favorável que a lei pessoal do de cujus, quer não."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 37,
+   "materia": "Direito Constitucional",
+   "enunciado": "A Promotoria de Justiça da Comarca Alfa recebeu representação informando que determinado Município estava destinando recursos públicos a escolas privadas, de cunho confessional, assim definidas em lei. À luz da sistemática constitucional, é correto afirmar que a destinação dos recursos às referidas escolas",
+   "alternativas": {
+    "A": "não é permitida em hipótese alguma, pois colide com a laicidade exigida das estruturas estatais de poder.",
+    "B": "é permitida, desde que os recursos sejam direcionados, paritariamente, a todas as denominações religiosas.",
+    "C": "é permitida, desde que não remunerem os seus dirigentes, tenham os seus projetos de ensino aprovados pelo Ministério da Educação e adotem o sistema de cotas para índios e afrodescendentes.",
+    "D": "é permitida, desde que comprovem finalidade não lucrativa, apliquem os excedentes financeiros em educação e o seu patrimônio, em caso de encerramento de atividades, seja destinado do modo estabelecido pela Constituição.",
+    "E": "é permitida, desde que não tenham fins lucrativos, apliquem os excedentes financeiros em educação, tenham os seus projetos de ensino aprovados pelo Ministério da Educação e adotem o sistema de cotas para índios e afrodescendentes."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 38,
+   "materia": "Direito Constitucional",
+   "enunciado": "O Governador do Estado Alfa consultou sua assessoria a respeito da possibilidade de encaminhar uma proposição à Assembleia Legislativa visando à alteração da Lei Orgânica do Ministério Público do respectivo Estado. A assessoria respondeu corretamente que o Governador do Estado",
+   "alternativas": {
+    "A": "está legitimado, juntamente com o Procurador-Geral de Justiça, para apresentar o projeto de lei complementar, que deve se harmonizar às normas gerais veiculadas na lei complementar nacional.",
+    "B": "está legitimado, juntamente com o Procurador-Geral de Justiça, para apresentar o projeto de lei complementar, que deve se harmonizar às normas gerais veiculadas na lei ordinária nacional.",
+    "C": "não está legitimado, de modo que apenas o Procurador-Geral de Justiça pode apresentar o projeto de lei complementar, que deve se harmonizar às normas gerais veiculadas na lei ordinária nacional.",
+    "D": "está legitimado, juntamente com o Procurador-Geral de Justiça, para apresentar o projeto de lei ordinária, que deve se harmonizar às normas gerais veiculadas na lei complementar nacional.",
+    "E": "não está legitimado, de modo que apenas o Procurador-Geral de Justiça pode apresentar o projeto de lei ordinária, que deve se harmonizar às normas gerais veiculadas na lei ordinária nacional."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 39,
+   "materia": "Direito Civil",
+   "enunciado": "A Fundação da Livro Aberto foi instituída com a finalidade de promover a leitura. Seus instituidores dotaram os bens necessários para cumprir o escopo, porém, após dez anos de regular funcionamento e contas regularmente aprovadas pelo Ministério Público, verificam que o patrimônio ainda restante não possibilita a manutenção das atividades. Diante disto, apesar do ato constitutivo não prever prazo e a forma de extinção, os instituidores pretendem extingui-la. A este respeito, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "Após a extinção, os instituidores farão jus a bens na proporção da integralização que cada qual realizou.",
+    "B": "A extinção deve ser promovida sob a condução do Poder Judiciário, a despeito do consenso dos instituidores.",
+    "C": "Os instituidores não possuem legitimidade para promover a extinção da Fundação Livro Aberto.",
+    "D": "Após a extinção, os bens da fundação serão incorporados em outra fundação com igual ou semelhante finalidade.",
+    "E": "Uma vez extinta, os bens deverão ser revertidos ao Município em que a fundação é domiciliada."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 40,
+   "materia": "Direito Civil",
+   "enunciado": "Jorge alugou de Tiago uma casa em Aparecida de Goiânia, pelo período de doze meses. Quando do término do contrato, Tiago recebeu o imóvel, em 30 de novembro, ressalvando a ausência de pagamento do último aluguel, o que deveria ocorrer em 05 de dezembro seguinte. Jorge não realizou o pagamento na data aprazada e Jorge viu-se obrigado a ajuizar ação para cobrar o valor devido por Tiago. A despeito de não haver previsão contratual, é correto afirmar que, em relação aos juros de mora,",
+   "alternativas": {
+    "A": "são devidos a partir de 30 de novembro.",
+    "B": "são devidos a partir de 05 de dezembro.",
+    "C": "não são devidos, pois não convencionados.",
+    "D": "são devidos a partir da data de celebração do contrato.",
+    "E": "não são devidos antes do trânsito em julgado da sentença."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 41,
+   "materia": "Direito Civil",
+   "enunciado": "Após habitar por três anos um imóvel rural com sua família, Marta decidiu alienar o “direito e ação” que possui sobre o bem, apesar de não ser a titular do direito real de propriedade, que pertence a Tiago, desconhecido na região. Roberto se interessa pelo imóvel e ajusta com Marta o preço de cem mil reais. Acerca desse negócio jurídico, é correto afirmar que",
+   "alternativas": {
+    "A": "a forma pública é necessária, ante o valor convencionado entre as partes.",
+    "B": "o instrumento pode ser particular, tendo em vista que o “direito e ação” se trata de uma detenção.",
+    "C": "a alienação do “direito e ação” deve ser por instrumento público, ante a ocorrência de usucapião.",
+    "D": "Tiago deve anuir com a alienação, independentemente da forma do negócio jurídico.",
+    "E": "a posse de que Marta é titular pode ser cedida por instrumento particular."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 42,
+   "materia": "Direito Civil",
+   "enunciado": "Júlia faleceu no mês de janeiro do ano corrente e deixou quatro filhos capazes, havidos em um primeiro casamento, e o companheiro Ricardo. A união estável de Júlia e Ricardo havia sido regulamentada em escritura pública sob o regime da separação convencional de bens. O monte sucessório de Júlia era composto por recursos mantidos em conta bancária e um imóvel, em que residia com o companheiro. Acerca da sucessão do patrimônio de Júlia, que não deixou testamento, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "Ricardo fará jus à metade do que couber a cada um dos quatro filhos de Júlia.",
+    "B": "A cada filho caberá um quarto do monte deixado por Júlia e a Ricardo, o direito real de habitação sobre o imóvel.",
+    "C": "Além do usufruto sobre o imóvel, Ricardo fará jus uma quota mínima de um quarto da herança.",
+    "D": "Ricardo receberá um quinto do patrimônio deixado por Júlia, bem como fará jus a direito real de habitação sobre o imóvel.",
+    "E": "Apenas os filhos concorrerão à sucessão dos bens deixados por Júlia."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 43,
+   "materia": "Direito Processual Civil",
+   "enunciado": "Marcos ajuíza ação de indenização em face de renomada clínica, especializada em realizar técnicas de reprodução assistida, em virtude de ter descoberto que seu filho, atualmente com quatro anos de idade, não possui o mesmo material genético que o seu, ao contrário do que foi acordado quando da realização da referida técnica. Diante do ocorrido, solicita perante o juízo competente a decretação de segredo de justiça. Nesse caso, assinale a afirmativa correta.",
+   "alternativas": {
+    "A": "Subsiste razão ao pleito de Marcos, considerando que é direito da parte interessada requerer segredo de justiça, independente de motivação, devendo o mesmo ser decretado sempre que a controvérsia não envolver interesse público e social.",
+    "B": "Não haveria fundamentação ao pleito de Marcos, tendo em vista o melhor interesse da criança em conhecer suas origens genéticas.",
+    "C": "Subsiste razão ao pleito de Marcos, tendo em vista as hipóteses de decretação de segredo de justiça contidas no art. 189 do Código de Processo Civil.",
+    "D": "Não haveria fundamentação ao pleito de Marcos, considerando a relevância e notoriedade da divulgação do caso, afeto ao interesse público e social.",
+    "E": "Não haveria fundamentação ao pleito de Marcos, considerando os pressupostos gerais contidos no Código de Processo Civil, cuja eventual decretação de segredo de justiça precede de solicitação anterior ao ajuizamento da demanda, nos termos do art. 189 do referido diploma."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 44,
+   "materia": "Direito Processual Civil",
+   "enunciado": "Joana, irresignada com sucessivos atrasos no pagamento de encargos que deveriam ser realizados com Augusto, em sede de contrato de prestação de serviços, decide ingressar com ação de cobrança. Interposta a petição inicial e sem qualquer indicação do desinteresse na autocomposição, o juízo agenda de forma automática a audiência de mediação. Intimados, Joana e Augusto mantêm-se inertes quanto à manifestação. Chegado o dia da realização da audiência, Joana decide não comparecer, pois permanece muito incomodada com as atitudes anteriores de Augusto e não deseja adentrar em qualquer tratativa de solução. Diante dessa circunstância,",
+   "alternativas": {
+    "A": "não há qualquer consequência à Joana, tendo em vista que ambas as partes não se manifestaram a respeito da realização da audiência.",
+    "B": "o fato de Joana não ter comparecido resultará em um posterior pedido de retratação em juízo a Augusto, que prontamente esteve presente na audiência.",
+    "C": "a ausência de Joana se mostra devidamente justificada, pois como é autora da ação, seu mero silêncio resulta na inaplicabilidade da realização da audiência, considerando ser a parte mais interessada na resolução da lide.",
+    "D": "a ausência injustificada de Joana é considerada ato atentatório à dignidade da Augusto, podendo resultar em aplicação de multa de até 10% a vantagem econômica pretendida ou do valor da causa, em favor de Augusto.",
+    "E": "a ausência injustificada de Joana é considerada ato atentatório à dignidade da justiça, podendo resultar em aplicação de multa de até 2% a vantagem econômica pretendida ou do valor da causa, em favor do Estado ou da União."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 45,
+   "materia": "Direito Processual Civil",
+   "enunciado": "Maria, mãe de Joaquim, de 8 anos, deseja ingressar em juízo objetivando requerer alimentos em face do pai e ex-cônjuge, Bruno, considerando que o filho do então casal reside apenas com ela e, até o presente momento, Bruno não estava auxiliando com as despesas do filho. Nesse sentido, em razão da incapacidade civil absoluta de Joaquim, a teor do Art. 3º do Código Civil, Maria ingressa com a demanda em seu nome. Nesse cenário,",
+   "alternativas": {
+    "A": "a demanda prosseguirá normalmente, tendo em vista a incapacidade civil e processual de Joaquim para ingressar em juízo, conforme art. 70 do Código de Processo Civil.",
+    "B": "a demanda deverá ser editada para que prossiga normalmente, considerando que Maria deveria ingressar somente em nome de Joaquim, o único destinatário da obrigação de prestar alimentos, cabendo ao juízo a designação de curador especial.",
+    "C": "a demanda deverá ser editada para que prossiga normalmente, pois, nos termos do art. 71 do Código de Processo Civil, a demanda deveria ser peticionada em nome de Joaquim, mas representado por Maria.",
+    "D": "a demanda deverá ser editada para que prossiga normalmente, pois em razão da incapacidade absoluta de Joaquim, a demanda deve ser representada pelo advogado, devidamente constituído perante a Ordem dos Advogados do Brasil ou por curador especial designado pelo juízo.",
+    "E": "a demanda prosseguirá normalmente, tendo em vista que a incapacidade civil absoluta de Joaquim impõe que a demanda seja ajuizada em nome daquele que o representa, no caso sua genitora."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 46,
+   "materia": "Direito Processual Civil",
+   "enunciado": "Em meio ao transcurso de determinada ação coletiva visando à reparação de danos ambientais, autor e réu já apresentaram suas respectivas manifestações tempestivamente no processo. Pouco antes da suspensão temporária dos prazos, em virtude do recesso forense, o Ministério Público é intimado para intervir na demanda. Com o retorno das atividades judiciárias, passados 18 (dezoito) dias úteis da ciência da referida intimação, o membro do parquet se manifesta devidamente perante os autos, por meio de parecer favorável à pretensão autoral, em virtude do reconhecimento dos danos deflagrados. Nesse cenário,",
+   "alternativas": {
+    "A": "a intervenção é tempestiva, considerando o disposto no Art. 178, I do Código de Processo Civil.",
+    "B": "a intervenção é intempestiva, tendo em vista que o atual Código de Processo Civil padronizou a contagem de prazos processuais em 15 dias úteis.",
+    "C": "a intervenção é intempestiva, pois se trata de hipótese a qual o Ministério Público não goza de qualquer contagem de prazo dobrado, nos termos do Art. 180, §2º do Código de Processo Civil.",
+    "D": "a intervenção é tempestiva, considerando que os 30 dias corridos se opera após o retorno de recesso forense do Poder Judiciário, nos termos da Lei Orgânica da Magistratura Nacional.",
+    "E": "a intervenção é tempestiva, pois em razão de envolver matéria de Direito Ambiental, há expressiva complexidade, apta a permitir a contagem de prazo dobrado, consoante o microssistema de tutela coletiva, na forma do Art. 81 do Código de Defesa do Consumidor."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 47,
+   "materia": "Direito Penal",
+   "enunciado": "João, empresário, foi preso em flagrante pela prática do crime de apropriação indébita, previsto no Art. 168 do Código Penal. Levado para a delegacia, João entrou em contato com seu advogado Paulo, que foi então a seu encontro. Durante conversa reservada, João pediu a seu advogado que resolvesse a questão, afirmando que estaria disposto a pagar para não ficar preso. Diante disso, Paulo procurou o policial Fernando e ofereceu a quantia de R$2.000,00 para que João fosse solto e não respondesse por nada. O policial não concordou com o valor oferecido e, durante a negociação, solicitou R$6.000,00 para atender ao pedido do advogado. Após consultar João, Paulo efetuou o pagamento do valor solicitado. Ao tomar conhecimento dos fatos, Sérgio, colega de Fernando, prendeu o policial em flagrante, apreendendo o valor e relatando os fatos ao Delegado. No entanto, apresentou apenas R$4.000,00, dos R$6.000,00 apreendidos com Fernando, ficando com a diferença. Diante dos fatos narrados, João, Paulo, Fernando e Sérgio, deverão ser responsabilizados penalmente, respectivamente, pela prática dos crimes de",
+   "alternativas": {
+    "A": "corrupção passiva; corrupção passiva; corrupção ativa e furto.",
+    "B": "corrupção ativa; corrupção ativa; corrupção passiva e peculato desvio.",
+    "C": "corrupção ativa; corrupção ativa; corrupção passiva e peculato apropriação.",
+    "D": "corrupção passiva; corrupção passiva; corrupção ativa e peculato furto.",
+    "E": "corrupção ativa; corrupção ativa; corrupção passiva e peculato furto."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 48,
+   "materia": "Direito Penal",
+   "enunciado": "Joaquim, desejando subtrair um veículo automotor, abordou Paula que estava parada no semáforo de uma rua com pouco movimento. Ao anunciar o assalto, Paula ficou assustada e, por não ter veículos à sua frente, acelerou seu carro, avançando a sinalização. Joaquim, diante da conduta de Paula, efetuou disparo com sua arma de fogo na direção da condutora, vindo a matá-la. Assustado, Joaquim fugiu do local sem levar qualquer objeto pertencente à vítima. Com base no entendimento sumulado pelo Supremo Tribunal Federal é correto afirmar que Joaquim responderá pelo crime de",
+   "alternativas": {
+    "A": "latrocínio tentado.",
+    "B": "latrocínio consumado.",
+    "C": "roubo tentado em concurso com homicídio consumado.",
+    "D": "roubo impróprio consumado em concurso com homicídio consumado.",
+    "E": "furto majorado pelo emprego de arma de fogo tentado e homicídio consumado."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 49,
+   "materia": "Direito Penal",
+   "enunciado": "Sandro foi preso em flagrante ao subtrair um pacote de macarrão, cujo valor era R$9,00, de um hipermercado do bairro onde morava. O Ministério Público ofereceu denúncia em face de Sandro, mas o magistrado rejeitou a peça acusatória, reconhecendo a incidência do princípio da bagatela ou insignificância. O referido princípio exclui a",
+   "alternativas": {
+    "A": "ilicitude.",
+    "B": "tipicidade formal.",
+    "C": "culpabilidade.",
+    "D": "tipicidade material.",
+    "E": "punibilidade."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 50,
+   "materia": "Direito Penal",
+   "enunciado": "O Código Penal, ao tratar da Aplicação da Pena, determina a utilização do critério trifásico, nos termos do disposto no seu artigo 68, cabendo ao Magistrado, na Sentença, determinar a quantidade de pena aplicável ao Réu. Dentre as circunstâncias que acarretam a elevação da pena do réu encontra-se a reincidência. No critério trifásico, a reincidência é considerada",
+   "alternativas": {
+    "A": "agravante.",
+    "B": "qualificadora.",
+    "C": "majorante.",
+    "D": "circunstância judicial.",
+    "E": "atenuante."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 51,
+   "materia": "Direito Processual Penal",
+   "enunciado": "No dia 30 de junho de 2020, o Ministério Público ofereceu denúncia em face de Augusto, nascido em 10 de janeiro de 1992, imputando a ele a prática do crime de estupro de vulnerável, delito previsto no Art. 217-A do Código Penal. Segundo a inicial acusatória, no dia 16 de fevereiro de 2015, o acusado manteve conjunção carnal com Vitória, que à época possuía 13 anos de idade, pois nascida em 2 de fevereiro de 2002. Ao saber do fato e antes que a jovem completasse 18 anos, os pais de Vitória procuraram a delegacia de polícia, manifestando expressamente a vontade de ver Augusto responsabilizado criminalmente, o que foi por ela confirmado ao atingir a maioridade. No inquérito, foram reunidos elementos de informação suficientes à satisfação do lastro mínimo probatório exigido para a acusação. Entretanto, a denúncia foi rejeitada liminarmente pelo juiz competente. Ao fundamentar sua decisão, o magistrado apontou a ilegitimidade de parte, entendendo que não caberia ao Parquet exercer a ação penal, que não poderia ser admitida. Com base nas informações apresentadas, assinale a afirmativa correta para o caso.",
+   "alternativas": {
+    "A": "Caberia ao Ministério Público interpor Recurso em Sentido Estrito em face da decisão de rejeição da denúncia, sustentando que o crime em questão era de ação penal pública tanto à época do fato quanto no momento do oferecimento da acusação.",
+    "B": "Caberia ao Ministério Público comunicar a vítima para o oferecimento de queixa-crime no prazo de 6 meses após completar 18 anos, tendo em vista que, à época do fato, o crime era de ação penal privada.",
+    "C": "Caberia ao Ministério Público interpor Recurso em Sentido Estrito, sustentando que, à época do fato, o crime em questão era de ação penal privada, mas a Lei 13.718/18 tornou a ação penal pública incondicionada, sendo de aplicação imediata os dispositivos modificados pela referida legislação.",
+    "D": "Caberia ao Ministério Público interpor recurso de Apelação em face da decisão de rejeição da denúncia, sustentando que o crime em questão era de ação penal pública tanto à época do fato quanto no momento do oferecimento da acusação.",
+    "E": "A punibilidade estava extinta em razão da decadência, pois a queixa-crime não foi oferecida no prazo de 6 meses pelos pais de Vitória."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 52,
+   "materia": "Direito Processual Penal",
+   "enunciado": "Álvaro foi preso em flagrante delito em 16 de março de 2021, após subtrair, mediante emprego de arma de fogo, o celular de Josué. Sua prisão foi convertida em preventiva, sendo o indiciado mantido preso durante a investigação, que reuniu elementos suficientes à formação da justa causa. Os autos do inquérito foram recebidos pelo Ministério Público no dia 8 de abril de 2021. No entanto, o promotor com atribuição para o caso não ofereceu denúncia no prazo legal, não requereu novas diligências e nem promoveu o arquivamento. Diante da inércia ministerial, Álvaro contratou advogado que, no dia 21 de setembro de 2021, ofereceu queixa-crime, imputando a Josué a prática do delito de roubo, na forma do Art. 157, § 2º-A, I, do Código Penal. Considerando os elementos fornecidos pelo enunciado, é correto afirmar que",
+   "alternativas": {
+    "A": "ainda que fosse admissível a ação penal privada subsidiária da pública pela inércia do Ministério Público, operou-se, no caso, a decadência, pois ultrapassado o prazo de seis meses do conhecimento da autoria delitiva.",
+    "B": "ante a inércia do Parquet, era admissível a ação penal privada subsidiária da pública, não podendo, entretanto, o Ministério Público intervir, de modo algum, no processo.",
+    "C": "a queixa-crime era inadmissível, apesar da inércia do Ministério Público, pois a ação penal relativa ao crime em questão é de iniciativa pública incondicionada.",
+    "D": "verificada a inércia do Parquet, era admissível a ação penal privada subsidiária da pública, podendo o Ministério Público, nesse caso, aditar a queixa, repudiá-la e oferecer denúncia substitutiva, intervir em todos os termos do processo, fornecer elementos de prova, interpor recurso e retomar a ação como parte principal em caso de negligência do querelante.",
+    "E": "verificada a inércia do Parquet, era admissível a ação penal privada subsidiária da pública, podendo o Ministério Público oferecer denúncia substitutiva, intervir em todos os termos do processo, fornecer elementos de prova, mas não aditar a queixa, interpor recurso ou retomar a ação."
+   },
+   "gabarito": "X"
+  },
+  {
+   "n": 53,
+   "materia": "Direito Processual Penal",
+   "enunciado": "Magno foi acusado pela prática do crime de extorsão mediante sequestro qualificado, delito previsto no Art. 159, § 1º, CP e punido com pena de reclusão de doze a vinte anos. Por ocasião do oferecimento da inicial acusatória, o Ministério Público postulou a decretação da prisão preventiva do acusado. Após receber a denúncia, o magistrado atendeu ao pedido do Parquet e impôs a segregação cautelar, limitando-se a afirmar genericamente que adotava a manifestação ministerial, sem sequer transcrever nenhum de seus fundamentos ou apontar fatos e razões concretas para a decretação. Na hipótese é correto afirmar que",
+   "alternativas": {
+    "A": "a decisão que decretou a prisão preventiva é válida.",
+    "B": "há nulidade absoluta em relação à decisão que decretou a prisão preventiva.",
+    "C": "há nulidade relativa em relação à decisão que decretou a prisão preventiva.",
+    "D": "a decisão é inexistente por ausência de fundamentação.",
+    "E": "há mera irregularidade em relação à decisão que decretou a prisão preventiva."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 54,
+   "materia": "Direito Processual Penal",
+   "enunciado": "Tarcísio foi denunciado pela prática do crime de falsificação de documento público, crime punido com pena privativa de liberdade máxima de seis anos de reclusão. A denúncia foi recebida, o acusado citado e oferecida resposta à acusação. Ambas as partes arrolaram testemunhas e houve requerimento de oitiva dos peritos. Não ocorrendo a absolvição sumária, o juiz competente designou audiência de instrução e julgamento. De acordo com os dados apresentados, aponte a alternativa correta acerca do procedimento em questão.",
+   "alternativas": {
+    "A": "Aplicável, na hipótese, o rito comum ordinário. Por esse procedimento, as provas devem ser produzidas em uma só audiência, a ser realizada no prazo máximo de 60 dias, sendo ouvidas, nesta ordem, as testemunhas arroladas pela defesa e pela acusação, observando-se o sistema de exame cruzado para as arguições. Além disso, devem ser tomados esclarecimentos dos peritos para, por fim, ser o acusado interrogado.",
+    "B": "Aplicável, na hipótese, o rito comum ordinário. Por esse procedimento, as provas devem ser produzidas em uma só audiência, a ser realizada no prazo máximo de 30 dias, sendo ouvidas, nesta ordem, as testemunhas arroladas pela acusação e pela defesa, sendo as perguntas requeridas pelas partes ao juiz, que as formula diretamente. Além disso, devem ser tomados esclarecimentos dos peritos para, por fim, ser o acusado interrogado.",
+    "C": "Aplicável, na hipótese, o rito especial dos crimes contra a fé pública. Por esse procedimento, as provas devem ser produzidas em uma só audiência, sendo o acusado interrogado para depois serem tomados os depoimentos das testemunhas de acusação e de defesa, nesta ordem e, por fim, ouvidos os peritos.",
+    "D": "Aplicável, na hipótese, o rito comum ordinário. Por esse procedimento, as provas devem ser produzidas em uma só audiência, a ser realizada no prazo máximo de 60 dias, sendo ouvidas, nesta ordem, as testemunhas arroladas pela acusação e pela defesa, observando-se o sistema de exame cruzado para as arguições. Além disso, devem ser tomados esclarecimentos dos peritos para, por fim, ser o acusado interrogado.",
+    "E": "Aplicável, na hipótese, o rito comum sumário. Por esse procedimento, as provas devem ser produzidas em uma só audiência a ser realizada no prazo máximo de 30 dias, sendo ouvidas, nesta ordem, as testemunhas arroladas pela acusação e pela defesa, observando-se o sistema de exame cruzado para as arguições. Além disso, devem ser tomados esclarecimentos dos peritos para, por fim, ser o acusado interrogado."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 55,
+   "materia": "Direito Tributário",
+   "enunciado": "José, residente e domiciliado em Goiânia, faleceu nesta cidade, sem testamento, deixando ações negociadas em bolsas e um automóvel registrado junto ao DETRAN do Estado de Minas Gerais. Seus herdeiros, todos maiores e capazes, de comum acordo, decidiram realizar seu inventário extrajudicial perante tabelião de Goiânia. Diante desse cenário, os herdeiros de José deverão recolher o Imposto sobre a Transmissão Causa Mortis e Doações",
+   "alternativas": {
+    "A": "ao Estado de Goiás, tanto em relação às ações como em relação ao automóvel.",
+    "B": "ao Estado de Goiás, em relação às ações; e ao Estado de Minas Gerais em relação ao automóvel.",
+    "C": "à União, em relação às ações; e ao Estado de Minas Gerais em relação ao automóvel.",
+    "D": "à União, em relação às ações; e dividido em percentuais iguais de 50% cada aos Estados de Goiás e Minas Gerais em relação ao automóvel.",
+    "E": "à União, em relação às ações; e percentual de 25% ao Estado de Goiás e 75% ao Estado de Minas Gerais em relação ao automóvel."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 56,
+   "materia": "Direito Tributário",
+   "enunciado": "Lei do Estado Alfa publicada em 31/12/2021 majorou as bases de cálculo do Imposto sobre a Propriedade de Veículos Automotores (IPVA) pelo valor de mercado, estabelecendo que as alterações teriam efeitos a partir de 01/01/2022. Também em 31/12/2021, Decreto do Prefeito da Capital do Estado Alfa estabeleceu a atualização, pelo índice inflacionário oficial, do valor monetário da base de cálculo do Imposto sobre a Propriedade Predial e Territorial Urbana (IPTU), determinando que as alterações também teriam efeitos a partir de 01/01/2022. Diante desse cenário",
+   "alternativas": {
+    "A": "tanto a lei estadual como o decreto municipal violaram o princípio da anterioridade nonagesimal, e o decreto municipal também violou o princípio da legalidade tributária.",
+    "B": "a lei estadual violou o princípio da anterioridade nonagesimal, mas o decreto municipal apenas violou o princípio da legalidade tributária.",
+    "C": "a lei estadual não violou o princípio da anterioridade nonagesimal, mas o decreto municipal violou tanto o princípio da legalidade tributária como o da anterioridade nonagesimal.",
+    "D": "nem a lei estadual nem o decreto municipal violaram o princípio da anterioridade nonagesimal, mas o decreto municipal violou o princípio da legalidade tributária.",
+    "E": "nem a lei estadual nem o decreto municipal violou o princípio da anterioridade nonagesimal, e o decreto municipal tampouco violou o princípio da legalidade tributária."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 57,
+   "materia": "Direito Tributário",
+   "enunciado": "A empresa ABC Roupas Ltda. foi notificada pelo Fisco do Estado Beta para, em até 30 dias do recebimento da notificação, recolher valores não declarados nem pagos de Imposto sobre a Circulação de Mercadorias e Serviços (ICMS). No 5º dia após o recebimento da notificação, precisou requerer certidão de quitação de tributos estaduais para participar de licitação. À luz do Código Tributário Nacional, deverá ser a ela emitida uma",
+   "alternativas": {
+    "A": "Certidão Negativa.",
+    "B": "Certidão Positiva.",
+    "C": "Certidão Positiva com Efeitos de Negativa.",
+    "D": "Certidão Negativa com Efeitos de Positiva.",
+    "E": "Certidão de Dívida Ativa."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 58,
+   "materia": "Direito Tributário",
+   "enunciado": "Acerca do Regime Especial Unificado de Arrecadação de Tributos e Contribuições devidos pelas Microempresas e Empresas de Pequeno Porte - Simples Nacional e à luz da Lei Complementar nº 123/2006, julgue as afirmativas abaixo: I. Estão abrangidos pelo recolhimento no regime do Simples Nacional, dentre outros impostos federais, o Imposto sobre a Renda da Pessoa Jurídica - IRPJ; o Imposto sobre Produtos Industrializados - IPI e o Imposto sobre Operações de Crédito, Câmbio e Seguro, ou Relativas a Títulos ou Valores Mobiliários - IOF. II. A opção pelo Simples Nacional da pessoa jurídica enquadrada na condição de microempresa e empresa de pequeno porte é irretratável para todo o ano-calendário. III. Não poderão recolher os impostos e contribuições na forma do Simples Nacional a microempresa ou empresa de pequeno porte que tenha sócio domiciliado no exterior. Está correto apenas o que se afirma em",
+   "alternativas": {
+    "A": "I.",
+    "B": "II.",
+    "C": "III.",
+    "D": "I e III.",
+    "E": "II e III."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 59,
+   "materia": "Direitos Humanos",
+   "enunciado": "João agrediu Maria, sua esposa, causando-lhe lesões corporais leves, o que foi objeto de registro junto ao órgão policial competente. Após o encaminhamento do expediente ao Ministério Público, mas em momento anterior ao oferecimento da denúncia, Maria solicitou ao Promotor de Justiça o “arquivamento do caso”. À luz dessa narrativa, é correto afirmar que a referida solicitação",
+   "alternativas": {
+    "A": "deve ser interpretada como retratação da representação, o que obsta o ajuizamento da denúncia, isto sem prejuízo da adoção de medidas protetivas em prol de Maria.",
+    "B": "não obsta o oferecimento da denúncia ou a adoção de medidas protetivas em prol de Maria, não sendo possível a suspensão condicional do processo.",
+    "C": "não obsta o oferecimento da denúncia ou a adoção de medidas protetivas em prol de Maria, sendo possível a suspensão condicional do processo.",
+    "D": "deve ser interpretada como retratação da representação, o que obsta o ajuizamento da denúncia e a adoção de medidas protetivas em prol de Maria.",
+    "E": "deve ser ratificada em juízo e, caso o seja, obstará o oferecimento de denúncia e a adoção de medidas protetivas em prol de Maria."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 60,
+   "materia": "Direitos Humanos",
+   "enunciado": "O adolescente Pedro, pessoa com deficiência, acompanhado de seus pais, compareceu à Secretaria de Educação do Município Alfa e solicitou a concessão de certos mecanismos de tecnologia assistiva. Esses mecanismos se mostravam necessários para a superação de algumas barreiras que se apresentavam para o desenvolvimento do pleno aprendizado de Pedro no âmbito da escola pública municipal em que se encontrava matriculado. À luz da ordem jurídica vigente, é correto afirmar que Pedro",
+   "alternativas": {
+    "A": "não tem direito à obtenção de mecanismos dessa natureza, já que a encampação, pela Administração Pública, de evoluções tecnológicas, configura faculdade, não obrigação, sendo matéria estranha à proteção das pessoas com deficiência.",
+    "B": "não tem direito à obtenção de mecanismos dessa natureza, pois a Administração Pública somente tem a obrigação de afastar as barreiras urbanísticas, arquitetônicas, nos transportes, nas comunicações e atitudinais.",
+    "C": "tem direito à obtenção de mecanismos dessa natureza, se necessários à ampliação de suas habilidades funcionais, sendo que a recusa de fornecimento é considerada discriminação em razão da deficiência.",
+    "D": "não tem direito à obtenção de mecanismos dessa natureza, pois a Administração Pública somente tem a obrigação de afastar as barreiras urbanísticas, arquitetônicas e negacionistas.",
+    "E": "tem direito à obtenção de tecnologias assistivas, que abrangem as adaptações e as modificações em construções e estruturas, as quais ostentam caráter inclusivo da pessoa com deficiência. Questão 01 A lei de organização judiciária do Estado Alfa dispôs que competiria ao Tribunal de Justiça do respectivo Estado processar e julgar, em caráter originário, os mandados de segurança impetrados em face das autoridades ali relacionadas. Apesar disso, surgiram diversas vozes defendendo a inconstitucionalidade desse diploma normativo, incluindo decisões monocráticas, proferidas em primeira instância, que recebiam mandados de segurança impetrados contra essas autoridades, afastando a competência do Tribunal de Justiça. Ao constatar o que estava ocorrendo, o Partido Político Beta, principal defensor do projeto de lei que fora encaminhado pelo Tribunal de Justiça, consultou sua assessoria jurídica a respeito da possibilidade de uma lei de organização judiciária estadual ter a sua constitucionalidade reconhecida, pelo Supremo Tribunal Federal, em ação na qual seja formulado pedido especificamente direcionado a esse fim, bem como se a lei de organização judiciária do Estado Beta apresentava algum vício de inconstitucionalidade. Analise, em texto discursivo, os dois aspectos objeto da indagação direcionada à assessoria jurídica. 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 Questão 02 Paula e Joana reuniram-se para praticar crimes contra idosos na cidade de Anápolis. Em certa ocasião, no dia 12 de novembro de 2021, Paula foi até uma praça da cidade e abordou Cleide, senhora de 65 anos, afirmando conhecer uma mulher que possuía poderes mágicos capazes de multiplicar dinheiro. Paula afirmou que ela mesma havia se beneficiado da multiplicação e que teve transformados R$1.000,00 (mil reais) que possuía em R$10.000,00 (dez mil reais) ao confiar os valores àquela pessoa. Por isso, desde então teria entendido que tinha a missão de divulgar o trabalho em questão e ajudar pessoas humildes e de bom coração, como Cleide. A vítima, muito impressionada com a história, aceitou ir ao encontro de Joana e afirmou que gostaria de usar os poderes para multiplicar suas economias. Joana ratificou sua capacidade multiplicadora e as três foram em direção à casa de Cleide, onde a idosa guardava R$3.000,00 (três mil reais) embaixo do colchão. Lá chegando, Joana pediu que Cleide colocasse os valores em um envelope pardo, o que foi feito. A vítima entregou o envelope com o dinheiro para Joana, que informou precisar ficar sozinha por alguns minutos com o objetivo de realizar a mágica. Ao retornar ao local onde Paula e Cleide estavam, Joana devolveu o envelope à senhora e pediu que ela o colocasse em cima da geladeira e não mexesse nele por uma semana, afirmando que após esse prazo ela teria R$30.000,00 (trinta mil reais) e não mais os R$3.000,00 (três mil reais). Cleide cumpriu o solicitado e, passada a semana, abriu o envelope, encontrando apenas pedaços de papel em branco. Envergonhada, a idosa relutou em ir à delegacia, mas seu neto João decidiu ir sozinho comunicar o fato à autoridade policial. Concluídas as investigações, sendo identificadas Paula e Joana, os autos chegaram ao Ministério Público, que ofereceu denúncia, imputando a Joana e Paula a prática do crime de furto mediante fraude. Considerando os dados fornecidos pelo enunciado, responda justificadamente à seguinte questão: A imputação feita pelo Ministério Público é correta? Justifique sua resposta, apontando as razões de a imputação estar certa ou errada, bem como se o Ministério Público poderia oferecer a Denúncia sem a manifestação de Cleide. 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 Realização"
+   },
+   "gabarito": "C"
+  }
+ ]
+}

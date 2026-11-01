@@ -1,0 +1,594 @@
+{
+ "id": "tjdft-2022-analista-judiciario-oficial-de-justica-avaliador-federal",
+ "nome": "TJDFT 2022 · Analista Judiciário - Oficial de Justiça Avaliador Federal",
+ "cargo": "Concurso de servidores · prova tipo 1",
+ "banca": "FGV",
+ "gabarito": "definitivo",
+ "questoes": [
+  {
+   "n": 16,
+   "materia": "Provimento Geral da Corregedoria",
+   "enunciado": "Em tema de expedição e cumprimento de mandados judiciais, o Provimento Geral da Corregedoria aplicado aos Juízes e Ofícios Judiciais do Poder Judiciário do Distrito Federal e dos Territórios, disponibilizado no DJe de 10/10/2014, estabelece que:",
+   "alternativas": {
+    "A": "o diretor de secretaria adotará, como regra, a comunicação dos atos processuais utilizando-se do oficial de justiça;",
+    "B": "o mandado para constrição de bens deverá indicar todos os dados necessários para a sua consecução, exceto o nome da pessoa indicada como depositária;",
+    "C": "frustrada a citação ou a intimação por via postal, o mandado deverá ser inutilizado, abrindo-se nova conclusão para o juízo decidir se é hipótese de cumprimento por oficial de justiça;",
+    "D": "o mandado de intimação para audiência deverá ser encaminhado ao setor competente com antecedência mínima de cinco dias e máxima de trinta dias da data de realização do ato;",
+    "E": "nos casos envolvendo vítimas ou pessoas em situação de perigo, o mandado deverá ser expedido separadamente para cada parte, de modo que apenas o endereço do destinatário conste do documento."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 17,
+   "materia": "Provimento Geral da Corregedoria",
+   "enunciado": "Durante o cumprimento de determinado mandado de intimação expedido pelo juiz de Direito no bojo de processo que tramita em segredo de justiça, o oficial de justiça João verificou que necessitava obter informações complementares junto à secretaria da correlata vara. No caso em tela, conforme disposto no Provimento Geral da Corregedoria aplicado aos Juízes e Ofícios Judiciais do Poder Judiciário do Distrito Federal e dos Territórios, disponibilizado no DJe de 10/10/2014, o oficial de justiça João:",
+   "alternativas": {
+    "A": "somente poderá obter informações, pessoalmente, na secretaria da vara;",
+    "B": "somente poderá obter informações, mediante prévio despacho autorizativo do juiz de Direito;",
+    "C": "poderá obter informações, por qualquer meio, junto à secretaria da vara;",
+    "D": "não poderá obter informações junto à secretaria da vara, diante do segredo de justiça;",
+    "E": "não poderá obter informações junto à secretaria da vara, diante do segredo de justiça, exceto se ambas as partes do processo tiverem previamente autorizado."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 18,
+   "materia": "Provimento Geral da Corregedoria",
+   "enunciado": "De acordo com o Provimento Geral da Corregedoria aplicado aos Juízes e Ofícios Judiciais do Poder Judiciário do Distrito Federal e dos Territórios, disponibilizado no DJe de 10/10/2014, NÃO constitui atividade que incumbe ao oficial de justiça:",
+   "alternativas": {
+    "A": "avaliar bens, salvo quando exigidos conhecimentos técnicos especializados;",
+    "B": "proceder à prévia avaliação na hipótese de bens a serem removidos ao Depósito Público;",
+    "C": "responder, até o dia útil seguinte, às orientações encaminhadas pela Administração e pelos ofícios judiciais, bem como às mensagens eletrônicas enviadas pelas partes e advogados;",
+    "D": "lavrar certidões manuscritas e cumprir pessoalmente as diligências, identificando-se pelo nome e pela função, portando o crachá em local visível e, se solicitado, apresentar a carteira de identidade funcional;",
+    "E": "devolver, sem cumprimento, no prazo máximo de 24 horas contadas do recebimento, mandado de outro setor que lhe seja distribuído indevidamente ou, transcorrido esse prazo, cumpri-lo integralmente."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 19,
+   "materia": "Provimento Geral da Corregedoria",
+   "enunciado": "Em relação ao cumprimento dos alvarás de soltura, o Provimento da Corregedoria da Justiça do Distrito Federal e dos Territórios nº 05, de 23/07/2010, estabelece que:",
+   "alternativas": {
+    "A": "o juízo competente para decidir a respeito da liberdade ao preso provisório ou condenado será também responsável pela expedição e cumprimento do respectivo alvará de soltura, no prazo máximo de três dias;",
+    "B": "nas hipóteses em que o Tribunal delegar ao juízo de primeiro grau o cumprimento de decisão determinando a soltura, o juízo deverá proceder à expedição do alvará no prazo máximo de 72 horas;",
+    "C": "as comunicações dos atos processuais ao indiciado, réu ou condenado preso serão realizadas por oficial de justiça diretamente no estabelecimento onde o custodiado estiver preso, sendo imprescindível a requisição para a formalização de tais atos em juízo;",
+    "D": "o oficial de justiça deverá certificar a data, local e horário do cumprimento do alvará de soltura, o estabelecimento prisional e o respectivo diretor, bem como se resultou ou não na soltura do preso e as razões que eventualmente justificaram a manutenção da prisão;",
+    "E": "o não cumprimento do alvará de soltura pelo oficial de justiça, na forma e no prazo regulares, será oficiado pelo juiz do processo à Corregedoria, inclusive do juízo deprecado, quando for o caso, para apuração de eventual falta disciplinar e adoção de medidas preventivas, e à Defensoria Pública, para apuração de responsabilidade criminal."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 20,
+   "materia": "Provimento Judicial Aplicado Ao Processo Judicial Eletrônico",
+   "enunciado": "Em matéria de indisponibilidade do sistema PJe, de acordo com o Provimento Judicial da Corregedoria da Justiça do Distrito Federal e dos Territórios aplicado ao Processo Judicial Eletrônico (disponibilizado no DJe de 21/08/2017), os prazos que vencerem no dia da ocorrência da indisponibilidade serão prorrogados para o dia útil seguinte, quando a indisponibilidade:",
+   "alternativas": {
+    "A": "ocorrer entre 0h00 e 06h00 dos dias de expediente forense;",
+    "B": "ocorrer em feriados e finais de semana, a qualquer hora, por período superior a noventa minutos;",
+    "C": "for superior a sessenta minutos, ininterruptos ou não, se ocorrida entre 06h00 e 23h00;",
+    "D": "for superior a trinta minutos, ininterruptos ou não, nas últimas 24 horas do prazo, ocasião em que a prorrogação de prazo será feita mediante ato do presidente do Tribunal, vedada a prorrogação automática pelo sistema PJe;",
+    "E": "ocorrer, em qualquer dia, por período superior a noventa minutos, ocasião em que a prorrogação de prazo será feita mediante ato do presidente do Tribunal, vedada a prorrogação automática pelo sistema PJe."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 21,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A Lei nº XX, do Estado Alfa, impôs amplas alterações na sistemática remuneratória dos servidores públicos estaduais, alterando gratificações até então recebidas. Em normas transitórias, dispôs que as alterações promovidas seriam aplicadas àqueles que já se encontravam no serviço público à época da sua entrada em vigor, bem como que as gratificações até então recebidas deveriam ser adequadas aos novos patamares legais, ainda que isso acarretasse a redução do total dos vencimentos recebidos. O sindicato dos servidores questionou o seu advogado a respeito da constitucionalidade das normas transitórias da Lei nº XX, sendo-lhe respondido, corretamente, que elas eram:",
+   "alternativas": {
+    "A": "inconstitucionais, por violarem a legítima expectativa de direito dos servidores que já ocupavam cargos públicos, os quais não podem ser alcançados por leis posteriores que alterem a sistemática remuneratória;",
+    "B": "inconstitucionais, por violarem o direito adquirido dos servidores que já ocupavam cargos públicos, os quais não podem ser alcançados por leis posteriores que alterem a sistemática remuneratória;",
+    "C": "parcialmente inconstitucionais, apenas na parte em que foi permitida a redução do total dos vencimentos recebidos pelo servidor, em razão da alteração da sistemática afeta às gratificações;",
+    "D": "constitucionais, em razão da necessária linearidade que deve reger a sistemática remuneratória dos servidores públicos, o que é incompatível com a quebra da igualdade formal entre esses agentes;",
+    "E": "constitucionais, pois a alteração da sistemática remuneratória dos servidores públicos estaduais não afetava as garantias do ato jurídico perfeito e do direito adquirido."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 22,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "João foi eleito deputado federal pelo Partido Político Alfa. Logo após a diplomação, tomou conhecimento de que o referido partido não tinha preenchido os requisitos estabelecidos para o recebimento dos recursos do fundo partidário e para o acesso gratuito ao rádio e à televisão. À luz da sistemática constitucional, é correto afirmar que:",
+   "alternativas": {
+    "A": "como João foi eleito em eleição proporcional, o seu mandato pertence ao partido político, logo, não pode se filiar a outro partido sem que haja perda do mandato;",
+    "B": "João tem a obrigação de se filiar, sem perda do mandato, a partido que tenha preenchido os requisitos exigidos, sendo essa filiação considerada para o recebimento de recursos do fundo partidário e acesso gratuito ao rádio e à televisão;",
+    "C": "João tem a faculdade de se filiar, sem perda do mandato, a partido que tenha preenchido os requisitos exigidos, não sendo essa filiação considerada para o recebimento de recursos do fundo partidário e acesso gratuito ao rádio e à televisão;",
+    "D": "João tem a obrigação de se filiar, sem perda do mandato, a partido que tenha preenchido os requisitos exigidos, não sendo essa filiação considerada para o recebimento de recursos do fundo partidário e acesso gratuito ao rádio e à televisão;",
+    "E": "João tem a faculdade de se filiar a qualquer partido político, passando a ocupar uma das cadeiras obtidas pelo novo partido, sendo essa filiação considerada para o recebimento de recursos do fundo partidário e acesso gratuito ao rádio e à televisão."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 23,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "O Distrito Federal editou a Lei nº XX, organizando o serviço público local de transporte coletivo. Ao ver do sindicato dos rodoviários desse nível federativo, o diploma normativo é flagrantemente inconstitucional por afrontar normas de reprodução obrigatória da Constituição da República de 1988, incluindo aquelas afetas ao processo legislativo e aos direitos fundamentais. Por tal razão, consultou o seu advogado a respeito da possibilidade de deflagrar o controle concentrado de constitucionalidade perante o Supremo Tribunal Federal (STF). O advogado respondeu, corretamente, que o sindicato:",
+   "alternativas": {
+    "A": "tem legitimidade para a deflagração do referido controle, mas a afronta a normas de reprodução obrigatória somente permite a realização do controle concentrado pelo Tribunal de Justiça;",
+    "B": "não tem legitimidade para a deflagração do referido controle, além do que a afronta a normas de reprodução obrigatória somente permite a realização do controle concentrado pelo",
+    "C": "não tem legitimidade para a deflagração do referido controle, mas seria, em tese, possível o ajuizamento de ação direta de inconstitucionalidade ou de arguição de descumprimento de preceito fundamental;",
+    "D": "tem legitimidade para a deflagração do referido controle, considerando o princípio da inafastabilidade do acesso à jurisdição constitucional, que há de ser deflagrado com o uso do recurso extraordinário;",
+    "E": "não tem legitimidade para a deflagração do referido controle, mas seria, em tese, possível o ajuizamento de arguição de descumprimento de preceito fundamental, não de ação direta de inconstitucionalidade."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 24,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "O deputado estadual João concedeu ampla entrevista a um popular programa televisivo, informando que havia uma organização criminosa instalada no governo do Estado com o objetivo de fraudar licitações e contratos administrativos. Descreveu em detalhes o modus operandi da organização criminosa e informou que recebera as informações de dois servidores públicos estaduais de absoluta confiança. Em razão dessa narrativa, foi instaurada investigação penal para apurar os fatos e identificar os membros da organização criminosa. A primeira providência foi intimar o deputado estadual João para depor. À luz da sistemática constitucional, João:",
+   "alternativas": {
+    "A": "está obrigado a depor sobre os fatos e a fornecer a identidade das pessoas que passaram as informações;",
+    "B": "não está obrigado a depor sobre os fatos nem a fornecer a identidade das pessoas que passaram as informações;",
+    "C": "está obrigado a depor sobre os fatos, mas não a fornecer a identidade das pessoas que passaram as informações;",
+    "D": "não está obrigado a depor sobre os fatos, mas deve fornecer a identidade das pessoas que passaram as informações;",
+    "E": "está obrigado a depor sobre os fatos, mas pode silenciar em relação àquilo que o implique, devendo preservar o sigilo de suas fontes."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 25,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A sociedade empresária YY, especializada na prestação de serviços hospitalares, com sede na Alemanha, decidiu iniciar estudos para explorar o serviço de assistência à saúde no território brasileiro. Ao consultar um especialista da área, foi-lhe informado, corretamente, que YY:",
+   "alternativas": {
+    "A": "não pode explorar o serviço, que é vedado, de modo peremptório, às empresas estrangeiras;",
+    "B": "pode explorar o serviço, o qual, por ser de relevância pública, depende de concessão ou permissão do poder público;",
+    "C": "pode explorar livremente o serviço, que está ao alcance da iniciativa privada, podendo ser prestado por empresas nacionais e estrangeiras;",
+    "D": "não pode explorar o serviço, que é de titularidade do poder público e pressupõe o prévio êxito em processo licitatório, com a outorga de posterior autorização;",
+    "E": "pode explorar o serviço, desde que se enquadre em um permissivo legal, pois a regra é que a assistência à saúde não pode ser prestada por empresas estrangeiras."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 26,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Maria é servidora pública federal estável ocupante de cargo efetivo e, após processo administrativo disciplinar, foi demitida. Inconformada, Maria aforou medida judicial e obteve sentença, já transitada em julgado, que determinou sua reintegração. Após o retorno a seu cargo, Maria recebeu apenas o pagamento retroativo dos vencimentos, férias indenizadas e auxílio- alimentação, referentes ao período em que esteve afastada por força da demissão, ora já declarada nula. Insatisfeita com os valores recebidos, mesmo ciente de que não ocorreu, no período reivindicado, qualquer situação de ambiente insalubre nem necessitou se deslocar no trajeto residência- trabalho-residência, Maria ajuizou nova medida judicial, agora pleiteando o pagamento retroativo das verbas a título de auxílio- transporte e adicional de insalubridade, em relação ao período em que ficou ilegalmente afastada. Levando em consideração a atual jurisprudência do Superior",
+   "alternativas": {
+    "A": "merece prosperar, pois todas as verbas, sejam de natureza salarial, sejam de natureza indenizatória, devem ser pagas retroativamente em relação ao período em que Maria ficou ilegalmente afastada de suas funções;",
+    "B": "merece prosperar, pois, além de receber retroativamente todas as verbas, sejam de natureza salarial, sejam de natureza indenizatória, Maria tem direito à reparação pelos danos morais sofridos pela demissão declarada nula;",
+    "C": "não merece prosperar, pois a servidora somente tem direito ao pagamento retroativo de seus vencimentos, razão pela qual deve devolver os valores recebidos de boa-fé a título de férias indenizadas e auxílio-alimentação;",
+    "D": "não merece prosperar, pois os pagamentos do auxílio- transporte e do adicional de insalubridade têm natureza indenizatória, assim como também não lhe seria devido o auxílio-alimentação que lhe fora indevidamente pago;",
+    "E": "não merece prosperar, pois os pagamentos do auxílio- transporte e do adicional de insalubridade não se mostram devidos à servidora pelo tão só exercício ficto no cargo público, haja vista que ditas rubricas reclamam a existência de requisitos legais específicos, não preenchidos."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 27,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A Lei de Introdução às Normas do Direito Brasileiro (LINDB), com as alterações introduzidas pela Lei nº 13.655/2018, trouxe o chamado consequencialismo, visando à maior previsibilidade, segurança jurídica e eficiência na criação e na aplicação do Direito Público. Nesse contexto, de acordo com a atual redação da LINDB:",
+   "alternativas": {
+    "A": "a interpretação de normas sobre gestão pública deve privilegiar a efetividade das políticas públicas e os direitos dos administrados, desconsiderando os obstáculos e as dificuldades reais do gestor;",
+    "B": "nas esferas administrativa e controladora, não se decidirá, em qualquer hipótese, com base em valores jurídicos abstratos, e a motivação demonstrará a necessidade e a adequação da medida imposta ou da invalidação de ato, contrato, ajuste, processo ou norma administrativa, sem mencionar possíveis alternativas que foram descartadas;",
+    "C": "a decisão que, nas esferas controladora ou judicial, decretar a invalidação de ato, contrato, ajuste, processo ou norma administrativa deverá indicar de modo expresso suas consequências jurídicas, sem referências às consequências administrativas, em razão do princípio da separação dos poderes;",
+    "D": "a revisão, nas esferas administrativa, controladora ou judicial, quanto à validade de ato, contrato, ajuste, processo ou norma administrativa cuja produção já se houver completado, levará em conta as orientações gerais vigentes no momento da decisão de revisão, de maneira que é permitido que, com base em mudança posterior de orientação geral, se declarem inválidas situações plenamente constituídas;",
+    "E": "a decisão administrativa, controladora ou judicial que estabelecer interpretação ou orientação nova sobre norma de conteúdo indeterminado, impondo novo dever ou novo condicionamento de direito, deverá prever regime de transição quando indispensável para que o novo dever ou condicionamento de direito seja cumprido de modo proporcional, equânime e eficiente e sem prejuízo aos interesses gerais."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 28,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A Lei Brasileira de Inclusão da Pessoa com Deficiência (Lei nº 13.146/2015) dispõe que é assegurada atenção integral à saúde da pessoa com deficiência em todos os níveis de complexidade, por intermédio do SUS, garantido acesso universal e igualitário. De acordo com tal Estatuto da Pessoa com Deficiência, as ações e os serviços de saúde pública destinados à pessoa com deficiência devem assegurar diversas providências, EXCETO:",
+   "alternativas": {
+    "A": "atendimento domiciliar multidisciplinar, tratamento ambulatorial e internação;",
+    "B": "atendimento psicológico, exceto para seus familiares e atendentes pessoais;",
+    "C": "respeito à especificidade, à identidade de gênero e à orientação sexual da pessoa com deficiência;",
+    "D": "atenção sexual e reprodutiva, incluindo o direito à fertilização assistida;",
+    "E": "diagnóstico e intervenção precoces, realizados por equipe multidisciplinar."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 29,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em abril de 2022, o Tribunal de Justiça Alfa deseja contratar aquisição de determinados equipamentos que só podem ser fornecidos por empresa exclusiva. De acordo com o regime jurídico da Lei nº 14.133/2021, tal contratação pelo Tribunal de Justiça Alfa deve ser feita mediante:",
+   "alternativas": {
+    "A": "inexigibilidade de licitação, mas o Tribunal deverá demonstrar a inviabilidade de competição mediante atestado de exclusividade, contrato de exclusividade, declaração do fabricante ou outro documento idôneo capaz de comprovar que o objeto é fornecido por empresa exclusiva, vedada a preferência por marca específica;",
+    "B": "inexigibilidade de licitação, mas o Tribunal deverá demonstrar a inviabilidade de competição mediante atestado de exclusividade, contrato de exclusividade, declaração do fabricante ou outro documento idôneo capaz de comprovar que o objeto é fornecido por empresa exclusiva, permitida a preferência por marca específica;",
+    "C": "dispensa de licitação, mas o Tribunal deverá demonstrar a inviabilidade de competição mediante atestado de exclusividade, contrato de exclusividade, declaração do fabricante ou outro documento idôneo capaz de comprovar que o objeto é fornecido por empresa exclusiva, vedada a preferência por marca específica;",
+    "D": "dispensa de licitação, mas o Tribunal deverá demonstrar a inviabilidade de competição mediante atestado de exclusividade, contrato de exclusividade, declaração do fabricante ou outro documento idôneo capaz de comprovar que o objeto é fornecido por empresa exclusiva, permitida a preferência por marca específica;",
+    "E": "prévia licitação, na modalidade diálogo competitivo, para contratação de compra em que a Administração Pública realiza diálogos com licitantes previamente selecionados mediante critérios subjetivos, com o intuito de desenvolver uma ou mais alternativas capazes de atender às suas necessidades, devendo os licitantes apresentar proposta final após o encerramento dos diálogos."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 30,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em março de 2022, José, analista judiciário do Tribunal de Justiça do Distrito Federal e dos Territórios, de forma dolosa, no exercício da função, revelou fato de que tinha ciência em razão das atribuições e que devia permanecer em segredo, propiciando beneficiamento por informação privilegiada e, ainda, colocando em risco a segurança da sociedade e do Estado. De acordo com a atual redação da Lei nº 8.429/1992, José praticou ato de improbidade administrativa e, após o devido processo legal, está sujeito às seguintes cominações, que podem ser aplicadas isolada ou cumulativamente, de acordo com a gravidade do fato:",
+   "alternativas": {
+    "A": "pagamento de multa civil de até 24 vezes o valor da remuneração percebida pelo agente e proibição de contratar com o poder público ou de receber benefícios ou incentivos fiscais ou creditícios, direta ou indiretamente, ainda que por intermédio de pessoa jurídica da qual seja sócio majoritário, pelo prazo não superior a quatro anos;",
+    "B": "perda da função pública, suspensão dos direitos políticos de três a cinco anos, pagamento de multa civil de até cem vezes o valor da remuneração percebida pelo agente e proibição de contratar com o poder público ou receber benefícios ou incentivos fiscais ou creditícios, direta ou indiretamente, ainda que por intermédio de pessoa jurídica da qual seja sócio majoritário, pelo prazo de cinco anos;",
+    "C": "perda da função pública, pagamento de multa civil de até 24 vezes o valor da remuneração percebida pelo agente e proibição de contratar com o poder público ou de receber benefícios ou incentivos fiscais ou creditícios, direta ou indiretamente, ainda que por intermédio de pessoa jurídica da qual seja sócio majoritário, pelo prazo não superior a quatro anos;",
+    "D": "perda dos bens ou valores acrescidos ilicitamente ao patrimônio, se concorrer esta circunstância, perda da função pública, suspensão dos direitos políticos até doze anos, pagamento de multa civil equivalente ao valor do dano e proibição de contratar com o poder público ou de receber benefícios ou incentivos fiscais ou creditícios, direta ou indiretamente, ainda que por intermédio de pessoa jurídica da qual seja sócio majoritário, pelo prazo não superior a doze anos;",
+    "E": "perda dos bens ou valores acrescidos ilicitamente ao patrimônio, se concorrer esta circunstância, perda da função pública, suspensão dos direitos políticos até catorze anos, pagamento de multa civil equivalente ao valor do acréscimo patrimonial e proibição de contratar com o poder público ou de receber benefícios ou incentivos fiscais ou creditícios, direta ou indiretamente, ainda que por intermédio de pessoa jurídica da qual seja sócio majoritário, pelo prazo não superior a catorze anos."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 31,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Matos, animado com a herança que recebeu, decidiu realizar algumas obras na sua casa: construiu uma piscina no jardim, trocou a fiação elétrica deteriorada da cozinha, com risco de curto-circuito, construiu um banheiro no quarto da filha, instalou corrimãos nas escadas e, por fim, ia construir um lago, mas desistiu quando verificou que um já havia se formado naturalmente, com a depressão natural da terra e as águas das intensas chuvas dos últimos meses. Diante disso, é correto afirmar que:",
+   "alternativas": {
+    "A": "o lago e a piscina, por tornarem mais agradável o uso do bem, são considerados benfeitorias voluptuárias;",
+    "B": "a troca da fiação elétrica e a construção do banheiro no quarto da filha são consideradas benfeitorias necessárias;",
+    "C": "o banheiro construído no quarto da filha e a instalação de corrimãos são considerados benfeitorias úteis;",
+    "D": "a piscina e a troca da fiação elétrica podem ser consideradas benfeitorias necessárias;",
+    "E": "o lago e a instalação de corrimãos podem ser considerados benfeitorias úteis."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 32,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Rosália efetuou a doação de um terreno para o Município de Euclidelândia, para que nele seja construída uma escola no prazo de um ano a contar da data da celebração do negócio jurídico. Os elementos acidentais presentes no contrato são:",
+   "alternativas": {
+    "A": "encargo e termo;",
+    "B": "condição suspensiva e encargo;",
+    "C": "condição resolutiva e termo;",
+    "D": "termo e condição inicial;",
+    "E": "encargo e condição final."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 33,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "André é locatário de Bernardo e restou inadimplente do último aluguel quando devolveu o imóvel e se extinguiu a locação. Entretanto, durante a vigência do contrato, Bernardo pegou uma quantia emprestada com André e nunca chegou a lhe pagar. A dívida de aluguel de André a Bernardo venceu em janeiro de 2019, com prazo prescricional de três anos, e a dívida de Bernardo a André referente ao empréstimo venceu em março de 2018, com prazo prescricional de cinco anos. Em março de 2022, André decide cobrar de Bernardo a dívida referente ao empréstimo, e Bernardo resiste, alegando compensação. Considerando que, em virtude do valor original e dos encargos moratórios, o montante devido pelo empréstimo sempre foi maior que o valor devido por conta do aluguel, é correto afirmar que:",
+   "alternativas": {
+    "A": "André pode fazer a cobrança sem qualquer desconto, pois a prescrição da dívida de aluguel inviabiliza a alegação de compensação;",
+    "B": "a dívida referente ao empréstimo deve ser compensada com aquela referente ao aluguel em março de 2022, no momento de alegação da compensação;",
+    "C": "do montante cobrado deve ser descontado o valor da dívida de aluguel no momento em que ambas as dívidas se tornaram exigíveis, isto é, em março de 2019;",
+    "D": "a cobrança pretendida não é cabível, uma vez que a dívida não é mais exigível em razão do decurso do prazo prescricional;",
+    "E": "a compensação da dívida decorrente do empréstimo com a dívida oriunda da locação afasta qualquer pretensão de André."
+   },
+   "gabarito": "X"
+  },
+  {
+   "n": 34,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Cosme comprou uma geladeira usada de sua vizinha, Daniela. Entretanto, três semanas depois, o eletrodoméstico parou de gelar e o técnico demandado indicou que o defeito decorreu de um pequeno vazamento da mangueira, que deveria estar lá há uns dois meses, pois quase todo o gás já tinha saído. Daniela não sabia do vazamento. Sobre o caso, entre os direitos que tem Cosme em face de Daniela, inclui-se:",
+   "alternativas": {
+    "A": "a devolução de parte do que foi pago, a título de abatimento no preço;",
+    "B": "a compensação pelo que perdeu e deixou de ganhar em virtude do defeito;",
+    "C": "a condenação a ela realizar o reparo, sob pena de multa diária;",
+    "D": "o ressarcimento das despesas que teve com o conserto da geladeira;",
+    "E": "a substituição por uma geladeira com as mesmas características."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 35,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Gilmara é viúva e não teve filhos. Idosa, necessita de ajuda para o seu sustento, pois a sua minguada aposentadoria não lhe permite pagar o aluguel, a alimentação e os remédios de que necessita para sobreviver. Seus únicos parentes vivos são uma sobrinha, um irmão, duas primas, um tio e duas tias. Diante disso, Gilmara pode requerer alimentos:",
+   "alternativas": {
+    "A": "às duas primas;",
+    "B": "ao irmão;",
+    "C": "ao tio e às duas tias;",
+    "D": "a todos eles;",
+    "E": "à sobrinha."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 36,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Romualdo e Luara se casaram no ano de 2018. Antes do casamento, Romualdo já era proprietário de uma fazenda no interior de Minas Gerais e Luara já havia adquirido um automóvel Corsa. Na constância da união, Luara comprou um apartamento em Belo Horizonte e reformou todo o telhado da sede da fazenda de Romualdo. Romualdo, por sua vez, herdou uma casa em Monte Verde. Ainda na constância do casamento, a fazenda de Romualdo gerou uma safra recorde de café tipo exportação, ainda não colhida. Diante disso, caso o casal decida se divorciar, é correto afirmar que se o regime for o da:",
+   "alternativas": {
+    "A": "separação legal de bens, somente o automóvel Corsa seria considerado bem comum;",
+    "B": "participação final nos aquestos e Romualdo decidir vender a fazenda, não necessitará da vênia conjugal, em razão de expressa dispensa legal;",
+    "C": "comunhão universal de bens, a casa herdada por Romualdo em Monte Verde não será considerada bem comum para efeito de partilha;",
+    "D": "separação convencional de bens, somente o valor da reforma do telhado da sede da fazenda será devolvido a Luara, bem como metade do valor da casa de Monte Verde;",
+    "E": "comunhão parcial de bens, as safras de café colhidas na constância do casamento são consideradas bens comuns para efeito de partilha."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 37,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Quando foi aberto o testamento de Hermenegilda, seus parentes descobriram diversas disposições peculiares. Sobre elas, é correto afirmar que:",
+   "alternativas": {
+    "A": "a disposição de que sua fazenda fosse vendida e o preço obtido fosse dado a estabelecimentos particulares de caridade deve ser entendida como destinada aos estabelecimentos do lugar de domicílio de Hermenegilda por ocasião de sua morte;",
+    "B": "é válida a disposição que prevê que seu diário seja entregue a seu namorado na adolescência e, caso os herdeiros não consigam descobrir de quem se trata, o bem ficará para os herdeiros legítimos;",
+    "C": "é nula a determinação de que seu anel de esmeralda seja dado a uma de suas netas, a ser escolhida pela sua amiga Zuleide, por conta de sua indeterminação no que diz respeito ao legatário;",
+    "D": "é nula, por falta de objeto determinado, a estipulação de que um montante entre dois e dez mil reais será especificado pela sua amiga Zuleide para ser dado a Roberval, o enfermeiro que cuidou de Hermenegilda nos seus últimos meses de vida;",
+    "E": "a disposição de que sua casa seja dividida entre sua sobrinha Amália e o seu grupo de orações implica que Amália somente receba um oitavo da propriedade da casa, já que havia sete pessoas no grupo de orações de Hermenegilda."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 38,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Observando que a parte autora não havia praticado os atos e diligências que lhe competiam, assim deixando o feito paralisado por mais de trinta dias, o juiz da causa determinou a sua intimação pessoal para suprir a falta. Dirigindo-se ao endereço que constava da petição inicial como sendo o da residência do autor, apurou o oficial de justiça que ele havia se mudado, sem deixar informações sobre o novo domicílio. Diante desse quadro, devidamente certificado pelo oficial de justiça, deverá o juiz:",
+   "alternativas": {
+    "A": "extinguir o feito, sem resolução do mérito;",
+    "B": "suspender o feito, até que o autor volte a se manifestar;",
+    "C": "determinar a intimação do autor por edital;",
+    "D": "determinar a intimação da Curadoria Especial para patrocinar os interesses do autor;",
+    "E": "determinar a expedição de ofício à OAB, solicitando-lhe a indicação de advogado para patrocinar os interesses do autor."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 39,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Entendendo que fora ilegalmente preterido pela Administração Pública, diante de sua não convocação para tomar posse em cargo para o qual havia sido aprovado em concurso público, João impetrou mandado de segurança, em cuja petição inicial sustentou a ilegalidade da conduta estatal, para pedir a concessão da ordem que lhe assegurasse a nomeação no cargo público pretendido. Após o juízo positivo de admissibilidade da ação, a autoridade impetrada prestou a suas informações, a pessoa jurídica de direito público apresentou a sua peça impugnativa e o Ministério Público ofertou a sua manifestação conclusiva. Estando convencido da existência do direito afirmado na petição inicial e de sua violação pela Administração Pública, o juiz da causa, pouco antes de proferir sentença, tomou contato com petição protocolizada pelo advogado do impetrante, anexando a certidão de óbito deste, sem que tivesse sido requerida a habilitação no polo ativo por seus herdeiros ou espólio. Nesse contexto, deverá o juiz:",
+   "alternativas": {
+    "A": "proferir sentença julgando procedente o pedido;",
+    "B": "proferir sentença julgando improcedente o pedido;",
+    "C": "proferir sentença terminativa;",
+    "D": "determinar a suspensão do feito, até que os interessados requeiram a sua sucessão no polo ativo da demanda;",
+    "E": "determinar a suspensão do feito, até que os interessados requeiram a sua substituição processual no polo ativo da demanda."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 40,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "André intentou ação de cobrança de obrigação contratual em face de Carlos, tendo formulado o pedido de condenação deste ao pagamento da quantia de cinquenta mil reais. Encerrada a instrução probatória, o juiz da causa, concluindo que os fatos constitutivos do direito afirmado na petição inicial restaram parcialmente comprovados, proferiu sentença em que condenava o réu a pagar ao autor a quantia de dez mil reais. Inconformado, André interpôs recurso de apelação, pleiteando a reforma parcial da sentença para que se acolhesse integralmente o seu pedido, com a condenação de Carlos a lhe pagar a importância de cinquenta mil reais. Intimado para responder ao recurso do réu, Carlos apresentou as suas contrarrazões e, também, interpôs apelo adesivo, em cujas razões pugnou pela rejeição total do pleito de cobrança de André. Remetidos os autos ao órgão ad quem, André, uma semana antes do julgamento dos recursos pelo órgão fracionário, protocolizou petição em que desistia de sua apelação. Nesse contexto, é correto afirmar que:",
+   "alternativas": {
+    "A": "nenhum dos recursos de apelação poderá ser conhecido pelo",
+    "B": "o recurso de apelação de André não poderá ser conhecido pelo tribunal, podendo sê-lo o de Carlos;",
+    "C": "o relator deverá determinar a intimação de Carlos para que informe se concorda com a desistência do apelo autoral;",
+    "D": "deverá ser reconhecida a ineficácia da desistência, já que manifestada quando o feito já estava incluído em pauta para julgamento;",
+    "E": "ambos os recursos de apelação poderão ser conhecidos pelo litigância de má-fé."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 41,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Um cidadão ajuizou ação popular para obter a invalidação de ato administrativo que reputava lesivo ao patrimônio público. Contudo, antes mesmo que os autos fossem à conclusão para fins de juízo positivo de admissibilidade da demanda, o autor manifestou desistência da ação, aludindo, inclusive, à existência de poderes especiais para tanto, que havia outorgado ao seu advogado no instrumento de mandato. Nesse cenário, deverá o juiz:",
+   "alternativas": {
+    "A": "homologar a desistência, extinguindo o feito sem resolução do mérito;",
+    "B": "deixar de homologar a desistência e determinar a citação da parte ré, diante da indisponibilidade da matéria litigiosa;",
+    "C": "determinar a intimação pessoal do autor, por oficial de justiça, para que ratifique a manifestação de desistência;",
+    "D": "determinar a intimação da parte ré, por oficial de justiça, para informar se concorda, ou não, com a desistência;",
+    "E": "determinar a publicação de editais, a fim de assegurar a possibilidade de outro cidadão assumir o polo ativo."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 42,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Preenchidos os requisitos da petição inicial, em que se pede a condenação de dois réus ao pagamento da quantia de cem mil reais, o juiz designou audiência de conciliação para o dia 31 de março de 2022. No dia 2 de março, já citados, o primeiro réu protocoliza petição informando que não tem interesse na realização da referida audiência. Em 10 de março, o outro réu também peticiona nos autos, confirmando o seu desinteresse na realização da referida audiência. Nesse cenário, o termo inicial para o oferecimento da contestação será para:",
+   "alternativas": {
+    "A": "cada um dos réus, a data de apresentação de seus respectivos pedidos de cancelamento da audiência;",
+    "B": "ambos, a data do protocolo da petição do último réu, requerendo o cancelamento da audiência;",
+    "C": "ambos, a data da juntada aos autos do último mandado de citação cumprido;",
+    "D": "ambos, a data do protocolo do pedido de cancelamento da audiência do primeiro réu;",
+    "E": "ambos, a partir do dia 31 de março de 2022."
+   },
+   "gabarito": "X"
+  },
+  {
+   "n": 43,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "José celebra contrato de mútuo com Paulo e João, em que estipula ambos como devedores solidários, na quantia de cem mil reais. Inadimplida a obrigação no prazo estipulado, o credor demanda judicialmente a cobrança integral dessa dívida apenas em face de Paulo. Nesse cenário, é correto afirmar que:",
+   "alternativas": {
+    "A": "João não poderá ingressar no feito, uma vez que não tem interesse jurídico;",
+    "B": "Paulo poderá peticionar requerendo o ingresso de João como litisconsorte necessário;",
+    "C": "o juiz poderá determinar o chamamento ao processo de João, determinando sua citação;",
+    "D": "João poderá requerer o seu ingresso no feito como assistente litisconsorcial;",
+    "E": "o juiz deve intimar José para aditar a inicial e incluir João, uma vez que o litisconsórcio é necessário."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 44,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "O juiz, um ano após determinar a citação do executado, em um processo de execução com base em um título executivo extrajudicial, verificou ser seu juízo absolutamente incompetente, o que motivou a remessa do feito para o juízo que entendia ser competente. Sabendo-se que o exequente adotou todas as providências necessárias para viabilizar a citação e que o processo segue no novo juízo, é correto afirmar que:",
+   "alternativas": {
+    "A": "a interrupção da prescrição ocorrerá somente na data em que o feito foi recebido no juízo competente;",
+    "B": "não ocorrerá a interrupção da prescrição, uma vez que a ação foi distribuída originariamente a um juízo incompetente;",
+    "C": "a interrupção da prescrição ocorrerá quando o juízo incompetente remeter o feito ao juízo competente;",
+    "D": "a interrupção da prescrição ocorrerá na data do protocolo da petição do exequente requerendo a prescrição;",
+    "E": "a interrupção da prescrição retroagirá à data da propositura da ação no juízo incompetente."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 45,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Pedro, ao ser demandado em uma ação de ressarcimento de danos materiais, afirma, na contestação, não ser o responsável pelo prejuízo invocado, mas, sim, seu irmão José. Nesse sentido, é correto afirmar que:",
+   "alternativas": {
+    "A": "o juiz deve extinguir o processo, sem resolução do mérito, se entender que assiste razão ao exposto por Pedro;",
+    "B": "o autor não poderá alterar a petição inicial, uma vez que já está estabilizada subjetivamente a demanda com a citação do réu;",
+    "C": "o juiz deverá intimar o autor, que só poderá requerer a extinção do feito e propor uma nova demanda em face de José ou seguir com Pedro no polo passivo;",
+    "D": "o juiz deve julgar improcedente o pedido, desde logo, se entender que quem praticou o referido ato foi realmente José;",
+    "E": "o autor poderá alterar a petição inicial, substituindo Pedro por José, no polo passivo, reembolsando as despesas e pagando honorários ao procurador do réu excluído."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 46,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Sobre o tema consumação e tentativa e seus componentes, quanto ao arrependimento posterior, é correto afirmar que:",
+   "alternativas": {
+    "A": "no arrependimento posterior, o ato de reparação precisa ser espontâneo;",
+    "B": "o arrependimento posterior é incompatível com o delito de roubo;",
+    "C": "o arrependimento posterior incide se o agente restitui a coisa antes da prolação da sentença;",
+    "D": "o arrependimento posterior incide se o agente repara o dano antes da prolação da sentença;",
+    "E": "não se aplica o instituto do arrependimento posterior ao crime de moeda falsa."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 47,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Sobre a previsão do Art. 24, § 1º, do Código Penal (dever legal de enfrentar o perigo), considere a situação em que uma guarnição composta por quatro policiais, em que apenas um está equipado com arma longa, se depara com um “bonde” (aglomeração de criminosos fortemente armados em deslocamento), integrado por número muito superior de pessoas armadas. Sobre a previsão do perigo na situação descrita, no caso de não atuação policial, estará considerada hipótese de:",
+   "alternativas": {
+    "A": "legítima defesa;",
+    "B": "estrito cumprimento do dever legal;",
+    "C": "estado de necessidade;",
+    "D": "exercício regular de direito;",
+    "E": "prevaricação."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 48,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Sobre a previsão do parágrafo único do Art. 25 do Código Penal (legítima defesa de vítima mantida refém durante a prática de crimes), é correto afirmar que:",
+   "alternativas": {
+    "A": "a abertura do preceito permite a extensão a outros agentes, como guardas civis municipais e integrantes do sistema prisional;",
+    "B": "o raio de incidência da excludente não alcança contextos em que qualquer pessoa é mantida refém durante a prática de crimes;",
+    "C": "apenas a privação de liberdade, e não a restrição, pode colocar a vítima em posição de refém e funcionar como elemento da excludente;",
+    "D": "apenas a restrição de liberdade, e não a privação, pode colocar a vítima em posição de refém e funcionar como elemento da excludente;",
+    "E": "a atuação defensiva pelo agente de segurança deverá ocorrer a qualquer tempo, ainda que a vítima esteja em local diferente de quem tolhe sua liberdade."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 49,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Nas excludentes de antijuridicidade há limites impostos pela própria lei para que o fato tipificado seja justificado. Sobre o tema do excesso na causa de justificação, é correto afirmar que:",
+   "alternativas": {
+    "A": "o excesso na causa de justificação é instituto incompatível por si só com a submissão ao juízo de inexigibilidade de uma conduta diversa;",
+    "B": "a exculpação do excesso na causa de justificação pode ter três sistemas de aplicação: erro de cálculo, quase justificação e estados psíquicos excepcionais;",
+    "C": "o excesso na ação necessária para o exercício de uma causa de justificação é punível ainda que o agente o faça por ignorância inevitável ou erro invencível;",
+    "D": "ocorre excesso extensivo quando a pretendida defesa é exercitada a tempo de evitar o dano, mas os meios empregados são desproporcionais;",
+    "E": "ocorre excesso intensivo quando a pretendida defesa é exercitada extemporaneamente, pois o bem jurídico que se quer defender já está lesionado."
+   },
+   "gabarito": "B"
+  },
+  {
+   "n": 50,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "A lei dispensa tratamento cauteloso à embriaguez do agente, que inclui não apenas o uso de álcool, mas também de qualquer outra droga, lícita ou ilícita, que possa provocar alterações de ordem psíquica. Se a embriaguez foi causada:",
+   "alternativas": {
+    "A": "por motivos alheios à vontade do agente, poderá haver apenas exclusão do juízo de culpabilidade;",
+    "B": "por motivos alheios à vontade do agente, poderá haver apenas redução do juízo de culpabilidade;",
+    "C": "voluntariamente, poderá haver exclusão ou redução do juízo de culpabilidade;",
+    "D": "por descuido, o sujeito deverá responder, pois o juízo de culpabilidade se mantém;",
+    "E": "por descuido, poderá haver apenas redução do juízo de culpabilidade."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 51,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Hermes resolve matar Renato efetuando diversos disparos de arma de fogo contra seu corpo. Acreditando na morte do seu desafeto, Hermes arremessa a vítima de um penhasco. Ocorre que, apesar de alvejado, Renato não havia falecido com os disparos, vindo, no entanto, a morrer por conta do traumatismo decorrente da precipitação no desfiladeiro. Diante desse quadro, é correto afirmar que Hermes:",
+   "alternativas": {
+    "A": "responderá por homicídio culposo, pelo desvio causal não pretendido;",
+    "B": "responderá por crime, por atuar com erro sobre a pessoa;",
+    "C": "responderá por homicídio doloso tentado, por atuar com erro determinado por terceiro;",
+    "D": "não responderá por crime, por atuar com erro sobre a execução;",
+    "E": "responderá por homicídio doloso, por atuar com dolo geral."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 52,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Determinado fiscal de trânsito, por imprudência, autoriza um motorista a passar o sinal vermelho e este vem a atropelar um pedestre. Nessa hipótese o fiscal de trânsito responderá:",
+   "alternativas": {
+    "A": "em coautoria com o motorista, pela mesma conduta;",
+    "B": "por participação, por instigação, com o motorista;",
+    "C": "por participação, por auxílio, com o motorista;",
+    "D": "por participação, por induzimento, com o motorista;",
+    "E": "como autor, independentemente da responsabilidade alheia."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 53,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No Brasil, o princípio da proibição da dupla persecução penal ou da vedação à dupla incriminação:",
+   "alternativas": {
+    "A": "tem expressa previsão na Constituição da República de 1988;",
+    "B": "não tem previsão normativa, o que impede sua aplicação;",
+    "C": "tem expressa previsão no Código de Processo Penal;",
+    "D": "não tem previsão normativa, decorrendo implicitamente da Constituição da República de 1988;",
+    "E": "tem expressa previsão na legislação processual penal extravagante."
+   },
+   "gabarito": "D"
+  },
+  {
+   "n": 54,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Quanto ao dever de reavaliar periodicamente a necessidade da prisão preventiva, é correto afirmar que:",
+   "alternativas": {
+    "A": "permanece durante o todo arco procedimental original ou recursal, até a formação do trânsito em julgado;",
+    "B": "ainda que submetido a recurso, o controle segue sob responsabilidade do juiz de primeiro grau;",
+    "C": "é desnecessária a provocação da revisão por via processual adequada, até a formação do trânsito em julgado;",
+    "D": "em primeiro grau, ainda que o réu esteja foragido, subsiste o dever de revisão periódica da prisão preventiva;",
+    "E": "cessa com a formação de um juízo de certeza da culpabilidade do réu, declarado na sentença."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 55,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Sobre a possibilidade de aplicação de prisão domiciliar à mulher gestante ou que for mãe ou responsável por crianças ou pessoas com deficiência que possua condenação definitiva, é correto afirmar que:",
+   "alternativas": {
+    "A": "é cabível, desde que não tenha cometido crime com violência ou grave ameaça à pessoa;",
+    "B": "não é cabível, por expressa falta de previsão legal;",
+    "C": "é cabível, excepcionalmente, por interpretação do Art. 117 da LEP, aos apenados em regime semiaberto e fechado;",
+    "D": "não é cabível, pois a substituição se limita à fase da prisão preventiva;",
+    "E": "é cabível, desde que não tenha cometido o crime contra seu filho ou dependente."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 56,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "No caso de conexão entre crime de competência da Justiça Comum Federal, crime da Justiça Comum Estadual e crime eleitoral que venha a ser declarado prescrito, a competência para processo e julgamento dos crimes conexos será da:",
+   "alternativas": {
+    "A": "Justiça Eleitoral;",
+    "B": "Justiça Federal;",
+    "C": "Justiça Federal e da Justiça Estadual, com separação obrigatória;",
+    "D": "Justiça Federal e da Justiça Estadual, com separação facultativa;",
+    "E": "Justiça Estadual."
+   },
+   "gabarito": "A"
+  },
+  {
+   "n": 57,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Em relação ao habeas corpus, é correto afirmar que pode ser validamente empregado para impugnar medidas cautelares:",
+   "alternativas": {
+    "A": "pessoais que importem em restrição da liberdade de locomoção de maneira direta;",
+    "B": "diversas da prisão, em razão da ameaça indireta à liberdade de locomoção;",
+    "C": "diversas da prisão em que haja ameaça direta à liberdade de locomoção;",
+    "D": "diversas da prisão, nas hipóteses em que estas consistirem em prisão domiciliar;",
+    "E": "pessoais que importem em ameaça direta, vedado seu uso para cautelares alternativas."
+   },
+   "gabarito": "X"
+  },
+  {
+   "n": 58,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Ao exibir um mandado de prisão preventiva, determinado agente policial afirma que deseja entrar na residência de Olímpio, para verificar se o procurado, Houdini, estava no seu interior. Diante da presença de expressivo efetivo policial armado, Olímpio, mesmo ciente que Houdini lá não se encontrava, autoriza o ingresso no interior da sua residência, que passa a ser vasculhada. Ao levantar os tacos de madeira do chão do quarto, o agente policial encontra farta quantidade de drogas, prendendo Olímpio em flagrante. A Referida prisão é:",
+   "alternativas": {
+    "A": "legal, pois o crime de tráfico de drogas é delito permanente;",
+    "B": "ilegal, pois o mandado de prisão não pode ser cumprido em residência de terceiros;",
+    "C": "ilegal, diante da ausência de justa causa para o ingresso na residência;",
+    "D": "legal, pois a teoria da serendipidade autoriza a apreensão sem mandado;",
+    "E": "legal, pois se trata de encontro fortuito de provas de segundo grau, o que dispensa mandado judicial."
+   },
+   "gabarito": "C"
+  },
+  {
+   "n": 59,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Ao proceder a investigação de associação para o tráfico de drogas, o Ministério Público, seguindo os requisitos e formalidades legais, solicitou a interceptação telefônica de diversos alvos. Em determinada etapa, ficou caracterizado que Rambão, sargento da Polícia Militar, durante o expediente, acobertava o tráfico ilícito, recebendo remuneração indevida para tanto. Em razão da caracterização de crime militar, houve a extração de peças para o órgão com atribuição para avaliar o oferecimento de denúncia perante a Justiça Militar Estadual. No que se refere à interceptação telefônica, deve ser compartilhado o seguinte material:",
+   "alternativas": {
+    "A": "apenas os áudios que contêm conversas relevantes;",
+    "B": "apenas os áudios selecionados para renovação da medida;",
+    "C": "apenas os áudios que tenham locução do policial militar;",
+    "D": "apenas os áudios que indiquem condutas criminosas;",
+    "E": "a integralidade dos áudios."
+   },
+   "gabarito": "E"
+  },
+  {
+   "n": 60,
+   "materia": "Conhecimentos Específicos",
+   "enunciado": "Nos casos de ações penais em curso, alcançadas por sucessão de lei nova que acarrete observância do princípio da continuidade normativo-típica, a denúncia ou queixa deverá:",
+   "alternativas": {
+    "A": "ser ratificada;",
+    "B": "ser retificada;",
+    "C": "ser rerratificada;",
+    "D": "ser extinta;",
+    "E": "prosseguir sem alterações. 1 No dia 25 de abril de 2022, Pederneiras, delegado de polícia do Estado X, se dirige ao Fórum Desembargador Milton Sebastião Barbosa, em Brasília, com a finalidade de despachar representação de prisão temporária em determinada investigação. Chegando ao Fórum, ciente da determinação do de armas de fogo e de munição, Pederneiras dirige-se primeiro ao portão principal de acesso, passando pelo detector de metais, local em que resolve desmuniciar sua pistola, mesmo sabedor de que na reserva de armamento do Fórum encontraria uma caixa de areia específica para o descarregamento, como já fizera em outras oportunidades. Com receio de chamar atenção, Pederneiras opta por realizar o procedimento de retirada da munição da pistola dentro da pasta executiva que carrega. Em razão da pouca visão e do espaço limitado para manobra, ao tentar retirar a munição que estava na câmara, Pederneiras aciona o gatilho, efetuando disparo involuntário, que vem atingir uma idosa, que realizava o procedimento de ingresso ao lado. Em virtude das lesões provocadas, a idosa morre no local, sem que qualquer socorro médico pudesse ser prestado. Discorra sobre a existência de responsabilidade jurídico-penal de Pederneiras no evento morte. Valor: 15 pontos Máximo de 15 linhas. 2 João, pretendendo o cumprimento de uma sentença transitada em julgado há menos de 1 ano, que havia condenado Maria a lhe pagar a quantia de R$ 50.000,00, peticionou, no mesmo processo, anexando o demonstrativo discriminado e atualizado do valor do crédito, requerendo a intimação da devedora, pelo Diário da Justiça, na pessoa de seu advogado ainda constituído nos autos. Ao despachar a petição, o juiz determinou a intimação da executada para pagar a dívida em 15 dias. Do mandado de intimação constou a ordem de penhora e avaliação de bens, caso não ocorresse o pagamento no prazo assinalado. Transcorrendo o prazo sem o efetivo pagamento, o credor requereu uma certidão do teor da decisão do juiz para efeito de protesto junto ao cartório de notas e protestos de títulos e documentos, o que foi deferido pelo juízo. Considerando os elementos descritos, responda, de forma fundamentada: a) Qual o termo inicial do prazo de 15 dias mencionado e de que forma se estabelece sua contagem? Caso não haja o pagamento integral da dívida, como devem ser fixados inicialmente os honorários advocatícios? b) Desejando resistir à pretensão do exequente, qual a medida de que dispõe a devedora e quais são o seu prazo e a sua forma de fluência? c) Considerando que Maria, ao se insurgir contra a pretensão executória, argua, como única tese defensiva, que o exequente pleiteia quantia superior à resultante da sentença, sem a apresentação do valor que entende correto e de demonstrativo discriminado e atualizado do seu cálculo, qual providência será adotada pelo juiz? d) Quais os requisitos necessários para a admissibilidade de pronunciamento judicial autorizando o protesto? e) Foi correta a distribuição da pretensão executória no mesmo processo? Quais as formas de intimação do executado possíveis para o cumprimento da sentença? Valor: 15 pontos Máximo de 15 linhas Tipo 1 Branca Tipo 1 Branca Tipo 1 Branca Realização"
+   },
+   "gabarito": "E"
+  }
+ ]
+}
