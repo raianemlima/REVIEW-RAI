@@ -1,0 +1,33 @@
+
+/* ---- aba Teses STJ (Jurisprudência em Teses) ---- */
+.tes-hero { border-radius: 20px; padding: 22px 20px 20px; margin: 16px 0 14px; color: #f4f6fb;
+  background: radial-gradient(120% 140% at 100% 0%, #4a5fc1 0%, transparent 55%), linear-gradient(135deg, #1a2350 0%, #24337a 60%, #2b3f94 100%); }
+.tes-kicker { font: 600 .7rem var(--f-mono); letter-spacing: .12em; text-transform: uppercase; opacity: .85; margin: 0; }
+.tes-hero h2 { color: #fff; margin: 6px 0; font-size: 1.6rem; }
+.tes-hero p { margin: 0; opacity: .9; max-width: 38em; }
+.tes-stats { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+.tes-stats div { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); border-radius: 14px; padding: 8px 12px; min-width: 88px; }
+.tes-stats b { display: block; font: 600 1.25rem var(--f-ui); color: #fff; font-variant-numeric: tabular-nums; }
+.tes-stats span { font-size: .75rem; opacity: .88; }
+.tes-filtros { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 0 0 8px; }
+.tes-filtros input[type=search] { flex: 1 1 240px; min-width: 0; }
+.tes-filtros select, .tes-filtros input[type=search] { padding: 9px 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--ink); font: inherit; max-width: 100%; }
+.tes-filtros label { display: inline-flex; gap: 6px; align-items: center; font-size: .88rem; color: var(--muted); }
+.tes-cont { color: var(--muted); font-size: .88rem; margin: 4px 0 10px; }
+.tes-lista { display: grid; gap: 12px; }
+.tes-item { border: 1px solid var(--line); border-radius: 14px; background: var(--surface); padding: 14px 14px 12px; }
+.tes-item.lido { opacity: .62; }
+.tes-item header { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 6px; }
+.tes-num { font: 700 .7rem var(--f-mono); letter-spacing: .06em; padding: 3px 8px; border-radius: 999px; color: #fff; background: #24408a; }
+.tes-meta { font: 500 .78rem var(--f-mono); color: var(--muted); }
+.tes-lido { margin-left: auto; font-size: .82rem; color: var(--muted); display: inline-flex; gap: 5px; align-items: center; }
+.tes-item h4 { margin: 4px 0 4px; font-size: 1rem; line-height: 1.35; }
+.tes-sub { margin: 0 0 6px; font-size: .82rem; color: var(--muted); }
+.tes-item summary { cursor: pointer; font-weight: 600; font-size: .9rem; }
+.tes-teses { margin: 8px 0 0; padding-left: 1.6em; display: grid; gap: 10px; }
+.tes-txt { margin: 0; line-height: 1.5; border-left: 3px solid #c8962b; background: rgba(200,150,43,.1); border-radius: 0 10px 10px 0; padding: 6px 10px; }
+.tes-sit { margin: 4px 0 0; font: 500 .72rem var(--f-mono); color: var(--muted); }
+.tes-jul { margin-top: 4px; }
+.tes-jul summary { font-weight: 500; font-size: .82rem; color: var(--muted); }
+.tes-jul ul { margin: 4px 0 2px; padding-left: 1.2em; font: 400 .78rem var(--f-mono); color: var(--muted); display: grid; gap: 2px; }
+/* ---- fim da aba Teses STJ ---- */
