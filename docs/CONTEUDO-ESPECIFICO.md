@@ -4,11 +4,24 @@ Três e-books no **Aprofundamento** (Biblioteca), um por concurso, montados a pa
 
 | E-book | Edital no Cronograma | Assuntos com trechos | Trechos |
 |---|---|---|---|
-| Conteúdo específico · DPE/RN | `rn-2025` (Res. 344/2025) | 100 de 206 | 242 |
-| Conteúdo específico · TJPB 2026 | `tjpb-2026` (Edital 01/2026) | 57 de 78 | 154 |
-| Conteúdo específico · DPDF 2026 | `df-2026` (Edital 1/2026) | 142 de 227 | 325 |
+| Conteúdo específico · DPE/RN | `rn-2025` (Res. 344/2025) | 143 de 206 | 379 |
+| Conteúdo específico · TJPB 2026 | `tjpb-2026` (Edital 01/2026) | 71 de 78 | 220 |
+| Conteúdo específico · DPDF 2026 | `df-2026` (Edital 1/2026) | 167 de 227 | 401 |
 
-**Língua Portuguesa fica fora** dos e-books (TJPB e DPDF), por escolha da titular do app: no Cronograma, esses assuntos não ganham botão nem aviso. Os demais assuntos sem trecho ficam no e-book com o aviso de que o material não cobre o tema. O material do Drive não tem doutrina de Informática, Primeiros Socorros, LODF e regime dos servidores do DF; em Direito Civil e em Processo Penal ele traz sobretudo informativos e atualizações, não manual.
+**Língua Portuguesa fica fora** dos e-books (TJPB e DPDF), por escolha da titular do app: no Cronograma, esses assuntos não ganham botão nem aviso. Os demais assuntos sem trecho ficam no e-book com o aviso de que o material não cobre o tema. O material do Drive não tem doutrina de Informática, Primeiros Socorros, LODF e regime dos servidores do DF.
+
+## Fontes
+
+São 101 arquivos do Drive, só material de estudo (peças, ofícios e documentos de trabalho ficam de fora):
+
+- **CP Iuris (e-books 2026):** Civil, Administrativo, Consumidor, Processo Civil, Penal (Parte Especial), Legislação Penal Especial, Criança e Adolescente, Direitos Humanos e Informativos 10x;
+- **Reta Final DPE/SP (Cursos DUO):** Constitucional, Administrativo e Tributário, Civil, Processo Civil, Penal, Processo Penal, Difusos e Coletivos, Criança e Adolescente, Direitos Humanos, Princípios Institucionais e Teses Institucionais;
+- **Cursos DUO, apostilas por ponto:** Civil (famílias, obrigações, registros/LGPD/Marco Civil), Processo Civil (sujeitos, tutela provisória, procedimentos, provas, precedentes, execução), Penal (visão geral, patrimônio), Processo Penal (introdução, inquérito e ação, prova), Execução Penal (progressão, remição, multa), Constitucional (direitos fundamentais) e Princípios Institucionais (assistência jurídica);
+- **Pro Leges e NPL (resumos):** Defensoria Pública (LC 80/1994), Difusos e Coletivos, Pessoa com Deficiência, Pessoa Idosa, Consumidor, Criança e Adolescente, Urbanístico, Saúde, Agrário, Digital, Desportivo, Criminologia, Execução Penal, Hermenêutica e Medicina Legal;
+- **Curso RDP (Direitos Humanos):** sistemas global e interamericano, casos da Corte IDH, grupos vulneráveis, comentários gerais, refugiados, indigenista e outros;
+- **Atualizações e Radar Legislativo** de 2026 e as anotações de estudo.
+
+Os e-books CP Iuris de **Constitucional e Processo Penal** (cerca de 7 MB cada) não passam pelo conector do Drive. Nessas matérias valem o Reta Final, as apostilas por ponto e os informativos.
 
 ## No Cronograma
 

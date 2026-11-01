@@ -55,6 +55,7 @@ for p in P:
     for k, g in enumerate(grupos):
         txt = "\n\n".join(g)
         if len(txt.split()) < 20 and len(grupos) > 1: continue
+        if re.search(r"O que vai estudar neste material|neste material Ponto|^\s*SUM[ÁA]RIO", txt[:200], re.I): continue   # abertura que só repete o edital
         t = toks_num(txt)
         u = {"id": f'{p["id"]}.{k}', "pid": p["id"], "k": k, "n": len(grupos), "fonte": p["fonte"], "arq": p["arq"], "disc": p["disc"],
              "sec": p["sec"], "p": p["p"], "texto": txt, "prox": textos_g[k + 1] if k + 1 < len(textos_g) else "", "ant": textos_g[k - 1] if k else ""}
