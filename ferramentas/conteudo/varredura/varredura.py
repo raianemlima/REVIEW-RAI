@@ -129,9 +129,26 @@ def _tentar(tipo, num, anos, baixar):
     return st, None, url
 
 
+CANARIO = ("lei", 15471, 2026)   # norma que existe e está no app: serve para saber se o Planalto responde a este servidor
+
+
+def testar_planalto(baixar=baixar):
+    """None se o Planalto devolve a norma-canário; senão, a frase para o relatório (bloqueio, página que não é norma, sem conexão)."""
+    t, n, a = CANARIO
+    url = TIPOS[t][1].format(num=n, ano=a, periodo=periodo_do_ano(a))
+    st, corpo = baixar(url)
+    if st == 200 and extrair(corpo):
+        return None
+    amostra = limpa(texto_da_pagina(corpo))[:100] if corpo else ""
+    return f"O Planalto não devolveu uma norma conhecida ({rotulo(t, n, a)}) a este servidor: resposta {st or 'sem conexão'}" + (f", \"{amostra}\"" if amostra else "") + ". Provável bloqueio de acesso vindo de servidores; rode a varredura no seu computador (python ferramentas/conteudo/varredura/varredura.py) ou use a rotina no Claude."
+
+
 def varrer_normas(estado, cobertas, hoje, baixar=baixar, max_falhas=6, teto=120):
     """Confere as pendentes e anda a partir do número seguinte ao último conferido, por tipo, até `max_falhas` números seguidos que não existem."""
     achadas, avisos, vistas = [], [], set()
+    falha = testar_planalto(baixar)
+    if falha:
+        return achadas, [falha]
 
     def registrar(tipo, r, url, deixadas):
         t, n, a, data, ementa = r

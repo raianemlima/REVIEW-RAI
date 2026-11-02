@@ -35,7 +35,7 @@ def baixar(url):
     vistos.append(url)
     m = __import__('re').search(r'l(\\d+)\\.htm', url)
     n = int(m.group(1)) if m else 0
-    if n in (15527, 15528, 15529, 15300):
+    if n in (15527, 15528, 15529, 15300, 15471):
         return 200, ('<p>%s</p><p>%s</p><p>O PRESIDENTE DA REPÚBLICA Faço saber</p>' % pag(n)).encode()
     return 404, b''
 from datetime import date
@@ -56,7 +56,7 @@ infos, av2 = v.varrer_informativos([{'tribunal': 'STF', 'ate': 1234}], baixar=la
 rel = v.relatorio(date(2026, 11, 2), achadas, infos, avisos + av2, {})
 print(json.dumps({'achadas': len(achadas), 'avisos': len(avisos), 'rel': rel}))`);
   assert.equal(r.achadas, 0); assert.ok(r.avisos >= 1);
-  assert.match(r.rel, /Atenção:.*Sem acesso ao Planalto/);
+  assert.match(r.rel, /Atenção:.*O Planalto não devolveu uma norma conhecida.*sem conexão/);
   assert.doesNotMatch(r.rel, /Nenhuma norma nova/);
 });
 
@@ -67,16 +67,28 @@ a, av = v.varrer_normas({'lei': {'desde': 15527, 'ano': 2026, 'pendentes': [1535
 i, av2 = v.varrer_informativos([{'tribunal': 'STJ', 'ate': 908}], baixar=lambda u: (429, b''))
 print(json.dumps({'a': len(a), 'av': av, 'av2': av2}))`);
   assert.equal(r.a, 0);
-  assert.ok(r.av.some(m => /Sem acesso ao Planalto.*403/.test(m)), JSON.stringify(r.av));
+  assert.ok(r.av.some(m => /O Planalto não devolveu.*resposta 403/.test(m)), JSON.stringify(r.av));
   assert.ok(r.av2.some(m => /Sem acesso ao STJ.*429/.test(m)), JSON.stringify(r.av2));
 });
 
 test('pendente que o Planalto não devolve vira aviso', () => {
   const r = roda(`
 from datetime import date
-a, av = v.varrer_normas({'lei': {'desde': 15527, 'ano': 2026, 'pendentes': [15352]}, 'lcp': {'desde': 239}, 'emc': {'desde': 142}}, set(), date(2026, 11, 2), baixar=lambda u: (404, b''))
+a, av = v.varrer_normas({'lei': {'desde': 15527, 'ano': 2026, 'pendentes': [15352]}, 'lcp': {'desde': 239}, 'emc': {'desde': 142}}, set(), date(2026, 11, 2), baixar=lambda u: (200, b'<p>LEI N. 15.471, DE 20 DE JULHO DE 2026</p><p>Institui a estrategia.</p><p>O PRESIDENTE</p>') if '15471' in u else (404, b''))
 print(json.dumps(av))`);
   assert.ok(r.some(m => /Lei 15\.352\/2026 está nas pendentes/.test(m)), JSON.stringify(r));
+});
+
+test('o Planalto responde com uma página de bloqueio: um único aviso claro, sem varrer à toa', () => {
+  const r = roda(`
+from datetime import date
+vistos = []
+def baixar(u):
+    vistos.append(u); return 200, b'<html>Just a moment... cloudflare</html>'
+a, av = v.varrer_normas({'lei': {'desde': 15527, 'ano': 2026, 'pendentes': [15352]}}, set(), date(2026, 11, 2), baixar=baixar)
+print(json.dumps({'a': len(a), 'av': av, 'n': len(vistos)}))`);
+  assert.equal(r.n, 1); assert.equal(r.a, 0); assert.equal(r.av.length, 1);
+  assert.match(r.av[0], /Provável bloqueio de acesso vindo de servidores/);
 });
 
 test('informativo novo: STF pela existência da página, STJ pelo número da edição na página', () => {
