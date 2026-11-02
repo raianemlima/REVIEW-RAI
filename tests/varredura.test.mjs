@@ -102,11 +102,12 @@ print(json.dumps([(n['tribunal'], n['numero']) for n in novas]))`);
   assert.deepEqual(r, [['STF', 1235], ['STJ', 909]]);
 });
 
-test('o estado da varredura cobre as normas pendentes e o workflow mensal existe', () => {
+test('o estado da varredura não deixa pendente o que já virou item e o workflow mensal existe', () => {
   const e = JSON.parse(readFileSync(new URL('ferramentas/conteudo/dados/varredura-estado.json', raiz), 'utf8'));
-  assert.deepEqual(e.lei.pendentes, [15352, 15409, 15413, 15426, 15450, 15472]);
-  assert.deepEqual(e.lcp.pendentes, [227, 238]);
+  assert.deepEqual(e.lei.pendentes, []); assert.deepEqual(e.lcp.pendentes, []);
   assert.ok(e.lei.desde > 15526 && e.lcp.desde > 238 && e.emc.desde > 141);
+  const app = readFileSync(new URL('app-src.txt', raiz), 'utf8');
+  for (const lei of ['Lei 15.352/2026', 'Lei 15.409/2026', 'Lei 15.413/2026', 'Lei 15.426/2026', 'Lei 15.450/2026', 'Lei 15.472/2026', 'Lei Complementar 227/2026', 'Lei Complementar 238/2026']) assert.ok(app.includes(`"lei": "${lei}"`), lei);
   const wf = readFileSync(new URL('.github/workflows/varredura-mensal.yml', raiz), 'utf8');
   assert.match(wf, /cron: "0 11 1 \* \*"/);
   assert.match(wf, /issues: write/);

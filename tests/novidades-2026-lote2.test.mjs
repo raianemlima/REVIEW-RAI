@@ -62,3 +62,42 @@ test("Novidades: marcos que o lote precisa registrar (vigência, vetos e pegadin
   assert.match(txt("nv-2026-11-lei15358"), /70%/);                                // art. 112, V, da LEP
   assert.match(txt("nv-2026-11-lc236"), /2 anos/);                                // prazo de adaptação dos entes
 });
+
+// segundo lote: as oito normas que a varredura deixou pendentes
+const LOTE5 = {
+  "nv-2026-11-lei15352": ["Lei 15.352/2026", "2026-02-25"],
+  "nv-2026-11-lei15409": ["Lei 15.409/2026", "2026-05-21"],
+  "nv-2026-11-lei15413": ["Lei 15.413/2026", "2026-05-22"],
+  "nv-2026-11-lei15426": ["Lei 15.426/2026", "2026-06-08"],
+  "nv-2026-11-lei15450": ["Lei 15.450/2026", "2026-07-01"],
+  "nv-2026-11-lei15472": ["Lei 15.472/2026", "2026-07-22"],
+  "nv-2026-11-lc227": ["Lei Complementar 227/2026", "2026-01-14"],
+  "nv-2026-11-lc238": ["Lei Complementar 238/2026", "2026-10-21"],
+};
+
+test("Novidades: as oito normas pendentes entram completas, com lacunas, e o lote anterior continua", () => {
+  assert.equal(new Set(itens.map(i => i.id)).size, itens.length, "ids repetidos");
+  for (const [id, [lei, pub]] of Object.entries(LOTE5)) {
+    const n = por[id];
+    assert.ok(n, id);
+    assert.equal(n.tipo, "lei", id); assert.equal(n.lei, lei, id); assert.equal(n.pub, pub, id);
+    for (const c of ["titulo", "resumo", "temas", "mudou", "dpe", "prova", "lacunas"]) assert.ok(n[c] && n[c].length, `${id}: campo ${c}`);
+    for (const p of n.papeis || []) assert.ok(["defesa", "assistido", "coletivo"].includes(p), `${id}: ${p}`);
+    assert.ok(n.treino.length >= 3 && n.treino.every(t => t.q && typeof t.a === "boolean" && t.e), `${id}: treino`);
+    for (const l of n.lacunas) assert.equal(l.f.split("____").length, 2, `${id}: ${l.f.slice(0, 40)}`);
+  }
+  for (const id of Object.keys(LOTE)) assert.ok(por[id], id);
+});
+
+test("Novidades: marcos das oito normas (vigência, vetos e números que caem)", () => {
+  const txt = id => { const n = por[id]; return [n.resumo, ...n.mudou, ...n.prova, ...n.lacunas.map(l => l.f + " " + l.v)].join(" "); };
+  assert.match(txt("nv-2026-11-lei15352"), /17 de março de 2026/);         // ECA Digital
+  assert.match(txt("nv-2026-11-lei15409"), /60 dias/);                     // vacatio do cadastro
+  assert.match(txt("nv-2026-11-lei15426"), /veto/i);                       // art. 89-A, IX e parágrafo único
+  assert.match(txt("nv-2026-11-lei15450"), /180 dias/);
+  assert.match(txt("nv-2026-11-lei15472"), /alimentar/);
+  assert.match(txt("nv-2026-11-lc238"), /R\$ 140 mil/); assert.match(txt("nv-2026-11-lc238"), /R\$ 110 mil/);
+  assert.match(txt("nv-2026-11-lc238"), /13\/10\/2026/);
+  assert.match(txt("nv-2026-11-lc227"), /20 dias/);
+});
+

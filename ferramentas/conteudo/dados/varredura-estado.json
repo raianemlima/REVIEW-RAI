@@ -3,21 +3,11 @@
     "desde": 15527,
     "ano": 2026,
     "deixadas": [],
-    "pendentes": [
-      15352,
-      15409,
-      15413,
-      15426,
-      15450,
-      15472
-    ]
+    "pendentes": []
   },
   "lcp": {
     "desde": 239,
-    "pendentes": [
-      227,
-      238
-    ]
+    "pendentes": []
   },
   "emc": {
     "desde": 142

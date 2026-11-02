@@ -1,0 +1,520 @@
+[
+  {
+    "id": "nv-2026-11-lei15352",
+    "tipo": "lei",
+    "lei": "Lei 15.352/2026",
+    "pub": "2026-02-25",
+    "titulo": "ANPD como autarquia de natureza especial, nova carreira e vigência do ECA Digital em 17/03/2026",
+    "resumo": "Converte a **MP 1.317/2025**. Dá nova redação à **LGPD** para fixar a **ANPD** como **autarquia de natureza especial** vinculada ao Ministério da Justiça e Segurança Pública, com autonomia funcional, técnica, decisória, administrativa e financeira, **inclui a ANPD entre as agências reguladoras** (Lei 13.848/2019), cria a **carreira de Regulação e Fiscalização de Proteção de Dados** e fixa que o **Estatuto Digital da Criança e do Adolescente** (Lei 15.211/2025) entra em vigor em **17 de março de 2026**. Revoga a MP 1.319/2025. Publicada em 25/02/2026 (edição extra).",
+    "temas": [
+      "Administrativo",
+      "Infância e juventude",
+      "Direitos humanos"
+    ],
+    "papeis": [
+      "coletivo",
+      "assistido"
+    ],
+    "mudou": [
+      "**LGPD, art. 55-A:** a ANPD é **autarquia de natureza especial**, vinculada ao Ministério da Justiça e Segurança Pública, com **autonomia funcional, técnica, decisória, administrativa e financeira**, patrimônio próprio e sede e foro no Distrito Federal, nos termos da Lei 13.848/2019. A estrutura do art. 55-C passa a prever também **Procuradoria** e **Auditoria**.",
+      "**Agência reguladora:** o art. 2º da Lei 13.848/2019 inclui a ANPD no rol de agências reguladoras (inciso XII). A Lei 9.008/1995 passa a prever **um representante da ANPD** no conselho gestor do fundo de defesa de direitos difusos (art. 2º, IX).",
+      "**Carreira e cargos:** cria a carreira de **Regulação e Fiscalização de Proteção de Dados** (Lei 10.871/2004, art. 1º, XXI), de nível superior, com o cargo de **Especialista em Regulação de Proteção de Dados**; transforma cargos vagos, sem aumento de despesa (200 cargos de Especialista, mais cargos em comissão e funções de confiança), e cria CCE e FCE para a ANPD. O curso de formação específica é parte obrigatória do concurso.",
+      "**Transição:** os **mandatos em curso** do Conselho Diretor são mantidos até o fim original (art. 12); os agentes públicos em atividade na ANPD podem permanecer (art. 13); a ANPD **sucede** a Autoridade Nacional de Proteção de Dados em direitos, obrigações e lides em curso, **afastada a legitimidade passiva da União** (art. 15, parágrafo único).",
+      "**ECA Digital (Lei 15.211/2025), novo art. 41-A:** a lei entra em vigor em **17 de março de 2026**. A Lei 15.352 entra em vigor na publicação (art. 21)."
+    ],
+    "dpe": [
+      "Marco temporal importante para a **tutela da criança no ambiente digital**: o ECA Digital vale desde **17/03/2026**, o que fixa o termo inicial para pedidos de providências contra plataformas e responsáveis.",
+      "Em ações sobre **dados pessoais**, a ANPD (e não a União) responde pelas lides da antiga Autoridade (art. 15, parágrafo único); confira a legitimidade passiva antes de ajuizar."
+    ],
+    "prova": [
+      "**Natureza jurídica** da ANPD (autarquia de natureza especial, com autonomia) e sua inclusão entre as **agências reguladoras**.",
+      "**Data de início do ECA Digital** (17/03/2026) e a regra de **sucessão** da Autoridade pela Agência, sem legitimidade passiva da União."
+    ],
+    "treino": [
+      {
+        "q": "A Lei 15.352/2026 fixou que o Estatuto Digital da Criança e do Adolescente entra em vigor em 17 de março de 2026.",
+        "a": true,
+        "e": "Certo. É o novo art. 41-A da Lei 15.211/2025, incluído pelo art. 19 da Lei 15.352/2026."
+      },
+      {
+        "q": "Com a Lei 15.352/2026, os mandatos em curso dos membros do Conselho Diretor da ANPD foram encerrados na data de entrada em vigor da lei.",
+        "a": false,
+        "e": "Errado. O art. 12 mantém os mandatos em curso até o seu término original."
+      },
+      {
+        "q": "A ANPD é autarquia de natureza especial vinculada ao Ministério da Justiça e Segurança Pública, com autonomia funcional, técnica, decisória, administrativa e financeira.",
+        "a": true,
+        "e": "Certo. É a redação do art. 55-A da LGPD."
+      },
+      {
+        "q": "Nas lides da antiga Autoridade Nacional de Proteção de Dados, a União continua sendo parte passiva legítima.",
+        "a": false,
+        "e": "Errado. O art. 15, parágrafo único, torna a ANPD sucessora nas lides em curso e posteriores, afastada a legitimidade passiva da União."
+      }
+    ],
+    "lacunas": [
+      {
+        "d": "ec",
+        "f": "Lei 15.211/2025, art. 41-A (Lei 15.352/2026): o ECA Digital entra em vigor em ____ de março de 2026.",
+        "v": "17"
+      },
+      {
+        "d": "ad",
+        "f": "LGPD, art. 55-A: a ANPD é uma ____ de natureza especial vinculada ao Ministério da Justiça e Segurança Pública.",
+        "v": "autarquia"
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lei15409",
+    "tipo": "lei",
+    "lei": "Lei 15.409/2026",
+    "pub": "2026-05-21",
+    "titulo": "Cadastro Nacional de Pessoas Condenadas por Violência contra a Mulher (CNVM)",
+    "resumo": "Cria o **CNVM**, banco de dados de pessoas condenadas por **sentença penal transitada em julgado** por dez crimes de violência contra a mulher (feminicídio, estupro, estupro de vulnerável, importunação sexual, perseguição, violência psicológica etc.), com **nome, documentos, filiação, fotografia, impressões digitais, endereço** e o crime cometido, **resguardado o sigilo do nome da ofendida**. Gerido pelo Poder Executivo da União. **Entra em vigor 60 dias após a publicação**; o art. 5º foi vetado. Publicada em 21/05/2026.",
+    "temas": [
+      "Violência contra a mulher",
+      "Penal",
+      "Processo penal"
+    ],
+    "papeis": [
+      "defesa",
+      "assistido"
+    ],
+    "mudou": [
+      "**Cadastro (art. 1º):** banco de dados de pessoas condenadas por sentença penal **transitada em julgado**; o sigilo do nome da ofendida é resguardado. O CNVM **incorpora** as informações dos bancos de dados dos órgãos de segurança pública federais e estaduais (§4º).",
+      "**Crimes do rol (§2º):** feminicídio (art. 121-A), estupro (213), estupro de vulnerável (217-A), violação sexual mediante fraude (215), importunação sexual (215-A), assédio sexual (216-A), registro não autorizado da intimidade sexual (216-B), lesão corporal contra a mulher (129, §13), perseguição contra a mulher (147-A, §1º, II) e violência psicológica contra a mulher (147-B).",
+      "**Dados (§3º):** nome completo, RG, CPF, filiação, **identificação biométrica** (fotografia frontal e impressões digitais), endereço residencial e crime cometido contra a mulher.",
+      "**Gestão (art. 3º):** Poder Executivo da União, conforme regulamento; o sistema deve permitir a comunicação entre órgãos de segurança federais e estaduais. Os dados são atualizados periodicamente e armazenados para **consulta dos interessados** (art. 4º). **Art. 5º vetado** (confira a mensagem de veto).",
+      "**Vigência (art. 6º):** **60 dias** após a publicação oficial."
+    ],
+    "dpe": [
+      "Para a **defesa criminal**, a inclusão exige **trânsito em julgado** e crime do **rol fechado** do §2º; vale conferir se o registro corresponde exatamente à condenação e como o regulamento tratará acesso, retificação e exclusão de dados (inclusive após reabilitação).",
+      "Para a **mulher vítima**, o cadastro é fonte de consulta sobre o histórico do agressor, sem expor o nome da ofendida."
+    ],
+    "prova": [
+      "**Condição de inclusão:** condenação **transitada em julgado**; sigilo do nome da **ofendida**.",
+      "**Rol de crimes** (inclui feminicídio, estupro, estupro de vulnerável, perseguição e violência psicológica) e **vacatio** de 60 dias."
+    ],
+    "treino": [
+      {
+        "q": "O CNVM reúne dados de pessoas condenadas por sentença penal transitada em julgado pela prática de crimes de violência contra a mulher.",
+        "a": true,
+        "e": "Certo. É o §1º do art. 1º da Lei 15.409/2026."
+      },
+      {
+        "q": "Pessoas apenas denunciadas por violência contra a mulher devem constar do CNVM.",
+        "a": false,
+        "e": "Errado. O cadastro é de pessoas condenadas por sentença transitada em julgado."
+      },
+      {
+        "q": "O CNVM deve conter o nome completo da ofendida, ao lado dos dados do condenado.",
+        "a": false,
+        "e": "Errado. O §1º resguarda o direito de sigilo do nome da ofendida."
+      },
+      {
+        "q": "A Lei 15.409/2026 entra em vigor após decorridos 60 dias de sua publicação oficial.",
+        "a": true,
+        "e": "Certo. É o art. 6º."
+      }
+    ],
+    "lacunas": [
+      {
+        "d": "pp",
+        "f": "Lei 15.409/2026, art. 6º: entra em vigor após decorridos ____ dias da publicação oficial.",
+        "v": "60"
+      },
+      {
+        "d": "pp",
+        "f": "Lei 15.409/2026, art. 1º, §1º: o CNVM reúne pessoas condenadas por sentença penal transitada em ____.",
+        "v": "julgado"
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lei15413",
+    "tipo": "lei",
+    "lei": "Lei 15.413/2026",
+    "pub": "2026-05-22",
+    "titulo": "Saúde mental de crianças e adolescentes no SUS (ECA, art. 11-A)",
+    "resumo": "Acrescenta o **art. 11-A ao ECA**: crianças e adolescentes têm **acesso a programas de saúde mental do SUS** para prevenção e tratamento, com atenção psicossocial básica e especializada, de urgência e emergência e hospitalar; os profissionais recebem **formação específica e permanente**; e as crianças em situação de vulnerabilidade têm acesso aos recursos terapêuticos de forma **gratuita ou subsidiada**. Publicada em 22/05/2026; vigência imediata.",
+    "temas": [
+      "Infância e juventude",
+      "Saúde"
+    ],
+    "papeis": [
+      "assistido",
+      "coletivo"
+    ],
+    "mudou": [
+      "**ECA, art. 11-A, caput:** é assegurado às crianças e aos adolescentes acesso a **programas de saúde mental promovidos pelo SUS** para a **prevenção e o tratamento** de agravos de saúde mental.",
+      "**§1º:** os programas promovem a atenção psicossocial **básica e especializada, de urgência e emergência, e a atenção hospitalar**.",
+      "**§2º:** os profissionais recebem **formação específica e permanente** para detectar sinais de risco e acompanhar os casos.",
+      "**§3º:** as crianças e os adolescentes **em situação de vulnerabilidade** que estejam em tratamento têm acesso a **todos os recursos terapêuticos**, de forma **gratuita ou subsidiada**, conforme as linhas de cuidado voltadas às suas necessidades."
+    ],
+    "dpe": [
+      "Fundamento legal expresso para **ações de saúde** (internação, acompanhamento psicossocial, medicamentos e terapias) em favor de crianças e adolescentes atendidos pela Defensoria, e para a **tutela coletiva** de políticas de saúde mental infantojuvenil.",
+      "A garantia de **todos os recursos terapêuticos** para quem está em vulnerabilidade pode embasar pedidos de custeio de tratamentos não disponíveis na rede."
+    ],
+    "prova": [
+      "**Novo art. 11-A do ECA:** programas de saúde mental no SUS, níveis de atenção (básica, especializada, urgência e emergência, hospitalar) e formação **permanente** dos profissionais."
+    ],
+    "treino": [
+      {
+        "q": "O art. 11-A do ECA assegura às crianças e aos adolescentes acesso a programas de saúde mental promovidos pelo SUS para a prevenção e o tratamento de agravos.",
+        "a": true,
+        "e": "Certo. É o caput do art. 11-A, incluído pela Lei 15.413/2026."
+      },
+      {
+        "q": "A Lei 15.413/2026 restringe os programas de saúde mental infantojuvenil à atenção hospitalar.",
+        "a": false,
+        "e": "Errado. O §1º prevê atenção psicossocial básica e especializada, de urgência e emergência, e hospitalar."
+      },
+      {
+        "q": "Aos profissionais que atuam na área deve ser dada formação específica e permanente para detectar sinais de risco.",
+        "a": true,
+        "e": "Certo. É o §2º do art. 11-A."
+      }
+    ],
+    "lacunas": [
+      {
+        "d": "ec",
+        "f": "ECA, art. 11-A (Lei 15.413/2026): é assegurado acesso a programas de saúde mental promovidos pelo ____ para prevenção e tratamento.",
+        "v": "SUS"
+      },
+      {
+        "d": "ec",
+        "f": "ECA, art. 11-A, §2º: os profissionais recebem formação específica e ____ para a detecção de sinais de risco.",
+        "v": "permanente"
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lei15426",
+    "tipo": "lei",
+    "lei": "Lei 15.426/2026",
+    "pub": "2026-06-08",
+    "titulo": "Conselhos dos Direitos da Criança e do Adolescente: deveres, não remuneração e relatório semestral (ECA, arts. 89, 89-A e 260-I)",
+    "resumo": "Altera o **ECA** para fixar os **deveres funcionais** dos membros dos Conselhos dos Direitos da Criança e do Adolescente (nacional, estaduais, distrital e municipais) e a responsabilização administrativa conforme a lei do ente. A função é de **interesse público relevante e não é remunerada** (art. 89); a **lei de cada ente** dispõe sobre a **perda da função**; os conselhos devem apresentar e divulgar **relatório detalhado de atividades, no mínimo semestral** (art. 260-I). Há **vetos** no art. 89-A (inciso IX e parágrafo único). Publicada em 08/06/2026.",
+    "temas": [
+      "Infância e juventude",
+      "Administrativo"
+    ],
+    "papeis": [
+      "coletivo"
+    ],
+    "mudou": [
+      "**ECA, art. 89:** a função de membro dos Conselhos dos Direitos é de **interesse público relevante** e **não será remunerada**; a **lei de cada ente** da Federação disporá sobre a **perda da função**, respeitado o art. 89-A.",
+      "**ECA, art. 89-A (novo):** deveres fundamentais dos membros: defender os direitos de crianças e adolescentes; cumprir a Constituição e as leis; zelar pelo prestígio do Conselho; agir com dignidade, boa-fé, probidade, zelo e eficiência; comparecer às sessões; examinar os assuntos sob a ótica do interesse público; tratar com respeito os demais; e **prestar contas** à sociedade e aos órgãos públicos (incisos I a VIII). **Vetados** o inciso IX e o parágrafo único.",
+      "**ECA, art. 260-I, parágrafo único:** as informações dos incisos IV, V e VI compõem **relatório detalhado das atividades** de cada Conselho, **obrigatoriamente apresentado e divulgado**, no mínimo, a cada **semestre**."
+    ],
+    "dpe": [
+      "Útil para a atuação em **controle social** e em ações que questionem a regularidade de conselhos, a transparência do **fundo da infância** e a conduta de conselheiros.",
+      "A regra da **perda da função por lei do ente** exige verificar a legislação local de cada Conselho (por exemplo, a de um município da Paraíba ou do Rio Grande do Norte)."
+    ],
+    "prova": [
+      "**Não remuneração** e **interesse público relevante** (art. 89); **deveres fundamentais** (art. 89-A); **relatório semestral** (art. 260-I, parágrafo único).",
+      "Distinguir o que foi **vetado** (art. 89-A, IX e parágrafo único) do que foi sancionado."
+    ],
+    "treino": [
+      {
+        "q": "A função de membro dos Conselhos dos Direitos da Criança e do Adolescente é remunerada, por ser considerada de interesse público relevante.",
+        "a": false,
+        "e": "Errado. O art. 89 diz que a função é de interesse público relevante e não será remunerada."
+      },
+      {
+        "q": "Os Conselhos devem apresentar e divulgar relatório detalhado de suas atividades, no mínimo semestralmente.",
+        "a": true,
+        "e": "Certo. É o parágrafo único do art. 260-I do ECA."
+      },
+      {
+        "q": "A perda da função de conselheiro é disciplinada pela lei de cada ente da Federação, respeitado o art. 89-A.",
+        "a": true,
+        "e": "Certo. É o parágrafo único do art. 89 do ECA."
+      },
+      {
+        "q": "Todos os incisos do art. 89-A do ECA, incluído pela Lei 15.426/2026, foram sancionados sem veto.",
+        "a": false,
+        "e": "Errado. O inciso IX e o parágrafo único do art. 89-A foram vetados."
+      }
+    ],
+    "lacunas": [
+      {
+        "d": "ec",
+        "f": "ECA, art. 89: a função de membro dos Conselhos dos Direitos é considerada de interesse público ____ e não será remunerada.",
+        "v": "relevante"
+      },
+      {
+        "d": "ec",
+        "f": "ECA, art. 260-I, parágrafo único: o relatório detalhado de atividades é apresentado, no mínimo, com periodicidade ____.",
+        "v": "semestral"
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lei15450",
+    "tipo": "lei",
+    "lei": "Lei 15.450/2026",
+    "pub": "2026-07-01",
+    "titulo": "Prevenção do uso inadequado de psicofármacos em crianças e adolescentes (ECA, art. 14, §6º)",
+    "resumo": "Acrescenta o **§6º ao art. 14 do ECA**: a **prevenção do uso indiscriminado, desnecessário ou excessivo de psicofármacos** em crianças e adolescentes passa a ser tema das **campanhas de educação sanitária**. A lei tem **vacatio de 180 dias**. Publicada em 01/07/2026.",
+    "temas": [
+      "Infância e juventude",
+      "Saúde"
+    ],
+    "papeis": [
+      "coletivo",
+      "assistido"
+    ],
+    "mudou": [
+      "**ECA, art. 14, §6º:** a prevenção do uso **indiscriminado, desnecessário ou excessivo de psicofármacos** em crianças e adolescentes inclui-se entre os temas das **campanhas de educação sanitária** previstas no caput.",
+      "**Vigência (art. 2º):** entra em vigor **180 dias após a publicação**, ou seja, no fim de dezembro de 2026."
+    ],
+    "dpe": [
+      "É norma de **educação sanitária** (campanhas), não de regulação de prescrições; ainda assim serve de apoio em questionamentos sobre a **medicalização** de crianças e adolescentes, por exemplo em unidades de acolhimento institucional."
+    ],
+    "prova": [
+      "**Novo §6º do art. 14 do ECA** (campanhas de educação sanitária) e **vacatio** de 180 dias."
+    ],
+    "treino": [
+      {
+        "q": "A Lei 15.450/2026 incluiu entre os temas das campanhas de educação sanitária do ECA a prevenção do uso indiscriminado, desnecessário ou excessivo de psicofármacos em crianças e adolescentes.",
+        "a": true,
+        "e": "Certo. É o novo §6º do art. 14 do ECA."
+      },
+      {
+        "q": "A Lei 15.450/2026 entrou em vigor na data da publicação.",
+        "a": false,
+        "e": "Errado. O art. 2º prevê vigência após 180 dias da publicação oficial."
+      },
+      {
+        "q": "A lei proíbe a prescrição de psicofármacos a crianças e adolescentes.",
+        "a": false,
+        "e": "Errado. A lei apenas inclui a prevenção do uso inadequado entre os temas das campanhas de educação sanitária; não proíbe prescrições."
+      }
+    ],
+    "lacunas": [
+      {
+        "d": "ec",
+        "f": "Lei 15.450/2026, art. 2º: entra em vigor após decorridos ____ dias da publicação oficial.",
+        "v": "180"
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lei15472",
+    "tipo": "lei",
+    "lei": "Lei 15.472/2026",
+    "pub": "2026-07-22",
+    "titulo": "Natureza alimentar dos honorários advocatícios (Estatuto da Advocacia, arts. 22, §9º, e 24)",
+    "resumo": "Altera a **Lei 8.906/1994**: os honorários dos **inscritos na OAB**, convencionados, fixados ou arbitrados por ato judicial ou de sucumbência, **têm natureza alimentar** e gozam dos **mesmos privilégios dos créditos trabalhistas** (art. 22, §9º); o ato judicial que fixa honorários e o contrato escrito são **títulos executivos** e **crédito privilegiado** na falência, na concordata, na recuperação judicial e extrajudicial, no concurso de credores, na insolvência civil e na liquidação extrajudicial (art. 24). Publicada em 22/07/2026; vigência imediata.",
+    "temas": [
+      "Civil",
+      "Processo civil"
+    ],
+    "papeis": [
+      "assistido"
+    ],
+    "mudou": [
+      "**Estatuto da Advocacia, art. 22, §9º:** os honorários decorrentes da prestação de serviço profissional são direito dos inscritos na OAB, têm **natureza alimentar** e gozam dos **mesmos privilégios dos créditos oriundos da legislação do trabalho**, sejam **convencionados, fixados ou arbitrados** por ato judicial ou de **sucumbência**, com tratamento privilegiado em qualquer modalidade de **concurso de credores**.",
+      "**Art. 24:** o ato judicial que fixar ou arbitrar honorários e o contrato escrito que os estipular são **títulos executivos** e constituem **crédito privilegiado** na falência, na concordata, na recuperação judicial e extrajudicial, no concurso de credores, na insolvência civil e na liquidação extrajudicial.",
+      "A lei **não altera o CPC**. O caráter alimentar dos honorários já era reconhecido pela jurisprudência (por exemplo, na Súmula Vinculante 47 do STF); agora está no Estatuto."
+    ],
+    "dpe": [
+      "A lei trata dos honorários dos **inscritos na OAB**; ela **não regula** os honorários devidos à Defensoria Pública. Conferir a evolução da jurisprudência sobre a extensão do regime a outras carreiras.",
+      "A lei **não trata da gratuidade da justiça**: a exigibilidade de honorários contra beneficiário da gratuidade continua regida pelo CPC (art. 98, §3º)."
+    ],
+    "prova": [
+      "**Natureza alimentar** e **privilégio de crédito trabalhista** (art. 22, §9º); **título executivo** e **crédito privilegiado** nos concursos de credores (art. 24).",
+      "A lei altera a **Lei 8.906/1994**, não o CPC."
+    ],
+    "treino": [
+      {
+        "q": "Pela Lei 15.472/2026, os honorários advocatícios têm natureza alimentar e gozam dos mesmos privilégios dos créditos oriundos da legislação do trabalho.",
+        "a": true,
+        "e": "Certo. É o §9º do art. 22 da Lei 8.906/1994."
+      },
+      {
+        "q": "A natureza alimentar, segundo a lei, alcança apenas os honorários de sucumbência.",
+        "a": false,
+        "e": "Errado. O §9º abrange os honorários convencionados, fixados ou arbitrados por ato judicial ou de sucumbência."
+      },
+      {
+        "q": "O ato judicial que fixa honorários e o contrato escrito que os estipula são títulos executivos e constituem crédito privilegiado na falência e na recuperação judicial.",
+        "a": true,
+        "e": "Certo. É a redação do art. 24 do Estatuto da Advocacia."
+      },
+      {
+        "q": "A Lei 15.472/2026 alterou o Código de Processo Civil para explicitar a natureza alimentar dos honorários.",
+        "a": false,
+        "e": "Errado. A lei alterou os arts. 22 e 24 da Lei 8.906/1994."
+      }
+    ],
+    "lacunas": [
+      {
+        "d": "pc",
+        "f": "Lei 8.906/1994, art. 22, §9º (Lei 15.472/2026): os honorários têm natureza ____ e gozam dos mesmos privilégios dos créditos trabalhistas.",
+        "v": "alimentar"
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lc238",
+    "tipo": "lei",
+    "lei": "Lei Complementar 238/2026",
+    "pub": "2026-10-21",
+    "titulo": "MEI: novos limites, remissão de dívidas com a União e licitações (altera a LC 123/2006)",
+    "resumo": "Altera o **Simples Nacional** (LC 123/2006): eleva o **limite de receita bruta do MEI para R$ 140 mil** (efeitos a partir de **01/01/2028**; para o **ano-calendário de 2027**, o limite é de **R$ 110 mil**), admite **até 2 empregados**, concede **remissão integral** dos créditos da União de responsabilidade do MEI **até 13/10/2026** (com contrapartidas) e ajusta as regras de **licitação exclusiva** para ME, EPP e MEI. Publicada em 21/10/2026.",
+    "temas": [
+      "Tributário",
+      "Administrativo"
+    ],
+    "papeis": [
+      "assistido"
+    ],
+    "mudou": [
+      "**Limite do MEI (LC 123, art. 18-A, §§1º e 2º):** até **R$ 140.000,00** de receita bruta no ano-calendário anterior (o limite vigente até então era de R$ 81 mil); no **início de atividade**, R$ 11.666,67 por mês. **Efeitos a partir de 1º/01/2028** (art. 10, I).",
+      "**Ano-calendário de 2027 (art. 2º):** o limite é de **R$ 110.000,00** e, no início de atividade, R$ 9.166,67 por mês. A ampliação depende de a renúncia de receita estar considerada na LOA de 2027 a 2029 (art. 3º).",
+      "**Empregados (art. 18-C):** o MEI pode ter **até 2 empregados** que recebam exclusivamente 1 salário mínimo ou o piso da categoria; em caso de afastamento legal, pode contratar substitutos até cessar o afastamento.",
+      "**Remissão (arts. 5º a 7º):** perdão **integral** dos créditos da União, inscritos ou não em dívida ativa, **até 13/10/2026**, de pessoas naturais enquadradas como MEI (contribuição fixa mensal do art. 18-A, §3º, V, “a”, e acessórios, inclusive parcelamentos e transações). **Não gera direito à restituição** do que já foi pago (§3º). Contrapartidas: manter em dia os recolhimentos dos **6 meses seguintes** (§4º) e **desistir das ações judiciais e renunciar às pretensões** sobre os créditos remitidos, para a baixa dos créditos (art. 6º), sem honorários pela extinção (§1º). A PGFN regulamenta (art. 9º).",
+      "**Licitações (LC 123, arts. 48 e 49):** licitação **exclusiva para ME e EPP** nos itens de valor igual ou menor ao do art. 75, I, da Lei 14.133/2021; **possibilidade** de licitação exclusiva para **MEI** nos itens até metade do valor do art. 75, II.",
+      "**Vigência (art. 10):** na publicação; **efeitos em 1º/01/2028** quanto aos §§1º e 2º do art. 18-A e em **1º/01/2027** quanto aos demais dispositivos."
+    ],
+    "dpe": [
+      "Muitos **assistidos são MEI**: vale orientar sobre a **remissão** (créditos até 13/10/2026), o pedido de baixa com **desistência de ações** e o cuidado de manter os 6 recolhimentos seguintes, sob pena de cancelamento.",
+      "A remissão **não devolve** o que já foi pago ou convertido em renda; atenção a processos em que o assistido discute o crédito e precisará desistir apenas da parte remitida (§3º do art. 6º veda renúncia genérica)."
+    ],
+    "prova": [
+      "**Limites do MEI**: R$ 110 mil em 2027 e R$ 140 mil a partir de 2028; **até 2 empregados**.",
+      "**Remissão**: créditos até **13/10/2026**, **contrapartidas** (adimplência por 6 meses e desistência de ações) e **ausência de restituição**."
+    ],
+    "treino": [
+      {
+        "q": "O novo limite de receita bruta do MEI, de R$ 140 mil, produz efeitos a partir de 1º de janeiro de 2028.",
+        "a": true,
+        "e": "Certo. É o art. 10, I, da LC 238/2026, quanto ao art. 18-A, §§1º e 2º, da LC 123/2006."
+      },
+      {
+        "q": "Para o ano-calendário de 2027, o limite de receita bruta anual do MEI é de R$ 110 mil.",
+        "a": true,
+        "e": "Certo. É o art. 2º da LC 238/2026."
+      },
+      {
+        "q": "A remissão concedida pela LC 238/2026 dá direito à restituição das contribuições que o MEI já havia pago.",
+        "a": false,
+        "e": "Errado. O art. 5º, §3º, afasta o direito à restituição, à compensação ou ao ressarcimento de valores já pagos ou convertidos em renda."
+      },
+      {
+        "q": "A baixa dos créditos remitidos independe de qualquer providência do contribuinte em relação a ações judiciais em curso.",
+        "a": false,
+        "e": "Errado. O art. 6º condiciona a baixa a requerimento que comprove a desistência das ações e a renúncia às pretensões sobre os créditos abrangidos."
+      },
+      {
+        "q": "A remissão alcança créditos da União de responsabilidade de pessoas naturais enquadradas como MEI até 13 de outubro de 2026.",
+        "a": true,
+        "e": "Certo. É o caput do art. 5º."
+      }
+    ],
+    "lacunas": [
+      {
+        "d": "tr",
+        "f": "LC 238/2026, art. 2º: para o ano-calendário de 2027, o limite de receita bruta anual do MEI é de R$ ____.",
+        "v": "110 mil"
+      },
+      {
+        "d": "tr",
+        "f": "LC 238/2026, art. 10, I: o novo limite de R$ 140 mil do MEI produz efeitos a partir de 1º de janeiro de ____.",
+        "v": "2028"
+      },
+      {
+        "d": "tr",
+        "f": "LC 238/2026, art. 5º: a remissão alcança créditos da União até ____ de outubro de 2026.",
+        "v": "13"
+      },
+      {
+        "d": "tr",
+        "f": "LC 238/2026, art. 5º, §4º: o beneficiário mantém em dia os recolhimentos dos ____ meses seguintes, sob pena de cancelamento da remissão.",
+        "v": "6"
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lc227",
+    "tipo": "lei",
+    "lei": "Lei Complementar 227/2026",
+    "pub": "2026-01-14",
+    "titulo": "Comitê Gestor do IBS (CGIBS), processo administrativo do IBS e normas gerais do ITCMD",
+    "resumo": "Regulamenta a reforma tributária em três frentes: institui o **Comitê Gestor do IBS (CGIBS)**, que administra o IBS de forma compartilhada por Estados, DF e Municípios (regulamento único, arrecadação, repartição e **contencioso administrativo**); disciplina o **processo administrativo tributário do IBS** (impugnação em **20 dias**, sessões **virtuais**, três instâncias); e fixa **normas gerais do ITCMD** (competência por situação do bem imóvel e por domicílio do falecido, nos bens móveis). Altera CTN, LC 214/2025, LC 123/2006 e o Decreto 70.235/1972, entre outras normas. Publicada em 14/01/2026 (republicada em 15/01 e retificada em 23/01), com **vetos**.",
+    "temas": [
+      "Tributário",
+      "Constitucional"
+    ],
+    "papeis": [
+      "coletivo"
+    ],
+    "mudou": [
+      "**CGIBS (arts. 1º, 2º e 7º):** entidade pública de **caráter técnico e operacional sob regime especial**, com sede e foro no **Distrito Federal**, dotada de **independência técnica, administrativa, orçamentária e financeira**, sem vinculação ou tutela hierárquica. Exerce, de forma integrada e **exclusivamente por meio do CGIBS**, as competências de editar o **regulamento único** do IBS, **arrecadar e distribuir** o produto e **decidir o contencioso administrativo**. Estrutura básica: Conselho Superior, Presidência e Vice-Presidência, Diretoria Executiva, Secretaria-Geral, Corregedoria, Auditoria Interna, entre outros.",
+      "**Processo administrativo do IBS (arts. 54 a 89):** vale para o **lançamento de ofício**, penalidades por obrigações acessórias e indeferimento de restituição ou ressarcimento. Princípios: simplicidade, **verdade material**, ampla defesa, contraditório, oficialidade, **formalismo moderado**, razoável duração, entre outros (art. 55). Tramitação em **sistema eletrônico** (art. 57).",
+      "**Contencioso:** a **impugnação** é apresentada em **20 dias** da intimação do lançamento de ofício, com as provas, sob pena de **preclusão**, ressalvadas justa causa, força maior e fato ou direito superveniente (art. 67). As sessões são **virtuais e síncronas**, com audiências, **sustentação oral** e memoriais, e a **pauta** é comunicada com **10 dias** de antecedência (art. 88). Instâncias: **primeira**, **segunda** e **uniformização** da jurisprudência do IBS (art. 89).",
+      "**ITCMD (normas gerais):** quanto a **imóveis situados no Brasil**, o imposto é do **Estado (ou DF) da situação do bem**, ainda que o falecido ou o doador tenha domicílio no exterior (art. 158). Nos **bens móveis**, títulos e créditos, na transmissão **causa mortis**, a competência é do Estado ou DF do **domicílio do falecido** (art. 159, I).",
+      "**Outras alterações e vigência:** a lei altera o CTN, a LC 214/2025 (IBS e CBS), a LC 123/2006 e o Decreto 70.235/1972, entre outras. Entra em vigor na **publicação**, com efeitos em **1º/01/2027** para o art. 76, II, “c”, e o art. 169. Há **vários dispositivos vetados**: confira a mensagem de veto e o texto compilado antes de responder questões."
+    ],
+    "dpe": [
+      "Tema de **direito tributário** e de **tutela coletiva**: o contencioso administrativo do IBS ficará **concentrado no CGIBS**, com prazos próprios (impugnação em 20 dias) que o assistido contribuinte precisa conhecer.",
+      "Em **inventários** assistidos pela Defensoria, as regras gerais do ITCMD sobre **competência** (situação do imóvel; domicílio do falecido nos móveis) ajudam a definir a qual Estado recolher o imposto."
+    ],
+    "prova": [
+      "**CGIBS:** natureza (entidade pública sob regime especial), competências exclusivas e independência; **IBS** do art. 156-A da CF.",
+      "**Impugnação em 20 dias**, sessões **virtuais e síncronas**, três instâncias, e **competência do ITCMD** (imóvel: situação do bem; móvel causa mortis: domicílio do falecido)."
+    ],
+    "treino": [
+      {
+        "q": "O CGIBS é entidade pública de caráter técnico e operacional sob regime especial, dotada de independência técnica, administrativa, orçamentária e financeira.",
+        "a": true,
+        "e": "Certo. É o art. 1º da LC 227/2026."
+      },
+      {
+        "q": "O prazo para impugnar o lançamento de ofício do IBS é de 20 dias, contados da intimação.",
+        "a": true,
+        "e": "Certo. É o art. 67, §1º, da LC 227/2026."
+      },
+      {
+        "q": "No ITCMD, relativamente a imóveis situados no Brasil, é competente o Estado do domicílio do falecido, ainda que o bem esteja em outro Estado.",
+        "a": false,
+        "e": "Errado. Para imóveis situados no Brasil, é competente o Estado (ou DF) da situação do bem (art. 158, I)."
+      },
+      {
+        "q": "As sessões de julgamento do contencioso administrativo do IBS devem ser sempre presenciais.",
+        "a": false,
+        "e": "Errado. O art. 88, §1º, prevê sessões virtuais e síncronas, com audiências, sustentação oral e memoriais."
+      },
+      {
+        "q": "O contencioso administrativo do IBS se estrutura em primeira instância, segunda instância e instância de uniformização da jurisprudência.",
+        "a": true,
+        "e": "Certo. É o art. 89 da LC 227/2026."
+      }
+    ],
+    "lacunas": [
+      {
+        "d": "tr",
+        "f": "LC 227/2026, art. 67, §1º: o prazo para impugnar o lançamento de ofício do IBS é de ____ dias, contado da intimação.",
+        "v": "20"
+      },
+      {
+        "d": "tr",
+        "f": "LC 227/2026, art. 88, §2º: as partes são intimadas da inclusão em pauta com antecedência mínima de ____ dias.",
+        "v": "10"
+      },
+      {
+        "d": "tr",
+        "f": "LC 227/2026, art. 1º: o CGIBS tem sede e foro no ____.",
+        "v": "Distrito Federal"
+      },
+      {
+        "d": "tr",
+        "f": "LC 227/2026, art. 158: para imóveis situados no Brasil, o ITCMD é do Estado da ____ do bem.",
+        "v": "situação"
+      }
+    ]
+  }
+]
