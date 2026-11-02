@@ -20,6 +20,8 @@ FONTES = [  # (prefixo do nome do arquivo depois do id, rótulo, chaves)
     ("Direito_Civil_-_E-book_2026", "CP Iuris · Direito Civil (e-book 2026)", ["civil"]),
     ("Direito_Administrativo_-_E-book_2026", "CP Iuris · Direito Administrativo (e-book 2026)", ["adm"]),
     ("Direito_do_Consumidor_-_E-book_2026", "CP Iuris · Direito do Consumidor (e-book 2026)", ["consumidor"]),
+    ("Direito_Constitucional_-_E-book_2026", "CP Iuris · Direito Constitucional (e-book 2026)", ["const"]),
+    ("Direito_Processual_Penal_-_E-book_2026", "CP Iuris · Direito Processual Penal (e-book 2026)", ["pp"]),
     ("Informativos_10x_-_2026", "CP Iuris · Informativos 10x – 2026 (1º semestre)", "geral"),
     ("Roteiro_de_Leitura_-_Informativos", None, None),
     ("Atualizações_-_Julho_2026", "Atualizações – julho/2026", "geral"),
@@ -204,6 +206,10 @@ def maiusc(s):
 
 def titulo(l, prev_fim):
     """(nível, texto) quando a linha é título; senão None. prev_fim = a linha anterior terminou frase/bloco."""
+    mh = re.match(r"^§H(\d) (.*)$", l)   # Markdown estruturado: o nível vem do número de "#"
+    if mh:
+        t = re.sub(r"\*+", "", mh.group(2)).strip()
+        return (int(mh.group(1)), t) if t else None
     if l.startswith("§H "):
         t = re.sub(r"\*+", "", l[3:]).strip()
         m = NUMH.match(t)
@@ -273,9 +279,45 @@ def paragrafos(linhas):
 
 PULA = re.compile(r"INSTAGRAM|@[A-Za-z]|proleges\.com\.br|pág\.\s*\d+\s*de\s*\d+|^SUMÁRIO$|^Sumário$|(?:Estudos|Material de estudo) d[ao] \w+ ?(?:•|$)|^\*\*Nota de atualização:\*\*", re.I)   # rodapé com nome da dona das anotações
 
+# Markdown dos livros convertidos de PDF (ferramentas/conteudo/pdf2md.py): "## Capítulo", "###", "####" dão o nível;
+# caixas de destaque vêm como citação (">"); questões de concurso, gabaritos, sumário e notas de rodapé ficam de fora.
+MD_ESTRUTURADO = re.compile(r"E-book_2026\.md$")
+QUESTAO_MD = re.compile(r"^(QUEST(ÃO|ÕES|AO|OES)( DE CONCURSO)?|GABARITOS?|COMENT[ÁA]RIOS)$", re.I)
+GABARITO_MD = re.compile(r"^(\d+\.\s*)?GABARITO\b|^Gabarito\s*:", re.I)
+NOTA_MD = re.compile(r"^(\d{1,3}) (?!(?:de|e|a|o|anos?|dias?|meses|horas|%)\b)\S")
+def _limpo(x): return re.sub(r"[*|_]+", " ", x).strip(" .:").strip()
+def ler_md_estruturado(linhas):
+    out, notas, k, n = [], set(), 0, len(linhas)
+    k = next((i for i, l in enumerate(linhas) if re.match(r"^##\s+Cap[ií]tulo\b", l)), 0)   # pula o sumário
+    pulando = False   # questões do fim do capítulo: até o próximo título
+    while k < n:
+        s = linhas[k].rstrip(); k += 1
+        m = re.match(r"^(#{1,6})\s+(.*)$", s)
+        if m:
+            pulando = False
+            out.append(f"§H{max(1, len(m.group(1)) - 1)} " + m.group(2).strip()); continue
+        if pulando: continue
+        if s.startswith(">"):
+            bloco = [s]
+            while k < n and linhas[k].startswith(">"): bloco.append(linhas[k].rstrip()); k += 1
+            txt = [x for x in (re.sub(r"^>\s?", "", y).strip() for y in bloco) if x]
+            if not txt or QUESTAO_MD.match(_limpo(txt[0])): continue   # caixa "QUESTÃO DE CONCURSO"
+            out.extend(x for x in txt if not GABARITO_MD.match(_limpo(x))); out.append(""); continue
+        if not s.strip(): out.append(""); continue
+        if QUESTAO_MD.match(_limpo(s)): pulando = True; continue
+        mn = NOTA_MD.match(s) or re.match(r"^(\d{1,3})\s*https?://", s)
+        if mn: notas.add(mn.group(1)); continue
+        if re.fullmatch(r"\d{0,3}\s*Disponível em", _limpo(s)) or re.fullmatch(r"<?https?://\S+>?", s.strip()): continue
+        if GABARITO_MD.match(_limpo(s)): continue
+        out.append(s)
+    return out, notas
+
 def ler_md(arq):
     p = os.path.join(pasta, arq)
     linhas = open(p, encoding="utf-8").read().split("\n")
+    if MD_ESTRUTURADO.search(arq):
+        out, notas = ler_md_estruturado(linhas)
+        return [{"p": 1, "l": out, "notas": notas}]
     out, tab = [], False
     for l in linhas:
         s = l.rstrip()
@@ -317,6 +359,10 @@ for d in corpus:
             ls.append(l)
         if md:
             corpo, gab, nums = ls, {}, set()
+            if pg.get("notas"):   # marca de nota colada ao texto ("DF12,", "máxi102ma"): sai; número de lei (8.069) fica
+                notas = pg["notas"]
+                tira = lambda m: "" if m.group(1) in notas else m.group(0)
+                corpo = [l if l.startswith("§H") else re.sub(r"(?<=[A-Za-zÀ-ú\)”\"!?*])(\d{1,3})(?=[\s,;:*]|\.(?:\s|$)|$)", tira, re.sub(r"(?<=[a-zà-ú])(\d{1,3})(?=[a-zà-ú])", tira, l)) for l in corpo]
         else:
             corpo, gab, nums = rodape(ls)
         if not viu_h and any(l.startswith("§H ") for l in corpo):
@@ -343,7 +389,7 @@ for d in corpus:
             bloco.clear()
         for l in corpo:
             t = titulo(l, prev_fim)
-            if t and (md or docx) and not l.startswith("§H ") and not maiusc(l): t = None
+            if t and (md or docx) and not l.startswith("§H") and (not maiusc(l) or "notas" in pg): t = None
             if t:
                 despeja(); fecha()
                 nivel, txt = t

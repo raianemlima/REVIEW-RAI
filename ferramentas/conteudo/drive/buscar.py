@@ -169,6 +169,10 @@ def elegivel(p, termos, cob, pares, hc):
     precisa = max(1, math.ceil(.5 * len(pares)))
     return cob >= .8 and dist >= precisa and (occ >= 2 or len(termos) >= 4)
 
+# materiais de cursos anteriores (rótulo com 2021/2022) perdem para os atuais quando os dois tratam do assunto
+ANTIGO = re.compile(r"\b(2021|2022)\b")
+def peso_fonte(p): return .8 if ANTIGO.search(p["fonte"]) else 1.0
+
 def por_subconsulta(cands, sq, peso, k=2, pedaco=False, titulo=False, ctx=""):
     termos = list(dict.fromkeys(toks_q(sq)))
     curto = False
@@ -193,7 +197,7 @@ def por_subconsulta(cands, sq, peso, k=2, pedaco=False, titulo=False, ctx=""):
         s = bm25(p, q)
         if s < 3: continue
         fr = sum(1 for b in pares if b in p["_bi"])
-        res.append((peso * (s * (.5 + cob) + 2.5 * fr + 6 * hc * min(len(termos), 4)), cob, hc, sq, p))
+        res.append((peso * peso_fonte(p) * (s * (.5 + cob) + 2.5 * fr + 6 * hc * min(len(termos), 4)), cob, hc, sq, p))
     res.sort(key=lambda x: -x[0])
     return res[:k]
 

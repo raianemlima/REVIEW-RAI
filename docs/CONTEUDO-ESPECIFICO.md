@@ -4,26 +4,26 @@ Três e-books no **Aprofundamento** (Biblioteca), um por concurso, montados a pa
 
 | E-book | Edital no Cronograma | Assuntos com trechos | Trechos |
 |---|---|---|---|
-| Conteúdo específico · DPE/RN | `rn-2025` (Res. 344/2025) | 147 de 206 | 405 |
-| Conteúdo específico · TJPB 2026 | `tjpb-2026` (Edital 01/2026) | 72 de 78 | 226 |
-| Conteúdo específico · DPDF 2026 | `df-2026` (Edital 1/2026) | 174 de 227 | 425 |
+| Conteúdo específico · DPE/RN | `rn-2025` (Res. 344/2025) | 154 de 206 | 443 |
+| Conteúdo específico · TJPB 2026 | `tjpb-2026` (Edital 01/2026) | 72 de 78 | 234 |
+| Conteúdo específico · DPDF 2026 | `df-2026` (Edital 1/2026) | 175 de 227 | 436 |
 
 **Língua Portuguesa fica fora** dos e-books (TJPB e DPDF), por escolha da titular do app: no Cronograma, esses assuntos não ganham botão nem aviso. Os demais assuntos sem trecho ficam no e-book com o aviso de que o material não cobre o tema. O material do Drive não tem doutrina de Informática, Primeiros Socorros, LODF e regime dos servidores do DF.
 
 ## Fontes
 
-São 136 arquivos do Drive, só material de estudo (peças, ofícios e documentos de trabalho ficam de fora):
+São 138 arquivos do Drive, só material de estudo (peças, ofícios e documentos de trabalho ficam de fora):
 
-- **CP Iuris (e-books 2026):** Civil, Administrativo, Consumidor, Processo Civil, Penal (Parte Especial), Legislação Penal Especial, Criança e Adolescente, Direitos Humanos e Informativos 10x;
+- **CP Iuris (e-books 2026):** Constitucional, Processo Penal, Civil, Administrativo, Consumidor, Processo Civil, Penal (Parte Especial), Legislação Penal Especial, Criança e Adolescente, Direitos Humanos e Informativos 10x;
 - **Reta Final DPE/SP (Cursos DUO):** Constitucional, Administrativo e Tributário, Civil, Processo Civil, Penal, Processo Penal, Difusos e Coletivos, Criança e Adolescente, Direitos Humanos, Princípios Institucionais e Teses Institucionais;
 - **Cursos DUO, apostilas por ponto:** Civil (famílias, obrigações, registros/LGPD/Marco Civil), Processo Civil (sujeitos, tutela provisória, procedimentos, provas, precedentes, execução), Penal (visão geral, patrimônio), Processo Penal (introdução, inquérito e ação, prova), Execução Penal (progressão, remição, multa), Constitucional (direitos fundamentais) e Princípios Institucionais (assistência jurídica);
 - **Pro Leges e NPL (resumos):** Defensoria Pública (LC 80/1994), Difusos e Coletivos, Pessoa com Deficiência, Pessoa Idosa, Consumidor, Criança e Adolescente, Urbanístico, Saúde, Agrário, Digital, Desportivo, Criminologia, Execução Penal, Hermenêutica e Medicina Legal;
 - **Curso RDP (Direitos Humanos):** sistemas global e interamericano, casos da Corte IDH, grupos vulneráveis, comentários gerais, refugiados, indigenista e outros;
 - **Atualizações e Radar Legislativo** de 2026 e as anotações de estudo.
 
-- **Cursos anteriores (o ano vai no rótulo de cada trecho):** OUSE · Teoria da Constituição (2022: a Constituição, constitucionalismo e história constitucional, poder constituinte, modificação, normas constitucionais); CERS · Carreiras Jurídicas (2021: Constitucional cap. 1; Processo Penal caps. 5, 8, 10, 12, 13 e 16) e aulas de Processo Penal (2021: provas, prisão e cautelares, júri, recursos); Themas · DPE Full (2022: Constitucional — controle de constitucionalidade, poder legislativo, processo legislativo, Tribunal de Contas, racismo; Processo Penal — noções introdutórias, inquérito e juiz de garantias, ação penal, teoria geral das provas, provas em espécie, perícia e cadeia de custódia, meios extraordinários de obtenção de prova, prisão em flagrante, preventiva e temporária, procedimentos, sentença). Os slides quase não entram: o texto fragmentado é descartado.
+- **Cursos anteriores (o ano vai no rótulo de cada trecho):** OUSE · Teoria da Constituição (2022: a Constituição, constitucionalismo e história constitucional, poder constituinte, modificação, normas constitucionais); CERS · Carreiras Jurídicas (2021: Constitucional cap. 1; Processo Penal caps. 5, 8, 10, 12, 13 e 16) e aulas de Processo Penal (2021: provas, prisão e cautelares, júri, recursos); Themas · DPE Full (2022: Constitucional — controle de constitucionalidade, poder legislativo, processo legislativo, Tribunal de Contas, racismo; Processo Penal — noções introdutórias, inquérito e juiz de garantias, ação penal, teoria geral das provas, provas em espécie, perícia e cadeia de custódia, meios extraordinários de obtenção de prova, prisão em flagrante, preventiva e temporária, procedimentos, sentença). Os slides quase não entram: o texto fragmentado é descartado. Quando um material atual e um desses tratam do mesmo assunto, o atual vem primeiro (a pontuação dos de 2021/2022 vale 80%).
 
-Os e-books CP Iuris 2026 de **Constitucional e Processo Penal** (cerca de 7 MB cada) não passam pelo conector do Drive, e as ferramentas do Drive não dividem PDF (só copiam ou criam arquivos inteiros); os materiais de 2021/2022 acima cobrem essas matérias. Para usar os e-books completos, envie os PDFs pelo chat da sessão ou divida cada um em partes de até 5 MB no Drive.
+Os e-books CP Iuris 2026 de **Constitucional e Processo Penal** (cerca de 7 MB cada) não passam pelo conector do Drive; entraram pelo Markdown convertido do PDF (`ferramentas/conteudo/pdf2md.py`, veja [EBOOKS-PDF.md](EBOOKS-PDF.md)), o mesmo que dá os livros completos no Aprofundamento. No conteúdo específico, eles são a principal fonte dessas duas matérias. Do Markdown, `trechos.py` usa os títulos (`## Capítulo`, `###`, `####`) como seções e deixa de fora o sumário, as caixas "QUESTÃO DE CONCURSO", as listas de questões e comentários do fim dos capítulos, os gabaritos e as notas de rodapé (links).
 
 Alguns materiais (OUSE, Themas) trazem nome e CPF da compradora no rodapé de cada página; o extrator tira essas linhas e a geração confere que nenhum dado pessoal chega aos trechos.
 
