@@ -263,7 +263,9 @@ def main():
     (saida / f"varredura-{tag}.md").write_text(relatorio(hoje, achadas, infos, avisos, estado), encoding="utf-8")
     (saida / f"candidatos-{tag}.json").write_text(json.dumps([esboco(x, tag) for x in achadas if x["relevancia"] != "baixa"], ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"{len(achadas)} normas, {len(infos)} informativos, {len(avisos)} aviso(s) -> {saida}")
-    return 1 if avisos and not achadas and not infos else 0
+    for av in avisos:
+        print("  aviso:", av)
+    return 0   # o relatório já carrega os avisos; o workflow falha no fim se houver (depois de atualizar a issue)
 
 
 if __name__ == "__main__":

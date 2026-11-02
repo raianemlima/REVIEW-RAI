@@ -31,3 +31,5 @@ jobs:
           gh label create varredura --color 1D76DB --description "Novidades para o app" 2>/dev/null || true
           n=$(gh issue list --label varredura --state open --json number --jq '.[0].number')
           if [ -n "$n" ]; then gh issue edit "$n" --title "$titulo" --body-file "$arq"; else gh issue create --title "$titulo" --body-file "$arq" --label varredura; fi
+      - name: Falhar se algum site não respondeu (a issue já diz qual)
+        run: "! grep -q 'Atenção' varredura/varredura-*.md"
