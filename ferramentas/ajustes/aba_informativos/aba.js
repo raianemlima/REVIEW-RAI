@@ -14,9 +14,11 @@ async function infJson(arq) {
 function infLidos() { ensureAj(); S.ajustes.inf ||= {}; S.ajustes.inf.lidos ||= {}; return S.ajustes.inf.lidos; }
 // "DIREITO PENAL – CÓDIGO PENAL; ..." ou "DIREITO PENAL, DIREITO PROCESSUAL PENAL" -> ["Direito Penal", ...]
 function infAreas(ramo) {
-  const base = String(ramo || "").split(" – ")[0];
-  return base.split(/\s*,\s*(?=DIREITO)/).map(x => x.trim()).filter(Boolean)
-    .map(x => x.toLowerCase().replace(/(^|\s)(\S)/g, (m, a, b) => a + b.toUpperCase()).replace(/\b(Do|Da|De|E|Dos|Das)\b/g, m => m.toLowerCase()));
+  const base = String(ramo || "").split(/\s+[–—-]\s+/)[0];   // "DIREITO X – tema; tema" (o STF usa –, — ou -)
+  return [...new Set(base.split(/\s*[,;]\s*/).map(x => x.trim()).filter(Boolean)
+    .map(x => x.toLowerCase().replace(/(^|\s)(\S)/g, (m, a, b) => a + b.toUpperCase())
+      .replace(/(?!^)\b(Do|Da|De|E|Dos|Das|Com|Em|No|Na|A|À|O|Para)\b/g, m => m.toLowerCase())
+      .replace(/Tribut\S*rio/, "Tributário").replace(/Crian\S*a\b/, "Criança").replace("Cosntitucional", "Constitucional")))];   // erros de digitação da fonte
 }
 function infAchata(eds) {
   const out = [];
@@ -68,7 +70,7 @@ async function renderInformativos() {
       <select id="infT" aria-label="Tribunal"><option value="">STF e STJ</option><option value="STF"${F.trib === "STF" ? " selected" : ""}>STF</option><option value="STJ"${F.trib === "STJ" ? " selected" : ""}>STJ</option></select>
       <select id="infA" aria-label="Ano"><option value="">Todos os anos</option>${anos.map(a => `<option${F.ano === a ? " selected" : ""}>${a}</option>`).join("")}</select>
       <select id="infR" aria-label="Matéria"><option value="">Todas as matérias</option>${areas.map(a => `<option${F.area === a ? " selected" : ""}>${esc(a)}</option>`).join("")}</select>
-      <label><input type="checkbox" id="infTese" ${F.tese ? "checked" : ""}> só com tese/destaque</label>
+      <label><input type="checkbox" id="infTese" ${F.tese ? "checked" : ""}> com tese/destaque</label>
       <label><input type="checkbox" id="infNao" ${F.nao ? "checked" : ""}> só não lidos</label>
     </div>
     <p class="inf-cont" aria-live="polite">${plural(lista.length, "julgado", "julgados")}</p>

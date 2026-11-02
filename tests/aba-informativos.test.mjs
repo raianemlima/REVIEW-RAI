@@ -77,6 +77,28 @@ test("aba Informativos: áreas do ramo viram nomes legíveis", () => {
   assert.deepEqual(Array.from(w.infAreas("DIREITO PENAL, DIREITO PROCESSUAL PENAL")), ["Direito Penal", "Direito Processual Penal"]);
   assert.deepEqual(Array.from(w.infAreas("DIREITO ADMINISTRATIVO – MILITAR; CONCURSO PÚBLICO")), ["Direito Administrativo"]);
   assert.deepEqual(Array.from(w.infAreas("")), []);
+  // o STF também separa o ramo do tema com — ou -: sem isso o filtro "Matéria" ganhava opções de 250 caracteres e alargava a tela no celular
+  assert.deepEqual(Array.from(w.infAreas("DIREITO CONSTITUCIONAL — RECURSOS DESTINADOS À SAÚDE; ORÇAMENTO PÚBLICO; PROCESSO LEGISLATIVO")), ["Direito Constitucional"]);
+  assert.deepEqual(Array.from(w.infAreas("DIREITO TRIBUTÁRIO - CONTRIBUIÇÕES SOCIAIS; PIS; COFINS")), ["Direito Tributário"]);
+  assert.deepEqual(Array.from(w.infAreas("DIREITO EMPRESARIAL, RECUPERAÇÃO JUDICIAL")), ["Direito Empresarial", "Recuperação Judicial"]);
+  assert.deepEqual(Array.from(w.infAreas("DIREITO DA PESSOA COM DEFICIÊNCIA")), ["Direito da Pessoa com Deficiência"]);
+  assert.deepEqual(Array.from(w.infAreas("DIREITO TRIBUTÃRIO")), ["Direito Tributário"]);
+});
+
+test("aba Informativos: nenhuma matéria do filtro passa de 60 caracteres nos dados publicados", () => {
+  const w = ambiente(), dir = new URL("../arquivos/informativos/", import.meta.url);
+  const areas = new Set();
+  for (const f of readdirSync(dir).filter(f => /^st[fj]-\d{4}\.json$/.test(f)))
+    for (const ed of JSON.parse(readFileSync(new URL(f, dir), "utf8"))) for (const it of ed.itens) for (const a of w.infAreas(it.ramo)) areas.add(a);
+  const longas = [...areas].filter(a => a.length > 60);
+  assert.deepEqual(longas, []);
+  assert.ok(areas.size > 10 && areas.size < 80, `${areas.size} matérias`);
+});
+
+test("aba Informativos no celular: filtros em grade, sem caixa mais larga que a tela", () => {
+  const css = ler("index.html");
+  assert.match(css, /\.inf-filtros select \{ min-width: 0; max-width: 100%;/);
+  assert.match(css, /@media \(max-width: 560px\) \{\n  \.inf-hero[\s\S]*?\.inf-filtros \{ display: grid; grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/);
 });
 
 test("aba Informativos publicada: menu, estilo, rota e atalho em Hoje, uma vez cada", () => {
