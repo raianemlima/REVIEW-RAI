@@ -1,6 +1,6 @@
 name: Varredura mensal
-# Todo dia 1º, 8h em Brasília: confere no Planalto, no STF e no STJ o que saiu depois do último lote do app e abre (ou atualiza)
-# uma issue com a lista. Nada entra no app sozinho: o lote é redigido e revisado antes (ver docs/ESTUDO-DIRECIONADO.md).
+# Todo dia 1º, 8h em Brasília: confere no STF e no STJ (e no Planalto, se ele deixar) o que saiu depois do último lote do app
+# e abre (ou atualiza) uma issue com a lista, se houver novidade. Nada entra no app sozinho: o lote é redigido e revisado antes (ver docs/ESTUDO-DIRECIONADO.md).
 on:
   schedule:
     - cron: "0 11 1 * *"
@@ -22,14 +22,14 @@ jobs:
         with:
           name: varredura
           path: varredura/
-      - name: Abrir ou atualizar a issue
+      - name: Abrir ou atualizar a issue (só se houver novidade; o Planalto bloqueia servidores do GitHub, então as leis ficam com a rotina do Claude ou com a execução local)
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          . varredura/status.txt
+          if [ "$novidades" = "0" ]; then echo "Nada novo para abrir issue (avisos: $avisos)."; exit 0; fi
           arq=$(ls varredura/varredura-*.md | head -1)
           titulo="Varredura de $(date +%m/%Y): normas e informativos novos"
           gh label create varredura --color 1D76DB --description "Novidades para o app" 2>/dev/null || true
           n=$(gh issue list --label varredura --state open --json number --jq '.[0].number')
           if [ -n "$n" ]; then gh issue edit "$n" --title "$titulo" --body-file "$arq"; else gh issue create --title "$titulo" --body-file "$arq" --label varredura; fi
-      - name: Falhar se algum site não respondeu (a issue já diz qual)
-        run: "! grep -q 'Atenção' varredura/varredura-*.md"

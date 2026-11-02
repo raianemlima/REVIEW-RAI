@@ -27,10 +27,18 @@ Para o edital escolhido (padrão: o do seu estado em Ajustes, ou TJPB na direç�
 
 ## 4. Varredura mensal
 
-`.github/workflows/varredura-mensal.yml` roda no dia 1º, 8h (Brasília), e também por "Run workflow". O script `ferramentas/conteudo/varredura/varredura.py`:
+O script `ferramentas/conteudo/varredura/varredura.py` (só biblioteca padrão, sem segredo):
 
 - procura no Planalto leis, leis complementares e emendas com número acima do último conferido (`ferramentas/conteudo/dados/varredura-estado.json`) e confere as **pendentes** do lote anterior;
 - procura no STF e no STJ as edições de informativo seguintes às de `arquivos/informativos/indice.json`;
-- abre (ou atualiza) uma issue "Varredura de MM/AAAA" com a lista, por prioridade, e guarda `candidatos-AAAA-MM.json` (esboço de item) como artefato.
+- escreve `varredura-AAAA-MM.md` (relatório, por prioridade), `candidatos-AAAA-MM.json` (esboço de item) e `status.txt`.
 
-Não escreve no repositório e não precisa de segredo. Se o site não responder, a issue diz **"Sem acesso"** em vez de "nada de novo". Depois de um lote: suba `desde` no estado e, para largar uma norma de propósito, ponha o número em `deixadas`. Quem redige o lote lê o texto oficial de cada norma; o formato é o de `novidades-2026-11-0*.json`.
+Se o site não responde como esperado (primeiro confere uma norma conhecida, a Lei 15.471), o relatório diz **"Atenção"** em vez de "nada de novo".
+
+**Onde roda**
+
+- **GitHub Actions** (`.github/workflows/varredura-mensal.yml`, dia 1º, 8h de Brasília, ou "Run workflow"): abre/atualiza a issue "Varredura de MM/AAAA" quando acha algo. **O Planalto bloqueia os servidores do GitHub** ("Acesso Negado"), então ali só os informativos chegam; o aviso aparece no relatório.
+- **Na sua máquina:** `python ferramentas/conteudo/varredura/varredura.py` (o Planalto responde a conexões do Brasil).
+- **Rotina do Claude** (cloud, mensal): roda o script, lê o texto oficial de cada norma, redige o lote no formato de `novidades-2026-11-0*.json` e abre uma **PR** para você aprovar. Nunca faz merge sozinha.
+
+Depois de um lote: suba `desde` no estado e, para largar uma norma de propósito, ponha o número em `deixadas`. Quem redige lê o texto oficial; nada entra no app sem revisão.

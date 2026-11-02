@@ -231,7 +231,7 @@ def relatorio(hoje, achadas, informativos, avisos, estado):
     L = [f"# Varredura de {hoje:%m/%Y}", "",
          "O que saiu de novo e ainda não está no app. Texto oficial e público (Planalto, STF e STJ). Nada daqui entra no app sozinho: cada norma precisa ser lida e resumida antes.", ""]
     for av in avisos:
-        L.append(f"> **Atenção:** {av} Tente de novo mais tarde (Actions › Varredura mensal › Run workflow).")
+        L.append(f"> **Atenção:** {av}")
     if avisos:
         L.append("")
     grupos = {k: [a for a in achadas if a["relevancia"] == k] for k in ("alta", "media", "baixa")}
@@ -278,11 +278,12 @@ def main():
     saida.mkdir(parents=True, exist_ok=True)
     tag = f"{hoje:%Y-%m}"
     (saida / f"varredura-{tag}.md").write_text(relatorio(hoje, achadas, infos, avisos, estado), encoding="utf-8")
+    (saida / "status.txt").write_text("novidades=%d\navisos=%d\n" % (len(achadas) + len(infos), len(avisos)), encoding="utf-8")
     (saida / f"candidatos-{tag}.json").write_text(json.dumps([esboco(x, tag) for x in achadas if x["relevancia"] != "baixa"], ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"{len(achadas)} normas, {len(infos)} informativos, {len(avisos)} aviso(s) -> {saida}")
     for av in avisos:
         print("  aviso:", av)
-    return 0   # o relatório já carrega os avisos; o workflow falha no fim se houver (depois de atualizar a issue)
+    return 0   # os avisos vão no relatório e no log; o workflow decide se abre a issue
 
 
 if __name__ == "__main__":
