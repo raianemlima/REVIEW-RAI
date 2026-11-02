@@ -120,8 +120,8 @@ def _tentar(tipo, num, anos, baixar):
     for ano in anos:
         url = TIPOS[tipo][1].format(num=num, ano=ano, periodo=periodo_do_ano(ano))
         st, corpo = baixar(url)
-        if st is None:
-            return None, None, url
+        if st not in (200, 404):   # sem conexão, 403, 429, 5xx: o site não respondeu de verdade, não é "norma inexistente"
+            return None, (st, corpo[:80].decode("latin-1", errors="replace") if st else corpo.decode("latin-1", errors="replace")), url
         if st == 200:
             r = extrair(corpo)
             if r:
@@ -150,10 +150,12 @@ def varrer_normas(estado, cobertas, hoje, baixar=baixar, max_falhas=6, teto=120)
             if st is None:
                 sem_rede += 1
                 if sem_rede >= 2:
-                    avisos.append(f"Sem acesso ao Planalto ao conferir {TIPOS[tipo][0]} pendente (parei no nº {num}).")
+                    avisos.append(f"Sem acesso ao Planalto ao conferir {TIPOS[tipo][0]} pendente (parei no nº {num}; resposta: {r[0] or 'sem conexão'}).")
                     break
             elif r:
                 registrar(tipo, r, url, deixadas)
+            else:
+                avisos.append(f"{rotulo(tipo, num, ano)} está nas pendentes, mas o Planalto não a devolveu (página inexistente ou fora do formato).")
         num, falhas, visitados = e.get("desde", 1), 0, 0
         while falhas < max_falhas and visitados < teto and sem_rede < 2:
             st, r, url = _tentar(tipo, num, anos(ano), baixar)
@@ -161,7 +163,7 @@ def varrer_normas(estado, cobertas, hoje, baixar=baixar, max_falhas=6, teto=120)
             if st is None:
                 sem_rede += 1
                 if sem_rede >= 2:
-                    avisos.append(f"Sem acesso ao Planalto ao procurar {TIPOS[tipo][0]} (parei no nº {num}).")
+                    avisos.append(f"Sem acesso ao Planalto ao procurar {TIPOS[tipo][0]} (parei no nº {num}; resposta: {r[0] or 'sem conexão'}).")
                 continue
             if r is None:
                 falhas += 1
@@ -187,10 +189,10 @@ def varrer_informativos(indice, baixar=baixar, olhar=6):
             else:
                 url = f"https://processo.stj.jus.br/jurisprudencia/externo/informativo/?acao=pesquisarumaedicao&livre={n:04d}"
             st, corpo = baixar(url)
-            if st is None:
+            if st not in (200, 404):
                 sem_rede += 1
                 if sem_rede >= 2:
-                    avisos.append(f"Sem acesso ao {trib} ao procurar informativos (parei no nº {n}).")
+                    avisos.append(f"Sem acesso ao {trib} ao procurar informativos (parei no nº {n}; resposta: {st or 'sem conexão'}).")
                     break
                 continue
             txt = corpo.decode("latin-1", errors="replace")

@@ -60,6 +60,25 @@ print(json.dumps({'achadas': len(achadas), 'avisos': len(avisos), 'rel': rel}))`
   assert.doesNotMatch(r.rel, /Nenhuma norma nova/);
 });
 
+test('resposta 403 ou 429 do site conta como falta de acesso, não como "nenhuma norma nova"', () => {
+  const r = roda(`
+from datetime import date
+a, av = v.varrer_normas({'lei': {'desde': 15527, 'ano': 2026, 'pendentes': [15352]}, 'lcp': {'desde': 239}, 'emc': {'desde': 142}}, set(), date(2026, 11, 2), baixar=lambda u: (403, b'Forbidden'))
+i, av2 = v.varrer_informativos([{'tribunal': 'STJ', 'ate': 908}], baixar=lambda u: (429, b''))
+print(json.dumps({'a': len(a), 'av': av, 'av2': av2}))`);
+  assert.equal(r.a, 0);
+  assert.ok(r.av.some(m => /Sem acesso ao Planalto.*403/.test(m)), JSON.stringify(r.av));
+  assert.ok(r.av2.some(m => /Sem acesso ao STJ.*429/.test(m)), JSON.stringify(r.av2));
+});
+
+test('pendente que o Planalto não devolve vira aviso', () => {
+  const r = roda(`
+from datetime import date
+a, av = v.varrer_normas({'lei': {'desde': 15527, 'ano': 2026, 'pendentes': [15352]}, 'lcp': {'desde': 239}, 'emc': {'desde': 142}}, set(), date(2026, 11, 2), baixar=lambda u: (404, b''))
+print(json.dumps(av))`);
+  assert.ok(r.some(m => /Lei 15\.352\/2026 está nas pendentes/.test(m)), JSON.stringify(r));
+});
+
 test('informativo novo: STF pela existência da página, STJ pelo número da edição na página', () => {
   const r = roda(`
 def baixar(url):
