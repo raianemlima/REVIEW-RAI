@@ -39,6 +39,7 @@ Se o site não responde como esperado (primeiro confere uma norma conhecida, a L
 
 - **GitHub Actions** (`.github/workflows/varredura-mensal.yml`, dia 1º, 8h de Brasília, ou "Run workflow"): abre/atualiza a issue "Varredura de MM/AAAA" quando acha algo. **O Planalto bloqueia os servidores do GitHub** ("Acesso Negado"), então ali só os informativos chegam; o aviso aparece no relatório.
 - **Na sua máquina:** `python ferramentas/conteudo/varredura/varredura.py` (o Planalto responde a conexões do Brasil).
-- **Rotina do Claude** (cloud, mensal): roda o script, lê o texto oficial de cada norma, redige o lote no formato de `novidades-2026-11-0*.json` e abre uma **PR** para você aprovar. Nunca faz merge sozinha.
+- **Rotina do Claude na nuvem** (`REVIEW-RAI: varredura mensal`, id `trig_01KUBVAsPNoHasj6Lf7M59KP`): foi criada para ler cada norma, redigir o lote e abrir uma PR, mas o teste de 02/11/2026 mostrou que **o Planalto também bloqueia a nuvem da Anthropic** (script e WebFetch voltaram "Acesso Negado"). Ela parou sem inventar nada e **ficou desligada**. Religar só se o bloqueio mudar (https://claude.ai/code/routines).
+- **Redigir o lote** continua sendo feito numa sessão do Claude Code no seu computador: rode o script, peça "redija o lote da varredura" e aprove o resultado.
 
 Depois de um lote: suba `desde` no estado e, para largar uma norma de propósito, ponha o número em `deixadas`. Quem redige lê o texto oficial; nada entra no app sem revisão.
