@@ -1,0 +1,367 @@
+[
+  {
+    "id": "nv-2026-11-lei15438",
+    "tipo": "lei",
+    "lei": "Lei 15.438/2026",
+    "pub": "2026-06-19",
+    "titulo": "Violência doméstica contra a mulher: decadência de 12 meses para queixa e representação",
+    "resumo": "Aumenta para **12 meses** o prazo decadencial do direito de **queixa ou de representação** nos crimes praticados no âmbito de violência doméstica e familiar contra a mulher. A regra entra no **Código Penal** (art. 103, parágrafo único), na **Lei Maria da Penha** (novo art. 16-A) e no **CPP** (art. 38, §2º). Publicada em 19/06/2026; vigência imediata.",
+    "temas": [
+      "Violência contra a mulher",
+      "Penal",
+      "Processo penal"
+    ],
+    "papeis": [
+      "defesa",
+      "assistido"
+    ],
+    "mudou": [
+      "**CP, art. 103, parágrafo único:** nos crimes praticados no âmbito de violência doméstica e familiar contra a mulher, a ofendida decai do direito de queixa ou de representação se não o exercer em **12 (doze) meses**, contados do dia em que soube quem é o autor do crime ou, na hipótese do art. 100, §3º, do CP, do dia em que se esgota o prazo para o oferecimento da denúncia.",
+      "**Lei 11.340/2006, art. 16-A:** repete a regra dos 12 meses para a ofendida na Lei Maria da Penha.",
+      "**CPP, art. 38, §2º:** a regra dos 12 meses vale também no CPP; no caso do art. 29 do CPP (ação privada subsidiária da pública), o prazo conta-se do dia em que se esgota o prazo para o oferecimento da denúncia. O antigo parágrafo único do art. 38 passa a §1º.",
+      "A regra geral de **6 meses** (CP, art. 103, e CPP, art. 38, caput) continua valendo para os demais casos."
+    ],
+    "dpe": [
+      "No atendimento à **mulher vítima**, o prazo de 12 meses conta do conhecimento da autoria, o que amplia o tempo para representar em crimes de ação penal pública condicionada (como a ameaça) e para a queixa nos de ação privada.",
+      "Para a **defesa**, a alegação de decadência fica mais restrita nesses casos; a análise do **direito intertemporal** é importante: ampliar o prazo de decadência é norma de natureza mista, e a aplicação a fatos anteriores pode ser discutida."
+    ],
+    "prova": [
+      "Prazo de **12 meses** em violência doméstica contra a mulher x prazo geral de **6 meses**; termo inicial (conhecimento da autoria).",
+      "Locais da alteração: **CP, art. 103, parágrafo único; Lei 11.340, art. 16-A; CPP, art. 38, §2º**."
+    ],
+    "treino": [
+      {
+        "q": "Nos crimes de violência doméstica e familiar contra a mulher, a ofendida decai do direito de queixa ou de representação em 12 meses, contados do dia em que souber quem é o autor do crime.",
+        "a": true,
+        "e": "Certo. É a regra do art. 103, parágrafo único, do CP, repetida no art. 16-A da Lei Maria da Penha e no art. 38, §2º, do CPP."
+      },
+      {
+        "q": "O prazo de 12 meses para a representação da ofendida conta-se, em qualquer caso, da data do fato.",
+        "a": false,
+        "e": "Errado. O termo inicial é o dia em que a ofendida soube quem é o autor do crime ou, nas hipóteses do art. 100, §3º, do CP e do art. 29 do CPP, o dia em que se esgota o prazo para o oferecimento da denúncia."
+      },
+      {
+        "q": "A Lei 15.438/2026 alterou o Código Penal, a Lei Maria da Penha e o Código de Processo Penal.",
+        "a": true,
+        "e": "Certo. Os dispositivos são o art. 103 do CP, o art. 16-A da Lei 11.340/2006 e o art. 38 do CPP."
+      },
+      {
+        "q": "Para os demais crimes, fora do âmbito da violência doméstica contra a mulher, o prazo decadencial de 6 meses foi mantido.",
+        "a": true,
+        "e": "Certo. A lei criou regra especial; o prazo geral do art. 103 do CP e do art. 38 do CPP permanece."
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lei15380",
+    "tipo": "lei",
+    "lei": "Lei 15.380/2026",
+    "pub": "2026-04-07",
+    "titulo": "Maria da Penha: audiência de retratação só com pedido expresso da vítima",
+    "resumo": "Acrescenta parágrafo único ao **art. 16 da Lei Maria da Penha**: a audiência de **retratação** da representação só é designada pelo juiz mediante **manifestação expressa** da vítima, por escrito ou oralmente, **antes do recebimento da denúncia**. A audiência serve para **confirmar a retratação**, não a representação. Publicada em 07/04/2026.",
+    "temas": [
+      "Violência contra a mulher",
+      "Processo penal"
+    ],
+    "papeis": [
+      "defesa",
+      "assistido"
+    ],
+    "mudou": [
+      "**Lei 11.340/2006, art. 16, parágrafo único:** a audiência do caput **tem por objetivo confirmar a retratação** da vítima, **não a representação**.",
+      "Só será designada pelo juiz mediante **manifestação expressa do desejo de se retratar**, apresentada **por escrito ou oralmente antes do recebimento da denúncia**, e a retratação deve ser registrada nos autos.",
+      "Na prática, acaba a designação automática da audiência do art. 16 para perguntar à vítima se ela deseja manter a representação."
+    ],
+    "dpe": [
+      "Orientar a **vítima** de que ela só será ouvida na audiência de retratação se manifestar o desejo de se retratar; o silêncio não gera audiência.",
+      "Para a **defesa**, não cabe requerer a audiência para investigar a vontade da vítima: o pedido tem de partir dela. A discussão passa a ser sobre o **momento** (antes do recebimento da denúncia) e a **espontaneidade** da manifestação."
+    ],
+    "prova": [
+      "A audiência do art. 16 confirma a **retratação**, não a representação (parágrafo único).",
+      "Requisitos: **manifestação expressa**, escrita ou oral, **antes do recebimento da denúncia**."
+    ],
+    "treino": [
+      {
+        "q": "Segundo o art. 16, parágrafo único, da Lei Maria da Penha, a audiência de retratação serve para confirmar a representação da vítima.",
+        "a": false,
+        "e": "Errado. O parágrafo único diz que a audiência tem por objetivo confirmar a retratação, não a representação."
+      },
+      {
+        "q": "A audiência de retratação só será designada pelo juiz se a vítima manifestar expressamente o desejo de se retratar, por escrito ou oralmente, antes do recebimento da denúncia.",
+        "a": true,
+        "e": "Certo. É a redação do parágrafo único do art. 16, acrescentado pela Lei 15.380/2026."
+      },
+      {
+        "q": "O juiz deve designar a audiência do art. 16 da Lei Maria da Penha, de ofício, sempre que houver representação da vítima.",
+        "a": false,
+        "e": "Errado. A designação depende de manifestação expressa da vítima de seu desejo de se retratar."
+      },
+      {
+        "q": "A manifestação de vontade de se retratar pode ser feita oralmente, desde que registrada nos autos.",
+        "a": true,
+        "e": "Certo. A lei admite manifestação escrita ou oral e exige o devido registro nos autos."
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lei15383",
+    "tipo": "lei",
+    "lei": "Lei 15.383/2026",
+    "pub": "2026-04-10",
+    "titulo": "Monitoração eletrônica do agressor como medida protetiva autônoma (Maria da Penha, arts. 12-D e 22, VIII)",
+    "resumo": "Cria a **monitoração eletrônica do agressor** como **medida protetiva de urgência autônoma** (Lei 11.340/2006, art. 22, VIII), fixa critérios de **prioridade**, permite que o **delegado de polícia** a aplique imediatamente em municípios que não sejam sede de comarca (art. 12-D), aumenta a pena do descumprimento de medida protetiva por violação do monitoramento (art. 24-A, §4º) e fixa **mínimo de 6% do FNSP** para o enfrentamento da violência contra a mulher. Publicada em 10/04/2026.",
+    "temas": [
+      "Violência contra a mulher",
+      "Processo penal"
+    ],
+    "papeis": [
+      "defesa",
+      "assistido"
+    ],
+    "mudou": [
+      "**Art. 22, VIII:** nova medida protetiva: **monitoração eletrônica**, com disponibilização à vítima de aplicativo ou dispositivo que alerte sobre a aproximação do agressor. O §5º do art. 22 foi **revogado**.",
+      "**Prioridade (art. 22, §6º):** casos de **descumprimento de medidas anteriores** ou de risco iminente à integridade física ou psicológica; a decisão que deixar de aplicar a monitoração nesses casos deve ter **fundamentação expressa** (§9º). Instalação do equipamento e instrução ao agressor sobre as áreas de exclusão (§7º); **alerta automático e simultâneo** à vítima e à unidade policial mais próxima ao romper o perímetro (§8º).",
+      "**Art. 12-D:** havendo risco atual ou iminente à vida ou à integridade física ou psicológica da mulher ou dependentes, o agressor é **imediatamente submetido à monitoração** pelo juiz ou, se o município **não for sede de comarca**, pelo **delegado de polícia**; o juiz é comunicado em até **24 horas** e decide em igual prazo sobre manter ou revogar, com ciência ao Ministério Público.",
+      "**Art. 24-A, §4º:** pena **aumentada de 1/3 até a metade** se o descumprimento decorrer da violação das áreas de exclusão ou da remoção, violação ou alteração do dispositivo sem autorização judicial.",
+      "**Recursos e políticas públicas:** **mínimo de 6%** dos recursos empenhados do FNSP para o enfrentamento da violência contra a mulher, incluída a aquisição e a manutenção de equipamentos de monitoração (Lei 13.756/2018, art. 5º, §4º); campanhas educativas e prioridade de alocação de recursos (Lei 11.340, arts. 35 e 39); alterações na Lei 14.899/2024, art. 3º, IV e VI."
+    ],
+    "dpe": [
+      "Ao postular **medidas protetivas** para a mulher, incluir o pedido de **monitoração eletrônica**, especialmente em caso de descumprimento anterior; a decisão que o negar nesses casos precisa ser fundamentada.",
+      "Para a **defesa**, a monitoração aplicada pelo delegado de polícia deve ser submetida ao juiz em 24 horas, que decide em igual prazo (art. 12-D, parágrafo único). Cabe questionar a **proporcionalidade** e a **fundamentação** do risco atual ou iminente, bem como as áreas de exclusão fixadas."
+    ],
+    "prova": [
+      "**Monitoração eletrônica** como medida protetiva autônoma (art. 22, VIII) e **prioridade** nos casos de descumprimento anterior (§6º).",
+      "**Competência do delegado** de polícia no art. 12-D (município que não é sede de comarca) e prazo de 24 horas para o juiz decidir.",
+      "Aumento de **1/3 até a metade** na pena do art. 24-A, §4º, e **6% do FNSP**."
+    ],
+    "treino": [
+      {
+        "q": "A monitoração eletrônica do agressor passou a constar, na Lei Maria da Penha, como medida protetiva de urgência autônoma.",
+        "a": true,
+        "e": "Certo. É o novo inciso VIII do art. 22 da Lei 11.340/2006."
+      },
+      {
+        "q": "O delegado de polícia pode submeter imediatamente o agressor à monitoração eletrônica quando o Município não for sede de comarca, devendo comunicar o juiz em até 24 horas.",
+        "a": true,
+        "e": "Certo. O juiz decide em igual prazo sobre manter ou revogar a medida, com ciência ao Ministério Público (art. 12-D, parágrafo único)."
+      },
+      {
+        "q": "A pena do crime de descumprimento de medida protetiva é aumentada de 1/3 até a metade se o descumprimento decorrer da violação das áreas de exclusão monitoradas eletronicamente.",
+        "a": true,
+        "e": "Certo. É o art. 24-A, §4º, da Lei Maria da Penha."
+      },
+      {
+        "q": "O §5º do art. 22 da Lei Maria da Penha foi mantido pela Lei 15.383/2026.",
+        "a": false,
+        "e": "Errado. A lei revogou o §5º do art. 22."
+      },
+      {
+        "q": "A lei fixou em, no mínimo, 6% dos recursos empenhados do FNSP a destinação ao enfrentamento da violência contra a mulher.",
+        "a": true,
+        "e": "Certo. É o art. 5º, §4º, da Lei 13.756/2018, na redação dada pela Lei 15.383/2026."
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lei15411",
+    "tipo": "lei",
+    "lei": "Lei 15.411/2026",
+    "pub": "2026-05-21",
+    "titulo": "Afastamento imediato do agressor por risco à integridade sexual, moral ou patrimonial (Maria da Penha, art. 12-C)",
+    "resumo": "Amplia as hipóteses do **afastamento imediato do agressor** do lar (**art. 12-C** da Lei Maria da Penha): além do risco à vida e à integridade física ou psicológica, passa a alcançar o risco à **integridade sexual, moral ou patrimonial** da mulher ou de seus dependentes. Publicada em 21/05/2026.",
+    "temas": [
+      "Violência contra a mulher"
+    ],
+    "papeis": [
+      "assistido",
+      "defesa"
+    ],
+    "mudou": [
+      "**Art. 12-C, caput:** verificado o **risco atual ou iminente** à vida ou à integridade **física, sexual, psicológica, moral ou patrimonial** da mulher em situação de violência doméstica e familiar, ou de seus dependentes, o agressor será **imediatamente afastado** do lar, domicílio ou local de convivência com a ofendida.",
+      "A lei alterou apenas o caput; os incisos do art. 12-C, que indicam quem determina o afastamento (juiz; delegado de polícia, se o Município não for sede de comarca; policial, se não houver delegado disponível), permanecem como estavam."
+    ],
+    "dpe": [
+      "Ao atender mulher com **violência patrimonial** (retenção de bens e documentos, destruição de bens, controle do dinheiro), o risco à integridade patrimonial passa a ser, por si, fundamento legal para o afastamento imediato.",
+      "Para a **defesa**, exigir demonstração de **risco atual ou iminente** e fundamentação específica, já que o rol de bens protegidos é maior."
+    ],
+    "prova": [
+      "Rol ampliado do art. 12-C: vida e integridade **física, sexual, psicológica, moral ou patrimonial**.",
+      "Beneficiárias: a mulher e seus **dependentes**."
+    ],
+    "treino": [
+      {
+        "q": "O afastamento imediato do agressor do lar, previsto no art. 12-C da Lei Maria da Penha, passou a ser cabível também em caso de risco atual ou iminente à integridade patrimonial da mulher.",
+        "a": true,
+        "e": "Certo. A redação do caput inclui a integridade sexual, moral ou patrimonial."
+      },
+      {
+        "q": "O art. 12-C da Lei Maria da Penha só admite o afastamento imediato do agressor em caso de risco à vida ou à integridade física da mulher.",
+        "a": false,
+        "e": "Errado. O rol abrange a integridade física, sexual, psicológica, moral ou patrimonial, da mulher ou de seus dependentes."
+      },
+      {
+        "q": "A proteção do art. 12-C alcança também os dependentes da mulher em situação de violência doméstica.",
+        "a": true,
+        "e": "Certo. A redação do caput menciona expressamente os dependentes."
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lei15412",
+    "tipo": "lei",
+    "lei": "Lei 15.412/2026",
+    "pub": "2026-05-21",
+    "titulo": "Medidas protetivas cíveis são título executivo judicial e dispensam ação principal (Maria da Penha, art. 22, §§4º e 10)",
+    "resumo": "Altera o **art. 22 da Lei Maria da Penha**: o juiz deve conceder a **tutela específica** ou providências que assegurem o **resultado prático equivalente** (§4º) e as medidas protetivas **de natureza cível**, inclusive **alimentos provisionais ou provisórios**, constituem **título executivo judicial de pleno direito**, **dispensando a ação principal** (§10). Publicada em 21/05/2026.",
+    "temas": [
+      "Violência contra a mulher",
+      "Civil",
+      "Processo civil"
+    ],
+    "papeis": [
+      "assistido"
+    ],
+    "mudou": [
+      "**Art. 22, §4º:** na aplicação das medidas protetivas de urgência, o juiz concede a **tutela específica** ou determina providências que assegurem a **tutela pelo resultado prático equivalente**.",
+      "**Art. 22, §10:** as medidas protetivas de natureza **cível**, inclusive os **alimentos provisionais ou provisórios**, constituem **título executivo judicial de pleno direito** e **dispensam a propositura de ação principal**."
+    ],
+    "dpe": [
+      "Ponto central na **atuação cível** da Defensoria em favor da mulher: os alimentos provisórios fixados como medida protetiva podem ser **executados diretamente**, sem aguardar a propositura de ação de alimentos ou de divórcio em prazo para ratificar a medida.",
+      "Útil para pedir o cumprimento imediato de medidas cíveis (alimentos provisórios, restituição de bens) e as providências necessárias ao resultado prático equivalente, sem depender de ação principal."
+    ],
+    "prova": [
+      "**Título executivo judicial** de pleno direito e **dispensa de ação principal** para as medidas protetivas cíveis (art. 22, §10).",
+      "**Tutela específica / resultado prático equivalente** (art. 22, §4º)."
+    ],
+    "treino": [
+      {
+        "q": "As medidas protetivas de natureza cível da Lei Maria da Penha constituem título executivo judicial de pleno direito e dispensam a propositura de ação principal.",
+        "a": true,
+        "e": "Certo. É o art. 22, §10, incluído pela Lei 15.412/2026."
+      },
+      {
+        "q": "Os alimentos provisórios fixados como medida protetiva perdem eficácia se a ação principal não for proposta no prazo legal.",
+        "a": false,
+        "e": "Errado. A lei dispensa a ação principal para as medidas protetivas cíveis, inclusive alimentos provisionais ou provisórios."
+      },
+      {
+        "q": "Na aplicação das medidas protetivas, o juiz deve conceder a tutela específica ou determinar providências que assegurem o resultado prático equivalente.",
+        "a": true,
+        "e": "Certo. É o art. 22, §4º, da Lei 11.340/2006."
+      },
+      {
+        "q": "A Lei 15.412/2026 alterou o art. 12-C da Lei Maria da Penha.",
+        "a": false,
+        "e": "Errado. Ela alterou o art. 22; o art. 12-C foi alterado pela Lei 15.411/2026."
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lei15392",
+    "tipo": "lei",
+    "lei": "Lei 15.392/2026",
+    "pub": "2026-04-17",
+    "titulo": "Custódia compartilhada de animais de estimação na dissolução de casamento ou união estável",
+    "resumo": "Lei específica sobre a **custódia compartilhada de animais de estimação** na dissolução de casamento ou de união estável: sem acordo, o juiz determina o **compartilhamento equilibrado** da custódia e das despesas; **não se defere** se houver histórico ou risco de **violência doméstica** ou **maus-tratos** (o agressor perde posse e propriedade, sem indenização); **renúncia** ou **descumprimento reiterado** geram perda da posse e da propriedade. Publicada em 17/04/2026 (sancionada pelo Vice-Presidente em exercício).",
+    "temas": [
+      "Civil",
+      "Família",
+      "Processo civil"
+    ],
+    "papeis": [
+      "assistido"
+    ],
+    "mudou": [
+      "**Regra (art. 2º):** na dissolução de casamento ou de união estável, **sem acordo** sobre a custódia do animal de estimação de propriedade comum, o juiz determina o **compartilhamento da custódia e das despesas** de forma equilibrada. Presume-se de **propriedade comum** o animal cujo tempo de vida tenha transcorrido **majoritariamente na constância** do casamento ou da união estável.",
+      "**Exceções (art. 3º):** a custódia compartilhada **não será deferida** se houver **histórico ou risco de violência doméstica e familiar** ou **maus-tratos contra o animal**. O **agressor perde a posse e a propriedade** para a outra parte, **sem direito a indenização**, e responde pelos débitos pendentes.",
+      "**Convívio e despesas (art. 4º):** o tempo de convívio considera o ambiente, o trato, o zelo e o sustento, e a disponibilidade de cada parte. Despesas **ordinárias** (alimentação e higiene) ficam com quem estiver com o animal; as demais (consultas, internações, medicamentos) são **divididas igualmente**.",
+      "**Renúncia e descumprimento (arts. 5º e 6º):** quem renuncia perde posse e propriedade, sem indenização; o descumprimento **imotivado e reiterado** acarreta **perda definitiva** e extingue a custódia. **Processo (art. 7º):** aplica-se subsidiariamente o capítulo das ações de família do CPC (arts. 693 e seguintes)."
+    ],
+    "dpe": [
+      "Em **ações de família**, a lei dá fundamento legal à disputa por animais de estimação; o histórico de **violência doméstica** impede a custódia compartilhada e retira do agressor a posse e a propriedade do animal, o que é argumento relevante para a mulher assistida.",
+      "O pedido pode ser feito em ação de dissolução ou em ação própria, com aplicação subsidiária do procedimento das ações de família (mediação e conciliação)."
+    ],
+    "prova": [
+      "**Custódia compartilhada** como regra sem acordo, e as **duas exceções** do art. 3º (violência doméstica e maus-tratos).",
+      "**Presunção de propriedade comum** (tempo majoritário na constância da união) e **divisão de despesas** (ordinárias x demais)."
+    ],
+    "treino": [
+      {
+        "q": "Não havendo acordo na dissolução de casamento ou de união estável, o juiz determinará o compartilhamento equilibrado da custódia e das despesas do animal de estimação de propriedade comum.",
+        "a": true,
+        "e": "Certo. É a regra do art. 2º da Lei 15.392/2026."
+      },
+      {
+        "q": "Havendo histórico ou risco de violência doméstica e familiar, a custódia compartilhada do animal será deferida, mas com fixação de visitas supervisionadas.",
+        "a": false,
+        "e": "Errado. Nessa hipótese a custódia compartilhada não é deferida, e o agressor perde a posse e a propriedade do animal em favor da outra parte, sem indenização."
+      },
+      {
+        "q": "As despesas ordinárias de alimentação e higiene do animal incumbem a quem o tiver em sua companhia; as demais, como consultas veterinárias, são divididas igualmente.",
+        "a": true,
+        "e": "Certo. É o art. 4º, parágrafo único."
+      },
+      {
+        "q": "O descumprimento imotivado e reiterado dos termos da custódia compartilhada acarreta a perda definitiva da posse e da propriedade do animal em favor da outra parte.",
+        "a": true,
+        "e": "Certo. É o art. 6º, e a custódia compartilhada é extinta."
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lei15455",
+    "tipo": "lei",
+    "lei": "Lei 15.455/2026",
+    "pub": "2026-07-02",
+    "titulo": "Proteção e acolhimento de trabalhadores resgatados de condição análoga à de escravo e do trabalho doméstico",
+    "resumo": "Estabelece medidas de **proteção e acolhimento** de trabalhadores **resgatados de condição análoga à de escravo** e vincula o poder público e os empregadores a **proteger os trabalhadores domésticos** contra abuso, assédio, discriminação e violência. Prevê **prioridade no Bolsa Família**, **6 parcelas de seguro-desemprego** de um salário mínimo, **comunicação policial em 48 horas** ao MTE e ao MPT e novas **medidas protetivas** na LC 150/2015 (CadÚnico e acolhimento institucional). Altera o CP, as Leis 7.998/1990, 10.593/2002 e 11.340/2006 e a LC 150/2015. Publicada em 02/07/2026, com vetos.",
+    "temas": [
+      "Trabalho",
+      "Direitos humanos",
+      "Violência contra a mulher"
+    ],
+    "papeis": [
+      "assistido",
+      "coletivo"
+    ],
+    "mudou": [
+      "**Dever geral (arts. 1º e 2º):** o poder público e os empregadores devem assegurar ao trabalhador doméstico proteção efetiva contra abuso, assédio, discriminação, violência e redução a condição análoga à de escravo. O poder público deve garantir participação sindical, criar mecanismos de acesso à justiça e programas de acolhimento, reinserção e readaptação.",
+      "**Prioridade no Programa Bolsa Família** (art. 3º) para quem for resgatado de trabalho em condição análoga à de escravo, atendidos os critérios de elegibilidade. **Seguro-desemprego** (Lei 7.998/1990, art. 2º-C): **6 parcelas** de **1 salário mínimo** cada.",
+      "**Código Penal, art. 129, §9º:** a lesão corporal praticada contra pessoa com quem haja **relação de trabalho doméstico** passa a receber o tratamento do §9º (violência doméstica).",
+      "**Fiscalização do trabalho doméstico** (Lei 10.593/2002, art. 11-A): a entrada do Auditor-Fiscal do Trabalho no **domicílio do empregador** depende de **autorização** do empregador ou do trabalhador, caso ali resida; **dupla visita**, salvo falta de anotação na CTPS, reincidência, fraude, resistência, embaraço ou prática de redução a condição análoga à de escravo.",
+      "**Lei Maria da Penha, art. 11, parágrafo único:** a autoridade policial que tomar conhecimento de **indícios** de redução a condição análoga à de escravo ou de outra forma de violência doméstica contra a trabalhadora doméstica deve comunicar, em até **48 horas**, a unidade regional do MTE e o Ministério Público do Trabalho.",
+      "**LC 150/2015, Capítulo I-A (art. 30-A):** constatada a redução do empregado doméstico a condição análoga à de escravo, a autoridade policial ou judicial ou os órgãos de fiscalização determinam a **inclusão no CadÚnico** e o **acolhimento institucional imediato** e abrigamento emergencial, quando necessário; sendo a vítima mulher, aplica-se a Lei Maria da Penha, inclusive medidas protetivas. O inciso II do art. 30-A foi **vetado**."
+    ],
+    "dpe": [
+      "Importante para a atuação da Defensoria na **proteção da trabalhadora doméstica**: com indícios de trabalho escravo, é possível pedir acolhimento, inclusão no CadÚnico, seguro-desemprego e medidas protetivas (quando mulher), além de acionar o MTE e o MPT.",
+      "A **comunicação em 48 horas** da autoridade policial ao MTE e ao MPT é dever legal; vale cobrar o seu cumprimento nos casos atendidos."
+    ],
+    "prova": [
+      "**6 parcelas de seguro-desemprego** de 1 salário mínimo (Lei 7.998, art. 2º-C) e prioridade no **Bolsa Família**.",
+      "**Autorização** para entrada do AFT no domicílio e **dupla visita** (Lei 10.593, art. 11-A); **comunicação em 48 horas** (Lei Maria da Penha, art. 11, parágrafo único).",
+      "**Art. 30-A da LC 150/2015**: CadÚnico, acolhimento institucional e aplicação da Lei Maria da Penha quando a vítima for mulher."
+    ],
+    "treino": [
+      {
+        "q": "A autoridade policial que tomar conhecimento de indícios de redução de trabalhadora doméstica a condição análoga à de escravo deve comunicar o fato, em até 48 horas, à unidade regional do MTE e ao Ministério Público do Trabalho.",
+        "a": true,
+        "e": "Certo. É o art. 11, parágrafo único, da Lei Maria da Penha, incluído pela Lei 15.455/2026."
+      },
+      {
+        "q": "O trabalhador resgatado de condição análoga à de escravo, por ação de fiscalização do MTE, tem direito a 3 parcelas de seguro-desemprego no valor de um salário mínimo.",
+        "a": false,
+        "e": "Errado. O art. 2º-C da Lei 7.998/1990 prevê 6 parcelas de um salário mínimo cada."
+      },
+      {
+        "q": "A entrada do Auditor-Fiscal do Trabalho no domicílio do empregador doméstico, para verificar o cumprimento das normas trabalhistas, dispensa autorização.",
+        "a": false,
+        "e": "Errado. Ela depende de autorização do empregador ou do trabalhador, caso ali resida (Lei 10.593/2002, art. 11-A)."
+      },
+      {
+        "q": "A lesão corporal praticada contra pessoa com quem o agente tenha relação de trabalho doméstico recebe o tratamento do art. 129, §9º, do CP.",
+        "a": true,
+        "e": "Certo. O §9º foi alterado para incluir a pessoa com relação de trabalho doméstico."
+      }
+    ]
+  }
+]

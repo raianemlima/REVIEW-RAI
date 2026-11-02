@@ -1,0 +1,440 @@
+[
+  {
+    "id": "nv-2026-11-lei15358",
+    "tipo": "lei",
+    "lei": "Lei 15.358/2026",
+    "pub": "2026-03-25",
+    "titulo": "Marco Legal do Combate ao Crime Organizado (Lei Raul Jungmann)",
+    "resumo": "Institui o **Marco Legal do Combate ao Crime Organizado**: cria os crimes de **domínio social estruturado** (art. 2º, reclusão de 20 a 40 anos) e de **favorecimento ao domínio social estruturado** (art. 3º, 12 a 20 anos), declara-os **hediondos** (art. 4º), eleva os requisitos de **progressão de regime** (LEP, art. 112, V a VIII), cria a **ação civil de perdimento de bens** e passa a exigir **audiência de custódia por videoconferência** (CPP, art. 310). Altera ainda CP, Lei de Drogas, Estatuto do Desarmamento, Lei de Lavagem e Código Eleitoral. Publicada em 25/03/2026, com vetos; vigência imediata.",
+    "temas": [
+      "Penal",
+      "Processo penal",
+      "Execução penal"
+    ],
+    "papeis": [
+      "defesa"
+    ],
+    "mudou": [
+      "Cria o crime de **domínio social estruturado** (art. 2º): praticar, como integrante de organização criminosa ultraviolenta, grupo paramilitar ou milícia privada, qualquer das condutas dos incisos I a X (impor controle sobre áreas e comunidades por violência ou grave ameaça, obstruir a polícia com barricadas, atacar presídios, sabotar portos, hospitais, escolas, energia, dados públicos etc.). Pena: **reclusão de 20 a 40 anos**, sem prejuízo das penas dos demais crimes. O §1º aumenta a pena de 2/3 ao dobro (comando ou liderança, financiamento, entre outras hipóteses).",
+      "Efeitos do art. 2º: crime **insuscetível de anistia, graça, indulto, fiança e livramento condicional** (§4º); **atos preparatórios** são punidos com redução de 1/3 a 1/2 (§5º); líderes vão para presídio federal de segurança máxima (§7º); homicídios cometidos por membros do grupo são julgados por **Varas Criminais Colegiadas** (§8º); veda o auxílio-reclusão (§6º e art. 30). O §3º foi vetado.",
+      "Cria o **favorecimento ao domínio social estruturado** (art. 3º), com **reclusão de 12 a 20 anos** e multa. Segundo o art. 4º, os crimes dos arts. 2º e 3º são **hediondos** e constituem **formas especiais de organização criminosa**, com aplicação subsidiária da Lei 12.850/2013.",
+      "**Inquérito** (art. 5º): conclusão em **90 dias** se o indiciado estiver preso e **270 dias** se solto, prorrogáveis por igual período; o juiz decide as representações em 15 dias (24 horas em caso de urgência). O descumprimento de prazo **não gera automaticamente** o relaxamento da prisão (§4º).",
+      "**Execução penal (LEP, art. 112):** **70%** para o condenado primário por crime hediondo ou equiparado (inciso V); **75%** para o hediondo com resultado morte se primário, para quem comanda organização criminosa ultraviolenta, para o crime de constituição de milícia privada e para o feminicídio se primário (inciso VI); **80%** para o reincidente em hediondo (inciso VII); **85%** para o reincidente em hediondo com resultado morte (inciso VIII). Em várias alíneas fica **vedado o livramento condicional**. Também cria o monitoramento de visitas virtuais e de parlatório (art. 41-A) e a análise por juízo de controle distinto das conversas monitoradas entre advogado e cliente (art. 41-B).",
+      "**Audiência de custódia por videoconferência** (CPP, arts. 3º-B, §1º, e 310): em até 24 horas da prisão, com presença do acusado, do MP e de advogado ou membro da Defensoria. Garantias nos §§7º a 13: entrevista **prévia, reservada e inviolável** com o defensor; privacidade na sala; **repetição completa** da audiência se a falha do sistema for atribuível ao tribunal; salas com videoconferência em todos os estabelecimentos prisionais; audiência presencial só em situação excepcional de força maior, por decisão justificada.",
+      "**CPP:** prisão preventiva admitida quando o crime é cometido por integrante dessas organizações (art. 313, V); exceção à prevalência do júri no concurso de competência para homicídios desses grupos (art. 78, I); efeito suspensivo ou ativo no recurso em sentido estrito do art. 581, V (art. 584, §4º).",
+      "**Patrimônio:** medidas cautelares e ação civil autônoma de **perdimento de bens** (arts. 12 a 27), Banco Nacional de Dados e novo perdimento dos instrumentos do crime (CP, art. 91-A, §5º). **CP:** novo efeito da condenação de suspensão da inscrição no CNPJ por 180 dias (art. 92, IV) e qualificadoras ou majorantes quando o crime é praticado nesse contexto, por exemplo homicídio doloso de 20 a 40 anos (art. 121, §2º-D) e aplicação em triplo da pena do roubo (art. 157, §4º) e da extorsão (art. 158, §4º). **Lei 11.343/2006:** pena em dobro para os arts. 33 a 37 (art. 40-A). **Lei 10.826/2003:** aumento de 2/3 (art. 21-A)."
+    ],
+    "dpe": [
+      "Atenção redobrada na **audiência de custódia por videoconferência**: o defensor tem direito a entrevista prévia, reservada e inviolável, e o preso deve ficar sozinho na sala, com privacidade (CPP, art. 310, §§9º e 10). Falha do sistema atribuível ao tribunal torna **obrigatória a repetição completa** da audiência (§11); a presença física só pode ser substituída em situação excepcional, com decisão justificada (§13).",
+      "Na **execução penal**, recalcular as frações de progressão e a possibilidade de livramento condicional conforme o novo art. 112, V a VIII. O art. 41-B é salvaguarda do sigilo da comunicação com o cliente: o conteúdo monitorado é analisado em primeiro lugar, e com exclusividade, por um juízo de controle distinto do juízo da instrução; o que for declarado ilícito não pode ser acessado pelo juízo da instrução e o que não interessar à prova deve ser inutilizado.",
+      "Para a **defesa**, vale a tese de que o monitoramento da conversa com o advogado exige razões fundadas de conluio criminoso reconhecidas judicialmente (LEP, art. 41-B) e de que o descumprimento dos prazos do inquérito, embora não relaxe automaticamente a prisão, exige reavaliação das circunstâncias do caso concreto (art. 5º, §4º)."
+    ],
+    "prova": [
+      "Pena do art. 2º (20 a 40 anos), pena do art. 3º (12 a 20 anos), natureza **hedionda** (art. 4º) e vedações do art. 2º, §4º (anistia, graça, indulto, fiança e livramento condicional).",
+      "Novos percentuais do **art. 112 da LEP** (70%, 75%, 80% e 85%) e hipóteses em que o livramento condicional é vedado.",
+      "Regras da **audiência de custódia por videoconferência** (CPP, art. 310, §§7º a 13) e prazos do inquérito (90 e 270 dias)."
+    ],
+    "treino": [
+      {
+        "q": "O crime de domínio social estruturado, previsto no art. 2º da Lei 15.358/2026, é punido com reclusão de 20 a 40 anos.",
+        "a": true,
+        "e": "Certo. É a pena prevista no preceito secundário do art. 2º, sem prejuízo das sanções correspondentes à ameaça, à violência ou a outros crimes."
+      },
+      {
+        "q": "O crime de domínio social estruturado admite fiança e livramento condicional, por não constar do rol dos crimes hediondos.",
+        "a": false,
+        "e": "Errado. O art. 2º, §4º, o declara insuscetível de anistia, graça, indulto, fiança e livramento condicional, e o art. 4º o considera hediondo."
+      },
+      {
+        "q": "Pelo novo art. 112, V, da LEP, o apenado primário condenado por crime hediondo ou equiparado deve cumprir 70% da pena para progredir de regime.",
+        "a": true,
+        "e": "Certo. O inciso V, na redação da Lei 15.358/2026, fixa 70% para o hediondo ou equiparado se o apenado for primário."
+      },
+      {
+        "q": "Se o inquérito policial não for concluído nos prazos do art. 5º da Lei 15.358/2026, o preso deve ser imediatamente colocado em liberdade.",
+        "a": false,
+        "e": "Errado. O art. 5º, §4º, diz que o descumprimento dos prazos não gera automaticamente o relaxamento da prisão ou a liberdade, devendo o juiz avaliar as circunstâncias do caso concreto."
+      },
+      {
+        "q": "Se houver falha no sistema de videoconferência atribuível ao tribunal durante a audiência de custódia, é obrigatória a repetição completa da audiência.",
+        "a": true,
+        "e": "Certo. CPP, art. 310, §11, na redação da Lei 15.358/2026: a repetição é completa, sem convalescer qualquer ato incompleto."
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lei15402",
+    "tipo": "lei",
+    "lei": "Lei 15.402/2026",
+    "pub": "2026-05-08",
+    "titulo": "Progressão de regime (LEP, art. 112), remição em prisão domiciliar e crimes contra o Estado Democrático (concurso e multidão)",
+    "resumo": "Promulgada pelo Presidente do Senado após o Congresso **rejeitar o veto total** ao PL 2.162/2023 (CF, art. 66, §7º). Dá nova redação ao **art. 112 da LEP** (regra geral de **1/6** com exceções de **25%, 30% e 20%**), acrescenta o §9º ao art. 126 (**remição em regime domiciliar**) e cria os **arts. 359-M-A e 359-M-B** do Código Penal (concurso formal e redução de pena para crimes cometidos em multidão). Publicada em 08/05/2026 (edição extra); vigência imediata.",
+    "temas": [
+      "Execução penal",
+      "Penal"
+    ],
+    "papeis": [
+      "defesa"
+    ],
+    "mudou": [
+      "**LEP, art. 112, caput:** a progressão ocorre quando o preso tiver cumprido ao menos **1/6** da pena no regime anterior e o mérito indicar a progressão, **observadas as exceções** dos incisos.",
+      "**Inciso I:** apenado **primário** condenado por crime com **violência ou grave ameaça** cumpre ao menos **25%**; **inciso II:** apenado **reincidente** condenado por crime com violência ou grave ameaça cumpre ao menos **30%**. Em ambos fica ressalvado o rol do **Título XII da Parte Especial do CP** (crimes contra o Estado Democrático de Direito).",
+      "**Inciso III:** apenado **reincidente em crime diverso** dos referidos nos incisos I e II cumpre ao menos **20%**. Na lei promulgada, os incisos IV a X do art. 112 constam como (VETADO).",
+      "**Comparação com a redação anterior** (Lei 13.964/2019, que previa 16%, 20%, 25% e 30% para os condenados sem hediondez): os patamares de **25%** (primário com violência), **30%** (reincidente com violência) e **20%** (reincidente sem violência) já existiam. As novidades são a regra geral de **1/6** e a **ressalva do Título XII do CP**, que tira os crimes contra o Estado Democrático de Direito das frações de 25% e 30%.",
+      "**Remição** (LEP, art. 126, §9º): o cumprimento da pena em **regime domiciliar não impede a remição**.",
+      "**CP, art. 359-M-A:** quando os delitos do Capítulo II do Título XII estiverem no mesmo contexto, aplica-se o **concurso formal próprio** (art. 70, primeira parte), ainda que haja desígnios autônomos, **vedado o cúmulo** do art. 70, segunda parte, e do art. 69.",
+      "**CP, art. 359-M-B:** crimes do mesmo capítulo praticados em **contexto de multidão** têm a pena **reduzida de 1/3 a 2/3**, desde que o agente não tenha financiado nem exercido papel de liderança.",
+      "**Atenção ao texto compilado:** o art. 112 da LEP também foi alterado pela Lei 15.358/2026 (incisos V a VIII, para hediondos e organizações). O compilado do Planalto reúne as duas leis e ainda mostra o inciso IV (30%, Lei 13.964/2019). Confira sempre o compilado antes de aplicar ou responder."
+    ],
+    "dpe": [
+      "Para a **defesa na execução**, conferir nos processos de condenados por crimes do **Título XII do CP** se a fração de progressão aplicada ainda é de 25% ou 30%: a ressalva legal afasta essas frações para tais crimes, e a lei mais benéfica retroage. Nos demais casos os percentuais coincidem, em regra, com os anteriores, e o ponto de atenção é a convivência com a **Lei 15.358/2026** no art. 112.",
+      "A **remição em regime domiciliar** (art. 126, §9º) permite pedir o cômputo de trabalho ou estudo de quem cumpre pena em prisão domiciliar.",
+      "O **concurso formal próprio** do art. 359-M-A e a redução do art. 359-M-B ajudam a defesa nos processos por crimes contra o Estado Democrático de Direito praticados em um mesmo contexto."
+    ],
+    "prova": [
+      "Regra geral de **1/6** com as exceções de **25%, 30% e 20%** no art. 112 da LEP e a **ressalva do Título XII** do CP (crimes contra o Estado Democrático de Direito).",
+      "**Remição em regime domiciliar** (art. 126, §9º) e os novos **arts. 359-M-A e 359-M-B** do CP (concurso formal próprio; redução de 1/3 a 2/3 na multidão).",
+      "Forma de entrada em vigor: **veto total rejeitado** e lei promulgada pelo Presidente do Senado (CF, art. 66, §7º)."
+    ],
+    "treino": [
+      {
+        "q": "A Lei 15.402/2026 foi sancionada pelo Presidente da República.",
+        "a": false,
+        "e": "Errado. O Congresso rejeitou o veto total ao PL 2.162/2023 e a lei foi promulgada pelo Presidente do Senado, nos termos do art. 66, §7º, da CF."
+      },
+      {
+        "q": "Pela nova redação do art. 112, I, da LEP, o apenado primário condenado por crime cometido com violência ou grave ameaça deve cumprir ao menos 25% da pena, salvo em relação aos crimes do Título XII da Parte Especial do CP.",
+        "a": true,
+        "e": "Certo. É a exceção do inciso I, com ressalva dos crimes contra o Estado Democrático de Direito."
+      },
+      {
+        "q": "O cumprimento da pena em regime domiciliar impede a remição da pena, conforme o art. 126, §9º, da LEP.",
+        "a": false,
+        "e": "Errado. O §9º, incluído pela Lei 15.402/2026, diz o contrário: o regime domiciliar não impede a remição."
+      },
+      {
+        "q": "Os crimes do Capítulo II do Título XII do CP, quando inseridos no mesmo contexto, são punidos por concurso formal próprio, mesmo que haja desígnios autônomos, vedado o cúmulo material.",
+        "a": true,
+        "e": "Certo. É o que prevê o art. 359-M-A do CP."
+      },
+      {
+        "q": "A redução de pena de 1/3 a 2/3 para crimes praticados em contexto de multidão (art. 359-M-B do CP) aplica-se também a quem exerceu papel de liderança.",
+        "a": false,
+        "e": "Errado. A redução só vale se o agente não praticou ato de financiamento nem exerceu papel de liderança."
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lei15353",
+    "tipo": "lei",
+    "lei": "Lei 15.353/2026",
+    "pub": "2026-03-08",
+    "titulo": "Estupro de vulnerável: presunção absoluta de vulnerabilidade (CP, art. 217-A)",
+    "resumo": "Acrescenta os **§§4º-A e 5º ao art. 217-A do Código Penal** para fixar em lei a **presunção absoluta de vulnerabilidade** da vítima de estupro de vulnerável, **inadmitida a relativização**, e dispor que as penas se aplicam independentemente de consentimento, experiência sexual anterior, relações prévias ou gravidez resultante. Publicada em 08/03/2026 (edição extra).",
+    "temas": [
+      "Penal",
+      "Infância e juventude",
+      "Violência contra a mulher"
+    ],
+    "papeis": [
+      "defesa",
+      "assistido"
+    ],
+    "mudou": [
+      "**CP, art. 217-A, §4º-A:** a vulnerabilidade da vítima é **presunção absoluta**, sendo **inadmissível a relativização**.",
+      "**CP, art. 217-A, §5º:** as penas do crime aplicam-se **independentemente** do consentimento da vítima, de sua experiência sexual anterior, da existência de relação prévia com o agente ou de gravidez dela decorrente.",
+      "A lei positiva o entendimento da **Súmula 593 do STJ** (o crime se configura com a conjunção carnal ou o ato libidinoso com menor de 14 anos, sendo irrelevantes o consentimento, a experiência sexual ou o relacionamento amoroso), agora com **base legal expressa**."
+    ],
+    "dpe": [
+      "Na **defesa criminal**, a tese de relativização da vulnerabilidade (consentimento, namoro, diferença mínima de idade) tem **menos espaço**; o debate migra para a prova da idade, da autoria e da própria existência do ato.",
+      "Na atuação em favor da **vítima**, o §5º impede que o consentimento aparente, a experiência sexual anterior ou a gravidez sejam usados para descaracterizar o crime."
+    ],
+    "prova": [
+      "Redação dos **§§4º-A e 5º** do art. 217-A do CP e correlação com a **Súmula 593 do STJ**.",
+      "Atenção à pegadinha: a presunção de vulnerabilidade é **absoluta**; o consentimento e a gravidez não afastam o crime."
+    ],
+    "treino": [
+      {
+        "q": "A Lei 15.353/2026 transformou em relativa a presunção de vulnerabilidade da vítima de estupro de vulnerável, admitindo prova de consentimento.",
+        "a": false,
+        "e": "Errado. A lei fixou a presunção como absoluta (art. 217-A, §4º-A) e vedou sua relativização."
+      },
+      {
+        "q": "Segundo o art. 217-A, §5º, do CP, as penas do estupro de vulnerável aplicam-se independentemente de gravidez resultante do crime.",
+        "a": true,
+        "e": "Certo. O §5º cita o consentimento, a experiência sexual anterior, a relação prévia com o agente e a gravidez como circunstâncias irrelevantes."
+      },
+      {
+        "q": "A previsão legal do art. 217-A, §4º-A, do CP converge com o entendimento da Súmula 593 do STJ.",
+        "a": true,
+        "e": "Certo. A súmula já afirmava que o consentimento, a experiência sexual e o relacionamento amoroso são irrelevantes para a configuração do crime."
+      },
+      {
+        "q": "A experiência sexual anterior da vítima menor de 14 anos pode afastar a tipicidade do estupro de vulnerável.",
+        "a": false,
+        "e": "Errado. O art. 217-A, §5º, do CP afasta qualquer relevância da experiência sexual anterior."
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lei15384",
+    "tipo": "lei",
+    "lei": "Lei 15.384/2026",
+    "pub": "2026-04-10",
+    "titulo": "Violência vicária e vicaricídio (Maria da Penha, art. 7º, VI; CP, art. 121-B)",
+    "resumo": "Inclui a **violência vicária** entre as formas de violência doméstica e familiar contra a mulher (Lei 11.340/2006, art. 7º, VI), cria o crime de **vicaricídio** (CP, **art. 121-B**, reclusão de **20 a 40 anos**) e o inclui no rol dos **crimes hediondos** (Lei 8.072/1990, art. 1º, I-C). Publicada em 10/04/2026 e retificada em 15/04/2026.",
+    "temas": [
+      "Violência contra a mulher",
+      "Penal"
+    ],
+    "papeis": [
+      "defesa",
+      "assistido"
+    ],
+    "mudou": [
+      "**Lei Maria da Penha, art. 7º, VI:** violência vicária é a conduta praticada contra descendente, ascendente, dependente, enteado, parente, pessoa sob guarda, responsabilidade ou rede de apoio da mulher **com o fim de atingi-la**.",
+      "**CP, art. 121-B (vicaricídio):** matar pessoa próxima da mulher, nas relações descritas, para atingi-la. Pena: **reclusão de 20 a 40 anos**. Há aumento de **1/3 a 1/2** se o crime for cometido na presença da mulher, contra criança, adolescente, idoso ou pessoa com deficiência, ou em descumprimento de medida protetiva.",
+      "**Lei 8.072/1990, art. 1º, I-C:** o vicaricídio passa a ser **crime hediondo**, com todos os efeitos da lei (insuscetível de anistia, graça, indulto e fiança, e regras próprias de progressão)."
+    ],
+    "dpe": [
+      "Importante para o **atendimento da mulher vítima**: ameaças e violência contra filhos e familiares como forma de atingi-la agora são formalmente violência doméstica, o que permite pedir **medidas protetivas** para a mulher e para os atingidos.",
+      "Na **defesa criminal**, atenção à prova do **dolo específico** de atingir a mulher e ao enquadramento de condutas como homicídio comum ou qualificado (art. 121) ou vicaricídio (art. 121-B)."
+    ],
+    "prova": [
+      "Definição de **violência vicária** (art. 7º, VI, da Lei Maria da Penha) e pena e **causas de aumento** do art. 121-B do CP.",
+      "Natureza **hedionda** do vicaricídio (Lei 8.072, art. 1º, I-C)."
+    ],
+    "treino": [
+      {
+        "q": "A violência vicária é forma de violência doméstica e familiar contra a mulher, ainda que praticada diretamente contra um descendente dela, desde que com o fim de atingi-la.",
+        "a": true,
+        "e": "Certo. É a definição do novo inciso VI do art. 7º da Lei 11.340/2006."
+      },
+      {
+        "q": "O crime de vicaricídio (CP, art. 121-B) tem pena de reclusão de 12 a 30 anos.",
+        "a": false,
+        "e": "Errado. A pena é de reclusão de 20 a 40 anos."
+      },
+      {
+        "q": "O vicaricídio foi incluído no rol dos crimes hediondos pela Lei 15.384/2026.",
+        "a": true,
+        "e": "Certo. A lei acrescentou o inciso I-C ao art. 1º da Lei 8.072/1990."
+      },
+      {
+        "q": "A pena do vicaricídio é aumentada de 1/3 a 1/2 se o crime é cometido contra criança, adolescente, idoso ou pessoa com deficiência.",
+        "a": true,
+        "e": "Certo. Também aumenta se o crime ocorre na presença da mulher ou em descumprimento de medida protetiva."
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lei15397",
+    "tipo": "lei",
+    "lei": "Lei 15.397/2026",
+    "pub": "2026-05-04",
+    "titulo": "Crimes patrimoniais: furto, roubo, estelionato, receptação e crimes contra a segurança de serviços",
+    "resumo": "Reescreve os **preceitos secundários** do furto (**1 a 6 anos**), do roubo (**6 a 10 anos**), do estelionato (**1 a 5 anos**) e da receptação (**2 a 6 anos**), cria novas qualificadoras (furto mediante fraude eletrônica, de celulares, de animais, de cabos e energia), a **cessão de conta laranja** (art. 171, §2º, VII), a **receptação de animal** (art. 180-A) e eleva a pena do art. 266. **Revoga o §5º do art. 171** (representação no estelionato). Publicada em 04/05/2026, com veto ao art. 157, §3º, I.",
+    "temas": [
+      "Penal"
+    ],
+    "papeis": [
+      "defesa"
+    ],
+    "mudou": [
+      "**Furto (art. 155):** pena de **reclusão de 1 a 6 anos** e multa; o repouso noturno aumenta a pena de **metade** (§1º). Qualificado (§4º) com **2 a 8 anos**, agora também quando a subtração for de bens que comprometam o funcionamento de órgãos públicos ou de estabelecimentos que prestem serviços essenciais (inciso V). Passam a ter **4 a 10 anos**: furto mediante fraude eletrônica (§4º-B); veículo levado a outro Estado ou ao exterior (§5º); semovente domesticável de produção, animal doméstico, celular, computador ou dispositivo eletrônico (§6º); explosivos e arma de fogo (§7º). Fios, cabos e equipamentos de energia, telefonia, dados, ferrovias e metrô: **2 a 8 anos** (§8º).",
+      "**Roubo (art. 157):** pena de **reclusão de 6 a 10 anos**; §1º-A (bens que comprometam órgãos públicos ou serviços essenciais) com **6 a 12 anos**; novas causas de aumento de 1/3 até metade no §2º (IX, celular, computador ou dispositivo eletrônico; X, arma de fogo); roubo com resultado morte (§3º, II) passa a **24 a 30 anos**.",
+      "**Estelionato (art. 171):** pena de **1 a 5 anos** e multa; nova figura do §2º, VII (**cessão de conta bancária** para transitar recursos de atividade criminosa); **fraude eletrônica** (§2º-A) com **4 a 8 anos**.",
+      "**Revogação do §5º do art. 171:** o texto compilado do Planalto mostra o §5º e seus incisos como **revogados**. Era o dispositivo que condicionava o estelionato à **representação** (Pacote Anticrime). Sem ele, a leitura natural é a de volta à regra geral do art. 100 do CP (ação penal pública incondicionada); a aplicação aos fatos anteriores é questão de direito intertemporal, por se tratar de norma de natureza mista.",
+      "**Receptação:** art. 180 com pena de **2 a 6 anos** e novo **art. 180-A** (receptação de animal doméstico ou semovente), com **3 a 8 anos**. **Art. 266** (interrupção de serviço telegráfico, radiotelegráfico ou telefônico): pena de **2 a 4 anos**, aplicada **em dobro** se o crime for cometido por ocasião de calamidade pública ou mediante subtração, dano ou destruição de equipamento de telecomunicações (§2º). O **art. 3º** da lei revoga expressamente o §5º do art. 171."
+    ],
+    "dpe": [
+      "Para a **defesa**, o impacto é grande em **dosimetria e regime inicial**: as penas-base mudaram, e o §5º do art. 171 foi revogado. Avaliar, caso a caso, o **direito intertemporal** (novatio legis in mellius, quanto às penas menores, e in pejus, quanto às penas maiores e à ausência de representação).",
+      "Observar o possível **princípio da insignificância** e a desclassificação para as formas simples frente às novas qualificadoras, especialmente nas de celulares e dispositivos eletrônicos."
+    ],
+    "prova": [
+      "Novas **penas** do furto, do roubo, do estelionato e da receptação e as **novas qualificadoras** (fraude eletrônica, celular, animais).",
+      "**Cessão de conta laranja** (art. 171, §2º, VII) e **revogação do §5º do art. 171** (fim da exigência de representação)."
+    ],
+    "treino": [
+      {
+        "q": "A Lei 15.397/2026 revogou o §5º do art. 171 do CP, que condicionava o estelionato à representação da vítima.",
+        "a": true,
+        "e": "Certo. O compilado do Planalto exibe o §5º e seus incisos como revogados pela Lei 15.397/2026."
+      },
+      {
+        "q": "O furto simples (art. 155, caput, do CP) passou a ter pena de 4 a 10 anos.",
+        "a": false,
+        "e": "Errado. A pena do caput passou a ser de 1 a 6 anos; 4 a 10 anos é pena de algumas qualificadoras, como a da fraude eletrônica."
+      },
+      {
+        "q": "A cessão onerosa ou gratuita de conta bancária para que nela transitem recursos de atividade criminosa passou a configurar estelionato (art. 171, §2º, VII).",
+        "a": true,
+        "e": "Certo. A hipótese foi incluída pela Lei 15.397/2026."
+      },
+      {
+        "q": "A Lei 15.397/2026 passou a prever a pena do estelionato de 1 a 5 anos e multa.",
+        "a": true,
+        "e": "Certo. É a redação do preceito secundário do caput do art. 171."
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lei15407",
+    "tipo": "lei",
+    "lei": "Lei 15.407/2026",
+    "pub": "2026-05-12",
+    "titulo": "Presídios federais e RDD: homicídio de agentes de segurança, videoconferência e decisão liminar",
+    "resumo": "Altera a **Lei 11.671/2008** (transferência e inclusão de presos em presídios federais) e a **LEP** (arts. 52 e 54) para prever a ida **preferencial** ao sistema federal de quem cometeu **homicídio qualificado contra agentes de segurança** (CP, art. 121, §2º, VII), audiências por **videoconferência**, pedido de **RDD desde o recolhimento** e **decisão liminar** do juiz, com decisão final em 15 dias. Publicada em 12/05/2026 e retificada em 22/05/2026; há vetos em dispositivos do art. 52 da LEP.",
+    "temas": [
+      "Execução penal",
+      "Processo penal"
+    ],
+    "papeis": [
+      "defesa"
+    ],
+    "mudou": [
+      "**Lei 11.671/2008, art. 3º, §§6º a 8º:** o preso por **homicídio qualificado** (art. 121, §2º, VII, do CP, contra agentes de segurança pública e assemelhados) deve ser recolhido, **preferencialmente**, em estabelecimento federal; as audiências podem ser por **videoconferência**; a reserva de vaga é solicitada ao órgão competente (SENAPPEN).",
+      "**LEP, art. 52, §10:** o **RDD** pode ser requerido desde a data do recolhimento pelo diretor do estabelecimento, pela autoridade administrativa ou pelo Ministério Público.",
+      "**LEP, art. 54, §§2º e 3º:** o juiz decide **liminarmente** sobre a inclusão no RDD, com decisão final em até **15 dias** após manifestação do Ministério Público e da defesa.",
+      "**Vetos:** os incisos III e IV do §1º e os §§8º e 9º do art. 52 da LEP foram vetados."
+    ],
+    "dpe": [
+      "No **RDD**, a defesa deve ser ouvida antes da decisão final (art. 54, §3º), mesmo que a medida liminar tenha sido deferida. Atentar para o **contraditório diferido** e para a fundamentação concreta da urgência, com pedido de revogação da liminar se não houver motivo específico.",
+      "Nas **transferências para presídio federal**, verificar a competência, a fundamentação (necessidade do sistema federal) e o respeito à prévia entrevista com o defensor e à videoconferência com garantias (Lei 11.671, art. 3º)."
+    ],
+    "prova": [
+      "**RDD**: legitimados para o pedido desde o recolhimento e a **decisão liminar** com decisão final em até **15 dias** (LEP, art. 54, §§2º e 3º).",
+      "Hipótese de recolhimento **preferencial** em presídio federal (Lei 11.671, art. 3º, §6º)."
+    ],
+    "treino": [
+      {
+        "q": "A Lei 15.407/2026 permite que o juiz decida liminarmente sobre a inclusão do preso no regime disciplinar diferenciado, com decisão final em até 15 dias, após manifestação do Ministério Público e da defesa.",
+        "a": true,
+        "e": "Certo. É o que dispõem os §§2º e 3º do art. 54 da LEP, na redação dada por essa lei."
+      },
+      {
+        "q": "O RDD só pode ser requerido depois do trânsito em julgado da condenação.",
+        "a": false,
+        "e": "Errado. O art. 52, §10, da LEP permite o pedido desde a data do recolhimento."
+      },
+      {
+        "q": "A Lei 11.671/2008 passou a prever o recolhimento preferencial, em estabelecimento federal, do preso por homicídio qualificado contra agentes de segurança pública.",
+        "a": true,
+        "e": "Certo. É o que dispõe o art. 3º, §6º, da Lei 11.671/2008, na redação da Lei 15.407/2026."
+      },
+      {
+        "q": "A Lei 15.407/2026 foi integralmente sancionada, sem nenhum veto.",
+        "a": false,
+        "e": "Errado. Houve vetos a dispositivos do art. 52 da LEP (§1º, III e IV, e §§8º e 9º)."
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lei15487",
+    "tipo": "lei",
+    "lei": "Lei 15.487/2026",
+    "pub": "2026-08-07",
+    "titulo": "Combate à exploração sexual infantil no ambiente digital (ECA, arts. 190-A a 241-E)",
+    "resumo": "Reforça a proteção de crianças e adolescentes contra **violência sexual, inclusive no ambiente digital e com inteligência artificial**: amplia a **infiltração policial na internet**, legaliza a **ronda virtual**, endurece as penas dos crimes dos **arts. 240 a 241-E** do ECA (inclusive conteúdo **simulado por IA** e aliciamento), assegura **atendimento psicológico e psicossocial** à vítima com **custeio pelo agressor**, torna **hediondos** diversos desses crimes e cria nova hipótese de **prisão preventiva** (CPP, art. 313, VI). Publicada em 07/08/2026; vigência imediata.",
+    "temas": [
+      "Infância e juventude",
+      "Penal",
+      "Processo penal"
+    ],
+    "papeis": [
+      "defesa",
+      "assistido"
+    ],
+    "mudou": [
+      "**Investigação (ECA, arts. 190-A, 190-C e 190-F):** a infiltração policial na internet passa a valer também para os crimes dos arts. 240 a 241-D e 244-A do ECA e para os arts. 154-A, 217-A, 218, 218-A, 218-B e 218-C do CP. A **ronda virtual** é lícita quando feita por órgão de persecução penal com software **estritamente destinado** a identificar e coletar arquivos em **ambientes digitais públicos** (acessíveis sem autorização individual ou permissão prévia); não é interceptação nem infiltração (§4º). Em **flagrante** ou **risco à vida ou à integridade física** da criança, a polícia ou o MP podem requisitar **diretamente** os registros de conexão ou dados cadastrais, **sem ordem judicial prévia**, comunicando o juiz em até **48 horas**, vedado usar os dados para outro fim (§§2º e 3º).",
+      "**Penas:** art. 240 (**4 a 10 anos**), art. 241 (**4 a 10**), art. 241-A (**4 a 10**), art. 241-B (**3 a 6**, com o §4º punindo acessar e visualizar), art. 241-C (simulação, inclusive por **IA**, **3 a 5**) e art. 241-D (**aliciamento de menor de 14 anos, 3 a 5**, com aumento de 1/3 a 2/3 para uso de IA ou deepfake). O art. 241-E define o conteúdo para esses fins, inclusive **fictício ou gerado por IA**. Art. 226-A: aumento de 1/3 a 2/3 quando o agente usa **modulador de proxy ou técnica de mascaramento ou anonimização de IP** para dificultar sua identificação (não vale para o uso legítimo de tecnologias de privacidade e segurança digital).",
+      "**Atendimento e custeio** (ECA, arts. 227-B e 227-C): a criança ou o adolescente vítima ou testemunha de violência sexual tem direito a **atendimento psicológico e psicossocial** individual, especializado, contínuo e integral, inclusive no SUS, em local que preserve a privacidade e o afaste do agressor. Quem causar lesão corporal ou praticar violência física, sexual ou psicológica contra criança ou adolescente **deve cobrir integralmente os custos do tratamento**, inclusive o **ressarcimento ao SUS**.",
+      "**Hediondez** (Lei 8.072/1990, art. 1º, parágrafo único, VII): os crimes do caput e dos §§1º e 2º do art. 240, do caput e parágrafo único do art. 241, do caput e dos §§1º e 3º do art. 241-A, do caput do art. 241-B, do caput e dos §§1º e 2º do art. 241-D e do caput e §1º do art. 244-A do ECA.",
+      "**Processo penal e organização criminosa:** nova hipótese de prisão preventiva (CPP, art. 313, VI) para crimes contra a dignidade sexual de criança ou adolescente e para os arts. 240 a 241-D e 244-A do ECA; causa de aumento da Lei 12.850/2013 (art. 2º, §4º, I) também quando a organização for destinada aos crimes do ECA; ajuste no art. 92, §2º, do CP."
+    ],
+    "dpe": [
+      "Interesse para a **Defensoria da infância**: a lei reforça o direito da criança vítima ou testemunha ao **atendimento psicológico e psicossocial** no SUS e atribui ao agressor o custo integral do tratamento e o ressarcimento ao SUS (ECA, arts. 227-B e 227-C).",
+      "Para a **defesa criminal**: pesquisar a **licitude da prova** obtida por ronda virtual e infiltração digital, o enquadramento (art. 241-B x 241-C) e a **proporcionalidade** das penas elevadas, além da discussão sobre o limite do conceito de conteúdo fictício ou gerado por IA."
+    ],
+    "prova": [
+      "**Ronda virtual** em ambientes digitais **públicos** e requisição direta de registros de conexão ou dados cadastrais, sem ordem judicial prévia, em flagrante ou risco, com comunicação ao juiz em **48 horas** (ECA, art. 190-F).",
+      "Novas **penas** e a inclusão de **IA/deepfake** nos arts. 241-C e 241-D, e a lista de **crimes hediondos** do ECA.",
+      "**Custeio integral do tratamento** pelo agressor e ressarcimento ao SUS (art. 227-C)."
+    ],
+    "treino": [
+      {
+        "q": "A ronda virtual realizada por órgão de persecução penal em ambientes digitais públicos, com software destinado à coleta de arquivos, exige prévia autorização judicial em todos os casos.",
+        "a": false,
+        "e": "Errado. O art. 190-F do ECA a considera lícita e a distingue da interceptação e da infiltração; a requisição direta de registros de conexão, sem ordem prévia, é admitida em flagrante ou risco e deve ser comunicada ao juiz em 48 horas."
+      },
+      {
+        "q": "Quem pratica violência sexual contra criança ou adolescente deve cobrir integralmente os custos do tratamento da vítima, incluído o ressarcimento ao SUS.",
+        "a": true,
+        "e": "Certo. É o que dispõe o art. 227-C do ECA, que alcança também a lesão corporal e a violência física ou psicológica."
+      },
+      {
+        "q": "O art. 241-D do ECA prevê aumento de pena quando o aliciamento envolve o uso de inteligência artificial ou deepfake.",
+        "a": true,
+        "e": "Certo. O aumento é de 1/3 a 2/3."
+      },
+      {
+        "q": "A Lei 15.487/2026 não altera o rol de crimes hediondos nem o de hipóteses de prisão preventiva.",
+        "a": false,
+        "e": "Errado. A lei incluiu crimes do ECA no rol da Lei 8.072/1990 e criou o inciso VI do art. 313 do CPP."
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lei15410",
+    "tipo": "lei",
+    "lei": "Lei 15.410/2026",
+    "pub": "2026-05-21",
+    "titulo": "Lei Barbara Penna: execução penal e tortura em casos de violência doméstica",
+    "resumo": "Cria uma **falta grave** específica para o condenado que se aproxima da residência ou do local de trabalho da vítima durante regime aberto, semiaberto ou saída temporária, havendo **medidas protetivas**; autoriza o **RDD** para condenado por violência doméstica violento ou ameaçador; permite a **transferência para outra unidade da Federação** e inclui no crime de **tortura** a submissão reiterada da mulher a sofrimento intenso em contexto de violência doméstica. Publicada em 21/05/2026.",
+    "temas": [
+      "Violência contra a mulher",
+      "Execução penal",
+      "Penal"
+    ],
+    "papeis": [
+      "defesa",
+      "assistido"
+    ],
+    "mudou": [
+      "**LEP, art. 50, IX:** é **falta grave** aproximar-se da residência ou do local de trabalho da vítima durante regime aberto, semiaberto ou benefício de saída, quando houver medidas protetivas (incisos II e III do art. 22 da Lei Maria da Penha).",
+      "**LEP, art. 52, §8º:** sujeita-se ao **RDD** o condenado por violência doméstica contra a mulher que apresente conduta violenta ou ameaçadora.",
+      "**LEP, art. 86, §4º:** possibilidade de **transferência** do condenado para estabelecimento de **outra unidade da Federação** para proteger a vítima.",
+      "**Lei 9.455/1997, art. 1º, III:** configura tortura submeter a mulher, de forma reiterada, a intenso sofrimento físico ou mental no contexto de violência doméstica."
+    ],
+    "dpe": [
+      "Na **defesa na execução**, atentar para o devido processo na apuração da nova falta grave (PAD com defesa técnica e prova do conhecimento das medidas protetivas) e para os efeitos sobre progressão, livramento e regressão.",
+      "Para a **mulher vítima**, a lei amplia instrumentos de proteção durante a execução: comunicar à Defensoria e ao juízo da execução sobre qualquer aproximação do condenado, para registro da falta grave."
+    ],
+    "prova": [
+      "Nova **falta grave** do art. 50, IX, da LEP e hipótese de **RDD** para violência doméstica (art. 52, §8º).",
+      "Inclusão da violência doméstica reiterada na **Lei de Tortura** (art. 1º, III)."
+    ],
+    "treino": [
+      {
+        "q": "Aproximar-se da residência da vítima durante o regime semiaberto, havendo medida protetiva, é falta grave segundo a LEP, na redação da Lei 15.410/2026.",
+        "a": true,
+        "e": "Certo. É o novo inciso IX do art. 50 da LEP."
+      },
+      {
+        "q": "A Lei 15.410/2026 vedou a transferência do condenado por violência doméstica para outra unidade da Federação.",
+        "a": false,
+        "e": "Errado. O novo §4º do art. 86 da LEP permite a transferência para outra unidade da Federação."
+      },
+      {
+        "q": "O condenado por violência doméstica contra a mulher com conduta violenta ou ameaçadora pode ser submetido ao RDD.",
+        "a": true,
+        "e": "Certo. É o art. 52, §8º, da LEP."
+      },
+      {
+        "q": "A Lei de Tortura passou a prever a submissão reiterada da mulher a intenso sofrimento no contexto de violência doméstica.",
+        "a": true,
+        "e": "Certo. É o art. 1º, III, da Lei 9.455/1997."
+      }
+    ]
+  }
+]

@@ -1,0 +1,651 @@
+[
+  {
+    "id": "nv-2026-11-ec139",
+    "tipo": "lei",
+    "lei": "Emenda Constitucional 139/2026",
+    "pub": "2026-05-06",
+    "titulo": "Tribunais de Contas como instituições permanentes e essenciais ao controle externo (CF, arts. 31, §1º, e 75)",
+    "resumo": "A **EC 139/2026** altera o **§1º do art. 31** e o **art. 75** da Constituição para estabelecer que os **Tribunais de Contas** (da União, dos Estados, do DF e dos Municípios) são **instituições permanentes, essenciais ao exercício do controle externo**, e para **vedar a extinção, a criação e a instalação** dos Tribunais e Conselhos de Contas dos Municípios. Promulgada em 05/05/2026; publicada em 06/05/2026; vigência imediata.",
+    "temas": [
+      "Constitucional",
+      "Administrativo"
+    ],
+    "papeis": [
+      "coletivo"
+    ],
+    "mudou": [
+      "**Art. 31, §1º:** o controle externo da Câmara Municipal é exercido com o auxílio dos **Tribunais de Contas dos Estados**, do **Município**, ou dos **Conselhos ou Tribunais de Contas dos Municípios, onde houver**, **vedada sua extinção, criação ou instalação**.",
+      "**Art. 75:** os Tribunais de Contas são **instituições permanentes, essenciais ao exercício do controle externo**. As normas da Seção (fiscalização contábil, financeira e orçamentária) aplicam-se, no que couber, à **organização, composição e fiscalização** dos Tribunais de Contas dos Estados e do DF e dos **Tribunais e Conselhos de Contas dos Municípios**, **vedada sua extinção, criação ou instalação**.",
+      "Na prática, **congela** o quadro atual: ficam proibidos novos Tribunais ou Conselhos de Contas municipais (e a extinção dos existentes), mantendo-se, nos demais Municípios, o controle externo pelo Tribunal de Contas do Estado.",
+      "Vigência: **na data da publicação** (art. 2º)."
+    ],
+    "dpe": [
+      "Tema de **controle externo** e de **direito constitucional/administrativo**: ajuda a sustentar, em ações coletivas e na fiscalização de políticas públicas, a atuação dos Tribunais de Contas como órgãos permanentes de controle."
+    ],
+    "prova": [
+      "**Vedação de extinção, criação ou instalação** de Tribunais e Conselhos de Contas municipais (art. 31, §1º, e art. 75).",
+      "**Natureza** dos Tribunais de Contas: **instituições permanentes e essenciais ao controle externo**; mantém-se, como regra, a ausência de Tribunal de Contas municipal nos Municípios que não o tinham."
+    ],
+    "treino": [
+      {
+        "q": "Após a EC 139/2026, é permitida a criação de novos Tribunais de Contas municipais, desde que por lei do respectivo Município.",
+        "a": false,
+        "e": "Errado. Os arts. 31, §1º, e 75 da CF vedam a extinção, a criação e a instalação de Tribunais e Conselhos de Contas dos Municípios."
+      },
+      {
+        "q": "O art. 75 da Constituição passou a prever que os Tribunais de Contas são instituições permanentes, essenciais ao exercício do controle externo.",
+        "a": true,
+        "e": "Certo. É a redação dada pela EC 139/2026."
+      },
+      {
+        "q": "O controle externo da Câmara Municipal é exercido com o auxílio dos Tribunais de Contas dos Estados ou do Município ou dos Conselhos ou Tribunais de Contas dos Municípios, onde houver.",
+        "a": true,
+        "e": "Certo. É a redação do §1º do art. 31 da CF, que também veda a extinção, a criação e a instalação desses órgãos."
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-ec140",
+    "tipo": "lei",
+    "lei": "Emenda Constitucional 140/2026",
+    "pub": "2026-10-16",
+    "titulo": "Aposentadoria diferenciada dos agentes comunitários de saúde e de combate às endemias e regularização do vínculo (CF, arts. 40, 198 e 201)",
+    "resumo": "A **EC 140/2026** assegura aos **agentes comunitários de saúde (ACS)** e aos **agentes de combate às endemias (ACE)** **aposentadoria com requisitos diferenciados** (**57 anos, se mulher, e 60, se homem, com 25 anos de contribuição e de efetivo exercício**), com **regras de transição** (idades progressivas), **integralidade e paridade** em certos casos e **benefício extraordinário a cargo da União** no RGPS. Determina o **regime de servidor efetivo**, veda a contratação **temporária ou terceirizada** e impõe a **admissão** dos agentes com vínculo precário (prazo: **31/12/2028**). Promulgada e publicada em 16/10/2026; vigência imediata.",
+    "temas": [
+      "Constitucional",
+      "Previdenciário",
+      "Saúde",
+      "Administrativo"
+    ],
+    "papeis": [
+      "coletivo",
+      "assistido"
+    ],
+    "mudou": [
+      "**CF, art. 40, §5º-A** e **art. 201, §8º-A:** o requisito de idade passa a ser **57 anos (mulher) e 60 anos (homem)** para o ACS e o ACE que comprovem **25 anos de contribuição e de efetivo exercício** na atividade (RPPS e RGPS). O §4º do art. 40 passa a ressalvar também o §5º-A.",
+      "**CF, art. 198:** a atuação de ACS e ACE é **obrigatória e permanente**, atividade **essencial ao SUS e exclusiva de Estado** (inciso IV); é **vedada** a contratação **temporária ou terceirizada**, salvo emergência em saúde pública, na forma da lei (§4º-A); aplica-se o regime jurídico dos servidores de **cargo de provimento efetivo** (§4º-B); direito a **aposentadoria com requisitos diferenciados** e a **adicional de insalubridade** (§10).",
+      "**Transição para o RPPS** (art. 3º da EC): para quem ingressou em cargo efetivo até a vigência da EC, idade mínima de **50/52 anos** (mulher/homem) até 2030, **52/54** até 2035, **54/56** até 2040 e **57/60** a partir de 2041, com **25 anos** de contribuição e de efetivo exercício; reduz-se 1 ano de idade para cada ano que exceder os 25, até o máximo de 5 anos. Previsão de **integralidade e paridade** para quem tenha ingressado no serviço público até a promulgação, nas condições do art. 3º, §§3º a 5º.",
+      "**Regra por pontos** (art. 4º): 60/63 anos de idade, 15 anos de contribuição, 10 anos de efetivo exercício e soma de **83 pontos (mulher) e 86 (homem)**. **Incapacidade permanente** por acidente de trabalho ou doença profissional ou do trabalho: **integralidade e paridade** (art. 5º). **RGPS** (arts. 6º e 7º): regras equivalentes, com **benefício extraordinário** pago pela **União** (art. 8º) e **revisão** para aposentados anteriores à EC, sem pagamentos retroativos (art. 9º).",
+      "**Regularização do vínculo (art. 12):** os ACS e ACE que, na data da promulgação, estejam vinculados ao SUS sob **vínculo temporário, indireto ou precário** devem ser **admitidos** pelo respectivo ente, sob o regime de servidor efetivo. Requisito: **processo seletivo público** realizado **após 14/02/2006** (EC 51/2006) ou seleção anterior nos termos do parágrafo único do art. 2º da EC 51. Prazo para efetivar: **31/12/2028**. As regras estendem-se aos **agentes indígenas de saneamento e de saúde** (art. 13).",
+      "**Financiamento:** a União presta **assistência financeira complementar** a Estados, DF e Municípios (art. 10) e fornece recursos ao Fundo do RGPS (art. 11)."
+    ],
+    "dpe": [
+      "Para a **tutela coletiva e a defesa de servidores/agentes**: a EC dá base constitucional para ações que exijam a **regularização do vínculo** de ACS/ACE terceirizados ou precários e a revisão de aposentadorias.",
+      "No atendimento individual, orientar a **contagem do tempo** de efetivo exercício, que inclui o afastamento por **mandato classista** e o tempo de **readaptação decorrente de acidente de trabalho, doença profissional ou doença do trabalho** (art. 2º)."
+    ],
+    "prova": [
+      "Requisitos permanentes: **57/60 anos e 25 anos** de contribuição e efetivo exercício (art. 40, §5º-A, e art. 201, §8º-A).",
+      "**Vedação** de contratação temporária ou terceirizada (art. 198, §4º-A) e **prazo** de **31/12/2028** para a admissão dos agentes (art. 12).",
+      "**Benefício extraordinário** pago pela União no RGPS e **integralidade e paridade** nas hipóteses da EC."
+    ],
+    "treino": [
+      {
+        "q": "A EC 140/2026 vedou a contratação temporária ou terceirizada de agentes comunitários de saúde e de agentes de combate às endemias, salvo em emergência em saúde pública, na forma da lei.",
+        "a": true,
+        "e": "Certo. É o art. 198, §4º-A, da CF."
+      },
+      {
+        "q": "O requisito de idade permanente da aposentadoria diferenciada dos ACS e ACE é de 57 anos para a mulher e 60 anos para o homem, com 25 anos de contribuição e de efetivo exercício.",
+        "a": true,
+        "e": "Certo. É o art. 40, §5º-A, e o art. 201, §8º-A, da CF."
+      },
+      {
+        "q": "Os entes federativos deverão efetivar a admissão dos agentes com vínculo precário até 31 de dezembro de 2030.",
+        "a": false,
+        "e": "Errado. O prazo do art. 12, §3º, da EC 140/2026 é 31 de dezembro de 2028."
+      },
+      {
+        "q": "Os ACS e ACE submetem-se ao regime jurídico dos servidores nomeados para cargo de provimento efetivo.",
+        "a": true,
+        "e": "Certo. É o art. 198, §4º-B, da CF."
+      },
+      {
+        "q": "No Regime Geral, o benefício extraordinário destinado a assegurar a integralidade e a paridade é pago pelo próprio INSS com recursos do segurado.",
+        "a": false,
+        "e": "Errado. O art. 8º da EC prevê benefício extraordinário a ser pago pela União."
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-ec141",
+    "tipo": "lei",
+    "lei": "Emenda Constitucional 141/2026",
+    "pub": "2026-10-16",
+    "titulo": "Jornada de 40 horas semanais e dois dias de repouso semanal remunerado (CF, art. 7º, XIII e XV)",
+    "resumo": "A **EC 141/2026** reduz a duração do trabalho normal para **8 horas diárias e 40 horas semanais** (art. 7º, XIII) e prevê **repouso semanal remunerado de 2 dias**, um deles **preferencialmente aos domingos** (art. 7º, XV), **sem redução salarial**. A redução é **progressiva**: até **42 horas** em 2 meses e **40 horas** um ano depois. Promulgada em 16/10/2026; entra em vigor na publicação, **exceto o inciso XV, que vale após 2 meses**.",
+    "temas": [
+      "Constitucional",
+      "Trabalho"
+    ],
+    "papeis": [
+      "assistido",
+      "coletivo"
+    ],
+    "mudou": [
+      "**CF, art. 7º, XIII:** duração do trabalho normal **não superior a 8 horas diárias e 40 horas semanais**, facultada a compensação de horários e a redução da jornada, mediante acordo ou convenção coletiva (antes: 44 horas semanais).",
+      "**CF, art. 7º, XV:** repouso semanal remunerado de **2 dias**, **um dos quais preferencialmente aos domingos**. O parágrafo único do art. 7º vira **§1º**.",
+      "**§2º (novo):** convenção ou acordo coletivo podem, **excepcionalmente**, estabelecer regime compensatório que assegure, **em média, 2 dias de repouso por mês-calendário**, garantido o gozo de **pelo menos 1 dos dias dentro do período máximo de 1 semana de trabalho**. **§3º (novo):** lei poderá dispor sobre **regimes diferenciados**, respeitados os limites dos incisos XIII, XIV e XV.",
+      "**Sem redução salarial** (art. 2º): a redução da jornada e o aumento do repouso aplicam-se aos **contratos em vigor** sem redução nominal, proporcional ou de qualquer outra espécie, **inclusive quanto aos pisos salariais**. Quem já trabalha **40 horas ou menos** não tem a jornada reduzida proporcionalmente (art. 4º).",
+      "**Transição:** em **2 meses** após a publicação, a jornada não excede **42 horas**; **1 ano depois**, **40 horas** (art. 6º). As **cláusulas** de convenções e acordos incompatíveis perdem efeito após 2 meses (art. 3º). Durante a transição, convenção ou acordo coletivo podem **ampliar a duração diária** para distribuir a jornada semanal, respeitado o repouso do inciso XV (art. 7º). **Lei complementar** pode prever medidas transitórias para **MEI, ME e EPP**, condicionadas à manutenção de empregos (art. 5º).",
+      "**Empregado de nível superior com alta remuneração (art. 8º):** não se aplicam as regras de duração do trabalho e de controle de jornada ao empregado com **diploma de nível superior** e remuneração mensal **igual ou superior a 2,5 vezes o teto do RGPS**, salvo liberalidade do empregador ou previsão em acordo ou convenção coletiva (respeitados o inciso XV e o §2º). **Não vale para empregados públicos** da administração direta e indireta (§1º). **Justiça do Trabalho** é competente (§2º).",
+      "**Contratos administrativos (art. 9º):** nos contratos públicos vigentes com emprego direto de mão de obra, a redução da jornada só se aplica após **aditamento** para manter o equilíbrio econômico-financeiro, no prazo de **até 1 ano**, e os empregados passam a ser abrangidos na data do aditamento ou, no máximo, ao fim desse prazo, assegurada a irredutibilidade salarial.",
+      "**Vigência (art. 10):** o **inciso XV** do art. 7º vale **2 meses após a publicação**; os **demais dispositivos**, na data da publicação."
+    ],
+    "dpe": [
+      "Alto impacto nas demandas **trabalhistas de assistidos** (horas extras, jornada, repouso) e na análise de **cláusulas de acordos e convenções coletivas** incompatíveis, que perdem efeito após 2 meses.",
+      "A EC trata de **empregados**; para **servidores estatutários**, verificar a aplicação pelo art. 39, §3º, da CF e pela legislação de cada ente, já que a EC não trata expressamente do ponto. Atenção para os contratos de **terceirização** com a Administração (art. 9º) e para a irredutibilidade dos pisos."
+    ],
+    "prova": [
+      "**8 h diárias e 40 h semanais** e **repouso de 2 dias, um preferencialmente aos domingos**; **irredutibilidade salarial**, inclusive dos pisos.",
+      "**Transição**: 42 horas em 2 meses e 40 horas 1 ano depois; **vigência escalonada** (inciso XV após 2 meses).",
+      "**Exceção do art. 8º** (nível superior e 2,5 vezes o teto do RGPS) e sua **inaplicabilidade** aos empregados públicos."
+    ],
+    "treino": [
+      {
+        "q": "Pelo novo art. 7º, XV, da CF, o repouso semanal remunerado é de dois dias, um dos quais obrigatoriamente aos domingos.",
+        "a": false,
+        "e": "Errado. A Constituição fala em 2 dias de repouso, um dos quais preferencialmente aos domingos."
+      },
+      {
+        "q": "A redução da jornada e o incremento do repouso aplicam-se aos contratos em vigor sem redução salarial, inclusive dos pisos salariais.",
+        "a": true,
+        "e": "Certo. É o art. 2º e seu parágrafo único da EC 141/2026."
+      },
+      {
+        "q": "A redução para 40 horas semanais é progressiva: em 2 meses a duração normal não excederá 42 horas e, 1 ano depois, 40 horas.",
+        "a": true,
+        "e": "Certo. É o art. 6º da EC 141/2026."
+      },
+      {
+        "q": "A exceção do art. 8º da EC 141/2026, quanto às regras de duração do trabalho e de controle de jornada, alcança também os empregados públicos de nível superior com remuneração igual ou superior a 2,5 vezes o teto do RGPS.",
+        "a": false,
+        "e": "Errado. O §1º do art. 8º afasta a exceção em relação aos empregados públicos da administração direta e indireta de todos os Poderes e entes."
+      },
+      {
+        "q": "A alteração do inciso XV do art. 7º da CF entra em vigor após 2 meses da publicação da EC; as demais, na data da publicação.",
+        "a": true,
+        "e": "Certo. É o art. 10 da EC 141/2026."
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lei15484",
+    "tipo": "lei",
+    "lei": "Lei 15.484/2026",
+    "pub": "2026-08-04",
+    "titulo": "Relevância da questão de direito federal infraconstitucional no recurso especial (CF, art. 105, §2º; CPC, art. 1.035-A)",
+    "resumo": "Regulamenta o **filtro de relevância** para admissão do **recurso especial** no STJ (CF, art. 105, §2º, incluído pela EC 125/2022). Cria o **art. 1.035-A do CPC**: o STJ não conhece do recurso, em **decisão irrecorrível**, quando a questão não for relevante, o que exige manifestação de **2/3** do órgão julgador. O recorrente deve demonstrar a relevância em **tópico específico**. Altera os arts. 927, 932, 979, 988, 998, 1.030, 1.039 e 1.042 do CPC. Publicada em 04/08/2026 (edição extra); vigência **30 dias após a publicação**.",
+    "temas": [
+      "Processo civil",
+      "Constitucional"
+    ],
+    "papeis": [
+      "defesa",
+      "assistido"
+    ],
+    "mudou": [
+      "**CPC, art. 1.035-A, caput:** o STJ, em **decisão irrecorrível**, **não conhecerá** do recurso especial quando a questão de direito federal infraconstitucional nele versada **não for relevante**. **§1º:** relevante é a questão com relevância **econômica, política, social ou jurídica** que **ultrapasse os interesses subjetivos do processo**.",
+      "**Ônus do recorrente (§§2º e 3º):** demonstrar a relevância, para apreciação exclusiva pelo STJ, em **tópico específico e fundamentado**; **desatendida a forma**, o recurso é **inadmitido**.",
+      "**Presunção (§4º):** presume-se a relevância nas hipóteses do **art. 105, §3º, da CF**. **Terceiros (§5º):** o relator pode admitir manifestação de terceiros subscrita por procurador habilitado.",
+      "**Quórum (§6º):** só se deixa de conhecer do recurso pela manifestação de **inexistência de relevância** de **2/3 dos membros** do órgão competente. **Suspensão (§7º):** reconhecida a relevância, o relator pode determinar, mediante justificativa, a suspensão nacional dos processos que versem sobre a questão por **6 meses**, prorrogável **uma vez** por mais 6 meses se houver audiência pública ou participação de terceiros. **Julgamento (§8º):** em **sessão presencial**, salvo se o voto do relator for pela inexistência de relevância ou por reafirmar a jurisprudência dominante.",
+      "**Compatibilização no CPC:** o acórdão do recurso especial sob o regime da relevância é **precedente obrigatório** (art. 927, III-A); permite decisão monocrática (art. 932, IV, b, e V, b); **reclamação** (art. 988, V); filtro do art. 1.030, I, c; extensão do art. 1.039, parágrafo único (inadmissão automática dos recursos sobrestados quando negada a relevância); regra do art. 1.042 (sem agravo contra inadmissão fundada em precedentes de relevância).",
+      "**Aplicação no tempo (art. 4º):** a exigência de indicar, em tópico específico, os argumentos de relevância vale para recursos contra **acórdãos publicados após a vigência** da lei. O STJ regulamenta no regimento interno (art. 6º)."
+    ],
+    "dpe": [
+      "**Defesa em recursos especiais:** passa a ser essencial fundamentar a **relevância** em tópico próprio (sob pena de inadmissão) e demonstrar a repercussão para além do caso concreto; atentar para as hipóteses de **presunção** do art. 105, §3º, da CF.",
+      "Acompanhar a **suspensão nacional** de processos por até 6 meses (prorrogável) e os temas afetados, para evitar perda de prazos e aproveitar teses firmadas em favor do assistido."
+    ],
+    "prova": [
+      "**Decisão irrecorrível** e **quórum de 2/3** para a inexistência de relevância (art. 1.035-A, caput e §6º).",
+      "**Tópico específico** e consequência da omissão (inadmissão), **presunção** do art. 105, §3º, da CF e **vigência** em 30 dias."
+    ],
+    "treino": [
+      {
+        "q": "A decisão do STJ que não conhece de recurso especial por ausência de relevância da questão de direito federal infraconstitucional é irrecorrível.",
+        "a": true,
+        "e": "Certo. É o caput do art. 1.035-A do CPC."
+      },
+      {
+        "q": "A inexistência de relevância da questão pode ser reconhecida por maioria simples dos membros do órgão julgador.",
+        "a": false,
+        "e": "Errado. O §6º exige a manifestação de 2/3 dos membros do órgão competente."
+      },
+      {
+        "q": "Se o recorrente não demonstrar a relevância em tópico específico e fundamentado, o recurso especial será inadmitido.",
+        "a": true,
+        "e": "Certo. É o art. 1.035-A, §§2º e 3º."
+      },
+      {
+        "q": "Reconhecida a relevância, o relator pode determinar a suspensão nacional dos processos que versem sobre a questão pelo prazo de 6 meses, prorrogável por mais 6 meses, uma única vez, se houver necessidade de audiência pública ou participação de terceiros.",
+        "a": true,
+        "e": "Certo. É o art. 1.035-A, §7º."
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lei15479",
+    "tipo": "lei",
+    "lei": "Lei 15.479/2026",
+    "pub": "2026-07-30",
+    "titulo": "Transferência automática mensal da pensão alimentícia (CPC, art. 529-A)",
+    "resumo": "Cria o **art. 529-A do CPC**: no cumprimento de sentença de alimentos, o exequente pode requerer a **transferência automática, mês a mês**, do valor da pensão para conta sua ou do seu representante. O juiz determina à **instituição financeira**, por **sistema eletrônico** gerido pela autoridade supervisora do sistema financeiro, a transferência; se faltar saldo, ocorre a **indisponibilidade de ativos** limitada ao valor em atraso. Publicada em 30/07/2026; **entra em vigor 1 ano após a publicação**.",
+    "temas": [
+      "Civil",
+      "Processo civil",
+      "Família"
+    ],
+    "papeis": [
+      "assistido"
+    ],
+    "mudou": [
+      "**CPC, art. 529-A:** em qualquer fase do cumprimento de sentença, o exequente pode requerer a **transferência automática mensal** da prestação alimentícia; o executado pode informar a **conta preferencial** de débito.",
+      "O juiz ordena à **instituição financeira**, pelo **sistema eletrônico** gerido pela autoridade supervisora, a transferência. A ordem informa partes, valor mensal, duração, contas, forma de **atualização** (art. 1.710 do CC) e **encargos em caso de inadimplemento**; a instituição presta **informações periódicas** ao juízo.",
+      "**Saldo insuficiente:** a instituição comunica o fato e são tornados **indisponíveis** os ativos dos incisos I a III do art. 835 do CPC, **limitados ao valor atualizado das prestações em atraso**; os ativos do **empresário individual** podem ser bloqueados ainda que afetados à atividade. Aplicam-se os §§1º a 9º do art. 854 (bloqueio de ativos financeiros).",
+      "**Conversão em penhora** se a manifestação do executado for rejeitada ou não apresentada, sem termo, com **transferência em 24 horas** ao exequente, que será intimado em **5 dias**. Ajustes nos arts. 196 (atos processuais eletrônicos) e 913, e dever de estatísticas ao CNJ (art. 3º).",
+      "**Vigência:** **1 ano** após a publicação oficial (em 2027)."
+    ],
+    "dpe": [
+      "Ferramenta nova para a **execução de alimentos** de assistidos (crianças e adolescentes, em especial): em vez de depender de depósitos voluntários, a mensalidade passa a ser **debitada automaticamente** da conta do devedor, com indisponibilidade imediata de ativos em caso de atraso.",
+      "Quando for aplicável (vigência em 2027), o pedido deve constar já do **requerimento de cumprimento de sentença** de alimentos, com indicação da conta de crédito do exequente."
+    ],
+    "prova": [
+      "Pedido do **exequente** e decisão do juiz determinando a **transferência automática mensal** (art. 529-A); **indisponibilidade** limitada ao valor em atraso.",
+      "**Vigência diferida** de 1 ano."
+    ],
+    "treino": [
+      {
+        "q": "O exequente de alimentos pode requerer, em qualquer fase do cumprimento de sentença, a transferência automática, mês a mês, do valor da prestação alimentícia para conta de sua titularidade ou de seu representante.",
+        "a": true,
+        "e": "Certo. É o caput do art. 529-A do CPC."
+      },
+      {
+        "q": "Se não houver saldo suficiente, o art. 529-A do CPC autoriza a indisponibilidade de ativos sem qualquer limite de valor.",
+        "a": false,
+        "e": "Errado. A indisponibilidade é limitada ao valor atualizado da prestação alimentícia em atraso."
+      },
+      {
+        "q": "A Lei 15.479/2026 entrou em vigor na data de sua publicação.",
+        "a": false,
+        "e": "Errado. A lei entra em vigor após decorrido 1 ano de sua publicação oficial."
+      },
+      {
+        "q": "A indisponibilidade será convertida em penhora, sem lavratura de termo, se a manifestação do executado for rejeitada ou não apresentada.",
+        "a": true,
+        "e": "Certo. O juiz determina à instituição financeira que transfira o montante em 24 horas."
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lei15378",
+    "tipo": "lei",
+    "lei": "Lei 15.378/2026",
+    "pub": "2026-04-07",
+    "titulo": "Estatuto dos Direitos do Paciente",
+    "resumo": "Institui o **Estatuto dos Direitos do Paciente**, que regula os direitos e as responsabilidades dos pacientes sob cuidados prestados por serviços de saúde de qualquer natureza ou por profissionais de saúde. Define **autodeterminação**, **diretivas antecipadas de vontade**, **consentimento informado** e **cuidados paliativos**, assegura direitos como **acompanhante**, **segunda opinião**, **cópia gratuita do prontuário** e **sigilo mesmo após a morte**, e considera a violação **contrária aos direitos humanos**. Publicada em 07/04/2026; vigência imediata.",
+    "temas": [
+      "Saúde",
+      "Consumidor",
+      "Direitos humanos"
+    ],
+    "papeis": [
+      "assistido",
+      "coletivo"
+    ],
+    "mudou": [
+      "**Alcance (arts. 1º e 2º):** pacientes sob cuidados de serviços de saúde de qualquer natureza (públicos, privados, planos de saúde) ou de profissionais de saúde. Conceitos: **autodeterminação**, **diretivas antecipadas de vontade**, **representante**, **consentimento informado**, **cuidados paliativos**.",
+      "**Direitos:** ser representado (art. 6º); ter **acompanhante** em consultas e internações, salvo risco de prejuízo à saúde, à intimidade ou à segurança (7º); atendimento de qualidade e transferência (8º); **segurança** (9º); **não discriminação** (10); **participação** nas decisões (11); **informação** (12), inclusive sobre tratamento experimental (13); **consentimento informado e sua retirada** (14); **sigilo**, mesmo após a morte, salvo exceções legais (15); **privacidade** (17); **segunda opinião** (18); acesso ao **prontuário sem justificativa**, **cópia sem ônus** e pedido de retificação (19); respeito às **diretivas antecipadas** (20); **cuidados paliativos** e escolha do local de morte (21).",
+      "**Responsabilidades do paciente** (art. 22) e **mecanismos do poder público** (art. 23). A violação dos direitos é considerada **contrária aos direitos humanos**, para os fins da Lei 12.986/2014 (art. 24)."
+    ],
+    "dpe": [
+      "Base para demandas de **saúde** e de **direito do consumidor**: acesso gratuito ao prontuário, segunda opinião, acompanhante, informação clara e respeito às diretivas antecipadas.",
+      "No **atendimento a pessoas idosas e em cuidados paliativos**, o Estatuto reforça a autonomia e o direito de escolher o local de morte."
+    ],
+    "prova": [
+      "**Prontuário**: cópia **gratuita** e **sem justificativa** (art. 19); **sigilo após a morte** (art. 15); **segunda opinião** (art. 18).",
+      "**Diretivas antecipadas de vontade** e **consentimento informado**; violação = **contrária aos direitos humanos** (art. 24)."
+    ],
+    "treino": [
+      {
+        "q": "O paciente tem direito a cópia do seu prontuário, sem necessidade de justificativa e sem custo, conforme o Estatuto dos Direitos do Paciente.",
+        "a": true,
+        "e": "Certo. É o art. 19 da Lei 15.378/2026."
+      },
+      {
+        "q": "O dever de sigilo sobre as informações do paciente cessa com a sua morte.",
+        "a": false,
+        "e": "Errado. O art. 15 assegura a confidencialidade mesmo após a morte do paciente."
+      },
+      {
+        "q": "Os direitos do Estatuto aplicam-se apenas aos serviços públicos de saúde.",
+        "a": false,
+        "e": "Errado. A lei alcança serviços de saúde de qualquer natureza, públicos ou privados, planos de saúde e profissionais de saúde."
+      },
+      {
+        "q": "A violação dos direitos previstos no Estatuto é considerada contrária aos direitos humanos, nos termos da Lei 12.986/2014.",
+        "a": true,
+        "e": "Certo. É o art. 24 da Lei 15.378/2026."
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lei15327",
+    "tipo": "lei",
+    "lei": "Lei 15.327/2026",
+    "pub": "2026-01-07",
+    "titulo": "Fim dos descontos associativos em benefícios do INSS e ressarcimento dos lesados",
+    "resumo": "Veda **descontos de mensalidades associativas** nos benefícios do INSS (Lei 8.213/1991, art. 115, §8º), **mesmo com autorização** do beneficiário, e obriga a **devolução integral e atualizada em até 30 dias** do desconto indevido de mensalidade associativa **ou de crédito consignado**. Amplia o **sequestro de bens** (DL 3.240/1941) para infrações que envolvam descontos indevidos em benefícios do INSS e cria **controles do crédito consignado** (benefícios bloqueados por padrão; desbloqueio por biometria ou assinatura eletrônica qualificada). Publicada em 07/01/2026 e retificada em 08/01/2026; vigência imediata, com vetos (arts. 4º, 7º, 9º e 11, entre outros).",
+    "temas": [
+      "Previdenciário",
+      "Consumidor",
+      "Penal"
+    ],
+    "papeis": [
+      "assistido",
+      "coletivo"
+    ],
+    "mudou": [
+      "**Vedação (Lei 8.213/1991, art. 115, §8º):** é vedado descontar nos benefícios do INSS mensalidades, contribuições ou outros valores destinados a **associações, sindicatos, entidades de classe ou organizações de aposentados e pensionistas**, **ainda que com autorização expressa** do beneficiário. O inciso V do art. 115 foi **revogado**.",
+      "**Devolução (arts. 2º e 3º):** o desconto indevido de mensalidade associativa **ou de pagamento de crédito consignado** gera devolução integral, sem prejuízo de sanções civis, penais ou administrativas. A **entidade associativa, a instituição financeira ou a sociedade de arrendamento mercantil** devem restituir o **valor integral atualizado** em até **30 dias**, contados da notificação da irregularidade ainda não comunicada ou da decisão administrativa definitiva que reconheça o desconto como indevido; ficam ressalvadas as restituições em andamento. A fraude deve ser comunicada ao **Ministério Público**. Os §§1º e 2º do art. 3º e o **art. 4º** foram **vetados**: a ementa fala em “busca ativa”, mas confira o texto sancionado e a mensagem de veto antes de afirmar esse dever.",
+      "**Sequestro de bens (DL 3.240/1941, arts. 1º a 7º-A):** ficam sujeitos a sequestro os bens do investigado ou acusado por infração penal **que envolva descontos indevidos em benefícios do INSS** (art. 1º, IV); o sequestro é decretado sem audiência da parte, pode recair sobre todos os bens (inclusive de pessoa jurídica usada na prática delitiva), admite administrador judicial e **alienação antecipada**.",
+      "**Crédito consignado (Lei 8.213, art. 115, §§9º a 13):** todos os benefícios são **bloqueados por padrão**; o desbloqueio exige autorização prévia, pessoal e específica, autenticada por **biometria** (reconhecimento facial ou impressão digital) e por **assinatura eletrônica qualificada** ou autenticação de múltiplos fatores; o beneficiário deve ser informado e pode contestar a contratação; após cada contratação o benefício é **bloqueado novamente**; é **vedada** a contratação ou o desbloqueio por **procuração** ou por **central telefônica**.",
+      "**Outras regras:** tratamento de dados pelo INSS conforme a **LGPD** (art. 124-G da Lei 8.213); **discriminatória** à pessoa idosa a estipulação de exigências não extensivas a outros públicos (art. 10); prioridade de projetos de saúde, lazer, inclusão digital e educação financeira pelo CNDI (Lei 12.213, art. 4º, parágrafo único); ato do Poder Executivo regulamenta a execução (art. 12)."
+    ],
+    "dpe": [
+      "Fundamento direto para **ações individuais e coletivas** de restituição de descontos e de danos morais de aposentados e pensionistas contra associações, bancos e arrendadoras; orientar o assistido de que a devolução deve ocorrer em **30 dias** da notificação ou da decisão administrativa definitiva.",
+      "Em casos de **fraude no consignado**, verificar o descumprimento do **bloqueio por padrão** e da exigência de **biometria e assinatura qualificada** (e a vedação de procuração e de central telefônica), o que reforça a responsabilidade da instituição financeira."
+    ],
+    "prova": [
+      "**Vedação** do desconto associativo, **mesmo autorizado** (art. 115, §8º), e **devolução em 30 dias** pelas entidades e instituições financeiras.",
+      "**Bloqueio por padrão** do consignado, desbloqueio por **biometria e assinatura eletrônica qualificada**, e vedação de **procuração** ou **central telefônica**."
+    ],
+    "treino": [
+      {
+        "q": "É permitido o desconto de mensalidade associativa em benefício do INSS desde que haja autorização expressa do beneficiário.",
+        "a": false,
+        "e": "Errado. O art. 115, §8º, da Lei 8.213/1991, incluído pela Lei 15.327/2026, veda o desconto ainda que com autorização expressa."
+      },
+      {
+        "q": "O desconto indevido de crédito consignado em benefício do INSS também gera o dever de devolução integral e atualizada em até 30 dias.",
+        "a": true,
+        "e": "Certo. O art. 3º alcança o desconto indevido de mensalidade associativa ou de pagamento de crédito consignado."
+      },
+      {
+        "q": "Pela Lei 15.327/2026, os benefícios do INSS são bloqueados por padrão para descontos de crédito consignado, e o desbloqueio exige autenticação por biometria e por assinatura eletrônica qualificada ou autenticação de múltiplos fatores.",
+        "a": true,
+        "e": "Certo. É o art. 115, §9º, da Lei 8.213/1991."
+      },
+      {
+        "q": "A contratação ou o desbloqueio do crédito consignado pode ser feita por procuração ou por central telefônica.",
+        "a": false,
+        "e": "Errado. O §13 do art. 115 veda a contratação e o desbloqueio por procuração ou por central telefônica."
+      },
+      {
+        "q": "A Lei 15.327/2026 estendeu o sequestro de bens do DL 3.240/1941 às infrações penais que envolvam descontos indevidos em benefícios do INSS.",
+        "a": true,
+        "e": "Certo. É o novo inciso IV do art. 1º do DL 3.240/1941."
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lei15371",
+    "tipo": "lei",
+    "lei": "Lei 15.371/2026",
+    "pub": "2026-04-01",
+    "titulo": "Licença-paternidade e salário-paternidade",
+    "resumo": "Regulamenta a **licença-paternidade** (CF, art. 7º, XIX) e institui o **salário-paternidade** na Previdência Social. A duração será de **10 dias a partir de 01/01/2027**, **15 dias a partir de 2028** e **20 dias a partir de 2029** (esta última condicionada à meta fiscal), com acréscimo de **1/3** em caso de filho com deficiência. A licença pode ser **suspensa, cessada ou indeferida** havendo elementos concretos de **violência doméstica ou familiar** ou **abandono material**. Altera a CLT e as Leis 8.212, 8.213 e 11.770. Publicada em 01/04/2026; **vigência em 01/01/2027**.",
+    "temas": [
+      "Trabalho",
+      "Previdenciário",
+      "Infância e juventude"
+    ],
+    "papeis": [
+      "assistido"
+    ],
+    "mudou": [
+      "**Hipóteses (art. 2º):** nascimento de filho, adoção ou guarda judicial para fins de adoção, sem prejuízo do emprego e do salário; também em caso de **parto antecipado** e de **falecimento da mãe**. Durante o afastamento o empregado **não pode exercer atividade remunerada** e deve participar dos cuidados.",
+      "**Duração (art. 11):** **10 dias** a partir de 01/01/2027; **15 dias** a partir de 01/01/2028; **20 dias** a partir de 01/01/2029, esta condicionada ao cumprimento da meta fiscal (§§1º e 2º). **Acréscimo de 1/3** para nascimento ou adoção de criança ou adolescente com deficiência (art. 12).",
+      "**Suspensão, cessação ou indeferimento (art. 2º, §§3º a 5º):** havendo **elementos concretos** de **violência doméstica ou familiar** ou de **abandono material**, nos termos de regulamento; pode ser determinada pelo juízo, de ofício pela autoridade competente ou por provocação do **Ministério Público**, da **mulher em situação de violência** ou da **pessoa responsável** pela criança.",
+      "**Comunicação e estabilidade:** comunicação ao empregador com **30 dias de antecedência** (art. 3º); **vedada a dispensa arbitrária ou sem justa causa** do início da licença até **1 mês após** o término (art. 4º), com indenização em dobro se a rescisão frustrar o gozo.",
+      "**Ajustes legais:** CLT (arts. 131, 134, 391-A, 392 e seguintes, 473), Leis 8.212 e 8.213 (salário-paternidade) e Lei 11.770/2008 (Empresa Cidadã). **Vigência (art. 14):** **01/01/2027**."
+    ],
+    "dpe": [
+      "Orientar **pais assistidos** sobre os novos prazos e a estabilidade, e **mães e vítimas de violência** sobre a possibilidade de pedir a **suspensão ou cessação** da licença do agressor ou do pai que abandona materialmente.",
+      "A licença abrange **adoção e guarda para fins de adoção**, relevante para a atuação em **processos de adoção** da Defensoria."
+    ],
+    "prova": [
+      "**Escala de duração:** 10, 15 e 20 dias (2027, 2028 e 2029), com condição fiscal para os 20 dias; **acréscimo de 1/3** para filho com deficiência.",
+      "**Hipóteses de suspensão/cessação** (violência doméstica ou abandono material) e **estabilidade** até 1 mês após a licença; vigência em **01/01/2027**."
+    ],
+    "treino": [
+      {
+        "q": "A Lei 15.371/2026 fixou a licença-paternidade em 10 dias a partir de 1º de janeiro de 2027, 15 dias a partir de 2028 e 20 dias a partir de 2029.",
+        "a": true,
+        "e": "Certo. É o art. 11, observada a condição fiscal para a duração de 20 dias."
+      },
+      {
+        "q": "A licença-paternidade não pode ser suspensa, mesmo diante de elementos concretos de violência doméstica praticada pelo pai.",
+        "a": false,
+        "e": "Errado. O art. 2º, §3º, prevê a suspensão, a cessação ou o indeferimento nesses casos, nos termos de regulamento."
+      },
+      {
+        "q": "É vedada a dispensa arbitrária ou sem justa causa do empregado desde o início da licença-paternidade até 1 mês após o seu término.",
+        "a": true,
+        "e": "Certo. É o art. 4º."
+      },
+      {
+        "q": "Em caso de nascimento de filho com deficiência, o período da licença é acrescido de 1/3.",
+        "a": true,
+        "e": "Certo. É o art. 12."
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lei15500",
+    "tipo": "lei",
+    "lei": "Lei 15.500/2026",
+    "pub": "2026-09-04",
+    "titulo": "Fundo de Fortalecimento do Acesso à Justiça e Estruturação da Defensoria Pública da União (FDPU)",
+    "resumo": "Cria o **FDPU** (Fundo de Fortalecimento do Acesso à Justiça, Promoção dos Direitos Fundamentais e Estruturação da Defensoria Pública da União), com **Conselho Curador**, gestão própria e portal de transparência. Receitas: **dotações orçamentárias próprias** e **5% das custas** recolhidas na Justiça da União de 1º e 2º graus (as demais fontes foram **vetadas**). Os recursos financiam programas, **obras**, **equipamentos** e **softwares** e as medidas do **art. 98 do ADCT**, **vedada** a despesa com **pessoal** e verbas indenizatórias, salvo as ações do art. 98 do ADCT. Publicada em 04/09/2026 (edição extra).",
+    "temas": [
+      "Defensoria",
+      "Constitucional"
+    ],
+    "papeis": [
+      "assistido",
+      "coletivo"
+    ],
+    "mudou": [
+      "**Criação do FDPU** com **Conselho Curador** (que aprova as ações), gestão e fiscalização próprias. Os bens adquiridos são incorporados ao patrimônio da DPU (art. 8º) e o **Defensor Público-Geral Federal** regulamenta a lei (art. 9º).",
+      "**Receitas (art. 6º):** dotações orçamentárias próprias (I) e **5% das custas** recolhidas na Justiça da União de 1º e 2º graus (III). Os incisos II, IV a IX e o §1º foram **vetados**. O **saldo positivo** é transferido ao exercício seguinte (§2º) e a execução orçamentária é divulgada em **portal de transparência** (§3º).",
+      "**Aplicação (art. 7º):** programas e projetos para melhorar a atuação e o atendimento, **especialmente de grupos vulneráveis**; construção, reforma e adequação de **prédios**; aquisição de **veículos, equipamentos e softwares**; e medidas para cumprir o **art. 98 do ADCT** (presença da Defensoria em todas as unidades jurisdicionais). **Vedada** a aplicação em **despesas com pessoal**, inclusive encargos, e verbas indenizatórias, exceto as relacionadas às ações do art. 98 do ADCT (parágrafo único).",
+      "O **art. 10** da lei foi **vetado**."
+    ],
+    "dpe": [
+      "Tema institucional útil para provas da **Defensoria Pública**: fonte de **custeio da estruturação** da DPU, com vedação de custeio de pessoal e vínculo com o **art. 98 do ADCT** (presença de defensores em todas as unidades jurisdicionais).",
+      "Observe a técnica legislativa: o fundo tem **gestão própria**, **receitas vinculadas** e **transparência ativa**, e a lei ainda depende de **regulamentação** pelo Defensor Público-Geral Federal."
+    ],
+    "prova": [
+      "**Receitas** do FDPU: dotações próprias e **5% das custas** da Justiça da União; **vedação** de despesas com pessoal (com a exceção do art. 98 do ADCT).",
+      "**Finalidade** (art. 7º) e competência do **Defensor Público-Geral Federal** para regulamentar a lei."
+    ],
+    "treino": [
+      {
+        "q": "O FDPU pode ser utilizado para pagamento de despesas com pessoal da Defensoria Pública da União, sem qualquer ressalva.",
+        "a": false,
+        "e": "Errado. O parágrafo único do art. 7º veda a aplicação em despesas com pessoal e verbas indenizatórias, ressalvadas as relacionadas às ações do art. 98 do ADCT."
+      },
+      {
+        "q": "Constituem receita do FDPU as dotações orçamentárias próprias e 5% das custas recolhidas na Justiça da União de 1º e 2º graus.",
+        "a": true,
+        "e": "Certo. São os incisos I e III do art. 6º; os demais incisos foram vetados."
+      },
+      {
+        "q": "Cabe ao Defensor Público-Geral Federal regulamentar a lei que criou o FDPU.",
+        "a": true,
+        "e": "Certo. É o art. 9º da Lei 15.500/2026."
+      },
+      {
+        "q": "A execução orçamentária do FDPU deve ser divulgada em portal público de transparência.",
+        "a": true,
+        "e": "Certo. É o art. 6º, §3º."
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lei15434",
+    "tipo": "lei",
+    "lei": "Lei 15.434/2026",
+    "pub": "2026-06-17",
+    "titulo": "Departamento de Monitoramento e Fiscalização das Decisões dos Sistemas Internacionais de Direitos Humanos (DDH) no CNJ",
+    "resumo": "Cria, no **Conselho Nacional de Justiça**, o **DDH**, para **monitorar o cumprimento** das decisões e recomendações dos sistemas **ONU e OEA** em relação ao Brasil, promover o **controle de convencionalidade** no Judiciário, coordenar a **rede de unidades** do Poder Judiciário e apoiar o acesso à justiça e a adoção de tecnologias digitais e de IA conforme parâmetros de direitos humanos. Supervisionado pelo Presidente do CNJ e coordenado por **juiz auxiliar**. Publicada em 17/06/2026, com veto ao §1º, IV.",
+    "temas": [
+      "Direitos humanos",
+      "Constitucional"
+    ],
+    "papeis": [
+      "coletivo",
+      "assistido"
+    ],
+    "mudou": [
+      "**Atribuições do DDH (art. 1º, §1º):** monitorar a **implementação das decisões e recomendações** dos Sistemas Internacionais de Direitos Humanos proferidas contra o Brasil e prevenir novas condenações; acompanhar a aplicação dos parâmetros de direitos fundamentais, **inclusive pelo controle de convencionalidade** no Judiciário; **coordenar**, como órgão central, a **rede de unidades** de monitoramento no Poder Judiciário; promover o acesso à justiça e o uso de tecnologias e de **IA** conforme as normas de direitos humanos; e promover políticas judiciárias de direitos humanos. O inciso IV foi **vetado**.",
+      "**Sistemas Internacionais (§2º):** o conjunto de normas, órgãos e mecanismos do âmbito **global (ONU)** e **regional interamericano (OEA)**, incluindo tratados, decisões, sentenças, recomendações, medidas de urgência, pareceres consultivos e relatórios.",
+      "**Organização:** supervisionado pelo **Presidente do CNJ** e coordenado por **1 juiz auxiliar** por ele nomeado (art. 2º). O CNJ pode firmar **cooperações** e contratar especialistas (§3º). A atuação do DDH não prejudica as competências dos demais órgãos (§4º). **Vigência:** na publicação (art. 4º)."
+    ],
+    "dpe": [
+      "Base institucional para a Defensoria que atua em **litígios estratégicos e no Sistema Interamericano**: o DDH acompanha o cumprimento de sentenças da Corte IDH e de recomendações da Comissão e da ONU, e promove o **controle de convencionalidade** no Judiciário.",
+      "Útil para sustentar, nos processos, a aplicação de **parâmetros internacionais** e a observância das decisões da Corte Interamericana."
+    ],
+    "prova": [
+      "**Natureza e vinculação** do DDH: órgão do **CNJ**, supervisionado pelo Presidente e **coordenado por juiz auxiliar**.",
+      "Abrangência dos **Sistemas Internacionais** (ONU e OEA) e atribuição de **controle de convencionalidade**."
+    ],
+    "treino": [
+      {
+        "q": "O DDH foi criado no âmbito do Conselho Nacional de Justiça e é supervisionado pelo Presidente do CNJ.",
+        "a": true,
+        "e": "Certo. É o art. 2º da Lei 15.434/2026, que prevê a coordenação por um juiz auxiliar nomeado pelo Presidente."
+      },
+      {
+        "q": "Para os fins da lei, os Sistemas Internacionais de Direitos Humanos compreendem apenas o sistema interamericano, vinculado à OEA.",
+        "a": false,
+        "e": "Errado. O conceito abrange o âmbito global, sob a égide da ONU, e o regional interamericano, vinculado à OEA."
+      },
+      {
+        "q": "Entre as atribuições do DDH está acompanhar a implementação de parâmetros de direitos fundamentais, inclusive pela promoção do controle de convencionalidade no Poder Judiciário.",
+        "a": true,
+        "e": "Certo. É o art. 1º, §1º, II."
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lc225",
+    "tipo": "lei",
+    "lei": "Lei Complementar 225/2026",
+    "pub": "2026-01-09",
+    "titulo": "Código de Defesa do Contribuinte (normas gerais de direitos, garantias e conformidade tributária)",
+    "resumo": "Institui o **Código de Defesa do Contribuinte** (LC 225/2026), com normas gerais, de observância nacional, sobre **direitos, garantias, deveres e procedimentos** na relação com a administração tributária. Fixa **princípios** (boa-fé, segurança jurídica, redução da litigiosidade), **direitos e deveres** do contribuinte, o conceito de **devedor contumaz**, os **programas de conformidade** (**Confia**, **Sintonia** e **OEA**) e os **selos de conformidade**. Publicada em 09/01/2026; vigência imediata, exceto os programas Confia e Sintonia e os selos (90 dias). Entes federados têm **1 ano** para adaptar a legislação.",
+    "temas": [
+      "Tributário",
+      "Administrativo"
+    ],
+    "papeis": [
+      "assistido"
+    ],
+    "mudou": [
+      "**Alcance (arts. 1º e 2º):** normas gerais, de **observância obrigatória em todo o território nacional**, para União, Estados, DF e Municípios (Poder Executivo, administração direta e indireta com competência tributária).",
+      "**Princípios (art. 3º):** segurança jurídica e **boa-fé**; redução da litigiosidade (com preferência por formas alternativas de solução de conflitos); **presunção de boa-fé do contribuinte**; ampla defesa e contraditório; motivação (indicação dos pressupostos de fato e de direito); impulso oficial do processo; estímulo à **autorregularização** antes do auto de infração; transparência e orientação.",
+      "**Direitos do contribuinte (art. 4º):** comunicações claras; tratamento com urbanidade; ciência do processo; **vista e cópia**; acesso e retificação de dados; **recurso ao menos uma vez**; fazer-se assistir por **advogado**, **decisão em prazo razoável**; **sigilo**; **reparação** em caso de excesso de exação; tratamento diferenciado em caso de **hipossuficiência**; liquidação de **fiança ou seguro garantia** apenas após o trânsito em julgado de decisão de mérito desfavorável. **Deveres (art. 5º):** diligência, boa-fé e cooperação, prestar informações e guardar documentos, adimplir as obrigações.",
+      "**Devedor contumaz (arts. 11 a 17):** inadimplência **substancial** (no âmbito federal, créditos em situação irregular de **R$ 15 milhões ou mais** e superiores a **100% do patrimônio conhecido**), **reiterada** (4 períodos consecutivos ou 6 alternados em 12 meses) e **injustificada**. Exige **prévia notificação** e processo administrativo, com **30 dias** para regularizar ou apresentar defesa (com efeito suspensivo, salvo em hipóteses de fraude, entre outras). Deduzem-se os créditos suspensos, parcelados adimplentes, em transação ou discutidos em controvérsia relevante.",
+      "**Programas de conformidade (arts. 18 a 47):** **Confia** (relacionamento cooperativo com a RFB, de adesão voluntária, para pessoas jurídicas com governança e gestão de conformidade tributária), **Sintonia** (estímulo à conformidade) e **Programa OEA** (operador econômico autorizado), com **selos** válidos por 1 ano (Confia e Sintonia) e até 4 anos (OEA)."
+    ],
+    "dpe": [
+      "Útil na **defesa do contribuinte hipossuficiente**: direito a tratamento diferenciado e facilitado, ao recurso administrativo, à assistência por advogado e à vista dos autos, bem como à **presunção de boa-fé**.",
+      "No **processo administrativo e na execução fiscal** contra pequenos devedores, atentar para a distinção entre inadimplência comum e **devedor contumaz** (critérios objetivos e defesa prévia)."
+    ],
+    "prova": [
+      "**Critérios do devedor contumaz** (R$ 15 milhões, 100% do patrimônio, 4 ou 6 períodos em 12 meses) e **prazo de 30 dias** da notificação.",
+      "Os três **programas de conformidade** (Confia, Sintonia, OEA) e **prazos de vigência** (90 dias para Confia, Sintonia e selos; 1 ano para adaptação dos entes)."
+    ],
+    "treino": [
+      {
+        "q": "A LC 225/2026 estabelece normas gerais de observância obrigatória em todo o território nacional sobre direitos, garantias e deveres do contribuinte.",
+        "a": true,
+        "e": "Certo. É o art. 1º e seu parágrafo único."
+      },
+      {
+        "q": "No âmbito federal, a inadimplência substancial exige créditos tributários em situação irregular de, no mínimo, R$ 15 milhões e equivalentes a mais de 100% do patrimônio conhecido do sujeito passivo.",
+        "a": true,
+        "e": "Certo. É o art. 11, §2º, I, a."
+      },
+      {
+        "q": "O sujeito passivo pode ser enquadrado como devedor contumaz sem prévia notificação, desde que a inadimplência seja reiterada.",
+        "a": false,
+        "e": "Errado. O art. 11, §1º, e o art. 12 exigem prévia notificação e processo administrativo, com 30 dias para regularizar ou apresentar defesa."
+      },
+      {
+        "q": "A LC 225/2026 institui os programas Confia, Sintonia e OEA no âmbito da RFB.",
+        "a": true,
+        "e": "Certo. É o art. 18."
+      }
+    ]
+  },
+  {
+    "id": "nv-2026-11-lc236",
+    "tipo": "lei",
+    "lei": "Lei Complementar 236/2026",
+    "pub": "2026-09-04",
+    "titulo": "Consensualidade e processo administrativo tributário: alterações no CTN (transação, mediação, arbitragem, penalidades e prazos)",
+    "resumo": "Altera o **CTN** para dispor sobre **normas gerais de solução de controvérsias, consensualidade e processo administrativo** em matéria tributária e aduaneira. Fixa **limites proporcionais para multas** (art. 113-A: 75%, 100% e 150%), cria **reduções** de penalidade por pagamento ou parcelamento (art. 142, §5º), prevê **transação**, **mediação** e **arbitragem especial tributária** como causas de suspensão ou extinção do crédito (arts. 151 e 156), determina a **vinculação da administração** a decisões qualificadas do STF e do STJ (art. 194-A) e estabelece o **processo administrativo fiscal** nacional (arts. 208-A a 208-J), com **duplo grau**. Publicada em 04/09/2026 (edição extra), com vetos; vigência imediata.",
+    "temas": [
+      "Tributário",
+      "Processo civil"
+    ],
+    "papeis": [
+      "assistido"
+    ],
+    "mudou": [
+      "**Multas proporcionais (CTN, art. 113-A):** as penalidades observam a **razoabilidade e a proporcionalidade**; as multas ligadas ao valor do tributo não podem exceder **75%** (regra), **100%** (fraude, sonegação ou conluio) e **150%** (reincidência). **Art. 142, §5º:** redução da penalidade em **50%** (pagamento integral no prazo da impugnação), **40%** (parcelamento nesse prazo), **30%** (pagamento integral antes da inscrição em dívida ativa) e **20%** (parcelamento nesse momento); **devedor contumaz** não tem graduação (§6º). **Art. 142, §2º:** sem multa de ofício ou de mora no lançamento para evitar decadência de crédito suspenso (art. 151, II, IV e V).",
+      "**Consulta e orientação (art. 107):** solução de consulta e pareceres com efeito vinculante restrito ao órgão emissor. **Denúncia espontânea (art. 138):** a responsabilidade é excluída **inclusive em relação à multa de mora**. **Domicílio Tributário Eletrônico (art. 127-A)** para intimações, inclusive de procurador. **Indébitos** atualizados pelos mesmos índices dos créditos tributários (art. 165-A).",
+      "**Decadência (art. 150):** em caso de dolo, fraude ou simulação, o prazo conta-se na forma do art. 173, I; no **pagamento parcial**, conta-se da ocorrência do fato gerador. **Suspensão e extinção (arts. 151 e 156):** passam a suspender a exigibilidade a **arbitragem**, a **transação aceita** e o **acordo de mediação**, além do **seguro garantia ou fiança bancária** aceitos em execução fiscal; a sentença arbitral favorável transitada em julgado e o cumprimento do acordo de mediação extinguem o crédito. **Art. 161, §3º:** a ação judicial em que foi concedida liminar ou tutela provisória interrompe a incidência da multa de mora, desde a concessão da medida até 30 dias após a publicação da decisão que considerar devido o tributo.",
+      "**Consensualidade (arts. 171-A, 171-B e 171-C):** a lei especial autoriza a **arbitragem especial tributária e aduaneira** (sentença vinculante); a **mediação** é regulada em lei; transação, mediação e arbitragem **não configuram renúncia de receita** para a LRF. **Interrupção da prescrição (art. 174):** entre outras hipóteses, a instauração do procedimento de mediação, a instituição da arbitragem, a informação do crédito na falência ou liquidação extrajudicial e o ato inicial da execução fiscal extrajudicial.",
+      "**Vinculação a precedentes (art. 194-A):** o trânsito em julgado de decisão **vinculante do STF e do STJ** vincula também a administração tributária, que, em até **90 dias úteis**, publica parecer jurídico sobre os temas em que deixará de impugnar ou recorrer. **Fiscalização (art. 196):** o início do procedimento deve ser formalizado por documento com os elementos mínimos.",
+      "**Processo administrativo fiscal (arts. 208-A a 208-J):** garantia de **devido processo legal, contraditório, ampla defesa e duplo grau** (obrigatório para entes com mais de 100 mil habitantes); **conteúdo do auto de infração**; **prazos de 20 dias** (impugnação, recurso voluntário, recurso especial) e **5 dias** (embargos de declaração), contados em dias úteis; **efeito suspensivo** da impugnação; vedação de **recurso hierárquico** contra decisão definitiva favorável ao contribuinte; **sobrestamento** quando houver precedente qualificado com suspensão nacional. **Prazo de adaptação (art. 211-A):** Estados, DF e Municípios têm **2 anos** para atualizar a legislação; sem isso, aplicam-se diretamente os arts. 208-A a 208-J."
+    ],
+    "dpe": [
+      "Útil em **execuções fiscais e em processos administrativos tributários** de pequenos contribuintes: possibilidade de transação, mediação e redução de multas por pagamento ou parcelamento, e limites de proporcionalidade das penalidades.",
+      "Reforço das garantias do **contraditório e do duplo grau** no processo administrativo fiscal e da **vinculação da administração** aos precedentes qualificados favoráveis ao contribuinte."
+    ],
+    "prova": [
+      "**Teto das multas** (75%, 100%, 150%) e **reduções** do art. 142, §5º (50%, 40%, 30%, 20%).",
+      "**Novas causas** de suspensão (arbitragem, transação, mediação, seguro garantia) e de extinção do crédito (sentença arbitral favorável; cumprimento do acordo de mediação).",
+      "**Processo administrativo fiscal**: prazos de 20 e 5 dias úteis, duplo grau para entes com mais de 100 mil habitantes e prazo de **2 anos** de adaptação."
+    ],
+    "treino": [
+      {
+        "q": "As multas ligadas ao valor do tributo, em regra, não podem exceder 75% do valor do tributo lançado, elevando-se a 100% nos casos de fraude, sonegação ou conluio e a 150% na reincidência.",
+        "a": true,
+        "e": "Certo. É o art. 113-A, §1º, do CTN, na redação da LC 236/2026."
+      },
+      {
+        "q": "A transação aceita pela administração, a arbitragem e o acordo de mediação não suspendem a exigibilidade do crédito tributário.",
+        "a": false,
+        "e": "Errado. O art. 151 do CTN passa a prever a arbitragem especial, a transação aceita e o acordo de mediação como causas de suspensão."
+      },
+      {
+        "q": "O trânsito em julgado de decisão vinculante do STF ou do STJ vincula também a administração tributária, que deve dar publicidade ao fato em até 90 dias úteis, por parecer jurídico.",
+        "a": true,
+        "e": "Certo. É o art. 194-A do CTN."
+      },
+      {
+        "q": "A LC 236/2026 concedeu aos Estados, ao DF e aos Municípios o prazo de 5 anos para atualizar sua legislação sobre o processo administrativo fiscal.",
+        "a": false,
+        "e": "Errado. O prazo do art. 211-A é de 2 anos; sem a adaptação, aplicam-se diretamente os arts. 208-A a 208-J."
+      },
+      {
+        "q": "Os prazos do processo administrativo fiscal previstos nos arts. 208-A a 208-J do CTN são contados em dias úteis.",
+        "a": true,
+        "e": "Certo. É o art. 208-D, §3º, que também exclui o dia do início e inclui o do vencimento."
+      }
+    ]
+  }
+]
