@@ -1,0 +1,64 @@
+[
+  {
+    "id": "nv-2026-11-lei15471",
+    "tipo": "lei",
+    "lei": "Lei 15.471/2026",
+    "pub": "2026-07-21",
+    "titulo": "Estratégia Nacional de Saúde do Complexo Econômico-Industrial da Saúde (Ensceis)",
+    "resumo": "Institui a **Ensceis** para reduzir a dependência produtiva e tecnológica do SUS e fortalecer o Complexo Econômico-Industrial da Saúde (Ceis). Cria a **Empresa Estratégica de Saúde (EES)**, os instrumentos de parceria **PDP**, **PDIL** e **Etecs**, regras de **licitação dispensável e margem de preferência** para produtos estratégicos de saúde e altera as Leis 14.133/2021 e 8.080/1990. Sancionada em 20/07/2026, com vetos (arts. 28, 35 e 38).",
+    "temas": [
+      "Saúde",
+      "Administrativo"
+    ],
+    "papeis": [
+      "assistido",
+      "coletivo"
+    ],
+    "mudou": [
+      "Institui a **Ensceis**, com diretrizes (art. 3º) e objetivos (art. 4º): reduzir a dependência produtiva e tecnológica do SUS, assegurar acesso universal, equitativo e sustentável à saúde e preparar o País para emergências sanitárias.",
+      "Cria a **EES**: pessoa jurídica credenciada pelo Poder Executivo que cumpre, **cumulativamente**, as condições do art. 5º (finalidade produtiva e de pesquisa, capacidade técnica, operacional, econômico-financeira e regulatória, e instalação industrial no País com histórico e capacidade de expansão). Pode ser descredenciada de ofício ou a pedido, e **obrigada a permanecer EES por prazo determinado** (art. 6º, §3º). São **nulos** a alteração do ato constitutivo, o desfazimento de bens e a redução do conhecimento tecnológico que descumpram a Lei antes do descredenciamento (art. 6º, §4º).",
+      "Institui três instrumentos de parceria (art. 7º): **PDP** (Parceria para o Desenvolvimento Produtivo), **PDIL** (Programa de Desenvolvimento e Inovação Local) e **Etecs** (Encomendas Tecnológicas em Saúde).",
+      "Na **PDP**: processo seletivo, contrato específico de fornecimento e acesso integral à tecnologia de produção; contrapartida de **compra pelo Ministério da Saúde** nos volumes aprovados (art. 10); **preços decrescentes** e desconto adicional após o fim da patente (art. 11); transferência só considerada finalizada com o registro do produto e a certificação de boas práticas de fabricação na Anvisa (art. 13); **indenização** se o contrato for rescindido unilateralmente sem fundamentação e **nenhuma indenização** se o resultado divergir por risco tecnológico comprovado (art. 14, §§1º e 2º).",
+      "**Licitação dispensável** para produtos estratégicos de saúde (PES) vindos de PDP e Etecs, nas hipóteses dos incisos V, IX, XII, XV e XVI do art. 75 da Lei 14.133/2021, e de parceria do PDIL incorporada ao SUS, a preço compatível com o mercado (art. 25). Admite licitação exclusiva para PES de EES (art. 26), **margem de preferência** (art. 27; para EES, se a capacidade atender a pelo menos 30% da quantidade), compra centralizada (art. 29), consórcio (art. 31) e exigência de conteúdo nacional mínimo (art. 32).",
+      "Incentivos às EES: **prioridade** na análise de registros, licenças e autorizações e em chamamentos públicos (art. 33) e linhas de crédito do **BNDES** em condições favorecidas (art. 34).",
+      "Altera a **Lei 14.133/2021**, art. 75, XVI (dispensa para PES fornecidos por produtores públicos por intermédio de fundação de apoio criada antes desta Lei, ou em parcerias com transferência de tecnologia, a preço compatível com o mercado) e a **Lei 8.080/1990**, art. 6º (inclui a promoção do desenvolvimento produtivo, tecnológico e da inovação do Ceis no campo de atuação do SUS, o inciso XIII e o §6º, que define o Ceis).",
+      "**Vetos:** art. 28 (compensação tecnológica obrigatória nas compras de PES importados), art. 35 (escala de alíquotas do imposto de importação e defesa comercial) e art. 38 (alterações da Lei 6.360/1976). Apesar de a ementa ainda citar a Lei 6.360/1976, **ela não foi alterada** por esta Lei."
+    ],
+    "dpe": [
+      "Útil em demandas de **fornecimento de medicamentos, vacinas e dispositivos médicos**: a Lei trata a dependência externa e o desabastecimento do SUS como riscos a reduzir e prevê a **substituição provisória** de projeto que não atenda sua cota (art. 14, §5º).",
+      "Base para a tutela coletiva do direito à saúde e para o controle social: monitoramento permanente dos preços dos produtos estratégicos (art. 12), preços decrescentes nas PDPs (art. 11, §2º) e transferência efetiva de tecnologia como condição de encerramento (art. 13)."
+    ],
+    "prova": [
+      "Dispensa de licitação (art. 25) e margem de preferência (art. 27) para produtos estratégicos de saúde, em comparação com a Lei 14.133/2021 (art. 75, XVI, na nova redação, e art. 26).",
+      "Siglas e condições: PES, CTC, IFA, EES, PDP, PDIL, Etecs e Ceis; requisitos **cumulativos** da EES (art. 5º), permanência obrigatória (art. 6º, §3º) e nulidades (art. 6º, §4º).",
+      "Vetos: compensação tecnológica obrigatória (art. 28), alíquotas do imposto de importação (art. 35) e alterações da Lei 6.360/1976 (art. 38)."
+    ],
+    "treino": [
+      {
+        "q": "A Lei 15.471/2026 alterou a Lei 6.360/1976.",
+        "a": false,
+        "e": "Errado. A ementa ainda cita a Lei 6.360/1976, mas as alterações previstas no art. 38 foram vetadas. A Lei alterou a Lei 14.133/2021 (art. 75, XVI) e a Lei 8.080/1990 (art. 6º)."
+      },
+      {
+        "q": "A licitação é dispensável para a aquisição de produtos estratégicos de saúde oriundos de PDP e de Etecs, nas hipóteses dos incisos V, IX, XII, XV e XVI do art. 75 da Lei 14.133/2021.",
+        "a": true,
+        "e": "Certo. É o que prevê o art. 25, I, da Lei 15.471/2026."
+      },
+      {
+        "q": "Os preços dos produtos estratégicos de saúde em PDP devem ser decrescentes ao longo da vigência da parceria.",
+        "a": true,
+        "e": "Certo. Art. 11, §2º: preços decrescentes e compatíveis com os praticados no SUS antes da parceria e, quando couber, com os de outros países."
+      },
+      {
+        "q": "A Lei tornou obrigatória a exigência de compensação tecnológica em saúde nas aquisições de produtos estratégicos importados.",
+        "a": false,
+        "e": "Errado. O art. 28, que previa essa obrigatoriedade, foi vetado, pois poderia elevar o preço de produtos estratégicos e os custos do SUS; a Lei 14.133/2021 já permite exigir a compensação."
+      },
+      {
+        "q": "A Empresa Estratégica de Saúde pode ser obrigada a permanecer nessa condição por prazo determinado pelo Poder Executivo.",
+        "a": true,
+        "e": "Certo. Art. 6º, §3º: o prazo leva em conta, entre outros, a portabilidade tecnológica e o período de obsolescência tecnológica do produto."
+      }
+    ]
+  }
+]
