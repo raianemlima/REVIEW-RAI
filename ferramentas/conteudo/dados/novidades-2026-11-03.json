@@ -50,6 +50,23 @@
         "a": true,
         "e": "Certo. A lei criou regra especial; o prazo geral do art. 103 do CP e do art. 38 do CPP permanece."
       }
+    ],
+    "lacunas": [
+      {
+        "d": "pp",
+        "f": "CP, art. 103, parágrafo único: na violência doméstica contra a mulher, a ofendida decai do direito de queixa ou de representação em ____ meses.",
+        "v": "12"
+      },
+      {
+        "d": "pp",
+        "f": "O prazo de 12 meses conta-se do dia em que a ofendida soube quem é o ____ do crime.",
+        "v": "autor"
+      },
+      {
+        "d": "pp",
+        "f": "O prazo geral de decadência da queixa e da representação (CP, art. 103) é de ____ meses.",
+        "v": "6"
+      }
     ]
   },
   {
@@ -100,6 +117,18 @@
         "q": "A manifestação de vontade de se retratar pode ser feita oralmente, desde que registrada nos autos.",
         "a": true,
         "e": "Certo. A lei admite manifestação escrita ou oral e exige o devido registro nos autos."
+      }
+    ],
+    "lacunas": [
+      {
+        "d": "pp",
+        "f": "Lei Maria da Penha, art. 16, parágrafo único: a audiência tem por objetivo confirmar a ____ da vítima, não a representação.",
+        "v": "retratação"
+      },
+      {
+        "d": "pp",
+        "f": "A audiência do art. 16 só é designada mediante manifestação expressa da vítima apresentada antes do ____ da denúncia.",
+        "v": "recebimento"
       }
     ]
   },
@@ -160,6 +189,33 @@
         "a": true,
         "e": "Certo. É o art. 5º, §4º, da Lei 13.756/2018, na redação dada pela Lei 15.383/2026."
       }
+    ],
+    "lacunas": [
+      {
+        "d": "pp",
+        "f": "Lei Maria da Penha, art. 22, inciso ____: monitoração eletrônica do agressor como medida protetiva.",
+        "v": "VIII"
+      },
+      {
+        "d": "pp",
+        "f": "Lei Maria da Penha, art. 12-D: se o Município não for sede de comarca, o ____ de polícia pode aplicar a monitoração eletrônica imediatamente.",
+        "v": "delegado"
+      },
+      {
+        "d": "pp",
+        "f": "Na monitoração aplicada pelo delegado, o juiz é comunicado em até ____ horas e decide em igual prazo.",
+        "v": "24"
+      },
+      {
+        "d": "dp",
+        "f": "Lei Maria da Penha, art. 24-A, §4º: a pena do descumprimento é aumentada de ____ se houver violação das áreas de exclusão ou do dispositivo de monitoração.",
+        "v": "1/3 até a metade"
+      },
+      {
+        "d": "pp",
+        "f": "Lei 13.756/2018, art. 5º, §4º: no mínimo ____ dos recursos empenhados do FNSP devem ir para o enfrentamento da violência contra a mulher.",
+        "v": "6%"
+      }
     ]
   },
   {
@@ -203,6 +259,13 @@
         "q": "A proteção do art. 12-C alcança também os dependentes da mulher em situação de violência doméstica.",
         "a": true,
         "e": "Certo. A redação do caput menciona expressamente os dependentes."
+      }
+    ],
+    "lacunas": [
+      {
+        "d": "pp",
+        "f": "Lei Maria da Penha, art. 12-C: o afastamento imediato do agressor cabe também em caso de risco à integridade sexual, moral ou ____ da mulher ou dos dependentes.",
+        "v": "patrimonial"
       }
     ]
   },
@@ -253,6 +316,13 @@
         "q": "A Lei 15.412/2026 alterou o art. 12-C da Lei Maria da Penha.",
         "a": false,
         "e": "Errado. Ela alterou o art. 22; o art. 12-C foi alterado pela Lei 15.411/2026."
+      }
+    ],
+    "lacunas": [
+      {
+        "d": "pp",
+        "f": "Lei Maria da Penha, art. 22, §10: as medidas protetivas ____ constituem título executivo judicial e dispensam a ação principal.",
+        "v": "de natureza cível"
       }
     ]
   },
@@ -305,6 +375,18 @@
         "q": "O descumprimento imotivado e reiterado dos termos da custódia compartilhada acarreta a perda definitiva da posse e da propriedade do animal em favor da outra parte.",
         "a": true,
         "e": "Certo. É o art. 6º, e a custódia compartilhada é extinta."
+      }
+    ],
+    "lacunas": [
+      {
+        "d": "cv",
+        "f": "Lei 15.392/2026, art. 3º: a custódia compartilhada do animal de estimação não é deferida se houver histórico ou risco de violência ____ e familiar ou maus-tratos.",
+        "v": "doméstica"
+      },
+      {
+        "d": "cv",
+        "f": "Lei 15.392/2026, art. 4º: as despesas ordinárias de alimentação e higiene ficam com quem tem o animal; as demais, como consultas veterinárias, são divididas ____.",
+        "v": "igualmente"
       }
     ]
   },
@@ -361,6 +443,18 @@
         "q": "A lesão corporal praticada contra pessoa com quem o agente tenha relação de trabalho doméstico recebe o tratamento do art. 129, §9º, do CP.",
         "a": true,
         "e": "Certo. O §9º foi alterado para incluir a pessoa com relação de trabalho doméstico."
+      }
+    ],
+    "lacunas": [
+      {
+        "d": "dh",
+        "f": "Lei 7.998/1990, art. 2º-C (Lei 15.455/2026): o trabalhador resgatado de condição análoga à de escravo recebe ____ parcelas de seguro-desemprego de um salário mínimo.",
+        "v": "6"
+      },
+      {
+        "d": "pp",
+        "f": "Lei Maria da Penha, art. 11, parágrafo único: a autoridade policial comunica indícios de trabalho escravo doméstico ao MTE e ao MPT em até ____ horas.",
+        "v": "48"
       }
     ]
   }

@@ -1,0 +1,33 @@
+name: Varredura mensal
+# Todo dia 1º, 8h em Brasília: confere no Planalto, no STF e no STJ o que saiu depois do último lote do app e abre (ou atualiza)
+# uma issue com a lista. Nada entra no app sozinho: o lote é redigido e revisado antes (ver docs/ESTUDO-DIRECIONADO.md).
+on:
+  schedule:
+    - cron: "0 11 1 * *"
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  varredura:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Procurar normas e informativos novos
+        run: python ferramentas/conteudo/varredura/varredura.py --saida varredura
+      - uses: actions/upload-artifact@v4
+        with:
+          name: varredura
+          path: varredura/
+      - name: Abrir ou atualizar a issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          arq=$(ls varredura/varredura-*.md | head -1)
+          titulo="Varredura de $(date +%m/%Y): normas e informativos novos"
+          gh label create varredura --color 1D76DB --description "Novidades para o app" 2>/dev/null || true
+          n=$(gh issue list --label varredura --state open --json number --jq '.[0].number')
+          if [ -n "$n" ]; then gh issue edit "$n" --title "$titulo" --body-file "$arq"; else gh issue create --title "$titulo" --body-file "$arq" --label varredura; fi

@@ -1,0 +1,150 @@
+{
+  "nv-2026-11-lei15358": [
+    {"d": "dp", "f": "Lei 15.358/2026, art. 2º: o crime de domínio social estruturado tem pena de reclusão de ____.", "v": "20 a 40 anos"},
+    {"d": "dp", "f": "Lei 15.358/2026, art. 3º: o favorecimento ao domínio social estruturado tem pena de reclusão de ____, e multa.", "v": "12 a 20 anos"},
+    {"d": "ep", "f": "LEP, art. 112, V (Lei 15.358/2026): o apenado primário condenado por crime hediondo ou equiparado cumpre ____ da pena para progredir de regime.", "v": "70%"},
+    {"d": "ep", "f": "LEP, art. 112, VI, d: o condenado primário por feminicídio cumpre ____ da pena, vedado o livramento condicional.", "v": "75%"},
+    {"d": "ep", "f": "LEP, art. 112, VII: o reincidente na prática de crime hediondo ou equiparado cumpre ____ da pena.", "v": "80%"},
+    {"d": "ep", "f": "LEP, art. 112, VIII: o reincidente em crime hediondo ou equiparado com resultado morte cumpre ____ da pena, vedado o livramento condicional.", "v": "85%"},
+    {"d": "pp", "f": "Lei 15.358/2026, art. 5º: o inquérito policial é concluído em 90 dias, se o indiciado estiver preso, e em ____ dias, se estiver solto, prorrogáveis por igual período.", "v": "270"},
+    {"d": "pp", "f": "CPP, art. 310 (Lei 15.358/2026): a audiência de custódia ocorre em até ____ horas da prisão, por videoconferência em tempo real.", "v": "24"}
+  ],
+  "nv-2026-11-lei15402": [
+    {"d": "ep", "f": "LEP, art. 112, caput (Lei 15.402/2026): a regra geral da progressão exige o cumprimento de, ao menos, ____ da pena no regime anterior.", "v": "1/6"},
+    {"d": "ep", "f": "LEP, art. 112, I: o apenado primário condenado por crime com violência ou grave ameaça cumpre ao menos ____ da pena, salvo crimes do Título XII do CP.", "v": "25%"},
+    {"d": "ep", "f": "LEP, art. 112, II: o apenado reincidente condenado por crime com violência ou grave ameaça cumpre ao menos ____ da pena, salvo crimes do Título XII do CP.", "v": "30%"},
+    {"d": "ep", "f": "LEP, art. 112, III: o apenado reincidente em crime diverso dos dos incisos I e II cumpre ao menos ____ da pena.", "v": "20%"},
+    {"d": "dp", "f": "CP, art. 359-M-B: crimes do Capítulo II do Título XII praticados em contexto de multidão têm a pena reduzida de ____, salvo financiamento ou liderança.", "v": "1/3 a 2/3"}
+  ],
+  "nv-2026-11-lei15353": [
+    {"d": "dp", "f": "CP, art. 217-A, §4º-A: a presunção de vulnerabilidade da vítima de estupro de vulnerável é ____, inadmitida a relativização.", "v": "absoluta"},
+    {"d": "dp", "f": "A Súmula ____ do STJ afirma que o consentimento, a experiência sexual anterior e o relacionamento amoroso são irrelevantes para o estupro de vulnerável.", "v": "593"}
+  ],
+  "nv-2026-11-lei15384": [
+    {"d": "dp", "f": "CP, art. 121-B (vicaricídio): a pena é de reclusão de ____.", "v": "20 a 40 anos"},
+    {"d": "dp", "f": "CP, art. 121-B: a pena do vicaricídio é aumentada de ____ se o crime é cometido contra criança, adolescente, idoso ou pessoa com deficiência.", "v": "1/3 a 1/2"},
+    {"d": "dp", "f": "Lei Maria da Penha, art. 7º, VI: violência ____ é a praticada contra pessoa próxima da mulher com o fim de atingi-la.", "v": "vicária"},
+    {"d": "dp", "f": "Lei 8.072/1990, art. 1º, ____: o vicaricídio é crime hediondo.", "v": "I-C"}
+  ],
+  "nv-2026-11-lei15397": [
+    {"d": "dp", "f": "CP, art. 155, caput (Lei 15.397/2026): o furto é punido com reclusão de ____, e multa.", "v": "1 a 6 anos"},
+    {"d": "dp", "f": "CP, art. 155, §1º: o furto praticado durante o repouso noturno tem a pena aumentada de ____.", "v": "metade"},
+    {"d": "dp", "f": "CP, art. 155, §4º-B: o furto mediante fraude eletrônica é punido com reclusão de ____, e multa.", "v": "4 a 10 anos"},
+    {"d": "dp", "f": "CP, art. 157, caput (Lei 15.397/2026): o roubo é punido com reclusão de ____, e multa.", "v": "6 a 10 anos"},
+    {"d": "dp", "f": "CP, art. 157, §3º, II: o roubo com resultado morte é punido com reclusão de ____, e multa.", "v": "24 a 30 anos"},
+    {"d": "dp", "f": "CP, art. 171, caput (Lei 15.397/2026): o estelionato é punido com reclusão de ____, e multa.", "v": "1 a 5 anos"},
+    {"d": "dp", "f": "CP, art. 171, §2º-A: o estelionato cometido por fraude eletrônica é punido com reclusão de ____, e multa.", "v": "4 a 8 anos"},
+    {"d": "dp", "f": "CP, art. 180, caput (Lei 15.397/2026): a receptação é punida com reclusão de ____, e multa.", "v": "2 a 6 anos"},
+    {"d": "dp", "f": "Lei 15.397/2026, art. 3º: foi revogado o §5º do art. 171 do CP, que exigia ____ para o estelionato.", "v": "representação"}
+  ],
+  "nv-2026-11-lei15407": [
+    {"d": "ep", "f": "LEP, art. 54, §3º (Lei 15.407/2026): o juiz decide liminarmente sobre o RDD e a decisão final sai em até ____ dias, após manifestação do MP e da defesa.", "v": "15"},
+    {"d": "ep", "f": "LEP, art. 52, §10: o RDD pode ser requerido desde a data do ____ do preso.", "v": "recolhimento"}
+  ],
+  "nv-2026-11-lei15487": [
+    {"d": "ec", "f": "ECA, art. 240 (Lei 15.487/2026): produzir conteúdo de violência sexual contra criança ou adolescente é punido com reclusão de ____, e multa.", "v": "4 a 10 anos"},
+    {"d": "ec", "f": "ECA, art. 241-B: adquirir, possuir ou armazenar esse tipo de registro é punido com reclusão de ____, e multa.", "v": "3 a 6 anos"},
+    {"d": "ec", "f": "ECA, art. 241-C: simular a participação de criança em conteúdo de violência sexual, inclusive com IA, é punido com reclusão de ____, e multa.", "v": "3 a 5 anos"},
+    {"d": "ec", "f": "ECA, art. 241-D: aliciar, assediar ou constranger menor de ____ anos com o fim de praticar ato libidinoso é punido com reclusão de 3 a 5 anos.", "v": "14"},
+    {"d": "ec", "f": "ECA, art. 190-F, §3º: a requisição direta de registros de conexão deve ser comunicada ao juiz em até ____ horas.", "v": "48"},
+    {"d": "ec", "f": "ECA, art. 226-A: a pena aumenta de ____ quando o agente usa proxy ou mascaramento de IP para dificultar sua identificação.", "v": "1/3 a 2/3"}
+  ],
+  "nv-2026-11-lei15410": [
+    {"d": "ep", "f": "LEP, art. 52, §8º (Lei 15.410/2026): o condenado por violência doméstica contra a mulher, violento ou ameaçador, pode ser submetido ao ____.", "v": "RDD"},
+    {"d": "dp", "f": "Lei 9.455/1997, art. 1º, III: configura tortura submeter a mulher, de forma ____, a intenso sofrimento no contexto de violência doméstica.", "v": "reiterada"}
+  ],
+  "nv-2026-11-lei15438": [
+    {"d": "pp", "f": "CP, art. 103, parágrafo único: na violência doméstica contra a mulher, a ofendida decai do direito de queixa ou de representação em ____ meses.", "v": "12"},
+    {"d": "pp", "f": "O prazo de 12 meses conta-se do dia em que a ofendida soube quem é o ____ do crime.", "v": "autor"},
+    {"d": "pp", "f": "O prazo geral de decadência da queixa e da representação (CP, art. 103) é de ____ meses.", "v": "6"}
+  ],
+  "nv-2026-11-lei15380": [
+    {"d": "pp", "f": "Lei Maria da Penha, art. 16, parágrafo único: a audiência tem por objetivo confirmar a ____ da vítima, não a representação.", "v": "retratação"},
+    {"d": "pp", "f": "A audiência do art. 16 só é designada mediante manifestação expressa da vítima apresentada antes do ____ da denúncia.", "v": "recebimento"}
+  ],
+  "nv-2026-11-lei15383": [
+    {"d": "pp", "f": "Lei Maria da Penha, art. 22, inciso ____: monitoração eletrônica do agressor como medida protetiva.", "v": "VIII"},
+    {"d": "pp", "f": "Lei Maria da Penha, art. 12-D: se o Município não for sede de comarca, o ____ de polícia pode aplicar a monitoração eletrônica imediatamente.", "v": "delegado"},
+    {"d": "pp", "f": "Na monitoração aplicada pelo delegado, o juiz é comunicado em até ____ horas e decide em igual prazo.", "v": "24"},
+    {"d": "dp", "f": "Lei Maria da Penha, art. 24-A, §4º: a pena do descumprimento é aumentada de ____ se houver violação das áreas de exclusão ou do dispositivo de monitoração.", "v": "1/3 até a metade"},
+    {"d": "pp", "f": "Lei 13.756/2018, art. 5º, §4º: no mínimo ____ dos recursos empenhados do FNSP devem ir para o enfrentamento da violência contra a mulher.", "v": "6%"}
+  ],
+  "nv-2026-11-lei15411": [
+    {"d": "pp", "f": "Lei Maria da Penha, art. 12-C: o afastamento imediato do agressor cabe também em caso de risco à integridade sexual, moral ou ____ da mulher ou dos dependentes.", "v": "patrimonial"}
+  ],
+  "nv-2026-11-lei15412": [
+    {"d": "pp", "f": "Lei Maria da Penha, art. 22, §10: as medidas protetivas ____ constituem título executivo judicial e dispensam a ação principal.", "v": "de natureza cível"}
+  ],
+  "nv-2026-11-lei15392": [
+    {"d": "cv", "f": "Lei 15.392/2026, art. 3º: a custódia compartilhada do animal de estimação não é deferida se houver histórico ou risco de violência ____ e familiar ou maus-tratos.", "v": "doméstica"},
+    {"d": "cv", "f": "Lei 15.392/2026, art. 4º: as despesas ordinárias de alimentação e higiene ficam com quem tem o animal; as demais, como consultas veterinárias, são divididas ____.", "v": "igualmente"}
+  ],
+  "nv-2026-11-lei15455": [
+    {"d": "dh", "f": "Lei 7.998/1990, art. 2º-C (Lei 15.455/2026): o trabalhador resgatado de condição análoga à de escravo recebe ____ parcelas de seguro-desemprego de um salário mínimo.", "v": "6"},
+    {"d": "pp", "f": "Lei Maria da Penha, art. 11, parágrafo único: a autoridade policial comunica indícios de trabalho escravo doméstico ao MTE e ao MPT em até ____ horas.", "v": "48"}
+  ],
+  "nv-2026-11-ec139": [
+    {"d": "dc", "f": "CF, art. 75 (EC 139/2026): os Tribunais de Contas são instituições permanentes, essenciais ao exercício do controle ____.", "v": "externo"}
+  ],
+  "nv-2026-11-ec140": [
+    {"d": "dc", "f": "CF, art. 40, §5º-A: a idade para a aposentadoria dos ACS e ACE é de 57 anos, se mulher, e ____ anos, se homem, com 25 anos de contribuição e de efetivo exercício.", "v": "60"},
+    {"d": "dc", "f": "CF, art. 198, §4º-A: é vedada a contratação ____ ou terceirizada de ACS e ACE, salvo emergência em saúde pública.", "v": "temporária"},
+    {"d": "dc", "f": "EC 140/2026, art. 12: os entes devem admitir os ACS e ACE com vínculo precário até 31 de dezembro de ____.", "v": "2028"}
+  ],
+  "nv-2026-11-ec141": [
+    {"d": "dc", "f": "CF, art. 7º, XIII (EC 141/2026): duração do trabalho normal não superior a 8 horas diárias e ____ horas semanais.", "v": "40"},
+    {"d": "dc", "f": "CF, art. 7º, XV: repouso semanal remunerado de ____ dias, um dos quais preferencialmente aos domingos.", "v": "2"},
+    {"d": "dc", "f": "EC 141/2026, art. 6º: 2 meses após a publicação, a jornada não excede ____ horas semanais; um ano depois, 40 horas.", "v": "42"},
+    {"d": "dc", "f": "EC 141/2026, art. 8º: a exceção às regras de jornada vale para empregado com diploma de nível superior e remuneração igual ou superior a ____ vezes o teto do RGPS.", "v": "2,5"},
+    {"d": "dc", "f": "EC 141/2026, art. 10: o inciso XV do art. 7º entra em vigor ____ meses após a publicação; os demais dispositivos, na publicação.", "v": "2"}
+  ],
+  "nv-2026-11-lei15484": [
+    {"d": "pc", "f": "CPC, art. 1.035-A, §6º: só se deixa de conhecer do recurso especial por falta de relevância pela manifestação de ____ dos membros do órgão competente.", "v": "2/3"},
+    {"d": "pc", "f": "CPC, art. 1.035-A, §7º: reconhecida a relevância, a suspensão nacional dos processos é de ____ meses, prorrogável uma vez por mais 6.", "v": "6"},
+    {"d": "pc", "f": "A decisão do STJ que não conhece do recurso especial por ausência de relevância é ____.", "v": "irrecorrível"},
+    {"d": "pc", "f": "Lei 15.484/2026: entra em vigor após ____ dias da publicação oficial.", "v": "30"}
+  ],
+  "nv-2026-11-lei15479": [
+    {"d": "pc", "f": "CPC, art. 529-A (Lei 15.479/2026): a indisponibilidade de ativos por saldo insuficiente fica limitada ao valor atualizado da prestação alimentícia em ____.", "v": "atraso"},
+    {"d": "pc", "f": "Convertida a indisponibilidade em penhora, a instituição financeira transfere o valor ao exequente em ____ horas.", "v": "24"},
+    {"d": "pc", "f": "Lei 15.479/2026: entra em vigor após decorrido ____ da publicação oficial.", "v": "1 ano"}
+  ],
+  "nv-2026-11-lei15378": [
+    {"d": "co", "f": "Estatuto dos Direitos do Paciente, art. 19: o paciente tem acesso ao prontuário sem justificativa e cópia sem ____.", "v": "ônus"},
+    {"d": "co", "f": "Estatuto dos Direitos do Paciente, art. 15: a confidencialidade das informações do paciente vale mesmo após a sua ____.", "v": "morte"}
+  ],
+  "nv-2026-11-lei15327": [
+    {"d": "co", "f": "Lei 8.213/1991, art. 115, §8º: é vedado o desconto de mensalidade associativa em benefício do INSS, ainda que com ____ expressa do beneficiário.", "v": "autorização"},
+    {"d": "co", "f": "Lei 15.327/2026, art. 3º: o desconto indevido deve ser restituído de forma integral e atualizada em até ____ dias.", "v": "30"},
+    {"d": "co", "f": "Lei 8.213/1991, art. 115, §12: após cada contratação de crédito consignado, o benefício é ____ para novas operações.", "v": "bloqueado"}
+  ],
+  "nv-2026-11-lei15371": [
+    {"d": "dc", "f": "Lei 15.371/2026, art. 11: a licença-paternidade é de ____ dias a partir de 1º de janeiro de 2027.", "v": "10"},
+    {"d": "dc", "f": "Lei 15.371/2026, art. 11: a licença-paternidade é de 15 dias a partir de 1º de janeiro de ____ e de 20 dias a partir de 2029.", "v": "2028"},
+    {"d": "dc", "f": "Lei 15.371/2026, art. 3º: o empregado comunica o período da licença com antecedência mínima de ____ dias.", "v": "30"},
+    {"d": "dc", "f": "Lei 15.371/2026, art. 4º: é vedada a dispensa arbitrária até ____ após o término da licença-paternidade.", "v": "1 mês"},
+    {"d": "dc", "f": "Lei 15.371/2026, art. 12: em caso de filho com deficiência, a licença é acrescida de ____.", "v": "1/3"}
+  ],
+  "nv-2026-11-lei15500": [
+    {"d": "pi", "f": "Lei 15.500/2026: constituem receita do FDPU as dotações próprias e ____ das custas recolhidas na Justiça da União de 1º e 2º graus.", "v": "5%"},
+    {"d": "pi", "f": "Lei 15.500/2026, art. 7º, parágrafo único: é vedada a aplicação dos recursos do FDPU em despesas com ____, exceto as ações do art. 98 do ADCT.", "v": "pessoal"}
+  ],
+  "nv-2026-11-lei15434": [
+    {"d": "dh", "f": "Lei 15.434/2026: o DDH é supervisionado pelo Presidente do CNJ e coordenado por um juiz ____.", "v": "auxiliar"},
+    {"d": "dh", "f": "Lei 15.434/2026: os Sistemas Internacionais de Direitos Humanos abrangem o âmbito global, sob a ONU, e o regional interamericano, vinculado à ____.", "v": "OEA"}
+  ],
+  "nv-2026-11-lc225": [
+    {"d": "tr", "f": "LC 225/2026, art. 11: no âmbito federal, a inadimplência substancial exige créditos em situação irregular de R$ ____ ou mais.", "v": "15 milhões"},
+    {"d": "tr", "f": "LC 225/2026, art. 11: além do valor, os créditos devem equivaler a mais de ____ do patrimônio conhecido do sujeito passivo.", "v": "100%"},
+    {"d": "tr", "f": "LC 225/2026, art. 11, §2º, II: a inadimplência reiterada exige ____ períodos de apuração consecutivos ou 6 alternados em 12 meses.", "v": "4"},
+    {"d": "tr", "f": "LC 225/2026, art. 12: o sujeito passivo tem ____ dias, da notificação, para regularizar os créditos ou apresentar defesa antes de ser considerado devedor contumaz.", "v": "30"},
+    {"d": "tr", "f": "LC 225/2026, art. 18: os programas de conformidade são o Confia, o Sintonia e o Programa ____.", "v": "OEA"}
+  ],
+  "nv-2026-11-lc236": [
+    {"d": "tr", "f": "CTN, art. 113-A, §1º: as multas não podem exceder 75%, ou 100% em fraude, sonegação ou conluio, ou ____ na reincidência.", "v": "150%"},
+    {"d": "tr", "f": "CTN, art. 142, §5º, I: a penalidade é reduzida em ____ se houver pagamento integral do crédito no prazo da impugnação.", "v": "50%"},
+    {"d": "tr", "f": "CTN, art. 194-A, §1º: a Fazenda Pública publica parecer em até ____ dias úteis do trânsito em julgado de decisão vinculante do STF ou do STJ.", "v": "90"},
+    {"d": "tr", "f": "CTN, art. 208-D, I: o prazo para impugnação do auto de infração é de ____ dias úteis.", "v": "20"},
+    {"d": "tr", "f": "CTN, art. 211-A: o DF, os Estados e os Municípios têm ____ anos para atualizar sua legislação sobre o processo administrativo fiscal.", "v": "2"}
+  ]
+}

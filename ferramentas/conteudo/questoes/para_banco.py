@@ -3,7 +3,8 @@
     python ferramentas/conteudo/questoes/para_banco.py app-src.txt SAIDA_FGV/ SAIDA_CEBRASPE/ ...
 
 Converte cada JSON para o formato de dados/simulados/<id>.json (o mesmo das provas que já estão no app, anulada =
-gabarito "X"), filtra pela área jurídica (juridica.py) e embute todas as provas de dados/simulados/ em PROVAS_PUBLICO.
+gabarito "X"), filtra pela área jurídica (juridica.py) e embute todas as provas de dados/simulados/ em PROVAS_PUBLICO,
+anotando em cada questão a disciplina (campo "d", ver materias.py).
 Só mexe nas provas geradas aqui (ids que começam com "tj" ou "mp"): são apagadas e refeitas a cada execução. As demais
 (FCC, DPE-*) não são tocadas e saem idênticas.
 """
@@ -15,6 +16,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import juridica  # noqa: E402
+import materias  # noqa: E402
 
 DADOS = Path(__file__).resolve().parents[1] / "dados" / "simulados"
 GERADAS = re.compile(r"^(tj|mp)[a-z]*-\d{4}-")
@@ -46,6 +48,7 @@ def converter(d, usados):
 def embutir(arquivo):
     provas = [json.loads(p.read_text(encoding="utf-8")) for p in sorted(DADOS.glob("*.json")) if not p.stem.endswith("-correcoes")]
     provas.sort(key=lambda p: p["id"] != "fcc-defensorias")   # banco de questões da FCC primeiro
+    materias.anotar(provas)   # campo "d": disciplina de cada questão (o mapa de incidência e o caderno de erros usam)
     bloco = "const PROVAS_PUBLICO = " + json.dumps(provas, ensure_ascii=False).replace("</", "<\/") + ";\n"
     t = Path(arquivo).read_text(encoding="utf-8")
     a = t.index("const PROVAS_PUBLICO = ")

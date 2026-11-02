@@ -42,6 +42,13 @@
         "a": true,
         "e": "Certo. É a redação do §1º do art. 31 da CF, que também veda a extinção, a criação e a instalação desses órgãos."
       }
+    ],
+    "lacunas": [
+      {
+        "d": "dc",
+        "f": "CF, art. 75 (EC 139/2026): os Tribunais de Contas são instituições permanentes, essenciais ao exercício do controle ____.",
+        "v": "externo"
+      }
     ]
   },
   {
@@ -103,6 +110,23 @@
         "q": "No Regime Geral, o benefício extraordinário destinado a assegurar a integralidade e a paridade é pago pelo próprio INSS com recursos do segurado.",
         "a": false,
         "e": "Errado. O art. 8º da EC prevê benefício extraordinário a ser pago pela União."
+      }
+    ],
+    "lacunas": [
+      {
+        "d": "dc",
+        "f": "CF, art. 40, §5º-A: a idade para a aposentadoria dos ACS e ACE é de 57 anos, se mulher, e ____ anos, se homem, com 25 anos de contribuição e de efetivo exercício.",
+        "v": "60"
+      },
+      {
+        "d": "dc",
+        "f": "CF, art. 198, §4º-A: é vedada a contratação ____ ou terceirizada de ACS e ACE, salvo emergência em saúde pública.",
+        "v": "temporária"
+      },
+      {
+        "d": "dc",
+        "f": "EC 140/2026, art. 12: os entes devem admitir os ACS e ACE com vínculo precário até 31 de dezembro de ____.",
+        "v": "2028"
       }
     ]
   },
@@ -166,6 +190,33 @@
         "a": true,
         "e": "Certo. É o art. 10 da EC 141/2026."
       }
+    ],
+    "lacunas": [
+      {
+        "d": "dc",
+        "f": "CF, art. 7º, XIII (EC 141/2026): duração do trabalho normal não superior a 8 horas diárias e ____ horas semanais.",
+        "v": "40"
+      },
+      {
+        "d": "dc",
+        "f": "CF, art. 7º, XV: repouso semanal remunerado de ____ dias, um dos quais preferencialmente aos domingos.",
+        "v": "2"
+      },
+      {
+        "d": "dc",
+        "f": "EC 141/2026, art. 6º: 2 meses após a publicação, a jornada não excede ____ horas semanais; um ano depois, 40 horas.",
+        "v": "42"
+      },
+      {
+        "d": "dc",
+        "f": "EC 141/2026, art. 8º: a exceção às regras de jornada vale para empregado com diploma de nível superior e remuneração igual ou superior a ____ vezes o teto do RGPS.",
+        "v": "2,5"
+      },
+      {
+        "d": "dc",
+        "f": "EC 141/2026, art. 10: o inciso XV do art. 7º entra em vigor ____ meses após a publicação; os demais dispositivos, na publicação.",
+        "v": "2"
+      }
     ]
   },
   {
@@ -220,6 +271,28 @@
         "a": true,
         "e": "Certo. É o art. 1.035-A, §7º."
       }
+    ],
+    "lacunas": [
+      {
+        "d": "pc",
+        "f": "CPC, art. 1.035-A, §6º: só se deixa de conhecer do recurso especial por falta de relevância pela manifestação de ____ dos membros do órgão competente.",
+        "v": "2/3"
+      },
+      {
+        "d": "pc",
+        "f": "CPC, art. 1.035-A, §7º: reconhecida a relevância, a suspensão nacional dos processos é de ____ meses, prorrogável uma vez por mais 6.",
+        "v": "6"
+      },
+      {
+        "d": "pc",
+        "f": "A decisão do STJ que não conhece do recurso especial por ausência de relevância é ____.",
+        "v": "irrecorrível"
+      },
+      {
+        "d": "pc",
+        "f": "Lei 15.484/2026: entra em vigor após ____ dias da publicação oficial.",
+        "v": "30"
+      }
     ]
   },
   {
@@ -273,6 +346,23 @@
         "a": true,
         "e": "Certo. O juiz determina à instituição financeira que transfira o montante em 24 horas."
       }
+    ],
+    "lacunas": [
+      {
+        "d": "pc",
+        "f": "CPC, art. 529-A (Lei 15.479/2026): a indisponibilidade de ativos por saldo insuficiente fica limitada ao valor atualizado da prestação alimentícia em ____.",
+        "v": "atraso"
+      },
+      {
+        "d": "pc",
+        "f": "Convertida a indisponibilidade em penhora, a instituição financeira transfere o valor ao exequente em ____ horas.",
+        "v": "24"
+      },
+      {
+        "d": "pc",
+        "f": "Lei 15.479/2026: entra em vigor após decorrido ____ da publicação oficial.",
+        "v": "1 ano"
+      }
     ]
   },
   {
@@ -324,6 +414,18 @@
         "q": "A violação dos direitos previstos no Estatuto é considerada contrária aos direitos humanos, nos termos da Lei 12.986/2014.",
         "a": true,
         "e": "Certo. É o art. 24 da Lei 15.378/2026."
+      }
+    ],
+    "lacunas": [
+      {
+        "d": "co",
+        "f": "Estatuto dos Direitos do Paciente, art. 19: o paciente tem acesso ao prontuário sem justificativa e cópia sem ____.",
+        "v": "ônus"
+      },
+      {
+        "d": "co",
+        "f": "Estatuto dos Direitos do Paciente, art. 15: a confidencialidade das informações do paciente vale mesmo após a sua ____.",
+        "v": "morte"
       }
     ]
   },
@@ -384,6 +486,23 @@
         "a": true,
         "e": "Certo. É o novo inciso IV do art. 1º do DL 3.240/1941."
       }
+    ],
+    "lacunas": [
+      {
+        "d": "co",
+        "f": "Lei 8.213/1991, art. 115, §8º: é vedado o desconto de mensalidade associativa em benefício do INSS, ainda que com ____ expressa do beneficiário.",
+        "v": "autorização"
+      },
+      {
+        "d": "co",
+        "f": "Lei 15.327/2026, art. 3º: o desconto indevido deve ser restituído de forma integral e atualizada em até ____ dias.",
+        "v": "30"
+      },
+      {
+        "d": "co",
+        "f": "Lei 8.213/1991, art. 115, §12: após cada contratação de crédito consignado, o benefício é ____ para novas operações.",
+        "v": "bloqueado"
+      }
     ]
   },
   {
@@ -437,6 +556,33 @@
         "a": true,
         "e": "Certo. É o art. 12."
       }
+    ],
+    "lacunas": [
+      {
+        "d": "dc",
+        "f": "Lei 15.371/2026, art. 11: a licença-paternidade é de ____ dias a partir de 1º de janeiro de 2027.",
+        "v": "10"
+      },
+      {
+        "d": "dc",
+        "f": "Lei 15.371/2026, art. 11: a licença-paternidade é de 15 dias a partir de 1º de janeiro de ____ e de 20 dias a partir de 2029.",
+        "v": "2028"
+      },
+      {
+        "d": "dc",
+        "f": "Lei 15.371/2026, art. 3º: o empregado comunica o período da licença com antecedência mínima de ____ dias.",
+        "v": "30"
+      },
+      {
+        "d": "dc",
+        "f": "Lei 15.371/2026, art. 4º: é vedada a dispensa arbitrária até ____ após o término da licença-paternidade.",
+        "v": "1 mês"
+      },
+      {
+        "d": "dc",
+        "f": "Lei 15.371/2026, art. 12: em caso de filho com deficiência, a licença é acrescida de ____.",
+        "v": "1/3"
+      }
     ]
   },
   {
@@ -489,6 +635,18 @@
         "a": true,
         "e": "Certo. É o art. 6º, §3º."
       }
+    ],
+    "lacunas": [
+      {
+        "d": "pi",
+        "f": "Lei 15.500/2026: constituem receita do FDPU as dotações próprias e ____ das custas recolhidas na Justiça da União de 1º e 2º graus.",
+        "v": "5%"
+      },
+      {
+        "d": "pi",
+        "f": "Lei 15.500/2026, art. 7º, parágrafo único: é vedada a aplicação dos recursos do FDPU em despesas com ____, exceto as ações do art. 98 do ADCT.",
+        "v": "pessoal"
+      }
     ]
   },
   {
@@ -534,6 +692,18 @@
         "q": "Entre as atribuições do DDH está acompanhar a implementação de parâmetros de direitos fundamentais, inclusive pela promoção do controle de convencionalidade no Poder Judiciário.",
         "a": true,
         "e": "Certo. É o art. 1º, §1º, II."
+      }
+    ],
+    "lacunas": [
+      {
+        "d": "dh",
+        "f": "Lei 15.434/2026: o DDH é supervisionado pelo Presidente do CNJ e coordenado por um juiz ____.",
+        "v": "auxiliar"
+      },
+      {
+        "d": "dh",
+        "f": "Lei 15.434/2026: os Sistemas Internacionais de Direitos Humanos abrangem o âmbito global, sob a ONU, e o regional interamericano, vinculado à ____.",
+        "v": "OEA"
       }
     ]
   },
@@ -586,6 +756,33 @@
         "q": "A LC 225/2026 institui os programas Confia, Sintonia e OEA no âmbito da RFB.",
         "a": true,
         "e": "Certo. É o art. 18."
+      }
+    ],
+    "lacunas": [
+      {
+        "d": "tr",
+        "f": "LC 225/2026, art. 11: no âmbito federal, a inadimplência substancial exige créditos em situação irregular de R$ ____ ou mais.",
+        "v": "15 milhões"
+      },
+      {
+        "d": "tr",
+        "f": "LC 225/2026, art. 11: além do valor, os créditos devem equivaler a mais de ____ do patrimônio conhecido do sujeito passivo.",
+        "v": "100%"
+      },
+      {
+        "d": "tr",
+        "f": "LC 225/2026, art. 11, §2º, II: a inadimplência reiterada exige ____ períodos de apuração consecutivos ou 6 alternados em 12 meses.",
+        "v": "4"
+      },
+      {
+        "d": "tr",
+        "f": "LC 225/2026, art. 12: o sujeito passivo tem ____ dias, da notificação, para regularizar os créditos ou apresentar defesa antes de ser considerado devedor contumaz.",
+        "v": "30"
+      },
+      {
+        "d": "tr",
+        "f": "LC 225/2026, art. 18: os programas de conformidade são o Confia, o Sintonia e o Programa ____.",
+        "v": "OEA"
       }
     ]
   },
@@ -645,6 +842,33 @@
         "q": "Os prazos do processo administrativo fiscal previstos nos arts. 208-A a 208-J do CTN são contados em dias úteis.",
         "a": true,
         "e": "Certo. É o art. 208-D, §3º, que também exclui o dia do início e inclui o do vencimento."
+      }
+    ],
+    "lacunas": [
+      {
+        "d": "tr",
+        "f": "CTN, art. 113-A, §1º: as multas não podem exceder 75%, ou 100% em fraude, sonegação ou conluio, ou ____ na reincidência.",
+        "v": "150%"
+      },
+      {
+        "d": "tr",
+        "f": "CTN, art. 142, §5º, I: a penalidade é reduzida em ____ se houver pagamento integral do crédito no prazo da impugnação.",
+        "v": "50%"
+      },
+      {
+        "d": "tr",
+        "f": "CTN, art. 194-A, §1º: a Fazenda Pública publica parecer em até ____ dias úteis do trânsito em julgado de decisão vinculante do STF ou do STJ.",
+        "v": "90"
+      },
+      {
+        "d": "tr",
+        "f": "CTN, art. 208-D, I: o prazo para impugnação do auto de infração é de ____ dias úteis.",
+        "v": "20"
+      },
+      {
+        "d": "tr",
+        "f": "CTN, art. 211-A: o DF, os Estados e os Municípios têm ____ anos para atualizar sua legislação sobre o processo administrativo fiscal.",
+        "v": "2"
       }
     ]
   }

@@ -60,6 +60,48 @@
         "a": true,
         "e": "Certo. CPP, art. 310, §11, na redação da Lei 15.358/2026: a repetição é completa, sem convalescer qualquer ato incompleto."
       }
+    ],
+    "lacunas": [
+      {
+        "d": "dp",
+        "f": "Lei 15.358/2026, art. 2º: o crime de domínio social estruturado tem pena de reclusão de ____.",
+        "v": "20 a 40 anos"
+      },
+      {
+        "d": "dp",
+        "f": "Lei 15.358/2026, art. 3º: o favorecimento ao domínio social estruturado tem pena de reclusão de ____, e multa.",
+        "v": "12 a 20 anos"
+      },
+      {
+        "d": "ep",
+        "f": "LEP, art. 112, V (Lei 15.358/2026): o apenado primário condenado por crime hediondo ou equiparado cumpre ____ da pena para progredir de regime.",
+        "v": "70%"
+      },
+      {
+        "d": "ep",
+        "f": "LEP, art. 112, VI, d: o condenado primário por feminicídio cumpre ____ da pena, vedado o livramento condicional.",
+        "v": "75%"
+      },
+      {
+        "d": "ep",
+        "f": "LEP, art. 112, VII: o reincidente na prática de crime hediondo ou equiparado cumpre ____ da pena.",
+        "v": "80%"
+      },
+      {
+        "d": "ep",
+        "f": "LEP, art. 112, VIII: o reincidente em crime hediondo ou equiparado com resultado morte cumpre ____ da pena, vedado o livramento condicional.",
+        "v": "85%"
+      },
+      {
+        "d": "pp",
+        "f": "Lei 15.358/2026, art. 5º: o inquérito policial é concluído em 90 dias, se o indiciado estiver preso, e em ____ dias, se estiver solto, prorrogáveis por igual período.",
+        "v": "270"
+      },
+      {
+        "d": "pp",
+        "f": "CPP, art. 310 (Lei 15.358/2026): a audiência de custódia ocorre em até ____ horas da prisão, por videoconferência em tempo real.",
+        "v": "24"
+      }
     ]
   },
   {
@@ -122,6 +164,33 @@
         "a": false,
         "e": "Errado. A redução só vale se o agente não praticou ato de financiamento nem exerceu papel de liderança."
       }
+    ],
+    "lacunas": [
+      {
+        "d": "ep",
+        "f": "LEP, art. 112, caput (Lei 15.402/2026): a regra geral da progressão exige o cumprimento de, ao menos, ____ da pena no regime anterior.",
+        "v": "1/6"
+      },
+      {
+        "d": "ep",
+        "f": "LEP, art. 112, I: o apenado primário condenado por crime com violência ou grave ameaça cumpre ao menos ____ da pena, salvo crimes do Título XII do CP.",
+        "v": "25%"
+      },
+      {
+        "d": "ep",
+        "f": "LEP, art. 112, II: o apenado reincidente condenado por crime com violência ou grave ameaça cumpre ao menos ____ da pena, salvo crimes do Título XII do CP.",
+        "v": "30%"
+      },
+      {
+        "d": "ep",
+        "f": "LEP, art. 112, III: o apenado reincidente em crime diverso dos dos incisos I e II cumpre ao menos ____ da pena.",
+        "v": "20%"
+      },
+      {
+        "d": "dp",
+        "f": "CP, art. 359-M-B: crimes do Capítulo II do Título XII praticados em contexto de multidão têm a pena reduzida de ____, salvo financiamento ou liderança.",
+        "v": "1/3 a 2/3"
+      }
     ]
   },
   {
@@ -174,6 +243,18 @@
         "a": false,
         "e": "Errado. O art. 217-A, §5º, do CP afasta qualquer relevância da experiência sexual anterior."
       }
+    ],
+    "lacunas": [
+      {
+        "d": "dp",
+        "f": "CP, art. 217-A, §4º-A: a presunção de vulnerabilidade da vítima de estupro de vulnerável é ____, inadmitida a relativização.",
+        "v": "absoluta"
+      },
+      {
+        "d": "dp",
+        "f": "A Súmula ____ do STJ afirma que o consentimento, a experiência sexual anterior e o relacionamento amoroso são irrelevantes para o estupro de vulnerável.",
+        "v": "593"
+      }
     ]
   },
   {
@@ -224,6 +305,28 @@
         "q": "A pena do vicaricídio é aumentada de 1/3 a 1/2 se o crime é cometido contra criança, adolescente, idoso ou pessoa com deficiência.",
         "a": true,
         "e": "Certo. Também aumenta se o crime ocorre na presença da mulher ou em descumprimento de medida protetiva."
+      }
+    ],
+    "lacunas": [
+      {
+        "d": "dp",
+        "f": "CP, art. 121-B (vicaricídio): a pena é de reclusão de ____.",
+        "v": "20 a 40 anos"
+      },
+      {
+        "d": "dp",
+        "f": "CP, art. 121-B: a pena do vicaricídio é aumentada de ____ se o crime é cometido contra criança, adolescente, idoso ou pessoa com deficiência.",
+        "v": "1/3 a 1/2"
+      },
+      {
+        "d": "dp",
+        "f": "Lei Maria da Penha, art. 7º, VI: violência ____ é a praticada contra pessoa próxima da mulher com o fim de atingi-la.",
+        "v": "vicária"
+      },
+      {
+        "d": "dp",
+        "f": "Lei 8.072/1990, art. 1º, ____: o vicaricídio é crime hediondo.",
+        "v": "I-C"
       }
     ]
   },
@@ -276,6 +379,53 @@
         "a": true,
         "e": "Certo. É a redação do preceito secundário do caput do art. 171."
       }
+    ],
+    "lacunas": [
+      {
+        "d": "dp",
+        "f": "CP, art. 155, caput (Lei 15.397/2026): o furto é punido com reclusão de ____, e multa.",
+        "v": "1 a 6 anos"
+      },
+      {
+        "d": "dp",
+        "f": "CP, art. 155, §1º: o furto praticado durante o repouso noturno tem a pena aumentada de ____.",
+        "v": "metade"
+      },
+      {
+        "d": "dp",
+        "f": "CP, art. 155, §4º-B: o furto mediante fraude eletrônica é punido com reclusão de ____, e multa.",
+        "v": "4 a 10 anos"
+      },
+      {
+        "d": "dp",
+        "f": "CP, art. 157, caput (Lei 15.397/2026): o roubo é punido com reclusão de ____, e multa.",
+        "v": "6 a 10 anos"
+      },
+      {
+        "d": "dp",
+        "f": "CP, art. 157, §3º, II: o roubo com resultado morte é punido com reclusão de ____, e multa.",
+        "v": "24 a 30 anos"
+      },
+      {
+        "d": "dp",
+        "f": "CP, art. 171, caput (Lei 15.397/2026): o estelionato é punido com reclusão de ____, e multa.",
+        "v": "1 a 5 anos"
+      },
+      {
+        "d": "dp",
+        "f": "CP, art. 171, §2º-A: o estelionato cometido por fraude eletrônica é punido com reclusão de ____, e multa.",
+        "v": "4 a 8 anos"
+      },
+      {
+        "d": "dp",
+        "f": "CP, art. 180, caput (Lei 15.397/2026): a receptação é punida com reclusão de ____, e multa.",
+        "v": "2 a 6 anos"
+      },
+      {
+        "d": "dp",
+        "f": "Lei 15.397/2026, art. 3º: foi revogado o §5º do art. 171 do CP, que exigia ____ para o estelionato.",
+        "v": "representação"
+      }
     ]
   },
   {
@@ -326,6 +476,18 @@
         "q": "A Lei 15.407/2026 foi integralmente sancionada, sem nenhum veto.",
         "a": false,
         "e": "Errado. Houve vetos a dispositivos do art. 52 da LEP (§1º, III e IV, e §§8º e 9º)."
+      }
+    ],
+    "lacunas": [
+      {
+        "d": "ep",
+        "f": "LEP, art. 54, §3º (Lei 15.407/2026): o juiz decide liminarmente sobre o RDD e a decisão final sai em até ____ dias, após manifestação do MP e da defesa.",
+        "v": "15"
+      },
+      {
+        "d": "ep",
+        "f": "LEP, art. 52, §10: o RDD pode ser requerido desde a data do ____ do preso.",
+        "v": "recolhimento"
       }
     ]
   },
@@ -382,6 +544,38 @@
         "a": false,
         "e": "Errado. A lei incluiu crimes do ECA no rol da Lei 8.072/1990 e criou o inciso VI do art. 313 do CPP."
       }
+    ],
+    "lacunas": [
+      {
+        "d": "ec",
+        "f": "ECA, art. 240 (Lei 15.487/2026): produzir conteúdo de violência sexual contra criança ou adolescente é punido com reclusão de ____, e multa.",
+        "v": "4 a 10 anos"
+      },
+      {
+        "d": "ec",
+        "f": "ECA, art. 241-B: adquirir, possuir ou armazenar esse tipo de registro é punido com reclusão de ____, e multa.",
+        "v": "3 a 6 anos"
+      },
+      {
+        "d": "ec",
+        "f": "ECA, art. 241-C: simular a participação de criança em conteúdo de violência sexual, inclusive com IA, é punido com reclusão de ____, e multa.",
+        "v": "3 a 5 anos"
+      },
+      {
+        "d": "ec",
+        "f": "ECA, art. 241-D: aliciar, assediar ou constranger menor de ____ anos com o fim de praticar ato libidinoso é punido com reclusão de 3 a 5 anos.",
+        "v": "14"
+      },
+      {
+        "d": "ec",
+        "f": "ECA, art. 190-F, §3º: a requisição direta de registros de conexão deve ser comunicada ao juiz em até ____ horas.",
+        "v": "48"
+      },
+      {
+        "d": "ec",
+        "f": "ECA, art. 226-A: a pena aumenta de ____ quando o agente usa proxy ou mascaramento de IP para dificultar sua identificação.",
+        "v": "1/3 a 2/3"
+      }
     ]
   },
   {
@@ -434,6 +628,18 @@
         "q": "A Lei de Tortura passou a prever a submissão reiterada da mulher a intenso sofrimento no contexto de violência doméstica.",
         "a": true,
         "e": "Certo. É o art. 1º, III, da Lei 9.455/1997."
+      }
+    ],
+    "lacunas": [
+      {
+        "d": "ep",
+        "f": "LEP, art. 52, §8º (Lei 15.410/2026): o condenado por violência doméstica contra a mulher, violento ou ameaçador, pode ser submetido ao ____.",
+        "v": "RDD"
+      },
+      {
+        "d": "dp",
+        "f": "Lei 9.455/1997, art. 1º, III: configura tortura submeter a mulher, de forma ____, a intenso sofrimento no contexto de violência doméstica.",
+        "v": "reiterada"
       }
     ]
   }
