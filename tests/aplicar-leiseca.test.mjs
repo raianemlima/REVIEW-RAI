@@ -46,6 +46,20 @@ const leiFicticia = {
   cartoes: [{ g: 0, a: "1", origem: "CP, art. 1", tema: "art. 1", frente: "CP, Art. 1º: complete a lacuna.\nArt. 1º ______ fictício.", verso: "Texto", porque: "Fixture." }],
 };
 
+test("a fonte da lei seca grifada vai ao leitor sem nome de curso ou produto comercial", async () => {
+  const pasta = await mkdtemp(join(tmpdir(), "leiseca-")), bins = join(pasta, "bins");
+  await mkdir(bins);
+  const senha = "senha-de-teste", chave = randomBytes(32).toString("base64");
+  await escreverDeck(pasta, senha, { disciplinas: [{ id: "dp", nome: "Direito Penal", curto: "Penal" }], cartoes: [], leiseca: [] });
+  await writeFile(join(pasta, "index.html"), "<!doctype html>");
+  await cifrarLei(bins, chave, { ...leiFicticia, fonte: "Decorando a Lei Seca · Legislação Decodificada (material adquirido pela titular do app, uso pessoal)" });
+  await run("node", [script, join(pasta, "index.html")], { env: { ...process.env, APP_SENHA: senha, LEISECA_CHAVE: chave, LEISECA_PASTA: bins, LEISECA_PUBLICA: join(pasta, "sem-publicas") } });
+  const { deck } = await lerDeck(pasta, senha), lei = deck.leiseca.find(l => l.id === "cp-dls");
+  assert.doesNotMatch(lei.fonte + " " + lei.nome, /Decorando|Decodificad|curso/i);
+  assert.match(lei.fonte, /Lei seca grifada/);
+  assert.ok(deck.cartoes.filter(c => c.id.startsWith("ls-cp-dls")).every(c => !/curso/i.test(c.fonte)), "fonte dos cartões sem curso");
+});
+
 test("insere a lei seca do curso e os cartões no baralho, mantendo o sal e resolvendo a disciplina pelo nome", async () => {
   const pasta = await mkdtemp(join(tmpdir(), "leiseca-")), bins = join(pasta, "bins");
   await mkdir(bins);
@@ -66,6 +80,8 @@ test("insere a lei seca do curso e os cartões no baralho, mantendo o sal e reso
   assert.equal(lei.disc, "dp", "Penal não pode cair em Processo Penal");
   assert.equal(lei.completa, true);
   assert.equal(lei.grupos[0].itens[0].n, 7);
+  assert.equal(lei.nome, "Código Penal · com grifos", "o leitor não mostra o nome do produto de origem");
+  assert.equal(lei.fonte, "Fixture");
   const novos = deck.cartoes.filter(c => c.id.startsWith("ls-cp-dls"));
   assert.equal(novos.length, 1);
   assert.deepEqual({ id: novos[0].id, disc: novos[0].disc, tipo: novos[0].tipo, ord: novos[0].ord }, { id: "ls-cp-dls1-001", disc: "dp", tipo: "lei_seca", ord: 11 });

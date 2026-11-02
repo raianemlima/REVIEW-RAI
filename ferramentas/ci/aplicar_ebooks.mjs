@@ -1,7 +1,7 @@
-// Usado na publicação (GitHub Actions): insere no baralho cifrado os e-books "Conteúdo específico" (Aprofundamento).
+// Usado na publicação (GitHub Actions): insere no baralho cifrado os e-books do Aprofundamento (resumos por matéria e livros).
 // Uso: APP_SENHA=... node ferramentas/ci/aplicar_ebooks.mjs _site/index.html
 //
-// Os e-books ficam em conteudo-cifrado/*.bin, "selados" com a chave pública da lei seca do curso
+// Os e-books ficam em conteudo-cifrado/*.bin, "selados" com a chave pública da lei seca grifada
 // (leiseca-cifrada/chave-publica.txt, veja ferramentas/ci/leiseca_selada.mjs): no repositório público não há texto
 // legível do material de estudo; só a senha do app (APP_SENHA) abre. Cada .bin traz {"ebooks": [{id, titulo, caps, ...}]}.
 // O e-book entra em DECK.ebooks no lugar do que tiver o mesmo id. O baralho é decifrado e cifrado de novo com o MESMO
@@ -17,7 +17,7 @@ const pasta = process.env.EBOOKS_PASTA || "conteudo-cifrado";
 if (!arq) { console.error("Uso: node aplicar_ebooks.mjs index.html"); process.exit(1); }
 const bins = existsSync(pasta) ? readdirSync(pasta).filter(f => f.endsWith(".bin")).sort() : [];
 if (!bins.length) { console.log(`Nenhum e-book em ${pasta}/.`); process.exit(0); }
-if (!senha) { console.log("::notice::Segredo APP_SENHA não configurado: e-books de conteúdo específico não aplicados."); process.exit(0); }
+if (!senha) { console.log("::notice::Segredo APP_SENHA não configurado: e-books do Aprofundamento não aplicados."); process.exit(0); }
 const par = parDaSenha(senha);
 
 const ebooks = [], aplicados = [];
@@ -59,4 +59,4 @@ const iv = randomBytes(12);
 const ct = new Uint8Array(await crypto.subtle.encrypt({ name: "AES-GCM", iv }, key, gzipSync(Buffer.from(JSON.stringify(deck), "utf8"), { level: 9 })));
 writeFileSync(caminhoDeck, JSON.stringify({ ...enc, z: "gzip", iv: b64(iv), ct: b64(ct) }));
 const caps = ebooks.reduce((s, e) => s + e.caps.length, 0);
-console.log(`ok: ${ebooks.length} e-book(s) de conteúdo específico no baralho (${novos} novo(s), ${trocados} atualizado(s); ${caps} capítulos; ${aplicados.join(", ")})`);
+console.log(`ok: ${ebooks.length} e-book(s) do Aprofundamento no baralho (${novos} novo(s), ${trocados} atualizado(s); ${caps} capítulos; ${aplicados.join(", ")})`);

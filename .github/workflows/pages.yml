@@ -42,7 +42,7 @@ jobs:
           APP_SENHA: ${{ secrets.APP_SENHA }}
           LEISECA_CHAVE: ${{ secrets.LEISECA_CHAVE }}
         run: node ferramentas/ci/aplicar_leiseca.mjs _site/index.html
-      - name: E-books de conteúdo específico no Aprofundamento (segredo APP_SENHA)
+      - name: E-books do Aprofundamento (segredo APP_SENHA)
         env:
           APP_SENHA: ${{ secrets.APP_SENHA }}
         run: node ferramentas/ci/aplicar_ebooks.mjs _site/index.html

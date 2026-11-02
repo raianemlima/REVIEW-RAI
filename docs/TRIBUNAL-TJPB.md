@@ -7,7 +7,7 @@ Preparação para o Edital nº 01/2026 do TJPB (FGV), cargo de Analista Judiciá
 - **Aba Tribunal** (menu e atalho em Hoje): cronograma pessoal de 12 semanas, 4 horas por dia, sem Língua Portuguesa por escolha da titular (as 10 questões continuam valendo). As caixas de cada bloco ficam em `S.ajustes.tjpb.feitos` e sincronizam como os demais ajustes. Em cada bloco de assunto, **No app para este bloco** usa o motor do Cronograma para listar cartões, lei seca, súmulas/teses e questões ligados ao tema, com botões que abrem o conteúdo. Os blocos de súmulas e teses usam os assuntos jurídicos do mesmo dia.
 - **Cronograma por assuntos**: o edital `tjpb-2026` (servidor, fora do relatório dos editais de Defensor) traz 10 rubricas e 84 tópicos do Anexo I, com a página do edital e as leis citadas em cada item. As 40 questões específicas não são divididas pelo edital; a sugestão de tempo divide igualmente (5,71 por matéria) e a nota do perfil explica isso.
 - **Plano estratégico** (`plano-tjpb-2026.html`): página offline com raio-x do edital, leitura estratégica, mapa do que mais cai, perfil da FGV, rotina, cronograma (só leitura), discursiva e dia da prova. Abre pela aba Tribunal e pelo Cronograma.
-- **Lei seca do curso**: o leitor de Lei seca mostra, quando a lei tem esses campos, os grifos por cor (pegadinha, ponto cobrado, caiu dos dois jeitos, literal), o número de questões por artigo, os concursos recentes, a jurisprudência correlata, os avisos do STF e as assertivas das bancas; ganha os filtros **muito cobrado (6+)** e **caiu na FGV**. A aba Tribunal lista os artigos mais cobrados de cada lei do curso.
+- **Lei seca grifada**: o leitor de Lei seca mostra, quando a lei tem esses campos, os grifos por cor (pegadinha, ponto cobrado, caiu dos dois jeitos, literal), o número de questões por artigo, os concursos recentes, a jurisprudência correlata, os avisos do STF e as assertivas das bancas; ganha os filtros **muito cobrado (6+)** e **caiu na FGV**. A aba Tribunal lista os artigos mais cobrados de cada lei grifada.
 
 ## Manutenção
 
@@ -32,22 +32,22 @@ Normas oficiais que o edital cita e que o baralho não tinha entram como lei sec
 
 ## Marcação colorida automática
 
-Toda lei seca do app sem os grifos do curso recebe na publicação uma marcação por tipo de termo (`ferramentas/ci/grifos_auto.mjs`, chamado por `aplicar_leiseca.mjs`):
+Toda lei seca do app sem os grifos do material recebe na publicação uma marcação por tipo de termo (`ferramentas/ci/grifos_auto.mjs`, chamado por `aplicar_leiseca.mjs`):
 - **vermelho:** prazo, número, percentual ou quórum;
 - **azul:** exceção, vedação ou restrição;
 - **dourado:** dever, competência, nulidade ou "de ofício";
 - **marinho:** definição legal.
 
-As notas "(Redação dada pela Lei ...)" ficam sem marca. O leitor mostra a legenda própria ("marcação automática do app"), e a lei do curso continua com os grifos e a legenda do professor. A marcação não vem de estatística de questões: ela destaca os tipos de termo que as bancas mais exploram na literalidade.
+As notas "(Redação dada pela Lei ...)" ficam sem marca. O leitor mostra a legenda própria ("marcação automática do app"), e a lei grifada continua com os grifos e a legenda dos grifos. A marcação não vem de estatística de questões: ela destaca os tipos de termo que as bancas mais exploram na literalidade.
 
-## Lei seca do curso (Decorando a Lei Seca)
+## Lei seca grifada
 
 Os PDFs são material pago e trazem marca d'água com dados pessoais da compradora. Por isso só o **conteúdo extraído e cifrado** entra no repositório, nunca o PDF nem o texto em claro.
 
-No leitor, a lei do curso aparece com o nome da lei ("CDC", "LEP" etc.). Quando ela cobre a mesma lei de uma seleção curta que o app já tinha (CDC, Estatuto da Pessoa Idosa, Maria da Penha e, quando vier, a CF), o campo `substitui` faz a publicação tirar a seleção antiga do leitor. Os cartões dessa seleção continuam no baralho.
+No leitor, a lei grifada aparece com o nome da lei ("CDC", "LEP" etc.). Quando ela cobre a mesma lei de uma seleção curta que o app já tinha (CDC, Estatuto da Pessoa Idosa, Maria da Penha e, quando vier, a CF), o campo `substitui` faz a publicação tirar a seleção antiga do leitor. Os cartões dessa seleção continuam no baralho.
 
 1. Extrair (descarta a marca d'água e confere a saída): `python ferramentas/conteudo/leiseca_decodificada.py saida/ arquivo1.pdf arquivo2.pdf ...`
-2. Selar: `node ferramentas/ajustes/cifrar_leiseca.mjs saida/` → `leiseca-cifrada/<id>.bin`. O script usa a chave **pública** de `leiseca-cifrada/chave-publica.txt` e não precisa de segredo nenhum: o `.bin` só abre com a senha do app (segredo `APP_SENHA`, que já existe). A chave pública sai da própria senha (`ferramentas/ci/leiseca_selada.mjs`: PBKDF2-SHA-256 com 600 mil iterações, como o `deck.enc`, e par X25519) e aparece no log de toda publicação, na linha "chave pública da lei seca do curso". Se a senha do app mudar, copie a chave nova do log para `chave-publica.txt` e sele de novo; até lá, a publicação avisa e deixa a lei seca do curso de fora, sem quebrar o resto.
+2. Selar: `node ferramentas/ajustes/cifrar_leiseca.mjs saida/` → `leiseca-cifrada/<id>.bin`. O script usa a chave **pública** de `leiseca-cifrada/chave-publica.txt` e não precisa de segredo nenhum: o `.bin` só abre com a senha do app (segredo `APP_SENHA`, que já existe). A chave pública sai da própria senha (`ferramentas/ci/leiseca_selada.mjs`: PBKDF2-SHA-256 com 600 mil iterações, como o `deck.enc`, e par X25519) e aparece no log de toda publicação, na linha "chave pública da lei seca do curso". Se a senha do app mudar, copie a chave nova do log para `chave-publica.txt` e sele de novo; até lá, a publicação avisa e deixa a lei seca grifada de fora, sem quebrar o resto.
 3. Publicar (push na `main`): o passo "Lei seca extra no baralho" insere a lei seca pública, abre os `.bin` selados com `APP_SENHA`, abre o baralho com a mesma senha, troca as leis `*-dls` e os cartões `ls-<id>…` e cifra de novo com o mesmo sal. Sem `APP_SENHA`, o passo não faz nada. Se os `.bin` mudarem depois de publicados, suba `CACHE`/`APP_CACHE` para os aparelhos baixarem o baralho novo.
 
 O modo antigo, com chave simétrica, continua aceito: com a variável `LEISECA_CHAVE` definida, o `cifrar_leiseca.mjs` usa essa chave, e a publicação abre esses `.bin` com o segredo `LEISECA_CHAVE`.

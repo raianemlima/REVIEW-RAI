@@ -255,7 +255,7 @@
       const tiles = [...ler.querySelectorAll(":scope > .es-t")];
       const chave = t => t.id || t.dataset.estab || "";
       const extras = tiles.filter(t => !LEITURA_PRINCIPAL.includes(chave(t)) || (chave(t) === "tribunal" && direcao() !== "tj"));
-      // conteúdo específico (Aprofundamento) primeiro
+      // Aprofundamento (resumos por matéria) primeiro
       const eb = tiles.find(t => t.id === "goEb"); if (eb) ler.prepend(eb);
       recolher(ler, extras, "Mais materiais de leitura");
     }

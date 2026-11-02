@@ -164,7 +164,7 @@ def gerar():
     ramos = list(dict.fromkeys(RAMOS.values()))
     saida, novos = juntar(saida, ramos)
     dados = {"titulo": "Teses de repercussão geral e temas repetitivos mais importantes para a Defensoria",
-             "atualizado": "2026-10-17", "fonte": "Compilações “Teses de Repercussão Geral e Temas Repetitivos mais importantes para as Defensorias Públicas” (abril/2026) e “Teses de Repercussão Geral & Temas Repetitivos” (Cursos DUO, julho/2026), mais temas julgados ou afetados até outubro/2026",
+             "atualizado": "2026-10-17", "fonte": "Compilações de teses de repercussão geral e temas repetitivos mais importantes para as Defensorias Públicas (abril e julho/2026), mais temas julgados ou afetados até outubro/2026",
              "ramos": ramos, "itens": saida}
     SAIDA.write_text(json.dumps(dados, ensure_ascii=False, indent=1), encoding="utf-8")
     from collections import Counter
