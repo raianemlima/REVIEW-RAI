@@ -1,6 +1,8 @@
 # Informativos · STF e STJ
 
-Aba **Informativos**: julgados dos Informativos do STF e do Informativo de Jurisprudência do STJ desde 2024 (texto oficial, público), com busca, filtro por tribunal, ano e matéria, filtro "só com tese/destaque" e marcação de lido (`S.ajustes.inf.lidos`, sincroniza com os demais ajustes).
+Aba **Informativos**: julgados dos Informativos do STF e do Informativo de Jurisprudência do STJ desde 2024 (texto oficial, público), com busca, filtro por tribunal, ano e matéria, filtro "com tese/destaque" e marcação de lido (`S.ajustes.inf.lidos`, sincroniza com os demais ajustes).
+
+No celular (até 560 px), os números ficam lado a lado, a busca e a matéria ocupam a linha inteira, tribunal e ano dividem uma linha e os filtros de marcar viram botões. A matéria vem do ramo antes do primeiro travessão (–, — ou -) e das vírgulas: sem isso, o filtro ganhava opções de mais de 250 caracteres e alargava a tela.
 
 ## Dados
 
