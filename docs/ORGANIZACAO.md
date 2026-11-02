@@ -25,7 +25,7 @@ Todo o resto (ajuste da meta diária, sua semana, fila de revisão, reflexão, p
 
 ## Estudar
 
-- **Ler e aprender** mostra Aprofundamento (com o conteúdo específico), Lei seca e Informativos; os demais materiais ficam em "Mais materiais de leitura". Tribunal aparece na direção Tribunal.
+- **Ler e aprender** mostra Aprofundamento (com os resumos por matéria), Lei seca e Informativos; os demais materiais ficam em "Mais materiais de leitura". Tribunal aparece na direção Tribunal.
 - Os modos ainda sem conteúdo ("Sem cartões ainda") ficam em "Modos que liberam conforme você estuda".
 - Sem nenhum erro registrado, a seção "Consertar os erros" some.
 - Sem cartões para revisar, o quadro "Próximo bloco" some: o caminho está em Hoje.

@@ -218,34 +218,39 @@
     return itens.find(x => x.motivo === 'lei citada no edital') || itens.find(x => daDisc.has(x.item.id)) || null;
   }
   function acoesAssunto(p, b) {
-    const t = trechosDoAssunto(p, b), r = conteudoRelacionado(p, b), out = [];
-    if (t && t.n) out.push({ ico: '📖', txt: `Ler os trechos (${t.n})`, ir: { v: 'eb', id: t.id, ci: t.ci, a: `eb${t.ci}-${t.k}` }, tipo: 'trechos' });
+    const t = resumoDoAssunto(p, b), r = conteudoRelacionado(p, b), out = [];
+    if (t && t.n) out.push({ ico: '📖', txt: 'Ler o resumo', ir: { v: 'eb', id: t.id, ci: t.ci, a: `eb${t.ci}-${t.k}` }, tipo: 'resumo' });
     const L = leiDoAssunto(p, b, r);
     if (L) { const arts = L.artigos || []; out.push({ ico: '⚖️', txt: `Lei seca${L.item.curto ? ': ' + L.item.curto : ''}`, ir: { v: 'lei', dip: L.item.id, gi: arts[0]?.gi || 0, q: arts.length === 1 ? String(arts[0].a) : '' }, tipo: 'lei' }); }
     const Q = r?.questoes, qp = Q?.itens?.find(x => x.fonte === 'prova'), qc = Q?.itens?.find(x => x.fonte === 'cartao');
     if (qp) out.push({ ico: '❓', txt: `Questões (${Q.total})`, ir: { v: 'prova', id: qp.prova.id, mat: qp.item.materia || '', n: qp.item.n }, tipo: 'questoes' });
     else if (qc) out.push({ ico: '❓', txt: `Questões (${Q.total})`, ir: { v: 'lib', disc: qc.item.disc || '', tipo: 'multipla_escolha', q: '', tema: '' }, tipo: 'questoes' });
     if (!out.length) out.push({ ico: '🔎', txt: 'Buscar o assunto no app', ir: { v: 'busca', q: (b.objeto?.titulo || b.topico || '').replace(/^\s*\d+(?:\.\d+)*\s*/, '').replace(/[.;:]+$/, '').slice(0, 60) }, tipo: 'busca' });
-    return { acoes: out, trechos: t };
+    return { acoes: out, resumo: t };
   }
   function acoesHtml(p, b) {
-    const { acoes, trechos } = acoesAssunto(p, b);
-    const sem = trechos && !trechos.n ? `<small class="cr-sem-trecho" data-cr-trechos="0">Sem trecho doutrinário no seu material.</small>` : '';
+    const { acoes, resumo } = acoesAssunto(p, b);
+    const sem = resumo && !resumo.n ? `<small class="cr-sem-trecho" data-cr-resumo="0">Sem resumo deste assunto: estude pela lei seca e pelos cartões.</small>` : '';
     return `<div class="cr-acoes">${acoes.map((a, i) => `<button type="button" class="btn small ${i ? '' : 'primary'}" data-cr-acao="${a.tipo}" ${irAttr(a.ir)}>${a.ico} ${escLocal(a.txt)}</button>`).join('')}</div>${sem}`;
   }
-  // trechos doutrinários do material pessoal (e-book "Conteúdo específico" do edital, no Aprofundamento)
-  function trechosDoAssunto(p, b) {
-    const ebs = globalOu(() => DECK.ebooks, []) || [];
-    const e = ebs.find(x => x && x.edital === p.conteudoId && x.mapa && Object.hasOwn(x.mapa, b.topicoId));
-    if (!e) return null;
-    const [ci, k, n] = e.mapa[b.topicoId] || [];
-    return Number.isInteger(ci) && Number.isInteger(k) ? { id: e.id, titulo: e.titulo, ci, k, n: Number(n) || 0 } : null;
+  // resumo do assunto nos e-books "Resumos por matéria" (Aprofundamento): e.editais[edital][tópico] = [capítulo, âncora, 1],
+  // ou null quando o assunto do edital não tem resumo
+  function resumoDoAssunto(p, b) {
+    let semResumo = null;
+    for (const e of globalOu(() => DECK.ebooks, []) || []) {
+      const m = e && e.editais && e.editais[p.conteudoId];
+      if (!m || !Object.hasOwn(m, b.topicoId)) continue;
+      const [ci, k] = m[b.topicoId] || [];
+      if (Number.isInteger(ci) && Number.isInteger(k) && e.caps?.[ci]) return { id: e.id, titulo: e.titulo, cap: e.caps[ci].t, ci, k, n: 1 };
+      semResumo ||= { id: e.id, titulo: e.titulo, n: 0 };
+    }
+    return semResumo;
   }
-  function trechosHtml(p, b) {
-    const t = trechosDoAssunto(p, b);
+  function resumoHtml(p, b) {
+    const t = resumoDoAssunto(p, b);
     if (!t) return '';
-    if (!t.n) return `<p class="cr-trechos cr-trechos-vazio" data-cr-trechos="0">Sem trecho doutrinário deste assunto no seu material: estude pela lei seca, pelos cartões e pelas fontes oficiais.</p>`;
-    return `<p class="cr-trechos" data-cr-trechos="${t.n}"><button type="button" class="btn small primary" ${irAttr({ v: 'eb', id: t.id, ci: t.ci, a: `eb${t.ci}-${t.k}` })}>📖 Estudar os trechos doutrinários</button><small>${t.n} ${t.n === 1 ? 'trecho' : 'trechos'} do seu material · ${escLocal(t.titulo)}</small></p>`;
+    if (!t.n) return `<p class="cr-trechos cr-trechos-vazio" data-cr-resumo="0">Sem resumo deste assunto: estude pela lei seca, pelos cartões e pelas fontes oficiais.</p>`;
+    return `<p class="cr-trechos" data-cr-resumo="1"><button type="button" class="btn small primary" ${irAttr({ v: 'eb', id: t.id, ci: t.ci, a: `eb${t.ci}-${t.k}` })}>📖 Ler o resumo</button><small>${escLocal(t.titulo)} › ${escLocal(t.cap)}</small></p>`;
   }
   const resumir = (s, n = 160) => { const x = String(s || '').replace(/\s+/g, ' ').trim(); return x.length > n ? x.slice(0, n) + '…' : x; };
   const frenteCartao = c => c.tipo === 'multipla_escolha' && typeof parseMC === 'function' ? globalOu(() => parseMC(c.frente).stem, c.frente) : c.frente;
@@ -261,7 +266,7 @@
   function resumoRelacionado(r) {
     if (!r) return '';
     const partes = GRUPOS_REL.filter(([g]) => r[g].total).map(([g, nome]) => `${r[g].total} ${nome.toLowerCase()}`);
-    return `<p class="cr-app-resumo" data-cr-app-resumo>${partes.length ? `<b>No app para este assunto:</b> ${escLocal(partes.join(' · '))}` : 'Ainda não há conteúdo específico do app para este assunto; use o edital e as fontes oficiais.'}</p>`;
+    return `<p class="cr-app-resumo" data-cr-app-resumo>${partes.length ? `<b>No app para este assunto:</b> ${escLocal(partes.join(' · '))}` : 'Ainda não há conteúdo do app ligado a este assunto; use o edital e as fontes oficiais.'}</p>`;
   }
   function plataformaHtml(r, p, b) {
     if (!r) return '';
@@ -302,7 +307,7 @@
     const feito=!!registros()[chave(p,b)]?.concluido;
     const disponiveis=disciplina(b.disciplinaId,p).topicos||[];
     if(ativo)return `<article class="cr-bloco cr-tarefa ${feito?'cr-feito':''}" data-cr-bloco="${b.id}"><small>${escLocal(b.nome)} · ${b.minutos} min${b.tipo==='revisita'?' · revisita':''}</small><h4>${escLocal(b.topico)}</h4>${acoesHtml(p,b)}<label class="cr-concluir cr-concluir-btn"><input type="checkbox" data-cr-concluir="${escLocal(chave(p,b))}" ${feito?'checked':''}> ${feito?'Assunto estudado':'Marcar como estudado'}</label>${liberaHtml(p,b)}${materialHtml(p,b,true)}</article>`;
-    return `<article class="cr-bloco ${feito?'cr-feito':''}" data-cr-bloco="${b.id}"><small>${escLocal(b.nome)} · ${b.minutos} min${b.tipo==='revisita'?' · revisita após percorrer os assuntos':''}</small><h4>${escLocal(b.topico)}</h4>${trechosHtml(p,b)}${resumoRelacionado(conteudoRelacionado(p,b))}${materialHtml(p,b)}<label class="cr-concluir"><input type="checkbox" data-cr-concluir="${escLocal(chave(p,b))}" ${feito?'checked':''}> Estudei este assunto</label>${liberaHtml(p,b)}${ativo?'':`<label class="field cr-trocar"><span>Escolher outro assunto deste bloco</span><select data-cr-trocar="${b.id}">${disponiveis.filter(t=>t.id===b.topicoId||!registros()[motor().chaveTopico(p.conteudoId,b.disciplinaId,t.id)]?.concluido).map(t=>`<option value="${escLocal(t.id)}" ${t.id===b.topicoId?'selected':''}>${escLocal(t.titulo)}</option>`).join('')}</select></label>`}</article>`;
+    return `<article class="cr-bloco ${feito?'cr-feito':''}" data-cr-bloco="${b.id}"><small>${escLocal(b.nome)} · ${b.minutos} min${b.tipo==='revisita'?' · revisita após percorrer os assuntos':''}</small><h4>${escLocal(b.topico)}</h4>${resumoHtml(p,b)}${resumoRelacionado(conteudoRelacionado(p,b))}${materialHtml(p,b)}<label class="cr-concluir"><input type="checkbox" data-cr-concluir="${escLocal(chave(p,b))}" ${feito?'checked':''}> Estudei este assunto</label>${liberaHtml(p,b)}${ativo?'':`<label class="field cr-trocar"><span>Escolher outro assunto deste bloco</span><select data-cr-trocar="${b.id}">${disponiveis.filter(t=>t.id===b.topicoId||!registros()[motor().chaveTopico(p.conteudoId,b.disciplinaId,t.id)]?.concluido).map(t=>`<option value="${escLocal(t.id)}" ${t.id===b.topicoId?'selected':''}>${escLocal(t.titulo)}</option>`).join('')}</select></label>`}</article>`;
   }
   function semanaPreview(p,w=0) {
     if(!motor()||!unidades(p).length)return dias.map(([id,n])=>`<div class="cr-dia ${p.dias.includes(id)?'':'off'}"><b>${n}</b><small>${p.dias.includes(id)?minutosPorDia(p)+' min disponíveis':'dia livre'}</small>${p.dias.includes(id)?'<p>Escolha o edital de conteúdo para montar os assuntos.</p>':''}</div>`).join('');

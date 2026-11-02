@@ -1,7 +1,7 @@
 // Sela e-books (JSON do Aprofundamento) com a chave pública do app, para irem ao repositório público sem texto legível.
-// Uso: node ferramentas/ajustes/selar_conteudo.mjs conteudo-cifrado/ce-dpe-rn.bin ebook1.json [ebook2.json ...]
+// Uso: node ferramentas/ajustes/selar_conteudo.mjs conteudo-cifrado/resumos-por-materia.bin ebook1.json [ebook2.json ...]
 //
-// Usa a mesma chave pública da lei seca do curso (leiseca-cifrada/chave-publica.txt, derivada da senha do app):
+// Usa a mesma chave pública da lei seca grifada (leiseca-cifrada/chave-publica.txt, derivada da senha do app):
 // não precisa de segredo nenhum para selar; só a publicação (ferramentas/ci/aplicar_ebooks.mjs, com APP_SENHA) abre.
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, join } from "node:path";

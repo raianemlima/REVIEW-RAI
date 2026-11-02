@@ -2,14 +2,15 @@
 
     python ferramentas/conteudo/ebook_md.py LIVRO.md id disc "Título" "Subtítulo" SAIDA.json
 
-- cada "## Capítulo N — NOME" vira um capítulo do app (id cN); o que vem antes do capítulo 1 só entra se tiver
-  "APRESENTAÇÃO" (capa, ficha, sumário e "sobre o autor" ficam de fora: o app já tem navegação por capítulo);
+- cada "## Capítulo N — NOME" vira um capítulo do app (id cN); o que vem antes do capítulo 1 (capa, ficha, apresentação
+  da editora, sumário e "sobre o autor") fica de fora: o app já tem navegação por capítulo e não mostra a origem comercial;
+- menções à editora/curso no meio do texto saem (NEUTRO) e o script avisa se sobrar alguma (MARCA);
 - títulos internos descem um nível ("###" -> "##"), porque o renderizador do Aprofundamento mostra "##" como h3 e só
   lista no sumário do capítulo os títulos até h4;
 - o renderizador não remove barras de escape: "\\*" vira "∗", "\\_" e "\\`" voltam ao caractere, "\\|" em tabela vira "/".
 
 Depois: node ferramentas/ajustes/selar_conteudo.mjs conteudo-cifrado/<arquivo>.bin SAIDA.json
-O JSON e o Markdown são material de curso: NÃO vão para o Git (o repositório é público); só o .bin selado vai.
+O JSON e o Markdown são material comercial de uso pessoal: NÃO vão para o Git (o repositório é público); só o .bin selado vai.
 """
 import json
 import re
@@ -36,7 +37,20 @@ def bonito(t):
     return " ".join(out)
 
 
+# atribuições a sites/editoras comerciais no meio do texto viram redação neutra (as referências bibliográficas ficam)
+NEUTRO = [
+    (r",? retirad[oa]s do Buscador do Dizer o Direito:", ":"),
+    (r"(tabela|tabela adaptada) do Dizer o Direito:", r"\1 a seguir:"),
+    (r" explicad[oa] pelo Dizer o Direito:", " a seguir:"),
+    (r"alerta-se para o quanto pontuado pelo Dizer o Direito, sobre", "alerta-se para o seguinte, sobre"),
+    (r"\s*\((?:e-?book|material) (?:da )?(?:Editora )?CP ?IURIS\)", ""),
+]
+MARCA = re.compile(r"cp ?iuris|editora cp|e-?book (?:de|da|do) [A-Z][a-z]+ 20\d\d", re.I)
+
+
 def limpar(md):
+    for a, b in NEUTRO:
+        md = re.sub(a, b, md, flags=re.I)
     md = re.sub(r"(?m)^#(#{2,5})\s", lambda m: m.group(1) + " ", md)            # ### -> ##, #### -> ###, ...
     md = md.replace("\\*", "∗").replace("\\_", "_").replace("\\`", "`").replace("\\\\", "\\")
     md = "\n".join(l.replace("\\|", "/") if l.lstrip().startswith("|") else l for l in md.split("\n"))
@@ -51,12 +65,7 @@ def montar(md, eid, disc, titulo, subtitulo):
         sys.exit("nenhum '## Capítulo N — NOME' no Markdown (rode o pdf2md.py antes)")
     caps = []
     antes = linhas[:marcas[0][0]]
-    ap = next((i for i, l in enumerate(antes) if re.match(r"^\*\*APRESENTA[ÇC][ÃA]O\*\*$", l.strip())), None)
     su = next((i for i, l in enumerate(antes) if re.match(r"^\*\*SUM[ÁA]RIO\*\*$", l.strip())), None)
-    if ap is not None:
-        txt = limpar("\n".join(antes[ap + 1:su if su is not None and su > ap else len(antes)]))
-        if txt:
-            caps.append({"id": "c0", "t": "Apresentação", "md": txt})
     # restos do sumário impresso (linhas sem pontilhado) vão até o primeiro parágrafo de verdade; o que vem depois é do capítulo 1
     miolo = []
     if su is not None:
@@ -71,6 +80,9 @@ def montar(md, eid, disc, titulo, subtitulo):
         if not txt:
             sys.exit(f"capítulo {n} sem texto")
         caps.append({"id": f"c{n}", "t": f"{n}. {bonito(nome)}", "md": txt})
+    for c in caps:
+        for x in MARCA.findall(c["md"]):
+            print(f"  ATENÇÃO: menção de origem comercial no capítulo {c['t']}: {x!r}", file=sys.stderr)
     return {"id": eid, "titulo": titulo, "subtitulo": subtitulo, "disc": disc, "atualizado": date.today().isoformat(), "caps": caps}
 
 
