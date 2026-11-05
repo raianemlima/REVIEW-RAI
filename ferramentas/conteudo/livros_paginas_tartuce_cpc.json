@@ -1,0 +1,88 @@
+{
+ "id": "cv-novo-cpc-2015",
+ "titulo": "O novo CPC e o Direito Civil · livro completo (2015)",
+ "subtitulo": "Texto integral, sem figuras: onde o CPC/2015 e o Código Civil se encontram (edição de 2015, confira alterações posteriores)",
+ "disc": "cv",
+ "toc": [
+  15,
+  16
+ ],
+ "deslocamento": 0,
+ "capitulos": [
+  {
+   "t": "Das Normas Fundamentais do Novo Código de Processo Civil",
+   "busca": "Das Normas Fundamentais do Novo Código de Processo Civil – Constitucionalização do Direito Processual Civil, Técnica de Ponderação, Princípio da Boa-Fé Objetiva e Diálogos com o Direito Material"
+  },
+  {
+   "t": "Do Incidente de Desconsideração da Personalidade Jurídica",
+   "busca": "Do Incidente de Desconsideração da Personalidade Jurídica"
+  },
+  {
+   "t": "Dos Negócios Jurídicos Processuais",
+   "busca": "Dos Negócios Jurídicos Processuais"
+  },
+  {
+   "t": "Da Prescrição e da Decadência",
+   "busca": "Da Prescrição e da Decadência – Impactos do Novo Código de Processo Civil"
+  },
+  {
+   "t": "O Tratamento das Provas no Código Civil e o Impacto do Novo CPC",
+   "busca": "O Tratamento das Provas no Código Civil e o Impacto do Novo CPC"
+  },
+  {
+   "t": "Das Consequências do Novo Código de Processo Civil para a Teoria Geral das Obrigações",
+   "busca": "Das Consequências do Novo Código de Processo Civil para a Teoria Geral das Obrigações"
+  },
+  {
+   "t": "Das Regras Gerais de Responsabilidade Patrimonial no Novo Código de Processo Civil e sua Interação com o Direi",
+   "busca": "Das Regras Gerais de Responsabilidade Patrimonial no Novo Código de Processo Civil e sua Interação com o Direito Civil"
+  },
+  {
+   "t": "Das Repercussões do Novo Código de Processo Civil para o Instituto da Evicção",
+   "busca": "Das Repercussões do Novo Código de Processo Civil para o Instituto da Evicção"
+  },
+  {
+   "t": "Das Ações Possessórias Diretas no Novo Código de Processo Civil e suas Consequências para o Tratamento Constan",
+   "busca": "Das Ações Possessórias Diretas no Novo Código de Processo Civil e suas Consequências para o Tratamento Constante do Código Civil de 2002"
+  },
+  {
+   "t": "Do Tratamento da Usucapião Imobiliária no Novo CPC",
+   "busca": "Do Tratamento da Usucapião Imobiliária no Novo CPC – Da Usucapião Administrativa"
+  },
+  {
+   "t": "Alterações no Tratamento da Remição da Hipoteca pelo Novo CPC",
+   "busca": "Alterações no Tratamento da Remição da Hipoteca pelo Novo CPC"
+  },
+  {
+   "t": "As Regras Gerais das Ações de Direito de Família e o Tratamento Processual da Ação de Alteração de Regime de B",
+   "busca": "As Regras Gerais das Ações de Direito de Família e o Tratamento Processual da Ação de Alteração de Regime de Bens"
+  },
+  {
+   "t": "Do Tratamento da Separação e do Divórcio no Novo Código de Processo Civil",
+   "busca": "Do Tratamento da Separação e do Divórcio no Novo Código de Processo Civil"
+  },
+  {
+   "t": "Das Regras Relativas à União Estável no Novo CPC e as Consequências para o Direito Material",
+   "busca": "Das Regras Relativas à União Estável no Novo CPC e as Consequências para o Direito Material"
+  },
+  {
+   "t": "Dos Alimentos Familiares no Novo Código de Processo Civil",
+   "busca": "Dos Alimentos Familiares no Novo Código de Processo Civil – O Novo Tratamento da Prisão Civil"
+  },
+  {
+   "t": "A Tutela e Curatela e o Tratamento da Interdição no Novo Código de Processo Civil",
+   "busca": "A Tutela e Curatela e o Tratamento da Interdição no Novo Código de Processo Civil"
+  },
+  {
+   "t": "Do inventário e da partilha no novo Código de Processo Civil",
+   "busca": "Do Inventário e da Partilha no Novo Código de Processo Civil"
+  }
+ ],
+ "busca_de": 17,
+ "remover": [
+  "^_{5,}$"
+ ],
+ "titulos_livres": true,
+ "tolerar_vazios": true,
+ "fim": 538
+}

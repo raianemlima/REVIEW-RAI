@@ -1,0 +1,105 @@
+{
+ "id": "pc-pratica-forense",
+ "titulo": "Prática forense em processo civil · livro completo",
+ "subtitulo": "Texto integral, sem figuras: peças, modelos e prazos. Atenção: OCR com erros; confira artigos na lei seca",
+ "disc": "pc",
+ "toc": [
+  9,
+  19
+ ],
+ "deslocamento": 0,
+ "capitulos": [
+  {
+   "t": "Procuração ad judicia",
+   "pdf": 21
+  },
+  {
+   "t": "Substabelecimento",
+   "pdf": 33
+  },
+  {
+   "t": "Da assistência",
+   "pdf": 37
+  },
+  {
+   "t": "Denunciação da lide",
+   "pdf": 49
+  },
+  {
+   "t": "Chamamento ao processo",
+   "pdf": 61
+  },
+  {
+   "t": "Do incidente de desconsideração da personalidade jurídica",
+   "pdf": 69
+  },
+  {
+   "t": "Do amicus curiae",
+   "pdf": 89
+  },
+  {
+   "t": "Das exceções de impedimento e suspeição",
+   "pdf": 99
+  },
+  {
+   "t": "Petição inicial",
+   "pdf": 115
+  },
+  {
+   "t": "Contestação",
+   "pdf": 205
+  },
+  {
+   "t": "Reconvenção na contestação e reconvenção autônoma",
+   "pdf": 235
+  },
+  {
+   "t": "Réplica",
+   "pdf": 251
+  },
+  {
+   "t": "Da produção antecipada da prova",
+   "pdf": 257
+  },
+  {
+   "t": "Da exibição de documento ou coisa",
+   "pdf": 271
+  },
+  {
+   "t": "Da arguição de falsidade",
+   "pdf": 283
+  },
+  {
+   "t": "Liquidação de sentença",
+   "pdf": 289
+  },
+  {
+   "t": "Do cumprimento da sentença",
+   "pdf": 303
+  },
+  {
+   "t": "Da ação rescisória",
+   "pdf": 313
+  },
+  {
+   "t": "Recursos",
+   "pdf": 331
+  },
+  {
+   "t": "Espécies de recurso",
+   "pdf": 337
+  },
+  {
+   "t": "Processo de execução",
+   "pdf": 475
+  }
+ ],
+ "remover": [
+  "(?i)^pr[aá]tica forense em processo",
+  "(?i)^cap[ií]tulo\\s+[xvilu1]+\\b",
+  "(?i)^cap[il]tulo\\b",
+  "(?i)joseval|^pr.{1,3}tica.{0,8}f.{0,3}orense|marfins|martins\\\\s+viana"
+ ],
+ "titulos_livres": true,
+ "fim": 0
+}

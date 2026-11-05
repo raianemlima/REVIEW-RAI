@@ -1,0 +1,237 @@
+{
+ "id": "dp-estruturado-2019",
+ "titulo": "Direito Penal estruturado · livro completo (2019)",
+ "subtitulo": "Texto integral em tópicos, sem figuras. Atenção: a numeração dos tópicos se perdeu na extração; leia junto com o Código Penal",
+ "disc": "dp",
+ "toc": [
+  8,
+  29
+ ],
+ "deslocamento": 0,
+ "capitulos": [
+  {
+   "t": "Parte geral · Notas preliminares",
+   "busca": "Notas preliminares"
+  },
+  {
+   "t": "Parte geral · Da norma penal",
+   "busca": "Da norma penal"
+  },
+  {
+   "t": "Parte geral · Princípios penais fundamentais",
+   "busca": "Princípios penais fundamentais"
+  },
+  {
+   "t": "Parte geral · Teoria do crime",
+   "busca": "Teoria do crime"
+  },
+  {
+   "t": "Parte geral · Teoria do tipo",
+   "busca": "Teoria do tipo"
+  },
+  {
+   "t": "Parte geral · Classificação doutrinária dos crimes",
+   "busca": "Classificação doutrinária dos crimes"
+  },
+  {
+   "t": "Parte geral · Do tipo penal",
+   "busca": "Do tipo penal"
+  },
+  {
+   "t": "Parte geral · Relação de causalidade",
+   "busca": "Relação de causalidade"
+  },
+  {
+   "t": "Parte geral · Consumação e tentativa",
+   "busca": "Consumação e tentativa"
+  },
+  {
+   "t": "Parte geral · Desistência voluntária e arrependimento eficaz",
+   "busca": "Desistência voluntária e arrependimento eficaz"
+  },
+  {
+   "t": "Parte geral · Arrependimento posterior",
+   "busca": "Arrependimento posterior"
+  },
+  {
+   "t": "Parte geral · Crime impossível",
+   "busca": "Crime impossível"
+  },
+  {
+   "t": "Parte geral · Agravação pelo resultado",
+   "busca": "Agravação pelo resultado"
+  },
+  {
+   "t": "Parte geral · Erro de tipo e erro de proibição",
+   "busca": "Erro de tipo e erro de proibição"
+  },
+  {
+   "t": "Parte geral · Ilicitude",
+   "busca": "Ilicitude"
+  },
+  {
+   "t": "Parte geral · Estado de necessidade",
+   "busca": "Estado de necessidade"
+  },
+  {
+   "t": "Parte geral · Legítima defesa",
+   "busca": "Legítima defesa"
+  },
+  {
+   "t": "Parte geral · Estrito cumprimento de dever legal",
+   "busca": "Estrito cumprimento de dever legal"
+  },
+  {
+   "t": "Parte geral · Exercício regular de direito",
+   "busca": "Exercício regular de direito"
+  },
+  {
+   "t": "Parte geral · Consentimento do ofendido",
+   "busca": "Consentimento do ofendido"
+  },
+  {
+   "t": "Parte geral · Culpabilidade",
+   "busca": "Culpabilidade"
+  },
+  {
+   "t": "Parte geral · Imputabilidade (capacidade de culpabilidade)",
+   "busca": "Imputabilidade (capacidade de culpabilidade)"
+  },
+  {
+   "t": "Parte geral · Potencial consciência sobre a ilicitude do fato",
+   "busca": "Potencial consciência sobre a ilicitude do fato"
+  },
+  {
+   "t": "Parte geral · Exigibilidade de conduta diversa",
+   "busca": "Exigibilidade de conduta diversa"
+  },
+  {
+   "t": "Parte geral · Concurso de pessoas",
+   "busca": "Concurso de pessoas"
+  },
+  {
+   "t": "Parte geral · Das penas",
+   "busca": "Das penas"
+  },
+  {
+   "t": "Parte geral · Penas privativas de liberdade",
+   "busca": "Penas privativas de liberdade"
+  },
+  {
+   "t": "Parte geral · Penas restritivas de direitos",
+   "busca": "Penas restritivas de direitos"
+  },
+  {
+   "t": "Parte geral · Pena de multa",
+   "busca": "Pena de multa"
+  },
+  {
+   "t": "Parte geral · Aplicação da pena",
+   "busca": "Aplicação da pena"
+  },
+  {
+   "t": "Parte geral · Concurso de crimes",
+   "busca": "Concurso de crimes"
+  },
+  {
+   "t": "Parte geral · Crimes aberrantes",
+   "busca": "Crimes aberrantes"
+  },
+  {
+   "t": "Parte geral · Limites das penas",
+   "busca": "Limites das penas"
+  },
+  {
+   "t": "Parte geral · Suspensão condicional da pena (sursis)",
+   "busca": "Suspensão condicional da pena (sursis)"
+  },
+  {
+   "t": "Parte geral · Livramento condicional",
+   "busca": "Livramento condicional"
+  },
+  {
+   "t": "Parte geral · Efeitos da condenação",
+   "busca": "Efeitos da condenação"
+  },
+  {
+   "t": "Parte geral · Reabilitação",
+   "busca": "Reabilitação"
+  },
+  {
+   "t": "Parte geral · Medidas de segurança",
+   "busca": "Medidas de segurança"
+  },
+  {
+   "t": "Parte geral · Ação penal",
+   "busca": "Ação penal"
+  },
+  {
+   "t": "Parte geral · Condições objetivas de punibilidade",
+   "busca": "Condições objetivas de punibilidade"
+  },
+  {
+   "t": "Parte geral · Extinção da punibilidade",
+   "busca": "Extinção da punibilidade"
+  },
+  {
+   "t": "Parte geral · Prescrição",
+   "busca": "Prescrição"
+  },
+  {
+   "t": "Parte especial · Dos crimes contra a pessoa",
+   "busca": "Dos crimes contra a pessoa"
+  },
+  {
+   "t": "Parte especial · Dos crimes contra o patrimônio",
+   "busca": "Dos crimes contra o patrimônio"
+  },
+  {
+   "t": "Parte especial · Dos crimes contra a propriedade imaterial",
+   "busca": "Dos crimes contra a propriedade imaterial"
+  },
+  {
+   "t": "Parte especial · Dos crimes contra a organização do trabalho",
+   "busca": "Dos crimes contra a organização do trabalho"
+  },
+  {
+   "t": "Parte especial · Dos crimes contra o sentimento religioso e contra o respeito aos mortos",
+   "busca": "Dos crimes contra o sentimento religioso e contra o respeito aos mortos"
+  },
+  {
+   "t": "Parte especial · Dos crimes contra a dignidade sexual",
+   "busca": "Dos crimes contra a dignidade sexual"
+  },
+  {
+   "t": "Parte especial · Dos crimes contra a família",
+   "busca": "Dos crimes contra a família"
+  },
+  {
+   "t": "Parte especial · Dos crimes contra a incolumidade pública",
+   "busca": "Dos crimes contra a incolumidade pública"
+  },
+  {
+   "t": "Parte especial · Dos crimes contra a paz pública",
+   "busca": "Dos crimes contra a paz pública"
+  },
+  {
+   "t": "Parte especial · Dos crimes contra a fé pública",
+   "busca": "Dos crimes contra a fé pública"
+  },
+  {
+   "t": "Parte especial · Dos crimes contra a administração pública",
+   "busca": "Dos crimes contra a administração pública"
+  },
+  {
+   "t": "Parte especial · Disposições finais",
+   "busca": "Disposições finais"
+  }
+ ],
+ "busca_de": 30,
+ "remover": [
+  "^[•■»▪]+$",
+  "^\\d+(\\.\\d+)+\\.?$",
+  "^\\d{1,2}\\.$"
+ ],
+ "fim": 0,
+ "tolerar_vazios": true
+}

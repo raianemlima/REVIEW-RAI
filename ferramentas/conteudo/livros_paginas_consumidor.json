@@ -1,0 +1,220 @@
+{
+ "id": "co-curso-2018",
+ "titulo": "Direito do Consumidor · curso completo (12ª ed., 2018)",
+ "subtitulo": "Texto integral, sem figuras: CDC artigo por artigo, vícios, fato do produto/serviço, oferta, práticas abusivas, contratos e tutela coletiva (12ª ed., 2018; anterior à Lei 14.181/2021 do superendividamento)",
+ "disc": "co",
+ "toc": [
+  4,
+  25
+ ],
+ "deslocamento": 0,
+ "capitulos": [
+  {
+   "t": "Pressupostos fundamentais",
+   "busca": "PRESSUPOSTOS FUNDAMENTAIS"
+  },
+  {
+   "t": "Princípios e normas constitucionais",
+   "busca": "PRINCÍPIOS E NORMAS CONSTITUCIONAIS"
+  },
+  {
+   "t": "Os princípios constitucionais de proteção ao consumidor",
+   "busca": "OS Princípios CONSTITUCIONAIS DE PROTEÇÃO AO CONSUMIDOR"
+  },
+  {
+   "t": "O código de defesa do consumidor",
+   "busca": "O CÓDIGO DE DEFESA DO CONSUMIDOR"
+  },
+  {
+   "t": "A relação jurídica de consumo",
+   "busca": "A RELAÇÃO JURÍDICA DE CONSUMO"
+  },
+  {
+   "t": "Os princípios da lei n. 8.078/90 e os direitos básicos do consumidor",
+   "busca": "OS PRINCÍPIOS DA LEI N. 8.078/90 E OS DIREITOS BÁSICOS DO CONSUMIDOR"
+  },
+  {
+   "t": "Qualidade e segurança dos produtos e serviços",
+   "busca": "QUALIDADE E SEGURANÇA DOS PRODUTOS E SERVIÇOS"
+  },
+  {
+   "t": "O “recall”",
+   "busca": "O “RECALL”"
+  },
+  {
+   "t": "A teoria do risco do negócio:a base da responsabilidade objetiva",
+   "busca": "A TEORIA DO RISCO DO NEGÓCIO:A BASE DA RESPONSABILIDADE OBJETIVA"
+  },
+  {
+   "t": "A responsabilidade civil objetiva",
+   "busca": "A RESPONSABILIDADE CIVIL OBJETIVA"
+  },
+  {
+   "t": "Vício e defeito: distinção",
+   "busca": "VÍCIO E DEFEITO: DISTINÇÃO"
+  },
+  {
+   "t": "Os vícios dos produtos",
+   "busca": "OS VÍCIOS DOS PRODUTOS"
+  },
+  {
+   "t": "Os vícios dos serviços",
+   "busca": "OS Vícios dOS SERVIÇOS"
+  },
+  {
+   "t": "O fato do produto: os acidentes de consumo/defeitos e sua",
+   "busca": "O FATO DO PRODUTO: OS ACIDENTES DE CONSUMO/DEFEITOS E SUA"
+  },
+  {
+   "t": "O fato do serviço: os acidentes de consumo/defeitos e sua responsabilidade",
+   "busca": "O FATO DO SERVIÇO: OS ACIDENTES DE CONSUMO/DEFEITOS E SUA RESPONSABILIDADE"
+  },
+  {
+   "t": "Os danos materiais, morais, estéticos e à imagem e os critérios para a",
+   "busca": "OS DANOS MATERIAIS, MORAIS, ESTÉTICOS E À IMAGEM E OS CRITÉRIOS PARA A"
+  },
+  {
+   "t": "A responsabilidade dos Profissionais liberais: culpa",
+   "busca": "a responsabilidade dos Profissionais liberais: culpa"
+  },
+  {
+   "t": "A prestação dos serviços de reparação",
+   "busca": "a prestação dos serviços de reparação"
+  },
+  {
+   "t": "A garantia dos produtos e serviços",
+   "busca": "A GARANTIA DOS PRODUTOS E SERVIÇOS"
+  },
+  {
+   "t": "Os prazos para reclamar, a decadência e a prescrição",
+   "busca": "OS PRAZOS PARA RECLAMAR, A DECADÊNCIA E A PRESCRIÇÃO"
+  },
+  {
+   "t": "A oferta: regime jurídico vinculante",
+   "busca": "A OFERTA: REGIME JURÍDICO VINCULANTE"
+  },
+  {
+   "t": "A publicidade",
+   "busca": "A PUBLICIDADE"
+  },
+  {
+   "t": "A publicidade clandestina",
+   "busca": "A PUBLICIDADE CLANDESTINA"
+  },
+  {
+   "t": "A publicidade enganosa",
+   "busca": "A PUBLICIDADE ENGANOSA"
+  },
+  {
+   "t": "A publicidade abusiva",
+   "busca": "A PUBLICIDADE ABUSIVA"
+  },
+  {
+   "t": "A prova da verdade e correção da publicidade",
+   "busca": "A PROVA DA VERDADE E CORREÇÃO DA PUBLICIDADE"
+  },
+  {
+   "t": "As práticas abusivas",
+   "busca": "AS PRÁTICAS ABUSIVAS"
+  },
+  {
+   "t": "O orçamento",
+   "busca": "O ORÇAMENTO"
+  },
+  {
+   "t": "A cobrança de dívidas",
+   "busca": "A COBRANÇA DE DÍVIDAS"
+  },
+  {
+   "t": "Os bancos de dados e cadastros.os serviços de proteção ao crédito",
+   "busca": "OS BANCOS DE DADOS E CADASTROS.OS SERVIÇOS DE PROTEÇÃO AO CRÉDITO"
+  },
+  {
+   "t": "A Proteção Contratual",
+   "busca": "A Proteção Contratual"
+  },
+  {
+   "t": "As formas de contratação",
+   "busca": "AS FORMAS DE CONTRATAÇÃO"
+  },
+  {
+   "t": "Os contratos de adesão",
+   "busca": "OS CONTRATOS DE ADESÃO"
+  },
+  {
+   "t": "Contratos: transparência,interpretação e vinculação pré-contratual",
+   "busca": "CONTRATOS: TRANSPARÊNCIA,INTERPRETAÇÃO E VINCULAÇÃO PRÉ-CONTRATUAL"
+  },
+  {
+   "t": "Compras feitas FORA DO estabelecimento COMERCIAL (via web/internet, telefone, correio etc.)",
+   "busca": "compras feitas FORA DO estabelecimento COMERCIAL (via web/internet, telefone, correio etc.)"
+  },
+  {
+   "t": "As cláusulas abusivas",
+   "busca": "AS CLÁUSULAS ABUSIVAS"
+  },
+  {
+   "t": "Empréstimos e financiamentos",
+   "busca": "EMPRÉSTIMOS E FINANCIAMENTOS"
+  },
+  {
+   "t": "Compra e venda com pagamento do preço mediante prestações",
+   "busca": "COMPRA E VENDA COM PAGAMENTO DO PREÇO MEDIANTE PRESTAÇÕES"
+  },
+  {
+   "t": "A desconsideração da personalidade jurídica",
+   "busca": "A DESCONSIDERAÇÃO DA PERSONALIDADE JURÍDICA"
+  },
+  {
+   "t": "Aspectos processuais — o caráter coletivo da proteção processual do cdc",
+   "busca": "ASPECTOS PROCESSUAIS — O CARÁTER COLETIVO DA PROTEÇÃO PROCESSUAL DO CDC"
+  },
+  {
+   "t": "Os direitos difusos, coletivos e individuais homogêneos",
+   "busca": "OS DIREITOS DIFUSOS, COLETIVOS E INDIVIDUAIS HOMOGÊNEOS"
+  },
+  {
+   "t": "A legitimidade ativa para propositura de ações coletivas",
+   "busca": "A LEGITIMIDADE ATIVA PARA PROPOSITURA DE AÇÕES COLETIVAS"
+  },
+  {
+   "t": "As ações judiciais",
+   "busca": "AS AÇÕES JUDICIAIS"
+  },
+  {
+   "t": "Obrigações de fazer ou não fazer",
+   "busca": "OBRIGAÇÕES DE FAZER OU NÃO FAZER"
+  },
+  {
+   "t": "Custas, despesas e honorários nas ações coletivas",
+   "busca": "CUSTAS, DESPESAS E HONORÁRIOS NAS AÇÕES COLETIVAS"
+  },
+  {
+   "t": "Inversão do ônus da prova",
+   "busca": "INVERSÃO DO ÔNUS DA PROVA"
+  },
+  {
+   "t": "A competência",
+   "busca": "A COMPETÊNCIA"
+  },
+  {
+   "t": "Da coisa julgada nas ações coletivas",
+   "busca": "DA COISA JULGADA NAS AÇÕES COLETIVAS"
+  },
+  {
+   "t": "Aspectos da litispendência e continência da ação coletiva com a ação",
+   "busca": "ASPECTOS DA LITISPENDÊNCIA E CONTINÊNCIA DA AÇÃO COLETIVA COM A AÇÃO"
+  },
+  {
+   "t": "Denunciação da lide, chamamento do processo e assistência",
+   "busca": "Denunciação da lide, chamamento do processo e assistência"
+  },
+  {
+   "t": "Liquidação de sentença nas ações coletivas",
+   "busca": "LIQUIDAÇÃO DE SENTENÇA NAS AÇÕES COLETIVAS"
+  }
+ ],
+ "busca_de": 29,
+ "fim": 617,
+ "tolerar_vazios": true
+}

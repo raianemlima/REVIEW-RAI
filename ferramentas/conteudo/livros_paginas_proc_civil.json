@@ -1,0 +1,334 @@
+{
+ "id": "pc-manual-2018",
+ "titulo": "Processo Civil · manual completo (volume único, 2018)",
+ "subtitulo": "Texto integral, sem figuras: do CPC/2015 ao recurso extraordinário (edição de 2018, confira alterações posteriores)",
+ "disc": "pc",
+ "toc": [
+  2,
+  13
+ ],
+ "deslocamento": 0,
+ "capitulos": [
+  {
+   "t": "Jurisdição",
+   "pdf": 48
+  },
+  {
+   "t": "Ação",
+   "pdf": 112
+  },
+  {
+   "t": "Processo",
+   "pdf": 146
+  },
+  {
+   "t": "Competência",
+   "pdf": 206
+  },
+  {
+   "t": "Honorários advocatícios",
+   "pdf": 268
+  },
+  {
+   "t": "Gratuidade de justiça",
+   "pdf": 286
+  },
+  {
+   "t": "Litisconsórcio",
+   "pdf": 296
+  },
+  {
+   "t": "Intervenção de terceiros",
+   "pdf": 324
+  },
+  {
+   "t": "Negócio jurídico processual e calendarização procedimental",
+   "pdf": 376
+  },
+  {
+   "t": "Atos processuais",
+   "pdf": 400
+  },
+  {
+   "t": "Vícios dos atos processuais",
+   "pdf": 460
+  },
+  {
+   "t": "Tutela provisória",
+   "pdf": 472
+  },
+  {
+   "t": "Formação, suspensão e extinção do processo",
+   "pdf": 554
+  },
+  {
+   "t": "Procedimento sumário",
+   "pdf": 574
+  },
+  {
+   "t": "Petição inicial",
+   "pdf": 590
+  },
+  {
+   "t": "Posturas do juiz diante da petição inicial",
+   "pdf": 602
+  },
+  {
+   "t": "Audiência de mediação e conciliação",
+   "pdf": 634
+  },
+  {
+   "t": "Respostas do réu",
+   "pdf": 644
+  },
+  {
+   "t": "Revelia",
+   "pdf": 672
+  },
+  {
+   "t": "Providências preliminares e julgamento conforme o estado do processo",
+   "pdf": 684
+  },
+  {
+   "t": "Audiência de instrução e julgamento",
+   "pdf": 700
+  },
+  {
+   "t": "Provas",
+   "pdf": 712
+  },
+  {
+   "t": "Sentença",
+   "pdf": 806
+  },
+  {
+   "t": "Liquidação de sentença",
+   "pdf": 846
+  },
+  {
+   "t": "Coisa julgada",
+   "pdf": 866
+  },
+  {
+   "t": "Consignação em pagamento",
+   "pdf": 902
+  },
+  {
+   "t": "Ação de exigir contas",
+   "pdf": 916
+  },
+  {
+   "t": "Ações possessórias",
+   "pdf": 924
+  },
+  {
+   "t": "Divisão e demarcação de terras",
+   "pdf": 938
+  },
+  {
+   "t": "Ação de dissolução parcial de sociedade",
+   "pdf": 944
+  },
+  {
+   "t": "Ação de inventário e partilha",
+   "pdf": 952
+  },
+  {
+   "t": "Embargos de terceiro",
+   "pdf": 976
+  },
+  {
+   "t": "Oposição",
+   "pdf": 988
+  },
+  {
+   "t": "Ação de habilitação",
+   "pdf": 992
+  },
+  {
+   "t": "Ações de família",
+   "pdf": 996
+  },
+  {
+   "t": "Ação monitória",
+   "pdf": 1000
+  },
+  {
+   "t": "Homologação do penhor legal",
+   "pdf": 1026
+  },
+  {
+   "t": "Regulação de avaria grossa",
+   "pdf": 1034
+  },
+  {
+   "t": "Ação de restauração de autos",
+   "pdf": 1038
+  },
+  {
+   "t": "Formas executivas",
+   "pdf": 1042
+  },
+  {
+   "t": "Princípios da execução",
+   "pdf": 1050
+  },
+  {
+   "t": "Sujeitos processuais na execução",
+   "pdf": 1066
+  },
+  {
+   "t": "Competência da execução",
+   "pdf": 1084
+  },
+  {
+   "t": "Título executivo",
+   "pdf": 1094
+  },
+  {
+   "t": "Responsabilidade patrimonial",
+   "pdf": 1120
+  },
+  {
+   "t": "Cumprimento provisório de sentença",
+   "pdf": 1160
+  },
+  {
+   "t": "Cumprimento de sentença que reconhece a exigibilidade de obrigação de fazer e não fazer",
+   "pdf": 1174
+  },
+  {
+   "t": "Cumprimento de sentença que reconhece a exigibilidade de obrigação de entregar coisa",
+   "pdf": 1192
+  },
+  {
+   "t": "Cumprimento de sentença que reconhece a exigibilidade de obrigação de pagar quantia",
+   "pdf": 1194
+  },
+  {
+   "t": "Processo de execução da obrigação de fazer e não fazer",
+   "pdf": 1206
+  },
+  {
+   "t": "Processo de execução da obrigação de entregar coisa",
+   "pdf": 1214
+  },
+  {
+   "t": "Processo de execução da obrigação de pagar quantia certa",
+   "pdf": 1220
+  },
+  {
+   "t": "Execuções especiais",
+   "pdf": 1302
+  },
+  {
+   "t": "Defesas do executado",
+   "pdf": 1328
+  },
+  {
+   "t": "Suspensão e extinção do processo de execução",
+   "pdf": 1372
+  },
+  {
+   "t": "Precedentes judiciais",
+   "pdf": 1378
+  },
+  {
+   "t": "Ordem dos processos e recursos no tribunal",
+   "pdf": 1406
+  },
+  {
+   "t": "Incidente de assunção de competência",
+   "pdf": 1424
+  },
+  {
+   "t": "Incidente de arguição de inconstitucionalidade",
+   "pdf": 1432
+  },
+  {
+   "t": "Conflito de competência",
+   "pdf": 1438
+  },
+  {
+   "t": "Homologação de decisão estrangeira e concessão do exequatur à carta rogatória",
+   "pdf": 1444
+  },
+  {
+   "t": "Ação rescisória",
+   "pdf": 1452
+  },
+  {
+   "t": "Incidente de resolução de demandas repetitivas",
+   "pdf": 1484
+  },
+  {
+   "t": "Reclamação constitucional",
+   "pdf": 1510
+  },
+  {
+   "t": "Conceito de recursos e sucedâneos recursais",
+   "pdf": 1530
+  },
+  {
+   "t": "Classificação dos recursos",
+   "pdf": 1544
+  },
+  {
+   "t": "Efeitos recursais",
+   "pdf": 1552
+  },
+  {
+   "t": "Princípios recursais",
+   "pdf": 1568
+  },
+  {
+   "t": "Juízo de admissibilidade",
+   "pdf": 1594
+  },
+  {
+   "t": "Juízo de mérito",
+   "pdf": 1626
+  },
+  {
+   "t": "Apelação",
+   "pdf": 1630
+  },
+  {
+   "t": "Agravo",
+   "pdf": 1646
+  },
+  {
+   "t": "Embargos de declaração",
+   "pdf": 1684
+  },
+  {
+   "t": "Recurso ordinário constitucional",
+   "pdf": 1700
+  },
+  {
+   "t": "Recurso especial",
+   "pdf": 1706
+  },
+  {
+   "t": "Recurso extraordinário",
+   "pdf": 1716
+  },
+  {
+   "t": "Aspectos procedimentais comuns aos recursos extraordinário e especial",
+   "pdf": 1730
+  },
+  {
+   "t": "Embargos de divergência",
+   "pdf": 1752
+  },
+  {
+   "t": "Livro complementar das disposições finais e transitórias",
+   "pdf": 1758
+  }
+ ],
+ "remover": [
+  "(?i)^manual de direito processual civil.*(daniel|assum|vol)"
+ ],
+ "fim": 1771,
+ "abertura_lista": true
+}

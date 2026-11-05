@@ -1,0 +1,123 @@
+{
+ "id": "dh-pcd-sinopse-2020",
+ "titulo": "Direitos da Pessoa com Deficiência · livro completo (2020)",
+ "subtitulo": "Texto integral, sem figuras: CDPD, Lei Brasileira de Inclusão, capacidade civil, direitos setoriais, acessibilidade e crimes",
+ "disc": "dh",
+ "toc": [
+  7,
+  14
+ ],
+ "deslocamento": -2,
+ "capitulos": [
+  {
+   "t": "Introdução",
+   "pag": 15,
+   "busca": "Introdução"
+  },
+  {
+   "t": "Conceito de pessoa com deficiência",
+   "pag": 31,
+   "busca": "Conceito de pessoa com deficiência"
+  },
+  {
+   "t": "Barreiras e conceitos",
+   "pag": 53,
+   "busca": "Barreiras e conceitos"
+  },
+  {
+   "t": "Igualdade e não discriminação",
+   "pag": 71,
+   "busca": "Igualdade e não discriminação"
+  },
+  {
+   "t": "Prioridade",
+   "pag": 79,
+   "busca": "Prioridade"
+  },
+  {
+   "t": "Direito à vida",
+   "pag": 95,
+   "busca": "Direito à vida"
+  },
+  {
+   "t": "Direito à habilitação e reabilitação",
+   "pag": 103,
+   "busca": "Direito à habilitação e reabilitação"
+  },
+  {
+   "t": "Direito à saúde",
+   "pag": 109,
+   "busca": "Direito à saúde"
+  },
+  {
+   "t": "Direito à educação",
+   "pag": 129,
+   "busca": "Direito à educação"
+  },
+  {
+   "t": "Direito à moradia",
+   "pag": 151,
+   "busca": "Direito à moradia"
+  },
+  {
+   "t": "Direito ao trabalho, à habilitação e reabilitação profissional",
+   "pag": 157,
+   "busca": "Direito ao trabalho, à habilitação e reabilitação profissional"
+  },
+  {
+   "t": "Direito à assistência e à previdência social",
+   "pag": 191,
+   "busca": "Direito à assistência e à previdência social"
+  },
+  {
+   "t": "Direito à cultura, esporte, turismo e lazer",
+   "pag": 199,
+   "busca": "Direito à cultura, esporte, turismo e lazer"
+  },
+  {
+   "t": "Direito ao transporte e mobilidade",
+   "pag": 215,
+   "busca": "Direito ao transporte"
+  },
+  {
+   "t": "Direito de participação na vida pública e política",
+   "pag": 237,
+   "busca": "Direito de participação na vida pública e política"
+  },
+  {
+   "t": "Acesso à justiça",
+   "pag": 243,
+   "busca": "Acesso à justiça"
+  },
+  {
+   "t": "Do reconhecimento igual perante a lei",
+   "pag": 249,
+   "busca": "Do reconhecimento igual perante a lei"
+  },
+  {
+   "t": "Da tomada de decisão apoiada",
+   "pag": 253,
+   "busca": "Da tomada de decisão apoiada"
+  },
+  {
+   "t": "Acessibilidade",
+   "pag": 259,
+   "busca": "Acessibilidade"
+  },
+  {
+   "t": "Dos crimes contra pessoa com deficiência",
+   "pag": 307,
+   "busca": "Dos crimes contra pessoa com deficiência"
+  },
+  {
+   "t": "Resolução CNJ n.º 230/2016",
+   "pag": 315,
+   "busca": "Resolução CNJ"
+  }
+ ],
+ "cabecalho": [
+  "direitosdapessoacomdeficiencia",
+  "direitosdapessoacomdeficiencia"
+ ],
+ "fim": 330
+}
