@@ -52,10 +52,19 @@ Por isso o texto **não substitui** a leitura da lei seca e do material completo
 
 1. O Markdown do resumo (um `# Capítulo` por capítulo, `##` por assunto) fica **fora do repositório**.
 2. `python3 -I ferramentas/conteudo/pontos_de_prova.py RESUMO.md pdp-<id> <disc> "Título" "Subtítulo" SAIDA.json` converte para o JSON do Aprofundamento. O script recusa menção a curso, editora ou material de origem, dado pessoal, título `#` no corpo e linha de tabela com colunas a mais ou a menos.
-3. `node ferramentas/ajustes/selar_conteudo.mjs conteudo-cifrado/pontos-de-prova.bin pdp-*.json` sela os e-books com a chave pública do app (não precisa de segredo).
+3. `node ferramentas/ajustes/selar_conteudo.mjs conteudo-cifrado/revisao-pontos-de-prova.bin pdp-*.json` sela os e-books com a chave pública do app (não precisa de segredo).
 4. Na publicação, `ferramentas/ci/aplicar_ebooks.mjs` abre o `.bin` com a senha do app (`APP_SENHA`) e insere os e-books no baralho cifrado (`DECK.ebooks`), trocando pelo id. O `.bin` não é copiado para o site.
 
 Se a senha do app mudar, sele de novo (o log da etapa de lei seca mostra a chave pública nova). O Markdown e o JSON nunca vão para o Git; só o `.bin`.
+
+## Ligação com o Cronograma
+
+Cada e-book traz o campo `editais`, o mesmo dos resumos por matéria: `{edital: {id do assunto: [capítulo, posição do título no capítulo, 1]}}`. No Cronograma e em **Hoje**, o assunto ligado ganha o botão **📖 Ler o resumo**, que abre o e-book no título certo.
+
+- `ferramentas/conteudo/ligar_pontos_de_prova.py PASTA_JSON` grava o campo a partir de **regras revisadas à mão** (disciplina do catálogo + expressão sobre o título do assunto → seção do e-book), para os 21 editais de `arquivos/cronograma-conteudo.js`. Assunto composto ("Ponto II · alínea b — Contratos. Função social…") liga pelo tema principal, a primeira frase. Assunto sem regra fica de fora, sem aviso de "sem resumo".
+- A ligação é **conservadora**: um link errado é pior que nenhum. Para ligar mais assuntos, acrescente uma regra em `REGRAS` e rode de novo.
+- **Prioridade**: o arquivo se chama `revisao-pontos-de-prova.bin` para entrar no baralho **depois** de `resumos-por-materia.bin`. O app usa o primeiro e-book que ligar o assunto, então, onde há resumo do edital (DPE/RN, TJPB, DPDF), ele continua valendo, e os Pontos de prova cobrem o resto.
+- Se mudar o título de uma seção que uma regra usa, o script para e avisa. O teste confere que as âncoras gravadas apontam para o título certo no leitor do app.
 
 ## Atualizações a acompanhar
 

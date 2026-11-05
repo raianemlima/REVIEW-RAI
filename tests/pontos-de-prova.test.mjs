@@ -108,11 +108,51 @@ test("o e-book dos pontos de prova selado entra no baralho pelo aplicar_ebooks e
 });
 
 test("o repositório guarda os pontos de prova só selados, e a documentação do fluxo existe", () => {
-  const buf = readFileSync(join(raiz, "conteudo-cifrado/pontos-de-prova.bin"));
+  const buf = readFileSync(join(raiz, "conteudo-cifrado/revisao-pontos-de-prova.bin"));
   assert.ok(ehSelado(buf), "selado (LSX1)");
   const txt = buf.toString("latin1");
   for (const w of ["Tributário", "Criminologia", "Administrativo", "Processo", "Capítulo", "Súmula", "pdp-", "Penal", "Civil"]) assert.ok(!txt.includes(w), `não pode ter "${w}" legível`);
   const doc = readFileSync(join(raiz, "docs/PONTOS-DE-PROVA.md"), "utf8");
   for (const id of ["pdp-criminologia", "pdp-administrativo", "pdp-tributario", "pdp-pessoa-com-deficiencia", "pdp-processo-civil", "pdp-civil", "pdp-penal", "pdp-processo-civil-geral", "pdp-pratica-processual", "pdp-cpc-e-direito-civil", "pdp-consumidor", "pdp-cpc-novidades"]) assert.ok(doc.includes(id), `docs cita ${id}`);
   assert.match(readFileSync(join(raiz, "README.md"), "utf8"), /docs\/PONTOS-DE-PROVA\.md/);
+});
+
+// ---------- ligação com o Cronograma ----------
+const ligador = join(raiz, "ferramentas/conteudo/ligar_pontos_de_prova.py");
+const FIX_TRIB = {
+  id: "pdp-tributario", titulo: "Fixture", subtitulo: "", disc: "tr", grupo: "Pontos de prova", atualizado: "2026-01-01",
+  caps: [
+    { id: "c1", t: "Sistema", md: "## Conceito de tributo (CTN art. 3º)\n\ntexto\n\n### Detalhe\n\nmais texto\n\n## Competência tributária\n\ntexto\n" },
+    { id: "c2", t: "Crédito", md: "## Lançamento\n\ntexto\n\n## Decadência e prescrição\n\ntexto\n" },
+  ],
+};
+test("ligar_pontos_de_prova.py liga assunto do edital à seção certa, com a âncora do leitor do app", () => {
+  const pasta = mkdtempSync(join(tmpdir(), "pdp-lig-"));
+  writeFileSync(join(pasta, "pdp-tributario.json"), JSON.stringify(FIX_TRIB));
+  const r = spawnSync("python3", ["-I", "-c", `
+import sys, json
+sys.path.insert(0, ${JSON.stringify(join(raiz, "ferramentas/conteudo"))})
+import ligar_pontos_de_prova as L
+e = json.load(open(${JSON.stringify(join(pasta, "pdp-tributario.json"))}))
+ed = {"x-2026": {"disciplinas": [{"canonicais": ["direito_tributario"], "topicos": [
+  {"id": "t1", "titulo": "3. Competência tributária.", "texto": ""},
+  {"id": "t2", "titulo": "Ponto II · alínea b — Decadência e prescrição. Lançamento", "texto": ""},
+  {"id": "t3", "titulo": "5. Assunto sem resumo nenhum", "texto": ""}]},
+  {"canonicais": ["direito_penal"], "topicos": [{"id": "t4", "titulo": "Competência tributária", "texto": ""}]}]}}
+print(json.dumps(L.ligar([e], ed, estrito=False)))
+`], { encoding: "utf8" });
+  assert.equal(r.status, 0, r.stderr);
+  const m = JSON.parse(r.stdout)["pdp-tributario"]["x-2026"];
+  assert.deepEqual(Object.keys(m).sort(), ["t1", "t2"], "só liga o que tem regra e a disciplina certa");
+  assert.deepEqual(m.t1, [0, 2, 1], "'###' conta na posição: Competência é o 3º título do capítulo");
+  assert.deepEqual(m.t2, [1, 1, 1], "assunto composto liga pelo tema principal");
+});
+
+test("as âncoras gravadas apontam para o título certo no renderizador do app", () => {
+  const app = readFileSync(join(raiz, "app-src.txt"), "utf8");
+  const i0 = app.indexOf("function ebInline"), i1 = app.indexOf("function ebLidos");
+  const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  const { ebMd } = new Function("esc", `${app.slice(i0, i1)}; return { ebMd };`)(esc);
+  const html = ebMd(FIX_TRIB.caps[0].md, "eb0").html;
+  assert.match(html, /<h3 id="eb0-2">Competência tributária<\/h3>/);
 });
