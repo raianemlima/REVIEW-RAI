@@ -113,6 +113,6 @@ test("o repositório guarda os pontos de prova só selados, e a documentação d
   const txt = buf.toString("latin1");
   for (const w of ["Tributário", "Criminologia", "Administrativo", "Processo", "Capítulo", "Súmula", "pdp-", "Penal", "Civil"]) assert.ok(!txt.includes(w), `não pode ter "${w}" legível`);
   const doc = readFileSync(join(raiz, "docs/PONTOS-DE-PROVA.md"), "utf8");
-  for (const id of ["pdp-criminologia", "pdp-administrativo", "pdp-tributario", "pdp-pessoa-com-deficiencia", "pdp-processo-civil", "pdp-civil", "pdp-penal", "pdp-processo-civil-geral", "pdp-pratica-processual", "pdp-cpc-e-direito-civil"]) assert.ok(doc.includes(id), `docs cita ${id}`);
+  for (const id of ["pdp-criminologia", "pdp-administrativo", "pdp-tributario", "pdp-pessoa-com-deficiencia", "pdp-processo-civil", "pdp-civil", "pdp-penal", "pdp-processo-civil-geral", "pdp-pratica-processual", "pdp-cpc-e-direito-civil", "pdp-consumidor", "pdp-cpc-novidades"]) assert.ok(doc.includes(id), `docs cita ${id}`);
   assert.match(readFileSync(join(raiz, "README.md"), "utf8"), /docs\/PONTOS-DE-PROVA\.md/);
 });

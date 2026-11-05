@@ -1,6 +1,6 @@
-# Pontos de prova · dez e-books para carreiras jurídicas
+# Pontos de prova · doze e-books para carreiras jurídicas
 
-Dez e-books no **Aprofundamento** (Biblioteca), grupo **Pontos de prova**, com o que mais cai nas provas de concursos jurídicos (Defensoria, Tribunais, Ministério Público, Procuradorias). Cada um é um resumo reescrito, com quadros comparativos, súmulas e vinculantes, "pegadinhas" e uma seção final **Como cai em prova**. Servem à **DPE/RN**, ao **TJPB 2026** e à **DPDF 2026** e a outros concursos jurídicos.
+Doze e-books no **Aprofundamento** (Biblioteca), grupo **Pontos de prova**, com o que mais cai nas provas de concursos jurídicos (Defensoria, Tribunais, Ministério Público, Procuradorias). Cada um é um resumo reescrito, com quadros comparativos, súmulas e vinculantes, "pegadinhas" e uma seção final **Como cai em prova**. Servem à **DPE/RN**, ao **TJPB 2026** e à **DPDF 2026** e a outros concursos jurídicos.
 
 | E-book | id | Disciplina | Capítulos | Tamanho |
 |---|---|---|---|---|
@@ -14,6 +14,8 @@ Dez e-books no **Aprofundamento** (Biblioteca), grupo **Pontos de prova**, com o
 | Processo Civil: teoria geral, procedimento comum, execução e recursos | `pdp-processo-civil-geral` | `pc` | 5 | 27 mil caracteres |
 | Prática processual civil: peças e prazos | `pdp-pratica-processual` | `pc` | 5 | 14 mil caracteres |
 | CPC/2015 e Direito Civil: pontos de interface | `pdp-cpc-e-direito-civil` | `cv` | 5 | 15 mil caracteres |
+| Direito do Consumidor: pontos de prova | `pdp-consumidor` | `co` | 4 | 19 mil caracteres |
+| CPC/2015: o que mudou em relação ao CPC/1973 | `pdp-cpc-novidades` | `pc` | 3 | 11 mil caracteres |
 
 Os textos não citam curso, editora nem material de origem: são apoio ao estudo. Leia junto com a lei seca e **confira a redação vigente e a jurisprudência atual**. Quando um tema mudou depois do material de origem, o e-book traz o regime vigente e avisa.
 
@@ -28,6 +30,8 @@ Os textos não citam curso, editora nem material de origem: são apoio ao estudo
 - **Processo Civil (geral)**: jurisdição, competência, honorários, gratuidade, intervenção de terceiros, negócio processual, procedimento comum, provas, sentença, coisa julgada, cumprimento de sentença, execução, precedentes, recursos e ação rescisória.
 - **Prática processual**: quadro de prazos, peças (inicial, contestação, recursos, execução, rescisória), requisitos, checklist e erros que reprovam.
 - **CPC e Direito Civil**: onde os dois códigos se tocam (IDPJ, negócios processuais, prescrição de ofício, provas, fraude à execução, hipoteca judiciária, família, interdição, inventário).
+- **Direito do Consumidor**: CF e CDC, consumidor e fornecedor (teorias finalista e maximalista), fato e vício com seus prazos, práticas comerciais e publicidade, cadastros (Súmulas 323, 359, 385, 404), cláusulas abusivas, superendividamento (Lei 14.181/2021), tutela coletiva e sanções.
+- **CPC/2015 (novidades)**: o que foi extinto, criado e alterado em relação ao CPC/1973, por fase do processo, com transição.
 - **Processo Civil (tutela e especiais)**: tutela provisória (urgência, evidência, antecedente e **estabilização**), procedimentos especiais (exigir contas, possessórias, dissolução parcial, inventário, embargos de terceiro, família, monitória, jurisdição voluntária e interdição) e direito intertemporal.
 
 ## Cobertura e limites (leia antes de confiar)
@@ -38,6 +42,7 @@ O material de origem não foi lido página por página em nenhum dos casos. O re
 - **Pessoa com deficiência**: lidos com detalhe a introdução, o conceito, as barreiras, trechos de trabalho, BPC, curatela, crimes e a resolução do CNJ; o restante segue o sumário e o texto da LBI.
 - **Administrativo (2020)** e **Tributário (2023)**: lidos o sumário, as notas de atualização e os trechos que citam súmulas e jurisprudência; o corpo foi escrito pela estrutura do livro e pelo direito vigente. Sem leitura integral.
 - **Civil, Penal e Processo Civil (geral)**: os livros-base são grandes manuais (o de Civil tem 6 MB de texto; o de Processo Civil, 5,5 MB; o de Penal, 1,2 MB). Foram lidos o sumário e trechos; o corpo foi escrito pela estrutura e pelo direito vigente, com as súmulas e os temas do STF e do STJ que o autor da prova mais cobra. Sem leitura integral. O de Civil tem OCR ruim no sumário.
+- **Consumidor**: o livro-base é de 2018; o resumo inclui o superendividamento e a jurisprudência recente. Foram lidos o sumário e trechos; o corpo segue a estrutura do CDC. **CPC/2015 (novidades)**: a 2ª fonte de Processo Civil é uma edição anterior (2016) do mesmo manual do resumo geral; por isso virou um quadro de mudanças, não uma repetição.
 - **Prática processual** e **CPC e Direito Civil**: lidos os sumários e as apresentações; o conteúdo segue a estrutura de cada obra e o CPC vigente.
 - **Processo Civil (tutela e especiais)**: o arquivo de origem é uma digitalização com muitos erros (letras trocadas, palavras coladas). O sumário foi reconstruído e o artigo sobre estabilização da tutela foi lido; os demais temas seguem o sumário e o texto do CPC.
 
