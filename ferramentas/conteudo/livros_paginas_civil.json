@@ -1,0 +1,56 @@
+{
+ "id": "cv-manual-2024",
+ "titulo": "Direito Civil · manual completo (volume único, 2024)",
+ "subtitulo": "Texto integral, sem figuras. Atenção: OCR com erros (números e pontuação); confira artigos e prazos na lei seca",
+ "disc": "cv",
+ "toc": [
+  3,
+  38
+ ],
+ "deslocamento": 0,
+ "capitulos": [
+  {
+   "t": "Estudo da Lei de Introdução às Normas do Direito Brasileiro",
+   "pdf": 53
+  },
+  {
+   "t": "Parte geral do Código Civil de 2002",
+   "pdf": 172
+  },
+  {
+   "t": "Teoria geral das obrigações",
+   "pdf": 826
+  },
+  {
+   "t": "Responsabilidade civil",
+   "pdf": 1117
+  },
+  {
+   "t": "Teoria geral dos contratos",
+   "pdf": 1350
+  },
+  {
+   "t": "Contratos em espécie",
+   "pdf": 1626
+  },
+  {
+   "t": "Direito das coisas",
+   "pdf": 2062
+  },
+  {
+   "t": "Direito de família",
+   "pdf": 2818
+  },
+  {
+   "t": "Direito das sucessões",
+   "pdf": 3510
+  }
+ ],
+ "remover": [
+  "(?i)^manual de direito civil",
+  "(?i)^fl[aá]vio tartuce$"
+ ],
+ "titulos_livres": true,
+ "fim": 3969,
+ "abertura_lista": true
+}

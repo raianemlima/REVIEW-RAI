@@ -10,6 +10,10 @@ Livros de estudo em PDF (texto corrido, com marcadores) entram no **Aprofundamen
 | Direitos da Pessoa com Deficiência · livro completo (2020) | `dh-pcd-sinopse-2020` | `dh` | 21 | `conteudo-cifrado/livros-sinopses.bin` |
 | Direito Administrativo · livro completo (2020) | `ad-sinopse-2020` | `ad` | 17 | `conteudo-cifrado/livros-sinopses.bin` |
 | Direito Tributário · livro completo (17ª ed., 2023) | `tr-manual-2023` | `tr` | 17 | `conteudo-cifrado/livros-sinopses.bin` |
+| Processo Civil · manual completo (volume único, 2018) | `pc-manual-2018` | `pc` | 79 | `conteudo-cifrado/livros-manuais.bin` |
+| Direito Civil · manual completo (volume único, 2024) | `cv-manual-2024` | `cv` | 9 | `conteudo-cifrado/livros-manuais.bin` |
+| Prática forense em processo civil | `pc-pratica-forense` | `pc` | 21 | `conteudo-cifrado/livros-manuais.bin` |
+| Direito Penal estruturado (2019) | `dp-estruturado-2019` | `dp` | 53 | `conteudo-cifrado/livros-manuais.bin` |
 
 ## Como entra (cada passo roda fora do Git, só o `.bin` selado vai)
 
@@ -34,6 +38,13 @@ Limites: quadros e figuras do PDF viram texto solto (ou somem); as edições sã
 
 **Fora do app:** o volume de Processo Civil (Coleção Novo CPC, Didier) veio com OCR ilegível (825 de 856 páginas em ideogramas) e não foi incluído; precisa do PDF original ou de nova extração.
 
+### Qualidade do texto dos livros extraídos
+
+- **Processo Civil (2018)**: texto limpo; as notas de rodapé ficam no meio do texto, na página em que aparecem.
+- **Direito Civil (Tartuce, 2024)**: OCR com erros (o "0" vira "o", o "2" vira "z" em alguns números e a vírgula vira ponto). Os artigos e prazos precisam ser conferidos na lei seca.
+- **Prática forense**: OCR com ruído nos modelos de peças.
+- **Direito Penal estruturado**: o livro é um esquema em tópicos e a extração separou a numeração do texto; os capítulos seguem os títulos do sumário e a parte especial (crimes em espécie) vem em capítulos grandes.
+
 ## O que o conversor faz e não faz
 
 - Une as linhas do PDF em parágrafos; preserva negrito e itálico; tira cabeçalho, rodapé e o sumário impresso (pontilhado).
@@ -45,7 +56,7 @@ Limites: quadros e figuras do PDF viram texto solto (ou somem); as edições sã
 
 ## Peso
 
-Os dois livros somam cerca de 4,4 milhões de caracteres. Selados (gzip + AES) ficam em 0,6 a 0,7 MB cada no repositório; dentro do baralho cifrado acrescentam cerca de 1,8 MB ao `deck.enc`, que abre uma vez por entrada no app.
+Os dois primeiros livros somam cerca de 4,4 milhões de caracteres; os oito livros extraídos depois somam cerca de 18 milhões e acrescentam uns 5,7 MB selados ao repositório (e ao `deck.enc`). Selados (gzip + AES) ficam em 0,6 a 0,7 MB cada no repositório; dentro do baralho cifrado acrescentam cerca de 1,8 MB ao `deck.enc`, que abre uma vez por entrada no app.
 
 ## Direitos
 

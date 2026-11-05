@@ -91,7 +91,7 @@ def corrigir_ocr(p):
     return p
 
 
-def montar_paragrafos(linhas, blob, titulo_nivel):
+def montar_paragrafos(linhas, blob, livres=False):
     """Une as linhas em parágrafos; devolve lista de blocos (str) já em Markdown."""
     blocos, atual = [], ""
     i = 0
@@ -114,7 +114,7 @@ def montar_paragrafos(linhas, blob, titulo_nivel):
             if not tit and i < len(linhas):
                 tit = linhas[i].strip()
                 usado = 1
-            if tit and (tit[0].isupper() or tit[0] == "0") and not tit.endswith((",", ";")) and len(norm(tit)) >= 6 and norm(tit)[:18] in blob:
+            if tit and (tit[0].isupper() or tit[0] == "0") and not tit.endswith((",", ";")) and len(norm(tit)) >= 6 and ((norm(tit)[:18] in blob) or (livres and "." in num and len(s) < 120 and not tit.endswith("."))):
                 fecha()
                 i += usado
                 nivel = min(num.count(".") + 2, 5)
@@ -165,6 +165,34 @@ def achar_titulo(pgs, p, minimo, titulo):
     return None
 
 
+def achar_sequencial(pgs, desde, ult, titulo, minimo):
+    alvo = norm(titulo)
+    for k in range(max(desde, minimo), ult + 1):
+        if k not in pgs:
+            continue
+        for j, l in enumerate(pgs[k].split("\n")):
+            s = re.sub(r"^\d+(\.\d+)*\.?\s*", "", l.strip())
+            if 3 < len(s) <= 110 and norm(s) == alvo[:len(norm(s))] and len(norm(s)) >= min(len(alvo), 14) and not corrente(s, {}):
+                return k, j
+    return None
+
+
+def sem_lista_de_abertura(linhas):
+    """Tira a lista de itens (resumo do capítulo) que abre o capítulo, até o 1º título "N.1 MAIÚSCULAS" ou o 1º parágrafo de prosa."""
+    def maiuscula(t):
+        letras = [c for c in t if c.isalpha()]
+        return bool(letras) and sum(c.isupper() for c in letras) / len(letras) > 0.6
+    cabeca = [l.strip() for l in linhas[:220]]
+    if not any(re.search(r"\b\d{1,2}\.\d{1,2}\b", l) for l in cabeca[:12]):
+        return linhas                     # não abre com lista de itens
+    for i, s in enumerate(cabeca):
+        if re.match(r"^\d{1,2}\.1\.?\s+\S", s) and maiuscula(s):
+            return linhas[i:]
+        if len(s) >= 70 and not re.search(r"\d\.\d", s) and s[:1].isalpha() and not s.startswith("Sumário"):
+            return linhas[i:]
+    return linhas
+
+
 def main():
     if len(sys.argv) != 4:
         sys.exit(__doc__)
@@ -179,6 +207,19 @@ def main():
     ini = []
     anterior = (cfg["toc"][1], 0)
     for k, c in enumerate(caps):
+        if "pdf" in c:                      # página do PDF dada à mão: o capítulo começa no início dela
+            ini.append((c["pdf"], 0))
+            anterior = ini[-1]
+            continue
+        if "pag" not in c:                  # sem página: primeira linha-título depois do capítulo anterior
+            a = achar_sequencial(pgs, anterior[0] + (1 if k else 0), ult, c.get("busca", c["t"]), cfg.get("busca_de", 0))
+            if a is None:
+                print(f"  aviso: título do capítulo {k + 1} ({c['t']}) não achado; o texto fica no capítulo anterior", file=sys.stderr)
+                ini.append(None)
+                continue
+            ini.append(a)
+            anterior = a
+            continue
         p = c["pag"] + desl
         a = achar_titulo(pgs, p, anterior[0], c.get("busca", c["t"]))
         if a is None or a < anterior:
@@ -186,6 +227,8 @@ def main():
             print(f"  aviso: título do capítulo {k + 1} não achado, corte no início da página {p}", file=sys.stderr)
         ini.append(a)
         anterior = a
+    caps = [c for c, a in zip(caps, ini) if a is not None]
+    ini = [a for a in ini if a is not None]
     fim_livro = cfg.get("fim")
     saida = []
     for k, c in enumerate(caps):
@@ -202,19 +245,27 @@ def main():
                 ls = ls[:l1]
             linhas += corpo_da_pagina("\n".join(ls), cfg)
             linhas.append("")
+        if cfg.get("abertura_lista"):
+            linhas = sem_lista_de_abertura(linhas)
         # tira o título repetido no início (a abertura do capítulo) e propaganda
         linhas = [l for l in linhas if not PROPAGANDA.search(l)]
-        blocos = montar_paragrafos(linhas, blob, None)
+        blocos = montar_paragrafos(linhas, blob, cfg.get("titulos_livres", False))
         # o título do capítulo já está no campo "t": descarta blocos de abertura até o primeiro texto longo ou título de seção
         while blocos and not blocos[0].startswith("#") and len(blocos[0]) < 90 and len(blocos) > 1:
             blocos.pop(0)
-        blocos = [b for b in blocos if not b.startswith("Sumário:")]     # resumo de abertura do capítulo (repete os títulos)
-        while blocos and blocos[0].startswith("####"):                   # restos do sumário antes do primeiro título
+        # abertura do capítulo: resumo de itens ("Sumário: 1.1 ... - 1.2 ..."), restos de sumário e títulos soltos
+        def abertura(b):
+            return (b.startswith(("Sumário:", "####")) or (len(b) < 1800 and len(re.findall(r"\b\d{1,2}\.\d{1,2}", b)) >= 3 and not b.startswith("##")))
+        while blocos and abertura(blocos[0]):
             blocos.pop(0)
+        blocos = [b for b in blocos if not b.startswith("Sumário:")]
         md = "\n\n".join(blocos).strip()
         if len(md) < 120:
+            if cfg.get("tolerar_vazios"):
+                print(f"  aviso: capítulo '{c['t']}' ficou sem texto e foi omitido", file=sys.stderr)
+                continue
             sys.exit(f"capítulo {k + 1} ({c['t']}) ficou sem texto")
-        saida.append({"id": f"c{k + 1}", "t": f"{k + 1}. {c['t']}", "md": md})
+        saida.append({"id": f"c{len(saida) + 1}", "t": f"{len(saida) + 1}. {c['t']}", "md": md})
     for c in saida:
         for x in re.findall(r"[^\n]{0,40}(?:jus ?class|jus ?podivm|editora jus)[^\n]{0,40}", c["md"], re.I):
             print(f"  ATENÇÃO: menção de origem comercial em {c['t']}: {x!r}", file=sys.stderr)
