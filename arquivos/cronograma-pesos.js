@@ -1769,5 +1769,100 @@ window.DPE_PESOS_EDITAIS = {
       }
     ],
     "nota": "Distribuição da prova objetiva do III Concurso (Res. nº 344/2025): 100 questões em 4 grupos de 25, sem divisão por disciplina dentro do grupo. Reservar 25% do tempo a cada grupo e repartir entre as disciplinas listadas é hipótese de tempo, não peso oficial individual. Habilitação para a discursiva com 60% da nota global e até a 400ª posição (art. 43). Discursivas, peças, prova oral e títulos não foram somados. O edital do Cebraspe pode ajustar o quadro."
+  },
+  "am-2026-servidor": {
+    "fonte": "Edital nº 01/2026 – DPE/AM (VI Concurso de servidores, FCC), Anexo II · Analista Jurídico de Defensoria – Ciência Jurídica (cargo R)",
+    "tipo": "questoes",
+    "grupos": [
+      {
+        "label": "Língua Portuguesa",
+        "valor": 6.666666666666667,
+        "subjects": [],
+        "evidencia": "Item 7.1, quadro da prova objetiva (cargo R): Conhecimentos Gerais, 20 questões de peso 1, sem divisão por rubrica no edital; divisão igual entre as três rubricas (6,67 cada)."
+      },
+      {
+        "label": "Legislação da Defensoria",
+        "valor": 6.666666666666667,
+        "subjects": [
+          "direito_institucional_defensoria_publica"
+        ],
+        "evidencia": "Item 7.1, quadro da prova objetiva (cargo R): Conhecimentos Gerais, 20 questões de peso 1, sem divisão por rubrica no edital; divisão igual entre as três rubricas (6,67 cada)."
+      },
+      {
+        "label": "Conhecimentos Jurídicos e Institucionais",
+        "valor": 6.666666666666667,
+        "subjects": [
+          "direito_institucional_defensoria_publica",
+          "direito_antidiscriminatorio"
+        ],
+        "evidencia": "Item 7.1, quadro da prova objetiva (cargo R): Conhecimentos Gerais, 20 questões de peso 1, sem divisão por rubrica no edital; divisão igual entre as três rubricas (6,67 cada)."
+      },
+      {
+        "label": "Direito Constitucional",
+        "valor": 5,
+        "subjects": [
+          "direito_constitucional"
+        ],
+        "evidencia": "Item 7.1, quadro da prova objetiva (cargo R): Conhecimentos Específicos, 40 questões de peso 2, sem divisão por disciplina no edital; divisão igual entre as oito rubricas (5 cada)."
+      },
+      {
+        "label": "Direito Administrativo",
+        "valor": 5,
+        "subjects": [
+          "direito_administrativo"
+        ],
+        "evidencia": "Item 7.1, quadro da prova objetiva (cargo R): Conhecimentos Específicos, 40 questões de peso 2, sem divisão por disciplina no edital; divisão igual entre as oito rubricas (5 cada)."
+      },
+      {
+        "label": "Direito Civil",
+        "valor": 5,
+        "subjects": [
+          "direito_civil"
+        ],
+        "evidencia": "Item 7.1, quadro da prova objetiva (cargo R): Conhecimentos Específicos, 40 questões de peso 2, sem divisão por disciplina no edital; divisão igual entre as oito rubricas (5 cada)."
+      },
+      {
+        "label": "Direito Processual Civil",
+        "valor": 5,
+        "subjects": [
+          "direito_processual_civil"
+        ],
+        "evidencia": "Item 7.1, quadro da prova objetiva (cargo R): Conhecimentos Específicos, 40 questões de peso 2, sem divisão por disciplina no edital; divisão igual entre as oito rubricas (5 cada)."
+      },
+      {
+        "label": "Direito Penal",
+        "valor": 5,
+        "subjects": [
+          "direito_penal"
+        ],
+        "evidencia": "Item 7.1, quadro da prova objetiva (cargo R): Conhecimentos Específicos, 40 questões de peso 2, sem divisão por disciplina no edital; divisão igual entre as oito rubricas (5 cada)."
+      },
+      {
+        "label": "Direito Processual Penal",
+        "valor": 5,
+        "subjects": [
+          "direito_processual_penal"
+        ],
+        "evidencia": "Item 7.1, quadro da prova objetiva (cargo R): Conhecimentos Específicos, 40 questões de peso 2, sem divisão por disciplina no edital; divisão igual entre as oito rubricas (5 cada)."
+      },
+      {
+        "label": "Direitos Humanos",
+        "valor": 5,
+        "subjects": [
+          "direitos_humanos"
+        ],
+        "evidencia": "Item 7.1, quadro da prova objetiva (cargo R): Conhecimentos Específicos, 40 questões de peso 2, sem divisão por disciplina no edital; divisão igual entre as oito rubricas (5 cada)."
+      },
+      {
+        "label": "Direito da Criança e do Adolescente, do Idoso, da Pessoa com Deficiência e da Mulher",
+        "valor": 5,
+        "subjects": [
+          "direito_da_crianca_e_adolescente",
+          "direito_pessoas_idosas_deficiencia"
+        ],
+        "evidencia": "Item 7.1, quadro da prova objetiva (cargo R): Conhecimentos Específicos, 40 questões de peso 2, sem divisão por disciplina no edital; divisão igual entre as oito rubricas (5 cada)."
+      }
+    ],
+    "nota": "Cargo de servidor (Analista Jurídico de Defensoria – Ciência Jurídica, código R). A prova objetiva tem 60 questões de múltipla escolha com cinco alternativas, em 3 horas: 20 de Conhecimentos Gerais (peso 1) e 40 de Conhecimentos Específicos (peso 2), itens 7.1 e 7.2. Pelo item 9.2, a nota é a média ponderada das duas notas (0 a 10). Como cada prova é medida sobre o seu próprio número de questões, toda questão vale o mesmo (1/6 de ponto): o peso 2 não torna a questão específica mais valiosa e os Específicos respondem por 40/60 da nota, não por 80%. Por isso o perfil usa o número de questões, e não questões × peso. O edital não divide as 20 questões gerais entre as três rubricas nem as 40 específicas entre as oito; aqui vale a divisão igual (6,67 e 5), que orienta TEMPO e não é peso de aprovação. Nota mínima 6,00 (item 9.3), o que equivale a 36 acertos em 60 se a conversão para a escala 0 a 10 for linear (o edital não detalha). Desempate: maior número de acertos nos Específicos e depois em Língua Portuguesa (itens 10.3.2 e 10.3.3). Não há discursiva, prova prática nem títulos. O cronograma é sujeito a alteração."
   }
 };

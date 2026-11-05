@@ -70,6 +70,10 @@ O catálogo também traz o **Edital nº 1 – DPDF, de 26/10/2026** (DODF nº 19
 - Plano: o campo opcional `plano` aponta para `plano-dpdf-2026.html`, página offline com diagnóstico, prioridades, fases até 21/02/2027, piloto de quatro semanas, modelo de sessão, treino discursivo, acompanhamento e checklist das datas do edital (salva só no aparelho). O Cronograma mostra o link “Plano estratégico deste edital” ao escolher esse programa; só aceita um `.html` da raiz do site.
 - Contrato: `cargo` (opcional) aceita `"defensor"` ou `"servidor"`; `plano` (opcional) aceita apenas `nome-do-arquivo.html`. Ambos são verificados por `ferramentas/ci/validar_conteudo.mjs`. Testes: `tests/plano-dpdf-2026.test.mjs` e `tests/dashboard-editais.test.mjs`.
 
+### Edital DPE/AM 2026 (servidor, cargo R)
+
+O catálogo traz o **Edital nº 01/2026 da DPE/AM** (FCC) para **Analista Jurídico de Defensoria – Ciência Jurídica**: `cargo: "servidor"`, fora do relatório de frequência dos editais de Defensor, com 11 rubricas e 173 tópicos do Anexo II e localizador `PDF p. N`. O perfil de pesos usa `tipo: "questoes"` (20 Gerais e 40 Específicas), porque pelo item 9.2 toda questão vale o mesmo: usar questões × peso, como na DPDF, daria 80% aos Específicos em vez de 67%. O plano offline é `plano-dpeam-2026.html`. Método, limites e como atualizar: [DPE/AM 2026](DPE-AM-2026.md). Testes: `tests/plano-dpeam-2026.test.mjs`.
+
 ## Metas de assuntos e revisão são diferentes
 
 Em **Hoje**, acompanhe os assuntos planejados e marque **Estudei este assunto** após estudar. A conclusão é registrada pelo aluno: não é automática pelo relógio, não comprova domínio e não altera a nota ou o intervalo FSRS de um cartão.

@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6653e7">
+  <title>Review DPE · Plano DPE/AM 2026</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f7fc; --surface: #ffffff; --surface-soft: #eeeaff; --surface-muted: #f0eff7;
+      --ink: #18152f; --muted: #625d75; --line: #e5e3f1;
+      --brand: #6653e7; --brand-deep: #4d3bc6; --brand-soft: #eeeaff;
+      --ok: #24b981; --ok-soft: #e7f8f1; --amber: #ef9c26; --amber-soft: #fff3dd;
+      --bar: #c9c6d8;
+      --shadow-soft: 0 8px 24px rgba(40, 30, 100, .07);
+      --radius: 22px; --radius-sm: 14px;
+    }
+    [data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #11101d; --surface: #1b192a; --surface-soft: #302a55; --surface-muted: #242231;
+      --ink: #f6f4ff; --muted: #b8b3ca; --line: #302d43;
+      --brand: #8b7cf6; --brand-deep: #7665ec; --brand-soft: #302a55;
+      --ok: #4ed6a5; --ok-soft: #173a31; --amber: #f5b74f; --amber-soft: #3b2e19;
+      --bar: #46425c;
+      --shadow-soft: 0 8px 24px rgba(0, 0, 0, .18);
+    }
+    * { box-sizing: border-box; }
+    html { min-width: 320px; scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 ui-rounded, "Avenir Next", "Segoe UI", system-ui, sans-serif; }
+    a { color: inherit; }
+    button, input { font: inherit; }
+    button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visible { outline: 3px solid color-mix(in srgb, var(--brand) 62%, #fff); outline-offset: 3px; }
+    .shell { width: min(1080px, calc(100% - 32px)); margin: 0 auto; }
+    .topbar { border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 92%, transparent); position: sticky; top: 0; z-index: 5; backdrop-filter: blur(16px); }
+    .topbar-inner { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 800; letter-spacing: -.05em; text-decoration: none; }
+    .brand img { width: 32px; height: 32px; border-radius: 10px; }
+    .brand strong { color: var(--brand); }
+    .top-actions { display: flex; gap: 8px; }
+    .icon-btn, .ghost-btn { min-width: 44px; min-height: 44px; border: 1px solid var(--line); border-radius: 13px; background: var(--surface); color: var(--ink); cursor: pointer; }
+    .ghost-btn { padding: 0 14px; font-weight: 700; }
+    .icon-btn:hover, .ghost-btn:hover { border-color: var(--brand); }
+    main { padding: 32px 0 64px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 22px; }
+    .eyebrow { color: var(--brand); font-size: 11px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+    h1 { font-size: clamp(28px, 5vw, 42px); line-height: 1.08; letter-spacing: -.04em; margin: 8px 0 12px; }
+    h2 { font-size: 22px; letter-spacing: -.03em; margin: 0 0 6px; }
+    h3 { font-size: 16px; margin: 14px 0 6px; }
+    p { margin: 0 0 10px; }
+    .lead { color: var(--muted); max-width: 72ch; }
+    .hero, .panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow-soft); }
+    .hero { background: linear-gradient(135deg, color-mix(in srgb, var(--brand-soft) 80%, var(--surface)) 0%, var(--surface) 62%); }
+    .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 18px; }
+    .stat { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 14px; }
+    .stat b { display: block; font-size: 26px; letter-spacing: -.04em; color: var(--brand); }
+    .stat span { color: var(--muted); font-size: 13px; }
+    nav.toc { display: flex; flex-wrap: wrap; gap: 8px; }
+    nav.toc a { text-decoration: none; border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 10px 14px; font-size: 13px; font-weight: 700; }
+    nav.toc a:hover { border-color: var(--brand); color: var(--brand); }
+    .point { font-weight: 700; margin-bottom: 14px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { text-align: left; vertical-align: top; padding: 10px 10px; border-bottom: 1px solid var(--line); }
+    th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+    td.num, th.num { text-align: right; white-space: nowrap; }
+    .table-wrap { overflow-x: auto; }
+    .bars { display: grid; gap: 8px; margin: 8px 0 14px; }
+    .bar-row { display: grid; grid-template-columns: minmax(150px, 30%) 1fr; gap: 12px; align-items: center; font-size: 13px; }
+    .bar-row > span:first-child { text-align: right; }
+    .bar-track { display: flex; align-items: center; gap: 8px; }
+    .bar-track i { display: block; height: 18px; border-radius: 5px; background: var(--bar); }
+    .bar-row.core .bar-track i, #bars .bar-track i { background: var(--brand); }
+    .bar-track small { color: var(--muted); white-space: nowrap; }
+    .legend { color: var(--brand); font-size: 13px; font-weight: 700; }
+    ol, ul { margin: 0 0 10px; padding-left: 20px; }
+    li { margin-bottom: 6px; }
+    .weeks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .week { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 16px; background: var(--surface-muted); }
+    .week .when { color: var(--brand); font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+    .check { display: flex; gap: 10px; align-items: flex-start; padding: 9px 0; border-bottom: 1px solid var(--line); cursor: pointer; }
+    .check:last-child { border-bottom: 0; }
+    .check input { width: 22px; height: 22px; margin-top: 1px; accent-color: var(--brand); flex: none; }
+    .check.done span { color: var(--muted); text-decoration: line-through; }
+    .progress { height: 8px; border-radius: 999px; background: var(--surface-muted); overflow: hidden; margin: 8px 0 4px; }
+    .progress i { display: block; height: 100%; width: 0; background: var(--ok); transition: width .2s ease; }
+    .note { background: var(--amber-soft); border-radius: var(--radius-sm); padding: 12px 14px; font-size: 14px; }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; }
+    .sim { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; align-items: stretch; margin: 12px 0; }
+    .sim label, .diag-table label { display: block; font-weight: 700; font-size: 13px; margin-bottom: 4px; }
+    .sim input, .diag-table input { width: 100%; min-height: 44px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); color: var(--ink); padding: 0 12px; }
+    .diag-table input { width: 92px; }
+    .result { background: var(--brand-soft); border-radius: var(--radius-sm); padding: 12px 14px; }
+    .result b { display: block; font-size: 34px; letter-spacing: -.04em; color: var(--brand); line-height: 1.1; }
+    .result span { color: var(--muted); font-size: 13px; }
+    .tag { display: inline-block; border-radius: 999px; padding: 1px 9px; font-size: 12px; font-weight: 800; background: var(--surface-muted); }
+    .tag.core { background: var(--brand-soft); color: var(--brand-deep); }
+    [data-theme="dark"] .tag.core { color: var(--brand); }
+    .rank li { margin-bottom: 4px; }
+    footer { color: var(--muted); font-size: 13px; padding: 0 0 40px; }
+    @media (max-width: 800px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } .weeks, .sim { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) {
+      table.stack thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+      table.stack, table.stack tbody, table.stack tr, table.stack td { display: block; width: 100%; }
+      table.stack tr { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 8px 12px; margin-bottom: 10px; background: var(--surface-muted); }
+      table.stack td { border: 0; padding: 4px 0; }
+      table.stack td[data-label]::before { content: attr(data-label); display: block; color: var(--muted); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+      table.stack td.num { text-align: left; }
+    }
+    @media (max-width: 480px) { .diag-table th, .diag-table td { padding: 8px 4px; } .diag-table input { width: 68px; padding: 0 8px; } .hero, .panel { padding: 18px; } .bar-row { grid-template-columns: 1fr; gap: 2px; } .bar-row > span:first-child { text-align: left; } }
+    @media (max-width: 360px) { .diag-table input { width: 54px; padding: 0 4px; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .progress i { transition: none; } }
+    @media print { .topbar, nav.toc, .no-print { display: none !important; } body, [data-theme="dark"] { background: #fff; color: #111; } .hero, .panel { box-shadow: none; break-inside: avoid; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="./" aria-label="Review DPE — início">
+        <img src="icons/icon-192.png" alt="Logo Review DPE">
+        <span>Review <strong>DPE</strong></span>
+      </a>
+      <div class="top-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Alternar tema" title="Alternar tema">◐</button>
+        <button class="icon-btn" id="printPage" type="button" aria-label="Imprimir ou salvar em PDF" title="Imprimir ou salvar em PDF">↗</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero" aria-labelledby="pageTitle">
+      <div class="eyebrow">Edital nº 01/2026 – DPE/AM · Fundação Carlos Chagas (FCC) · VI Concurso de servidores</div>
+      <h1 id="pageTitle">Plano estratégico · Analista Jurídico de Defensoria – Ciência Jurídica</h1>
+      <p class="lead">Prova objetiva prevista para 07/03/2027, à tarde, na cidade/polo escolhido na inscrição; o cronograma do edital está sujeito a alteração. A nota final é a da objetiva: não há discursiva, prova prática nem títulos (itens 7.1 e 10.1). Os assuntos do edital já estão no <b>Cronograma</b> do app: escolha “DPE/AM · Analista Jurídico (servidor)”.</p>
+      <p class="lead" id="countdown" aria-live="polite"></p>
+      <div class="stats">
+        <div class="stat"><b>60</b><span>questões objetivas em 3h, com cinco alternativas</span></div>
+        <div class="stat"><b>36</b><span>acertos para a nota mínima de 6,00 (se a conversão for linear)</span></div>
+        <div class="stat"><b>40/60</b><span>das questões são Específicas; cada questão vale o mesmo</span></div>
+        <div class="stat"><b>30ª</b><span>posição de corte por polo na ampla concorrência (40ª nas cotas)</span></div>
+      </div>
+    </section>
+
+    <nav class="toc" aria-label="Seções do plano">
+      <a href="#diagnostico">Regras</a><a href="#nota">Nota</a><a href="#programa">Programa</a><a href="#fases">Fases</a><a href="#piloto">Piloto</a><a href="#sessao">Sessão</a><a href="#diag">Diagnóstico</a><a href="#acompanhamento">Ajuste</a><a href="#datas">Datas</a>
+    </nav>
+
+    <section class="panel" id="diagnostico" aria-labelledby="diagTitle">
+      <h2 id="diagTitle">1. Regras do edital e o que mudam no estudo</h2>
+      <p class="point">É uma prova só, de marcar alternativa, em 3 horas: todo o preparo serve a acertar sob tempo, sem pontos por redação nem por títulos.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Regra do edital</th><th>Consequência para o estudo</th></tr></thead>
+        <tbody>
+          <tr><td>60 questões: 20 de Conhecimentos Gerais (peso 1) e 40 de Específicos (peso 2), cinco alternativas, 3 horas (itens 7.1 e 7.2)</td><td>Cerca de 3 minutos por questão. Treine em blocos de 60 questões em 3 horas.</td></tr>
+          <tr><td>Nota = média ponderada das duas provas, cada uma de 0 a 10 (item 9.2)</td><td>Toda questão vale o mesmo (1/6 de ponto). O peso 2 não faz o Específico valer mais por questão: os Gerais são 1/3 da nota e não podem ser abandonados.</td></tr>
+          <tr><td>Nota mínima 6,00 (item 9.3); aprovados até a 30ª posição por polo, 40ª nas cotas, com os empatados na última posição (item 9.4)</td><td>36 acertos é o piso, não a meta. O corte real depende dos candidatos do seu polo e só se conhece depois da prova.</td></tr>
+          <tr><td>Questão sem marcação, com mais de uma resposta, emenda ou rasura não é computada (item 8.11.2); o edital não prevê desconto por erro</td><td>Nunca deixe questão em branco: no fim, marque a alternativa mais provável.</td></tr>
+          <tr><td>Desempate: Estatuto da Pessoa Idosa, depois maior número de acertos nos Específicos, em Língua Portuguesa, maior idade e função de jurado (item 10.3)</td><td>Registre separadamente o placar dos Específicos e o de Português nos simulados.</td></tr>
+          <tr><td>Legislação e jurisprudência vigentes até a data de publicação do edital; o que vier depois não cai (item 13.2 e Anexo II, observação 1)</td><td>Estude o texto vigente nessa data. Novidades legislativas posteriores não são cobradas nesta prova.</td></tr>
+          <tr><td>Anexo II, observação 2: o conteúdo coincide com o de outros cargos, mas a prova tem a complexidade do cargo</td><td>Provas de Defensor, como as do banco FCC do app, têm outro nível: use-as para treinar o formato e o estilo da banca, não para calibrar sua nota.</td></tr>
+          <tr><td>Vagas do cargo R: 1 imediata em Itacoatiara e cadastro de reserva nos 12 polos (Anexo IV). O polo é irreversível depois da inscrição (item 4.21.3) e exige domicílio nele (item 12.11)</td><td>Escolher o polo é decisão de vida, não só de estratégia: tome-a antes de 04/01/2027.</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Hipóteses a confirmar na Semana 1</h3>
+      <ul>
+        <li>A legislação estadual (Lei 4.077/2014, LC 01/1990, Lei 1.762/1986 e Constituição do Amazonas) tende a ser a maior lacuna para quem não é do Amazonas.</li>
+        <li>O estilo da FCC (literalidade × aplicação) deve ser confirmado nas questões FCC do app, antes de decidir quanto tempo vai para leitura de lei seca.</li>
+      </ul>
+      <h3>Informações que faltam para personalizar</h3>
+      <ul><li>Horas reais por dia útil e por fim de semana.</li><li>Resultado do diagnóstico por disciplina (seção 7).</li><li>Polo escolhido e materiais já usados.</li></ul>
+    </section>
+
+    <section class="panel" id="nota" aria-labelledby="notaTitle">
+      <h2 id="notaTitle">2. A conta da nota</h2>
+      <p class="point">Pelo item 9.2, nota = (1 × nota dos Gerais + 2 × nota dos Específicos) ÷ 3. Como cada nota é medida sobre o próprio número de questões, isso se reduz a: nota = (acertos nos Gerais + acertos nos Específicos) ÷ 6.</p>
+      <p class="legend">Os Específicos têm 40 das 60 questões, ou 67% da nota; não 80%, como “questões × peso” sugeriria.</p>
+      <div class="bars" id="bars" role="list" aria-label="Questões por prova"></div>
+      <h3>Simulador</h3>
+      <div class="sim">
+        <div><label for="simCG">Acertos nos Gerais (0 a 20)</label><input id="simCG" type="number" inputmode="numeric" min="0" max="20" step="1" placeholder="0"></div>
+        <div><label for="simCE">Acertos nos Específicos (0 a 40)</label><input id="simCE" type="number" inputmode="numeric" min="0" max="40" step="1" placeholder="0"></div>
+        <div class="result" aria-live="polite"><b id="simNota">0,00</b><span id="simStatus"></span></div>
+      </div>
+      <p class="note">Premissa: conversão linear dos acertos para a escala de 0 a 10, que é o que o edital sugere mas não detalha. Os cálculos do edital usam duas casas e arredondam para cima quando a terceira é 5 ou mais (item 13.2.1). Com 36 acertos (60%) a nota é 6,00; o corte de classificação por polo pode exigir mais.</p>
+    </section>
+
+    <section class="panel" id="programa" aria-labelledby="progTitle">
+      <h2 id="progTitle">3. Mapa do programa e o núcleo que rende duas vezes</h2>
+      <p class="point">O edital não diz quantas questões cada disciplina terá. O mapa mostra a extensão do programa e onde o mesmo conhecimento aparece em mais de um bloco.</p>
+      <div class="table-wrap"><table id="mapa" class="stack">
+        <thead><tr><th>Rubrica</th><th>Prova</th><th class="num">Assuntos</th><th>Núcleo institucional</th><th>O que observar no edital</th></tr></thead>
+        <tbody></tbody>
+      </table></div>
+      <p class="note">A coluna “Assuntos” conta os itens do Anexo II e mede a extensão do programa, não o número de questões nem o peso. <b>Núcleo institucional:</b> a LC 80/1994, a Lei 4.077/2014 e o art. 134 da Constituição aparecem em Legislação da Defensoria, em Conhecimentos Jurídicos e Institucionais e dentro de Constitucional, Administrativo, Processo Civil e Processo Penal. Estudado uma vez e retomado por perguntas, esse bloco rende em seis rubricas.</p>
+      <ol>
+        <li><b>Alavanca:</b> núcleo institucional (da LC 80/1994 à Lei 4.077/2014) e Língua Portuguesa, cujo programa é curto e estável e vale desempate.</li>
+        <li><b>Volume:</b> Processo Penal (40 assuntos), Processo Civil (29), Civil (21) e Direitos Humanos, onde o edital cobra tratados e teoria crítica.</li>
+        <li><b>Perfil Defensoria:</b> Direito da Criança, do Idoso, da Pessoa com Deficiência e da Mulher, com leis específicas e literais.</li>
+        <li><b>Ordem final:</b> o diagnóstico da seção 7 decide; a lista acima é só o ponto de partida.</li>
+      </ol>
+    </section>
+
+    <section class="panel" id="fases" aria-labelledby="fasesTitle">
+      <h2 id="fasesTitle">4. Fases até 07/03/2027</h2>
+      <p class="point">Cerca de 17 semanas: diagnóstico e base, cobertura com retomadas, treino no formato da prova e reta final.</p>
+      <div class="table-wrap"><table class="stack">
+        <thead><tr><th>Fase</th><th>Período</th><th>Foco</th><th>Produto que comprova avanço</th></tr></thead>
+        <tbody>
+          <tr data-inicio="2026-11-05" data-fim="2026-11-29"><td data-label="Fase">1. Diagnóstico e base</td><td data-label="Período">05/11 a 29/11</td><td data-label="Foco">Diagnóstico por disciplina com questões FCC do app; núcleo institucional; Português em doses curtas</td><td data-label="Produto que comprova avanço">Mapa de lacunas e reavaliação</td></tr>
+          <tr data-inicio="2026-11-30" data-fim="2027-01-24"><td data-label="Fase">2. Cobertura com retomadas</td><td data-label="Período">30/11 a 24/01</td><td data-label="Foco">As 11 rubricas pelo Cronograma; cada assunto volta por perguntas e questões. Inscrição até 04/01 e boleto até 05/01 caem aqui</td><td data-label="Produto que comprova avanço">Cada rubrica com um ciclo completo e uma retomada sem consulta</td></tr>
+          <tr data-inicio="2027-01-25" data-fim="2027-02-28"><td data-label="Fase">3. Integração e formato</td><td data-label="Período">25/01 a 28/02</td><td data-label="Foco">Questões FCC intercaladas, simulados de 60 questões em 3h (20 Gerais + 40 Específicos) e tratamento dos erros recorrentes. Cartão informativo em 05/02</td><td data-label="Produto que comprova avanço">Simulados corrigidos e erros recorrentes tratados</td></tr>
+          <tr data-inicio="2027-03-01" data-fim="2027-03-07"><td data-label="Fase">4. Reta final</td><td data-label="Período">01/03 a 07/03</td><td data-label="Foco">Revisão ativa dos pontos instáveis, lei seca, logística e sono; nenhum conteúdo novo</td><td data-label="Produto que comprova avanço">Lista curta de pontos instáveis revista; prova em 07/03</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note">De 21/12 a 03/01 a disponibilidade tende a cair: trate como semanas de retomada e questões, não de conteúdo novo.</p>
+    </section>
+
+    <section class="panel" id="piloto" aria-labelledby="pilotoTitle">
+      <div class="row"><h2 id="pilotoTitle">5. Piloto de quatro semanas</h2><span id="pilotProgressText" class="lead"></span></div>
+      <p class="point">A unidade é a tarefa concluída, não a hora; marque o produto de cada semana quando ele existir.</p>
+      <div class="progress" aria-hidden="true"><i id="pilotProgress"></i></div>
+      <div class="weeks" id="weeks"></div>
+      <p class="note">No piloto, evite cadastrar todo o material em flashcards, reler resumos inteiros como revisão ou adiar as questões até “terminar a teoria”.</p>
+    </section>
+
+    <section class="panel" id="sessao" aria-labelledby="sessaoTitle">
+      <h2 id="sessaoTitle">6. Modelo de sessão</h2>
+      <p class="point">Cada sessão termina com uma entrega verificável e a próxima retomada marcada.</p>
+      <ol>
+        <li><b>Diagnosticar:</b> 2 ou 3 perguntas sem consulta sobre o tema do dia.</li>
+        <li><b>Adquirir ou reparar:</b> estudar só o necessário; na lei seca, extrair hipótese, sujeitos, requisitos, prazos e exceções.</li>
+        <li><b>Recuperar:</b> fechar o material e reconstruir regra, requisitos e exceção.</li>
+        <li><b>Conferir:</b> comparar com a fonte e anotar a diferença no registro de erros.</li>
+        <li><b>Aplicar:</b> 5 a 10 questões FCC do assunto; explicar por que a alternativa mais próxima está errada.</li>
+        <li><b>Retomar:</b> marcar a próxima recuperação. Exemplo ajustável: 1 a 3 dias, depois cerca de 1 semana, depois 2 a 4 semanas.</li>
+      </ol>
+      <h3>Escala da semana (estrutura, não carga fixa)</h3>
+      <ul>
+        <li>Dias úteis: um bloco de conteúdo novo ou de reparo, um bloco de questões mistas de temas anteriores e 15 a 20 minutos de Português.</li>
+        <li>Fim de semana: bateria intercalada em tempo de prova, correção comentada e atualização do registro de erros.</li>
+        <li>Se faltar tempo, corte primeiro o conteúdo novo; preserve retomadas e questões.</li>
+      </ul>
+      <h3>No app</h3>
+      <ul>
+        <li><b>Cronograma:</b> escolha “DPE/AM · Analista Jurídico (servidor)”; ao marcar “Estudei este assunto”, os cartões do assunto entram na revisão. Isso é marcação sua e não comprova domínio.</li>
+        <li><b>Provas:</b> o banco “FCC · Defensorias” traz questões reais da banca, com o filtro por matéria, para diagnóstico e treino.</li>
+        <li><b>Aprofundamento:</b> os resumos por matéria (Constitucional, Administrativo, Civil, Processo Civil, Penal, Processo Penal, Direitos Humanos, Criança e Adolescente e princípios institucionais da Defensoria) abrem pela Biblioteca. O botão “Ler o resumo” dentro do Cronograma ainda não está ligado a este edital. Língua Portuguesa não tem resumo no app; para as leis do Amazonas, confira a Biblioteca e, se faltar, estude pelo texto oficial.</li>
+      </ul>
+    </section>
+
+    <section class="panel" id="diag" aria-labelledby="diagRankTitle">
+      <div class="row"><h2 id="diagRankTitle">7. Diagnóstico por disciplina</h2><button class="ghost-btn no-print" id="resetDiag" type="button">Limpar diagnóstico</button></div>
+      <p class="point">Registre acertos e questões feitas por rubrica (banco FCC do app e simulados). Os números ficam salvos só neste aparelho.</p>
+      <div class="table-wrap"><table class="diag-table" id="diagTabela">
+        <thead><tr><th>Rubrica</th><th>Acertos</th><th>Questões feitas</th></tr></thead>
+        <tbody></tbody>
+      </table></div>
+      <h3>O que atacar primeiro</h3>
+      <p class="lead">Só entram no ranking rubricas com 5 ou mais questões. A ordem é pela taxa de erro e, no empate, pela extensão do programa. Taxa de erro de poucas questões oscila muito: use como pista, não como veredito.</p>
+      <ol class="rank" id="diagRank"></ol>
+      <h3>Ainda sem amostra suficiente</h3>
+      <ul class="rank" id="diagFalta"></ul>
+    </section>
+
+    <section class="panel" id="acompanhamento" aria-labelledby="acompTitle">
+      <h2 id="acompTitle">8. Acompanhamento e ajuste</h2>
+      <p class="point">Avanço = recuperação posterior e questões inéditas; horas e páginas medem esforço.</p>
+      <h3>Registro de erros</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Tema</th><th>Tarefa</th><th>Resposta dada</th><th>Falha principal</th><th>Correção</th><th>Próxima verificação</th></tr></thead>
+        <tbody><tr><td>Anulação × revogação</td><td>Questão FCC sobre extinção de ato administrativo</td><td>Marcou revogação para ato ilegal</td><td>Discriminação</td><td>Ilegalidade leva à anulação; conveniência e oportunidade, à revogação</td><td>Questão nova em 3 dias</td></tr></tbody>
+      </table></div>
+      <p class="lead">Falha principal: conhecimento · recuperação · interpretação do comando · discriminação · aplicação · atualização · execução (tempo).</p>
+      <h3>Regras de ajuste</h3>
+      <ul>
+        <li>Não entende o conceito → exposição inicial ou exemplo comentado.</li>
+        <li>Entende consultando, esquece depois → recuperação com intervalo menor.</li>
+        <li>Confunde institutos → casos contrastantes.</li>
+        <li>Lembra a regra, erra a questão → mais questões variadas da mesma matéria.</li>
+        <li>Resolve, mas estoura o tempo → treino cronometrado progressivo, de 3 minutos por questão.</li>
+        <li>Plano não cabe → cortar conteúdo novo, nunca as retomadas.</li>
+      </ul>
+      <p class="lead">Revisões do plano: 02/12, por volta de 20/12 e 25/01. Mude um componente por vez e anote por quê.</p>
+    </section>
+
+    <section class="panel" id="datas" aria-labelledby="datasTitle">
+      <div class="row"><h2 id="datasTitle">9. Datas e decisões</h2><button class="ghost-btn no-print" id="resetChecklist" type="button">Limpar marcações</button></div>
+      <p class="point">Marcações ficam salvas só neste aparelho. O cronograma do edital está sujeito a alteração: confira o site da FCC.</p>
+      <div class="progress" aria-hidden="true"><i id="adminProgress"></i></div>
+      <div id="checklist"></div>
+    </section>
+  </main>
+  <footer class="shell">Review DPE · plano de estudo derivado do Edital nº 01/2026 – DPE/AM (FCC), arquivo revisado em 30/10/2026. Confira sempre retificações e a versão vigente do edital. Estratégias de estudo são propostas ajustáveis, não promessa de aprovação.</footer>
+
+  <script>
+    (() => {
+      "use strict";
+      const $ = s => document.querySelector(s);
+      const $$ = s => [...document.querySelectorAll(s)];
+      const esc = v => String(v ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+      const storage = {
+        get(key, fallback = null) { try { return localStorage.getItem(key) ?? fallback; } catch (_) { return fallback; } },
+        set(key, value) { try { localStorage.setItem(key, value); } catch (_) {} },
+        remove(key) { try { localStorage.removeItem(key); } catch (_) {} }
+      };
+      // [id no catálogo, nome, prova, assuntos no Anexo II, cruza com o núcleo institucional, o que observar]
+      const rubricas = [
+        ["lingua_portuguesa", "Língua Portuguesa", "Gerais", 21, "", "Programa curto e estável: crase, concordância, regência, pontuação e interpretação. Vale desempate (item 10.3.3)."],
+        ["legislacao_defensoria", "Legislação da Defensoria", "Gerais", 9, "sim", "CF arts. 5º, 37 e 134; LC 80/1994; EC 45/2004 e 80/2014; Constituição do Amazonas; LC 01/1990; Lei 1.762/1986; Lei 4.077/2014."],
+        ["conhecimentos_juridicos_institucionais", "Conhecimentos Jurídicos e Institucionais", "Gerais", 7, "sim", "Organização e atuação da DPE-AM, ética institucional e direito antidiscriminatório."],
+        ["direito_constitucional", "Direito Constitucional", "Específicos", 7, "parcial", "O item 6 traz a Defensoria Pública como função essencial à Justiça."],
+        ["direito_administrativo", "Direito Administrativo", "Específicos", 13, "parcial", "Itens 7 e 9: atendimento ao público e atribuições administrativas das Defensorias; licitações pela Lei 14.133/2021."],
+        ["direito_civil", "Direito Civil", "Específicos", 21, "", "Família e Sucessões ocupam 7 dos 21 itens (15 a 21); Direito das Coisas, 6 (9 a 14)."],
+        ["direito_processual_civil", "Direito Processual Civil", "Específicos", 29, "parcial", "Itens 6 e 17 tratam da Defensoria; os itens 19 a 29 são ações e procedimentos específicos. O edital numera o item 6 duas vezes e pula o 13."],
+        ["direito_penal", "Direito Penal", "Específicos", 11, "", "Teoria do delito e política criminal; 11 normas especiais no item 9 (o edital imprime números de lei que parecem errados para Drogas e Abuso de Autoridade)."],
+        ["direito_processual_penal", "Direito Processual Penal", "Específicos", 40, "parcial", "Maior programa em itens; os itens 39 e 40 tratam de prerrogativas dos defensores e de assistência jurídica gratuita."],
+        ["direitos_humanos", "Direitos Humanos", "Específicos", 11, "", "Tratados da ONU e do sistema interamericano, teoria crítica e 100 Regras de Brasília."],
+        ["direito_crianca_idoso_pcd_mulher", "Criança e Adolescente, Idoso, Pessoa com Deficiência e Mulher", "Específicos", 4, "", "Quatro seções de leis específicas: ECA, Sinase e Lei 13.431; Estatuto do Idoso; Convenção, Lei 7.853 e Lei 13.146; Maria da Penha."]
+      ];
+      const semanas = [
+        { quando: "Semana 1 · 05–11/11", foco: "Diagnóstico", fazer: "5 a 8 questões FCC por rubrica no banco do app (Provas), sem consulta e com a confiança anotada antes de corrigir. Leitura ativa da LC 80/1994 inteira, marcando o que também aparece em Constitucional, Administrativo, Processo Civil e Processo Penal. Preencher a seção 7.", produto: "Diagnóstico por disciplina preenchido e primeira lista de erros", ajuste: "Faltam conceitos básicos → exposição inicial antes de testes." },
+        { quando: "Semana 2 · 12–18/11", foco: "Núcleo institucional", fazer: "Reconstruir sem consulta a estrutura da LC 80/1994 e da Lei 4.077/2014; ler a LC 01/1990 e a Lei 1.762/1986, que o item 1.5 do edital indica como base do regime jurídico dos servidores. Português: crase, concordância e regência, 20 minutos por dia.", produto: "Reconstrução escrita, dias depois, dos pontos da Semana 1", ajuste: "Acerta só com as pistas das alternativas → perguntas abertas." },
+        { quando: "Semana 3 · 19–25/11", foco: "Constitucional e Administrativo", fazer: "Direitos e garantias, ordem social e a Defensoria como função essencial; poderes, ato administrativo, Lei 14.133/2021 e agentes públicos. Cerca de 70% do tempo em questões e erros. Pares que se confundem: anulação × revogação × convalidação; dispensa × inexigibilidade.", produto: "Questões erradas reescritas como regra e exceção", ajuste: "Lembra a regra, mas erra a questão → mais questões variadas da matéria." },
+        { quando: "Semana 4 · 26/11–02/12", foco: "Avaliar o sistema", fazer: "Reavaliar temas da Semana 1 sem leitura prévia; mini-simulado de 30 questões (10 Gerais e 20 Específicas) em 90 minutos, na proporção da prova; comparar com o diagnóstico; ajustar a carga semanal no Cronograma.", produto: "Tabela diagnóstico × reavaliação e decisão sobre a Fase 2", ajuste: "Plano não coube → reduzir escopo antes de aumentar volume." }
+      ];
+      const datas = [
+        "Impugnação do edital, se houver motivo: 03 e 04/11/2026 (prazo já encerrado a partir de 05/11)",
+        "Escolher o polo de atendimento: define concorrência, local de prova e domicílio exigido, e não muda depois (itens 4.21.3 e 12.11). Só 1 vaga imediata (Itacoatiara); nos demais polos há cadastro de reserva",
+        "Pedido de isenção da taxa, se tiver direito: 30/11 a 04/12/2026; resultado em 10/12; recurso em 2 dias úteis; resultado final em 18/12",
+        "Inscrição em www.concursosfcc.com.br: 30/11/2026 a 04/01/2027; taxa de R$ 125,00; boleto pago até 05/01/2027, dentro do horário bancário",
+        "Foto individual recente, com cabeça descoberta e ombros, para o envio na inscrição",
+        "Condições especiais (lactante, TDAH ou dislexia, diabetes tipo 1, acessibilidade): solicitar até 04/01/2027, no link de inscrição, com a documentação exigida (itens 4.23 e 4.24)",
+        "Conferir, a partir de 07/12/2026, se a inscrição e o pagamento constam no site da FCC (item 4.4.3)",
+        "Resultado das condições especiais: 15/01/2027; resultado dos recursos: 22/01/2027",
+        "Edital de Convocação e Cartão Informativo: 05/02/2027 — conferir local e horário (referência: Manaus/AM, item 8.1.1)",
+        "Levar documento de identidade oficial com foto e caneta esferográfica transparente de tinta preta ou azul (itens 8.7 e 8.12); celular e relógio desligados e lacrados; não se pode sair antes de 2 horas de prova (item 8.19, f)",
+        "Prova: 07/03/2027, à tarde. Chegar com antecedência: não há tolerância de atraso (item 8.19, a) nem segunda chamada (item 8.8)",
+        "Gabarito e questões em 08/03/2027; recurso em 2 dias úteis (item 11.2); vista da folha de respostas em 14 e 15/04/2027"
+      ];
+      const PROVA = new Date(2027, 2, 7);
+      function renderCountdown() {
+        const hoje = new Date(); hoje.setHours(0, 0, 0, 0);
+        const dias = Math.round((PROVA - hoje) / 86400000);
+        $("#countdown").textContent = dias > 1 ? `Faltam ${dias} dias para a prova prevista.` : dias === 1 ? "A prova prevista é amanhã." : dias === 0 ? "A prova prevista é hoje." : "A data prevista da prova já passou; confira o cronograma vigente.";
+      }
+      function renderBars() {
+        const blocos = [["Conhecimentos Gerais", 20], ["Conhecimentos Específicos", 40]];
+        const max = Math.max(...blocos.map(b => b[1]));
+        $("#bars").innerHTML = blocos.map(([nome, q]) => `<div class="bar-row" role="listitem"><span>${esc(nome)}</span><span class="bar-track"><i style="width:${Math.round(q / max * 100)}%"></i><small>${q} questões · ${Math.round(q / 60 * 100)}% da nota</small></span></div>`).join("");
+      }
+      function renderMapa() {
+        $("#mapa tbody").innerHTML = rubricas.map(([id, nome, prova, assuntos, cruza, obs]) => {
+          const marca = cruza === "sim" ? `<span class="tag core">Sim</span>` : cruza === "parcial" ? `<span class="tag core">Parcial</span>` : `<span class="tag">—</span>`;
+          return `<tr data-rubrica="${esc(id)}" data-assuntos="${assuntos}"><td data-label="Rubrica"><b>${esc(nome)}</b></td><td data-label="Prova">${esc(prova)}</td><td class="num" data-label="Assuntos no edital">${assuntos}</td><td data-label="Núcleo institucional">${marca}</td><td data-label="O que observar">${esc(obs)}</td></tr>`;
+        }).join("");
+      }
+      // Simulador do item 9.2: nota = (acertos Gerais + acertos Específicos) / 6; centésimos arredondados para cima a partir de 5.
+      const inteiro = (v, max) => { const n = Math.floor(Number(v)); return Number.isFinite(n) && n > 0 ? Math.min(n, max) : 0; };
+      const fmtNota = acertos => { const c = Math.floor((acertos * 100 + 3) / 6); return `${Math.floor(c / 100)},${String(c % 100).padStart(2, "0")}`; };
+      function renderSim(ev) {
+        const cg = $("#simCG"), ce = $("#simCE");
+        const a = inteiro(cg.value, 20), b = inteiro(ce.value, 40), total = a + b;
+        if (ev && ev.target && ev.target.value !== "" && Number(ev.target.value) > Number(ev.target.max)) ev.target.value = ev.target.max;
+        $("#simNota").textContent = fmtNota(total);
+        $("#simStatus").textContent = total >= 36 ? `Atinge o piso de 6,00 (36 acertos em 60). A classificação depende da sua posição no polo.` : `Abaixo do piso de 6,00: faltam ${36 - total} acertos em 60.`;
+      }
+      function lista(chave) { try { const v = JSON.parse(storage.get(chave, "[]")); return Array.isArray(v) ? v : []; } catch (_) { return []; } }
+      const chavePiloto = "review-dpe:plano-dpeam-2026:piloto:v1", chaveDatas = "review-dpe:plano-dpeam-2026:datas:v1", chaveDiag = "review-dpe:plano-dpeam-2026:diag:v1";
+      // Diagnóstico: { rubrica: [acertos, questões] }, só neste aparelho.
+      function lerDiag() { try { const v = JSON.parse(storage.get(chaveDiag, "{}")); return v && typeof v === "object" && !Array.isArray(v) ? v : {}; } catch (_) { return {}; } }
+      function renderDiagTabela() {
+        const d = lerDiag();
+        $("#diagTabela tbody").innerHTML = rubricas.map(([id, nome]) => {
+          const [a, t] = Array.isArray(d[id]) ? d[id] : [0, 0];
+          return `<tr><td>${esc(nome)}</td><td><input id="da-${id}" type="number" inputmode="numeric" min="0" step="1" data-diag-acertos="${id}" value="${a || ""}" aria-label="Acertos em ${esc(nome)}"></td><td><input id="dt-${id}" type="number" inputmode="numeric" min="0" step="1" data-diag-total="${id}" value="${t || ""}" aria-label="Questões feitas em ${esc(nome)}"></td></tr>`;
+        }).join("");
+        renderRank();
+      }
+      function renderRank() {
+        const d = lerDiag();
+        const dados = rubricas.map(([id, nome, , assuntos]) => { const [a, t] = Array.isArray(d[id]) ? d[id] : [0, 0]; return { id, nome, assuntos, a, t }; });
+        const ranking = dados.filter(x => x.t >= 5).sort((x, y) => (1 - y.a / y.t) - (1 - x.a / x.t) || y.assuntos - x.assuntos);
+        $("#diagRank").innerHTML = ranking.map(x => `<li data-rubrica="${esc(x.id)}"><b>${esc(x.nome)}</b> — ${Math.round((1 - x.a / x.t) * 100)}% de erro (${x.a} de ${x.t}) · ${x.assuntos} assuntos</li>`).join("");
+        $("#diagFalta").innerHTML = dados.filter(x => x.t < 5).map(x => `<li data-rubrica="${esc(x.id)}">${esc(x.nome)} — ${x.t} ${x.t === 1 ? "questão" : "questões"} (mínimo 5)</li>`).join("");
+      }
+      function atualizarDiag(ev) {
+        const alvo = ev.target, id = alvo.dataset.diagAcertos || alvo.dataset.diagTotal;
+        if (!id) return;
+        const ca = $(`[data-diag-acertos="${id}"]`), ct = $(`[data-diag-total="${id}"]`);
+        const t = inteiro(ct.value, 999);
+        let a = inteiro(ca.value, 999);
+        if (t > 0 && a > t) { a = t; ca.value = String(a); }
+        const d = lerDiag();
+        if (a > 0 || t > 0) d[id] = [a, t]; else delete d[id];
+        storage.set(chaveDiag, JSON.stringify(d));
+        renderRank();
+      }
+      function renderWeeks() {
+        const feitos = new Set(lista(chavePiloto));
+        $("#weeks").innerHTML = semanas.map((s, i) => `<article class="week"><div class="when">${esc(s.quando)}</div><h3>${esc(s.foco)}</h3><p>${esc(s.fazer)}</p><label class="check${feitos.has(i) ? " done" : ""}"><input type="checkbox" data-week="${i}" ${feitos.has(i) ? "checked" : ""}><span><b>Produto:</b> ${esc(s.produto)}</span></label><p class="lead"><b>Ajuste se…</b> ${esc(s.ajuste)}</p></article>`).join("");
+        atualizar("[data-week]", chavePiloto, "week", "#pilotProgress", "#pilotProgressText");
+      }
+      function renderChecklist() {
+        const feitos = new Set(lista(chaveDatas));
+        $("#checklist").innerHTML = datas.map((d, i) => `<label class="check${feitos.has(i) ? " done" : ""}"><input type="checkbox" data-check="${i}" ${feitos.has(i) ? "checked" : ""}><span>${esc(d)}</span></label>`).join("");
+        atualizar("[data-check]", chaveDatas, "check", "#adminProgress");
+      }
+      function atualizar(seletor, chave, campo, barra, texto) {
+        const caixas = $$(seletor), marcadas = caixas.filter(c => c.checked);
+        caixas.forEach(c => c.closest(".check").classList.toggle("done", c.checked));
+        $(barra).style.width = `${caixas.length ? Math.round(marcadas.length / caixas.length * 100) : 0}%`;
+        if (texto) $(texto).textContent = `${marcadas.length} de ${caixas.length} produtos`;
+        storage.set(chave, JSON.stringify(marcadas.map(c => Number(c.dataset[campo]))));
+      }
+      $("#simCG").addEventListener("input", renderSim);
+      $("#simCE").addEventListener("input", renderSim);
+      $("#diagTabela").addEventListener("input", atualizarDiag);
+      $("#resetDiag").addEventListener("click", () => { storage.remove(chaveDiag); renderDiagTabela(); });
+      $("#weeks").addEventListener("change", () => atualizar("[data-week]", chavePiloto, "week", "#pilotProgress", "#pilotProgressText"));
+      $("#checklist").addEventListener("change", () => atualizar("[data-check]", chaveDatas, "check", "#adminProgress"));
+      $("#resetChecklist").addEventListener("click", () => { storage.remove(chaveDatas); renderChecklist(); });
+      $("#themeToggle").addEventListener("click", () => { const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark"; document.documentElement.dataset.theme = next; storage.set("review-dpe:theme", next); });
+      $("#printPage").addEventListener("click", () => window.print());
+      document.documentElement.dataset.theme = storage.get("review-dpe:theme", "light") || "light";
+      renderCountdown(); renderBars(); renderMapa(); renderSim(); renderDiagTabela(); renderWeeks(); renderChecklist();
+    })();
+  </script>
+</body>
+</html>

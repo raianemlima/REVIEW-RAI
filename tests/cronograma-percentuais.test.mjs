@@ -150,12 +150,12 @@ test('salvar e reabrir plano personalizado conserva pesos 60/40 sem regenerá-lo
   } finally { a.close(); }
 });
 
-test('os 21 perfis usam IDs existentes e as sugestões de todos os editais fecham 100%', () => {
+test('os 22 perfis usam IDs existentes e as sugestões de todos os editais fecham 100%', () => {
   const a = ambiente();
   try {
     const catalogo = a.run('window.__cronogramaCatalogo');
     const perfis = a.run('window.DPE_PESOS_EDITAIS');
-    assert.equal(Object.keys(perfis).length, 21);
+    assert.equal(Object.keys(perfis).length, 22);
     for (const [id, perfil] of Object.entries(perfis)) {
       const edital = catalogo.EDITAIS_DPE.find(e => e.id === id);
       assert.ok(edital);
@@ -169,5 +169,24 @@ test('os 21 perfis usam IDs existentes e as sugestões de todos os editais fecha
     }
     for (const texto of ['-1','101','100.01','7,691','1e2','1,2.3']) assert.ok(Number.isNaN(catalogo.lerPercentual(texto)));
     for (const [texto, numero] of [['0',0],['100',100],[',5',0.5],['7,69',7.69],['7.69',7.69]]) assert.equal(catalogo.lerPercentual(texto), numero);
+  } finally { a.close(); }
+});
+
+test('edital DPE/AM (cargo R) sugere pelo número de questões: 20 gerais e 40 específicas, sem dobrar o peso 2', () => {
+  const a = ambiente();
+  try {
+    const catalogo = a.run('window.__cronogramaCatalogo');
+    const edital = catalogo.EDITAIS_DPE.find(e => e.id === 'am-2026-servidor');
+    assert.ok(edital);
+    const programa = a.run('window.DPE_CONTEUDOS_EDITAIS["am-2026-servidor"]');
+    const ids = Array.from(programa.disciplinas.map(d => d.id));
+    const pesos = catalogo.sugerirPesos('am-2026-servidor', ids);
+    const gerais = ['lingua_portuguesa', 'legislacao_defensoria', 'conhecimentos_juridicos_institucionais'];
+    const soma = lista => lista.reduce((n, id) => n + Math.round(pesos[id] * 100), 0);
+    assert.equal(soma(ids), 10000);
+    assert.ok(Math.abs(soma(gerais) - 3333) <= 1, 'Gerais respondem por 20/60 (33,33%), não por 20/100');
+    assert.ok(Math.abs(soma(ids.filter(id => !gerais.includes(id))) - 6667) <= 1, 'Específicos respondem por 40/60 (66,67%), não por 80%');
+    for (const id of gerais) close(pesos[id], 11.11);
+    for (const id of ids.filter(x => !gerais.includes(x))) close(pesos[id], 8.33);
   } finally { a.close(); }
 });

@@ -12,6 +12,7 @@
   // e o Edital nº 1 – DPDF/2026 (servidor: Analista de Apoio à Assistência Judiciária – Direito e Legislação),
   // identificado como cargo de servidor e excluído do relatório de frequência dos editais de Defensor.
   // O Edital nº 01/2026 – TJPB (Analista Judiciário – Área Judiciária) segue a mesma regra de servidor.
+  // O Edital nº 01/2026 – DPE/AM (VI Concurso de servidores, FCC; cargo R, Analista Jurídico – Ciência Jurídica) também.
   // O III Concurso da DPE/RN entra pelo regulamento (Res. nº 344/2025), ainda sem edital: fica no Cronograma e fora do
   // relatório de frequência (relatorio: false) enquanto o programa recebido estiver incompleto.
   // Provas discursivas isoladas, caderno de prova, outros concursos de servidores e edital de 2014 ficaram fora.
@@ -36,7 +37,8 @@
     ["sp-2026","SP",2026,"DPE/SP · X Concurso"],
     ["to-2021","TO",2021,"DPE/TO · Edital 01/2021"],
     ["df-2026","DF",2026,"DPDF · Analista Direito e Legislação (servidor) · Edital 1/2026"],
-    ["tjpb-2026","PB",2026,"TJPB · Analista Judiciário – Área Judiciária (servidor) · Edital 1/2026"]
+    ["tjpb-2026","PB",2026,"TJPB · Analista Judiciário – Área Judiciária (servidor) · Edital 1/2026"],
+    ["am-2026-servidor","AM",2026,"DPE/AM · Analista Jurídico (servidor) · Edital 1/2026"]
   ].map(([id, estado, ano, nome]) => {
     const canonicas = window.DPE_CONTEUDOS_EDITAIS?.[id]?.disciplinas.flatMap(d => d.canonicais || []) || [];
     return { id, estado, ano, nome, subjects: [...new Set(canonicas)] };
