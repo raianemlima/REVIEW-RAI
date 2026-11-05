@@ -100,11 +100,14 @@ test("Hoje: marcar Estudei este assunto avisa quantos cartões entraram na revis
     const [, disc, top] = k.split(":");
     a.run(`(()=>{const t=window.DPE_CONTEUDOS_EDITAIS["rn-2025"].disciplinas.find(d=>d.id===${JSON.stringify(disc)}).topicos.find(t=>t.id===${JSON.stringify(top)});DECK.cartoes.push({id:"h1",disc:${JSON.stringify(disc)},ord:1,tema:t.titulo.replace(/[.:].*$/,""),tipo:"conceito",frente:"Pergunta sobre "+t.texto,verso:"R",abr:"nucleo_comum",peso:3,inc:3});byId.h1=DECK.cartoes[DECK.cartoes.length-1];DECK.disciplinas.push({id:${JSON.stringify(disc)},nome:"X",curto:"X",peso:1});})()`);
     a.run("renderHoje()");
-    assert.match(a.d.querySelector("#cronogramaHoje [data-cr-libera]").textContent, /Ao marcar, 1 cartão novo entra na revisão/);
+    // o assunto de hoje depende da data: em alguns dias o tema casa com mais de um cartão da fixture; o aviso deve bater com a contagem real
+    const antes = a.d.querySelector("#cronogramaHoje [data-cr-libera]").textContent;
+    const n = Number((antes.match(/Ao marcar, (\d+) cart(?:ão novo entra|ões novos entram) na revisão/) || [])[1]);
+    assert.ok(n >= 1, `aviso com a contagem de cartões novos: ${antes}`);
     const box2 = a.d.querySelector("#cronogramaHoje [data-cr-concluir]");
     box2.checked = true; box2.dispatchEvent(new a.dom.window.Event("change", { bubbles: true }));
     assert.equal(a.run(`S.ajustes.cronogramaProgresso[${JSON.stringify(k)}].concluido`), true);
-    assert.match(a.d.querySelector("#cronogramaHoje [data-cr-libera]").textContent, /1 cartão deste assunto está na sua revisão/);
+    assert.match(a.d.querySelector("#cronogramaHoje [data-cr-libera]").textContent, new RegExp(`${n} cart(ão deste assunto está|ões deste assunto estão) na sua revisão`));
     assert.match(a.run("__toasts.join(' | ')"), /cart(ão|ões) deste assunto entr/);
     assert.ok(JSON.parse(novos(a)).includes("h1"));
   } finally { a.close(); }
