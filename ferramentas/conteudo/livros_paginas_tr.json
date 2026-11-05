@@ -1,0 +1,102 @@
+{
+ "id": "tr-manual-2023",
+ "titulo": "Direito Tributário · livro completo (17ª ed., 2023)",
+ "subtitulo": "Texto integral, sem figuras: sistema tributário, crédito, impostos e Simples (anterior à reforma tributária da EC 132/2023)",
+ "disc": "tr",
+ "toc": [
+  15,
+  36
+ ],
+ "deslocamento": 0,
+ "capitulos": [
+  {
+   "t": "Noções introdutórias",
+   "pag": 41,
+   "busca": "Noções introdutórias"
+  },
+  {
+   "t": "Limitações constitucionais ao poder de tributar",
+   "pag": 137,
+   "busca": "Limitações constitucionais ao poder de tributar"
+  },
+  {
+   "t": "Competência tributária e legislação tributária",
+   "pag": 275,
+   "busca": "Competência tributária"
+  },
+  {
+   "t": "Interpretação e integração da legislação tributária",
+   "pag": 333,
+   "busca": "Interpretação e integração da legislação tributária"
+  },
+  {
+   "t": "Obrigação tributária",
+   "pag": 357,
+   "busca": "Obrigação tributária"
+  },
+  {
+   "t": "Responsabilidade tributária",
+   "pag": 395,
+   "busca": "Responsabilidade tributária"
+  },
+  {
+   "t": "Crédito tributário e lançamento",
+   "pag": 463,
+   "busca": "Crédito tributário e lançamento"
+  },
+  {
+   "t": "Suspensão da exigibilidade do crédito tributário",
+   "pag": 493,
+   "busca": "Suspensão da exigibilidade do crédito tributário"
+  },
+  {
+   "t": "Extinção do crédito tributário",
+   "pag": 521,
+   "busca": "Extinção do crédito tributário"
+  },
+  {
+   "t": "Exclusão do crédito tributário",
+   "pag": 607,
+   "busca": "Exclusão do crédito tributário"
+  },
+  {
+   "t": "Garantias e privilégios do crédito tributário",
+   "pag": 619,
+   "busca": "Garantias e privilégios do crédito tributário"
+  },
+  {
+   "t": "Administração tributária",
+   "pag": 645,
+   "busca": "Administração tributária"
+  },
+  {
+   "t": "Os impostos previstos na Constituição Federal",
+   "pag": 679,
+   "busca": "Os impostos previstos na Constituição Federal"
+  },
+  {
+   "t": "Repartição constitucional de receitas tributárias",
+   "pag": 829,
+   "busca": "Repartição constitucional de receitas tributárias"
+  },
+  {
+   "t": "O Simples Nacional",
+   "pag": 863,
+   "busca": "O Simples Nacional"
+  },
+  {
+   "t": "Planejamento tributário e liberdade econômica",
+   "pag": 907,
+   "busca": "Planejamento tributário e liberdade econômica"
+  },
+  {
+   "t": "Apêndice · súmulas",
+   "pag": 929,
+   "busca": "SÚMULAS VINCULANTES"
+  }
+ ],
+ "cabecalho": [
+  "direitotributarioricardoalexandre"
+ ],
+ "fim": 940
+}

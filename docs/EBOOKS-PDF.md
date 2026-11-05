@@ -6,6 +6,10 @@ Livros de estudo em PDF (texto corrido, com marcadores) entram no **Aprofundamen
 |---|---|---|---|---|
 | Direito Constitucional · manual completo (2026) | `dc-manual-2026` | `dc` | 25 | `conteudo-cifrado/manual-direito-constitucional.bin` |
 | Direito Processual Penal · manual completo (2026) | `pp-manual-2026` | `pp` | 24 | `conteudo-cifrado/manual-direito-processual-penal.bin` |
+| Criminologia · livro completo (2020) | `cr-sinopse-2020` | `cr` | 38 | `conteudo-cifrado/livros-sinopses.bin` |
+| Direitos da Pessoa com Deficiência · livro completo (2020) | `dh-pcd-sinopse-2020` | `dh` | 21 | `conteudo-cifrado/livros-sinopses.bin` |
+| Direito Administrativo · livro completo (2020) | `ad-sinopse-2020` | `ad` | 17 | `conteudo-cifrado/livros-sinopses.bin` |
+| Direito Tributário · livro completo (17ª ed., 2023) | `tr-manual-2023` | `tr` | 17 | `conteudo-cifrado/livros-sinopses.bin` |
 
 ## Como entra (cada passo roda fora do Git, só o `.bin` selado vai)
 
@@ -21,6 +25,14 @@ node ferramentas/ajustes/selar_conteudo.mjs conteudo-cifrado/<arquivo>.bin livro
 ```
 
 Na publicação, `ferramentas/ci/aplicar_ebooks.mjs` abre os `.bin` com a senha do app (`APP_SENHA`) e insere os livros no baralho cifrado (`DECK.ebooks`). O texto só existe dentro do `deck.enc`. Nenhum segredo novo, e o cache do app é carimbado na publicação.
+
+## Livros que chegam como texto já extraído (uma seção por página)
+
+Quando o livro vem como Markdown "## Página N" (texto extraído do PDF, sem os marcadores de fonte do `pdf2md.py`), use `ferramentas/conteudo/livro_paginas.py LIVRO.md CONFIG.json SAIDA.json`. O `CONFIG.json` (um por livro, em `ferramentas/conteudo/livros_paginas_*.json`) traz só títulos de capítulo, páginas do sumário e regras de limpeza, nunca o texto. O script tira cabeçalhos e rodapés, une as linhas em parágrafos, refaz palavras partidas por hífen, troca o "0" do OCR por "o", marca como título (`##` a `####`) a linha numerada que também está no sumário impresso e corta cada capítulo no seu título. Depois: `node ferramentas/ajustes/selar_conteudo.mjs conteudo-cifrado/livros-sinopses.bin cr.json pcd.json adm.json tr.json`.
+
+Limites: quadros e figuras do PDF viram texto solto (ou somem); as edições são anteriores a leis novas (o Administrativo, de 2020, é anterior às Leis 14.133 e 14.230/2021; o Tributário, de 2023, à regulamentação da reforma tributária). Para o regime vigente, use os **Pontos de prova** de cada matéria.
+
+**Fora do app:** o volume de Processo Civil (Coleção Novo CPC, Didier) veio com OCR ilegível (825 de 856 páginas em ideogramas) e não foi incluído; precisa do PDF original ou de nova extração.
 
 ## O que o conversor faz e não faz
 

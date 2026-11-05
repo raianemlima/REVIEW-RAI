@@ -1,0 +1,102 @@
+{
+ "id": "ad-sinopse-2020",
+ "titulo": "Direito Administrativo · livro completo (2020)",
+ "subtitulo": "Texto integral, sem figuras: regime jurídico, licitações, contratos, serviços públicos, responsabilidade, improbidade e controle (a edição é anterior à Lei 14.133/2021 e à Lei 14.230/2021)",
+ "disc": "ad",
+ "toc": [
+  7,
+  20
+ ],
+ "deslocamento": 0,
+ "capitulos": [
+  {
+   "t": "Noções preliminares",
+   "pag": 23,
+   "busca": "Noções preliminares"
+  },
+  {
+   "t": "O regime jurídico-administrativo",
+   "pag": 49,
+   "busca": "regime jurídico-administrativo"
+  },
+  {
+   "t": "Organização da Administração Pública",
+   "pag": 77,
+   "busca": "Organização da Administração Pública"
+  },
+  {
+   "t": "Entes de cooperação",
+   "pag": 115,
+   "busca": "Entes de cooperação"
+  },
+  {
+   "t": "Atos administrativos",
+   "pag": 169,
+   "busca": "Atos administrativos"
+  },
+  {
+   "t": "Poderes administrativos",
+   "pag": 207,
+   "busca": "Poderes administrativos"
+  },
+  {
+   "t": "Agentes públicos",
+   "pag": 227,
+   "busca": "Agentes públicos"
+  },
+  {
+   "t": "Licitações públicas",
+   "pag": 277,
+   "busca": "Licitações públicas"
+  },
+  {
+   "t": "Contratos administrativos",
+   "pag": 393,
+   "busca": "Contratos administrativos"
+  },
+  {
+   "t": "Serviços públicos",
+   "pag": 441,
+   "busca": "Serviços públicos"
+  },
+  {
+   "t": "Responsabilidade civil do Estado",
+   "pag": 497,
+   "busca": "Responsabilidade civil do Estado"
+  },
+  {
+   "t": "Bens públicos",
+   "pag": 521,
+   "busca": "Bens públicos"
+  },
+  {
+   "t": "Intervenção do Estado no domínio econômico",
+   "pag": 539,
+   "busca": "Intervenção do Estado no domínio econômico"
+  },
+  {
+   "t": "Processo administrativo",
+   "pag": 545,
+   "busca": "Processo administrativo"
+  },
+  {
+   "t": "Improbidade administrativa",
+   "pag": 587,
+   "busca": "Improbidade administrativa"
+  },
+  {
+   "t": "Controle da Administração Pública",
+   "pag": 617,
+   "busca": "Controle da Administração Pública"
+  },
+  {
+   "t": "Intervenção estatal na propriedade",
+   "pag": 649,
+   "busca": "Intervenção estatal na propriedade"
+  }
+ ],
+ "cabecalho": [
+  "direitoadministrativovol"
+ ],
+ "fim": 676
+}
