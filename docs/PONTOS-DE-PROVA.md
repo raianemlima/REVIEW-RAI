@@ -1,6 +1,6 @@
-# Pontos de prova · cinco matérias para carreiras jurídicas
+# Pontos de prova · dez e-books para carreiras jurídicas
 
-Cinco e-books no **Aprofundamento** (Biblioteca), grupo **Pontos de prova**, com o que mais cai nas provas de concursos jurídicos (Defensoria, Tribunais, Ministério Público, Procuradorias). Cada um é um resumo reescrito, com quadros comparativos, súmulas e vinculantes, "pegadinhas" e uma seção final **Como cai em prova**. Servem à **DPE/RN**, ao **TJPB 2026** e à **DPDF 2026** e a outros concursos jurídicos.
+Dez e-books no **Aprofundamento** (Biblioteca), grupo **Pontos de prova**, com o que mais cai nas provas de concursos jurídicos (Defensoria, Tribunais, Ministério Público, Procuradorias). Cada um é um resumo reescrito, com quadros comparativos, súmulas e vinculantes, "pegadinhas" e uma seção final **Como cai em prova**. Servem à **DPE/RN**, ao **TJPB 2026** e à **DPDF 2026** e a outros concursos jurídicos.
 
 | E-book | id | Disciplina | Capítulos | Tamanho |
 |---|---|---|---|---|
@@ -9,6 +9,11 @@ Cinco e-books no **Aprofundamento** (Biblioteca), grupo **Pontos de prova**, com
 | Direito Tributário: pontos de prova | `pdp-tributario` | `tr` | 7 | 37 mil caracteres |
 | Direitos da Pessoa com Deficiência: pontos de prova | `pdp-pessoa-com-deficiencia` | `dh` | 5 | 20 mil caracteres |
 | Processo Civil: tutela provisória e procedimentos especiais | `pdp-processo-civil` | `pc` | 4 | 29 mil caracteres |
+| Direito Civil: pontos de prova | `pdp-civil` | `cv` | 7 | 27 mil caracteres |
+| Direito Penal: pontos de prova | `pdp-penal` | `dp` | 3 | 18 mil caracteres |
+| Processo Civil: teoria geral, procedimento comum, execução e recursos | `pdp-processo-civil-geral` | `pc` | 5 | 27 mil caracteres |
+| Prática processual civil: peças e prazos | `pdp-pratica-processual` | `pc` | 5 | 14 mil caracteres |
+| CPC/2015 e Direito Civil: pontos de interface | `pdp-cpc-e-direito-civil` | `cv` | 5 | 15 mil caracteres |
 
 Os textos não citam curso, editora nem material de origem: são apoio ao estudo. Leia junto com a lei seca e **confira a redação vigente e a jurisprudência atual**. Quando um tema mudou depois do material de origem, o e-book traz o regime vigente e avisa.
 
@@ -18,16 +23,23 @@ Os textos não citam curso, editora nem material de origem: são apoio ao estudo
 - **Direito Administrativo**: regime jurídico e princípios; organização administrativa e terceiro setor; atos e poderes; agentes públicos; **licitações e contratos pela Lei 14.133/2021** (com quadro de equivalência com a Lei 8.666); serviços públicos e concessões; responsabilidade civil do Estado; bens públicos e intervenção na propriedade; processo administrativo e controle; **improbidade pela Lei 14.230/2021** (Temas 897 e 1.199 do STF).
 - **Direito Tributário**: tributo e espécies; competência; princípios e imunidades; legislação, interpretação e fato gerador; responsabilidade tributária; lançamento, decadência e prescrição; suspensão, extinção e exclusão do crédito; garantias; fiscalização, dívida ativa e execução fiscal; impostos em espécie; **reforma tributária** (EC 132/2023, LC 214/2025 e LC 227/2026) e planejamento tributário. Traz as súmulas e vinculantes mais cobradas.
 - **Direitos da Pessoa com Deficiência**: CDPD com status de emenda constitucional, modelo social, LBI (conceito, avaliação biopsicossocial, barreiras), capacidade civil, curatela e tomada de decisão apoiada, direitos setoriais (educação, trabalho e cotas, BPC, saúde, transporte), acessibilidade, **crimes** e Res. CNJ 230/2016.
-- **Processo Civil**: tutela provisória (urgência, evidência, antecedente e **estabilização**), procedimentos especiais (exigir contas, possessórias, dissolução parcial, inventário, embargos de terceiro, família, monitória, jurisdição voluntária e interdição) e direito intertemporal.
+- **Direito Civil**: LINDB, pessoa natural e jurídica (desconsideração, extinção da EIRELI), bens, negócio jurídico e defeitos, prescrição e decadência, obrigações, contratos (princípios da Lei 13.874/2019, espécies de maior incidência), responsabilidade civil e súmulas, posse, usucapião e condomínio, família (regimes, socioafetividade, alimentos), sucessões (vocação hereditária, Tema 498) e a Reforma do CC em andamento.
+- **Direito Penal**: princípios, lei penal no tempo e no espaço, teoria do crime, concurso de pessoas, penas e dosimetria, medida de segurança, ação penal, prescrição e os crimes de maior incidência (com a Lei 13.964/2019 e a Lei 14.994/2024).
+- **Processo Civil (geral)**: jurisdição, competência, honorários, gratuidade, intervenção de terceiros, negócio processual, procedimento comum, provas, sentença, coisa julgada, cumprimento de sentença, execução, precedentes, recursos e ação rescisória.
+- **Prática processual**: quadro de prazos, peças (inicial, contestação, recursos, execução, rescisória), requisitos, checklist e erros que reprovam.
+- **CPC e Direito Civil**: onde os dois códigos se tocam (IDPJ, negócios processuais, prescrição de ofício, provas, fraude à execução, hipoteca judiciária, família, interdição, inventário).
+- **Processo Civil (tutela e especiais)**: tutela provisória (urgência, evidência, antecedente e **estabilização**), procedimentos especiais (exigir contas, possessórias, dissolução parcial, inventário, embargos de terceiro, família, monitória, jurisdição voluntária e interdição) e direito intertemporal.
 
 ## Cobertura e limites (leia antes de confiar)
 
-O material de origem não foi lido página por página nos cinco casos. O resumo parte da estrutura dos livros, dos trechos lidos e dos pontos que o próprio material destaca, e completa o restante com o regime legal vigente:
+O material de origem não foi lido página por página em nenhum dos casos. O resumo parte da estrutura dos livros, dos trechos lidos e dos pontos que o próprio material destaca, e completa o restante com o regime legal vigente:
 
 - **Criminologia**: lidos com detalhe as escolas, as principais teorias, a vitimologia e a prevenção; os demais capítulos (técnicas, classificações de criminosos, temas atuais) foram escritos a partir do sumário e de trechos localizados.
 - **Pessoa com deficiência**: lidos com detalhe a introdução, o conceito, as barreiras, trechos de trabalho, BPC, curatela, crimes e a resolução do CNJ; o restante segue o sumário e o texto da LBI.
 - **Administrativo (2020)** e **Tributário (2023)**: lidos o sumário, as notas de atualização e os trechos que citam súmulas e jurisprudência; o corpo foi escrito pela estrutura do livro e pelo direito vigente. Sem leitura integral.
-- **Processo Civil**: o arquivo de origem é uma digitalização com muitos erros (letras trocadas, palavras coladas). O sumário foi reconstruído e o artigo sobre estabilização da tutela foi lido; os demais temas seguem o sumário e o texto do CPC.
+- **Civil, Penal e Processo Civil (geral)**: os livros-base são grandes manuais (o de Civil tem 6 MB de texto; o de Processo Civil, 5,5 MB; o de Penal, 1,2 MB). Foram lidos o sumário e trechos; o corpo foi escrito pela estrutura e pelo direito vigente, com as súmulas e os temas do STF e do STJ que o autor da prova mais cobra. Sem leitura integral. O de Civil tem OCR ruim no sumário.
+- **Prática processual** e **CPC e Direito Civil**: lidos os sumários e as apresentações; o conteúdo segue a estrutura de cada obra e o CPC vigente.
+- **Processo Civil (tutela e especiais)**: o arquivo de origem é uma digitalização com muitos erros (letras trocadas, palavras coladas). O sumário foi reconstruído e o artigo sobre estabilização da tutela foi lido; os demais temas seguem o sumário e o texto do CPC.
 
 Por isso o texto **não substitui** a leitura da lei seca e do material completo. Pontos marcados com "conferir" dependem de verificação na redação atual.
 
