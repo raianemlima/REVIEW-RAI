@@ -1,0 +1,22 @@
+{
+  "edital": "am-2026-servidor",
+  "itens": {
+    "d002_t001": { "cap": "Constituição Federal: artigo 5º", "titulo": null },
+    "d002_t002": { "cap": "LC federal nº 80/1994", "titulo": null },
+    "d002_t003": { "cap": "Emendas constitucionais", "titulo": "EC nº 45/2004" },
+    "d002_t004": { "cap": "Emendas constitucionais", "titulo": "EC nº 80/2014" },
+    "d002_t005": { "cap": "Constituição do Amazonas", "titulo": null },
+    "d002_t006": { "cap": "LC estadual nº 1/1990", "titulo": null },
+    "d002_t007": { "cap": "Lei nº 1.762/1986", "titulo": null },
+    "d002_t008": { "cap": "Lei nº 4.077/2014", "titulo": null },
+    "d002_t009": { "cap": "Outras normas estaduais pertinentes", "titulo": null },
+    "d003_t001": { "cap": "Fundamentos constitucionais", "titulo": null },
+    "d003_t002": { "cap": "Organização e atuação institucional", "titulo": null },
+    "d003_t003": { "cap": "Organização e atuação institucional", "titulo": null },
+    "d003_t004": { "cap": "Atuação extrajudicial", "titulo": null },
+    "d003_t005": { "cap": "Ética institucional", "titulo": null },
+    "d003_t006": { "cap": "Direito antidiscriminatório", "titulo": null },
+    "d003_t007": { "cap": "Políticas públicas e inclusão", "titulo": null },
+    "d004_t006": { "cap": "Constituição Federal: artigo 134", "titulo": null }
+  }
+}
