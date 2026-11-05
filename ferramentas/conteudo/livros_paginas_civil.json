@@ -52,5 +52,7 @@
  ],
  "titulos_livres": true,
  "fim": 3969,
- "abertura_lista": true
+ "abertura_lista": true,
+ "ocr_digitos": true,
+ "ocr_pontos": true
 }

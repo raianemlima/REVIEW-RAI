@@ -33,6 +33,11 @@ from datetime import date
 SHY = "­"
 # menção de origem comercial: o script remove a linha (propaganda) ou recusa se sobrar
 PROPAGANDA = re.compile(r"jus ?class|jus ?podivm|editora ?jus|conectado|qr ?code|www\.editora|c[óo]digo de acesso|etiqueta da p", re.I)
+ABREV = {"apud", "rev", "atual", "ampl", "trad", "ibid", "idem", "cit", "fls", "vols", "part", "sup", "cond", "loc", "inst", "proc", "ordem"}
+CORPUS = {}          # contagem de palavras do livro (minúsculas), para decidir hífen de quebra de linha
+REFLUXO = False      # texto sem hífen tipográfico (livro digital): o hífen no fim da linha costuma ser do composto
+FLAGS = {}
+CLITICOS = {"se", "lhe", "lhes", "lo", "la", "los", "las", "me", "te", "nos", "vos", "o", "a", "os", "as", "ei", "ia", "ão"}
 MANTEM = {"ex", "pós", "pré", "vice", "sócio", "não", "mini", "meio", "além", "sem"}
 FIM_FRASE = re.compile(r"[.:;!?)\]”\"…]$")
 ITEM = re.compile(r"^(?:Sum[áa]rio:|[a-e]\)|[ivx]+\)|[►•▪◦■□●○–—-]\s|\d+\)|\(\s*[A-Z]{2,}|Gabarito|Quest[ãa]o|Obs\.?:|Aten[çc][ãa]o|Exemplo|Súmula|S[úu]mula|Tema \d)", re.I)
@@ -65,6 +70,8 @@ def corrente(l, cfg):
     n = norm(s)
     if re.fullmatch(r"\d{1,3}|[#\s]{1,8}|[•·\-–—]", s):          # número de página (21, "# # #")
         return True
+    if len(s) >= 2 and not re.search(r"[A-Za-zÀ-ÿ0-9]", s):
+        return True
     if lixo(s):
         return True
     if re.match(r"^(cap\.?\s*[\dIVXLil]+\s*[•.·]|cap\.?\s*\d+\.)", s, re.I):
@@ -82,11 +89,33 @@ def sumario_blob(pgs, ini, fim):
     return norm(" ".join(pgs[k] for k in range(ini, fim + 1) if k in pgs))
 
 
+def deve_juntar(a, b):
+    """Hífen no fim da linha: True = palavra partida (junta sem hífen); False = composto (mantém o hífen)."""
+    j, h = (a + b).lower(), (a + "-" + b).lower()
+    if CORPUS.get(h, 0) > CORPUS.get(j, 0):
+        return False
+    if CORPUS.get(j, 0) > CORPUS.get(h, 0):
+        return True
+    if a.lower() in MANTEM or (b.lower() in CLITICOS and len(b) <= 3):
+        return False
+    return not REFLUXO
+
+
 def corrigir_ocr(p):
     # "0" no lugar de "o" (artigo): "0 homem", "Segundo 0 autor"; não mexe em "0 a 6 anos" nem em "0,5"
     p = re.sub(r"(?<![\d.,/§º°-])\b0(?= (?!a \d|e \d|\d|%|,|\.)[A-Za-zÀ-ÿ])", "o", p)
     p = re.sub(r"(^|[.:;!?] )o ", lambda m: m.group(1) + "O ", p)
     p = re.sub(r"(?<=[a-zà-ÿ])-\s?-?0(?![\d,.])", "-o", p).replace("- -o", "-o")
+    p = re.sub(r"(?<=[\w)])~", ",", p)
+    p = re.sub(r"(?<!\S)[~\\{}<>|¬■□^_]+(?!\S)", " ", p)
+    p = re.sub(r"(?<=\d)\. 0(?=\s?[,;)]|\s+(?:e|a|do|da|de|dos|das|ao|inc)\b)", ".º", p)
+    p = re.sub(r"(?<=\b\d)\.0(?=\s+(?:do|da|de|dos|das)\b)", ".º", p)
+    if FLAGS.get("ocr_digitos"):          # "2oo2", "2o24", "1o.406": o no lugar do zero dentro de números
+        p = re.sub(r"(?<=\d)o+(?=\d)", lambda m: "0" * len(m.group(0)), p)
+        p = re.sub(r"(?<=\d)o(?=[.,]\d)", "0", p)
+    if FLAGS.get("ocr_pontos"):           # vírgula lida como ponto: "sendo. salvo"
+        p = re.sub(r"(?<![A-Za-zÀ-ÿ])([a-zà-ÿ]{4,})\. (?=[a-zà-ÿ])", lambda m: m.group(0) if m.group(1) in ABREV else m.group(1) + ", ", p)
+    p = re.sub(r" {2,}", " ", p).strip()
     p = p.replace("’", "'")
     return p
 
@@ -132,8 +161,10 @@ def montar_paragrafos(linhas, blob, livres=False):
             fecha()
         if atual.endswith(SHY):
             atual = atual[:-1] + s
-        elif atual.endswith("-") and s[:1].islower() and re.search(r"[a-zà-ÿ]-$", atual) and atual.rsplit(" ", 1)[-1].lower().rstrip("-") not in MANTEM:
-            atual = atual[:-1] + s
+        elif atual.endswith("-") and s[:1].islower() and re.search(r"[a-zà-ÿ]-$", atual):
+            frag = atual.rsplit(" ", 1)[-1].rstrip("-")
+            mb = re.match(r"[a-zà-ÿ]+", s)
+            atual = (atual[:-1] + s) if deve_juntar(frag, mb.group(0) if mb else "") else (atual + s)
         else:
             atual = (atual + " " + s).strip() if atual else s
     fecha()
@@ -275,6 +306,12 @@ def main():
     cfg = json.load(open(sys.argv[2], encoding="utf-8"))
     pgs = paginas(texto)
     ult = max(pgs)
+    global REFLUXO
+    FLAGS.update({k: cfg.get(k) for k in ("ocr_digitos", "ocr_pontos")})
+    CORPUS.clear()
+    for w in re.findall(r"[A-Za-zÀ-ÿ]+(?:-[A-Za-zÀ-ÿ]+)*", texto.replace(SHY, "")):
+        CORPUS[w.lower()] = CORPUS.get(w.lower(), 0) + 1
+    REFLUXO = texto.count(SHY) < 20
     blob = sumario_blob(pgs, cfg["toc"][0], cfg["toc"][1])
     desl = cfg["deslocamento"]
     caps = cfg["capitulos"]
