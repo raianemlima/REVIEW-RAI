@@ -46,7 +46,7 @@ O material de origem não foi lido página por página em nenhum dos casos. O re
 - **Prática processual** e **CPC e Direito Civil**: lidos os sumários e as apresentações; o conteúdo segue a estrutura de cada obra e o CPC vigente.
 - **Processo Civil (tutela e especiais)**: o arquivo de origem é uma digitalização com muitos erros (letras trocadas, palavras coladas). O sumário foi reconstruído e o artigo sobre estabilização da tutela foi lido; os demais temas seguem o sumário e o texto do CPC.
 
-Por isso o texto **não substitui** a leitura da lei seca e do material completo. Pontos marcados com "conferir" dependem de verificação na redação atual.
+Por isso o texto **não substitui** a leitura da lei seca e do material completo. Os e-books não trazem avisos de "conferir": cada ponto de atualidade duvidosa foi verificado em fontes públicas e, quando não foi possível confirmá-lo, ficou de fora (foi o caso, por exemplo, das penas dos arts. 88 a 91 da LBI, do prazo da desapropriação indireta e do marco temporal indígena).
 
 ## Como entra no app (nada legível vai para o Git)
 
