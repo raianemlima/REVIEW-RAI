@@ -9,7 +9,7 @@
   "#" no corpo de um capítulo;
 - o e-book sai com grupo "Pontos de prova" e entra no baralho pelo mesmo caminho dos resumos por matéria.
 
-Depois: node ferramentas/ajustes/selar_conteudo.mjs conteudo-cifrado/pontos-de-prova.bin SAIDA.json [...]
+Depois: node ferramentas/ajustes/selar_conteudo.mjs conteudo-cifrado/revisao-pontos-de-prova.bin SAIDA.json [...]
 O Markdown e o JSON são material de estudo de uso pessoal: NÃO vão para o Git (o repositório é público); só o .bin selado vai.
 """
 import json
