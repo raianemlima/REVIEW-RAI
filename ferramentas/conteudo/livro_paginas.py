@@ -193,8 +193,83 @@ def sem_lista_de_abertura(linhas):
     return linhas
 
 
+PALAVRA = re.compile(r"[(“\"‘]?(?:[a-zà-ú]+|[A-ZÀ-Ú][a-zà-ú]+|[A-ZÀ-Ú]{2,})(?:-[A-Za-zÀ-ú]+)?[)”\"’]?[.,;:!?]?\)?")
+
+
+def boa(w):
+    """Palavra plausível: sem símbolos de ruído do OCR; siglas, hifens e barras valem."""
+    w = w.strip("()“”\"‘’.,;:!?[]")
+    if not w or not re.search(r"[A-Za-zÀ-ÿ]", w):
+        return True
+    if re.search(r"[_|~^<>{}\\@#$%&*=¬■□♦]", w) or re.search(r"[A-Za-zÀ-ÿ]\d|\d[A-Za-zÀ-ÿ]{2,}", w):
+        return False
+    if w.islower() and len(w) > 3 and not re.search(r"[aeiouáéíóúâêôãõày]", w):
+        return False
+    return len(w) <= 28 and not re.search(r"[a-zà-ÿ][A-ZÀ-Ý][a-zà-ÿ]", w)
+
+
+def numero_impresso(ls, cfg):
+    """Número de página impresso, lido do cabeçalho/rodapé (primeiras e últimas linhas); None se não houver."""
+    cand = [l.strip() for l in ls if l.strip()]
+    for l in cand[:3] + cand[-3:]:
+        m = re.fullmatch(r"(\d{1,4})\.?", l) or re.fullmatch(r"(\d)\s(\d)\s?(\d)?", l)
+        if m:
+            return int("".join(g for g in m.groups() if g))
+        if corrente(l, cfg) or any(norm(l).startswith(h) for h in cfg.get("cabecalho", [])):
+            m = re.match(r"^(\d{1,4})\s+\D", l) or re.search(r"\D\s(\d{1,4})$", l)
+            if m:
+                return int(m.group(1))
+    return None
+
+
+def modo_paginas(pgs, cfg, ini, caps, ult, saida):
+    """Saída página a página (formato do montar_livro.py da biblioteca de citações): texto de cada página com o número impresso."""
+    de = ini[0][0]
+    ate = cfg.get("fim") or ult
+    blob = sumario_blob(pgs, cfg["toc"][0], cfg["toc"][1])
+    brutas = {}
+    for k in range(de, ate + 1):
+        if k not in pgs:
+            continue
+        ls = pgs[k].split("\n")
+        corpo = [l for l in ls if not PROPAGANDA.search(l)]
+        blocos = montar_paragrafos(corpo_da_pagina("\n".join(corpo), cfg), blob, cfg.get("titulos_livres", False))
+        texto = "\n\n".join(re.sub(r"^#+\s+", "", b) for b in blocos).strip()
+        brutas[k] = (numero_impresso(ls, cfg), texto)
+    from collections import Counter
+    difs = Counter(n - k for k, (n, _) in brutas.items() if n is not None)
+    if not difs:
+        sys.exit("nenhum número de página impresso reconhecido")
+    desl, vezes = difs.most_common(1)[0]
+    print(f"  deslocamento página impressa - página do PDF: {desl:+d} (confere em {vezes} de {len(brutas)} páginas)", file=sys.stderr)
+    sem_numero = vezes < 5
+    if sem_numero:
+        print("  AVISO: o texto não traz número de página impresso; as páginas saem como [n] da digitalização (confira no livro antes de citar)", file=sys.stderr)
+    paginas, descartadas = [], 0
+    for k, (n, texto) in sorted(brutas.items()):
+        if len(texto) < 60:
+            descartadas += 1
+            continue
+        pal = [w for w in re.findall(r"\S+", texto) if re.search(r"[A-Za-zÀ-ú]", w)]
+        ruins = sum(1 for w in pal if not boa(w))
+        conf = round(max(0, 100 - 6 * 100 * ruins / len(pal))) if pal else 0
+        if conf < 60:
+            descartadas += 1
+            continue
+        duv = sorted({w.strip("()“”\"‘’.,;:!?") for w in re.findall(r"\S+", texto) if re.search(r"[A-Za-zÀ-ú]{2}", w) and not boa(w)} - {""})[:60]
+        p = {"n": k, "impressa": None if sem_numero else str(k + desl), "texto": texto, "notas": "", "duvidas": duv, "confianca": conf}
+        if not sem_numero and n != k + desl:
+            p["deduzida"] = True
+        paginas.append(p)
+    json.dump({"arquivo": cfg["id"], "paginas": paginas}, open(saida, "w", encoding="utf-8"), ensure_ascii=False)
+    nomes = [] if sem_numero else [[i + 1, c["t"], ini[i][0] + desl] for i, c in enumerate(caps)]
+    json.dump(nomes, open(saida + ".capitulos.json", "w", encoding="utf-8"), ensure_ascii=False)
+    media = sum(p["confianca"] for p in paginas) / len(paginas)
+    print(f"{saida}: {len(paginas)} páginas ({descartadas} descartadas por pouco texto ou leitura ruim), confiança média {media:.0f}%, {sum(p['confianca'] < 85 for p in paginas)} abaixo de 85%")
+
+
 def main():
-    if len(sys.argv) != 4:
+    if len(sys.argv) not in (4, 5):
         sys.exit(__doc__)
     texto = open(sys.argv[1], encoding="utf-8").read()
     cfg = json.load(open(sys.argv[2], encoding="utf-8"))
@@ -229,6 +304,8 @@ def main():
         anterior = a
     caps = [c for c, a in zip(caps, ini) if a is not None]
     ini = [a for a in ini if a is not None]
+    if len(sys.argv) == 5 and sys.argv[4] == "--paginas":
+        return modo_paginas(pgs, cfg, ini, caps, ult, sys.argv[3])
     fim_livro = cfg.get("fim")
     saida = []
     for k, c in enumerate(caps):
