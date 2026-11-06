@@ -74,3 +74,120 @@ print(json.dumps(next(ast.literal_eval(n.value) for n in arvore.body if isinstan
   // as substituições que já existiam continuam
   for (const [dls, antigas] of Object.entries({ "cdc-dls": ["cdc"], "idoso-dls": ["idoso"], "lmp-dls": ["lmp"], "cf-dls": ["cf"] })) assert.deepEqual(subst[dls], antigas);
 });
+
+// ---------- leitura dos trechos do PDF (sem PyMuPDF e sem PDF: o módulo é carregado com um pymupdf falso) ----------
+// Caso real do EPD, art. 2º, § 1º: a última palavra de um trecho grifado termina SEM espaço, e o espaço seguinte é um
+// trecho próprio só de espaço, na fonte normal. O extrator descartava esse trecho e saía "interdisciplinare".
+async function lerPagina(trechos) {
+  const py = `
+import json, runpy, sys, types
+sys.modules["pymupdf"] = types.ModuleType("pymupdf")
+m = runpy.run_path(sys.argv[1], run_name="modulo")
+class Pg:
+    def __init__(self, blocos): self.b = blocos
+    def get_text(self, modo): return {"blocks": self.b}
+linhas = m["linhas"](m["spans_da_pagina"](Pg(json.loads(sys.argv[2]))))
+print(json.dumps([{"txt": l["txt"], "margem": l["margem"], "spans": [s["t"] for s in l["s"]]} for l in linhas], ensure_ascii=False))`;
+  const bloco = [{ lines: trechos.map(s => ({ spans: [{ text: s[0], font: s[1], size: s[2], color: s[3], bbox: [s[4], s[5], s[6], s[5] + 11] }] })) }];
+  const { stdout } = await run("python3", ["-I", "-c", py, script, JSON.stringify(bloco)]);
+  return JSON.parse(stdout);
+}
+const GRIFO = 0xbc3048, CINZA = 0x333333, NEGRITO = "Literata-Bold", NORMAL = "Literata-Regular";
+
+test("o espaço que é um trecho próprio entre uma palavra grifada e a seguinte é mantido (interdisciplinar + e)", async () => {
+  const linhas = await lerPagina([
+    ["por ", NORMAL, 10.4, CINZA, 127.6, 149.8, 147.0],
+    ["equipe ", NEGRITO, 10.4, GRIFO, 157.3, 149.8, 195.4],
+    ["multiprofissional ", NEGRITO, 10.4, GRIFO, 205.7, 149.8, 300.6],
+    ["e ", NEGRITO, 10.4, GRIFO, 310.9, 149.8, 318.8],
+    ["interdisciplinar", NEGRITO, 10.4, GRIFO, 329.1, 149.8, 413.8],
+    [" ", NORMAL, 10.4, CINZA, 413.8, 149.8, 415.9],
+    ["e", NORMAL, 10.4, CINZA, 426.1, 149.8, 431.5],
+  ]);
+  assert.equal(linhas.length, 1);
+  assert.equal(linhas[0].txt, "por equipe multiprofissional e interdisciplinar e");
+});
+
+test("trecho só de espaço fora do texto da lei (margem, rodapé, outras fontes) continua descartado", async () => {
+  const linhas = await lerPagina([
+    [" ", "ArchivoSemiBold-Regular", 9, CINZA, 40, 200, 42],          // margem esquerda: não pode virar linha vazia
+    ["Texto da lei.", NORMAL, 10.4, CINZA, 70, 200.2, 140],
+    [" ", NORMAL, 10.4, CINZA, 70, 820, 72],                          // rodapé (y0 > 805)
+    [" ", "Archivo-Regular", 8, CINZA, 300, 300, 302],               // fonte que não é a do texto da lei
+  ]);
+  assert.deepEqual(linhas.map(l => l.txt), ["Texto da lei."]);
+});
+
+test("acento decomposto (letra + acento combinante) sai composto (NFC), como o resto do texto e as buscas do app esperam", async () => {
+  const linhas = await lerPagina([["pessoas idôneas e informações", NEGRITO, 10.4, GRIFO, 70, 300, 300]]);
+  assert.equal(linhas[0].txt, "pessoas idôneas e informações");
+  assert.equal(linhas[0].txt, linhas[0].txt.normalize("NFC"));
+});
+
+// Caso real da CF, art. 7º, XIII: a emenda que deu a redação aparece como uma etiqueta em fonte pequena ("EC 141/2026"),
+// colada ao texto sem espaço, e saía "EC 141/2026duração do trabalho".
+test("a etiqueta da emenda (EC 141/2026) não cola na primeira palavra do dispositivo", async () => {
+  const linhas = await lerPagina([
+    ["XIII - ", "ArchivoSemiBold-Bold", 8.9, CINZA, 70, 200, 95],
+    ["EC 141/2026", "ArchivoSemiBold-Bold", 5.8, 0x17785f, 96, 200, 130],
+    ["duração do trabalho normal", NORMAL, 10.4, CINZA, 130, 200, 260],
+  ]);
+  assert.equal(linhas.length, 1);
+  assert.equal(linhas[0].txt, "XIII - EC 141/2026 duração do trabalho normal");
+});
+
+test("etiqueta de emenda que já vem seguida de espaço não ganha espaço duplo, e texto parecido com etiqueta fora do padrão não é alterado", async () => {
+  const comEspaco = await lerPagina([
+    ["EC 139/2026", "ArchivoSemiBold-Bold", 5.8, 0x17785f, 96, 200, 130],
+    [" O controle externo", NORMAL, 10.4, CINZA, 130, 200, 260],
+  ]);
+  assert.equal(comEspaco[0].txt, "EC 139/2026 O controle externo");
+  const foraDoPadrao = await lerPagina([
+    ["ECO 10/2026", "ArchivoSemiBold-Bold", 5.8, 0x17785f, 96, 200, 130],
+    ["texto", NORMAL, 10.4, CINZA, 130, 200, 260],
+  ]);
+  assert.equal(foraDoPadrao[0].txt, "ECO 10/2026texto");
+});
+
+// Caso real da CF (art. 183 e art. 224): o bloco "COMO ESTÁ CAINDO · questões recentes do Vade Mecum de Questões" vem
+// depois do bloco de assertivas, não tem tratamento próprio e seu texto era anexado à última assertiva.
+async function extrair(trechos) {
+  const py = `
+import json, runpy, sys, types
+sys.modules["pymupdf"] = types.ModuleType("pymupdf")
+m = runpy.run_path(sys.argv[1], run_name="modulo")
+class Pg:
+    def __init__(self, blocos): self.b = blocos
+    def get_text(self, modo): return {"blocks": self.b}
+e = m["Extrator"](("cf-dls", "Constituição Federal · com grifos", "CF", "@constitucional"))
+for l in m["linhas"](m["spans_da_pagina"](Pg(json.loads(sys.argv[2])))):
+    e.linha(l)
+e.fecha_art()
+print(json.dumps(e.saida(), ensure_ascii=False))`;
+  const bloco = [{ lines: trechos.map(s => ({ spans: [{ text: s[0], font: s[1], size: s[2], color: s[3], bbox: [s[4], s[5], s[6], s[5] + 11] }] })) }];
+  const { stdout } = await run("python3", ["-I", "-c", py, script, JSON.stringify(bloco)]);
+  return JSON.parse(stdout);
+}
+const SEMIBOLD = "ArchivoSemiBold-ExtraBold";
+const cabecalhoCaindo = y => [["C O M O E S TÁ C A I N D O", SEMIBOLD, 6.0, 0x2f5d62, 81, y, 160], ["questões recentes do Vade Mecum de Questões, com gabarito comentado", "ArchivoSemiBold-Medium", 6.0, 0x6b6b6b, 168, y, 360]];
+
+test("o bloco 'Como está caindo' não é anexado à última assertiva, e as assertivas do artigo continuam saindo inteiras", async () => {
+  const lei = await extrair([
+    ["A R T.", SEMIBOLD, 6.0, 0x6a625b, 40, 50, 60],
+    ["224", "Literata-SemiBold", 12, CINZA, 40, 62, 60],
+    ["O Congresso Nacional instituirá o Conselho.", NORMAL, 10.4, CINZA, 70, 54, 300],
+    ["D E C O R A N D O A D O U T R I N A D A S B A N C A S", SEMIBOLD, 6.0, 0x2f6b3a, 81, 157, 240],
+    ["■", "LiberationSerif-Bold", 6.3, 0x2f6b3a, 81, 166, 85],
+    [" FGV 2026 - Juiz de Direito (TJ-PE)", "ArchivoSemiBold-Bold", 6.3, 0x2f6b3a, 84, 166, 240],
+    ["O art. 224 veicula norma de eficácia limitada.", "Literata-Regular", 8.4, CINZA, 81, 173, 300],
+    ...cabecalhoCaindo(263).map(s => s),
+    ["Segundo a Constituição, a publicação de veículo impresso depende de licença.", "Literata-Regular", 8.4, CINZA, 81, 285, 400],
+    ["GABARITO: FALSO", SEMIBOLD, 5.7, 0xc4161c, 87, 317, 130],
+  ]);
+  const itens = lei.grupos.flatMap(g => g.itens);
+  assert.equal(itens.filter(i => i.a !== undefined).length, 1);
+  const qs = itens.filter(i => i.q !== undefined);
+  assert.equal(qs.length, 1);
+  assert.equal(qs[0].q, "O art. 224 veicula norma de eficácia limitada.");
+  assert.doesNotMatch(JSON.stringify(lei), /C O M O E S T|Vade Mecum|GABARITO/);
+});

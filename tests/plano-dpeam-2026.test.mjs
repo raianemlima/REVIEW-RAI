@@ -132,7 +132,7 @@ test("o plano é publicado, guardado offline e a edição de cache fica sincroni
   assert.match(ler("arquivos/cronograma.js"), /\["am-2026-servidor","AM",2026,"DPE\/AM · Analista Jurídico \(servidor\) · Edital 1\/2026"\]/);
   const versoes = [ler("sw.js").match(/const CACHE = "([^"]+)"/)[1], ler("gate.js").match(/APP_CACHE = "([^"]+)"/)[1], ler("index.html").match(/APP_CACHE = "([^"]+)"/)[1]];
   assert.equal(new Set(versoes).size, 1, `versões de cache divergentes: ${versoes}`);
-  assert.equal(versoes[0], "review-dpe-assuntos-v31");
+  assert.equal(versoes[0], "review-dpe-assuntos-v32");
 });
 
 async function abrirPagina() {
