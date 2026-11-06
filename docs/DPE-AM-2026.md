@@ -8,6 +8,8 @@ O que o app tem do **Edital nº 01/2026 da Defensoria Pública do Estado do Amaz
 |---|---|---|
 | **Cronograma** › "DPE/AM · Analista Jurídico (servidor) · Edital 1/2026" (`am-2026-servidor`) | 11 rubricas e 173 assuntos: 3 de Conhecimentos Gerais e 8 dos Específicos do cargo R, cada assunto com o texto do edital e a página do PDF | Anexo II do edital (PDF, páginas 30 e 43 a 47) |
 | **Cronograma** › sugestão de percentuais | Perfil por questões: 20 Gerais e 40 Específicas | Item 7.1 do edital |
+| **Aprofundamento** › grupo "Apostila DPE/AM" | Três e-books: a **apostila de estudo** (29 capítulos, com notas de fonte), os **21 quadros comparativos** (23 capítulos) e **LC nº 80/1994 × DPE-AM** (12 capítulos) | Material de estudo fornecido pela titular do app (veja abaixo) |
+| **Cronograma** › botão **📖 Ler o resumo** | 17 assuntos do edital abrem a apostila no capítulo certo: os 9 de Legislação da Defensoria, os 7 de Conhecimentos Jurídicos e Institucionais e o item 6 de Direito Constitucional | `ferramentas/conteudo/dpeam/mapa-apostila.json` |
 | **Plano estratégico** (`plano-dpeam-2026.html`) | Regras do edital e consequências, simulador da nota, mapa do programa, fases datadas até 07/03/2027, piloto de 4 semanas, diagnóstico por disciplina, checklist de datas | Itens 4, 7 a 13 e Anexos II a IV |
 
 O programa tem `cargo: "servidor"`, então fica **fora do relatório de frequência dos editais de Defensor** (aba Progresso). Os cartões e a revisão espaçada seguem a regra geral: um cartão novo só entra depois de marcar "Estudei este assunto" no Cronograma.
@@ -30,8 +32,38 @@ O edital não divide as 20 questões gerais entre as três rubricas nem as 40 es
 - **Cronograma sujeito a alteração.** As datas do plano vêm do Anexo III e podem mudar; confira o site da banca. O plano exibe as datas como "previstas".
 - **Localizador de página.** O número impresso no rodapé do Anexo II reinicia na página 1, então o localizador é a página do arquivo PDF (`Edital nº 01/2026 – DPE/AM, Anexo II, PDF p. N`).
 - **Vagas.** O cargo R tem 1 vaga imediata em Itacoatiara e cadastro de reserva nos 12 polos; o corte de classificação é a 30ª posição por polo (40ª nas cotas).
-- **Resumos por matéria.** O botão **Ler o resumo** do Cronograma depende do campo `editais` de cada e-book selado (veja [Resumos por matéria](RESUMOS-POR-MATERIA.md)), e este edital não está nesse mapa. Nos assuntos dele o botão e o aviso "sem resumo" não aparecem, sem erro. Os e-books continuam abrindo normalmente pela Biblioteca. Ligar os assuntos exige regenerar os e-books com o material pessoal do Drive (`ferramentas/conteudo/drive/`), que não faz parte do repositório.
+- **Resumos por matéria.** O botão **Ler o resumo** do Cronograma depende do campo `editais` do e-book selado (veja [Resumos por matéria](RESUMOS-POR-MATERIA.md)). Os e-books de resumos por matéria não têm este edital nesse mapa, então só os 17 assuntos ligados à apostila (acima) têm o botão; nos demais ele e o aviso "sem resumo" não aparecem, sem erro. Ligar o restante exigiria regenerar os resumos com o material pessoal do Drive (`ferramentas/conteudo/drive/`), que não faz parte do repositório.
+- **Só um botão por assunto.** Se dois e-books ligarem o mesmo assunto, vale o primeiro na ordem do baralho. Por isso só a apostila tem `editais`; os quadros e o estudo da LC nº 80 abrem pelo Aprofundamento.
 - **Fora do escopo.** Programas dos cargos A a Q.
+
+## Material de estudo (Apostila DPE/AM)
+
+Três materiais fornecidos pela titular do app entram como e-books do Aprofundamento, no grupo **Apostila DPE/AM**, em `conteudo-cifrado/dpeam-estudo.bin`. **O repositório é público**: o texto nunca fica legível nele. Só o `.bin` selado com a chave pública do app vai ao Git; a publicação o abre com `APP_SENHA` (`ferramentas/ci/aplicar_ebooks.mjs`) e o põe no baralho cifrado. Por isso os e-books só aparecem no app depois do merge e da publicação.
+
+| E-book | id | Conteúdo |
+|---|---|---|
+| Apostila de estudo — DPE/AM | `dpeam-apostila-cg` | Legislação da Defensoria e Conhecimentos Jurídicos e Institucionais do Anexo II (CF arts. 5º, 37 e 134, emendas, LC 80/1994, normas do Amazonas, ética, direito antidiscriminatório), com casos, questões comentadas e 264 notas de fonte |
+| Quadros comparativos DPE/AM | `dpeam-quadros` | 21 quadros de "conceito, alcance, exemplo e confusão a evitar" e um capítulo de uso |
+| LC nº 80/1994 e a DPE-AM | `dpeam-lc80` | O que é comum, o que é da DPU e o que cada Estado complementa; 9 quadros |
+
+**O que o conversor muda** (`ferramentas/conteudo/dpeam/apostila_para_ebook.py`), porque o renderizador do app aceita uma sintaxe curta: tira o logo, o `<span>` oculto com as notas e os separadores; troca `[^1_12]` por `[12]` e leva as notas ao capítulo "Fontes consultadas" (em texto simples, pois o app não torna links clicáveis); resolve escapes; normaliza o separador de tabela para 3 traços (com 2, o app não reconhece a tabela); tira o vocativo pessoal da abertura dos quadros; e recusa tabela com número de colunas diferente do cabeçalho. O resto do texto é o original.
+
+**Aviso do app.** Cada e-book abre com um aviso sobre o marco temporal: a prova só cobre a legislação vigente até a publicação do edital (item 13.2). Os materiais citam alterações de 2026 (LC estadual nº 288/2026 e Lei estadual nº 8.345/2026) que **não foram verificadas de forma independente** (uma busca na web não encontrou fonte para nenhuma das duas, o que não prova que não existam). Confira a data de publicação delas antes de memorizar.
+
+**Também não foram verificadas** as demais afirmações jurídicas dos materiais, como as ADIs nº 2.167 e nº 6.873 e os números de artigos da LC nº 80/1994. O texto é do material, não do app.
+
+**Os testes** usam texto fictício (o conteúdo real não entra no repositório). `tests/apostila-dpeam.test.mjs` cobre o conversor, o mapa dos assuntos contra o catálogo e o botão no Cronograma, com uma apostila sintética montada a partir dos próprios títulos do mapa.
+
+**Regenerar** (os arquivos de origem ficam fora do Git):
+
+```bash
+python3 -I ferramentas/conteudo/dpeam/apostila_para_ebook.py --perfil apostila --mapa ferramentas/conteudo/dpeam/mapa-apostila.json apostila.md saida/apostila.json
+python3 -I ferramentas/conteudo/dpeam/apostila_para_ebook.py --perfil quadros quadros.md saida/quadros.json
+python3 -I ferramentas/conteudo/dpeam/apostila_para_ebook.py --perfil lc80 lc80.md saida/lc80.json
+node ferramentas/ajustes/selar_conteudo.mjs conteudo-cifrado/dpeam-estudo.bin saida/apostila.json saida/quadros.json saida/lc80.json
+```
+
+A conversão falha se o mapa apontar para capítulo ou título que não existe, o que protege as âncoras do botão **Ler o resumo**. Depois aumente a versão do cache (`CACHE` em `sw.js`; `APP_CACHE` em `gate.js` e `index.html`) e rode `npm test`.
 
 ## Atualizar
 

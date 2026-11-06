@@ -73,7 +73,7 @@ test("aplicar_ebooks sem senha, sem e-books ou com .bin de outra chave não mexe
 
 test("os e-books do Aprofundamento no repositório estão selados (sem texto legível do material) e sem nome de curso no arquivo", () => {
   const pasta = join(raiz, "conteudo-cifrado"), bins = readdirSync(pasta).filter(f => f.endsWith(".bin")).sort();
-  assert.deepEqual(bins, ["livros-manuais.bin", "livros-sinopses.bin", "manual-direito-constitucional.bin", "manual-direito-processual-penal.bin", "resumos-por-materia.bin", "revisao-pontos-de-prova.bin"]);
+  assert.deepEqual(bins, ["dpeam-estudo.bin", "livros-manuais.bin", "livros-sinopses.bin", "manual-direito-constitucional.bin", "manual-direito-processual-penal.bin", "resumos-por-materia.bin", "revisao-pontos-de-prova.bin"]);
   for (const f of bins) {
     const buf = readFileSync(join(pasta, f));
     assert.ok(ehSelado(buf), `${f} selado (LSX1)`);
