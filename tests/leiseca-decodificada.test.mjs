@@ -29,6 +29,8 @@ print(json.dumps(saida))`;
 const TITULOS = {
   "Lei 9784-1999 Processo Administrativo - Legislação Decodificada 3 em 1 - Grifos com Cores": "l9784-dls",
   "Lei 8.987-1995 (Concessões) - Legislação Decodificada 3 em 1 - Grifos com cores": "l8987-dls",
+  "Legislação Decodificada - Estatuto da Pessoa com Deficiência - Grifos com Cores": "epd-dls",
+  "Legislação Decodificada - Estatuto da Pessoa Idosa - Grifos com Cores": "idoso-dls",
   // as que já existiam continuam sendo reconhecidas pela mesma linha
   "Lei 8429-1992 Improbidade - Legislação Decodificada 3 em 1 - Grifos com Cores": "lia-dls",
   "Lei 14133-2021 - Legislação Decodificada 3 em 1 - Grifos com Cores": "l14133-dls",
@@ -60,11 +62,15 @@ print(json.dumps(next(ast.literal_eval(n.value) for n in arvore.body if isinstan
   const { stdout } = await run("python3", ["-I", "-c", py, script]);
   const subst = JSON.parse(stdout);
   assert.deepEqual(subst["l9784-dls"], ["l9784"]);
+  assert.deepEqual(subst["epd-dls"], ["l13146", "epcd"], "o EPD grifado tira o texto oficial (l13146) e a seleção antiga (epcd)");
   assert.equal("l8987-dls" in subst, false);
   const publica = join(raiz, "ferramentas/conteudo/dados/leiseca-publica/l9784.json");
   assert.ok(existsSync(publica), "a lei pública que a grifada substitui precisa existir");
   assert.equal(JSON.parse(readFileSync(publica, "utf8")).id, "l9784");
   assert.equal(existsSync(join(raiz, "ferramentas/conteudo/dados/leiseca-publica/l8987.json")), false);
+  const epd = join(raiz, "ferramentas/conteudo/dados/leiseca-publica/l13146.json");
+  assert.ok(existsSync(epd), "a lei pública que o EPD grifado substitui precisa existir");
+  assert.equal(JSON.parse(readFileSync(epd, "utf8")).id, "l13146");
   // as substituições que já existiam continuam
   for (const [dls, antigas] of Object.entries({ "cdc-dls": ["cdc"], "idoso-dls": ["idoso"], "lmp-dls": ["lmp"], "cf-dls": ["cf"] })) assert.deepEqual(subst[dls], antigas);
 });

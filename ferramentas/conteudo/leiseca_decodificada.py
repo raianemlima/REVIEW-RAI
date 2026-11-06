@@ -43,6 +43,7 @@ LEIS = [
     # leis específicas antes dos códigos: o título e a 1ª página de uma lei podem citar um código
     (r"9\.?784", "l9784-dls", "Lei 9.784/1999 · Processo Administrativo · com grifos", "Lei 9.784", "@administrativo"),
     (r"8\.?987", "l8987-dls", "Lei 8.987/1995 · Concessões e Permissões · com grifos", "Lei 8.987", "@administrativo"),
+    (r"Pessoa com Defici|13\.?146", "epd-dls", "Estatuto da Pessoa com Deficiência · Lei 13.146/2015 · com grifos", "EPD", "@direitos humanos"),
     (r"Execução Penal|7\.?210", "lep-dls", "Lei de Execução Penal · Lei 7.210/1984 · com grifos", "LEP", "@execucao penal"),
     (r"Criança e do Adolescente|8\.?069", "eca-dls", "Estatuto da Criança e do Adolescente · Lei 8.069/1990 · com grifos", "ECA", "@crianca"),
     (r"Maria da Penha|11\.?340", "lmp-dls", "Lei Maria da Penha · Lei 11.340/2006 · com grifos", "Maria da Penha", "@penal"),
@@ -412,7 +413,7 @@ def cartoes_de(curto, grupos, minimo=4, por_artigo=2):
 
 # id da lei do curso -> versões antigas da mesma lei (seleções em dados/leiseca e texto oficial em dados/leiseca-publica)
 # que ela tira do leitor na publicação
-SUBSTITUI = {"cdc-dls": ["cdc"], "idoso-dls": ["idoso"], "lmp-dls": ["lmp"], "cf-dls": ["cf"], "l9784-dls": ["l9784"]}
+SUBSTITUI = {"cdc-dls": ["cdc"], "idoso-dls": ["idoso"], "lmp-dls": ["lmp"], "cf-dls": ["cf"], "l9784-dls": ["l9784"], "epd-dls": ["l13146", "epcd"]}
 
 
 def meta_de(titulo, capa=""):

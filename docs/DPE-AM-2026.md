@@ -65,19 +65,23 @@ node ferramentas/ajustes/selar_conteudo.mjs conteudo-cifrado/dpeam-estudo.bin sa
 
 A conversão falha se o mapa apontar para capítulo ou título que não existe, o que protege as âncoras do botão **Ler o resumo**. Depois aumente a versão do cache (`CACHE` em `sw.js`; `APP_CACHE` em `gate.js` e `index.html`) e rode `npm test`.
 
-## Lei seca grifada de Administrativo (Lei 9.784 e Lei 8.987)
+## Lei seca grifada (Lei 9.784, Lei 8.987 e Estatuto da Pessoa com Deficiência)
 
-Duas leis do programa de Direito Administrativo entram no leitor de **Lei seca** com os grifos por cor, as questões por artigo (2022–2026) e os cartões de lacuna, pelo mesmo fluxo das demais leis do curso (`ferramentas/conteudo/leiseca_decodificada.py` → `ferramentas/ajustes/cifrar_leiseca.mjs` → `leiseca-cifrada/*.bin` selado; a publicação abre com `APP_SENHA`).
+Três leis do programa entram no leitor de **Lei seca** com os grifos por cor, as questões por artigo (2022–2026) e os cartões de lacuna, pelo mesmo fluxo das demais leis do curso (`ferramentas/conteudo/leiseca_decodificada.py` → `ferramentas/ajustes/cifrar_leiseca.mjs` → `leiseca-cifrada/*.bin` selado; a publicação abre com `APP_SENHA`).
 
 | Lei | id | Artigos | Com grifos | Julgados | Cartões | Itens do edital |
 |---|---|---|---|---|---|---|
 | Lei 9.784/1999 · Processo Administrativo | `l9784-dls` | 77 | 66 | 11 | 66 | Administrativo, item 4 (procedimento administrativo) |
 | Lei 8.987/1995 · Concessões e Permissões | `l8987-dls` | 49 | 33 | 15 | 37 | Administrativo, item 7 (concessão, permissão e parceria público-privada) |
+| Estatuto da Pessoa com Deficiência · Lei 13.146/2015 | `epd-dls` | 127 | 66 | 0 | 56 | Bloco Criança, Idoso, Pessoa com Deficiência e Mulher (o edital cita a Lei 13.146/2015 pelo número) |
 
+- **O EPD substitui o texto oficial (`l13146`, 130 artigos) e a seleção antiga (`epcd`).** A grifada não traz os arts. 29, 82 e 106, que no texto oficial são `(VETADO)`; os demais estão inteiros (o oficial só é maior por pontilhados e notas de alteração). Esta edição da apostila não tem as seções de assertivas nem de julgados (0 e 0): é a série sem "3 em 1".
 - **A Lei 9.784 já existia como texto oficial** (`ferramentas/conteudo/dados/leiseca-publica/l9784.json`, sem grifos). A grifada declara `substitui: ["l9784"]` e a publicação a coloca no lugar da pública, sem duplicar a lei no leitor. A Lei 8.987 não tinha versão pública.
 - **Correção na publicação (`aplicar_leiseca.mjs`).** O campo `substitui` só enxergava leis que já estavam no baralho; as leis públicas inseridas na **mesma** execução ainda estavam na lista de novas e escapavam. Foi achado numa simulação da publicação com os dados reais (o baralho ficaria com as duas versões) e agora há teste para isso.
 - **Onde aparecem no Cronograma.** O atalho **⚖️ Lei seca** só sai quando o edital cita a lei ou ela é a "lei da disciplina" (tabela `LEI_DA_DISCIPLINA` em `arquivos/cronograma.js`, que não tem Administrativo). O edital da DPE/AM não cita a Lei 9.784 nem a 8.987 por número. Por isso elas aparecem em **Ver tudo sobre o assunto**, por coincidência de termos: em verificação local com os dados reais, em 10 dos 13 assuntos de Administrativo. Elas também casam com assuntos de outras rubricas (por exemplo, recursos e prazos em Processo Penal) por termos genéricos; isso já acontece com as demais leis e fica restrito a essa lista.
-- **Tabela do extrator.** Foram acrescentadas as linhas das duas leis em `LEIS` e a substituição em `SUBSTITUI`; `tests/leiseca-decodificada.test.mjs` cobre o reconhecimento pelo título e as substituições sem importar o PyMuPDF nem usar PDF.
+- **Atalho que não funcionava com os ids publicados (corrigido).** A tabela `LEI_DA_DISCIPLINA` usa os ids base (`cf`, `cdc`, `idoso`, `lmp`, `epcd`), mas no baralho publicado essas leis têm outros ids (as do curso levam `-dls`, e o EPD é `l13146` ou `epd-dls`). Medindo na tela real, o atalho só saía com o id antigo; com `cf-dls`, `idoso-dls`, `epd-dls` e `l13146` sumia, o que atingia Constitucional e o bloco Criança, Idoso, PcD e Mulher. `leiDoAssunto` agora normaliza o id (`ID_BASE_DA_LEI`); `tests/cronograma-lei-seca.test.mjs` cobre os ids antigos e novos, com controle negativo (lei que não é da disciplina não ganha o atalho).
+- **Idoso e Improbidade, já no app (`idoso-dls`, `lia-dls`), não foram trocados.** Os PDFs foram reenviados, mas a extração nova sela com tamanho quase idêntico ao do `.bin` do repositório (−0,1% e −0,02%, 16 e 8 bytes), o que indica o mesmo conteúdo; uma edição diferente mudaria o tamanho muito mais. O comparativo é indireto (o conteúdo atual está selado e não pode ser aberto sem a senha do app).
+- **Tabela do extrator.** Foram acrescentadas as linhas das três leis em `LEIS` e as substituições em `SUBSTITUI`; `tests/leiseca-decodificada.test.mjs` cobre o reconhecimento pelo título e as substituições sem importar o PyMuPDF nem usar PDF.
 - **Marca d'água.** Os PDFs trazem dados pessoais da compradora em cada página. O extrator os descarta e aborta se algo parecido sobrar; a saída foi conferida de novo à parte (nenhuma ocorrência).
 
 ## Atualizar

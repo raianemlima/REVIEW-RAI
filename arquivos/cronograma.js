@@ -213,11 +213,15 @@
   // atalho de Lei seca só quando a lei é do assunto: citada no edital ou a lei da própria disciplina. Coincidência de
   // palavras em outra lei (ex.: "convivência familiar" no Estatuto da PcD para um assunto do ECA) fica só em "Ver tudo".
   const LEI_DA_DISCIPLINA = [[/constitucional/, 'cf'], [/consumidor/, 'cdc'], [/coletiv|difus/, 'acp'], [/humanos|internacional/, 'cadh'], [/execucao penal|penitenciari|prisional/, 'mandela'], [/idos/, 'idoso'], [/deficien/, 'epcd'], [/mulher|genero|domestic/, 'lmp'], [/defensoria|institucional/, 'lc80'], [/juizados/, 'jec'], [/urbanistic|moradia|agrari|fundiari/, 'moradia'], [/alimentos/, 'alimentos'], [/racial|vulnera|situacao de rua/, 'vulneraveis']];
+  // No baralho publicado a lei da disciplina pode ter outro id que o da tabela acima: as do curso levam o sufixo -dls (e
+  // substituem a seleção antiga) e o Estatuto da Pessoa com Deficiência é a l13146 (texto oficial) ou a epd-dls (grifada).
+  const ID_BASE_DA_LEI = { 'cf-dls': 'cf', 'cdc-dls': 'cdc', 'idoso-dls': 'idoso', 'lmp-dls': 'lmp', 'l13146': 'epcd', 'epd-dls': 'epcd' };
+  const idBaseDaLei = id => ID_BASE_DA_LEI[id] || id;
   function leiDoAssunto(p, b, r) {
     const itens = (r?.lei?.itens || []).filter(x => x.fonte === 'leiseca'); if (!itens.length) return null;
     const n = normLocal([disciplina(b.disciplinaId, p).nome, b.nome, b.objeto?.titulo].filter(Boolean).join(' '));
     const daDisc = new Set(LEI_DA_DISCIPLINA.filter(([re]) => re.test(n)).map(([, id]) => id));
-    return itens.find(x => x.motivo === 'lei citada no edital') || itens.find(x => daDisc.has(x.item.id)) || null;
+    return itens.find(x => x.motivo === 'lei citada no edital') || itens.find(x => daDisc.has(idBaseDaLei(x.item.id))) || null;
   }
   function acoesAssunto(p, b) {
     const t = resumoDoAssunto(p, b), r = conteudoRelacionado(p, b), out = [];
