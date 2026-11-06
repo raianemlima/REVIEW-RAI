@@ -1139,7 +1139,8 @@ function renderLeiSeca() {
     if (filtrando) return "";
     if (b.h !== undefined) { const est = /^(T[ÍI]TULO|CAP[ÍI]TULO|LIVRO|Livro|PARTE|Parte|Se[çc][ãa]o|SEÇÃO)\b/.test(b.h) || b.h === b.h.toUpperCase(); return `<h4 class="ls-h ${est ? "" : "rub"}">${esc(b.h)}</h4>`; }
     if (b.n !== undefined) return `<p class="ls-n">${esc(b.n)}</p>`;
-    if (b.qsolta) return `<div class="ls-q"><p>${esc(b.qsolta.q)}</p><small>${esc(b.qsolta.b)}</small><details><summary>Ver gabarito</summary><p><b>${b.qsolta.g}.</b> ${esc(b.qsolta.c || "")}</p></details></div>`;
+    if (b.qsolta) return `<div class="ls-q"><p>${esc(b.qsolta.q)}</p><small>${esc(b.qsolta.b)}</small>
+      ${b.qsolta.g ? `<details><summary>Ver gabarito</summary><p><b>${b.qsolta.g}.</b> ${esc(b.qsolta.c || "")}</p></details>` : `<p class="ls-ok">Assertiva considerada correta pela banca.</p>`}</div>`;
     return "";
   }).join("");
   $("#main").innerHTML = `
