@@ -98,7 +98,11 @@ for (const lei of leis) {
   let pos = deck.leiseca.findIndex(x => x.id === lei.id || (lei.substitui || []).includes(x.id));
   deck.leiseca = deck.leiseca.filter((x, i) => i === pos || !(x.id === lei.id || (lei.substitui || []).includes(x.id)));
   if (pos >= 0) { pos = deck.leiseca.findIndex(x => x.id === lei.id || (lei.substitui || []).includes(x.id)); deck.leiseca[pos] = item; }
-  else novas.push(item);
+  else {
+    // as leis públicas da mesma publicação ainda estão em "novas" (entram no fim, abaixo): a lei grifada também as substitui
+    for (const velha of lei.substitui || []) { const i = novas.findIndex(x => x.id === velha); if (i >= 0) novas.splice(i, 1); }
+    novas.push(item);
+  }
   nLeis++;
   const prefixo = `ls-${lei.id}`;
   deck.cartoes = deck.cartoes.filter(c => !String(c.id).startsWith(prefixo));

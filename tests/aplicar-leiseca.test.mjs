@@ -139,6 +139,27 @@ test("a lei seca pública usa o texto vigente: nada tachado, revogado só como (
   assert.match(JSON.parse(await readFile(join(pasta, "res-cnj-401.json"), "utf8")).nome, /substituiu a Res\. 230\/2016/);
 });
 
+// Caso real da Lei 9.784: o texto oficial (leiseca-publica/l9784.json) e a versão grifada (leiseca-cifrada/l9784-dls.bin) entram na
+// MESMA publicação, as públicas primeiro. A grifada precisa tirar a pública da lista; sem isso o leitor mostraria a lei duas vezes.
+test("a lei do curso tira a versão pública da mesma lei que entra na mesma publicação, e só ela", async () => {
+  const { parDaSenha, selar } = await import(join(raiz, "ferramentas/ci/leiseca_selada.mjs"));
+  const pasta = await mkdtemp(join(tmpdir(), "leiseca-")), bins = join(pasta, "bins"), publicas = join(pasta, "publicas");
+  await mkdir(bins); await mkdir(publicas);
+  const senha = "senha-de-teste", publica = parDaSenha(senha).publica.toString("base64");
+  const oficial = (id, curto) => ({ id, nome: `${curto} · texto oficial`, curto, disc: "@administrativo", fonte: "Planalto", completa: true, grupos: [{ itens: [{ a: "1", x: "Art. 1º Texto oficial." }] }] });
+  await writeFile(join(publicas, "l9784.json"), JSON.stringify(oficial("l9784", "Lei 9.784")));
+  await writeFile(join(publicas, "l7347.json"), JSON.stringify(oficial("l7347", "Lei 7.347")));
+  const curso = { id: "l9784-dls", nome: "Lei 9.784/1999 · Processo Administrativo · com grifos", curto: "Lei 9.784", disc: "@administrativo", fonte: "Fixture", completa: true, substitui: ["l9784"], cartoes: [],
+    grupos: [{ nome: "Parte", itens: [{ a: "1", x: "Art. 1º Texto do curso.", g: [["Art. 1º Texto do curso.", "a"]] }] }] };
+  await writeFile(join(bins, "l9784-dls.bin"), selar(publica, gzipSync(Buffer.from(JSON.stringify(curso)))));
+  await escreverDeck(pasta, senha, { disciplinas: [{ id: "ad", nome: "Direito Administrativo" }], cartoes: [], leiseca: [] });
+  const env = { ...process.env, APP_SENHA: senha, LEISECA_PASTA: bins, LEISECA_PUBLICA: publicas }; delete env.LEISECA_CHAVE;
+  await run("node", [script, join(pasta, "index.html")], { env });
+  const { deck } = await lerDeck(pasta, senha);
+  assert.deepEqual(deck.leiseca.map(l => l.id), ["l7347", "l9784-dls"], "a pública substituída sai; a que ninguém substitui fica");
+  assert.equal(deck.leiseca.find(l => l.id === "l9784-dls").nome, "Lei 9.784/1999 · Processo Administrativo · com grifos");
+});
+
 test("lei seca selada com a chave pública: cifra sem segredo e abre só com a senha do app", async () => {
   const { parDaSenha } = await import(join(raiz, "ferramentas/ci/leiseca_selada.mjs"));
   const pasta = await mkdtemp(join(tmpdir(), "leiseca-")), bins = join(pasta, "bins"), saida = join(pasta, "saida");
