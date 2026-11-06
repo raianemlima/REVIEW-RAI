@@ -39,6 +39,8 @@ NIVEL = {"LIVRO": 0, "PARTE": 0, "TÍTULO": 1, "CAPÍTULO": 2, "SEÇÃO": 3, "SU
 MARCA_DAGUA = re.compile(r"uid:|cpfCnpj:|email:|Baixado por", re.I)
 # etiqueta da emenda que deu a redação ao dispositivo ("EC 141/2026"): fonte pequena, colada ao texto sem espaço
 ETIQUETA_EMENDA = re.compile(r"EC\s*\d+/\d{4}")
+# número do artigo na margem ("1º", "156-A", "1.240-A"): a fonte encolhe quando o número é comprido (12 pt até 6,8 pt)
+NUMERO_ARTIGO = re.compile(r"\d[\d.]*[º°]?(?:-[A-Z])?\.?")
 INICIO_LINHA = re.compile(r"^(?:[IVXLC]+\s*[-–—]|[a-z]\)|\d+\.\s|§|Parágrafo único|Art\.)")
 
 # id, nome, curto e disciplina (resolvida no baralho pelo nome canônico na inserção)
@@ -278,7 +280,8 @@ class Extrator:
             elif compacto == "ART.":
                 self.comecou = True
                 self.novo_art()
-            elif self.art is not None and not self.art["a"] and s0["sz"] >= 10:
+            elif self.art is not None and not self.art["a"] and (
+                    s0["sz"] >= 10 or (s0["f"].startswith("Literata") and s0["sz"] >= 6.5 and NUMERO_ARTIGO.fullmatch(txt.replace(" ", "")))):
                 self.numera(txt.replace(" ", ""))
             return
         juntado = junta_espacadas(txt)

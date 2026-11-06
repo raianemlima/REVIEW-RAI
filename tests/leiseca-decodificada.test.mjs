@@ -191,3 +191,35 @@ test("o bloco 'Como está caindo' não é anexado à última assertiva, e as ass
   assert.equal(qs[0].q, "O art. 224 veicula norma de eficácia limitada.");
   assert.doesNotMatch(JSON.stringify(lei), /C O M O E S T|Vade Mecum|GABARITO/);
 });
+
+// Caso real da CF (art. 156-A), do CC (art. 421-A, 1.025) e do CPC: o número do artigo, na margem, encolhe para caber
+// ("1º" em 12 pt, "156-A" em 8,2 pt, "1.240-A" em 6,8 pt). O extrator só aceitava 10 pt ou mais, então o artigo perdia
+// o número (o leitor não mostra item sem número) e suas assertivas ficavam soltas.
+async function artigoComNumero(numero, tamanho) {
+  const lei = await extrair([
+    ["A R T.", SEMIBOLD, 6.2, 0xad5a0a, 38, 124, 60],
+    [numero, "Literata-SemiBoldItalic", tamanho, 0x1f7396, 36, 130, 60],
+    ["Lei complementar instituirá o imposto.", NORMAL, 10.4, CINZA, 70, 126, 300],
+    ["D E C O R A N D O A D O U T R I N A D A S B A N C A S", SEMIBOLD, 6.0, 0x2f6b3a, 81, 157, 240],
+    ["■", "LiberationSerif-Bold", 6.3, 0x2f6b3a, 81, 166, 85],
+    [" FGV 2026 - Juiz de Direito (TJ-PE)", "ArchivoSemiBold-Bold", 6.3, 0x2f6b3a, 84, 166, 240],
+    ["O imposto é compartilhado.", "Literata-Regular", 8.4, CINZA, 81, 173, 300],
+  ]);
+  return lei.grupos.flatMap(g => g.itens);
+}
+for (const [numero, tamanho] of [["1º", 12.0], ["156-A", 8.2], ["1.025", 8.8], ["1.240-A", 6.8], ["54-A", 9.9]]) {
+  test(`o número do artigo ${numero} (${tamanho} pt na margem) é mantido, e a assertiva fica dentro do artigo`, async () => {
+    const itens = await artigoComNumero(numero, tamanho);
+    const arts = itens.filter(i => i.x !== undefined);
+    assert.equal(arts.length, 1);
+    assert.equal(arts[0].a, numero.replace("º", ""));
+    assert.match(arts[0].x, new RegExp("^Art\\. " + numero.replace(".", "\\.") + (numero.includes("º") ? "" : "\\.") + " Lei complementar"));
+    assert.equal(itens.filter(i => i.q !== undefined).length, 1);
+    assert.equal(itens.indexOf(arts[0]), 0, "a assertiva vem depois do artigo, não solta");
+  });
+}
+
+test("texto da margem que não parece número de artigo não vira número (controle negativo)", async () => {
+  const itens = await artigoComNumero("DOS DIREITOS E DEVERES", 8.2);
+  assert.equal(itens.filter(i => i.a !== undefined).length, 0);
+});
