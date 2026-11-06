@@ -22,6 +22,7 @@ extração e a saída é conferida para não conter esse tipo de dado. Requer Py
 """
 import json
 import re
+import unicodedata
 import sys
 from pathlib import Path
 
@@ -84,12 +85,19 @@ def spans_da_pagina(pg):
     for b in pg.get_text("dict")["blocks"]:
         for l in b.get("lines", []):
             for s in l["spans"]:
-                t = s["text"]
-                if not t.strip() or MARCA_DAGUA.search(t):
+                # NFC: o PDF traz alguns acentos decompostos (letra + acento combinante), no mesmo trecho da letra
+                t = unicodedata.normalize("NFC", s["text"])
+                if MARCA_DAGUA.search(t):
                     continue
                 x0, y0, x1, y1 = s["bbox"]
                 if y0 > 805:                      # rodapé e numeração de página
                     continue
+                if not t.strip():
+                    # A última palavra de um trecho grifado termina sem espaço, e o espaço seguinte é um trecho próprio
+                    # só de espaço, na fonte normal. Descartá-lo colava as palavras ("interdisciplinar" + "e"). Só vale
+                    # no texto da lei: em outras fontes e na margem esses trechos continuam sendo ignorados.
+                    if not (x0 >= 62 and texto_lei({"sz": round(s["size"], 1), "f": s["font"]})):
+                        continue
                 if t.strip() == "A N O TA Ç Õ E S":
                     continue
                 out.append({"t": t, "x": x0, "y": (y0 + y1) / 2, "sz": round(s["size"], 1), "c": cor(s), "f": s["font"]})

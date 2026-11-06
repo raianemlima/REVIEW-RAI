@@ -74,3 +74,52 @@ print(json.dumps(next(ast.literal_eval(n.value) for n in arvore.body if isinstan
   // as substituições que já existiam continuam
   for (const [dls, antigas] of Object.entries({ "cdc-dls": ["cdc"], "idoso-dls": ["idoso"], "lmp-dls": ["lmp"], "cf-dls": ["cf"] })) assert.deepEqual(subst[dls], antigas);
 });
+
+// ---------- leitura dos trechos do PDF (sem PyMuPDF e sem PDF: o módulo é carregado com um pymupdf falso) ----------
+// Caso real do EPD, art. 2º, § 1º: a última palavra de um trecho grifado termina SEM espaço, e o espaço seguinte é um
+// trecho próprio só de espaço, na fonte normal. O extrator descartava esse trecho e saía "interdisciplinare".
+async function lerPagina(trechos) {
+  const py = `
+import json, runpy, sys, types
+sys.modules["pymupdf"] = types.ModuleType("pymupdf")
+m = runpy.run_path(sys.argv[1], run_name="modulo")
+class Pg:
+    def __init__(self, blocos): self.b = blocos
+    def get_text(self, modo): return {"blocks": self.b}
+linhas = m["linhas"](m["spans_da_pagina"](Pg(json.loads(sys.argv[2]))))
+print(json.dumps([{"txt": l["txt"], "margem": l["margem"], "spans": [s["t"] for s in l["s"]]} for l in linhas], ensure_ascii=False))`;
+  const bloco = [{ lines: trechos.map(s => ({ spans: [{ text: s[0], font: s[1], size: s[2], color: s[3], bbox: [s[4], s[5], s[6], s[5] + 11] }] })) }];
+  const { stdout } = await run("python3", ["-I", "-c", py, script, JSON.stringify(bloco)]);
+  return JSON.parse(stdout);
+}
+const GRIFO = 0xbc3048, CINZA = 0x333333, NEGRITO = "Literata-Bold", NORMAL = "Literata-Regular";
+
+test("o espaço que é um trecho próprio entre uma palavra grifada e a seguinte é mantido (interdisciplinar + e)", async () => {
+  const linhas = await lerPagina([
+    ["por ", NORMAL, 10.4, CINZA, 127.6, 149.8, 147.0],
+    ["equipe ", NEGRITO, 10.4, GRIFO, 157.3, 149.8, 195.4],
+    ["multiprofissional ", NEGRITO, 10.4, GRIFO, 205.7, 149.8, 300.6],
+    ["e ", NEGRITO, 10.4, GRIFO, 310.9, 149.8, 318.8],
+    ["interdisciplinar", NEGRITO, 10.4, GRIFO, 329.1, 149.8, 413.8],
+    [" ", NORMAL, 10.4, CINZA, 413.8, 149.8, 415.9],
+    ["e", NORMAL, 10.4, CINZA, 426.1, 149.8, 431.5],
+  ]);
+  assert.equal(linhas.length, 1);
+  assert.equal(linhas[0].txt, "por equipe multiprofissional e interdisciplinar e");
+});
+
+test("trecho só de espaço fora do texto da lei (margem, rodapé, outras fontes) continua descartado", async () => {
+  const linhas = await lerPagina([
+    [" ", "ArchivoSemiBold-Regular", 9, CINZA, 40, 200, 42],          // margem esquerda: não pode virar linha vazia
+    ["Texto da lei.", NORMAL, 10.4, CINZA, 70, 200.2, 140],
+    [" ", NORMAL, 10.4, CINZA, 70, 820, 72],                          // rodapé (y0 > 805)
+    [" ", "Archivo-Regular", 8, CINZA, 300, 300, 302],               // fonte que não é a do texto da lei
+  ]);
+  assert.deepEqual(linhas.map(l => l.txt), ["Texto da lei."]);
+});
+
+test("acento decomposto (letra + acento combinante) sai composto (NFC), como o resto do texto e as buscas do app esperam", async () => {
+  const linhas = await lerPagina([["pessoas idôneas e informações", NEGRITO, 10.4, GRIFO, 70, 300, 300]]);
+  assert.equal(linhas[0].txt, "pessoas idôneas e informações");
+  assert.equal(linhas[0].txt, linhas[0].txt.normalize("NFC"));
+});
