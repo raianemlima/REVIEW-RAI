@@ -37,6 +37,8 @@ CABECALHOS = {
 ESTRUTURA = re.compile(r"^(LIVRO|PARTE|TÍTULO|CAPÍTULO|SEÇÃO|SUBSEÇÃO|ATO DAS DISPOSIÇÕES|DISPOSIÇÕES)\b")
 NIVEL = {"LIVRO": 0, "PARTE": 0, "TÍTULO": 1, "CAPÍTULO": 2, "SEÇÃO": 3, "SUBSEÇÃO": 4}
 MARCA_DAGUA = re.compile(r"uid:|cpfCnpj:|email:|Baixado por", re.I)
+# etiqueta da emenda que deu a redação ao dispositivo ("EC 141/2026"): fonte pequena, colada ao texto sem espaço
+ETIQUETA_EMENDA = re.compile(r"EC\s*\d+/\d{4}")
 INICIO_LINHA = re.compile(r"^(?:[IVXLC]+\s*[-–—]|[a-z]\)|\d+\.\s|§|Parágrafo único|Art\.)")
 
 # id, nome, curto e disciplina (resolvida no baralho pelo nome canônico na inserção)
@@ -130,6 +132,10 @@ def linhas(spans):
             res.append({"y": s["y"], "margem": margem, "s": [s]})
     for l in res:
         l["s"].sort(key=lambda s: s["x"])
+        # a etiqueta da emenda ("EC 141/2026") vem em trecho próprio e colada ao texto: separa com um espaço
+        for sp, prox in zip(l["s"], l["s"][1:]):
+            if ETIQUETA_EMENDA.fullmatch(sp["t"].strip()) and not sp["t"].endswith(" ") and not prox["t"].startswith(" "):
+                sp["t"] = sp["t"].strip() + " "
         l["txt"] = "".join(s["t"] for s in l["s"]).strip()
     res.sort(key=lambda l: (round(l["y"]), 0 if l["margem"] else 1))
     return res
@@ -298,6 +304,11 @@ class Extrator:
         if compacto in CABECALHOS or compacto.split("ASSERTIVAS")[0].split("COMOOJULGADO")[0] in CABECALHOS:
             chave = compacto.split("ASSERTIVAS")[0].split("COMOOJULGADO")[0]
             self.bloco = CABECALHOS[chave]
+            return
+        # "COMO ESTÁ CAINDO · questões recentes do Vade Mecum de Questões": bloco que o app não usa. Sem este cabeçalho, o
+        # texto dele ia parar na última assertiva do bloco anterior.
+        if compacto.startswith("COMOESTÁCAINDO"):
+            self.bloco = "caindo"
             return
         if s0["sz"] < 6.2 and txt.isupper() and s0["c"] in ("a3182b", "0a4f8f", "ad5a0a") and not re.match(r"^\d", txt):
             self.bloco = "stf"
