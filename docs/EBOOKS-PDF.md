@@ -11,9 +11,6 @@ Livros de estudo em PDF (texto corrido, com marcadores) entram no **Aprofundamen
 | Direito Administrativo · livro completo (2020) | `ad-sinopse-2020` | `ad` | 17 | `conteudo-cifrado/livros-sinopses.bin` |
 | Direito Tributário · livro completo (17ª ed., 2023) | `tr-manual-2023` | `tr` | 17 | `conteudo-cifrado/livros-sinopses.bin` |
 | Processo Civil · manual completo (volume único, 2018) | `pc-manual-2018` | `pc` | 79 | `conteudo-cifrado/livros-manuais.bin` |
-| Direito Civil · manual completo (volume único, 2024) | `cv-manual-2024` | `cv` | 9 | `conteudo-cifrado/livros-manuais.bin` |
-| Prática forense em processo civil | `pc-pratica-forense` | `pc` | 21 | `conteudo-cifrado/livros-manuais.bin` |
-| Direito Penal estruturado (2019) | `dp-estruturado-2019` | `dp` | 53 | `conteudo-cifrado/livros-manuais.bin` |
 | Direito do Consumidor · curso completo (12ª ed., 2018) | `co-curso-2018` | `co` | 50 | `conteudo-cifrado/livros-manuais.bin` |
 | O novo CPC e o Direito Civil · livro completo (2015) | `cv-novo-cpc-2015` | `cv` | 17 | `conteudo-cifrado/livros-manuais.bin` |
 
@@ -42,11 +39,11 @@ Limites: quadros e figuras do PDF viram texto solto (ou somem); as edições sã
 
 ### Qualidade do texto dos livros extraídos
 
+Só ficam no app os livros cujo texto passou na verificação (cobertura, hífens, numeração e ruído de OCR):
+
 - **Processo Civil (2018)**: texto limpo; as notas de rodapé ficam no meio do texto, na página em que aparecem.
-- **Direito Civil (Tartuce, 2024)**: OCR com erros (o "0" vira "o", o "2" vira "z" em alguns números e a vírgula vira ponto). Os artigos e prazos precisam ser conferidos na lei seca.
 - **Direito do Consumidor (2018)** e **O novo CPC e o Direito Civil (2015)**: texto limpo; são anteriores à Lei 14.181/2021 (superendividamento) e a alterações posteriores do CPC.
-- **Prática forense**: OCR com ruído nos modelos de peças.
-- **Direito Penal estruturado**: o livro é um esquema em tópicos e a extração separou a numeração do texto; os capítulos seguem os títulos do sumário e a parte especial (crimes em espécie) vem em capítulos grandes.
+- **Fora do app, por qualidade**: Direito Civil (Tartuce, 2024; OCR com muitos erros), Prática forense (OCR ruim) e Direito Penal estruturado (Greco; a extração perdeu a numeração dos tópicos). Precisam de nova leitura do PDF.
 
 ## O que o conversor faz e não faz
 
@@ -59,7 +56,7 @@ Limites: quadros e figuras do PDF viram texto solto (ou somem); as edições sã
 
 ## Peso
 
-Os dois primeiros livros somam cerca de 4,4 milhões de caracteres; os oito livros extraídos depois somam cerca de 21 milhões e acrescentam uns 6,6 MB selados ao repositório (e ao `deck.enc`). Selados (gzip + AES) ficam em 0,6 a 0,7 MB cada no repositório; dentro do baralho cifrado acrescentam cerca de 1,8 MB ao `deck.enc`, que abre uma vez por entrada no app.
+Os dois primeiros livros somam cerca de 4,4 milhões de caracteres; os sete livros extraídos depois somam cerca de 12 milhões de caracteres selados ao repositório (e ao `deck.enc`). Selados (gzip + AES) ficam em 0,6 a 0,7 MB cada no repositório; dentro do baralho cifrado acrescentam cerca de 1,8 MB ao `deck.enc`, que abre uma vez por entrada no app.
 
 ## Direitos
 
